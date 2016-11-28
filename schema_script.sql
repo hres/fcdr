@@ -1,4 +1,3 @@
-
 CREATE TABLE `Product` (
   `ProductID` int(11) NOT NULL AUTO_INCREMENT,
   `Description` text,
@@ -20,16 +19,6 @@ CREATE TRIGGER `update_time` BEFORE UPDATE ON  Product
 //
 DELIMITER ;
 
-CREATE TABLE `Product_Classification` (
-  `ProductID` int(11) DEFAULT NULL,
-  `ClassificationID` int(11) DEFAULT NULL,
-  KEY `ProductID` (`ProductID`),
-  KEY `ClassificationID` (`ClassificationID`),
-  CONSTRAINT `ClassificationID` FOREIGN KEY (`ClassificationID`) REFERENCES `Classification` (`ClassificationID`),
-  CONSTRAINT `ProductID` FOREIGN KEY (`ProductID`) REFERENCES `Product` (`ProductID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
 CREATE TABLE `Classification` (
   `ClassificationID` int(11) NOT NULL AUTO_INCREMENT,
   `Classification_Number` varchar(10) DEFAULT NULL,
@@ -38,7 +27,14 @@ CREATE TABLE `Classification` (
   PRIMARY KEY (`ClassificationID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=210 DEFAULT CHARSET=latin1;
 
-
+CREATE TABLE `Product_Classification` (
+  `ProductID` int(11) DEFAULT NULL,
+  `ClassificationID` int(11) DEFAULT NULL,
+  KEY `ProductID` (`ProductID`),
+  KEY `ClassificationID` (`ClassificationID`),
+  CONSTRAINT `ClassificationID` FOREIGN KEY (`ClassificationID`) REFERENCES `Classification` (`ClassificationID`),
+  CONSTRAINT `ProductID` FOREIGN KEY (`ProductID`) REFERENCES `Product` (`ProductID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `Package` (
   `PackageID` int(11) NOT NULL AUTO_INCREMENT,
@@ -75,19 +71,25 @@ CREATE TABLE `Package` (
   CONSTRAINT `ProductIDP` FOREIGN KEY (`ProductIDP`) REFERENCES `Product` (`ProductID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=739 DEFAULT CHARSET=latin1;
 
-DELIMITER //
+DELIMITER $$
 CREATE TRIGGER `createtion_date` BEFORE INSERT ON  Package
- FOR EACH ROW SET NEW.`Create_Date` = NOW()
-//
-DELIMITER ;
-DELIMITER //
-CREATE TRIGGER `last_update_time` BEFORE INSERT ON  Package
- FOR EACH ROW SET NEW.`Last_Edit_Date` = NOW()
-//
-DELIMITER ;
+FOR EACH ROW
+BEGIN
+	SET NEW.`Create_Date` = NOW();
+	SET NEW.`Last_Edit_Date` = NOW();
+END$$
 
+CREATE TABLE `Components` (
+  `ComponentID` int(11) NOT NULL AUTO_INCREMENT,
+  `Component_Name` text,
+  `Display_Order` int(11) DEFAULT NULL,
+  `flag` text,
+  `DVUofM` varchar(5) DEFAULT NULL,
+  `DVReferenceAmount` text,
+  PRIMARY KEY (`ComponentID`)
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 
-  CREATE TABLE `Product_Component` (
+CREATE TABLE `Product_Component` (
   `PackageID` int(11) DEFAULT NULL,
   `ComponentID` int(11) DEFAULT NULL,
   `Amount` varchar(7) DEFAULT NULL,
@@ -102,16 +104,6 @@ DELIMITER ;
   CONSTRAINT `ComponentID` FOREIGN KEY (`ComponentID`) REFERENCES `Components` (`ComponentID`),
   CONSTRAINT `PackageID` FOREIGN KEY (`PackageID`) REFERENCES `Package` (`PackageID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE `Components` (
-  `ComponentID` int(11) NOT NULL AUTO_INCREMENT,
-  `Component_Name` text,
-  `Display_Order` int(11) DEFAULT NULL,
-  `flag` text,
-  `DVUofM` varchar(5) DEFAULT NULL,
-  `DVReferenceAmount` text,
-  PRIMARY KEY (`ComponentID`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `Sales` (
   `SalesID` int(11) NOT NULL AUTO_INCREMENT,
