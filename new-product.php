@@ -1,89 +1,83 @@
 <?php include 'connection.php';?>
+
 <?php
 
-
-header("Content-type:text/html; charset=utf-8");
-
-
-
 	if(isset($_POST['search'])) {
-		
+
 	
-		
-			$description = mysqli_real_escape_string($conn,$_POST['Description']);
-			$brand = mysqli_real_escape_string($conn,$_POST['Brand']);
-			$manufacturer = mysqli_real_escape_string($conn,$_POST['Manufacturer']);			
-			$comments = mysqli_real_escape_string($conn,$_POST['Comments']);
-			$cnf_code = mysqli_real_escape_string($conn,$_POST['CNF_CODE']);
-			$classification_type = mysqli_real_escape_string($conn,$_POST['Classification_Type']);
-			$classification_number = mysqli_real_escape_string($conn,$_POST['Classification_Number']);
-			$cluster_number = mysqli_real_escape_string($conn,$_POST['Cluster_Number']);
+	$params = array($_POST['Description'],$_POST['Brand'], $_POST['Manufacturer_Name'],$_POST['Comments'],$_POST['CNF_CODE'],$_POST['Classification_Type'],$_POST['Classification_Number'],$_POST['Cluster_Number']);
 	
 	$flag = 0;
 	
-	if (strlen($classification_number) !=0){
+	if (strlen($params[6]) !=0){
 	
-		$query="INSERT INTO  $dbname.Product (Description, Brand, Manufacturer, Comments, CNF_CODE, Cluster_Number) VALUES ('$description','$brand', '$manufacturer', '$comments', '$cnf_code', '$cluster_number')";
-		$result = mysqli_query($conn,$query);
-		$id =  mysqli_insert_id($conn);
-		//$query2 = "INSERT INTO  $dbname.Classification (Number, Classification_Name, _Type) VALUES ('$classificationid', '$classification_name', '$type')";		
-		//$query1_ ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 1, '$energy_amount_sold', '$energy_unit_sold', '$energy_dvalue_sold', TRUE from $dbname.Package where UPC12 = '$UPC12'";
-		$query2 = "INSERT INTO $dbname.Product_Classification (ClassificationID, ProductID) Select ClassificationID , $id from $dbname.Classification where Classification_Number = $classification_number";
-		
-        $result2 = mysqli_query($conn,$query2); 
+							$query =<<<EOQ
+INSERT Into Product(
+       Description,
+       Brand,
+       Manufacturer,
+       Comments,
+       CNF_CODE,
+       Cluster_Number
 
-		//$query3 = "INSERT INTO  $dbname.Product_Classification (ProductID,ClassificationID) VALUES ($id, $id2)";
-		//$result3 = mysqli_query($conn,$query3);
+) VALUES ( ?, ?, ?, ?, ?, ?)
+EOQ;
+						$stmt = $conn->prepare($query);
+						$stmt->bind_param("ssssdd", $params[0], $params[1], $params[2], $params[3], $params[4], $params[7]);
+						$result_insert = $stmt->execute();
+						$id =  mysqli_insert_id($conn);
+						
+			if (!$result_insert ) {echo "ERRORS 1";}
+					
+				else {echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$id';\",200);</script>";}
+					
+							$query2 =<<<EOQ
+INSERT Into Product_Classification(
+       ClassificationID,
+       ProductID
+) Select ClassificationID, ? from Classification where Classification_Number =?
+EOQ;
+	$params_product_classification = array($id,$params[6]);
+		
+						$stmt_product_classification = $conn->prepare($query2);
+						$stmt_product_classification->bind_param("id", $params_product_classification[0], $params_product_classification[1]);
+						$result_product_classification = $stmt_product_classification->execute();
+
 		$flag = 1;
-		//echo $query3;	
-	
+
+		
+		
 		}	
 		
 		
 		else{
-		$query="INSERT INTO  $dbname.Product (Description, Brand, Manufacturer, Comments, CNF_CODE, Cluster_Number) VALUES ('$description','$brand', '$manufacturer', '$comments', '$cnf_code', '$cluster_number')";
-		$result = mysqli_query($conn,$query); 
-			$id =  mysqli_insert_id($conn);	
-		}
-	
-mysqli_query('SET NAMES utf8');
-mysqli_query('SET CHARACTER SET utf8');
-	
-	if($flag==0){
-			if (!$result ) {
-				echo "ERRORS 1";
-	
-				}else {
+
+										$query_product =<<<EOQ
+INSERT Into Product(
+       Description,
+       Brand,
+       Manufacturer,
+       Comments,
+       CNF_CODE,
+       Cluster_Number
+
+) VALUES ( ?, ?, ?, ?, ?, ?)
+EOQ;
+						$stmt_product = $conn->prepare($query_product);
+						$stmt_product->bind_param("ssssdd", $params[0], $params[1], $params[2], $params[3], $params[4], $params[7]);
+						$result_insert_x = $stmt_product->execute();
+						$id =  mysqli_insert_id($conn);
 				
-					echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$id';\",200);</script>";
-
-					
-					}
-
-	
-//echo "<script>setTimeout(\"location.href = 'edit_product.php?ProductID=$productID';\",200);</script>";
-//header("Location: edit_product.php?ProductID=$productID");
-
-
-}else{
-	if (!$result  OR !$result2) { echo "ERRORS: ";}
+			if (!$result_insert_x) { echo "ERRORS:  ";}
    
 	
-		else {echo "Success... ";
+		else {
 			echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$id';\",200);</script>";
-
-		
-		
+	
 		}
 		
 		}
 
-	
-	//header("Location: edit_product.php?ProductID=$id ");
-
-	
-	
-			
 
 }
 

@@ -1,182 +1,4 @@
--- MySQL dump 10.13  Distrib 5.5.53, for debian-linux-gnu (x86_64)
---
--- Host: localhost    Database: FCDR
--- ------------------------------------------------------
--- Server version	5.5.53-0ubuntu0.14.04.1
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `CSV`
---
-
-DROP TABLE IF EXISTS `CSV`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CSV` (
-  `fname` text,
-  `lname` text
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `Classification`
---
-
-DROP TABLE IF EXISTS `Classification`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Classification` (
-  `ClassificationID` int(11) NOT NULL AUTO_INCREMENT,
-  `Classification_Number` varchar(10) DEFAULT NULL,
-  `Classification_Name` text,
-  `Classification_Type` text,
-  PRIMARY KEY (`ClassificationID`)
-) ENGINE=InnoDB AUTO_INCREMENT=203 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `Components`
---
-
-DROP TABLE IF EXISTS `Components`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Components` (
-  `ComponentID` int(11) NOT NULL AUTO_INCREMENT,
-  `Component_Name` text,
-  `Display_Order` int(11) DEFAULT NULL,
-  `flag` text,
-  `DVUofM` varchar(5) DEFAULT NULL,
-  `DVReferenceAmount` text,
-  PRIMARY KEY (`ComponentID`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `Images`
---
-
-DROP TABLE IF EXISTS `Images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Images` (
-  `ImageID` int(11) NOT NULL AUTO_INCREMENT,
-  `ImageName` text,
-  `Image` longblob,
-  `LabelID` int(11) NOT NULL DEFAULT '0',
-  `Extension` text,
-  PRIMARY KEY (`ImageID`),
-  KEY `fk_LabelID` (`LabelID`),
-  CONSTRAINT `fk_LabelID` FOREIGN KEY (`LabelID`) REFERENCES `Package` (`PackageID`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `Package`
---
-
-DROP TABLE IF EXISTS `Package`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Package` (
-  `PackageID` int(11) NOT NULL AUTO_INCREMENT,
-  `ProductIDP` int(11) DEFAULT NULL,
-  `Label_UPC` text,
-  `Label_Description` text,
-  `Health_Claim` text,
-  `Suggested_Direction` text,
-  `Other_Package_Statement` text,
-  `Nutrition_Claim` text,
-  `Ingredients` text,
-  `Nutrition_Fact_Table` text,
-  `Common_Measure` text,
-  `Per_Serving_Amount` varchar(6) DEFAULT NULL,
-  `Per_Serving_Unit` varchar(3) DEFAULT NULL,
-  `Collection_Date` date DEFAULT NULL,
-  `Comments` text,
-  `PPD_Per_Serving_Amount` varchar(10) DEFAULT NULL,
-  `PPD_Per_Serving_UofM` varchar(8) DEFAULT NULL,
-  `Last_Edit_Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `Create_Date` datetime DEFAULT NULL,
-  `Last_Edited_By` text,
-  `Image1` longblob,
-  `Image2` longblob,
-  `Image3` longblob,
-  `Image4` longblob,
-  `Image5` longblob,
-  `Image6` longblob,
-  `Nielsen_Category` text,
-  `Brand` text,
-  `Manufacturer` text,
-  `Country` text,
-  `Package_Size` text,
-  `Number_Of_Units` text,
-  `Storage_Type` text,
-  `Storage_Statement` text,
-  `Product_Description` text,
-  `Multipart` text,
-  `Nielsen_Item_Rank_UPC` text,
-  `Package_Size_UofM` varchar(4) DEFAULT NULL,
-  `Per_Serving_Amount_In_Grams` text,
-  `Per_Serving_Amount_In_Grams_PPD` text,
-  `MultipartFlag` text,
-  `Source` text,
-  PRIMARY KEY (`PackageID`),
-  KEY `ProductIDP` (`ProductIDP`),
-  CONSTRAINT `ProductIDP` FOREIGN KEY (`ProductIDP`) REFERENCES `Product` (`ProductID`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = '' */ ;
-DELIMITER ;;
-CREATE TRIGGER `createtion_date` BEFORE INSERT ON  Package
-FOR EACH ROW
-BEGIN
-    SET NEW.`Create_Date` = NOW();
-    SET NEW.`Last_Edit_Date` = NOW();
-END;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = '' */ ;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-
---
--- Table structure for table `Product`
---
-
-DROP TABLE IF EXISTS `Product`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Product` (
   `ProductID` int(11) NOT NULL AUTO_INCREMENT,
   `Description` text,
@@ -189,88 +11,83 @@ CREATE TABLE `Product` (
   `Cluster_Number` int(11) DEFAULT NULL,
   `Last_Edited_By` text,
   PRIMARY KEY (`ProductID`)
-) ENGINE=InnoDB AUTO_INCREMENT=156 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = '' */ ;
-DELIMITER ;;
-CREATE TRIGGER update_creation_timestamp BEFORE INSERT ON Product
-FOR EACH ROW
-BEGIN
-    SET NEW.Last_Edit_Date = NOW();
-END;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = '' */ ;
-DELIMITER ;;
+) ENGINE=InnoDB AUTO_INCREMENT=2438 DEFAULT CHARSET=latin1;
+
+#Trigger, set Last_Edit_Date  to current date/time before each update
+DELIMITER //
 CREATE TRIGGER `update_time` BEFORE UPDATE ON  Product
- FOR EACH ROW
-BEGIN
-    SET NEW.`Last_Edit_Date` = NOW();
-END;;
+ FOR EACH ROW SET NEW.`Last_Edit_Date` = NOW()
+//
 DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
---
--- Table structure for table `ProductManufacturer`
---
-
-DROP TABLE IF EXISTS `ProductManufacturer`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ProductManufacturer` (
-  `ManufacturerID` int(11) NOT NULL AUTO_INCREMENT,
-  `Manufacturer_Name` text,
-  `Manufacturer_Address` text,
-  `Manufacturer_URL` text,
-  PRIMARY KEY (`ManufacturerID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2367 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `Product_Classification`
---
-
-DROP TABLE IF EXISTS `Product_Classification`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Product_Classification` (
   `ProductID` int(11) DEFAULT NULL,
   `ClassificationID` int(11) DEFAULT NULL,
   KEY `ProductID` (`ProductID`),
   KEY `ClassificationID` (`ClassificationID`),
-  CONSTRAINT `ProductID` FOREIGN KEY (`ProductID`) REFERENCES `Product` (`ProductID`),
-  CONSTRAINT `Product_Classification_ibfk_1` FOREIGN KEY (`ClassificationID`) REFERENCES `Classification` (`ClassificationID`)
+  CONSTRAINT `ClassificationID` FOREIGN KEY (`ClassificationID`) REFERENCES `Classification` (`ClassificationID`),
+  CONSTRAINT `ProductID` FOREIGN KEY (`ProductID`) REFERENCES `Product` (`ProductID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `Product_Component`
---
 
-DROP TABLE IF EXISTS `Product_Component`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Product_Component` (
+CREATE TABLE `Classification` (
+  `ClassificationID` int(11) NOT NULL AUTO_INCREMENT,
+  `Classification_Number` varchar(10) DEFAULT NULL,
+  `Classification_Name` text,
+  `Classification_Type` text,
+  PRIMARY KEY (`ClassificationID`)
+) ENGINE=InnoDB AUTO_INCREMENT=210 DEFAULT CHARSET=latin1;
+
+
+
+CREATE TABLE `Package` (
+  `PackageID` int(11) NOT NULL AUTO_INCREMENT,
+  `ProductIDP` int(11) DEFAULT NULL,
+  `UPC12` varchar(16) DEFAULT NULL,
+  `Description` text,
+  `Health_Claim` text,
+  `Suggested_Direction` text,
+  `Other_Package_Statement` text,
+  `Nutrition_Claim` text,
+  `Ingredients` text,
+  `Nutrition_Fact_Table` text,
+  `Common_Measure` text,
+  `Per_Serving_Amount` varchar(6) DEFAULT NULL,
+  `Per_Serving_Unit` varchar(3) DEFAULT NULL,
+  `Collection_Date` date DEFAULT NULL,
+  `Sources` text,
+  `Comments` text,
+  `PPD_Per_Serving_Amount` varchar(10) DEFAULT NULL,
+  `PPD_Per_Serving_UofM` varchar(8) DEFAULT NULL,
+  `Last_Edit_Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Create_Date` datetime DEFAULT NULL,
+  `Last_Edited_By` text,
+  `Image1` longblob,
+  `Image2` longblob,
+  `Image3` longblob,
+  `Image4` longblob,
+  `Image5` longblob,
+  `Image6` longblob,
+  `ValuePackFlag` tinyint(1) DEFAULT NULL,
+  `ValuePackUPC` text,
+  PRIMARY KEY (`PackageID`),
+  KEY `ProductIDP` (`ProductIDP`),
+  CONSTRAINT `ProductIDP` FOREIGN KEY (`ProductIDP`) REFERENCES `Product` (`ProductID`)
+) ENGINE=InnoDB AUTO_INCREMENT=739 DEFAULT CHARSET=latin1;
+
+DELIMITER //
+CREATE TRIGGER `createtion_date` BEFORE INSERT ON  Package
+ FOR EACH ROW SET NEW.`Create_Date` = NOW()
+//
+DELIMITER ;
+DELIMITER //
+CREATE TRIGGER `last_update_time` BEFORE INSERT ON  Package
+ FOR EACH ROW SET NEW.`Last_Edit_Date` = NOW()
+//
+DELIMITER ;
+
+
+  CREATE TABLE `Product_Component` (
   `PackageID` int(11) DEFAULT NULL,
   `ComponentID` int(11) DEFAULT NULL,
   `Amount` varchar(7) DEFAULT NULL,
@@ -278,31 +95,35 @@ CREATE TABLE `Product_Component` (
   `Daily_Value` varchar(4) DEFAULT NULL,
   `PPD` text,
   `Amountper100g` decimal(8,3) DEFAULT NULL,
+  `Amountper100gPPD` decimal(8,3) DEFAULT NULL,
   `AmountIsCalculated` tinyint(1) DEFAULT NULL,
   KEY `PackageID` (`PackageID`),
   KEY `ComponentID` (`ComponentID`),
   CONSTRAINT `ComponentID` FOREIGN KEY (`ComponentID`) REFERENCES `Components` (`ComponentID`),
   CONSTRAINT `PackageID` FOREIGN KEY (`PackageID`) REFERENCES `Package` (`PackageID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `Sales`
---
+CREATE TABLE `Components` (
+  `ComponentID` int(11) NOT NULL AUTO_INCREMENT,
+  `Component_Name` text,
+  `Display_Order` int(11) DEFAULT NULL,
+  `flag` text,
+  `DVUofM` varchar(5) DEFAULT NULL,
+  `DVReferenceAmount` text,
+  PRIMARY KEY (`ComponentID`)
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `Sales`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Sales` (
   `SalesID` int(11) NOT NULL AUTO_INCREMENT,
   `ProductIDS` int(11) DEFAULT NULL,
-  `Sales_UPC` int(11) DEFAULT NULL,
-  `Sales_Description` text,
+  `UPC10` varchar(15) DEFAULT NULL,
+  `Description` text,
   `Kilo_Vol` text,
   `Dollar_Volume` text,
-  `Nielsen_Category` text,
-  `Sales_Year` smallint(6) DEFAULT NULL,
-  `Source` text,
+  `Neilson_Category` text,
+  `Year_Recorded` int(11) DEFAULT NULL,
+  `Collection_Year` date DEFAULT NULL,
+  `Sources` text,
   `Comments` text,
   `Brand` text,
   `Package_Size` varchar(10) DEFAULT NULL,
@@ -312,98 +133,17 @@ CREATE TABLE `Sales` (
   `Kilo_Volume_Percent_Change` text,
   `Average_AC_Dist` text,
   `Average_Retail_Price` text,
+  `Sales_Period` text,
+  `Sales_Period_UofM` text,
+  `Sales_Reference_Date` date DEFAULT NULL,
   `Manufacturer` text,
   `Classification_Number` text,
   `Classification_Type` text,
   `Create_Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `Last_Edited_by` text,
-  `Collection_Date` date DEFAULT NULL,
-  `Product_Grouping` int(11) DEFAULT NULL,
-  `Neilson_Category_Number` text,
   `Last_Edit_Date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `Dollar_Volume_Total` text,
-  `Kilo_Volume_Total` text,
-  `Control_Label_Flag` text,
-  `Cluster_Number` text,
-  `Dollar_Share` text,
+  `Last_Edited_by` text,
+  `Sample_Date` date DEFAULT NULL,
   PRIMARY KEY (`SalesID`),
   KEY `ProductIDS` (`ProductIDS`),
   CONSTRAINT `ProductIDS` FOREIGN KEY (`ProductIDS`) REFERENCES `Product` (`ProductID`)
-) ENGINE=InnoDB AUTO_INCREMENT=141 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = '' */ ;
-DELIMITER ;;
-CREATE TRIGGER update_creation_timestamp_sales BEFORE INSERT ON Sales
-FOR EACH ROW
-BEGIN
-    SET NEW.Last_Edit_Date = NOW();
-END;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = '' */ ;
-DELIMITER ;;
-CREATE TRIGGER `last_update_time_sales` BEFORE UPDATE  ON  Sales
-FOR EACH ROW
-BEGIN
-    SET NEW.`Last_Edit_Date` = NOW();
-END;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-
---
--- Table structure for table `Test`
---
-
-DROP TABLE IF EXISTS `Test`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Test` (
-  `F_Name` text,
-  `phone` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `Unit_Of_Measure`
---
-
-DROP TABLE IF EXISTS `Unit_Of_Measure`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Unit_Of_Measure` (
-  `UofM_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `UofM_Name` text,
-  PRIMARY KEY (`UofM_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2016-11-29 11:52:12
+) ENGINE=InnoDB AUTO_INCREMENT=3715 DEFAULT CHARSET=latin1

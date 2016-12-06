@@ -54,14 +54,7 @@
 	
 	
 		<style>
-		.mainsearch{
-			border-style: solid;
-			border-color:#F0F0F0 ;
-			
-		}
-		
-		
-				.btn-file {
+			.btn-file {
     position: relative;
     overflow: hidden;
 }
@@ -99,78 +92,8 @@
 </head>
 <body class="wide comments example">
 
-<header role="banner">
-<div id="wb-bnr">
-<div id="wb-bar">
-<div class="container">
-<div class="row">
-<object id="gcwu-sig" type="image/svg+xml" tabindex="-1" role="img" data="./theme-gcwu-fegc/assets/sig-en.svg" aria-label="Government of Canada"></object>
-<ul id="gc-bar" class="list-inline">
-<li><a href="http://www.canada.ca/en/index.html" rel="external">Canada.ca</a></li>
-<li><a href="http://www.canada.ca/en/services/index.html" rel="external">Services</a></li>
-<li><a href="http://www.canada.ca/en/gov/dept/index.html" rel="external">Departments</a></li>
-<li id="wb-lng"><h2>Language selection</h2>
-<ul class="list-inline">
-<li><a lang="fr" href="content-fr.html">Français</a></li>
-</ul>
-</li>
-</ul>
-<section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
-<h2>Search and menus</h2>
-<ul class="pnl-btn list-inline text-right">
-<li><a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk btn btn-sm btn-default" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Search and menus</span></span></span></a></li>
-</ul>
-<div id="mb-pnl"></div>
-</section>
-</div>
-</div>
-</div>
-<div class="container">
-<div class="row">
-<div id="wb-sttl" class="col-md-5">
-<a href="home.php">
-<span>Food Component Data Repository</span>
-</a>
-</div>
-<object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="./theme-gcwu-fegc/assets/wmms.svg" aria-label="Symbol of the Government of Canada"></object>
-<section id="wb-srch" class="visible-md visible-lg">
-<h2>Search</h2>
-<form action="https://google.ca/search" method="get" role="search" class="form-inline ">
-<div class="form-group">
-<label for="wb-srch-q">Search website</label>
-<input id="wb-srch-q" class="form-control" name="q" type="search" value="" size="27" maxlength="150">
-<input type="hidden" name="q" value="site:wet-boew.github.io OR site:github.com/wet-boew/">
-</div>
-<button type="submit" id="wb-srch-sub" class="btn btn-default">Search</button>
-</form>
-</section>
-</div>
-</div>
-</div>
-<nav role="navigation" id="wb-sm" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
-	<div class="container nvbar">
-		<h2>Topics menu</h2>
-		<div class="row">
-			<ul class="list-inline menu">
-			
-  <li><a href="index.php">Search</a></li>
-  <li> <a href="create-product.php">Create Product</a></li>
-				   <li><a href="importdata.php" >Import</a></li>
+<?php include 'header.php';?>
 
-				<li><a href="#">Export</a></li>
-			</ul>
-		</div>
-	</div>
-</nav>
-<nav role="navigation" id="wb-bc" property="breadcrumb">
-<h2>You are here:</h2>
-<div class="container">
-<div class="row">
-<!--      -->
-</div>
-</div>
-</nav>
-</header>
 <main role="main" property="mainContentOfPage" class="container">
 
 
@@ -178,11 +101,6 @@
 
 		
 		<div class="container">
-
-
-  
-
-
 
 <section style="margin-top: 15px;" class="hidethis">
 <h3>Market Share</h3>
@@ -372,60 +290,8 @@ function goBack() {
 	
 
 		</main>
-	<footer role="contentinfo" id="wb-info" class="visible-sm visible-md visible-lg wb-navcurr">
-<div class="container">
-<nav role="navigation">
-<h2>About this site</h2>
-<ul id="gc-tctr" class="list-inline">
-<li><a rel="license" href="http://wet-boew.github.io/wet-boew/License-en.html">Terms and conditions</a></li>
-<li><a href="http://www.tbs-sct.gc.ca/tbs-sct/common/trans-eng.asp">Transparency</a></li>
-</ul>
-<div class="row">
-<section class="col-sm-3">
-<h3>Contact us</h3>
-<ul class="list-unstyled">
-<li><a href="https://github.com/wet-boew/wet-boew/issues/new">Questions or comments?</a></li>
-</ul>
-</section>
-<section class="col-sm-3">
-<h3>About</h3>
-<ul class="list-unstyled">
-<li><a href="http://wet-boew.github.io/v4.0-ci/index-en.html#about">About the Web Experience Toolkit</a></li>
-<li><a href="http://www.tbs-sct.gc.ca/ws-nw/index-eng.asp">About the Web Standards</a></li>
-</ul>
-</section>
-<section class="col-sm-3">
-<h3>News</h3>
-<ul class="list-unstyled">
-<li><a href="https://github.com/wet-boew/wet-boew/pulse">Recent project activity</a></li>
-<li><a href="https://github.com/wet-boew/wet-boew/graphs">Project statistics</a></li>
-</ul>
-</section>
-<section class="col-sm-3">
-<h3>Stay connected</h3>
-<ul class="list-unstyled">
-<li><a href="https://twitter.com/WebExpToolkit">Twitter</a></li>
-</ul>
-</section>
-</div>
-</nav>
-</div>
-<div id="gc-info">
-<div class="container">
-<nav role="navigation">
-<h2>Government of Canada footer</h2>
-<ul class="list-inline">
-<li><a href="http://healthycanadians.gc.ca"><span>Health</span></a></li>
-<li><a href="http://travel.gc.ca"><span>Travel</span></a></li>
-<li><a href="http://www.servicecanada.gc.ca/eng/home.shtml"><span>Service Canada</span></a></li>
-<li><a href="http://www.jobbank.gc.ca"><span>Jobs</span></a></li>
-<li><a href="http://actionplan.gc.ca/en"><span>Economy</span></a></li>
-<li id="canada-ca"><a href="http://www.canada.ca/en/index.html">Canada.ca</a></li>
-</ul>
-</nav>
-</div>
-</div>
-</footer>
+<?php include 'footer.php';?>
+
 	</div>
 	<!-- Include Date Range Picker -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
@@ -474,16 +340,5 @@ function goBack() {
 		})
 </script>
 
-	<script type="text/javascript">
-				  var _gaq = _gaq || [];
-				  _gaq.push(['_setAccount', 'UA-365466-5']);
-				  _gaq.push(['_trackPageview']);
-
-				  (function() {
-					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-				  })();
-	</script>
 </body>
 </html>

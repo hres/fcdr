@@ -22,7 +22,7 @@ $PackageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 	
 	
 	$query = "Select P.ProductID, P.Description, C.Classification_Name, C.Classification_Number, P.Brand, P.Manufacturer, P.CNF_CODE, C.Classification_Type   from $dbname.Product P LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID ";
-	$query2 = "Select ProductIDP From $dbname.Package where UPC12 = $PackageID";
+	$query2 = "Select ProductIDP From $dbname.Package where Label_UPC = $PackageID";
 	if(count($conditions) > 0) {
         // append the conditions
         $query .= "WHERE " . implode (' AND ', $conditions); // you can change to 'OR', but I suggest to apply the filters cumulative
@@ -31,8 +31,7 @@ $PackageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 
 	$result = mysqli_query($conn,$query);
 	$result2= mysqli_query($conn,$query2);
-		mysqli_query('SET NAMES utf8');
-		mysqli_query('SET CHARACTER SET utf8');
+
 		
 if (!$result) {
     echo "ERRORS";

@@ -86,7 +86,7 @@ ini_set('display_errors', 1); */
 		
 	
 		
-		if($Sales_UPC ==null or $Sales_Description ==null  or $Kilo_Vol == null or $Source ==null  or $Sales_Year==null or $Collection_Date==null){
+		if($Sales_UPC ==null or $Sales_Description ==null  or $Kilo_Vol == null or $Source ==null  or $Sales_Year==null or $Collection_Date==null or $Nielsen_Category==null or $Control_Label ==null){
 			
 			if($Sales_Description){
 				
@@ -124,7 +124,7 @@ ini_set('display_errors', 1); */
 			$rowcount1=mysqli_num_rows($result_grouping);
 			if($rowcount1>0){
 		/* 		echo "Sales_UPC Code already belongs to a different product";
-				$skipped_sales->push($Description);
+				$skipped_sales->push($Description);h
 				continue; */
 				
 			$insert_query = "INSERT Into $dbname.Sales (ProductIDS, Sales_UPC, Source, Sales_Description, Sales_Year, Nielsen_Category, Kilo_Vol, Dollar_Volume,Brand,

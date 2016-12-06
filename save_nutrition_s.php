@@ -11,6 +11,15 @@ if(isset($_POST['search'])) {
 				$energy_amount = mysqli_real_escape_string($conn,$_POST['Enery_Amount_S']);
 				$energy_unit = mysqli_real_escape_string($conn,$_POST['Enery_Unit_S']);
 				$energy_dvalue = mysqli_real_escape_string($conn,$_POST['Enery_DValue_S']);
+				//+++++++++++++++++++++++++++++++++==
+				$Energy_kj_Amount_S = mysqli_real_escape_string($conn,$_POST['Energy_kj_Amount_S']);
+				$Energy_kj_Unit_S = mysqli_real_escape_string($conn,$_POST['Energy_kj_Unit_S']);
+				$Energy_kj_DValue_S = mysqli_real_escape_string($conn,$_POST['Energy_kj_DValue_S']);
+				//+++++++++++++++++++++++++++++++++++++++++++=
+				$Saturated_Trans_kj_Amount_S = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_kj_Amount_S']);
+				$Energy_kj_Unit_S = mysqli_real_escape_string($conn,$_POST['Energy_kj_Unit_S']);
+				$Saturated_Trans_DValue_S = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_DValue_S']);
+				//+++++++++++++++++++++
 				
 				$fat_amount = mysqli_real_escape_string($conn,$_POST['Fat_Amount_S']);
 				$fat_unit = mysqli_real_escape_string($conn,$_POST['Fat_Unit_S']);
@@ -181,9 +190,16 @@ if(isset($_POST['search'])) {
 				$chloride_unit = mysqli_real_escape_string($conn,$_POST['Chloride_Unit_S']);
 				$chloride_dvalue = mysqli_real_escape_string($conn,$_POST['Chloride_DValue_S']);
 
-				
+
+			
+				$queryx ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 47, '$Energy_kj_Amount_S', '$Energy_kj_Unit_S', '$Energy_kj_DValue_S', FALSE from $dbname.Package where ProductIDP = '$productID'";
+				$queryy ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 46, '$Saturated_Trans_kj_Amount_S', '$Energy_kj_Unit_S', '$Saturated_Trans_DValue_S', FALSE from $dbname.Package where ProductIDP = '$productID'";
+			
+
 				$query1 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 1, '$energy_amount', '$energy_unit', '$energy_dvalue', FALSE from $dbname.Package where ProductIDP = '$productID'";
 				$query2 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 2, '$fat_amount', '$fat_unit', '$fat_dvalue', FALSE from $dbname.Package where ProductIDP = '$productID'";
+	
+
 				$query3 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 3, '$saturated_fat_amount', '$saturated_fat_unit', '$saturated_fat_dvalue', FALSE from $dbname.Package where ProductIDP = '$productID'";
 				$query4 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 4, '$trans_fat_amount', '$trans_fat_unit', '$trans_fat_dvalue', FALSE from $dbname.Package where ProductIDP = '$productID'";
 				$query5 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 5, '$omega6_amount', '$omega6_unit', '$omega6_dvalue', FALSE from $dbname.Package where ProductIDP = '$productID'";
@@ -234,6 +250,10 @@ if(isset($_POST['search'])) {
 				$query42 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 42, '$molybdenium_amount', '$molybdenium_unit', '$molybdenium_dvalue', FALSE from $dbname.Package where ProductIDP = '$productID'";
 				$query43 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 43, '$chloride_amount', '$chloride_unit', '$chloride_dvalue', FALSE from $dbname.Package where ProductIDP = '$productID'";
 
+
+				$resultx = mysqli_query($conn,$queryx);
+				$resulty = mysqli_query($conn,$queryy);
+				
 				$result1 = mysqli_query($conn,$query1);
 				$result2 = mysqli_query($conn,$query2);
 		    	$result3 = mysqli_query($conn,$query3);

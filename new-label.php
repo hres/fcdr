@@ -1,9 +1,19 @@
-<?php include 'connection.php';?>
+
 <?php
 
 header("Content-type:text/html; charset: iso-8859-1");
 
-<?php include 'connection.php';?>
+
+$servername = "127.0.0.1";
+$username = "rnelson";
+$password = "romario";
+$dbname = "FCDR";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 
 		if(isset($_POST['search'])) {

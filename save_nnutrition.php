@@ -11,6 +11,17 @@ $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 				$energy_unit = mysqli_real_escape_string($conn,$_POST['Energy_Unit']);
 				$energy_dvalue = mysqli_real_escape_string($conn,$_POST['Energy_DValue']);
 				
+				$Energy_kj_Amount = mysqli_real_escape_string($conn,$_POST['Energy_kj_Amount']);
+				$Energy_kj_Unit = mysqli_real_escape_string($conn,$_POST['Energy_kj_Unit']);
+				$Engergy_kj_DValue = mysqli_real_escape_string($conn,$_POST['Engergy_kj_DValue']);
+				
+				$Saturated_Trans_Amount = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_Amount']);
+				$Saturated_Trans_Unit = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_Unit']);
+				$Saturated_Trans_DValue = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_DValue']);
+				
+				
+				
+				
 				$fat_amount = mysqli_real_escape_string($conn,$_POST['Fat_Amount']);
 				$fat_unit = mysqli_real_escape_string($conn,$_POST['Fat_Unit']);
 				$fat_dvalue = mysqli_real_escape_string($conn,$_POST['Fat_DValue']);
@@ -179,10 +190,24 @@ $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 				$chloride_amount = mysqli_real_escape_string($conn,$_POST['Chloride_Amount']);
 				$chloride_unit = mysqli_real_escape_string($conn,$_POST['Chloride_Unit']);
 				$chloride_dvalue = mysqli_real_escape_string($conn,$_POST['Chloride_DValue']);
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+				$Energy_kj_Amount = mysqli_real_escape_string($conn,$_POST['Energy_kj_Amount']);
+				$Energy_kj_Unit = mysqli_real_escape_string($conn,$_POST['Energy_kj_Unit']);
+				$Engergy_kj_DValue = mysqli_real_escape_string($conn,$_POST['Engergy_kj_DValue']);
+				
+				$Saturated_Trans_Amount = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_Amount']);
+				$Saturated_Trans_Unit = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_Unit']);
+				$Saturated_Trans_DValue = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_DValue']);				
+	
 
+				$queryx ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 47, '$Energy_kj_Amount', '$Energy_kj_Unit', '$Engergy_kj_DValue', TRUE from $dbname.Package where ProductIDP = '$productID'";
+				$queryy ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 46, '$Saturated_Trans_Amount', '$Saturated_Trans_Unit', '$Saturated_Trans_DValue', TRUE from $dbname.Package where ProductIDP = '$productID'";
+	
 				
 				$query1 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 1, '$energy_amount', '$energy_unit', '$energy_dvalue', TRUE from $dbname.Package where ProductIDP = '$productID'";
 				$query2 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 2, '$fat_amount', '$fat_unit', '$fat_dvalue', TRUE from $dbname.Package where ProductIDP = '$productID'";
+
+
 				$query3 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 3, '$saturated_fat_amount', '$saturated_fat_unit', '$saturated_fat_dvalue', TRUE from $dbname.Package where ProductIDP = '$productID'";
 				$query4 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 4, '$trans_fat_amount', '$trans_fat_unit', '$trans_fat_dvalue', TRUE from $dbname.Package where ProductIDP = '$productID'";
 				$query5 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 5, '$omega6_amount', '$omega6_unit', '$omega6_dvalue', TRUE from $dbname.Package where ProductIDP = '$productID'";
@@ -233,6 +258,9 @@ $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 				$query42 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 42, '$molybdenium_amount', '$molybdenium_unit', '$molybdenium_dvalue', TRUE from $dbname.Package where ProductIDP = '$productID'";
 				$query43 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, Daily_Value, PPD) Select PackageID, 43, '$chloride_amount', '$chloride_unit', '$chloride_dvalue', TRUE from $dbname.Package where ProductIDP = '$productID'";
 
+				
+				$resultx = mysqli_query($conn,$queryx);
+				$resulty = mysqli_query($conn,$queryy);
 				$result1 = mysqli_query($conn,$query1);
 				$result2 = mysqli_query($conn,$query2);
 		    	$result3 = mysqli_query($conn,$query3);

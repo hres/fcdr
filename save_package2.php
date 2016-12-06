@@ -16,6 +16,16 @@ ini_set('display_errors', 1);
 				$energy_unit = mysqli_real_escape_string($conn,$_POST['Energy_Unit_S']);
 				$energy_dvalue = mysqli_real_escape_string($conn,$_POST['Energy_DValue_S']);
 				
+				$Energy_Amount_kj_S = mysqli_real_escape_string($conn,$_POST['Energy_Amount_kj_S']);
+				$Energy_Unit_kj_S = mysqli_real_escape_string($conn,$_POST['Energy_Unit_kj_S']);
+				$Energy_DValue_kj_S = mysqli_real_escape_string($conn,$_POST['Energy_DValue_kj_S']);
+				
+				$Saturated_Trans_Amount_S = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_Amount_S']);
+				$Saturated_Trans_Unit_S = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_Unit_S']);
+				$Saturated_Trans_DValue_S = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_DValue_S']);
+				
+				
+				
 				$fat_amount = mysqli_real_escape_string($conn,$_POST['Fat_Amount_S']);
 				$fat_unit = mysqli_real_escape_string($conn,$_POST['Fat_Unit_S']);
 				$fat_dvalue = mysqli_real_escape_string($conn,$_POST['Fat_DValue_S']);
@@ -371,7 +381,13 @@ ini_set('display_errors', 1);
 						
 			
 				//$result = mysqli_query($conn,$query);
-	
+
+			
+			$queryx = "UPDATE $dbname.Package AS P INNER JOIN $dbname.Product_Component AS PC ON P.PackageID=PC.PackageID INNER JOIN $dbname.Components AS C On  PC.ComponentID = C.ComponentID SET PC.Amount= '$Energy_Amount_kj_S', PC.Amount_Unit_Of_Measure = '$Energy_Unit_kj_S', PC.Daily_Value = '$Energy_DValue_kj_S' where  C.Component_Name = 'Energy kj' and   PC.PackageID=$PackageID AND PPD = 0";
+			$queryy = "Update $dbname.Package AS P INNER JOIN $dbname.Product_Component AS PC ON P.PackageID=PC.PackageID INNER JOIN $dbname.Components AS C On  PC.ComponentID = C.ComponentID SET PC.Amount= '$Saturated_Trans_Amount_S', PC.Amount_Unit_Of_Measure = '$Saturated_Trans_Unit_S', PC.Daily_Value = '$Saturated_Trans_DValue_S' where  C.Component_Name = 'Saturated + Trans Fat' and   PC.PackageID=$PackageID AND PPD = 0";
+				
+
+				
 				
 			$query1 = "UPDATE $dbname.Package AS P INNER JOIN $dbname.Product_Component AS PC ON P.PackageID=PC.PackageID INNER JOIN $dbname.Components AS C On  PC.ComponentID = C.ComponentID SET PC.Amount= '$energy_amount', PC.Amount_Unit_Of_Measure = '$energy_unit', PC.Daily_Value = '$energy_dvalue' where  C.Component_Name = 'Energy' and   PC.PackageID=$PackageID AND PPD = 0";
 			$query2 = "Update $dbname.Package AS P INNER JOIN $dbname.Product_Component AS PC ON P.PackageID=PC.PackageID INNER JOIN $dbname.Components AS C On  PC.ComponentID = C.ComponentID SET PC.Amount= '$fat_amount', PC.Amount_Unit_Of_Measure = '$fat_unit', PC.Daily_Value = '$fat_dvalue' where  C.Component_Name = 'Fat' and   PC.PackageID=$PackageID AND PPD = 0";
@@ -535,6 +551,8 @@ ini_set('display_errors', 1);
  */
 	//}	
 
+				$resultx = mysqli_query($conn,$queryx);
+				$resulty = mysqli_query($conn,$queryy);
 				$result1 = mysqli_query($conn,$query1);
 				$result2 = mysqli_query($conn,$query2);
 		    	$result3 = mysqli_query($conn,$query3);

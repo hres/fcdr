@@ -153,78 +153,7 @@ $('input[name="intervaltype"]').click(function () {
 </head>
 <body class="wide comments example">
 
-<header role="banner">
-<div id="wb-bnr">
-<div id="wb-bar">
-<div class="container">
-<div class="row">
-<object id="gcwu-sig" type="image/svg+xml" tabindex="-1" role="img" data="./theme-gcwu-fegc/assets/sig-en.svg" aria-label="Government of Canada"></object>
-<ul id="gc-bar" class="list-inline">
-<li><a href="http://www.canada.ca/en/index.html" rel="external">Canada.ca</a></li>
-<li><a href="http://www.canada.ca/en/services/index.html" rel="external">Services</a></li>
-<li><a href="http://www.canada.ca/en/gov/dept/index.html" rel="external">Departments</a></li>
-<li id="wb-lng"><h2>Language selection</h2>
-<ul class="list-inline">
-<li><a lang="fr" href="content-fr.html">Français</a></li>
-</ul>
-</li>
-</ul>
-<section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
-<h2>Search and menus</h2>
-<ul class="pnl-btn list-inline text-right">
-<li><a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk btn btn-sm btn-default" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Search and menus</span></span></span></a></li>
-</ul>
-<div id="mb-pnl"></div>
-</section>
-</div>
-</div>
-</div>
-<div class="container">
-<div class="row">
-<div id="wb-sttl" class="col-md-5">
-<a href="home.php">
-<span>Food Component Data Repository</span>
-</a>
-</div>
-<object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="./theme-gcwu-fegc/assets/wmms.svg" aria-label="Symbol of the Government of Canada"></object>
-<section id="wb-srch" class="visible-md visible-lg">
-<h2>Search</h2>
-<form action="https://google.ca/search" method="get" role="search" class="form-inline ">
-<div class="form-group">
-<label for="wb-srch-q">Search website</label>
-<input id="wb-srch-q" class="form-control" name="q" type="search" value="" size="27" maxlength="150">
-<input type="hidden" name="q" value="site:wet-boew.github.io OR site:github.com/wet-boew/">
-</div>
-<button type="submit" id="wb-srch-sub" class="btn btn-default">Search</button>
-</form>
-</section>
-</div>
-</div>
-</div>
-<nav role="navigation" id="wb-sm" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
-	<div class="container nvbar">
-		<h2>Topics menu</h2>
-		<div class="row">
-			<ul class="list-inline menu">
-			
-  <li><a href="index.php">Search</a></li>
-  <li> <a href="create-product.php">Create Product</a></li>
-				   <li><a href="importdata.php">Import</a></li>
-
-				<li><a href="#">Export</a></li>
-			</ul>
-		</div>
-	</div>
-</nav>
-<nav role="navigation" id="wb-bc" property="breadcrumb">
-<h2>You are here:</h2>
-<div class="container">
-<div class="row">
-<!--      -->
-</div>
-</div>
-</nav>
-</header>
+<?php include 'header.php';?>
 <main role="main" property="mainContentOfPage" class="container">
 
 
@@ -503,10 +432,10 @@ $('input[name="intervaltype"]').click(function () {
    <input type="text" class="form-control" placeholder="Amount" name="Energy_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Energy_Unit">
-  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+ <select class="form-control" id="sel1" name="Energy_Unit" disabled>
+  <option value="kcal" selected="selected">kcal</option>
 	
-	<?php include 'Units.php';?>
+
        <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
@@ -522,6 +451,86 @@ $('input[name="intervaltype"]').click(function () {
    <input type="text" class="form-control" placeholder="% Daily value" name="Energy_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
+ 
+ 
+ </div>
+ 
+ <div class= "row" style="margin-top:4px;">
+	<?php include 'connection.php';?>
+	<?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Energy kj' AND   K.PackageID=$UPC12 AND PPD = 1
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+	
+	?>
+		 <div class="form-group">
+  <label class="col-sm-3 control-label">Energy kj</label>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="Amount" name="Energy_kj_Amount" value="<?PHP echo $row['Amount']; ?>">
+  </div><!-- /col-sm-9 -->
+  <div class="col-sm-3">
+ <select class="form-control" id="sel1" name="Energy_kj_Unit" disabled>
+  <option value="kj" selected="selected">kj</option>
+	
+	
+       <option value=""></option>
+      </select>  </div>
+  <div class="col-sm-3">
+  	<?php include 'connection.php';?>
+	<?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Energy kj' AND   K.PackageID=$UPC12 AND PPD = 1
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+   <input type="text" class="form-control" placeholder="% Daily value" name="Energy_kj_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+  </div>
+ </div>
+ 
+ 
+ </div>
+ 
+ 
+  <div class= "row" style="margin-top:4px;">
+	<?php include 'connection.php';?>
+	<?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Saturated + Trans Fat' AND   K.PackageID=$UPC12 AND PPD = 1
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+	
+	?>
+		 <div class="form-group">
+  <label class="col-sm-3 control-label">Saturated + Trans Fat</label>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="Amount" name="Saturated_Plus_Trans_Amount" value="<?PHP echo $row['Amount']; ?>">
+  </div><!-- /col-sm-9 -->
+  <div class="col-sm-3">
+<select class="form-control" id="sel1" name="Saturated_Plus_Trans_UofM">
+  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+	
+	<?php include 'Units.php';?>
+		 <option value=""></option>
+      
+      </select> </div>
+  <div class="col-sm-3">
+  	<?php include 'connection.php';?>
+	<?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Saturated + Trans Fat' AND   K.PackageID=$UPC12 AND PPD = 1
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+   <input type="text" class="form-control" placeholder="% Daily value" name="Saturated_Plus_Trans_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+  </div>
+ </div>
+ 
+ 
  </div>
  
  <div class= "row" style="margin-top:4px;">
@@ -2141,9 +2150,9 @@ $('input[name="intervaltype"]').click(function () {
    <input type="text" class="form-control" placeholder="Amount" name="Energy_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Energy_Unit_S">
-  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+ <select class="form-control" id="sel1" name="Energy_Unit_S" disabled>
+  <option value="kcal" selected="selected">kcal</option>
+		
 		 <option value=""></option>
       
       </select>  </div>
@@ -2162,6 +2171,83 @@ $('input[name="intervaltype"]').click(function () {
   </div>
  </div>
  </div>
+ 
+ <div class= "row" style="margin-top:4px;">
+	<?php include 'connection.php';?>
+	<?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Energy kj' AND   K.PackageID=$UPC12 AND PPD = 0
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+		 <div class="form-group">
+  <label class="col-sm-3 control-label">Energy kj</label>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="Amount of Energy kj" name="Energy_Amount_kj_S" value="<?PHP echo $row['Amount']; ?>">
+  </div><!-- /col-sm-9 -->
+  <div class="col-sm-3">
+ <select class="form-control" id="sel1" name="Energy_Unit_kj_S" disabled>
+  <option value="kj" selected="selected">kj</option>
+	
+		 <option value=""></option>
+      
+      </select>  </div>
+  <div class="col-sm-3">
+  	<?php include 'connection.php';?>
+	<?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Energy kj' AND   K.PackageID=$UPC12 AND PPD = 0
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+  
+   <input type="text" class="form-control" placeholder="% Daily value" name="Energy_DValue_kj_S" value="<?PHP echo $row['Daily_Value']; ?>">
+  </div>
+ </div>
+ </div>
+ 
+  <div class= "row" style="margin-top:4px;">
+		 <div class="form-group">
+		 	<?php include 'connection.php';?>
+		 	<?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Saturated + Trans Fat' AND   K.PackageID=$UPC12 AND PPD = 0
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+  <label class="col-sm-3 control-label">Saturated + Trans Fat</label>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="Amount os Saturated + Trans Fat" name="Saturated_Trans_Amount_S" value="<?PHP echo $row['Amount']; ?>"> 
+  </div><!-- /col-sm-9 -->
+  <div class="col-sm-3">
+ <select class="form-control" id="sel1" name="Saturated_Trans_Unit_S">
+	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+		<?php include 'Units.php';?>
+		 <option value=""></option>
+      
+      </select>  </div>
+  <div class="col-sm-3">
+  <?php include 'connection.php';?>
+  		 	<?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Saturated + Trans Fat' AND   K.PackageID=$UPC12 AND PPD = 0
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+   <input type="text" class="form-control" placeholder="% Daily value" name="Saturated_Trans_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+  </div>
+ </div>
+ </div>
+ 
+ 
  
  <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
@@ -3742,7 +3828,7 @@ function validateForm() {
 	
 	console.log('validating');
 	
-	/* 	values for as sold  */
+	/* 	values for as sold  
     var energy_amount = document.forms["myForm"]["Energy_Amount"].value;
 	var energy_unit = document.forms["myForm"]["Energy_Unit"].value;
 	
@@ -4196,8 +4282,8 @@ document.getElementById("demo").style.color = 'red';
 		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Chloride";
 document.getElementById("demo").style.color = 'red';
 		return false;
-	}
-	/* values for as prepared */
+	}*/
+	/* values for as prepared 
 	
 	    var energy_amount_s = document.forms["myForm"]["Energy_Amount_S"].value;
 	var energy_unit_s = document.forms["myForm"]["Energy_Unit_S"].value;
@@ -4627,66 +4713,13 @@ document.getElementById("demo").style.color = 'red';
 document.getElementById("demo").style.color = 'red';
 		return false;
 	}
-
+*/
 }
 </script>	
 		
 
 		</main>
-<footer role="contentinfo" id="wb-info" class="visible-sm visible-md visible-lg wb-navcurr">
-<div class="container">
-<nav role="navigation">
-<h2>About this site</h2>
-<ul id="gc-tctr" class="list-inline">
-<li><a rel="license" href="http://wet-boew.github.io/wet-boew/License-en.html">Terms and conditions</a></li>
-<li><a href="http://www.tbs-sct.gc.ca/tbs-sct/common/trans-eng.asp">Transparency</a></li>
-</ul>
-<div class="row">
-<section class="col-sm-3">
-<h3>Contact us</h3>
-<ul class="list-unstyled">
-<li><a href="https://github.com/wet-boew/wet-boew/issues/new">Questions or comments?</a></li>
-</ul>
-</section>
-<section class="col-sm-3">
-<h3>About</h3>
-<ul class="list-unstyled">
-<li><a href="http://wet-boew.github.io/v4.0-ci/index-en.html#about">About the Web Experience Toolkit</a></li>
-<li><a href="http://www.tbs-sct.gc.ca/ws-nw/index-eng.asp">About the Web Standards</a></li>
-</ul>
-</section>
-<section class="col-sm-3">
-<h3>News</h3>
-<ul class="list-unstyled">
-<li><a href="https://github.com/wet-boew/wet-boew/pulse">Recent project activity</a></li>
-<li><a href="https://github.com/wet-boew/wet-boew/graphs">Project statistics</a></li>
-</ul>
-</section>
-<section class="col-sm-3">
-<h3>Stay connected</h3>
-<ul class="list-unstyled">
-<li><a href="https://twitter.com/WebExpToolkit">Twitter</a></li>
-</ul>
-</section>
-</div>
-</nav>
-</div>
-<div id="gc-info">
-<div class="container">
-<nav role="navigation">
-<h2>Government of Canada footer</h2>
-<ul class="list-inline">
-<li><a href="http://healthycanadians.gc.ca"><span>Health</span></a></li>
-<li><a href="http://travel.gc.ca"><span>Travel</span></a></li>
-<li><a href="http://www.servicecanada.gc.ca/eng/home.shtml"><span>Service Canada</span></a></li>
-<li><a href="http://www.jobbank.gc.ca"><span>Jobs</span></a></li>
-<li><a href="http://actionplan.gc.ca/en"><span>Economy</span></a></li>
-<li id="canada-ca"><a href="http://www.canada.ca/en/index.html">Canada.ca</a></li>
-</ul>
-</nav>
-</div>
-</div>
-</footer>
+<?php include 'footer.php';?>
 
 	</div>
 	

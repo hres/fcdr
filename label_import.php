@@ -74,7 +74,7 @@ ini_set('display_errors', 1); */
 
 		$Storage_Type = $worksheet->getCell('L'.$row)->getValue();
 		$Storage_Statement = mysqli_real_escape_string($conn,$worksheet->getCell('M'.$row)->getValue());
-		$Collection_Date = $worksheet->getCell('N'.$row)->getValue();
+		$Collection_Date = mysqli_real_escape_string($conn,$worksheet->getCell('N'.$row)->getValue());
 		$Health_Claim = mysqli_real_escape_string($conn,$worksheet->getCell('O'.$row)->getValue());
 		$Nutrient_Claim = mysqli_real_escape_string($conn,$worksheet->getCell('P'.$row)->getValue());
 		
@@ -102,10 +102,10 @@ ini_set('display_errors', 1); */
 		
 		$Saturated_Fat_Per_Serving = $worksheet->getCell('AH'.$row)->getValue();
 		$Trans_Fat_Per_Serving = $worksheet->getCell('AI'.$row)->getValue();
-		$Trans_And_Saturated_Fat_Daily_Vaue = $worksheet->getCell('AJ'.$row)->getValue();
+		$Trans_And_Saturated_Fat_Daily_Value = $worksheet->getCell('AJ'.$row)->getValue();
 		
 		/* added */
-		$Trans_And_Saturated_Fat_Daily_Vaue_PPD = $worksheet->getCell('AK'.$row)->getValue();
+		$Trans_And_Saturated_Fat_Daily_Value_PPD = $worksheet->getCell('AK'.$row)->getValue();
 		
 		$Fat_PolyUnsaturated = $worksheet->getCell('AL'.$row)->getValue();
 		$Omega_6_Per_Serving = $worksheet->getCell('AM'.$row)->getValue();
@@ -289,7 +289,7 @@ ini_set('display_errors', 1); */
 		$Product_Description = mysqli_real_escape_string($conn,$worksheet->getCell('EQ'.$row)->getValue());
 
 		
-			if($Label_UPC ===null or $Label_Description ===null or $Brand === null or $Manufacturer === null or $Nielsen_Category === null or $Ingredients === null or $Nutrition_Fact_Table===null or $Per_Serving_Amount===null or $Per_Serving_UofM ===null or $Per_Serving_Energy_Kcal === null or $Fat_Per_Serving === null or $Fat_Daily_Value===null or $Carbohydrates_Per_Serving === null or $Carbohydrates_Daily_Value === null or $Fibre_Daily_Value_PPD ===null or $Protein_Per_Serving === null)  
+			if($Record === null or $Label_UPC ===null or $Label_Description ===null  or $Nielsen_Category === null or $Ingredients === null or $Nutrition_Fact_Table===null or $Per_Serving_Amount===null or $Per_Serving_UofM ===null or $Per_Serving_Energy_Kcal === null  or $Protein_Per_Serving === null)  
 	
 			{
 		
@@ -339,30 +339,40 @@ ini_set('display_errors', 1); */
 				$query_energy_kcal_as_sold ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 1, '$Per_Serving_Energy_Kcal', 'kcal',  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 				$query_energy_kcal_as_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 1, '$Per_Serving_Energy_PPD_Kcal', 'kcal',  FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 					
-				$query_Per_Serving_Energy_Kj ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 47, '$Per_Serving_Energy_Kj', 'kj',  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_Per_Serving_Energy_Kj ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 47, '$Per_Serving_Energy_Kj', 'kj', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 				
-				$query_Per_Serving_Energy_PPD_Kj ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 47, '$Per_Serving_Energy_PPD_Kj', 'kj',  FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_Per_Serving_Energy_PPD_Kj ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 47, '$Per_Serving_Energy_PPD_Kj', 'kj', FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 
 		//$Per_Serving_Energy_Kj = $worksheet->getCell('AC'.$row)->getValue();
 		//$Per_Serving_Energy_PPD_Kj = $worksheet->getCell('AD'.$row)->getValue();	
 
-				$query_fat_per_serving ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,Daily_Value, PPD) Select PackageID, 2, '$Fat_Per_Serving', 'g','$Fat_Daily_Value'  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_fat_per_serving ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,Daily_Value, PPD) Select PackageID, 2, '$Fat_Per_Serving', 'g','$Fat_Daily_Value',  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 				
 				//**********
-				$query_fat_daily_value_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID,Daily_Value, PPD) Select PackageID, 2, '$Fat_Daily_Value_PPD'  FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_fat_daily_value_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID,Daily_Value, PPD) Select PackageID, 2, '$Fat_Daily_Value_PPD',  FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 
 
-				$query_Saturated_Fat_Per_Serving ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,Daily_Value, PPD) Select PackageID, 3, '$Saturated_Fat_Per_Serving', 'g','$Trans_And_Saturated_Fat_Daily_Vaue',  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_Saturated_Fat_Per_Serving ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 3, '$Saturated_Fat_Per_Serving', 'g', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 				
-				$query_Trans_Fat ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,Daily_Value, PPD) Select PackageID, 4, '$Trans_Fat_Per_Serving', 'g','$Trans_And_Saturated_Fat_Daily_Vaue', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_Trans_Fat ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,PPD) Select PackageID, 4, '$Trans_Fat_Per_Serving', 'g', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 				
 				
 				
-				//**********
-				$query_Saturated_Fat_Daily_Value_PPD ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 3, '$Saturated_Fat_Per_Serving', 'g','$Trans_And_Saturated_Fat_Daily_Vaue',  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
-				//**********
-				$query_Trans_Fat_Daily_Value_PPD ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 4,'$Trans_And_Saturated_Fat_Daily_Vaue_PPD', FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				//********** Saturated Fat per Serving
+				//$query_Saturated_Fat_Daily_Value_PPD ="Insert into $dbname.Product_Component(PackageID, ComponentID,Amount,Amount_Unit_Of_Measure, PPD) Select PackageID, 3, '$Saturated_Fat_Per_Serving', 'g',  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				//********** Trans Fat
+				//$query_Trans_Fat_Daily_Value_PPD ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount,Amount_Unit_Of_Measure, PPD) Select PackageID, 4,'$Trans_Fat_Per_Serving','g', FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 			    //**********
+
+				$query_Trans_Fat_Daily_Value_2 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 46,'$Trans_And_Saturated_Fat_Daily_Value', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_Trans_Fat_Daily_Value_PPD_2 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 46,'$Trans_And_Saturated_Fat_Daily_Value_PPD', FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+
+		//$Trans_And_Saturated_Fat_Daily_Vaue = $worksheet->getCell('AJ'.$row)->getValue();
+		
+		/* added */
+		//$Trans_And_Saturated_Fat_Daily_Vaue_PPD = $worksheet->getCell('AK'.$row)->getValue();
+
+
 				$query_fat_polysunsaturated = "Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 44, '$Fat_PolyUnsaturated', 'g', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 				$query_fat_polymonosaturated = "Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 45, '$Fat_Monounsaturated_Per_Serving', 'g', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 				
@@ -397,7 +407,7 @@ ini_set('display_errors', 1); */
 				
 				$query_Sodium_Per_Serving ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,Daily_Value, PPD) Select PackageID, 16, '$Sodium_Per_Serving', 'g','$Sodium_Daily_Value', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 
-				$query_Sodium_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 16, '$Sodium_Daily_Value_PPD', TRUE FALSE $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_Sodium_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 16, '$Sodium_Daily_Value_PPD', FALSE From $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 
 
 				$query_Potassium_Per_Serving ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,Daily_Value, PPD) Select PackageID, 17, '$Potassium_Per_Serving', 'mg','$Potassium_Daily_Value', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
@@ -528,6 +538,9 @@ ini_set('display_errors', 1); */
 	
 				$query_Chloride_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 43, '$Chloride_Daily_Value', FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 
+
+				$result_Trans_Saturaded = mysqli_query($conn,$query_Trans_Fat_Daily_Value_2);
+				$result_Trans_Saturaded_PPD = mysqli_query($conn,$query_Trans_Fat_Daily_Value_PPD_2);
 				
 				$result_energy_kcal_as_sold = mysqli_query($conn,$query_energy_kcal_as_sold);
 				$result_energy_kcal_as_ppd = mysqli_query($conn,$query_energy_kcal_as_ppd);		
@@ -573,8 +586,8 @@ ini_set('display_errors', 1); */
 				$result40 = mysqli_query($conn,$query_Niacin_Per_Serving);
 				
 				$result41 = mysqli_query($conn,$query_fat_daily_value_ppd);
-				$result42 = mysqli_query($conn,$query_Saturated_Fat_Daily_Value_PPD);
-				$result43 = mysqli_query($conn,$query_Trans_Fat_Daily_Value_PPD);
+				//$result42 = mysqli_query($conn,$query_Saturated_Fat_Daily_Value_PPD);
+				//$result43 = mysqli_query($conn,$query_Trans_Fat_Daily_Value_PPD);
 				$result44 = mysqli_query($conn,$query_omega6);
 				$result45 = mysqli_query($conn,$query_omega3);
 
@@ -652,26 +665,37 @@ ini_set('display_errors', 1); */
 				$query_energy_kcal_as_sold ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 1, '$Per_Serving_Energy_Kcal', 'kcal',  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 				$query_energy_kcal_as_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 1, '$Per_Serving_Energy_PPD_Kcal', 'kcal',  FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 
-				$query_energy_kj_as_sold ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 1, '$Per_Serving_Energy_Kj', 'kcal',  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
-				$query_energy_kj_as_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 1, '$Per_Serving_Energy_PPD_Kj', 'kcal',  FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_energy_kj_as_sold ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 1, '$Per_Serving_Energy_Kj', 'kj',  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_energy_kj_as_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 1, '$Per_Serving_Energy_PPD_Kj', 'kj',  FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 		
 				
 
-				$query_fat_per_serving ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,Daily_Value, PPD) Select PackageID, 2, '$Fat_Per_Serving', 'g','$Fat_Daily_Value'  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_fat_per_serving ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,Daily_Value, PPD) Select PackageID, 2, '$Fat_Per_Serving', 'g','$Fat_Daily_Value',  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 				
 				//**********
-				$query_fat_daily_value_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID,Daily_Value, PPD) Select PackageID, 2, '$Fat_Daily_Value_PPD'  FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_fat_daily_value_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID,Daily_Value, PPD) Select PackageID, 2, '$Fat_Daily_Value_PPD',  FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 
 
-				$query_Saturated_Fat_Per_Serving ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,Daily_Value, PPD) Select PackageID, 3, '$Saturated_Fat_Per_Serving', 'g','$Trans_And_Saturated_Fat_Daily_Vaue',  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_Saturated_Fat_Per_Serving ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,Daily_Value, PPD) Select PackageID, 3, '$Saturated_Fat_Per_Serving', 'g','$Trans_And_Saturated_Fat_Daily_Vaue', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 				
 				$query_Trans_Fat ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,Daily_Value, PPD) Select PackageID, 4, '$Trans_Fat_Per_Serving', 'g','$Trans_And_Saturated_Fat_Daily_Vaue', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 						
 				//**********
-				$query_Saturated_Fat_Daily_Value_PPD ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 3, '$Saturated_Fat_Per_Serving', 'g','$Trans_And_Saturated_Fat_Daily_Vaue',  TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+/* 								$query_Trans_Fat_Daily_Value_2 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 46,'$Trans_And_Saturated_Fat_Daily_Value', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_Trans_Fat_Daily_Value_PPD_2 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 46,'$Trans_And_Saturated_Fat_Daily_Value_PPD', FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+
+			 */	
+				
+				$query_Saturated_Fat_Daily_Value_PPD ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, PPD) Select PackageID, 3, '$Saturated_Fat_Per_Serving', 'g', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 				//**********
-				$query_Trans_Fat_Daily_Value_PPD ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 4,'$Trans_And_Saturated_Fat_Daily_Vaue_PPD', FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_Trans_Fat_Daily_Value_PPD ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, PPD) Select PackageID, 4,'$Trans_Fat_Per_Serving', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 			    //**********
+				
+				$query_Trans_Fat_Daily_Value_1 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 46,'$Trans_And_Saturated_Fat_Daily_Value', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_Trans_Fat_Daily_Value_PPD_1 ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 46,'$Trans_And_Saturated_Fat_Daily_Value_PPD', FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+
+				
+				
 				$query_fat_polysunsaturated = "Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 44, '$Fat_PolyUnsaturated', 'g', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 				$query_fat_polymonosaturated = "Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure, PPD) Select PackageID, 45, '$Fat_Monounsaturated_Per_Serving', 'g', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 				
@@ -705,7 +729,7 @@ ini_set('display_errors', 1); */
 				
 				$query_Sodium_Per_Serving ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,Daily_Value, PPD) Select PackageID, 16, '$Sodium_Per_Serving', 'g','$Sodium_Daily_Value', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 
-				$query_Sodium_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 16, '$Sodium_Daily_Value_PPD', TRUE FALSE $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
+				$query_Sodium_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 16, '$Sodium_Daily_Value_PPD', FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 
 
 				$query_Potassium_Per_Serving ="Insert into $dbname.Product_Component(PackageID, ComponentID, Amount, Amount_Unit_Of_Measure,Daily_Value, PPD) Select PackageID, 17, '$Potassium_Per_Serving', 'mg','$Potassium_Daily_Value', TRUE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
@@ -836,6 +860,9 @@ ini_set('display_errors', 1); */
 	
 				$query_Chloride_ppd ="Insert into $dbname.Product_Component(PackageID, ComponentID, Daily_Value, PPD) Select PackageID, 43, '$Chloride_Daily_Value', FALSE from $dbname.Package where ProductIDP = (Select Distinct ProductIDP from $dbname.Package where Label_UPC = '$Label_UPC')";
 
+		
+				$result_energy_kcal_as_sold_1 = mysqli_query($conn,$query_Trans_Fat_Daily_Value_1);
+				$result_energy_kcal_as_ppd_1 = mysqli_query($conn,$query_Trans_Fat_Daily_Value_PPD_1);	
 				
 				$result_energy_kcal_as_sold = mysqli_query($conn,$query_energy_kcal_as_sold);
 				$result_energy_kcal_as_ppd = mysqli_query($conn,$query_energy_kcal_as_ppd);	 //$query_energy_kj_as_sold
