@@ -2,7 +2,7 @@
 <?php
 
 require_once "Classes/PHPExcel.php";
-echo "Start";
+echo 'Current PHP version: ' . phpversion();
 
 if (isset($_POST['search'])) {
 	error_reporting(E_ALL);
