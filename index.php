@@ -140,7 +140,7 @@ $(document).ready(function() {
 	
 		<div class="container" id="tabs" >
   <ul class="nav nav-tabs">
-    <li class="active"><a href="index.php">Search Product</a></li>
+    <li class="active"><a href="index.php">Search Product P</a></li>
     <li><a href="home-market.php">Search Market Share</a></li>
     <li><a  href="home-label.php">Search Package Label</a></li>
   </ul>
@@ -261,7 +261,7 @@ $(document).ready(function() {
 
 				<button style=" float:right;" type="submit" class="btn btn-default" name="clearbd">Clear DB</button>
 </form> 
-  <?php include("clear.php"); ?>
+  <?php include("cleardb.php"); ?>
 		</main>
 
 <?php include 'footer.php';?>
