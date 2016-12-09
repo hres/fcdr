@@ -9,7 +9,6 @@ $salesID = ($_GET['SalesID']?$_GET['SalesID']:'');
 
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
-echo "WELCKE";
 		if(isset($_POST['search'])) {
 		
 	$params = array($_POST['Description'],$_POST['Brand'], $_POST['Manufacturer'],$_POST['Comments'],$_POST['CNF_CODE'],$_POST['Classification_Name'],$_POST['Classification_Type'],$_POST['Classification_Number'],$_POST['Cluster_Number']);
