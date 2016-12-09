@@ -921,7 +921,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-  <label class="col-sm-3 control-label">Sugar Alcohols</label>
+  <label class="col-sm-3 control-label">Sugars Alcohol</label>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="Amount" name="Sugar_Alcohols_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
@@ -2622,7 +2622,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-  <label class="col-sm-3 control-label">Sugar Alcohols</label>
+  <label class="col-sm-3 control-label">Sugars Alcohol</label>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="Amount" name="Sugar_Alcohols_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
@@ -4067,7 +4067,7 @@ document.getElementById("demo").style.color = 'red';
 	
 	if ((sugar_alcohol_amount === "" && sugar_alcohol_unit !== "") || (sugar_alcohol_amount !== "" && sugar_alcohol_unit === "")) {
 		console.log(true);
-		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Sugar Alcohols";
+		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Sugars Alcohol";
 document.getElementById("demo").style.color = 'red';
 		return false;
 	}
@@ -4497,7 +4497,7 @@ document.getElementById("demo").style.color = 'red';
 	
 	if ((sugar_alcohol_amount_s === "" && sugar_alcohol_unit_s !== "") || (sugar_alcohol_amount_s !== "" && sugar_alcohol_unit_s === "")) {
 		console.log(true);
-		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Sugar Alcohols -as prepared";
+		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Sugars Alcohol -as prepared";
 document.getElementById("demo").style.color = 'red';
 		return false;
 	}
