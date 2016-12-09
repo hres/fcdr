@@ -257,7 +257,11 @@ $(document).ready(function() {
 	</div>
   </div>
 </div>
-		
+		<form id="delete-all">
+
+				<button style=" float:right;" type="submit" class="btn btn-default" name="clearbd">Clear DB</button>
+</form> 
+  <?php include("clear.php"); ?>
 		</main>
 
 <?php include 'footer.php';?>
