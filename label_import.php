@@ -289,7 +289,7 @@ ini_set('display_errors', 1); */
 		$Product_Description = mysqli_real_escape_string($conn,$worksheet->getCell('EQ'.$row)->getValue());
 
 		
-			if($Record === null or $Label_UPC ===null or $Label_Description ===null  or $Nielsen_Category === null or $Ingredients === null or $Nutrition_Fact_Table===null or $Per_Serving_Amount===null or $Per_Serving_UofM ===null or $Per_Serving_Energy_Kcal === null  or $Protein_Per_Serving === null)  
+			if($Record === null or $Label_UPC ===null or $Label_Description ===null  or $Nielsen_Category === null or $Ingredients === null or $Nutrition_Fact_Table===null or $Per_Serving_Amount===null or $Per_Serving_UofM ===null   or $Protein_Per_Serving === null)  
 	
 			{
 		
