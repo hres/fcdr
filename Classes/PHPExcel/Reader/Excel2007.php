@@ -356,7 +356,22 @@ class PHPExcel_Reader_Excel2007 extends PHPExcel_Reader_Abstract implements PHPE
 		}
 
         $zipClass = PHPExcel_Settings::getZipClass();
-
+//CEO added the following
+if ($zipClass == 'ZipArchive') {
+    $contents = $archive->getFromIndex(
+        $archive->locateName($fileName, ZIPARCHIVE::FL_NOCASE)
+    );
+    if ($contents === false) {
+        $contents = $archive->getFromIndex(
+            $archive->locateName(substr($fileName, 1), ZIPARCHIVE::FL_NOCASE)
+        );
+    }
+}
+else {
+    $contents = $archive->getFromIndex($archive->locateName($fileName));
+}
+//ENd
+		
 		$zip = new $zipClass;
 		$zip->open($pFilename);
 
