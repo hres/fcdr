@@ -630,9 +630,9 @@ $('input[name="intervaltype"]').click(function () {
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label for="Sugar_Alcohols_Amount" class="col-sm-3 control-label">Sugar Alcohols</label>
+  <label for="Sugar_Alcohols_Amount" class="col-sm-3 control-label">Sugars Alcohol</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Sugar Alcohols" name="Sugar_Alcohols_Amount" id="Sugar_Alcohols_Amount">
+   <input type="text" class="form-control" placeholder="Amount of Sugars Alcohol" name="Sugar_Alcohols_Amount" id="Sugar_Alcohols_Amount">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Sugar_Alcohols_Unit" name="Sugar_Alcohols_Unit">
@@ -640,7 +640,7 @@ $('input[name="intervaltype"]').click(function () {
 			<?php include 'Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="% Daily value of Sugar Alcohols" name="Sugar_Alcohols_DValue" id="Sugar_Alcohols_DValue">
+   <input type="text" class="form-control" placeholder="% Daily value of Sugars Alcohol" name="Sugar_Alcohols_DValue" id="Sugar_Alcohols_DValue">
   </div>
  </div>
  </div>
@@ -1429,9 +1429,9 @@ $('input[name="intervaltype"]').click(function () {
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label for="Sugar_Alcohols_Amount_S" class="col-sm-3 control-label">Sugar Alcohols</label>
+  <label for="Sugar_Alcohols_Amount_S" class="col-sm-3 control-label">Sugars Alcohol</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Sugar Alcohols" name="Sugar_Alcohols_Amount_S" id="Sugar_Alcohols_Amount_S">
+   <input type="text" class="form-control" placeholder="Amount of Sugars Alcohol" name="Sugar_Alcohols_Amount_S" id="Sugar_Alcohols_Amount_S">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sugar_Alcohols_Unit_S">
@@ -1439,7 +1439,7 @@ $('input[name="intervaltype"]').click(function () {
 			<?php include 'Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="% Daily value of Sugar Alcohols" name="Sugar_Alcohols_DValue_S">
+   <input type="text" class="form-control" placeholder="% Daily value of Sugars Alcohol" name="Sugar_Alcohols_DValue_S">
   </div>
  </div>
  </div>
@@ -2272,7 +2272,7 @@ document.getElementById("demo").style.color = 'red';
 	
 	if ((sugar_alcohol_amount === "" && sugar_alcohol_unit !== "") || (sugar_alcohol_amount !== "" && sugar_alcohol_unit === "")) {
 		console.log(true);
-		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Sugar Alcohols";
+		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Sugars Alcohol";
 document.getElementById("demo").style.color = 'red';
 		return false;
 	}
@@ -2714,7 +2714,7 @@ document.getElementById("demo").style.color = 'red';
 	
 	if ((sugar_alcohol_amount_s === "" && sugar_alcohol_unit_s !== "") || (sugar_alcohol_amount_s !== "" && sugar_alcohol_unit_s === "")) {
 		console.log(true);
-		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Sugar Alcohols -as prepared";
+		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Sugars Alcohol -as prepared";
 document.getElementById("demo").style.color = 'red';
 		return false;
 	}
