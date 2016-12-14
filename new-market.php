@@ -1,7 +1,6 @@
 <?php include 'connection.php';?>
 <?php
 
-header("Content-type:text/html; charset: iso-8859-1");
 
 
 
