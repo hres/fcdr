@@ -1,24 +1,14 @@
-
+<?php include 'connection.php';?>
 <?php
 
-header("Content-type:text/html; charset: iso-8859-1");
 
 
-$servername = "127.0.0.1";
-$username = "rnelson";
-$password = "romario";
-$dbname = "FCDR";
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 
 		if(isset($_POST['search'])) {
-					error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 			
 			$Sales_UPC = mysqli_real_escape_string($conn,$_POST['Sales_UPC']);
 
@@ -67,8 +57,7 @@ ini_set('display_errors', 1);
 			$result = mysqli_query($conn,$query);
 
 
-		mysqli_query('SET NAMES utf8');
-		mysqli_query('SET CHARACTER SET utf8');
+		
 	
 	
 if (!$result ) {
