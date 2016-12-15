@@ -639,8 +639,8 @@ EOQ;
 
 								// $classification_check_result = mysqli_query($conn, $classification_check);
 								$stmt->store_result();
-								$classification_check_count = mysqli_num_rows($classification_check_result);
-								if (($stmt->num_rows)>0) {
+								//$classification_check_count = mysqli_num_rows($classification_check_result);
+								if (($stmt->num_rows) > 0) {
 									$query2 =<<<EOQ
 INSERT INTO Product_Classification (ClassificationID, ProductID)
 SELECT ClassificationID, ?
