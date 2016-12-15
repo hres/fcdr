@@ -466,7 +466,7 @@ EOQ;
 						$stmt->store_result();
 						// $result_grouping = mysqli_query($conn, $check_grouping);
 
-						$rowcount1 = mysqli_num_rows($result_grouping);
+						//$rowcount1 = mysqli_num_rows($result_grouping);
 						if (($stmt->num_rows)> 0) {
 
 							$param = array(
