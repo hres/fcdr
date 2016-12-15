@@ -588,31 +588,31 @@ EOQ;
 								$insert_queryt =<<<EOQ
 INSERT Into Sales (
 
-       ProductIDS,
-       Sales_UPC,
-       Source,
-       Sales_Description,
-       Sales_Year,
-       Nielsen_Category,
-       Kilo_Vol,
-       Dollar_Volume,
-       Brand,
-       Dollar_Rank,
-       Dollar_Volume_PerCentage_Change,
-       Kilo_Share,
-       Kilo_Volume_Percent_Change,
-       Average_AC_Dist,
-       Average_Retail_Price,
-       Collection_Date,
-       Dollar_Volume_Total,
-       Product_Grouping
+       ProductIDS,                      -- i
+       Sales_UPC,                       -- i
+       Source,                          -- s
+       Sales_Description,               -- s
+       Sales_Year,                      -- s
+       Nielsen_Category,                -- s
+       Kilo_Vol,                        -- s
+       Dollar_Volume,                   -- s
+       Brand,                           -- s
+       Dollar_Rank,                     -- s
+       Dollar_Volume_PerCentage_Change, -- s
+       Kilo_Share,                      -- s
+       Kilo_Volume_Percent_Change,      -- s
+       Average_AC_Dist,                 -- s
+       Average_Retail_Price,            -- s
+       Collection_Date,                 -- s
+       Dollar_Volume_Total,             -- s
+       Product_Grouping                 -- s
 
 )
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
 								$stmt = $conn->prepare($insert_queryt);
-								$stmt->bind_param("iissssddsdsdsdddsdi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17]);
+								$stmt->bind_param("iissssssssssssssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17]);
 								$result_insertt = $stmt->execute();
 
 								// $result_insertt = mysqli_query($conn, $insert_queryt);
