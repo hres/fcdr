@@ -289,7 +289,7 @@ EOQ;
 							//echo "$insert_query";
 
 
-						} else if (($stmt->num_rows)<1)  {
+						} else if (($stmt->num_rows) < 1)  {
 
 							/* Create a new Product */
 
@@ -467,7 +467,7 @@ EOQ;
 						// $result_grouping = mysqli_query($conn, $check_grouping);
 
 						//$rowcount1 = mysqli_num_rows($result_grouping);
-						if (($stmt->num_rows)> 0) {
+						if (($stmt->num_rows) > 0) {
 
 							$param = array(
 								$Sales_UPC,
@@ -512,7 +512,7 @@ INSERT INTO Sales (
        Product_Grouping                 -- s
 
 )
-SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Sales_UPC = ?
 EOQ;
