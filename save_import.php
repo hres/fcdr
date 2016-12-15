@@ -111,10 +111,8 @@ EOQ;
 					$stmt->bind_param("s", $Sales_UPC);
 					$result_grouping = $stmt->execute();
 					$stmt->store_result();
-					// $result_grouping = mysqli_query($conn, $check_grouping);
 
-					//$rowcount1 = mysqli_num_rows($result_grouping);
-					if (($stmt->num_rows)>0){
+					if (($stmt->num_rows) > 0) {
 		/* 		echo "Sales_UPC Code already belongs to a different product";
 				$skipped_sales->push($Description);
 					continue; */
@@ -169,8 +167,6 @@ EOQ;
 						$stmt->bind_param("iissssddsdsdsdddsdii", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $Sales_UPC);
 						$result_insert = $stmt->execute();
 
-						// $result_insert = mysqli_query($conn, $insert_query);
-
 						if ($Product_Description != null) {
 
 							$query_update =<<<EOQ
@@ -186,8 +182,6 @@ EOQ;
 							$stmt = $conn->prepare($query_update);
 							$stmt->bind_param("ss", $Product_Description, $Sales_UPC);
 							$result_update = $stmt->execute();
-
-							// $result_update = mysqli_query($conn, $query_update);
 
 						}
 
@@ -206,10 +200,8 @@ EOQ;
 						$stmt->bind_param("", $Product_Grouping);
 						$check_grouping_result = $stmt->execute();
 						$stmt->store_result();
-						// $check_grouping_result = mysqli_query($conn, $grouping);
 
-						//$row_count_grouping = mysqli_num_rows($check_grouping_result);
-						if (($stmt->num_rows)>0) {
+						if (($stmt->num_rows) > 0) {
 
 							$param = array(
 								$Sales_UPC,
@@ -262,8 +254,6 @@ EOQ;
 							$stmt->bind_param("iissssddsdsdsdddsdii", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $Product_Grouping);
 							$result_insert = $stmt->execute();
 
-							// $result_insert = mysqli_query($conn, $insert_query);
-
 							$input4 = "Record : $Record, $Sales_Description";
 							$linked_sales->push($input4);
 
@@ -282,8 +272,6 @@ EOQ;
 								$stmt = $conn->prepare($query_update);
 								$stmt->bind_param("si", $Product_Description, $Product_Grouping);
 								$result_update = $stmt->execute();
-
-								// $result_update = mysqli_query($conn, $query_update);
 							}
 
 							//echo "$insert_query";
@@ -311,8 +299,6 @@ EOQ;
 							$stmt = $conn->prepare($query);
 							$stmt->bind_param("sssd", $param[0], $param[1], $param[2], $param[3]);
 							$result = $stmt->execute();
-
-							// $result = mysqli_query($conn, $query);
 
 							$id = mysqli_insert_id($conn);
 							$input5 = "Record : $Record, $Product_Description";
@@ -367,8 +353,6 @@ EOQ;
 							$stmt->bind_param("iissssddsdsdsdddsdi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17]);
 							$result_insert = $stmt->execute();
 
-							// $result_insert = mysqli_query($conn, $insert_query2);
-
 							if (!$result_insert) {
 								echo "error";
 							}
@@ -387,11 +371,9 @@ EOQ;
 								$stmt = $conn->prepare($classification_check);
 								$stmt->bind_param("d", $Classification_Number);
 								$classification_check_result = $stmt->execute();
+								$stmt->store_result();
 
-								// $classification_check_result = mysqli_query($conn, $classification_check);
-
-								$classification_check_count = mysqli_num_rows($classification_check_result);
-								if ($classification_check_count > 0) {
+								if ($stmt->num_rows > 0) {
 
 									$query2 =<<<EOQ
 INSERT INTO Product_Classification (ClassificationID, ProductID)
@@ -403,8 +385,6 @@ EOQ;
 									$stmt = $conn->prepare($query2);
 									$stmt->bind_param("id", $id, $Classification_Number);
 									$result2 = $stmt->execute();
-
-									// $result2 = mysqli_query($conn, $query2);
 
 								} else {
 									if (strlen($Classification_Type) != 0) {
@@ -418,8 +398,6 @@ EOQ;
 										$stmt->bind_param("ds", $Classification_Number, $Classification_Type);
 										$result3 = $stmt->execute();
 
-										// $result3 = mysqli_query($conn, $query3);
-
 										$id1 =  mysqli_insert_id($conn);
 
 										$queryC =<<<EOQ
@@ -431,20 +409,12 @@ EOQ;
 										$stmt->bind_param("ii", $id1, $id);
 										$resultC = $stmt->execute();
 
-										// $resultC = mysqli_query($conn, $queryC);
 									}
 								}
 							}
-
-		/* 	$input6= "Record : $Record, $Sales_Description";
-					$new_product->push($input6); */
-
-						//echo "$insert_query2";
-						//}
-
 						}
 					}
-				}	//}
+				}
 				else if (!preg_match('/^\d+$/', $Product_Grouping)) {
 					if ($Sales_UPC == null or $Sales_Description == null) {
 						//echo "Missing Fields";
@@ -464,9 +434,7 @@ EOQ;
 						$stmt->bind_param("i", $Sales_UPC);
 						$result_grouping = $stmt->execute();
 						$stmt->store_result();
-						// $result_grouping = mysqli_query($conn, $check_grouping);
 
-						//$rowcount1 = mysqli_num_rows($result_grouping);
 						if (($stmt->num_rows) > 0) {
 
 							$param = array(
@@ -521,8 +489,6 @@ EOQ;
 							$stmt->bind_param("issssssssssssssssi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $Sales_UPC);
 							$result_insert = $stmt->execute();
 
-							// $result_insert = mysqli_query($conn, $insert_query);
-
 							$input7 = "Record : $Record, $Sales_Description";
 							$linked_sales->push($input7);
 							continue;
@@ -534,8 +500,6 @@ EOQ;
 							$stmt = $conn->prepare($query);
 							$stmt->bind_param("sssd", $Product_Description, $Brand, $Manufacturer, $Cluster_Number);
 							$result = $stmt->execute();
-
-							// $result = mysqli_query($conn, $query);
 
 							$id =  mysqli_insert_id($conn);
 							$in = "Record : $Record, $Product_Description";
@@ -552,11 +516,8 @@ EOQ;
 							$stmt->bind_param("ii", $Sales_UPC, $id);
 							$result3 = $stmt->execute();
 
-							// $result3 = mysqli_query($conn, $query3);
-
 							$stmt->store_result();
-							$rowcount2 = $stmt->num_rows; // mysqli_num_rows($result3);
-							if ($rowcount2 > 0) {
+							if ($stmt->num_rows > 0) {
 								//echo "Sales_UPC Code already belongs to a different product";
 								$input8 = "Record : $Record, $Sales_Description";
 
@@ -617,8 +578,6 @@ EOQ;
 								$stmt->bind_param("iissssssssssssssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17]);
 								$result_insertt = $stmt->execute();
 
-								// $result_insertt = mysqli_query($conn, $insert_queryt);
-
 								if (!$result_insertt) {
 									echo "error 2 $insert_queryt";
 								}
@@ -639,9 +598,7 @@ EOQ;
 								$stmt->bind_param("s", $Classification_Number);
 								$classification_check_result = $stmt->execute();
 
-								// $classification_check_result = mysqli_query($conn, $classification_check);
 								$stmt->store_result();
-								//$classification_check_count = mysqli_num_rows($classification_check_result);
 								if (($stmt->num_rows) > 0) {
 									$query2 =<<<EOQ
 INSERT INTO Product_Classification (ClassificationID, ProductID)
@@ -654,7 +611,6 @@ EOQ;
 									$stmt->bind_param("ii", $id, $Classification_Number);
 									$result2 = $stmt->execute();
 
-									// $result2 = mysqli_query($conn, $query2);
 								}
 							}
 						}
