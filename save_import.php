@@ -690,8 +690,6 @@ EOQ;
 
 	}
 
-	fclose($handle);
-
 	print "Import done";
 
 	//view upload form
