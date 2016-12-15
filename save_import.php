@@ -552,7 +552,8 @@ EOQ;
 
 							// $result3 = mysqli_query($conn, $query3);
 
-							$rowcount2 = mysqli_num_rows($result3);
+							$stmt->store_result();
+							$rowcount2 = $stmt->num_rows; // mysqli_num_rows($result3);
 							if ($rowcount2 > 0) {
 								//echo "Sales_UPC Code already belongs to a different product";
 								$input8 = "Record : $Record, $Sales_Description";
