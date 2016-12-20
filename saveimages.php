@@ -5,7 +5,7 @@
 error_reporting(0);   
 $dir=substr(uniqid(),-7);
   $valid_formats = array("jpg", "png", "gif", "jpeg");
-$max_file_size = 1024*200; //100 kb
+$max_file_size = 1024*10000; //100 kb
   define ("MAX_SIZE","2000");
 /* $path = "Prototype/uploads/"; // Upload directory
 mkdir ($path, 0744); */
