@@ -7,7 +7,7 @@ $oldProductID = ($_GET['OldProductID']?$_GET['OldProductID']:'');
 $newProductID = ($_GET['NewProductID']?$_GET['NewProductID']:'');
 
 
-	$query = "Update $dbname.Package SET ProductIDP = '$newProductID' where UPC12 = '$PackageID'";
+	$query = "Update $dbname.Package SET ProductIDP = '$newProductID' where PackageID = '$PackageID'";
 	$result = mysqli_query($conn,$query);
 						
 														
