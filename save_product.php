@@ -39,14 +39,14 @@ EOQ;
 			$result_c = $stmt_classification->execute();
 			$stmt_classification->store_result();
 				if(($stmt_classification->num_rows)>0){
-						echo "Yes exists";
+						
 		
 		$classification_check1 = $conn->prepare("Select * From Product_Classification Where ProductID =?");		
 		$classification_check1->bind_param("i", $productID);
 		$classification_check_result1 = $classification_check1->execute();
 			$classification_check1->store_result();
 							if(($classification_check1->num_rows)>0){
-						echo "Yes exists 2";
+					
 						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = ?");		
 	
 						$classification_update->bind_param("di",$params[7], $productID);
