@@ -312,7 +312,7 @@ $(window).resize();
 <div style="display:inline-block;">
   <form action="#" method="post">
 
-  <input type="submit" value="Delete!" class="btn btn-default" name="delete-product">
+  <input type="submit" value="Delete" class="btn btn-default" name="delete-product">
 </form>
  <?php include("delete-product.php"); ?>
 

@@ -2030,7 +2030,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?> 
-  <label class="col-sm-3 control-label">Molybdenium</label>
+  <label class="col-sm-3 control-label">Molybdenum</label>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="Amount" name="Molybdenium_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
@@ -2205,7 +2205,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Energy_DValue_kj_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Energy kj" name="Energy_DValue_kj_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3713,7 +3713,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?> 
-  <label class="col-sm-3 control-label">Molybdenium</label>
+  <label class="col-sm-3 control-label">Molybdenum</label>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="Amount" name="Molybdenium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->

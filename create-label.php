@@ -421,7 +421,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
 
 
-   <input type="text" class="form-control" placeholder="% Daily value of Fat" name="Engergy_kj_DValue" id="Fat_DValue">
+   <input type="text" class="form-control" placeholder="% Daily value of Energy kj" name="Engergy_kj_DValue" id="Fat_DValue">
   </div>
  </div>
  </div>
@@ -1134,9 +1134,9 @@ $('input[name="intervaltype"]').click(function () {
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label for="Molybdenium_Amount" class="col-sm-3 control-label">Molybdenium</label>
+  <label for="Molybdenium_Amount" class="col-sm-3 control-label">Molybdenum</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Molybdenium" name="Molybdenium_Amount">
+   <input type="text" class="form-control" placeholder="Amount of Molybdenum" name="Molybdenium_Amount">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Molybdenium_Unit" name="Molybdenium_Unit">
@@ -1145,7 +1145,7 @@ $('input[name="intervaltype"]').click(function () {
       
       </select>  </div>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="% Daily value of Molybdenium" name="Molybdenium_DValue" id="Molybdenium_DValue">
+   <input type="text" class="form-control" placeholder="% Daily value of Molybdenum" name="Molybdenium_DValue" id="Molybdenium_DValue">
   </div>
  </div>
  </div>
@@ -1933,9 +1933,9 @@ $('input[name="intervaltype"]').click(function () {
  
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label class="col-sm-3 control-label">Molybdenium</label>
+  <label class="col-sm-3 control-label">Molybdenum</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Molybdenium" name="Molybdenium_Amount_S">
+   <input type="text" class="form-control" placeholder="Amount of Molybdenum" name="Molybdenium_Amount_S">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Molybdenium_Unit_S">
@@ -1944,7 +1944,7 @@ $('input[name="intervaltype"]').click(function () {
       
       </select>  </div>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="% Daily value of Molybdenium" name="Molybdenium_DValue_S">
+   <input type="text" class="form-control" placeholder="% Daily value of Molybdenum" name="Molybdenium_DValue_S">
   </div>
  </div>
  </div>
@@ -2478,7 +2478,7 @@ document.getElementById("demo").style.color = 'red';
 	
 	if ((molybdenium_amount === "" && molybdenium_unit !== "") || (molybdenium_amount !== "" && molybdenium_unit === "")) {
 		console.log(true);
-		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Molybdenium";
+		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Molybdenum";
 document.getElementById("demo").style.color = 'red';
 		return false;
 	}
@@ -2920,7 +2920,7 @@ document.getElementById("demo").style.color = 'red';
 	
 	if ((molybdenium_amount_s === "" && molybdenium_unit_s !== "") || (molybdenium_amount_s !== "" && molybdenium_unit_s === "")) {
 		console.log(true);
-		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Molybdenium -as prepared";
+		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Molybdenum -as prepared";
 document.getElementById("demo").style.color = 'red';
 		return false;
 	}
