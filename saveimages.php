@@ -28,12 +28,12 @@ if (isset($_POST['search'])) {
 	    if ($_FILES['files']['error'][$f] == 0) {	           
 	        if ($_FILES['files']['size'][$f] > $max_file_size) {
 	            $message[] = "$name is too large!.";
-				echo "something***************** <br>";
+				//echo "something***************** <br>";
 	            continue; // Skip large files
 	        }
 			elseif( ! in_array(pathinfo($name, PATHINFO_EXTENSION), $valid_formats) ){
 				$message[] = "$name is not a valid format";
-				echo "something+++++++++++++++++++ <br>";
+				//echo "something+++++++++++++++++++ <br>";
 				//echo "$name-- ";
 				continue; // Skip invalid file formats
 			}
@@ -42,15 +42,15 @@ if (isset($_POST['search'])) {
 	           // $count=$count+1; // Number of successfully uploaded file
 			
 				//echo $path.$name;
-				echo "here --";
+		
 				 $image = addslashes(file_get_contents($_FILES['files']['tmp_name'][$f]));
-				 echo "here --2";
+
 				$image_name = addslashes($_FILES['files']['name'][$f]);
-				echo "here --3";
+
 				$ext = pathinfo($image_name, PATHINFO_EXTENSION);
-				echo "here --4";
+				
 				$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $image_name);
-				echo "$withoutExt <br>";
+				
 				$Label_UPC = $withoutExt;
 				$withoutExt .= "-$count";
 				
@@ -61,7 +61,7 @@ if (isset($_POST['search'])) {
 			$rowcount=mysqli_num_rows($result);
 			if($rowcount>0){
 				//echo "UPC10 Code already belongs to a different product ";
-			echo "OYESS";
+		
 			
 			$imported->push($withoutExt);
 				while($row = $result->fetch_assoc()) {
