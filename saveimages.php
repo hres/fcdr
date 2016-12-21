@@ -57,6 +57,8 @@ if (isset($_POST['search'])) {
 			$rowcount=mysqli_num_rows($result);
 			if($rowcount>0){
 				//echo "UPC10 Code already belongs to a different product ";
+			echo "OYESS";
+			
 			$imported->push($withoutExt);
 				while($row = $result->fetch_assoc()) {
 					
