@@ -69,7 +69,7 @@ if (isset($_POST['search'])) {
 			$Classification_Number     = $worksheet->getCell('Z'.$row)->getValue();
 			$Classification_Type       = $worksheet->getCell('AA'.$row)->getValue();
 			$Comments                  = $worksheet->getCell('AB'.$row)->getValue();
-echo "$row --";
+
 			if ($Sales_UPC == null or $Sales_Description == null or $Kilo_Vol == null or $Source == null or $Sales_Year == null or $Collection_Date == null) {
 
 				if ($Sales_Description) {
