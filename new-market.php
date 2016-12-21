@@ -28,7 +28,7 @@ EOQ;
 
 	//$rowcount = mysqli_num_rows($result2);
 	
-
+echo "before array";
 		$param = array(
 			$productID,
 			$_POST['Sales_UPC'],
@@ -53,6 +53,7 @@ EOQ;
 			$_POST['Dollar_Share'], 
 			$_POST['Cluster_Number']
 		);
+echo "after array before query";
 
 		$query =<<<EOQ
 INSERT INTO Sales (
@@ -82,11 +83,17 @@ INSERT INTO Sales (
 )
 VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
+echo "after query";
 
 	
 		$stmt = $conn->prepare($query);
+		echo "after prepared";
+
 		$stmt->bind_param("iiddissssssddddddddsdi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21]);
-		$result = $stmt->execute();
+echo "after Bind";
+	
+	$result = $stmt->execute();
+echo "after execute";
 
 print $stmt->error; 
 
