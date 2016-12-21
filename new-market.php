@@ -1,8 +1,7 @@
-
+<?php include 'connection.php';?>
 
 <?php
 
-include 'connection.php';
 
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
@@ -36,7 +35,7 @@ echo "before array";
 			$_POST['Kilo_Vol'],
 			$_POST['Sales_Year'],
 			$_POST['Nielsen_Category'],
-			$_POST['Source',
+			$_POST['Source'],
 			$_POST['Sales_Description'],
 			$_POST['Comments'],
 			$_POST['Collection_Date'],
