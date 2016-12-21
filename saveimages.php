@@ -6,7 +6,7 @@ error_reporting(0);
 $dir=substr(uniqid(),-7);
   $valid_formats = array("jpg", "png", "gif", "jpeg");
 $max_file_size = 	10240*10000; //10000 kb
-  define ("MAX_SIZE","2000");
+
 /* $path = "Prototype/uploads/"; // Upload directory
 mkdir ($path, 0744); */
 $count = 0;
@@ -26,7 +26,7 @@ if (isset($_POST['search'])) {
 	    if ($_FILES['files']['error'][$f] == 0) {	           
 	        if ($_FILES['files']['size'][$f] > $max_file_size) {
 	            $message[] = "$name is too large!.";
-				//echo "something***************** <br>";
+				echo "something***************** <br>";
 	            continue; // Skip large files
 	        }
 			elseif( ! in_array(pathinfo($name, PATHINFO_EXTENSION), $valid_formats) ){
