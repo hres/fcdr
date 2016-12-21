@@ -18,7 +18,7 @@ $ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
     echo "failed to delete the Package Label";
 
 }else{
-	echo "<h1>Package was successfully deleted, redirecting to the product page...</h1>";
+	echo "<h3>Package was successfully deleted, redirecting to the product page...</h3>";
 		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$ProductID';\",3000);</script>";
 
 	
