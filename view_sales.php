@@ -2,9 +2,9 @@
 
 <?php
 
-$PID = ($_GET['ProductID']?$_GET['ProductID']:'');
+$ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
 	
-	$query = "  SELECT * FROM $dbname.Sales P where P.ProductIDS = $PID";
+	$query = "  SELECT * FROM $dbname.Sales P where P.ProductIDS = $ProductID";
 	$result = mysqli_query($conn,$query);
 						
 							
@@ -17,7 +17,7 @@ if (!$result) {
 	
 	while($row = $result->fetch_assoc())  {
 		$r_y = $row['Year_Recorded'];
-		 echo "<tr><td><a href=sales_details.php?SalesID=" .$row['SalesID'] . ">" . $row['Sales_UPC'] . "</a></td> <td>" . $row['Sales_Description'] . "</td><td>" . $row['Dollar_Volume'] . "</td><td>" . $row['Kilo_Vol'] . "</td><td>" . $row['Sales_Year'] . "</td><td>" . $row['Nielsen_Category'] . "</td><td>" . $row['Source'] . "</td></tr>";                       
+		 echo "<tr><td><a href=sales_details.php?ProductID=$ProductID&SalesID=" .$row['SalesID'] . ">" . $row['Sales_UPC'] . "</a></td> <td>" . $row['Sales_Description'] . "</td><td>" . $row['Dollar_Volume'] . "</td><td>" . $row['Kilo_Vol'] . "</td><td>" . $row['Sales_Year'] . "</td><td>" . $row['Nielsen_Category'] . "</td><td>" . $row['Source'] . "</td></tr>";                       
 		
 	 }
 	

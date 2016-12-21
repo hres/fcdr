@@ -5,6 +5,7 @@
 
 
 $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');
+$ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 
 		if(isset($_POST['delete-label'])) {
@@ -17,8 +18,8 @@ $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');
     echo "failed to delete the Package Label";
 
 }else{
-	echo "Package was successfully deleted, redirecting to the home page...";
-		echo "<script>setTimeout(\"location.href = 'index.php';\",2000);</script>";
+	echo "<h1>Package was successfully deleted, redirecting to the product page...</h1>";
+		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$ProductID';\",3000);</script>";
 
 	
 }

@@ -14,8 +14,8 @@ $salesID = ($_GET['SalesID']?$_GET['SalesID']:'');
     echo "failed to delete the Market Share";
 
 }else{
-	echo "Market Share was successfully deleted, redirecting to the home page...";
-	echo "<script>setTimeout(\"location.href = 'index.php';\",2000);</script>";
+	echo "<h1>Market Share was successfully deleted, redirecting to product page...</h1>";
+		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$ProductID';\",3000);</script>";
 
 	
 }
