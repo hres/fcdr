@@ -150,7 +150,7 @@ $(document).ready(function() {
 		<div class="row">
 			<div class="form-group col-sm-4">
 				<label for="UPC_Label">Label UPC</label>
-				<input type="text" class="form-control" name="UPC_Label" id="UPC_Label" placeholder="Enter Label UPC code" />
+				<input type="text" class="form-control" name="Label_UPC" id="UPC_Label" placeholder="Enter Label UPC code" />
 			</div>
 			<div class="form-group col-sm-4">
 				<label for="Label_Description">Label Description</label>
