@@ -7,27 +7,7 @@ $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 
 if (isset($_POST['search'])) {
-/* 	error_reporting(E_ALL);
-	ini_set('display_errors', 1); */
 
-
-/* 	$query2 =<<<EOQ
-SELECT *
-  FROM Sales
- WHERE Sales_UPC = ?
-EOQ;
-
-	$stmt = $conn->prepare($query2);
-	$stmt->bind_param("i", $Sales_UPC);
-	$result2 = $stmt->execute();
-		$stmt->store_result(); */
-
-						//if (($stmt->num_rows) > 0) {
-	// $result2 = mysqli_query($conn,$query2);
-
-	//$rowcount = mysqli_num_rows($result2);
-	
-echo "before array";
 		$param = array(
 			$productID,
 			$_POST['Sales_UPC'],
@@ -52,7 +32,6 @@ echo "before array";
 			$_POST['Dollar_Share'], 
 			$_POST['Cluster_Number']
 		);
-echo "after array before query";
 
 		$query =<<<EOQ
 INSERT INTO Sales (
@@ -82,19 +61,14 @@ INSERT INTO Sales (
 )
 VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
-echo "after query";
 
 	
 		$stmt = $conn->prepare($query);
-		echo "after prepared";
 
 		$stmt->bind_param("iiddissssssddddddddsdi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21]);
-echo "after Bind";
 	
 	$result = $stmt->execute();
-echo "after execute";
 
-print $stmt->error; 
 
 
 		if (!$result ) {
