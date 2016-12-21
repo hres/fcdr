@@ -3,7 +3,7 @@
 if (isset($_POST['clearbd'])) {
 							
 
-	$query2 =  "Delete from Sales where SalesID > 0"; 	
+	$query2 =  "Delete from $dbname.Sales where SalesID > 0"; 	
 	$result = mysqli_query($conn,$query2);	
 	
 
