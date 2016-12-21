@@ -20,7 +20,9 @@ if (isset($_POST['search'])) {
 	
 			
 	    if ($_FILES['files']['error'][$f] == 4) {
-	        continue; // Skip file if any error found
+	      
+
+		  continue; // Skip file if any error found
 			//echo "something <br>";
 	    }	       
 	    if ($_FILES['files']['error'][$f] == 0) {	           
@@ -31,7 +33,7 @@ if (isset($_POST['search'])) {
 	        }
 			elseif( ! in_array(pathinfo($name, PATHINFO_EXTENSION), $valid_formats) ){
 				$message[] = "$name is not a valid format";
-				//echo "something+++++++++++++++++++ <br>";
+				echo "something+++++++++++++++++++ <br>";
 				//echo "$name-- ";
 				continue; // Skip invalid file formats
 			}
@@ -40,13 +42,15 @@ if (isset($_POST['search'])) {
 	           // $count=$count+1; // Number of successfully uploaded file
 			
 				//echo $path.$name;
-				
+				echo "here --";
 				 $image = addslashes(file_get_contents($_FILES['files']['tmp_name'][$f]));
-				 
+				 echo "here --2";
 				$image_name = addslashes($_FILES['files']['name'][$f]);
+				echo "here --3";
 				$ext = pathinfo($image_name, PATHINFO_EXTENSION);
+				echo "here --4";
 				$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $image_name);
-				//echo "$withoutExt <br>";
+				echo "$withoutExt <br>";
 				$Label_UPC = $withoutExt;
 				$withoutExt .= "-$count";
 				
