@@ -46,8 +46,7 @@
 	 echo "<script>document.getElementById(\"noResult\").innerHTML = \"No data found \" </script>";
  }
 	
-		mysqli_query('SET NAMES utf8');
-		mysqli_query('SET CHARACTER SET utf8');
+
 			if (!$result) {
 			echo "ERRORS";
 					}
