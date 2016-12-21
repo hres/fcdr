@@ -141,6 +141,7 @@ EOQ;
 			$Brand,
 			$Dollar_Rank,
 			$Dollar_Volume_PerCentage_Change,
+			$Kilo_Volume_Percent_Change,			
 			$Kilo_Share,
 			$Average_AC_Dist,
 			$Average_Retail_Price,
@@ -167,6 +168,7 @@ INSERT INTO Sales (
        Brand,
        Dollar_Rank,
        Dollar_Volume_PerCentage_Change,
+	   Kilo_Volume_Percent_Change,
        Kilo_Share,
        Average_AC_Dist,
        Average_Retail_Price,
@@ -176,12 +178,12 @@ INSERT INTO Sales (
        Dollar_Share,
        Cluster_Number
 )
-VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
-		
+	
 		$stmt = $conn->prepare($query);
-		$stmt->bind_param("iiddissssssdddddddsdi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20]);
+		$stmt->bind_param("iiddissssssddddddddsdi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20]);
 		$result = $stmt->execute();
 
 print $stmt->error; 
