@@ -104,26 +104,7 @@ if (isset($_POST['search'])) {
 						);
 
 echo "here 1";					
-/* 		$param = array(
-							$Sales_UPC,
-							$Source,
-							$Sales_Description,
-							$Sales_Year,
-							$Nielsen_Category,
-							$Kilo_Vol,
-							$Dollar_Volume,
-							$Brand,
-							$Rank,
-							$Vol_PerCent_Change,
-							$Kilo_Shr,
-							$Kilo_Vol_PerCent_Change,
-							$Avg_AC_Disk,
-							$Ave_Retail_Unit_Price,
-							$Collection_Date,
-							$Dollar_Volume_Total,
-							$Product_Grouping
-						);	 */	
-			
+
 			
 			
 			if ($Sales_UPC == null or $Sales_Description == null or $Kilo_Vol == null or $Source == null or $Sales_Year == null or $Collection_Date == null) {
@@ -163,71 +144,12 @@ EOQ;
 // AND ProductIDS <> (Select Distinct ProductIDS From $dbname.Sales Where Product_Grouping= $Product_Grouping)";
 
 					$stmt = $conn->prepare($check_grouping);
-					$stmt->bind_param("s", $Sales_UPC);
+					$stmt->bind_param("i", $Sales_UPC);
 					$result_grouping = $stmt->execute();
 					$stmt->store_result();
 
 					if (($stmt->num_rows) > 0) {
-		/* 		echo "Sales_UPC Code already belongs to a different product";
-				$skipped_sales->push($Description);
-					continue; */
-					
-					
-					
-					
-					
-/* 
-						$param = array(
-							$Sales_UPC,
-							$Source,
-							$Sales_Description,
-							$Sales_Year,
-							$Nielsen_Category,
-							$Kilo_Vol,
-							$Dollar_Volume,
-							$Brand,
-							$Rank,
-							$Vol_PerCent_Change,
-							$Kilo_Shr,
-							$Kilo_Vol_PerCent_Change,
-							$Avg_AC_Disk,
-							$Ave_Retail_Unit_Price,
-							$Collection_Date,
-							$Dollar_Volume_Total,
-							$Product_Grouping
-						);
 
-						$insert_query =<<<EOQ
-INSERT INTO Sales (
-       ProductIDS,
-       Sales_UPC,
-       Source,
-       Sales_Description,
-       Sales_Year,
-       Nielsen_Category,
-       Kilo_Vol,
-       Dollar_Volume,
-       Brand,
-       Dollar_Rank,
-       Dollar_Volume_PerCentage_Change,
-       Kilo_Share,
-       Kilo_Volume_Percent_Change,
-       Average_AC_Dist,
-       Average_Retail_Price,
-       Collection_Date,
-       Dollar_Volume_Total,
-       Product_Grouping
-)
-SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-  FROM Sales
- WHERE Sales_UPC = ?
-EOQ;
-
-						$stmt = $conn->prepare($insert_query);
-						$stmt->bind_param("iissssddsdsdsdddsdii", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $Sales_UPC);
-						$result_insert = $stmt->execute();
- */
- 
 					$param = array(
 							$Sales_UPC,
 							$Sales_Description,
@@ -268,21 +190,21 @@ INSERT INTO Sales (
 							Sales_Description,
 							Brand,
 							Manufacturer,
-							Rank,
+							Dollar_Rank,
 							Dollar_Volume,
-							Shr,
-							Vol_PerCent_Change,
+							Dollar_Share,
+							Dollar_Volume_PerCentage_Change,
 							Kilo_Vol,
-							Kilo_Shr,
-							Kilo_Vol_PerCent_Change,
-							Avg_AC_Disk,
-							Ave_Retail_Unit_Price,
+							Kilo_Share,
+							Kilo_Volume_Percent_Change,
+							Average_AC_Dist,
+							Average_Retail_Price,
 							Source,
 							Nielsen_Category,
 							Collection_Date,
 							Sales_Year,
-							Control_Label,
-							Kilo_Vol_Total,
+							Control_Label_Flag,
+							Kilo_Volume_Total,
 							Kilo_Vol_Rank,
 							Dollar_Volume_Total,
 							Cluster_Number,
@@ -378,21 +300,21 @@ INSERT INTO Sales (
 							Sales_Description,
 							Brand,
 							Manufacturer,
-							Rank,
+							Dollar_Rank,
 							Dollar_Volume,
-							Shr,
-							Vol_PerCent_Change,
+							Dollar_Share,
+							Dollar_Volume_PerCentage_Change,
 							Kilo_Vol,
-							Kilo_Shr,
-							Kilo_Vol_PerCent_Change,
-							Avg_AC_Disk,
-							Ave_Retail_Unit_Price,
+							Kilo_Share,
+							Kilo_Volume_Percent_Change,
+							Average_AC_Dist,
+							Average_Retail_Price,
 							Source,
 							Nielsen_Category,
 							Collection_Date,
 							Sales_Year,
-							Control_Label,
-							Kilo_Vol_Total,
+							Control_Label_Flag,
+							Kilo_Volume_Total,
 							Kilo_Vol_Rank,
 							Dollar_Volume_Total,
 							Cluster_Number,
@@ -503,21 +425,21 @@ INSERT INTO Sales (
 							Sales_Description,
 							Brand,
 							Manufacturer,
-							Rank,
+							Dollar_Rank,
 							Dollar_Volume,
-							Shr,
-							Vol_PerCent_Change,
+							Dollar_Share,
+							Dollar_Volume_PerCentage_Change,
 							Kilo_Vol,
-							Kilo_Shr,
-							Kilo_Vol_PerCent_Change,
-							Avg_AC_Disk,
-							Ave_Retail_Unit_Price,
+							Kilo_Share,
+							Kilo_Volume_Percent_Change,
+							Average_AC_Dist,
+							Average_Retail_Price,
 							Source,
 							Nielsen_Category,
 							Collection_Date,
 							Sales_Year,
-							Control_Label,
-							Kilo_Vol_Total,
+							Control_Label_Flag,
+							Kilo_Volume_Total,
 							Kilo_Vol_Rank,
 							Dollar_Volume_Total,
 							Cluster_Number,
@@ -657,21 +579,21 @@ INSERT INTO Sales (
 							Sales_Description,
 							Brand,
 							Manufacturer,
-							Rank,
+							Dollar_Rank,
 							Dollar_Volume,
-							Shr,
-							Vol_PerCent_Change,
+							Dollar_Share,
+							Dollar_Volume_PerCentage_Change,
 							Kilo_Vol,
-							Kilo_Shr,
-							Kilo_Vol_PerCent_Change,
-							Avg_AC_Disk,
-							Ave_Retail_Unit_Price,
+							Kilo_Share,
+							Kilo_Volume_Percent_Change,
+							Average_AC_Dist,
+							Average_Retail_Price,
 							Source,
 							Nielsen_Category,
 							Collection_Date,
 							Sales_Year,
-							Control_Label,
-							Kilo_Vol_Total,
+							Control_Label_Flag,
+							Kilo_Volume_Total,
 							Kilo_Vol_Rank,
 							Dollar_Volume_Total,
 							Cluster_Number,
@@ -770,28 +692,28 @@ INSERT INTO Sales (
 							Sales_Description,
 							Brand,
 							Manufacturer,
-							Rank,
+							Dollar_Rank, 
 							Dollar_Volume,
-							Shr,
-							Vol_PerCent_Change,
+							Dollar_Share,
+							Dollar_Volume_PerCentage_Change,
 							Kilo_Vol,
 							Kilo_Shr,
 							Kilo_Vol_PerCent_Change,
-							Avg_AC_Disk,
-							Ave_Retail_Unit_Price,
+							Average_AC_Dist,
+							Average_Retail_Price,
 							Source,
 							Nielsen_Category,
 							Collection_Date,
 							Sales_Year,
 							Control_Label,
-							Kilo_Vol_Total,
+							Kilo_Volume_Total,
 							Kilo_Vol_Rank,
 							Dollar_Volume_Total,
 							Cluster_Number,
 							Product_Grouping,
 							Product_Description,
 							Classification_Number,
-							Classification_Type,
+							Classification_Type,Kilo_Vol
 							Comments  
 )
 VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
