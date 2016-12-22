@@ -7,6 +7,8 @@
 	$result = mysqli_query($conn,$query2);	
 	
 	$xquery = "ALTER TABLE Sales MODIFY Sales_UPC TEXT";
+	$xresult = mysqli_query($conn,$xquery);	
+	
 		$query3 =  "Delete from $dbname.Product_Component where ComponentID > 0"; 	
 		$result3 = mysqli_query($conn,$query3);	
 	
