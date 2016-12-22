@@ -70,6 +70,61 @@ if (isset($_POST['search'])) {
 			$Classification_Type       = $worksheet->getCell('AA'.$row)->getValue();
 			$Comments                  = $worksheet->getCell('AB'.$row)->getValue();
 
+					$param = array(
+							$Sales_UPC,
+							$Sales_Description,
+							$Brand,
+							$Manufacturer,
+							$Rank,
+							$Dollar_Volume,
+							$Shr,
+							$Vol_PerCent_Change,
+							$Kilo_Vol,
+							$Kilo_Shr,
+							$Kilo_Vol_PerCent_Change,
+							$Avg_AC_Disk,
+							$Ave_Retail_Unit_Price,
+							$Source,
+							$Nielsen_Category,
+							$Collection_Date,
+							$Sales_Year,
+							$Control_Label,
+							$Kilo_Vol_Total,
+							$Kilo_Vol_Rank,
+							$Dollar_Volume_Total,
+							$Cluster_Number,
+							$Product_Grouping,
+							$Product_Description,
+							$Classification_Number,
+							$Classification_Type,
+							$Comments
+							
+							
+							
+						);
+			
+/* 		$param = array(
+							$Sales_UPC,
+							$Source,
+							$Sales_Description,
+							$Sales_Year,
+							$Nielsen_Category,
+							$Kilo_Vol,
+							$Dollar_Volume,
+							$Brand,
+							$Rank,
+							$Vol_PerCent_Change,
+							$Kilo_Shr,
+							$Kilo_Vol_PerCent_Change,
+							$Avg_AC_Disk,
+							$Ave_Retail_Unit_Price,
+							$Collection_Date,
+							$Dollar_Volume_Total,
+							$Product_Grouping
+						);	 */	
+			
+			
+			
 			if ($Sales_UPC == null or $Sales_Description == null or $Kilo_Vol == null or $Source == null or $Sales_Year == null or $Collection_Date == null) {
 
 				if ($Sales_Description) {
@@ -115,7 +170,12 @@ EOQ;
 		/* 		echo "Sales_UPC Code already belongs to a different product";
 				$skipped_sales->push($Description);
 					continue; */
-
+					
+					
+					
+					
+					
+/* 
 						$param = array(
 							$Sales_UPC,
 							$Source,
@@ -165,7 +225,81 @@ EOQ;
 						$stmt = $conn->prepare($insert_query);
 						$stmt->bind_param("iissssddsdsdsdddsdii", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $Sales_UPC);
 						$result_insert = $stmt->execute();
+ */
+ 
+					$param = array(
+							$Sales_UPC,
+							$Sales_Description,
+							$Brand,
+							$Manufacturer,
+							$Rank,
+							$Dollar_Volume,
+							$Shr,
+							$Vol_PerCent_Change,
+							$Kilo_Vol,
+							$Kilo_Shr,
+							$Kilo_Vol_PerCent_Change,
+							$Avg_AC_Disk,
+							$Ave_Retail_Unit_Price,
+							$Source,
+							$Nielsen_Category,
+							$Collection_Date,
+							$Sales_Year,
+							$Control_Label,
+							$Kilo_Vol_Total,
+							$Kilo_Vol_Rank,
+							$Dollar_Volume_Total,
+							$Cluster_Number,
+							$Product_Grouping,
+							$Product_Description,
+							$Classification_Number,
+							$Classification_Type,
+							$Comments
+							
+							
+							
+						); 
+ 
+						$insert_query =<<<EOQ
+INSERT INTO Sales (
+							ProductIDS,
+							Sales_UPC,
+							Sales_Description,
+							Brand,
+							Manufacturer,
+							Rank,
+							Dollar_Volume,
+							Shr,
+							Vol_PerCent_Change,
+							Kilo_Vol,
+							Kilo_Shr,
+							Kilo_Vol_PerCent_Change,
+							Avg_AC_Disk,
+							Ave_Retail_Unit_Price,
+							Source,
+							Nielsen_Category,
+							Collection_Date,
+							Sales_Year,
+							Control_Label,
+							Kilo_Vol_Total,
+							Kilo_Vol_Rank,
+							Dollar_Volume_Total,
+							Cluster_Number,
+							Product_Grouping,
+							Product_Description,
+							Classification_Number,
+							Classification_Type,
+							Comments  
+)
+SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+  FROM Sales
+ WHERE Sales_UPC = ?
+EOQ;
 
+						$stmt = $conn->prepare($insert_query);
+						$stmt->bind_param("isssdddddddddsssisddddisdssi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $Sales_UPC);
+						$result_insert = $stmt->execute();
+			 
 						if ($Product_Description != null) {
 
 							$query_update =<<<EOQ
@@ -202,55 +336,78 @@ EOQ;
 
 						if (($stmt->num_rows) > 0) {
 
-							$param = array(
-								$Sales_UPC,
-								$Source,
-								$Sales_Description,
-								$Sales_Year,
-								$Nielsen_Category,
-								$Kilo_Vol,
-								$Dollar_Volume,
-								$Brand,
-								$Rank,
-								$Vol_PerCent_Change,
-								$Kilo_Shr,
-								$Kilo_Vol_PerCent_Change,
-								$Avg_AC_Disk,
-								$Ave_Retail_Unit_Price,
-								$Collection_Date,
-								$Dollar_Volume_Total,
-								$Product_Grouping
-							);
+					$param = array(
+							$Sales_UPC,
+							$Sales_Description,
+							$Brand,
+							$Manufacturer,
+							$Rank,
+							$Dollar_Volume,
+							$Shr,
+							$Vol_PerCent_Change,
+							$Kilo_Vol,
+							$Kilo_Shr,
+							$Kilo_Vol_PerCent_Change,
+							$Avg_AC_Disk,
+							$Ave_Retail_Unit_Price,
+							$Source,
+							$Nielsen_Category,
+							$Collection_Date,
+							$Sales_Year,
+							$Control_Label,
+							$Kilo_Vol_Total,
+							$Kilo_Vol_Rank,
+							$Dollar_Volume_Total,
+							$Cluster_Number,
+							$Product_Grouping,
+							$Product_Description,
+							$Classification_Number,
+							$Classification_Type,
+							$Comments
+							
+							
+							
+						); 
 
 							/* Grouping exist, so link market share to that product*/
 							$insert_query =<<<EOQ
 INSERT INTO Sales (
-       ProductIDS,
-       Sales_UPC,
-       Source,
-       Sales_Description,
-       Sales_Year,
-       Nielsen_Category,
-       Kilo_Vol,
-       Dollar_Volume,
-       Brand,
-       Dollar_Rank,
-       Dollar_Volume_PerCentage_Change,
-       Kilo_Share,
-       Kilo_Volume_Percent_Change,
-       Average_AC_Dist,
-       Average_Retail_Price,
-       Collection_Date,
-       Dollar_Volume_Total,
-       Product_Grouping
+							ProductIDS,
+							Sales_UPC,
+							Sales_Description,
+							Brand,
+							Manufacturer,
+							Rank,
+							Dollar_Volume,
+							Shr,
+							Vol_PerCent_Change,
+							Kilo_Vol,
+							Kilo_Shr,
+							Kilo_Vol_PerCent_Change,
+							Avg_AC_Disk,
+							Ave_Retail_Unit_Price,
+							Source,
+							Nielsen_Category,
+							Collection_Date,
+							Sales_Year,
+							Control_Label,
+							Kilo_Vol_Total,
+							Kilo_Vol_Rank,
+							Dollar_Volume_Total,
+							Cluster_Number,
+							Product_Grouping,
+							Product_Description,
+							Classification_Number,
+							Classification_Type,
+							Comments  
 )
-SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Product_Grouping = ?
 EOQ;
 
 							$stmt = $conn->prepare($insert_query);
-							$stmt->bind_param("iissssddsdsdsdddsdii", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $Product_Grouping);
+						$stmt->bind_param("isssdddddddddsssisddddisdssi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $Product_Grouping);
 							$result_insert = $stmt->execute();
 
 							$input4 = "Record : $Record, $Sales_Description";
@@ -303,53 +460,77 @@ EOQ;
 							$input5 = "Record : $Record, $Product_Description";
 							$new_product->push($input5);
 
-							$param = array(
-								$id,
-								$Sales_UPC,
-								$Source,
-								$Sales_Description,
-								$Sales_Year,
-								$Nielsen_Category,
-								$Kilo_Vol,
-								$Dollar_Volume,
-								$Brand,
-								$Rank,
-								$Vol_PerCent_Change,
-								$Kilo_Shr,
-								$Kilo_Vol_PerCent_Change,
-								$Avg_AC_Disk,
-								$Ave_Retail_Unit_Price,
-								$Collection_Date,
-								$Dollar_Volume_Total,
-								$Product_Grouping
-							);
+					$param = array(
+							$id,
+							$Sales_UPC,
+							$Sales_Description,
+							$Brand,
+							$Manufacturer,
+							$Rank,
+							$Dollar_Volume,
+							$Shr,
+							$Vol_PerCent_Change,
+							$Kilo_Vol,
+							$Kilo_Shr,
+							$Kilo_Vol_PerCent_Change,
+							$Avg_AC_Disk,
+							$Ave_Retail_Unit_Price,
+							$Source,
+							$Nielsen_Category,
+							$Collection_Date,
+							$Sales_Year,
+							$Control_Label,
+							$Kilo_Vol_Total,
+							$Kilo_Vol_Rank,
+							$Dollar_Volume_Total,
+							$Cluster_Number,
+							$Product_Grouping,
+							$Product_Description,
+							$Classification_Number,
+							$Classification_Type,
+							$Comments
+							
+							
+							
+						); 
+
 
 							$insert_query2 =<<<EOQ
 INSERT INTO Sales (
-       ProductIDS,
-       Sales_UPC,
-       Source,
-       Sales_Description,
-       Sales_Year,
-       Nielsen_Category,
-       Kilo_Vol,
-       Dollar_Volume,
-       Brand,
-       Dollar_Rank,
-       Dollar_Volume_PerCentage_Change,
-       Kilo_Share,
-       Kilo_Volume_Percent_Change,
-       Average_AC_Dist,
-       Average_Retail_Price,
-       Collection_Date,
-       Dollar_Volume_Total,
-       Product_Grouping
+							ProductIDS,
+							Sales_UPC,
+							Sales_Description,
+							Brand,
+							Manufacturer,
+							Rank,
+							Dollar_Volume,
+							Shr,
+							Vol_PerCent_Change,
+							Kilo_Vol,
+							Kilo_Shr,
+							Kilo_Vol_PerCent_Change,
+							Avg_AC_Disk,
+							Ave_Retail_Unit_Price,
+							Source,
+							Nielsen_Category,
+							Collection_Date,
+							Sales_Year,
+							Control_Label,
+							Kilo_Vol_Total,
+							Kilo_Vol_Rank,
+							Dollar_Volume_Total,
+							Cluster_Number,
+							Product_Grouping,
+							Product_Description,
+							Classification_Number,
+							Classification_Type,
+							Comments  
 )
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
 							$stmt = $conn->prepare($insert_query2);
-							$stmt->bind_param("iissssddsdsdsdddsdi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17]);
+						$stmt->bind_param("iisssdddddddddsssisddddisdss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27]);
 							$result_insert = $stmt->execute();
 
 							if (!$result_insert) {
@@ -436,56 +617,77 @@ EOQ;
 
 						if (($stmt->num_rows) > 0) {
 
-							$param = array(
-								$Sales_UPC,
-								$Source,
-								$Sales_Description,
-								$Sales_Year,
-								$Nielsen_Category,
-								$Kilo_Vol,
-								$Dollar_Volume,
-								$Brand,
-								$Rank,
-								$Vol_PerCent_Change,
-								$Kilo_Shr,
-								$Kilo_Vol_PerCent_Change,
-								$Avg_AC_Disk,
-								$Ave_Retail_Unit_Price,
-								$Collection_Date,
-								$Dollar_Volume,
-								$Product_Grouping
-							);
-
+					$param = array(
+							$Sales_UPC,
+							$Sales_Description,
+							$Brand,
+							$Manufacturer,
+							$Rank,
+							$Dollar_Volume,
+							$Shr,
+							$Vol_PerCent_Change,
+							$Kilo_Vol,
+							$Kilo_Shr,
+							$Kilo_Vol_PerCent_Change,
+							$Avg_AC_Disk,
+							$Ave_Retail_Unit_Price,
+							$Source,
+							$Nielsen_Category,
+							$Collection_Date,
+							$Sales_Year,
+							$Control_Label,
+							$Kilo_Vol_Total,
+							$Kilo_Vol_Rank,
+							$Dollar_Volume_Total,
+							$Cluster_Number,
+							$Product_Grouping,
+							$Product_Description,
+							$Classification_Number,
+							$Classification_Type,
+							$Comments
+							
+							
+							
+						); 
 							$insert_query =<<<EOQ
 INSERT INTO Sales (
-
-       ProductIDS,                      -- i
-       Sales_UPC,                       -- i
-       Source,                          -- s
-       Sales_Description,               -- s
-       Sales_Year,                      -- s
-       Nielsen_Category,                -- s
-       Kilo_Vol,                        -- s
-       Dollar_Volume,                   -- s
-       Brand,                           -- s
-       Dollar_Rank,                     -- s
-       Dollar_Volume_PerCentage_Change, -- s
-       Kilo_Share,                      -- s
-       Kilo_Volume_Percent_Change,      -- s
-       Average_AC_Dist,                 -- s
-       Average_Retail_Price,            -- s
-       Collection_Date,                 -- s
-       Dollar_Volume_Total,             -- s
-       Product_Grouping                 -- s
-
+							ProductIDS,
+							Sales_UPC,
+							Sales_Description,
+							Brand,
+							Manufacturer,
+							Rank,
+							Dollar_Volume,
+							Shr,
+							Vol_PerCent_Change,
+							Kilo_Vol,
+							Kilo_Shr,
+							Kilo_Vol_PerCent_Change,
+							Avg_AC_Disk,
+							Ave_Retail_Unit_Price,
+							Source,
+							Nielsen_Category,
+							Collection_Date,
+							Sales_Year,
+							Control_Label,
+							Kilo_Vol_Total,
+							Kilo_Vol_Rank,
+							Dollar_Volume_Total,
+							Cluster_Number,
+							Product_Grouping,
+							Product_Description,
+							Classification_Number,
+							Classification_Type,
+							Comments  
 )
-SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Sales_UPC = ?
 EOQ;
 
+
 							$stmt = $conn->prepare($insert_query);
-							$stmt->bind_param("issssssssssssssssi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $Sales_UPC);
+						$stmt->bind_param("isssdddddddddsssisddddisdssi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $Sales_UPC);
 							$result_insert = $stmt->execute();
 
 							$input7 = "Record : $Record, $Sales_Description";
@@ -526,55 +728,77 @@ EOQ;
 
 							} else {
 
-								$param = array(
-									$id,
-									$Sales_UPC,
-									$Source,
-									$Sales_Description,
-									$Sales_Year,
-									$Nielsen_Category,
-									$Kilo_Vol,
-									$Dollar_Volume,
-									$Brand,
-									$Rank,
-									$Vol_PerCent_Change,
-									$Kilo_Shr,
-									$Kilo_Vol_PerCent_Change,
-									$Avg_AC_Disk,
-									$Ave_Retail_Unit_Price,
-									$Collection_Date,
-									$Dollar_Volume,
-									$Product_Grouping
-								);
+					$param = array(
+							$id,
+							$Sales_UPC,
+							$Sales_Description,
+							$Brand,
+							$Manufacturer,
+							$Rank,
+							$Dollar_Volume,
+							$Shr,
+							$Vol_PerCent_Change,
+							$Kilo_Vol,
+							$Kilo_Shr,
+							$Kilo_Vol_PerCent_Change,
+							$Avg_AC_Disk,
+							$Ave_Retail_Unit_Price,
+							$Source,
+							$Nielsen_Category,
+							$Collection_Date,
+							$Sales_Year,
+							$Control_Label,
+							$Kilo_Vol_Total,
+							$Kilo_Vol_Rank,
+							$Dollar_Volume_Total,
+							$Cluster_Number,
+							$Product_Grouping,
+							$Product_Description,
+							$Classification_Number,
+							$Classification_Type,
+							$Comments
+							
+							
+							
+						); 
 
 								$insert_queryt =<<<EOQ
-INSERT Into Sales (
-
-       ProductIDS,                      -- i
-       Sales_UPC,                       -- i
-       Source,                          -- s
-       Sales_Description,               -- s
-       Sales_Year,                      -- s
-       Nielsen_Category,                -- s
-       Kilo_Vol,                        -- s
-       Dollar_Volume,                   -- s
-       Brand,                           -- s
-       Dollar_Rank,                     -- s
-       Dollar_Volume_PerCentage_Change, -- s
-       Kilo_Share,                      -- s
-       Kilo_Volume_Percent_Change,      -- s
-       Average_AC_Dist,                 -- s
-       Average_Retail_Price,            -- s
-       Collection_Date,                 -- s
-       Dollar_Volume_Total,             -- s
-       Product_Grouping                 -- s
-
+INSERT INTO Sales (
+							ProductIDS,
+							Sales_UPC,
+							Sales_Description,
+							Brand,
+							Manufacturer,
+							Rank,
+							Dollar_Volume,
+							Shr,
+							Vol_PerCent_Change,
+							Kilo_Vol,
+							Kilo_Shr,
+							Kilo_Vol_PerCent_Change,
+							Avg_AC_Disk,
+							Ave_Retail_Unit_Price,
+							Source,
+							Nielsen_Category,
+							Collection_Date,
+							Sales_Year,
+							Control_Label,
+							Kilo_Vol_Total,
+							Kilo_Vol_Rank,
+							Dollar_Volume_Total,
+							Cluster_Number,
+							Product_Grouping,
+							Product_Description,
+							Classification_Number,
+							Classification_Type,
+							Comments  
 )
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
+
 								$stmt = $conn->prepare($insert_queryt);
-								$stmt->bind_param("iissssssssssssssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17]);
+								$stmt->bind_param("iisssdddddddddsssisddddisdss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27]);
 								$result_insertt = $stmt->execute();
 
 								if (!$result_insertt) {
