@@ -1,6 +1,6 @@
 <?php include 'connection.php';?>
 <?php
-
+error_reporting(0);   
 require_once "Classes/PHPExcel.php";
 
 
@@ -102,7 +102,8 @@ if (isset($_POST['search'])) {
 							
 							
 						);
-			
+
+echo "here 1";					
 /* 		$param = array(
 							$Sales_UPC,
 							$Source,
