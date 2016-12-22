@@ -1,3 +1,11 @@
 php_value upload_max_filesize 20971520
 php_value post_max_size 20971520
 php_value max_execution_time 600
+
+AuthUserFile "C:/Users/hcuser/Desktop/FCDRfcdr/.htpassword"
+AuthName "Please log in"
+AuthType Basic
+
+<Limit GET POST> 
+require valid-user
+</Limit>
