@@ -6,7 +6,7 @@
 	$query2 =  "Delete from $dbname.Sales where SalesID > 0"; 	
 	$result = mysqli_query($conn,$query2);	
 	
-	$xquery = "ALTER TABLE Sales MODIFY Sales_UPC varchar(20);"
+	$xquery = "ALTER TABLE Sales MODIFY Sales_UPC varchar(20)";
 		$query3 =  "Delete from $dbname.Product_Component where ComponentID > 0"; 	
 		$result3 = mysqli_query($conn,$query3);	
 	
