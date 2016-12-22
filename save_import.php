@@ -1,7 +1,7 @@
 <?php include 'connection.php';?>
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1); 
+/* error_reporting(E_ALL);
+ini_set('display_errors', 1);  */
 require_once "Classes/PHPExcel.php";
 
 
@@ -16,16 +16,16 @@ if (isset($_POST['search'])) {
 
 		$tmpfname = $_FILES['file_save']['tmp_name'];
 
-		echo "0";
+		//echo "0";
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
-		echo "1";
+		//echo "1";
 		$excelObj = $excelReader->load($tmpfname);
-		echo "2";
+		//echo "2";
 		$worksheet = $excelObj->getSheet(0);
-		echo "3";
+		//echo "3";
 		$lastRow = $worksheet->getHighestRow();
 
-		echo "4";
+		//echo "4";
 
 		// IF THE FILE DOES NOT EXIST, WRITE TO IT AS YOU OPEN UP A STREAM,
 		// OTHERWISE, JUST APPEND TO IT...
