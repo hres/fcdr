@@ -73,7 +73,7 @@ if (isset($_POST['search'])) {
 
 
 
-echo "here 1";					
+				
 
 			
 			
@@ -346,7 +346,7 @@ EOQ;
 							$result = $stmt->execute();
 
 							$id = mysqli_insert_id($conn);
-							$input5 = "Record : $Record, $Product_Description";
+							$input5 = "Record : $Record, $Product_Description--";
 							$new_product->push($input5);
 
 					$param = array(
