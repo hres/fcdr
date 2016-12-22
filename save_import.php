@@ -683,7 +683,7 @@ EOQ;
 							}	
 							
 							
-							$in = "Record : $Record, $Product_Description";
+							$in = "Record : $Record, $Product_Description**";
 							$new_product->push($in);
 
 
