@@ -291,6 +291,7 @@ $(document).ready(function() {
 
 				<button style=" float:right;" type="submit" class="btn btn-default" name="clearbd">Clear DB</button>
 </form> 
+<div class="result-modal"></div>
 		</main>
 
 <?php include 'footer.php';?>
