@@ -481,23 +481,31 @@ EOQ;
 					}
 				}
 				else if (!preg_match('/^\d+$/', $Product_Grouping)) {
+					
+					
+					
+					
 
 
 						if ($Product_Description == null) {
 							$Product_Description = $Sales_Description;
 						}
 						
-						$state =<<<EOQ
+/* 						$state =<<<EOQ
 SELECT * FROM Sales WHERE Sales_UPC = ?
-EOQ;
-// AND ProductIDS <> (Select Distinct ProductIDS From $dbname.Sales Where Product_Grouping= $Product_Grouping)";
+EOQ; */
 
+$query = " SELECT * FROM Sales where Sales_UPC = $Sales_UPC";
+$result3 = mysqli_query($conn,$query);	
+
+// AND ProductIDS <> (Select Distinct ProductIDS From $dbname.Sales Where Product_Grouping= $Product_Grouping)";
+/* 
 						$stmt2 = $conn->prepare($state);
 						$stmt2->bind_param("i", $Sales_UPC);
 						$result_state = $stmt2->execute();
-						$stmt2->store_result();
+						$stmt2->store_result(); */
 
-						if (($stmt2->num_rows) > 0) {
+						if (mysqli_num_rows($result3) > 0) {
 
 					$param = array(
 							$Sales_UPC,
