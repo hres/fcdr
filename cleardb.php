@@ -1,6 +1,6 @@
 <?php include 'connection.php';?>
 <?php
-if (isset($_POST['clearbd'])) {
+
 							
 
 	$query2 =  "Delete from $dbname.Sales where SalesID > 0"; 	
@@ -8,7 +8,7 @@ if (isset($_POST['clearbd'])) {
 	echo "here";
 
 							
-}
+
 
 $conn->close();
 ?>

@@ -45,6 +45,36 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 
+<script type="text/javascript">
+$(document).ready(function()
+{
+ $(document).on('submit', '#clearbd', function()
+ {
+
+  var data = $(this).serialize();
+  
+  
+  $.ajax({
+  
+  type : 'POST',
+  url  :  'cleardb.php',
+  data : data,
+  success :  function(data) {
+                $('.result-modal').html(data);
+				
+            },
+            error: function (request, status, error) {
+                alert(error.responseText);
+                //or console.log(request.responseText), or status or error;
+            }
+  });
+  return false;
+ });
+ 
+});
+</script>
+	
+	
 
 <script>
 function mainInfo(str) {
@@ -257,11 +287,10 @@ $(document).ready(function() {
 	</div>
   </div>
 </div>
-		<form id="delete-all">
+		<form id="clearbd">
 
 				<button style=" float:right;" type="submit" class="btn btn-default" name="clearbd">Clear DB</button>
 </form> 
-  <?php include("cleardb.php"); ?>
 		</main>
 
 <?php include 'footer.php';?>
