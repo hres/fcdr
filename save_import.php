@@ -235,7 +235,7 @@ SELECT DISTINCT ProductIDS
 EOQ;
 
 							$stmt = $conn->prepare($query_update);
-							$stmt->bind_param("ss", $Product_Description, $Sales_UPC);
+							$stmt->bind_param("si", $Product_Description, $Sales_UPC);
 							$result_update = $stmt->execute();
 
 						}
@@ -252,7 +252,7 @@ SELECT DISTINCT SalesID
 EOQ;
 
 						$stmt = $conn->prepare($grouping);
-						$stmt->bind_param("", $Product_Grouping);
+						$stmt->bind_param("i", $Product_Grouping);
 						$check_grouping_result = $stmt->execute();
 						$stmt->store_result();
 
