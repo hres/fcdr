@@ -351,7 +351,7 @@ EOQ;
 
 					$param = array(
 							$id,
-							$Sales_UPC,
+							$Sales_UPC, 
 							$Sales_Description,
 							$Brand,
 							$Manufacturer,
@@ -486,17 +486,18 @@ EOQ;
 						if ($Product_Description == null) {
 							$Product_Description = $Sales_Description;
 						}
-						$check_grouping =<<<EOQ
+						
+						$state =<<<EOQ
 SELECT * FROM Sales WHERE Sales_UPC = ?
 EOQ;
 // AND ProductIDS <> (Select Distinct ProductIDS From $dbname.Sales Where Product_Grouping= $Product_Grouping)";
 
-						$stmt = $conn->prepare($check_grouping);
-						$stmt->bind_param("i", $Sales_UPC);
-						$result_grouping = $stmt->execute();
-						$stmt->store_result();
+						$stmt2 = $conn->prepare($state);
+						$stmt2->bind_param("i", $Sales_UPC);
+						$result_state = $stmt2->execute();
+						$stmt2->store_result();
 
-						if (($stmt->num_rows) > 0) {
+						if (($stmt2->num_rows) > 0) {
 
 					$param = array(
 							$Sales_UPC,
@@ -676,7 +677,7 @@ SELECT ClassificationID, ?
 EOQ;
 
 									$stmt = $conn->prepare($query2);
-									$stmt->bind_param("ii", $id, $Classification_Number);
+									$stmt->bind_param("id", $id, $Classification_Number);
 									$result2 = $stmt->execute();
 
 								}
