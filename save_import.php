@@ -445,7 +445,7 @@ VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
 EOQ;
 
 							$stmt = $conn->prepare($insert_query2);
-						$stmt->bind_param("iisssdddddddddsssisdddisdss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26]);
+							$stmt->bind_param("iisssdddddddddsssisdddisdss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26]);
 							$result_insert = $stmt->execute();
 							print $stmt->error_list;
 							if (!$result_insert) {
@@ -552,7 +552,6 @@ EOQ;
 							$Sales_Year,
 							$Control_Label,
 							$Kilo_Vol_Total,
-							$Kilo_Vol_Rank,
 							$Dollar_Volume_Total,
 							$Cluster_Number,
 							$Product_Grouping,
@@ -586,7 +585,6 @@ INSERT INTO Sales (
 							Sales_Year,
 							Control_Label_Flag,
 							Kilo_Volume_Total,
-							Kilo_Vol_Rank,
 							Dollar_Volume_Total,
 							Cluster_Number,
 							Product_Grouping,
@@ -595,14 +593,14 @@ INSERT INTO Sales (
 							Classification_Type,
 							Comments  
 )
-SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Sales_UPC = ?
 EOQ;
 
 
 							$stmt = $conn->prepare($insert_query);
-						$stmt->bind_param("isssdddddddddsssisddddisdssi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $Sales_UPC);
+						$stmt->bind_param("isssdddddddddsssisdddisdssi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $Sales_UPC);
 							$result_insert = $stmt->execute();
 
 							$input7 = "Record : $Record, $Sales_Description";
@@ -664,7 +662,6 @@ EOQ;
 							$Sales_Year,
 							$Control_Label,
 							$Kilo_Vol_Total,
-							$Kilo_Vol_Rank,
 							$Dollar_Volume_Total,
 							$Cluster_Number,
 							$Product_Grouping,
@@ -699,7 +696,6 @@ INSERT INTO Sales (
 							Sales_Year,
 							Control_Label,
 							Kilo_Volume_Total,
-							Kilo_Vol_Rank,
 							Dollar_Volume_Total,
 							Cluster_Number,
 							Product_Grouping,
@@ -708,12 +704,12 @@ INSERT INTO Sales (
 							Classification_Type,Kilo_Vol
 							Comments  
 )
-VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
 
 								$stmt = $conn->prepare($insert_queryt);
-								$stmt->bind_param("iisssdddddddddsssisddddisdss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27]);
+								$stmt->bind_param("iisssdddddddddsssisdddisdss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26]);
 								$result_insertt = $stmt->execute();
 
 								if (!$result_insertt) {
