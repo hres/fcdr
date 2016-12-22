@@ -71,38 +71,7 @@ if (isset($_POST['search'])) {
 			$Classification_Type       = $worksheet->getCell('AA'.$row)->getValue();
 			$Comments                  = $worksheet->getCell('AB'.$row)->getValue();
 
-					$param = array(
-							$Sales_UPC,
-							$Sales_Description,
-							$Brand,
-							$Manufacturer,
-							$Rank,
-							$Dollar_Volume,
-							$Shr,
-							$Vol_PerCent_Change,
-							$Kilo_Vol,
-							$Kilo_Shr,
-							$Kilo_Vol_PerCent_Change,
-							$Avg_AC_Disk,
-							$Ave_Retail_Unit_Price,
-							$Source,
-							$Nielsen_Category,
-							$Collection_Date,
-							$Sales_Year,
-							$Control_Label,
-							$Kilo_Vol_Total,
-							$Kilo_Vol_Rank,
-							$Dollar_Volume_Total,
-							$Cluster_Number,
-							$Product_Grouping,
-							$Product_Description,
-							$Classification_Number,
-							$Classification_Type,
-							$Comments
-							
-							
-							
-						);
+
 
 echo "here 1";					
 
@@ -512,11 +481,7 @@ EOQ;
 					}
 				}
 				else if (!preg_match('/^\d+$/', $Product_Grouping)) {
-					if ($Sales_UPC == null or $Sales_Description == null) {
-						//echo "Missing Fields";
-						$skipped_sales->push($Sales_Description);
-						continue;
-					} else {
+
 
 						if ($Product_Description == null) {
 							$Product_Description = $Sales_Description;
@@ -614,31 +579,7 @@ EOQ;
 							$result = $stmt->execute();
 
 							$id =  mysqli_insert_id($conn);
-							$in = "Record : $Record, $Product_Description";
-							$new_product->push($in);
-
-							$query3 =<<<EOQ
-SELECT *
-  FROM Sales
- WHERE Sales_UPC = ?
-   AND ProductIDS <> ?
-EOQ;
-
-							$stmt = $conn->prepare($query3);
-							$stmt->bind_param("ii", $Sales_UPC, $id);
-							$result3 = $stmt->execute();
-
-							$stmt->store_result();
-							if ($stmt->num_rows > 0) {
-								//echo "Sales_UPC Code already belongs to a different product";
-								$input8 = "Record : $Record, $Sales_Description";
-
-								$skipped_sales->push($input8);
-
-								continue;
-
-							} else {
-
+							
 					$param = array(
 							$id,
 							$Sales_UPC,
@@ -710,13 +651,7 @@ EOQ;
 								$stmt = $conn->prepare($insert_queryt);
 							$stmt->bind_param("iisssdddddddddsssisdddis", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26]);
 								$result_insertt = $stmt->execute();
-
-								if (!$result_insertt) {
-									echo "error 2 $insert_queryt";
-								}
-							}
-
-
+	
 
 							if (strlen($Classification_Number) != 0) {
 								/* Must check if Classification number exist */
@@ -745,9 +680,16 @@ EOQ;
 									$result2 = $stmt->execute();
 
 								}
-							}
+							}	
+							
+							
+							$in = "Record : $Record, $Product_Description";
+							$new_product->push($in);
+
+
+
 						}
-					}
+					
 				}
 			}
 		}
