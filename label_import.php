@@ -409,6 +409,8 @@ EOQ;
 				$stmt->bind_param("s", $Label_UPC);
 				$label_result = $stmt->execute();
 								$stmt->store_result();
+								
+								
 								if (($stmt->num_rows) < 1) {
 					$sales_query =<<<EOQ
 SELECT DISTINCT ProductIDS
@@ -419,7 +421,7 @@ EOQ;
 					$stmt2->bind_param("s", $Neilsen_Item_Rank_UPC);
 					$sales_result = $stmt2->execute();
 					$stmt2->store_result();
-								if (($stmt2->num_rows) < 1)
+								if (($stmt2->num_rows) < 1) {
 						/* Create new Product and attach the label to it */
 						if ($Product_Description == null) {
 							$Product_Description = $Label_Description;
@@ -637,8 +639,8 @@ for ($row = 0; $row < 46; $row++) {
 }
 
 
-				
-					}
+					}				
+					
 				} else {
 					$query2 =<<<EOQ
 INSERT Into Package(
@@ -685,34 +687,17 @@ EOQ;
 					$stmt->execute();
 					$xid = mysqli_insert_id($conn);
 					$params = array($Brand, $Manufacturer, $Label_UPC);
-					if ($Product_Description != null) {
-						$params = array($Product_Description) + $params;
-						$query_update =<<<EOQ
-UPDATE Product
-   SET Description = ?, Brand = ?, Manufacturer = ?
- WHERE ProductID = (
-          SELECT Distinct ProductIDP
-            FROM Package
-           WHERE Label_UPC = ?
-       )
-EOQ;
-						$stmt = $conn->prepare($query_update);
-						$stmt->bind_param("sssi", $params[0], $params[1], $params[2], $params[3]);
-					} else {
-						$query_update =<<<EOQ
-UPDATE Product
-   SET Brand = ?, Manufacturer = ?
- WHERE ProductID = (
-          SELECT DISTINCT ProductIDP
-            FROM Package
-           WHERE Label_UPC = ?
-       )
-EOQ;
-						$stmt = $conn->prepare($query_update);
-						$stmt->bind_param("ssi", $params[0], $params[1], $params[2]);
+
+				if($Product_Description != null){
 					
-					$stmt->execute();
-}
+					$query_update="UPDATE  $dbname.Product SET Description='$Product_Description', Brand='$Brand', Manufacturer='$Manufacturer' WHERE ProductID=(Select Distinct ProductIDP from $dbname.Package Where Label_UPC = '$Label_UPC')";
+					$result_update = mysqli_query($conn,$query_update);
+					
+				}else{
+					$query_update="UPDATE  $dbname.Product SET Brand='$Brand',Manufacturer='$Manufacturer' WHERE ProductID=(Select Distinct ProductIDP from $dbname.Package Where Label_UPC = '$Label_UPC')";
+					$result_update = mysqli_query($conn,$query_update);
+					
+				}
 				
 $query_insert1 =<<<EOQ
 INSERT INTO Product_Component(
@@ -737,9 +722,9 @@ for ($row = 0; $row < 46; $row++) {
 
 					$input2= "Record : $Record, $Label_Description";
 					$linked_label->push($input2);
+
+
 }
-
-
 
 				}
 			}
