@@ -241,24 +241,24 @@ ini_set('display_errors', 1);
 
 $cars = array
   (
-  array("1",'$Per_Serving_Energy_Kcal','kcal', '', TRUE),
-  array("1",'Per_Serving_Energy_PPD_Kcal','kcal', '', FALSE), 
+  array("1",$Per_Serving_Energy_Kcal,'kcal', '', TRUE),
+  array("1",$Per_Serving_Energy_PPD_Kcal,'kcal', NULL, FALSE), 
   
 
   array("2",'$Fat_Per_Serving','g', '$Fat_Daily_Value', TRUE),
-  array("2",'','', '$Fat_Daily_Value_PPD', FALSE), 
+  array("2",NULL,NULL, '$Fat_Daily_Value_PPD', FALSE), 
   
   array("3",'$Saturated_Fat_Per_Serving','g', '', TRUE),
-  array("3",'','', '', FALSE), 
+  array("3",NULL,NULL, NULL, FALSE), 
 
   array("4",'$Trans_Fat_Per_Serving','g', '', TRUE),
-  array("4",'','', '', ''), 
+  array("4",'','', '', FALSE), 
   
   array("5",'$Omega_6_Per_Serving','g', '', TRUE),
-  array("5",'','', '', FALSE), 
+  array("5",NULL,NULL,NULL, FALSE), 
   
   array("6",'$Omega_3_Per_Serving','g', '', TRUE),
-  array("6",'','', '', FALSE), 
+  array("6",NULL,NULL, NULL, FALSE), 
 
   array("7",'$Carbohydrates_Per_Serving','g', '$Carbohydrates_Daily_Value', TRUE),
   array("7",'','', '$Carbohydrates_Daily_Value_PPD', FALSE), 
