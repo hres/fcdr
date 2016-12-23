@@ -408,8 +408,8 @@ EOQ;
 				$stmt = $conn->prepare($label_query);
 				$stmt->bind_param("s", $Label_UPC);
 				$label_result = $stmt->execute();
-				$rowcount = mysqli_num_rows($label_result);
-				if ($rowcount < 1) {
+								$stmt->store_result();
+								if (($stmt->num_rows) < 1) {
 					$sales_query =<<<EOQ
 SELECT DISTINCT ProductIDS
   FROM Sales
