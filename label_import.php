@@ -505,7 +505,7 @@ EOQ;
 						$stmt = $conn->prepare($query_insert);
 						$stmt->bind_param("ssssssssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $params[29]);
 						$result_insert = $stmt->execute();
-						$id = mysqli_insert_id($conn);
+						$id2 = mysqli_insert_id($conn);
 			
 	
 $query_insert =<<<EOQ
@@ -526,7 +526,7 @@ EOQ;
 for ($row = 0; $row < 46; $row++) {
 
 								$stmt = $conn->prepare($query_insert);
-								$stmt->bind_param("iidsds",$id, $cars[$row][0],$cars[$row][1],$cars[$row][2],$cars[$row][3],$cars[$row][4]);
+								$stmt->bind_param("iidsds",$id2, $cars[$row][0],$cars[$row][1],$cars[$row][2],$cars[$row][3],$cars[$row][4]);
 								$results = $stmt->execute();
 
 						$input4= "Record : $Record, $Label_Description";
