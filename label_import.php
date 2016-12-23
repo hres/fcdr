@@ -415,11 +415,11 @@ SELECT DISTINCT ProductIDS
   FROM Sales
  WHERE Sales_UPC = ?
 EOQ;
-					$stmt = $conn->prepare($sales_query);
-					$stmt->bind_param("s", $Neilsen_Item_Rank_UPC);
-					$sales_result = $stmt->execute();
-					$rowcount2 = mysqli_num_rows($sales_result);
-					if ($rowcount2 < 1) {
+					$stmt2 = $conn->prepare($sales_query);
+					$stmt2->bind_param("s", $Neilsen_Item_Rank_UPC);
+					$sales_result = $stmt2->execute();
+					$stmt2->store_result();
+								if (($stmt2->num_rows) < 1)
 						/* Create new Product and attach the label to it */
 						if ($Product_Description == null) {
 							$Product_Description = $Label_Description;
