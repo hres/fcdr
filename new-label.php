@@ -2,17 +2,7 @@
 
 <?php
 
-header("Content-type:text/html; charset: iso-8859-1");
 
-
-//$servername = "127.0.0.1";
-//$username = "rnelson";
-//$password = "romario";
-//$dbname = "FCDR";
-//$conn = new mysqli($servername, $username, $password, $dbname);
-//if ($conn->connect_error) {
-    //die("Connection failed: " . $conn->connect_error);
-//}
 
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
@@ -70,7 +60,7 @@ $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 			
 			
 			
-			$query2 = "Select * from $dbname.Package where UPC12 = $upc12 AND ProductIDP <> '$productID'"; 
+			$query2 = "Select * from $dbname.Package where Label_UPC = $Label_UPC AND ProductIDP <> '$productID'"; 
 			$result2 = mysqli_query($conn,$query2);
 			
 			$rowcount=mysqli_num_rows($result2);
