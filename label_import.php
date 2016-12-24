@@ -527,7 +527,7 @@ EOQ;
 
 
 
-for ($row1 = 0; $row1 < 46; $row1++) {
+for ($row1 = 0; $row1 < 94; $row1++) {
 
 								$stmt = $conn->prepare($query_insert);
 								$stmt->bind_param("iidsds",$id2, $cars[$row1][0],$cars[$row1][1],$cars[$row1][2],$cars[$row1][3],$cars[$row1][4]);
@@ -632,7 +632,7 @@ EOQ;
 
 
 
-for ($row2 = 0; $row2 < 46; $row2++) {
+for ($row2 = 0; $row2 < 94; $row2++) {
 
 								$stmt = $conn->prepare($query_insertx);
 								$stmt->bind_param("iidsds",$nid, $cars[$row2][0],$cars[$row2][1],$cars[$row2][2],$cars[$row][3],$cars[$row2][4]);
@@ -718,7 +718,7 @@ EOQ;
 
 
 
-for ($row3 = 0; $row3 < 46; $row3++) {
+for ($row3 = 0; $row3 < 94; $row3++) {
 
 								$stmt = $conn->prepare($query_insert1);
 								$stmt->bind_param("iidsds",$xid, $cars[$row3][0],$cars[$row3][1],$cars[$row3][2],$cars[$row3][3],$cars[$row3][4]);
