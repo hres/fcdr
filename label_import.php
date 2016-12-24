@@ -380,9 +380,13 @@ $cars = array
   array("45",'$Fat_Monounsaturated_Per_Serving','g', '', TRUE),
   array("45",'','', '', FALSE), 
 
+  array("46",'','', '$Trans_And_Saturated_Fat_Daily_Vaue', TRUE),
+  array("46",'','', '$Trans_And_Saturated_Fat_Daily_Vaue_PPD', FALSE), 	
+	
   array("47",'$Per_Serving_Energy_Kj','kj', '', TRUE),
   array("47",'$Per_Serving_Energy_PPD_Kj','kj', '', FALSE), 
   
+	
   );			
 			
 
