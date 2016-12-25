@@ -322,7 +322,7 @@ $cars = array
   array("26",'$Riboflavin_Per_Serving','mg', '$Riboflavin_Daily_Value', TRUE),
   array("26",'','', '$Riboflavin_Daily_Value_PPD', FALSE),
 
-  array("27",'$Niacin_Per_Serving','mg', '$Niacin_Daily_Value_PPD', TRUE),
+  array("27",'$Niacin_Per_Serving','mg', '$Niacin_Daily_Value', TRUE),
   array("27",'','', '$Niacin_Daily_Value_PPD', FALSE),
   
   array("28",'$VitaminB6_Per_Serving','mg', '$VitaminB6_Daily_Value', TRUE),
