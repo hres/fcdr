@@ -1248,7 +1248,7 @@ $('input[name="intervaltype"]').click(function () {
    <input type="text" class="form-control" placeholder="Amount of Saturated + Trans Fat" name="Saturated_Trans_kj_Amount_S" id="Fat_Amount_S">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Energy_kj_Unit_S">
+ <select class="form-control" id="sel1" name="Saturated_Trans_kj_Unit_S">
   <option value="" selected="selected"></option>
 			<?php include 'Units.php';?>
       
