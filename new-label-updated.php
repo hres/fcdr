@@ -107,7 +107,7 @@ EOQ;
 							$result_insert = $stmt->execute();
 							$last_id = mysqli_insert_id($conn);
 
-
+			if(!$result_insert) echo "ERROR";
 
 
 
@@ -271,7 +271,7 @@ for ($row = 0; $row < 90; $row++) {
 
 						}
 
-echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",200);</script>";
+//echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",200);</script>";
 
 
 		}
