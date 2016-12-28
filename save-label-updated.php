@@ -95,7 +95,7 @@ array(7,$_POST['Carbohydrates_Amount'],		$_POST['Carbohydrates_Unit'],		$_POST['
 array(8,$_POST['Fibre_Amount'],				$_POST['Fibre_Unit'],				$_POST['Fibre_DValue'],				TRUE),
 array(9,$_POST['Soluble_Fibre_Amount'],		$_POST['Soluble_Fibre_Unit'],		$_POST['Soluble_Fibre_DValue'],		TRUE),
 
-array(10,$_POST['Insoluble_Fibre_Amount'],	$_POST['Insoluble_Fibre_Unit'], 	$_POST['Insoluble_Fibre_DValue'], 	TRUE),
+array(10,$_POST['Insoluble_Fibre_Amount'],	$_POST['Insoluble_Fibre_Unit'], 	$_POST['Insolube_Fibre_DValue'], 	TRUE),
 array(11,$_POST['Sugar_Amount'],			$_POST['Sugar_Unit'], 				$_POST['Sugar_DValue'], 			TRUE),
 array(12,$_POST['Sugar_Alcohols_Amount'],	$_POST['Sugar_Alcohols_Unit'], 		$_POST['Sugar_Alcohols_DValue'], 	TRUE),
 array(13,$_POST['Starch_Amount'],			$_POST['Starch_Unit'],				 $_POST['Starch_DValue'], 			TRUE),
@@ -151,7 +151,7 @@ UPDATE Package AS P
 EOQ;
 							for ($row = 0; $row < 45; $row++) {
 								$stmt = $conn->prepare($query_insert_asprepred);
-								$stmt->bind_param("dsdiii",$as_prepared[$row][1],$as_prepared[$row][2],$as_prepared[$row][3],$packageID,$as_prepared[$row][0],$as_prepared[$row][4]);
+								$stmt->bind_param("dsdiis",$as_prepared[$row][1],$as_prepared[$row][2],$as_prepared[$row][3],$packageID,$as_prepared[$row][0],$as_prepared[$row][4]);
 								$results = $stmt->execute();
 
 							}
