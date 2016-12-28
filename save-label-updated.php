@@ -213,7 +213,7 @@ EOQ;
 					array(43,	$_POST['Chloride_Amount_S'],$_POST['Chloride_Unit_S'],$_POST['Chloride_DValue_S'], FALSE),
 					array(46,	$_POST['Saturated_Trans_Amount_S'],$_POST['Saturated_Trans_Unit_S'],$_POST['Saturated_Trans_DValue_S'], FALSE),
 
-					array(47,	$_POST['Energy_Amount_kj_S'],$_POST['Energy_kj_Unit_S'],$_POST['Energy_DValue_kj_S'], FALSE),
+					array(47,	$_POST['Energy_Amount_kj_S'],$_POST['Energy_Unit_kj_S'],$_POST['Energy_DValue_kj_S'], FALSE),
 
 							);
 
@@ -235,7 +235,7 @@ EOQ;
 
 							}
 
-		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3 style=\"color:Green;\">Label Successfully updated. Redirecting to the previous page...</h3>\";</script>";
+		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Label Successfully updated. Redirecting to the previous page...</strong></h3>\";</script>";
 		//echo "<script>setTimeout(\"location.href = 'edit_package.php?PackageID=$packageID';\",2500);</script>";
 
 		}
