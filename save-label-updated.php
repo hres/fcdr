@@ -146,8 +146,8 @@ UPDATE Package AS P
 			INNER JOIN Components AS C On  PC.ComponentID = C.ComponentID
 			SET PC.Amount= ?,
 				PC.Amount_Unit_Of_Measure = ?,
-				PC.Daily_Value = ?,
-			WHERE PC.PackageID = ? AND PC.ComponentID = ?, AND PPD = ?
+				PC.Daily_Value = ?
+			WHERE PC.PackageID = ? AND PC.ComponentID = ? AND PPD = ?
 EOQ;
 							for ($row = 0; $row < 45; $row++) {
 								$stmt = $conn->prepare($query_insert_asprepred);
@@ -225,8 +225,8 @@ UPDATE Package AS P
 			INNER JOIN Components AS C On  PC.ComponentID = C.ComponentID
 			SET PC.Amount= ?,
 				PC.Amount_Unit_Of_Measure = ?,
-				PC.Daily_Value = ?,
-			WHERE PC.PackageID = ? AND PC.ComponentID = ?, AND PPD = ?
+				PC.Daily_Value = ?
+			WHERE PC.PackageID = ? AND PC.ComponentID = ? AND PPD = ?
 EOQ;
 							for ($row1 = 0; $row1 < 45; $row1++) {
 								$stmt = $conn->prepare($query_insert_as_sold);

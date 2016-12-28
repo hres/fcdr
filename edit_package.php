@@ -336,7 +336,7 @@ $('input[name="intervaltype"]').click(function () {
      </div>
 			<div class="form-group col-sm-4">
 				<label for="Sources">Source</label>
-				<input type="text" class="form-control" name="Source"  id="Sources" placeholder="Enter the UPC Code of the Package Label" value="<?PHP echo $row['Sources']; ?>" /> 
+				<input type="text" class="form-control" name="Source"  id="Sources" placeholder="Enter the Source of the Package Label" value="<?PHP echo $row['Source']; ?>" /> 
 			</div>
 		
 			
