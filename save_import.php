@@ -9,7 +9,7 @@ if (isset($_POST['search'])) {
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
+ini_set('memory_limit', '256M');
 	if (is_uploaded_file($_FILES['file_save']['tmp_name'])) {
 		echo "<h3>" . "File ". $_FILES['file_save']['name'] ." uploaded successfully." . "</h3>";
 
