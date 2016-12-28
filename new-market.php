@@ -5,7 +5,7 @@
 
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
-
+//check if UPC is already associated to a different product
 if (isset($_POST['search'])) {
 
 		$param = array(

@@ -323,7 +323,7 @@ $cars = array
   array("26",'$Riboflavin_Per_Serving','mg', '$Riboflavin_Daily_Value', TRUE),
   array("26",'','', '$Riboflavin_Daily_Value_PPD', FALSE),
 
-  array("27",'$Niacin_Per_Serving','mg', '$Niacin_Daily_Value_PPD', TRUE),
+  array("27",'$Niacin_Per_Serving','mg', '$Niacin_Daily_Value', TRUE),
   array("27",'','', '$Niacin_Daily_Value_PPD', FALSE),
   
   array("28",'$VitaminB6_Per_Serving','mg', '$VitaminB6_Daily_Value', TRUE),
@@ -381,9 +381,18 @@ $cars = array
   array("45",'$Fat_Monounsaturated_Per_Serving','g', '', TRUE),
   array("45",'','', '', FALSE), 
 
+<<<<<<< HEAD
   array("47",$Per_Serving_Energy_Kj,'kj', NULL, TRUE),
   array("47",$Per_Serving_Energy_PPD_Kj,'kj', NULL, FALSE), 
+=======
+  array("46",'','', '$Trans_And_Saturated_Fat_Daily_Vaue', TRUE),
+  array("46",'','', '$Trans_And_Saturated_Fat_Daily_Vaue_PPD', FALSE), 	
+	
+  array("47",'$Per_Serving_Energy_Kj','kj', '', TRUE),
+  array("47",'$Per_Serving_Energy_PPD_Kj','kj', '', FALSE), 
+>>>>>>> 1b8604468e3a247cae30e4fba6a993eefe3c31f0
   
+	
   );			
 			
 
@@ -524,7 +533,7 @@ EOQ;
 
 
 
-for ($row1 = 0; $row1 < 46; $row1++) {
+for ($row1 = 0; $row1 < 94; $row1++) {
 
 								$stmt = $conn->prepare($query_insert);
 								$stmt->bind_param("iidsds",$id2, $cars[$row1][0],$cars[$row1][1],$cars[$row1][2],$cars[$row1][3],$cars[$row1][4]);
@@ -629,7 +638,7 @@ EOQ;
 
 
 
-for ($row2 = 0; $row2 < 46; $row2++) {
+for ($row2 = 0; $row2 < 94; $row2++) {
 
 								$stmt = $conn->prepare($query_insertx);
 								$stmt->bind_param("iidsds",$nid, $cars[$row2][0],$cars[$row2][1],$cars[$row2][2],$cars[$row][3],$cars[$row2][4]);
@@ -715,7 +724,7 @@ EOQ;
 
 
 
-for ($row3 = 0; $row3 < 46; $row3++) {
+for ($row3 = 0; $row3 < 94; $row3++) {
 
 								$stmt = $conn->prepare($query_insert1);
 								$stmt->bind_param("iidsds",$xid, $cars[$row3][0],$cars[$row3][1],$cars[$row3][2],$cars[$row3][3],$cars[$row3][4]);

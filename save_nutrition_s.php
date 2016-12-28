@@ -17,7 +17,7 @@ if(isset($_POST['search'])) {
 				$Energy_kj_DValue_S = mysqli_real_escape_string($conn,$_POST['Energy_kj_DValue_S']);
 				//+++++++++++++++++++++++++++++++++++++++++++=
 				$Saturated_Trans_kj_Amount_S = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_kj_Amount_S']);
-				$Energy_kj_Unit_S = mysqli_real_escape_string($conn,$_POST['Energy_kj_Unit_S']);
+				$Energy_kj_Unit_S = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_kj_Unit_S']);
 				$Saturated_Trans_DValue_S = mysqli_real_escape_string($conn,$_POST['Saturated_Trans_DValue_S']);
 				//+++++++++++++++++++++
 				
