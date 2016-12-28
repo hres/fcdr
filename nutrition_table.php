@@ -14,7 +14,7 @@ if (!$result) {
     echo "ERRORS";
 }
 	while($row = $result->fetch_assoc()){
-		if(($row['flag']== 'True' AND $row['PPD']=='1') OR ($row['PPD']=='1' AND $row['flag']== 'False' AND $row['Amount'] !='' )) {
+		if(($row['flag']== 'True' AND $row['PPD']==TRUE) OR ($row['PPD']==TRUE AND $row['flag']== 'False' AND $row['Amount'] !='' )) {
 		
 		
 		echo "<tr><td>". $row['Component_Name'] . "</td><td>". $row['Amount'] . "</td><td>". $row['Amount_Unit_Of_Measure'] . "</td><td>". $row['Daily_Value'] . "</td></tr>";                       
