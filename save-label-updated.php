@@ -235,10 +235,10 @@ EOQ;
 
 
 		}
+echo "<script>setTimeout(\"location.href = 'edit_package.php?PackageID=$packageID';\",200);</script>";
 
 		}
 			//echo "Success... ";
-echo "<script>setTimeout(\"location.href = 'edit_package.php?PackageID=$packageID';\",200);</script>";
 $conn->close();
 ?>
 
