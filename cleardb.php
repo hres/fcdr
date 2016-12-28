@@ -10,7 +10,7 @@
 	$query2 =  "Delete from $dbname.Sales where SalesID > 0"; 	
 	$result = mysqli_query($conn,$query2);	
 	Product_Grouping
-	querychange = "ALTER TABLE Sales MODIFY Product_Grouping DECIMAL";
+	querychange = "ALTER TABLE Sales MODIFY Product_Grouping text ";
 	$result_querychange = mysqli_query($conn,$querychange);	
 	if(!result_querychange){echo "ERROR";}
 	
