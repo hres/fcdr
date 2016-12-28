@@ -97,7 +97,7 @@ array(9,$_POST['Soluble_Fibre_Amount'],		$_POST['Soluble_Fibre_Unit'],		$_POST['
 
 array(10,$_POST['Insoluble_Fibre_Amount'],	$_POST['Insoluble_Fibre_Unit'], 	$_POST['Insoluble_Fibre_DValue'], 	TRUE),
 array(11,$_POST['Sugar_Amount'],			$_POST['Sugar_Unit'], 				$_POST['Sugar_DValue'], 			TRUE),
-array(12,$_POST['Sugar_Alcohols_Amount'],	$_POST['Sugar_Alcogols_Unit'], 		$_POST['Sugar_Alcohol_DValue'], 	TRUE),
+array(12,$_POST['Sugar_Alcohols_Amount'],	$_POST['Sugar_Alcohols_Unit'], 		$_POST['Sugar_Alcohols_DValue'], 	TRUE),
 array(13,$_POST['Starch_Amount'],			$_POST['Starch_Unit'],				 $_POST['Starch_DValue'], 			TRUE),
 array(14,$_POST['Protein_Amount'],			$_POST['Protein_Unit'],				 $_POST['Protein_DValue'], 			TRUE),
 array(15,$_POST['Cholesterol_Amount'],		$_POST['Cholesterol_Unit'],			$_POST['Cholesterol_DValue'], 		TRUE),

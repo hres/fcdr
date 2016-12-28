@@ -336,7 +336,7 @@ $('input[name="intervaltype"]').click(function () {
      </div>
 			<div class="form-group col-sm-4">
 				<label for="Sources">Source</label>
-				<input type="text" class="form-control" name="Sources"  id="Sources" placeholder="Enter the UPC Code of the Package Label" value="<?PHP echo $row['Sources']; ?>" /> 
+				<input type="text" class="form-control" name="Source"  id="Sources" placeholder="Enter the UPC Code of the Package Label" value="<?PHP echo $row['Sources']; ?>" /> 
 			</div>
 		
 			
@@ -432,11 +432,9 @@ $('input[name="intervaltype"]').click(function () {
    <input type="text" class="form-control" placeholder="Amount" name="Energy_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Energy_Unit" disabled>
+ <select class="form-control" id="sel1" name="Energy_Unit">
   <option value="kcal" selected="selected">kcal</option>
 	
-
-       <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
@@ -850,10 +848,10 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Insolube Fibre</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Insolube_Fibre_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount" name="Insoluble_Fibre_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1"  name="Insolube_Fibre_Unit">
+ <select class="form-control" id="sel1"  name="Insoluble_Fibre_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 <?php include 'Units.php';?>	
 	<option value=""></option>
@@ -1607,7 +1605,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminB12_Unit_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminB12_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1794,7 +1792,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
 		
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Iodide_Dvalue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value" name="Iodide_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2052,7 +2050,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?> 
   
-   <input type="text" class="form-control" placeholder="% Daily value" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value" name="Molybdenium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
