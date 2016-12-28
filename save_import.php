@@ -40,7 +40,7 @@ ini_set('memory_limit', '256M');
 		$count = 0;
 		for ($row = 2; $row <= $lastRow; $row++) {
 			++$count;
-			if($count >15000) break;
+			if($count >5000) break;
 			//echo "in<br>";
 			$Record                    = $worksheet->getCell('A'.$row)->getValue();
 			$Sales_UPC                 = $worksheet->getCell('B'.$row)->getValue();
