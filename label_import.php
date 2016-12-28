@@ -42,11 +42,12 @@ ini_set('display_errors', 1);
 
  // create new directory with 744 permissions if it does not exist yet
  // owner will be the user/group the PHP script is run under
-
+		
 
 
 		for ($row = 2; $row <= $lastRow; $row++) {
-
+			++$count;
+			if ($count>100) break;
 			$Record                                         = mysqli_real_escape_string($conn,$worksheet->getCell('A'.$row)->getValue());
 
 			$Label_UPC                                      = mysqli_real_escape_string($conn,$worksheet->getCell('B'.$row)->getValue());
@@ -245,16 +246,16 @@ $cars = array
   array("1",$Per_Serving_Energy_PPD_Kcal,'kcal', NULL, FALSE), 
   
 
-  array("2",'$Fat_Per_Serving','g', '$Fat_Daily_Value', TRUE),
-  array("2",NULL,NULL, '$Fat_Daily_Value_PPD', FALSE), 
+  array("2",$Fat_Per_Serving,'g', $Fat_Daily_Value, TRUE),
+  array("2",NULL,NULL, $Fat_Daily_Value_PPD, FALSE), 
   
-  array("3",'$Saturated_Fat_Per_Serving','g', '', TRUE),
+  array("3",$Saturated_Fat_Per_Serving,'g', NULL, TRUE),
   array("3",NULL,NULL, NULL, FALSE), 
 
-  array("4",'$Trans_Fat_Per_Serving','g', '', TRUE),
-  array("4",'','', '', FALSE), 
+  array("4",$Trans_Fat_Per_Serving,'g', NULL, TRUE),
+  array("4",NULL,NULL, NULL, FALSE), 
   
-  array("5",'$Omega_6_Per_Serving','g', '', TRUE),
+  array("5",$Omega_6_Per_Serving,'g', NULL, TRUE),
   array("5",NULL,NULL,NULL, FALSE), 
   
   array("6",'$Omega_3_Per_Serving','g', '', TRUE),
@@ -380,8 +381,8 @@ $cars = array
   array("45",'$Fat_Monounsaturated_Per_Serving','g', '', TRUE),
   array("45",'','', '', FALSE), 
 
-  array("47",'$Per_Serving_Energy_Kj','kj', '', TRUE),
-  array("47",'$Per_Serving_Energy_PPD_Kj','kj', '', FALSE), 
+  array("47",$Per_Serving_Energy_Kj,'kj', NULL, TRUE),
+  array("47",$Per_Serving_Energy_PPD_Kj,'kj', NULL, FALSE), 
   
   );			
 			
