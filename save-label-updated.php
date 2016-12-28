@@ -235,7 +235,7 @@ EOQ;
 
 							}
 
-		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3 style=\"color:Green;\"><strong>Label Successfully updated. Redirecting to the previous page...</strong></h3>\";</script>";
+		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Label Successfully updated. Redirecting to the previous page...</strong></h3>\";</script>";
 		//echo "<script>setTimeout(\"location.href = 'edit_package.php?PackageID=$packageID';\",2500);</script>";
 
 		}

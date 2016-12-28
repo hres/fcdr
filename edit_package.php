@@ -170,7 +170,7 @@ $('input[name="intervaltype"]').click(function () {
 <form role="form" method="post" action="#" id="vids-search-form" onsubmit="return validateForm()" name="myForm" >
 <section style="margin-top: 15px;" class="hidethis">
 <h3>Package Label</h3>
-	  <div id="confirm-message"></div>
+	  <div id="confirm-message" style="color:#008000;"></div>
 <div class="well" style="margin-right:2%;">
 	
 	
