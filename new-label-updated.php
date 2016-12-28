@@ -108,7 +108,7 @@ EOQ;
 							$result_insert = $stmt->execute();
 							$last_id = mysqli_insert_id($conn);
 
-			if(!$result_insert) echo "ERROR";
+			if($result_insert) {
 
 
 
@@ -268,16 +268,20 @@ for ($row = 0; $row < 90; $row++) {
 
 }
 
+		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Label Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
+		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",3000);</script>";
 
+						}else{
+							
+					echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to create a Label...</strong></h3>\";</script>";
 
 						}
+						}
 
-//echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",200);</script>";
 
 
 		}
-			//echo "Success... ";
-//echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",200);</script>";
+	
 $conn->close();
 ?>
 

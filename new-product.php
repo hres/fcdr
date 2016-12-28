@@ -27,9 +27,20 @@ EOQ;
 						$result_insert = $stmt->execute();
 						$id =  mysqli_insert_id($conn);
 						
-			if (!$result_insert ) {echo "ERRORS 1";}
+			if (!$result_insert ) {
+				
+						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\";</script>";
+				
+				}
 					
-				else {echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$id';\",200);</script>";}
+				else {
+					
+						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
+						echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$id';\",3000);</script>";
+
+
+					
+					}
 					
 							$query2 =<<<EOQ
 INSERT Into Product_Classification(
@@ -68,13 +79,21 @@ EOQ;
 						$result_insert_x = $stmt_product->execute();
 						$id =  mysqli_insert_id($conn);
 				
-			if (!$result_insert_x) { echo "ERRORS:  ";}
-   
-	
-		else {
-			echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$id';\",200);</script>";
-	
-		}
+						
+			if (!$result_insert_x ) {
+				
+						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\";</script>";
+				
+				}
+					
+				else {
+					
+						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
+						echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$id';\",3000);</script>";
+
+
+					
+					}
 		
 		}
 

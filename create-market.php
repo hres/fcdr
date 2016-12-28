@@ -125,6 +125,9 @@
 		<div class="fw-body" style="margin-left:-5px; margin-right:-5px;">
 		
 	<strong><h3>Create Market Share</h3></strong>	
+	<div id="confirm-message" style="color:#008000;"></div>
+	<div id="confirm-message2" style="color:#FF0000;"></div>
+
 	<div class="well wb-frmvld" style="margin-right:2%;">
 
 	<form role="form" method="post" action="#" id="vids-search-form1">

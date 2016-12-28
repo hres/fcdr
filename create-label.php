@@ -155,7 +155,9 @@ $('input[name="intervaltype"]').click(function () {
 
 		<div class="fw-body" style="margin-left:-5px; margin-right:-5px;">
 	<strong><h3>Create Label</h3></strong>	
-		
+	<div id="confirm-message" style="color:#008000;"></div>
+	<div id="confirm-message2" style="color:#FF0000;"></div>	
+	
 <form role="form" method="post" action="#" id="vids-search-form2 validation-example" onsubmit="return validateForm()" name="myForm" >
 	
 	<div class="well" style="margin-right:2%;">

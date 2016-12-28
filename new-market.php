@@ -40,8 +40,9 @@ if (isset($_POST['search'])) {
 			
 			$rowcount=mysqli_num_rows($result2);
 			if($rowcount>0){
-				echo "UPC10 Code already belongs to a different product ";
-				
+				echo "Sales UPC Code already belongs to a different product ";
+		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to create Market Share: Sales UPC Code already belongs to a different product ...</strong></h3>\";</script>";
+			
 				
 			}else{
 		$query =<<<EOQ
@@ -83,9 +84,13 @@ EOQ;
 
 
 		if (!$result ) {
-			echo "ERRORS";
+	echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to create Market Share...</strong></h3>\";</script>";
+	
 		} else {
-			echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",200);</script>";
+		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Market Share Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
+		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",3000);</script>";
+
+
 		}
 	}
 }

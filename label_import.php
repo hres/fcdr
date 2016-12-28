@@ -740,12 +740,7 @@ for ($row3 = 0; $row3 < 92; $row3++) {
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
-		echo "<h2>Labels linked to new products</h2>";
-		while (!$new_product->isEmpty()) {
-			$senditem = $new_product->shift();
-			if(strlen ($senditem) < 1) continue;
-			echo "$senditem <br>";
-		}
+
 		echo "<h2> Labels Linked to existing Products via other Labels UPCs Codes</h2>";
 		while (!$linked_label->isEmpty()) {
 			$senditem = $linked_label->shift();
@@ -758,6 +753,16 @@ for ($row3 = 0; $row3 < 92; $row3++) {
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
+		header("Content-Type: application/vnd.ms-excel");
+
+				echo "<h2>Labels linked to new products</h2>";
+		while (!$new_product->isEmpty()) {
+			$senditem = $new_product->shift();
+			if(strlen ($senditem) < 1) continue;
+			echo "$senditem <br>";
+		}
+		header("Content-disposition: attachment; filename=spreadsheet.xls");
+
 	} else {
 		echo "Unable to read the file";
 	}
