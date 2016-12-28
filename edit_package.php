@@ -230,7 +230,7 @@ $('input[name="intervaltype"]').click(function () {
 			<?php include 'Units.php';?>
       
       </select></div>
-			
+			<?php include("fill_package.php"); ?>	
 		
 		</div>
 	
