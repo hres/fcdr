@@ -269,30 +269,30 @@ $cars = array
   array("8",$Fibre_Per_Serving,'g', $Fibre_Daily_Value, TRUE),
   array("8",NULL,NULL, $Fibre_Daily_Value_PPD, FALSE),
 
-  array("9",$Soluble_Fibre_Per_Serving,'g', '', TRUE),
-  array("9",'','', '', FALSE), 
+  array("9",$Soluble_Fibre_Per_Serving,'g',NULL, TRUE),
+  array("9",NULL,NULL, NULL, FALSE), 
   
-  array("10",'$Insoluble_Fibre_Per_Serving','g', '', TRUE),
-  array("10",'','', '', FALSE), 
+  array("10",$Insoluble_Fibre_Per_Serving,'g', '', TRUE),
+  array("10",NULL,NULL, NULL, FALSE), 
 
   array("11",'$Sugar_Per_Serving','g', '$Sugar_Daily_Value', TRUE),
   array("11",'','', '$Sugar_Daily_Value_PPD', FALSE), 
 
   
-  array("12",'$Sugar_Alcohols_Per_Serving','g', '', TRUE),
-  array("12",'','', '', FALSE), 
+  array("12",$Sugar_Alcohols_Per_Serving,'g', NULL, TRUE),
+  array("12",NULL,NULL, NULL, FALSE), 
   
-  array("13",'$Starch_Per_Serving','g', '', TRUE),
-  array("13",'','', '', FALSE), 
+  array("13",$Starch_Per_Serving,'g', NULL, TRUE),
+  array("13",NULL,NULL,NULL, FALSE), 
   
-  array("14",'$Protein_Per_Serving','g', '', TRUE),
-  array("14",'','', '', FALSE), 
+  array("14",$Protein_Per_Serving,'g',NULL, TRUE),
+  array("14",NULL,NULL,NULL, FALSE), 
 
-  array("15",'$Cholesterol_Per_Serving','g', '$Cholesterol_Daily_Value', TRUE),
-  array("15",'','', '', FALSE), 
+  array("15",$Cholesterol_Per_Serving,'g', $Cholesterol_Daily_Value, TRUE),
+  array("15",NULL,NULL,NULL, FALSE), 
 
-  array("16",'$Sodium_Per_Serving','g', '$Sodium_Daily_Value', TRUE),
-  array("16",'','', '$Sodium_Daily_Value_PPD', FALSE),
+  array("16",$Sodium_Per_Serving,'g', $Sodium_Daily_Value, TRUE),
+  array("16",NULL,NULL, $Sodium_Daily_Value_PPD, FALSE),
   
   array("17",'$Potassium_Per_Serving','mg', '$Potassium_Daily_Value', TRUE),
   array("17",'','', '$Potassium_Daily_Value_PPD', FALSE), 
