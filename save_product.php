@@ -56,7 +56,11 @@ EOQ;
 	
 	   echo "Invalid classification number";
 }else
-{ 		echo "<script>setTimeout(\"location.href = 'edit_product.php?ProductID=$productID';\",100);</script>";
+{ 		
+
+		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully updated. Redirecting to the view page...</strong></h3>\";</script>";
+		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",3000);</script>";
+
 
 }
 							
@@ -74,12 +78,19 @@ EOQ;
 						$stmt_product_classification->bind_param("id", $params_product_classification[0], $params_product_classification[1]);
 						$result_product_classification = $stmt_product_classification->execute();
 		
-						echo "<script>setTimeout(\"location.href = 'edit_product.php?ProductID=$productID';\",100);</script>";
+						if($result_product_classification){
+							
+						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully updated. Redirecting to the view page...</strong></h3>\";</script>";
+						echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",3000);</script>";
 
+
+						}
 					
 					}
 				}else{
-					echo "<script>setTimeout(\"location.href = 'edit_product.php?ProductID=$productID';\",100);</script>";
+		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully updated. Redirecting to the view page...</strong></h3>\";</script>";
+		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",3000);</script>";
+
 
 					
 				}

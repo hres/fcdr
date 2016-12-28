@@ -117,6 +117,8 @@
 
 <section style="margin-top: 15px;" class="hidethis">
 <h3>Edit Product</h3>
+<div id="confirm-message" style="color:#008000;"></div>
+
 <div class="well" style="margin-right:2%;">
 	<form role="form" method="post" action="#" id="vids-search-form">
 	
