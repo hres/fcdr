@@ -170,6 +170,7 @@ $('input[name="intervaltype"]').click(function () {
 <form role="form" method="post" action="#" id="vids-search-form" onsubmit="return validateForm()" name="myForm" >
 <section style="margin-top: 15px;" class="hidethis">
 <h3>Package Label</h3>
+	  <div id="confirm-message"></div>
 <div class="well" style="margin-right:2%;">
 	
 	
@@ -3801,7 +3802,7 @@ $('input[name="intervaltype"]').click(function () {
 		<div style="float:right; display:inline-block; margin-right:2%;">
 				<button  type="submit" class="btn btn-default" name="search" >Save</button>
 			</div>
-	  <div id="confirm-message"></div>
+
 
 </section>
 	</form>
