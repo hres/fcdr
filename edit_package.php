@@ -215,17 +215,22 @@ $('input[name="intervaltype"]').click(function () {
 		
 		<div class="row">
 			<div class="form-group col-sm-4">
-				<label for="Country" class="required">Country <strong class="required"><br>(required)</strong></label>
-				<input type="text" class="form-control" name="Country"  id="Country" placeholder="Enter the Country of the Package Label" value="<?PHP echo $row['Country']; ?>" required/> 
+				<label for="Country">Country</label>
+				<input type="text" class="form-control" name="Country"  id="Country" placeholder="Enter the Country of the Package Label" value="<?PHP echo $row['Country']; ?>" /> 
 			</div>
 			<div class="form-group col-sm-4">
-				<label for="Package_Size" class="required">Package Size <strong class="required"><br>(required)</strong></label>
-				<input type="text" class="form-control" name="Package_Size" id="Package_Size" placeholder="Enter the Package Size of the Package Label" value="<?PHP echo $row['Package_Size']; ?>" required/>
+				<label for="Package_Size">Package Size </label>
+				<input type="text" class="form-control" name="Package_Size" id="Package_Size" placeholder="Enter the Package Size of the Package Label" value="<?PHP echo $row['Package_Size']; ?>" />
 			</div>
-			<div class="form-group col-sm-4">
-				<label for="Package_Size_UofM" class="required">Package Size Unit of Measure <strong class="required"><br>(required)</strong></label>
-				<input type="text" class="form-control" name="Package_Size_UofM" id="Package_Size_UofM" placeholder="Enter the Package Size Unit of Measure of the Package Label" value="<?PHP echo $row['Package_Size_UofM']; ?>"/>
-			</div>
+
+								<div class="form-group col-sm-4">
+	<label for="Package_Size_UofM" > Package Size Unit of Measure </label>
+    <select class="form-control" id="Package_Size_UofM" name="Package_Size_UofM" > 
+		   <option value="" selected="selected">Select the Per Serving Unit</option>
+			<?php include 'Units.php';?>
+      
+      </select></div>
+			
 		
 		</div>
 	
@@ -255,16 +260,16 @@ $('input[name="intervaltype"]').click(function () {
 <div class="row">
 	
 					<div class="form-group col-xs-6 ">
-  <label for="Ingredients">Ingredients</label>
-  <textarea class="form-control"  style="width:540px" rows="2"  id="Ingredients" name="Ingredients"><?PHP echo $row['Ingredients']; ?></textarea>
+  <label for="Ingredients" class="required">Ingredients <strong class="required">(required)</strong></label>
+  <textarea class="form-control"  style="width:540px" rows="2"  id="Ingredients" name="Ingredients" required><?PHP echo $row['Ingredients']; ?></textarea>
 </div>
 		
 
 		
 				
 					<div class="form-group col-xs-6">
-  <label for="Nutrition_Fact_Table">Nutrition Fact Table</label>
-  <textarea class="form-control" style="width:540px"   rows="2" name="Nutrition_Fact_Table" id="Nutrition_Fact_Table" ><?PHP echo $row['Nutrition_Fact_Table']; ?></textarea>
+  <label for="Nutrition_Fact_Table" class="required">Nutrition Fact Table <strong class="required">(required)</strong></label>
+  <textarea class="form-control" style="width:540px"   rows="2" name="Nutrition_Fact_Table" id="Nutrition_Fact_Table" required><?PHP echo $row['Nutrition_Fact_Table']; ?></textarea>
 </div>
 		
 </div>
@@ -393,13 +398,13 @@ $('input[name="intervaltype"]').click(function () {
 <div class="well" style="margin-right:2%;">	
 			<div class="row">
 		<div class="form-group col-xs-6">
-				<label for="manufacturer">Per Serving Amount</label>
-				<input type="text" style="width:540px" class="form-control" name="Per_Serving_Amount" id="manufacturer" placeholder="Enter the Amount in the Package Label" value="<?PHP echo $row['Per_Serving_Amount']; ?>" />
+				<label for="Per_Serving_Amount">Per Serving Amount <strong class="required">(required)</strong></label>
+				<input type="text" style="width:540px" class="form-control" name="Per_Serving_Amount" id="manufacturer" placeholder="Enter the Amount in the Package Label" value="<?PHP echo $row['Per_Serving_Amount']; ?>" required/>
 			</div>
 	
 					<div class="form-group col-xs-6">
-	<label for="sel1" name="Year_Recorded"> Per Serving  Unit of measure</label>
-    <select class="form-control" id="sel1" name="Per_Serving_Unit" style="width:540px">
+	<label for="sel1" name="Per_Serving_Unit" required> Per Serving  Unit of measure <strong class="required">(required)</strong></label>
+    <select class="form-control" id="sel1" name="Per_Serving_Unit" style="width:540px" required>
 		  <option value="<?PHP echo $row['Per_Serving_Unit']; ?>" selected="selected"><?PHP echo $row['Per_Serving_Unit']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>
@@ -427,9 +432,9 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
 		 <div class="form-group">
-  <label class="col-sm-3 control-label">Energy</label>
+  <label class="col-sm-3 control-label required">Energy <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Energy_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount" name="Energy_Amount" value="<?PHP echo $row['Amount']; ?>" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Energy_Unit">
@@ -542,12 +547,12 @@ $('input[name="intervaltype"]').click(function () {
 	?>
 		 <div class="form-group">
 
-  <label class="col-sm-3 control-label">Fat</label>
+  <label class="col-sm-3 control-label required">Fat <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Fat_Amount" value="<?PHP echo $row['Amount']; ?>"> 
+   <input type="text" class="form-control" placeholder="Amount" name="Fat_Amount" value="<?PHP echo $row['Amount']; ?>" required> 
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
-<select class="form-control" id="sel1" name="Fat_Unit_Of">
+<select class="form-control" id="sel1" name="Fat_Unit_Of" required>
   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	
 	<?php include 'Units.php';?>
@@ -564,7 +569,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Fat_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value" name="Fat_DValue" value="<?PHP echo $row['Daily_Value']; ?>" required>
   </div>
  </div>
  </div>
@@ -729,13 +734,13 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
 		 
-  <label class="col-sm-3 control-label">Carbohydrates</label>
+  <label class="col-sm-3 control-label required">Carbohydrates <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Carbohydrates_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount" name="Carbohydrates_Amount" value="<?PHP echo $row['Amount']; ?>" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Carbohydrates_Unit">
-	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected" required><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	<?php include 'Units.php';?>
 		 <option value=""></option>
       
@@ -767,13 +772,13 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>	 
 		 
-  <label class="col-sm-3 control-label">Fibre</label>
+  <label class="col-sm-3 control-label required">Fibre <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Fibre_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount" name="Fibre_Amount" value="<?PHP echo $row['Amount']; ?>" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Fibre_Unit">
-	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected" required><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>
       
@@ -990,9 +995,9 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
 		 
-  <label class="col-sm-3 control-label">Protein</label>
+  <label class="col-sm-3 control-label required">Protein <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Protein_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount" name="Protein_Amount" value="<?PHP echo $row['Amount']; ?>" >
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Protein_Unit">
@@ -3809,6 +3814,8 @@ $('input[name="intervaltype"]').click(function () {
 	   
 	
   </div>
+  
+  <div id="confirm-message"></div>
 </div>
 
 		
