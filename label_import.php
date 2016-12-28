@@ -394,9 +394,9 @@ $cars = array
 
 			if ($Label_UPC === null or $Label_Description === null or $Brand === null or $Manufacturer === null or $Nielsen_Category === null or $Ingredients === null or $Nutrition_Fact_Table=== null or $Per_Serving_Amount=== null or $Per_Serving_UofM === null or $Per_Serving_Energy_Kcal === null or $Fat_Per_Serving === null or $Fat_Daily_Value=== null or $Carbohydrates_Per_Serving === null or $Carbohydrates_Daily_Value === null or $Fibre_Daily_Value_PPD === null or $Protein_Per_Serving === null)
 			{
-				if ($Label_Description == null) {
-					$no_description = "A Label without description was skipped";
-					$input1 = "Record : $Record";
+				if ($Label_Description === null) {
+					$no_description = "Label without Description";
+					$input1 = "Record : $Record, $no_description";
 					$skipped_label->push($input1);
 				} else {
 					$inputx = "Record : $Record, $Label_Description";

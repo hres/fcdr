@@ -174,7 +174,7 @@ $('input[name="intervaltype"]').click(function () {
 				<input type="text" class="form-control" name="Label_Description" id="Label_Description" placeholder="Enter the Label description " required/>
 			</div>
 				<div class="form-group col-sm-4">
-				<label for="Common_Measure" class="required">Common Household Measure <strong class="required"><br>(required)</strong></label>
+				<label for="Common_Measure" >Common Household Measure </label>
 				<input type="text" class="form-control" name="Common_Measure" id="Common_Measure" placeholder="Enter the Common Household Measure " />
 			</div>
 		</div>
@@ -196,16 +196,16 @@ $('input[name="intervaltype"]').click(function () {
 		</div>
 		<div class="row">
 			<div class="form-group col-sm-4">
-				<label for="Country" class="required">Country <strong class="required"><br>(required)</strong></label>
-				<input type="text" class="form-control" name="Country" id="Country" placeholder="Enter Country " required/>
+				<label for="Country">Country</label>
+				<input type="text" class="form-control" name="Country" id="Country" placeholder="Enter Country " />
 			</div>
 		
 			<div class="form-group col-sm-4">
-				<label for="Package_Size" class="required"> Package Size <strong class="required"><br>(required) </strong></label>
-				<input type="text" class="form-control" name="Package_Size" id="Package_Size" placeholder="Enter the Package Size " required/>
+				<label for="Package_Size" > Package Size</label>
+				<input type="text" class="form-control" name="Package_Size" id="Package_Size" placeholder="Enter the Package Size "/>
 			</div>
 				<div class="form-group col-sm-4">
-				<label for="Package_Size_UofM" class="required">Package Size Unit of Measure <strong class="required"><br>(required)</strong></label>
+				<label for="Package_Size_UofM" >Package Size Unit of Measure </label>
 				<input type="text" class="form-control" name="Package_Size_UofM" id="Package_Size_UofM" placeholder="Enter the Package Size Unit of Measure " />
 			</div>
 		</div>		
@@ -230,16 +230,16 @@ $('input[name="intervaltype"]').click(function () {
 <div class="row">
 	
 					<div class="form-group col-xs-6 ">
-  <label for="Ingredients">Ingredients</label>
-  <textarea class="form-control"  style="width:540px" rows="2"  id="Ingredients" placeholder="Enter the Ingredients " name="Ingredients"></textarea>
+  <label for="Ingredients" class="required">Ingredients <strong class="required">(required)</strong></label>
+  <textarea class="form-control"  style="width:540px" rows="2"  id="Ingredients" placeholder="Enter the Ingredients " name="Ingredients" required></textarea>
 </div>
 		
 
 		
 				
 					<div class="form-group col-xs-6">
-  <label for="Nutrition_Fact_Table">Nutrition Fact Table</label>
-  <textarea class="form-control" style="width:540px" placeholder="Enter The Nutrition Fact Table "   rows="2"  id="Nutrition_Fact_Table" name="Nutrition_Fact_Table"></textarea>
+  <label for="Nutrition_Fact_Table" class="required">Nutrition Fact Table <strong class="required">(required)</strong></label>
+  <textarea class="form-control" style="width:540px" placeholder="Enter The Nutrition Fact Table "   rows="2"  id="Nutrition_Fact_Table" name="Nutrition_Fact_Table" required></textarea>
 </div>
 		
 </div>
@@ -363,13 +363,13 @@ $('input[name="intervaltype"]').click(function () {
 <div class="well" style="margin-right:2%;">	
 			<div class="row">
 		<div class="form-group col-xs-6">
-				<label for="Per_Serving_Amount">Per Serving Amount</label>
-				<input type="text" style="width:540px" class="form-control" name="Per_Serving_Amount" id="Per_Serving_Amount" placeholder="Enter the Amount in the Package Label" value="<?PHP echo $row['Per_Serving_Amount']; ?>" />
+				<label for="Per_Serving_Amount" class="required">Per Serving Amount <strong class="required">(required)</strong></label>
+				<input type="text" style="width:540px" class="form-control" name="Per_Serving_Amount" id="Per_Serving_Amount" placeholder="Enter the Amount in the Package Label"  required/>
 			</div>
 	
 					<div class="form-group col-xs-6">
-	<label for="Per_Serving_Unit" name="Year_Recorded"> Per Serving Unit</label>
-    <select class="form-control" id="Per_Serving_Unit" name="Per_Serving_Unit" style="width:540px">
+	<label for="Per_Serving_Unit" name="Year_Recorded" class="required"> Per Serving Unit <strong class="required">(required)</strong></label>
+    <select class="form-control" id="Per_Serving_Unit" name="Per_Serving_Unit" style="width:540px" required> 
 		   <option value="" selected="selected">Select the Per Serving Unit</option>
 			<?php include 'Units.php';?>
       
@@ -387,9 +387,9 @@ $('input[name="intervaltype"]').click(function () {
 	<div class="well" style="margin-right:2%;">
 <div class= "row">
 		 <div class="form-group">
-  <label for="Energy_Amount" class="col-sm-3 control-label">Energy</label>
+  <label for="Energy_Amount" class="col-sm-3 control-label" class="required">Energy <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Energy" name="Energy_Amount" id="Energy_Amount">
+   <input type="text" class="form-control" placeholder="Amount of Energy" name="Energy_Amount" id="Energy_Amount" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
 
@@ -452,9 +452,9 @@ $('input[name="intervaltype"]').click(function () {
  
  <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label for="Fat_Amount" class="col-sm-3 control-label">Fat</label>
+  <label for="Fat_Amount" class="col-sm-3 control-label required">Fat <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Fat" name="Fat_Amount" id="Fat_Amount">
+   <input type="text" class="form-control" placeholder="Amount of Fat" name="Fat_Amount" id="Fat_Amount" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
 
@@ -466,7 +466,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
 
 
-   <input type="text" class="form-control" placeholder="% Daily value of Fat" name="Fat_DValue" id="Fat_DValue">
+   <input type="text" class="form-control" placeholder="% Daily value of Fat" name="Fat_DValue" id="Fat_DValue" required>
   </div>
  </div>
  </div>
@@ -546,9 +546,9 @@ $('input[name="intervaltype"]').click(function () {
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label for="Carbohydrates_Amount" class="col-sm-3 control-label">Carbohydrates</label>
+  <label for="Carbohydrates_Amount" class="col-sm-3 control-label required">Carbohydrates<strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Carbohydrates" name="Carbohydrates_Amount" id="Carbohydrates_Amount">
+   <input type="text" class="form-control" placeholder="Amount of Carbohydrates" name="Carbohydrates_Amount" id="Carbohydrates_Amount" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Carbohydrates_Unit" name="Carbohydrates_Unit">
@@ -557,13 +557,13 @@ $('input[name="intervaltype"]').click(function () {
       
       </select>  </div>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="% Daily value of Carbohydrates" name="Carbohydrates_DValue" id="Carbohydrates_DValue">
+   <input type="text" class="form-control" placeholder="% Daily value of Carbohydrates" name="Carbohydrates_DValue" id="Carbohydrates_DValue" required>
   </div>
  </div>
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label for="Fibre_Amount" class="col-sm-3 control-label">Fibre</label>
+  <label for="Fibre_Amount" class="col-sm-3 control-label required">Fibre <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="Amount of Fibre" name="Fibre_Amount" id="Fibre_Amount">
   </div><!-- /col-sm-9 -->
@@ -574,7 +574,7 @@ $('input[name="intervaltype"]').click(function () {
       
       </select>  </div>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="% Daily value of Fibre" name="Fibre_DValue" id="Fibre_DValue">
+   <input type="text" class="form-control" placeholder="% Daily value of Fibre" name="Fibre_DValue" id="Fibre_DValue" required>
   </div>
  </div>
  </div>
@@ -662,12 +662,12 @@ $('input[name="intervaltype"]').click(function () {
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label for="Protein_Amount" class="col-sm-3 control-label">Protein</label>
+  <label for="Protein_Amount" class="col-sm-3 control-label required">Protein <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Protein" name="Protein_Amount" id="Protein_Amount">
+   <input type="text" class="form-control" placeholder="Amount of Protein" name="Protein_Amount" id="Protein_Amount" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="Protein_Unit" name="Protein_Unit">
+ <select class="form-control" id="Protein_Unit" name="Protein_Unit" required>
   <option value="" selected="selected"></option>
 			<?php include 'Units.php';?>
       
@@ -2053,7 +2053,7 @@ function goBack() {
 	<script>
 function validateForm() {
 	
-	/* 	values for as sold  */
+	/* 	values for as sold  
     var energy_amount = document.forms["myForm"]["Energy_Amount"].value;
 	var energy_unit = document.forms["myForm"]["Energy_Unit"].value;
 	
@@ -2487,8 +2487,8 @@ document.getElementById("demo").style.color = 'red';
 		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Chloride";
 document.getElementById("demo").style.color = 'red';
 		return false;
-	}
-	/* values for as prepared */
+	}*/
+	/* values for as prepared 
 	
 	var energy_amount_s = document.forms["myForm"]["Energy_Amount_S"].value;
 	var energy_unit_s = document.forms["myForm"]["Energy_Unit_S"].value;
@@ -2931,7 +2931,7 @@ document.getElementById("demo").style.color = 'red';
 		return false;
 	}
 
-}
+}*/
 </script>
 		</main>
 	<?php include 'footer.php';?>
