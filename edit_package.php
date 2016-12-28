@@ -3794,7 +3794,8 @@ $('input[name="intervaltype"]').click(function () {
 	
 	
 	
-
+  
+</div>
 <div id="demo"></div>	
 		<div style="float:left; display:inline-block;">
 			 <?php echo " <a class=\"btn btn-default\" href=package_details.php?PackageID=" . $_GET['PackageID'] . ">Back</a>";  ?>
@@ -3802,7 +3803,8 @@ $('input[name="intervaltype"]').click(function () {
 		<div style="float:right; display:inline-block; margin-right:2%;">
 				<button  type="submit" class="btn btn-default" name="search" >Save</button>
 			</div>
-	
+	  <div id="confirm-message"></div>
+
 </section>
 	</form>
 
@@ -3814,9 +3816,7 @@ $('input[name="intervaltype"]').click(function () {
 	   
 	
   </div>
-  
-  <div id="confirm-message"></div>
-</div>
+
 
 		
 	<br>	
