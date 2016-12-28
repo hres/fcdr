@@ -303,7 +303,7 @@ $cars = array
   array("19",$Iron_Per_Serving,'mg', $Iron_Daily_Value, TRUE),
   array("19",NULL,NULL, $Iron_Daily_Value_PPD, FALSE), 
 
-  array("20",$VitaminA_Per_Serving,'um', '$VitaminA_Daily_Value', TRUE),
+  array("20",$VitaminA_Per_Serving,'um', $VitaminA_Daily_Value, TRUE),
   array("20",NULL,NULL, $VitaminA_Daily_Value_PPD, FALSE), 
 
   array("21",$VitaminC_Per_Serving,'mg', $VitaminC_Daily_Value, TRUE),
@@ -383,11 +383,13 @@ $cars = array
   array("45",$Fat_Monounsaturated_Per_Serving,'g', NULL, TRUE),
   array("45",NULL,NULL,NULL, FALSE), 
 
+  array("46",NULL,NULL, $Trans_And_Saturated_Fat_Daily_Vaue, TRUE),
+  array("46",NULL,NULL, $Trans_And_Saturated_Fat_Daily_Vaue_PPD, FALSE), 
+  
   array("47",$Per_Serving_Energy_Kj,'kj', NULL, TRUE),
   array("47",$Per_Serving_Energy_PPD_Kj,'kj', NULL, FALSE), 
   
   );			
-			
 
 
 			if ($Label_UPC === null or $Label_Description === null or $Brand === null or $Manufacturer === null or $Nielsen_Category === null or $Ingredients === null or $Nutrition_Fact_Table=== null or $Per_Serving_Amount=== null or $Per_Serving_UofM === null or $Per_Serving_Energy_Kcal === null or $Fat_Per_Serving === null or $Fat_Daily_Value=== null or $Carbohydrates_Per_Serving === null or $Carbohydrates_Daily_Value === null or $Fibre_Daily_Value_PPD === null or $Protein_Per_Serving === null)
@@ -532,10 +534,10 @@ for ($row1 = 0; $row1 < 92; $row1++) {
 								$stmt->bind_param("iidsds",$id2, $cars[$row1][0],$cars[$row1][1],$cars[$row1][2],$cars[$row1][3],$cars[$row1][4]);
 								$results = $stmt->execute();
 
+
+}
 						$input4= "Record : $Record, $Label_Description";
 						$new_product->push($input4);
-}
-
 
 					} else {
 						/* attach label to corresponding Product --Found in Sales Table*/
@@ -637,10 +639,10 @@ for ($row2 = 0; $row2 < 92; $row2++) {
 								$stmt->bind_param("iidsds",$nid, $cars[$row2][0],$cars[$row2][1],$cars[$row2][2],$cars[$row][3],$cars[$row2][4]);
 								$results = $stmt->execute();
 
-						$input3= "Record : $Record, $Label_Description";
-						$linked_sales->push($input3);
 }
 
+						$input3= "Record : $Record, $Label_Description";
+						$linked_sales->push($input3);
 
 					}				
 					
@@ -723,12 +725,12 @@ for ($row3 = 0; $row3 < 92; $row3++) {
 								$stmt->bind_param("iidsds",$xid, $cars[$row3][0],$cars[$row3][1],$cars[$row3][2],$cars[$row3][3],$cars[$row3][4]);
 								$results = $stmt->execute();
 
-					$input2= "Record : $Record, $Label_Description";
-					$linked_label->push($input2);
+
 
 
 }
-
+					$input2= "Record : $Record, $Label_Description";
+					$linked_label->push($input2);
 				}
 			}
 		}
