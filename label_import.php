@@ -272,11 +272,11 @@ $cars = array
   array("9",$Soluble_Fibre_Per_Serving,'g',NULL, TRUE),
   array("9",NULL,NULL, NULL, FALSE), 
   
-  array("10",$Insoluble_Fibre_Per_Serving,'g', '', TRUE),
+  array("10",$Insoluble_Fibre_Per_Serving,'g', NULL, TRUE),
   array("10",NULL,NULL, NULL, FALSE), 
 
-  array("11",'$Sugar_Per_Serving','g', '$Sugar_Daily_Value', TRUE),
-  array("11",'','', '$Sugar_Daily_Value_PPD', FALSE), 
+  array("11",$Sugar_Per_Serving,'g', $Sugar_Daily_Value, TRUE),
+  array("11",NULL,NULL, $Sugar_Daily_Value_PPD, FALSE), 
 
   
   array("12",$Sugar_Alcohols_Per_Serving,'g', NULL, TRUE),
@@ -295,7 +295,7 @@ $cars = array
   array("16",NULL,NULL, $Sodium_Daily_Value_PPD, FALSE),
   
   array("17",$Potassium_Per_Serving,'mg', $Potassium_Daily_Value, TRUE),
-  array("17",NULL,NULL, '$Potassium_Daily_Value_PPD', FALSE), 
+  array("17",NULL,NULL, $Potassium_Daily_Value_PPD, FALSE), 
   
   array("18",$Calcium_Per_Serving,'mg', $Calcium_Daily_Value, TRUE),
   array("18",NULL,NULL, $Calcium_Daily_Value_PPD, FALSE), 
@@ -369,13 +369,13 @@ $cars = array
   array("40",NULL,NULL, $Manganese_Daily_Value_PPD, FALSE), 
   
   array("41",$Chromium_Per_Serving,'ug', $Chromium_Daily_Value, TRUE),
-  array("41",NULL,NULL, '$Chromium_Daily_Value_PPD', FALSE), 
+  array("41",NULL,NULL, $Chromium_Daily_Value_PPD, FALSE), 
   
   array("42",$Molybdenum_Per_Serving,'ug', $Molybdenum_Daily_Value, TRUE),
   array("42",NULL,NULL, $Molybdenum_Daily_Value_PPD, FALSE), 
 
   array("43",$Chloride_Per_Serving,'mg', '$Chloride_Daily_Value', TRUE),
-  array("43",NULL,NULL, '$Chloride_Daily_Value_PPD', FALSE), 
+  array("43",NULL,NULL, $Chloride_Daily_Value_PPD, FALSE), 
  
   array("44",$Fat_PolyUnsaturated,'g', NULL, TRUE),
   array("44",NULL,NULL,NULL, FALSE),
@@ -526,7 +526,7 @@ EOQ;
 
 
 
-for ($row1 = 0; $row1 < 46; $row1++) {
+for ($row1 = 0; $row1 < 92; $row1++) {
 
 								$stmt = $conn->prepare($query_insert);
 								$stmt->bind_param("iidsds",$id2, $cars[$row1][0],$cars[$row1][1],$cars[$row1][2],$cars[$row1][3],$cars[$row1][4]);
@@ -631,7 +631,7 @@ EOQ;
 
 
 
-for ($row2 = 0; $row2 < 46; $row2++) {
+for ($row2 = 0; $row2 < 92; $row2++) {
 
 								$stmt = $conn->prepare($query_insertx);
 								$stmt->bind_param("iidsds",$nid, $cars[$row2][0],$cars[$row2][1],$cars[$row2][2],$cars[$row][3],$cars[$row2][4]);
@@ -717,7 +717,7 @@ EOQ;
 
 
 
-for ($row3 = 0; $row3 < 46; $row3++) {
+for ($row3 = 0; $row3 < 92; $row3++) {
 
 								$stmt = $conn->prepare($query_insert1);
 								$stmt->bind_param("iidsds",$xid, $cars[$row3][0],$cars[$row3][1],$cars[$row3][2],$cars[$row3][3],$cars[$row3][4]);
