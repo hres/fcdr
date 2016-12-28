@@ -5,7 +5,7 @@
 
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
-//check if UPC is already associated to a different product
+
 if (isset($_POST['search'])) {
 
 		$param = array(
@@ -33,6 +33,17 @@ if (isset($_POST['search'])) {
 			$_POST['Cluster_Number']
 		);
 
+
+
+	$query2 = "Select * from $dbname.Sales where Sales_UPC = $Sales_UPC AND ProductIDS <> '$productID'"; 
+			$result2 = mysqli_query($conn,$query2);
+			
+			$rowcount=mysqli_num_rows($result2);
+			if($rowcount>0){
+				echo "UPC10 Code already belongs to a different product ";
+				
+				
+			}else{
 		$query =<<<EOQ
 INSERT INTO Sales (
        SalesID,
@@ -76,7 +87,7 @@ EOQ;
 		} else {
 			echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",200);</script>";
 		}
-	
+	}
 }
 $conn->close();
 

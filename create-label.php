@@ -387,7 +387,7 @@ $('input[name="intervaltype"]').click(function () {
 	<div class="well" style="margin-right:2%;">
 <div class= "row">
 		 <div class="form-group">
-  <label for="Energy_Amount" class="col-sm-3 control-label" class="required">Energy <strong class="required">(required)</strong></label>
+  <label for="Energy_Amount" class="col-sm-3 control-label required" >Energy <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="Amount of Energy" name="Energy_Amount" id="Energy_Amount" required>
   </div><!-- /col-sm-9 -->
