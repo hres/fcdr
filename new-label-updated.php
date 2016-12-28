@@ -158,7 +158,7 @@ EOQ;
 
 						  array("14",$_POST['Protein_Amount'],$_POST['Protein_Unit'], $_POST['Protein_DValue'], TRUE),
 						  array("14",$_POST['Protein_Amount_S'],$_POST['Protein_Unit_S'], $_POST['Protein_DValue_S'], FALSE),
-						  array("15",$_POST['Cholesterol_Amount'],$_POST['Cholesterol_Unit'], ,$_POST['Cholesterol_DValue'], TRUE),
+						  array("15",$_POST['Cholesterol_Amount'],$_POST['Cholesterol_Unit'],$_POST['Cholesterol_DValue'], TRUE),
 
 						  array("15",$_POST['Cholesterol_Amount_S'],$_POST['Cholesterol_Unit_S'],$_POST['Cholesterol_DValue_S'], FALSE),
 
