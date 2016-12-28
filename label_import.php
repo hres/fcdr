@@ -759,8 +759,10 @@ for ($row3 = 0; $row3 < 92; $row3++) {
 		while (!$new_product->isEmpty()) {
 			$senditem = $new_product->shift();
 			if(strlen ($senditem) < 1) continue;
-			echo "$senditem <br>";
+			//echo "$senditem";
 		}
+		echo 'First Name' . "\t" . 'Last Name' . "\t" . 'Phone' . "\n";
+echo 'John' . "\t" . 'Doe' . "\t" . '555-5555' . "\n";
 		header("Content-disposition: attachment; filename=spreadsheet.xls");
 
 	} else {
