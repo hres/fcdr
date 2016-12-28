@@ -54,12 +54,12 @@ $sql = "Select * from $dbname.Sales WHERE SalesID='$salesID'";
 	$row = $result1->fetch_assoc();
 	$pid= $row['ProductID'];
 if (!$result) {
-    echo "ERRORS";
-	echo $query;
+		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to updated Market share</strong></h3>\";</script>";
 
 }else {
+		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Market Share Successfully updated. Redirecting to the previous page...</strong></h3>\";</script>";
+		echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
 
-	echo "<script>setTimeout(\"location.href = 'edit_sales.php?SalesID=$salesID';\",100);</script>";
 
 }
 
