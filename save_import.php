@@ -7,7 +7,8 @@ require_once "Classes/PHPExcel.php";
 
 if (isset($_POST['search'])) {
 
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 	if (is_uploaded_file($_FILES['file_save']['tmp_name'])) {
 		echo "<h3>" . "File ". $_FILES['file_save']['name'] ." uploaded successfully." . "</h3>";
@@ -39,7 +40,7 @@ if (isset($_POST['search'])) {
 		$count = 0;
 		for ($row = 2; $row <= $lastRow; $row++) {
 			++$count;
-			if($count>=15000) break;
+			if($count >15000) break;
 			//echo "in<br>";
 			$Record                    = $worksheet->getCell('A'.$row)->getValue();
 			$Sales_UPC                 = $worksheet->getCell('B'.$row)->getValue();
