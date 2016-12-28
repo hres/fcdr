@@ -1,6 +1,8 @@
 <?php include 'connection.php';?>
 
 <?php
+		header("Content-Type: application/vnd.ms-excel");
+
 	error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -10,7 +12,7 @@ if (isset($_POST['search'])) {
 
 
 	if (is_uploaded_file($_FILES['file_save']['tmp_name'])) {
-		echo "<h1>" . "File ". $_FILES['file_save']['name'] ." uploaded successfully." . "</h1>";
+		//echo "<h1>" . "File ". $_FILES['file_save']['name'] ." uploaded successfully." . "</h1>";
 
 	//	readfile($_FILES['file_save']['tmp_name']);
 
@@ -753,7 +755,6 @@ for ($row3 = 0; $row3 < 92; $row3++) {
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
-		header("Content-Type: application/vnd.ms-excel");
 
 				echo "<h2>Labels linked to new products</h2>";
 		while (!$new_product->isEmpty()) {
