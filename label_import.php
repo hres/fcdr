@@ -309,78 +309,78 @@ $cars = array
   array("21",$VitaminC_Per_Serving,'mg', $VitaminC_Daily_Value, TRUE),
   array("21",NULL,NULL, $VitaminC_Daily_Value_PPD, FALSE),
 
-  array("22",'$VitaminD_Per_Serving','um', '$VitaminD_Daily_Value', TRUE),
-  array("22",NULL,NULL, '$VitaminD_Daily_Value_PPD', FALSE), 
+  array("22",$VitaminD_Per_Serving,'um', $VitaminD_Daily_Value, TRUE),
+  array("22",NULL,NULL, $VitaminD_Daily_Value_PPD, FALSE), 
   
-  array("23",'$VitaminE_Per_Serving','mg', '$VitaminE_Daily_Value', TRUE),
-  array("23",NULL,NULL, '$VitaminE_Daily_Value_PPD', FALSE), 
+  array("23",$VitaminE_Per_Serving,'mg', $VitaminE_Daily_Value, TRUE),
+  array("23",NULL,NULL, $VitaminE_Daily_Value_PPD, FALSE), 
   
-  array("24",'$VitaminK_Per_Serving','ug', '$VitaminK_Daily_Value', TRUE),
-  array("24",NULL,NULL, '$VitaminK_Daily_Value_PPD', FALSE), 
+  array("24",$VitaminK_Per_Serving,'ug', $VitaminK_Daily_Value, TRUE),
+  array("24",NULL,NULL, $VitaminK_Daily_Value_PPD, FALSE), 
 
-  array("25",'$Thiamine_Per_Serving','mg', '$Thiamine_Daily_Value', TRUE),
+  array("25",$Thiamine_Per_Serving,'mg', $Thiamine_Daily_Value, TRUE),
   
-  array("25",NULL,NULL, '$Thiamine_Daily_Value_PPD', FALSE), 
+  array("25",NULL,NULL, $Thiamine_Daily_Value_PPD, FALSE), 
 
-  array("26",'$Riboflavin_Per_Serving','mg', '$Riboflavin_Daily_Value', TRUE),
-  array("26",NULL,NULL, '$Riboflavin_Daily_Value_PPD', FALSE),
+  array("26",$Riboflavin_Per_Serving,'mg', $Riboflavin_Daily_Value, TRUE),
+  array("26",NULL,NULL, $Riboflavin_Daily_Value_PPD, FALSE),
 
-  array("27",'$Niacin_Per_Serving','mg', '$Niacin_Daily_Value_PPD', TRUE),
-  array("27",NULL,NULL, '$Niacin_Daily_Value_PPD', FALSE),
+  array("27",$Niacin_Per_Serving,'mg', $Niacin_Daily_Value_PPD, TRUE),
+  array("27",NULL,NULL, $Niacin_Daily_Value_PPD, FALSE),
   
-  array("28",'$VitaminB6_Per_Serving','mg', '$VitaminB6_Daily_Value', TRUE),
-  array("28",NULL,NULL, '$VitaminB6_Daily_Value_PPD', FALSE), 
+  array("28",$VitaminB6_Per_Serving,'mg', $VitaminB6_Daily_Value, TRUE),
+  array("28",NULL,NULL, $VitaminB6_Daily_Value_PPD, FALSE), 
 
-  array("29",'$Folate_Per_Serving','ug', '$Folate_Daily_Value', TRUE),
-  array("29",NULL,NULL,  '$Folate_Daily_Value_PPD', FALSE), 
+  array("29",$Folate_Per_Serving,'ug', $Folate_Daily_Value, TRUE),
+  array("29",NULL,NULL,$Folate_Daily_Value_PPD, FALSE), 
 
-  array("30",'$VitaminB12_Per_Serving','mg', '$VitaminB12_Daily_Value', TRUE),
-  array("30",NULL,NULL, '$VitaminB12_Daily_Value_PPD', FALSE), 
+  array("30",$VitaminB12_Per_Serving,'mg', $VitaminB12_Daily_Value, TRUE),
+  array("30",NULL,NULL, $VitaminB12_Daily_Value_PPD, FALSE), 
   
-  array("31",'$Biotin_PerServing','ug', '$Biotin_Daily_Value', TRUE),
-  array("31",NULL,NULL, '$Biotin_Daily_Value_PPD', FALSE), 
+  array("31",$Biotin_PerServing,'ug', $Biotin_Daily_Value, TRUE),
+  array("31",NULL,NULL, $Biotin_Daily_Value_PPD, FALSE), 
   
-  array("32",'$Choline_Per_Serving','mg', '$Choline_Daily_Value', TRUE),
-  array("32",NULL,NULL, '$Choline_Daily_Value_PPD', FALSE), 
+  array("32",$Choline_Per_Serving,'mg', $Choline_Daily_Value, TRUE),
+  array("32",NULL,NULL, $Choline_Daily_Value_PPD, FALSE), 
 
-  array("33",'$Pantothenate_Per_Serving','mg', '$Pantothenate_Daily_Value', TRUE),
-  array("33",NULL,NULL, '$Pantothenate_Daily_Value_PPD', FALSE), 
+  array("33",$Pantothenate_Per_Serving,'mg', $Pantothenate_Daily_Value, TRUE),
+  array("33",NULL,NULL, $Pantothenate_Daily_Value_PPD, FALSE), 
 
-  array("34",'$Phosphorus_Per_Serving','mg', '$Phosphorus_Daily_Value', TRUE),
-  array("34",NULL,NULL, '$Phosphorus_Daily_Value_PPD', FALSE),
+  array("34",$Phosphorus_Per_Serving,'mg', $Phosphorus_Daily_Value, TRUE),
+  array("34",NULL,NULL, $Phosphorus_Daily_Value_PPD, FALSE),
   
-  array("35",'$Iodide_Per_Serving','ug', '$Iodide_Daily_Value', TRUE),
-  array("35",NULL,NULL, '$Iodide_Daily_Value_PPD', FALSE), 
+  array("35",$Iodide_Per_Serving,'ug', $Iodide_Daily_Value, TRUE),
+  array("35",NULL,NULL, $Iodide_Daily_Value_PPD, FALSE), 
   
-  array("36",'$Magnesium_Per_Serving','mg', '$Magnesium_Daily_Value', TRUE),
-  array("36",NULL,NULL, '$Magnesium_Daily_Value_PPD', FALSE), 
+  array("36",$Magnesium_Per_Serving,'mg', $Magnesium_Daily_Value, TRUE),
+  array("36",NULL,NULL, $Magnesium_Daily_Value_PPD, FALSE), 
   
-  array("37",'$Zinc_Per_Serving','mg','$Zinc_Daily_Value', TRUE),
-  array("37",NULL,NULL, '$Zinc_Daily_Value_PPD', FALSE), 
+  array("37",$Zinc_Per_Serving,'mg',$Zinc_Daily_Value, TRUE),
+  array("37",NULL,NULL, $Zinc_Daily_Value_PPD, FALSE), 
 
-  array("38",'$Selenium_Per_Serving','ug', '$Selenium_Daily_Value', TRUE),
-  array("38",NULL,NULL, '$Selenium_Daily_Value_PPD', FALSE), 
+  array("38",$Selenium_Per_Serving,'ug', $Selenium_Daily_Value, TRUE),
+  array("38",NULL,NULL, $Selenium_Daily_Value_PPD, FALSE), 
 
-  array("39",'$Copper_Per_Serving','mg', '$Copper_Daily_Value', TRUE),
-  array("39",NULL,NULL, '$Copper_Daily_Value_PPD', FALSE),
+  array("39",$Copper_Per_Serving,'mg', $Copper_Daily_Value, TRUE),
+  array("39",NULL,NULL, $Copper_Daily_Value_PPD, FALSE),
 
 
-  array("40",'$Manganese_Per_Serving','mg', '$Manganese_Daily_Value', TRUE),
-  array("40",NULL,NULL, '$Manganese_Daily_Value_PPD', FALSE), 
+  array("40",$Manganese_Per_Serving,'mg', $Manganese_Daily_Value, TRUE),
+  array("40",NULL,NULL, $Manganese_Daily_Value_PPD, FALSE), 
   
-  array("41",'$Chromium_Per_Serving','ug', '$Chromium_Daily_Value', TRUE),
+  array("41",$Chromium_Per_Serving,'ug', $Chromium_Daily_Value, TRUE),
   array("41",NULL,NULL, '$Chromium_Daily_Value_PPD', FALSE), 
   
-  array("42",'$Molybdenum_Per_Serving','ug', '$Molybdenum_Daily_Value', TRUE),
-  array("42",NULL,NULL, '$Molybdenum_Daily_Value_PPD', FALSE), 
+  array("42",$Molybdenum_Per_Serving,'ug', $Molybdenum_Daily_Value, TRUE),
+  array("42",NULL,NULL, $Molybdenum_Daily_Value_PPD, FALSE), 
 
-  array("43",'$Chloride_Per_Serving','mg', '$Chloride_Daily_Value', TRUE),
+  array("43",$Chloride_Per_Serving,'mg', '$Chloride_Daily_Value', TRUE),
   array("43",NULL,NULL, '$Chloride_Daily_Value_PPD', FALSE), 
  
-  array("44",'$Fat_PolyUnsaturated','g', '', TRUE),
+  array("44",$Fat_PolyUnsaturated,'g', NULL, TRUE),
   array("44",NULL,NULL,NULL, FALSE),
 
-  array("45",'$Fat_Monounsaturated_Per_Serving','g', '', TRUE),
+  array("45",$Fat_Monounsaturated_Per_Serving,'g', NULL, TRUE),
   array("45",NULL,NULL,NULL, FALSE), 
 
   array("47",$Per_Serving_Energy_Kj,'kj', NULL, TRUE),

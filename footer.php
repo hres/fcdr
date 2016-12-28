@@ -65,3 +65,6 @@ If you remove the code below make sure to replace it with </div></div></nav> so 
 					</footer>
 				</div>
 			</div>
+					<script src="/dist/theme-gcwu-fegc/js/theme-min.js"></script>
+		<script src="/dist/js/settings.js"></script>
+		<script src="/dist/js/pe-ap-min.js"></script>
