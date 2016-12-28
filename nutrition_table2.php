@@ -19,7 +19,7 @@ if (!$result) {
     echo "ERRORS";
 }
 	while($row = $result->fetch_assoc()){
-		if($row['PPD']=='0' AND ($row['Amount'] !=NULL OR $row['Amount'] !=NULL )) {
+		if($row['PPD']=='0' AND ($row['Amount'] !=NULL OR $row['Amount_Unit_Of_Measure'] !=NULL )) {
 		 echo "<tr><td>". $row['Component_Name'] . "</td><td >". $row['Amount'] . "</td><td >". $row['Amount_Unit_Of_Measure'] . "</td><td> ".$row['Daily_Value']."</td></tr>";                       
 	}}
 
