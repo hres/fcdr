@@ -393,7 +393,7 @@ $('input[name="intervaltype"]').click(function () {
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
 
- <select class="form-control" id="Energy_Unit" name="Energy_Unit" disabled>
+ <select class="form-control" id="Energy_Unit" name="Energy_Unit">
   <option value="kcal" selected="selected">kcal</option>
 			
       
@@ -413,7 +413,7 @@ $('input[name="intervaltype"]').click(function () {
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
 
- <select class="form-control" id="Fat_Unit" name="Energy_kj_Unit" disabled>
+ <select class="form-control" id="Fat_Unit" name="Energy_kj_Unit">
   <option value="kj" selected="selected">kj</option>
 		
       

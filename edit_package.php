@@ -468,11 +468,9 @@ $('input[name="intervaltype"]').click(function () {
    <input type="text" class="form-control" placeholder="Amount" name="Energy_kj_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Energy_kj_Unit" disabled>
+ <select class="form-control" id="sel1" name="Energy_kj_Unit">
   <option value="kj" selected="selected">kj</option>
 	
-	
-       <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
@@ -2550,7 +2548,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Insolube Fibre</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Insolube_Fibre_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount" name="Insoluble_Fibre_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1"  name="Insolube_Fibre_Unit_S">
@@ -2917,7 +2915,7 @@ $('input[name="intervaltype"]').click(function () {
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminA_Unit_S">
-	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Daily_Value']; ?></option>
+	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>
       

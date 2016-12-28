@@ -202,7 +202,7 @@ EOQ;
 
 
 					array(34,	$_POST['Phosphorus_Amount_S'],$_POST['Phosphorus_Unit_S'],$_POST['Phosphorus_DValue_S'], FALSE),
-					array(35,	$_POST['Iodide_Amount_S'],$_POST['Iodide_Unit_S'],$_POST['Iodide_DValue_S'], FALSE),
+					array(35,	$_POST['Iodide_Amount_S'],$_POST['Iodide_Unit_S'],$_POST['Iodide_Dvalue_S'], FALSE),
 					array(36,	$_POST['Magnesium_Amount_S'],$_POST['Magnesium_Unit_S'],$_POST['Magnesium_DValue_S'], FALSE),
 					array(37,	$_POST['Zinc_Amount_S'],$_POST['Zinc_Unit_S'],$_POST['Zinc_DValue_S'], FALSE),
 					array(38,	$_POST['Selenium_Amount_S'],$_POST['Selenium_Unit_S'],$_POST['Selenium_DValue_S'], FALSE),
