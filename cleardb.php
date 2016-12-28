@@ -1,8 +1,12 @@
 <?php include 'connection.php';?>
 <?php
 
-							
+	$xllquery =  "Insert INTO Unit_Of_Measure (UofM_Name) VALUE ('mg')"	;	
+	$xllquery2 =  "Insert INTO Unit_Of_Measure (UofM_Name) VALUE ('g')"	;		
+	$resultxx = mysqli_query($conn,$xllquery);	
+	$resultxy = mysqli_query($conn,$xllquery2);	
 
+/* 
 	$query2 =  "Delete from $dbname.Sales where SalesID > 0"; 	
 	$result = mysqli_query($conn,$query2);	
 	
@@ -24,7 +28,7 @@
 		$query =  "Delete from $dbname.Product where ProductID > 0"; 	
 		$result7 = mysqli_query($conn,$query);	
 	echo "Database Cleared out";
-
+ */
 							
 
 
