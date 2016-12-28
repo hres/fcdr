@@ -6,6 +6,8 @@
 $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 
 		if(isset($_POST['search'])) {
+ 	error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 		$param = array(
 			$_POST['Label_Description'],
