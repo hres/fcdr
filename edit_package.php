@@ -840,7 +840,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		  <?php 
-	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Insolube Fibre' AND   K.PackageID=$UPC12 AND PPD = 1
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.ComponentID = '10' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
 	$row = $result->fetch_assoc();

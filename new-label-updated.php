@@ -144,15 +144,15 @@ EOQ;
 						 array(9,$_POST['Soluble_Fibre_Amount'],$_POST['Soluble_Fibre_Unit'], $_POST['Soluble_Fibre_DValue'], TRUE),
 						  array(9,$_POST['Soluble_Fibre_Amount_S'],$_POST['Soluble_Fibre_Unit_S'], $_POST['Soluble_Fibre_DValue_S'], FALSE),
 
-						  array(10,$_POST['Insoluble_Fibre_Amount'],$_POST['Insoluble_Fibre_Unit'], $_POST['Insoluble_Fibre_DValue'], TRUE),
-						  array(10,$_POST['Insoluble_Fibre_Amount_S'],$_POST['Insoluble_Fibre_Unit_S'],$_POST['Insoluble_Fibre_DValue_S'], FALSE),
+						  array(10,$_POST['Insolube_Fibre_Amount'],$_POST['Insolube_Fibre_Unit'], $_POST['Insolube_Fibre_DValue'], TRUE),
+						  array(10,$_POST['Insolube_Fibre_Amount_S'],$_POST['Insolube_Fibre_Unit_S'],$_POST['Insolube_Fibre_DValue_S'], FALSE),
 
 						  array(11,$_POST['Sugar_Amount'],$_POST['Sugar_Unit'], $_POST['Sugar_DValue'], TRUE),
 						  array(11,$_POST['Sugar_Amount_S'],$_POST['Sugar_Unit_S'],$_POST['Sugar_DValue_S'], FALSE),
 
 
-						  array(12,$_POST['Sugar_Alcohols_Amount'],$_POST['Sugar_Alcogols_Unit'], $_POST['Sugar_Alcohol_DValue'], TRUE),
-						  array(12,$_POST['Sugar_Alcohols_Amount_S'],$_POST['Sugar_Alcogols_Unit_S'],$_POST['Sugar_Alcohol_DValue_S'], FALSE),
+						  array(12,$_POST['Sugar_Alcohols_Amount'],$_POST['Sugar_Alcohols_Unit'], $_POST['Sugar_Alcohols_DValue'], TRUE),
+						  array(12,$_POST['Sugar_Alcohols_Amount_S'],$_POST['Sugar_Alcohols_Unit_S'],$_POST['Sugar_Alcohols_DValue_S'], FALSE),
 
 						  array(13,$_POST['Starch_Amount'],$_POST['Starch_Unit'], $_POST['Starch_DValue'], TRUE),
 						  array(13,$_POST['Starch_Amount_S'],$_POST['Starch_Unit_S'],$_POST['Starch_DValue_S'], FALSE),
@@ -217,8 +217,8 @@ EOQ;
 						  array(34,$_POST['Phosphorus_Amount'],$_POST['Phosphorus_Unit'],$_POST['Phosphorus_DValue'], TRUE),
 						  array(34,$_POST['Phosphorus_Amount_S'],$_POST['Phosphorus_Unit_S'],$_POST['Phosphorus_DValue_S'], FALSE),
 
-						  array(35,$_POST['Iodide_Amount'],$_POST['Iodide_Unit'],$_POST['Iodide_DValue'], TRUE),
-						  array(35,$_POST['Iodide_Amount_S'],$_POST['Iodide_Unit_S'],$_POST['Iodide_DValue_S'], FALSE),
+						  array(35,$_POST['Iodide_Amount'],$_POST['Iodide_Unit'],$_POST['Iodide_Dvalue'], TRUE),
+						  array(35,$_POST['Iodide_Amount_S'],$_POST['Iodide_Unit_S'],$_POST['Iodide_Dvalue_S'], FALSE),
 
 						  array(36,$_POST['Magnesium_Amount'],$_POST['Magnesium_Unit'],$_POST['Magnesium_DValue'], TRUE),
 						  array(36,$_POST['Magnesium_Amount_S'],$_POST['Magnesium_Unit_S'],$_POST['Magnesium_DValue_S'], FALSE),

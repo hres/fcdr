@@ -943,7 +943,7 @@ $('input[name="intervaltype"]').click(function () {
 			<?php include 'Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="% Daily value of Vitamin B12" name="VitaminB12_Unit_DValue" id="VitaminB12_Unit_DValue">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin B12" name="VitaminB12_DValue" id="VitaminB12_Unit_DValue">
   </div>
  </div>
  </div>
@@ -1602,7 +1602,7 @@ $('input[name="intervaltype"]').click(function () {
    <input type="text" class="form-control" placeholder="Amount of Vitamin D" name="VitaminD_Amount_S">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="VitaminD_Amount_S">
+ <select class="form-control" id="sel1" name="VitaminD_Unit_S">
   <option value="" selected="selected"></option>
 			<?php include 'Units.php';?>
       
