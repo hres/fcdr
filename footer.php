@@ -7,25 +7,20 @@
 <li><a href="http://www.hc-sc.gc.ca/home-accueil/proact-eng.php">Transparency</a></li>
 </ul>
 <div class="row">
-			<section><div class="span-2">
-					<h4 class="col-head"><a href="http://www.hc-sc.gc.ca/ahc-asc/index-eng.php" title="About us">About us</a></h4>
-				</div>
-			</section>
+<section class="col-sm-3">
+<h4 class="col-head"><a href="http://www.hc-sc.gc.ca/contact/index-eng.php" title="Contact us">Contact us</a></h4>
+</section>
+<section class="col-sm-3">
+<h4 class="col-head"><a href="http://www.hc-sc.gc.ca/ahc-asc/index-eng.php" title="About us">About us</a></h4>
+</section>
+<section class="col-sm-3">
+<h4 class="col-head"><a href="http://www.hc-sc.gc.ca/ahc-asc/media/index-eng.php" title="Media room">News</a></h4>
 
-			<section><div class="span-2">
-					<h4 class="col-head"><a href="http://www.hc-sc.gc.ca/ahc-asc/media/index-eng.php" title="Media room">News</a></h4>
-				</div>
-			</section>
+</section>
+<section class="col-sm-3">
+<h4 class="col-head"><a href="http://www.hc-sc.gc.ca/home-accueil/sm-ms/index-eng.php" title="Stay connected">Stay connected</a></h4>
 
-			<section><div class="span-2">
-					<h4 class="col-head"><a href="http://www.hc-sc.gc.ca/contact/index-eng.php" title="Contact us">Contact us</a></h4>
-				</div>
-			</section>
-
-			<section><div class="span-2">
-					<h4 class="col-head"><a href="http://www.hc-sc.gc.ca/home-accueil/sm-ms/index-eng.php" title="Stay connected">Stay connected</a></h4>
-				</div>
-			</section>
+</section>
 </div>
 </nav>
 </div>
