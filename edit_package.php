@@ -3808,9 +3808,9 @@ $('input[name="intervaltype"]').click(function () {
 
   </div>
       <div id="result1">
-	  	  <?php include("save_package2.php"); ?>
+	  	  <?php include("save-label-updated.php"); ?>
 
-	    <?php include("save_package.php"); ?>
+	   
 	
   </div>
 </div>
