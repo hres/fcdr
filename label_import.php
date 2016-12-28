@@ -1,7 +1,7 @@
 <?php include 'connection.php';?>
 
 <?php
-		header("Content-Type: application/vnd.ms-excel");
+		
 
 	error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -50,8 +50,7 @@ if (isset($_POST['search'])) {
 
 
 		for ($row = 2; $row <= $lastRow; $row++) {
-			++$count;
-			if ($count>100) {break;} 
+		
 			$Record                                         = mysqli_real_escape_string($conn,$worksheet->getCell('A'.$row)->getValue());
 
 			$Label_UPC                                      = mysqli_real_escape_string($conn,$worksheet->getCell('B'.$row)->getValue());
@@ -760,11 +759,8 @@ for ($row3 = 0; $row3 < 92; $row3++) {
 		while (!$new_product->isEmpty()) {
 			$senditem = $new_product->shift();
 			if(strlen ($senditem) < 1) continue;
-			//echo "$senditem";
+			echo "$senditem";
 		}
-		echo 'First Name' . "\t" . 'Last Name' . "\t" . 'Phone' . "\n";
-echo 'John' . "\t" . 'Doe' . "\t" . '555-5555' . "\n";
-		header("Content-disposition: attachment; filename=spreadsheet.xls");
 
 	} else {
 		echo "Unable to read the file";

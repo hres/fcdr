@@ -36,9 +36,10 @@ if (isset($_POST['search'])) {
 		$skipped_sales = new SplQueue();
 		$new_product   = new SplQueue();
 		$linked_sales  = new SplQueue();
-
+		$count = 0;
 		for ($row = 2; $row <= $lastRow; $row++) {
-
+			++$count;
+			if($count>=15000) break;
 			//echo "in<br>";
 			$Record                    = $worksheet->getCell('A'.$row)->getValue();
 			$Sales_UPC                 = $worksheet->getCell('B'.$row)->getValue();
