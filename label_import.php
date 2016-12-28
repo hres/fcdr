@@ -260,16 +260,16 @@ $cars = array
   array("5",$Omega_6_Per_Serving,'g', NULL, TRUE),
   array("5",NULL,NULL,NULL, FALSE), 
   
-  array("6",'$Omega_3_Per_Serving','g', '', TRUE),
+  array("6",$Omega_3_Per_Serving,'g', NULL, TRUE),
   array("6",NULL,NULL, NULL, FALSE), 
 
-  array("7",$Carbohydrates_Per_Serving,'g', '$Carbohydrates_Daily_Value', TRUE),
-  array("7",'','', '$Carbohydrates_Daily_Value_PPD', FALSE), 
+  array("7",$Carbohydrates_Per_Serving,'g', $Carbohydrates_Daily_Value, TRUE),
+  array("7",NULL,NULL, $Carbohydrates_Daily_Value_PPD, FALSE), 
 
-  array("8",'$Fibre_Per_Serving','g', '$Fibre_Daily_Value', TRUE),
-  array("8",'','', '$Fibre_Daily_Value_PPD', FALSE),
+  array("8",$Fibre_Per_Serving,'g', $Fibre_Daily_Value, TRUE),
+  array("8",NULL,NULL, $Fibre_Daily_Value_PPD, FALSE),
 
-  array("9",'$Soluble_Fibre_Per_Serving','g', '', TRUE),
+  array("9",$Soluble_Fibre_Per_Serving,'g', '', TRUE),
   array("9",'','', '', FALSE), 
   
   array("10",'$Insoluble_Fibre_Per_Serving','g', '', TRUE),

@@ -8,11 +8,7 @@
 <li><a href="http://www.canada.ca/en/index.html" rel="external">Canada.ca</a></li>
 <li><a href="http://www.canada.ca/en/services/index.html" rel="external">Services</a></li>
 <li><a href="http://www.canada.ca/en/gov/dept/index.html" rel="external">Departments</a></li>
-<li id="wb-lng"><h2>Language selection</h2>
-<ul class="list-inline">
-<li><a lang="fr" href="content-fr.html">Français</a></li>
-</ul>
-</li>
+
 </ul>
 <section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
 <h2>Search and menus</h2>
@@ -32,17 +28,7 @@
 </a>
 </div>
 <object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="./theme-gcwu-fegc/assets/wmms.svg" aria-label="Symbol of the Government of Canada"></object>
-<section id="wb-srch" class="visible-md visible-lg">
-<h2>Search</h2>
-<form action="https://google.ca/search" method="get" role="search" class="form-inline ">
-<div class="form-group">
-<label for="wb-srch-q">Search website</label>
-<input id="wb-srch-q" class="form-control" name="q" type="search" value="" size="27" maxlength="150">
-<input type="hidden" name="q" value="site:wet-boew.github.io OR site:github.com/wet-boew/">
-</div>
-<button type="submit" id="wb-srch-sub" class="btn btn-default">Search</button>
-</form>
-</section>
+
 </div>
 </div>
 </div>
