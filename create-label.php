@@ -1989,9 +1989,8 @@ $('input[name="intervaltype"]').click(function () {
 		</form>
 	
 	<div>
-	 	 <?php include("new-label.php"); ?>
-	     <?php include("save_nnutrition.php"); ?>
-	     <?php include("save_nutrition_s.php"); ?>
+	 	 <?php include("new-label-updated.php"); ?>
+
 	
 	</div>	
 </div>
