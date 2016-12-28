@@ -54,7 +54,8 @@ ini_set('display_errors', 1);
 
 		);
 
-			$stmtcheck = $conn->prepare("Select * FROM Package Label_UPC = ? AND ProductIDP <> ?");
+		
+			$stmtcheck = $conn->prepare("Select * FROM Package WHERE Label_UPC = ? AND ProductIDP <> ?");
 			$stmtcheck->bind_param("si", $Label_UPC, $productID);
 			$stmtcheck->execute();
 
