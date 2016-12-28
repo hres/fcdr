@@ -23,7 +23,8 @@ $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 			$result4 = mysqli_query($conn,$query4);
 			
 			if (!$result or !$result1 or !$result2 or !$result3 or !$result4) {
-    echo "failed to delete the product $query $query1 $query2 $query3 $query4 ";
+			echo"<script>document.getElementById(\"deletemess\").innerHTML = \"<h3><strong>failed to delete the product </strong></h3>\" </script>";
+
 	echo $query;
 
 	}else{
