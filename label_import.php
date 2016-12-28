@@ -294,14 +294,14 @@ $cars = array
   array("16",$Sodium_Per_Serving,'g', $Sodium_Daily_Value, TRUE),
   array("16",NULL,NULL, $Sodium_Daily_Value_PPD, FALSE),
   
-  array("17",'$Potassium_Per_Serving','mg', '$Potassium_Daily_Value', TRUE),
-  array("17",'','', '$Potassium_Daily_Value_PPD', FALSE), 
+  array("17",$Potassium_Per_Serving,'mg', $Potassium_Daily_Value, TRUE),
+  array("17",NULL,NULL, '$Potassium_Daily_Value_PPD', FALSE), 
   
-  array("18",'$Calcium_Per_Serving','mg', '$Calcium_Daily_Value', TRUE),
-  array("18",'','', '$Calcium_Daily_Value_PPD', FALSE), 
+  array("18",$Calcium_Per_Serving,'mg', $Calcium_Daily_Value, TRUE),
+  array("18",NULL,NULL, $Calcium_Daily_Value_PPD, FALSE), 
 
-  array("19",'$Iron_Per_Serving','mg', '$Iron_Daily_Value', TRUE),
-  array("19",'','', '$Iron_Daily_Value_PPD', FALSE), 
+  array("19",$Iron_Per_Serving,'mg', $Iron_Daily_Value, TRUE),
+  array("19",NULL,NULL, '$Iron_Daily_Value_PPD', FALSE), 
 
   array("20",'$VitaminA_Per_Serving','um', '$VitaminA_Daily_Value', TRUE),
   array("20",'','', '$VitaminA_Daily_Value_PPD', FALSE), 
