@@ -171,10 +171,10 @@ EOQ;
 					array(7,	$_POST['Carbohydrates_Amount_S'],$_POST['Carbohydrates_Unit_S'],$_POST['Carbohydrates_DValue_S'], FALSE),
 					array(8,	$_POST['Fibre_Amount_S'],$_POST['Fibre_Unit_S'],$_POST['Fibre_DValue_S'], FALSE),
 					array(9,	$_POST['Soluble_Fibre_Amount_S'],$_POST['Soluble_Fibre_Unit_S'], $_POST['Soluble_Fibre_DValue_S'], FALSE),
-					array(10,	$_POST['Insoluble_Fibre_Amount_S'],$_POST['Insoluble_Fibre_Unit_S'],$_POST['Insoluble_Fibre_DValue_S'], FALSE),
+					array(10,	$_POST['Insoluble_Fibre_Amount_S'],$_POST['Insolube_Fibre_Unit_S'],$_POST['Insolube_Fibre_DValue_S'], FALSE),
 
 					array(11,	$_POST['Sugar_Amount_S'],$_POST['Sugar_Unit_S'],$_POST['Sugar_DValue_S'], FALSE),
-					array(12,	$_POST['Sugar_Alcohols_Amount_S'],$_POST['Sugar_Alcogols_Unit_S'],$_POST['Sugar_Alcohol_DValue_S'], FALSE),
+					array(12,	$_POST['Sugar_Alcohols_Amount_S'],$_POST['Sugar_Alcohols_Unit_S'],$_POST['Sugar_Alcohol_DValue_S'], FALSE),
 					array(13,	$_POST['Starch_Amount_S'],	$_POST['Starch_Unit_S'],$_POST['Starch_DValue_S'], FALSE),
 					array(14,	$_POST['Protein_Amount_S'],$_POST['Protein_Unit_S'], $_POST['Protein_DValue_S'], FALSE),
 					array(15,	$_POST['Cholesterol_Amount_S'],$_POST['Cholesterol_Unit_S'],$_POST['Cholesterol_DValue_S'], FALSE),
@@ -235,7 +235,7 @@ EOQ;
 
 							}
 
-		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3 style=\"color:green;\">Label Successfully updated. Redirecting to the previous page...</h3>\";</script>";
+		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3 style=\"color:Green;\">Label Successfully updated. Redirecting to the previous page...</h3>\";</script>";
 		//echo "<script>setTimeout(\"location.href = 'edit_package.php?PackageID=$packageID';\",2500);</script>";
 
 		}
