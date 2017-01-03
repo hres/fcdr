@@ -6,7 +6,8 @@ require_once "Classes/PHPExcel.php";
 
 
 if (isset($_POST['search'])) {
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1); 
 
 ini_set('memory_limit', '256M');
 	if (is_uploaded_file($_FILES['file_save']['tmp_name'])) {
@@ -230,6 +231,7 @@ EOQ;
 
 						if (($stmt->num_rows) > 0) {
 	echo "Product Grouping in DB";
+					
 					$param = array(
 							$Sales_UPC,
 							$Sales_Description,
@@ -257,9 +259,7 @@ EOQ;
 							$Classification_Number,
 							$Classification_Type,
 							$Comments
-							
-							
-							
+														
 						); 
 
 							/* Grouping exist, so link market share to that product*/
@@ -299,7 +299,7 @@ SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
 EOQ;
 
 							$stmt = $conn->prepare($insert_query);
-						$stmt->bind_param("ssssdddddddddsssisdddssdssi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $Product_Grouping);
+						$stmt->bind_param("ssssdddddddddsssisdddssdsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $Product_Grouping);
 							$result_insert = $stmt->execute();
 
 							$input4 = "Record : $Record, $Sales_Description";
