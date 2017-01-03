@@ -30,7 +30,9 @@ ini_set('memory_limit', '256M');
 		// OTHERWISE, JUST APPEND TO IT...
 
 		// OPEN THE FILE FOR WRITING OR APPENDING...
-
+			
+	error_reporting(E_ALL);
+ini_set('display_errors', 1);
 		
 		$count_skipped = 0;
 		$skipped_sales = new SplQueue();
@@ -38,9 +40,7 @@ ini_set('memory_limit', '256M');
 		$linked_sales  = new SplQueue();
 		$count = 0;
 		for ($row = 2; $row <= $lastRow; $row++) {
-			
-	error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 			++$count;
 			if($count >5000) break;
 			//echo "in<br>";
