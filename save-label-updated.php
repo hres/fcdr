@@ -230,6 +230,8 @@ UPDATE Package AS P
 EOQ;
 							for ($row1 = 0; $row1 < 45; $row1++) {
 								$stmt = $conn->prepare($query_insert_as_sold);
+								$as_sold[$row1][1] =  (!empty($as_sold[$row1][1] )?$as_sold[$row1][1] :NULL);
+								$as_sold[$row1][3] = (!empty($as_sold[$row1][3] )?$as_sold[$row1][3] :NULL);
 								$stmt->bind_param("dsdiii",$as_sold[$row1][1],$as_sold[$row1][2],$as_sold[$row1][3],$packageID,$as_sold[$row1][0],$as_sold[$row1][4]);
 								$results = $stmt->execute();
 
