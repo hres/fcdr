@@ -1215,7 +1215,7 @@ $('input[name="intervaltype"]').click(function () {
    <input type="text" class="form-control" placeholder="Amount of Energy" name="Energy_Amount_S" id="Energy_Amount_S">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="Energy_Unit_S" name="Energy_Unit_S" disabled>
+ <select class="form-control" id="Energy_Unit_S" name="Energy_Unit_S" >
   <option value="kcal" selected="selected">kcal</option>
       
       </select>  </div>
@@ -1232,7 +1232,7 @@ $('input[name="intervaltype"]').click(function () {
    <input type="text" class="form-control" placeholder="Amount of Energy kj" name="Energy_kj_Amount_S" id="Fat_Amount_S">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Energy_kj_Unit_S" disabled>
+ <select class="form-control" id="sel1" name="Energy_kj_Unit_S">
   <option value="kj" selected="selected">kj</option>
 			
       
