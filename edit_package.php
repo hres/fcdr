@@ -27,7 +27,22 @@
 	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
 
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+
+	<script>
+
+$(document).ready(function() {
+
+$('input[name="intervaltype"]').click(function () {
+    //jQuery handles UI toggling correctly when we apply "data-target" attributes and call .tab('show') 
+    //on the <li> elements' immediate children, e.g the <label> elements:
+    $(this).closest('label').tab('show');
+});
+} );
+
+
+	</script>
 
 
 
@@ -48,19 +63,6 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
-	<script>
-
-$(document).ready(function() {
-
-$('input[name="intervaltype"]').click(function () {
-    //jQuery handles UI toggling correctly when we apply "data-target" attributes and call .tab('show') 
-    //on the <li> elements' immediate children, e.g the <label> elements:
-    $(this).closest('label').tab('show');
-});
-} );
-
-
-	</script>
 		<script>
 
 $(document).ready(function() {
