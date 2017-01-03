@@ -107,7 +107,7 @@ ini_set('display_errors', 1);
 				}
 
 			} else {
-				if (preg_match('/[^.0-9]/', $Product_Grouping)) {
+				if (is_numeric  ($Product_Grouping)) {
 
 				
 				echo "Grouping found";
@@ -477,7 +477,7 @@ EOQ;
 						}
 					}
 				}
-				else if (!preg_match('/[^.0-9]/', $Product_Grouping)) {
+				else if (!is_numeric ($Product_Grouping)) {
 					
 					
 					
@@ -689,7 +689,7 @@ EOQ;
 							}	
 							
 							
-							$in = "Record : $Record, $Product_Description**";
+							$in = "Record : $Record, $Product_Description";
 							$new_product->push($in);
 
 
