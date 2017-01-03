@@ -263,15 +263,15 @@ VALUES ( ?, ?, ?, ?, ?, ?)
 EOQ;
 for ($row = 0; $row < 90; $row++) {
 								$stmt = $conn->prepare($query_insert);
-								if(!empty($cars[$row][1]){
+								if(!empty($cars[$row][1])){
 								$stmt->bind_param("iidsds",$last_id, $cars[$row][0],$cars[$row][1],$cars[$row][2],$cars[$row][3],$cars[$row][4]);
-
+								$results = $stmt->execute();
 								}else{
 							      $stmt->bind_param("iidsds",$last_id, $cars[$row][0],NULL,$cars[$row][2],$cars[$row][3],$cars[$row][4]);
-
+								 $results = $stmt->execute();
 								}
 								
-								$results = $stmt->execute();
+								
 
 }
 
