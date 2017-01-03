@@ -106,6 +106,8 @@ ini_set('memory_limit', '256M');
 			} else {
 				if (preg_match('/^\d+$/', $Product_Grouping)) {
 
+				
+				echo "Grouping found";
 					/* Check if grouping already exists in Market Share table */
 					$check_grouping =<<<EOQ
 SELECT *
@@ -227,7 +229,7 @@ EOQ;
 						$stmt->store_result();
 
 						if (($stmt->num_rows) > 0) {
-
+	echo "Product Grouping in DB";
 					$param = array(
 							$Sales_UPC,
 							$Sales_Description,
