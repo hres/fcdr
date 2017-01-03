@@ -9,7 +9,7 @@
  */
  
 	$query = "ALTER TABLE Sales MODIFY Product_Grouping text";
-	
+	$result33 = mysqli_query($conn,$query);
 	$query2 =  "Delete from $dbname.Sales where SalesID > 0"; 	
 	$result = mysqli_query($conn,$query2);	
 	
