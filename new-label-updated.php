@@ -246,7 +246,7 @@ EOQ;
 						  array(46,$_POST['Saturated_Trans_kj_Amount_S'],$_POST['Saturated_Trans_kj_Unit_S'],$_POST['Saturated_Trans_DValue_S'], FALSE),
 
 						  array(47,$_POST['Energy_kj_Amount'],$_POST['Energy_kj_Unit'], $_POST['Engergy_kj_DValue'], TRUE),
-						  array(47,$_POST['Energy_kj_Amount_S'],'kj',$_POST['Energy_kj_DValue_S'], FALSE),
+						  array(47,$_POST['Energy_kj_Amount_S'],'kj',$_POST['Energy_kj_DValue_S'], FALSE)
 
 
 			);
