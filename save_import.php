@@ -150,8 +150,6 @@ EOQ;
 							$Cluster_Number,
 							$Product_Grouping,
 							$Product_Description,
-							$Classification_Number,
-							$Classification_Type,
 							$Comments
 							
 							
@@ -183,18 +181,16 @@ INSERT INTO Sales (
 							Dollar_Volume_Total,
 							Cluster_Number,
 							Product_Grouping,
-							Product_Description,
-							Classification_Number,
-							Classification_Type,
 							Comments  
 )
-SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Sales_UPC = ?
 EOQ;
 
+
 						$stmt = $conn->prepare($insert_query);
-						$stmt->bind_param("ssssdddddddddsssisdddssdsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $Sales_UPC);
+						$stmt->bind_param("ssssdddddddddsssisdddsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25], $Sales_UPC);
 						$result_insert = $stmt->execute();
 			 
 						if ($Product_Description != null) {
@@ -263,7 +259,7 @@ EOQ;
 						); 
 
 							/* Grouping exist, so link market share to that product*/
-							$insert_query =<<<EOQ
+							$insert_query22 =<<<EOQ
 INSERT INTO Sales (
 							ProductIDS,
 							Sales_UPC,
@@ -288,16 +284,16 @@ INSERT INTO Sales (
 							Dollar_Volume_Total,
 							Cluster_Number,
 							Product_Grouping,
-							Product_Description,
 							Comments  
 )
-SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Product_Grouping = ?
 EOQ;
 
-							$stmt = $conn->prepare($insert_query);
-						$stmt->bind_param("ssssdddddddddsssisdddssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21],  $param[22], $param[23], $Product_Grouping);
+
+							$stmt = $conn->prepare($insert_query22);
+						$stmt->bind_param("ssssdddddddddsssisdddsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25], $Product_Grouping);
 							$result_insert = $stmt->execute();
 							if($result_insert) {
 							$input4 = "Record : $Record, $Sales_Description";
