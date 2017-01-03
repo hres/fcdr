@@ -115,7 +115,7 @@ EOQ;
 // AND ProductIDS <> (Select Distinct ProductIDS From $dbname.Sales Where Product_Grouping= $Product_Grouping)";
 
 					$stmt = $conn->prepare($check_grouping);
-					$stmt->bind_param("i", $Sales_UPC);
+					$stmt->bind_param("s", $Sales_UPC);
 					$result_grouping = $stmt->execute();
 					$stmt->store_result();
 
