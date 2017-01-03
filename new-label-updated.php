@@ -114,7 +114,7 @@ EOQ;
 
 			$cars = array(
 						  array(1,$_POST['Energy_Amount'],$_POST['Energy_Unit'], $_POST['Energy_DValue'], TRUE),
-						  array(1,$_POST['Energy_Amount_S'],$_POST['Energy_Unit_S'], $_POST['Energy_DValue_S'], FALSE),
+						  array(1,$_POST['Energy_Amount_S'],'kcal', $_POST['Energy_DValue_S'], FALSE),
 
 						  array(2,$_POST['Fat_Amount'],$_POST['Fat_Unit'], $_POST['Fat_DValue'], TRUE),
 						  array(2,$_POST['Fat_Amount_S'],$_POST['Fat_Unit_S'],$_POST['Fat_DValue_S'], FALSE),
@@ -246,7 +246,7 @@ EOQ;
 						  array(46,$_POST['Saturated_Trans_kj_Amount_S'],$_POST['Saturated_Trans_kj_Unit_S'],$_POST['Saturated_Trans_DValue_S'], FALSE),
 
 						  array(47,$_POST['Energy_kj_Amount'],$_POST['Energy_kj_Unit'], $_POST['Engergy_kj_DValue'], TRUE),
-						  array(47,$_POST['Energy_kj_Amount_S'],$_POST['Energy_kj_Unit_S'],$_POST['Energy_kj_DValue_S'], FALSE),
+						  array(47,$_POST['Energy_kj_Amount_S'],'kj',$_POST['Energy_kj_DValue_S'], FALSE),
 
 
 			);
