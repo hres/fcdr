@@ -6,8 +6,6 @@ require_once "Classes/PHPExcel.php";
 
 
 if (isset($_POST['search'])) {
-error_reporting(E_ALL);
-ini_set('display_errors', 1); 
 
 ini_set('memory_limit', '256M');
 	if (is_uploaded_file($_FILES['file_save']['tmp_name'])) {
@@ -33,12 +31,16 @@ ini_set('memory_limit', '256M');
 
 		// OPEN THE FILE FOR WRITING OR APPENDING...
 
+		
 		$count_skipped = 0;
 		$skipped_sales = new SplQueue();
 		$new_product   = new SplQueue();
 		$linked_sales  = new SplQueue();
 		$count = 0;
 		for ($row = 2; $row <= $lastRow; $row++) {
+			
+	error_reporting(E_ALL);
+ini_set('display_errors', 1);
 			++$count;
 			if($count >5000) break;
 			//echo "in<br>";
@@ -297,10 +299,12 @@ EOQ;
 							$stmt = $conn->prepare($insert_query);
 						$stmt->bind_param("ssssdddddddddsssisdddssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21],  $param[22], $param[23], $Product_Grouping);
 							$result_insert = $stmt->execute();
-
+							if($result_insert) {
 							$input4 = "Record : $Record, $Sales_Description";
 							$linked_sales->push($input4);
-
+}else{
+	echo "query failed";
+}
 							if ($Product_Description != null) {
 
 								$query_update =<<<EOQ
