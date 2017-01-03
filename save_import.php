@@ -110,7 +110,7 @@ ini_set('display_errors', 1);
 				if (is_numeric  ($Product_Grouping)) {
 
 				
-				echo "Grouping found";
+				
 					/* Check if grouping already exists in Market Share table */
 					$check_grouping =<<<EOQ
 SELECT *
@@ -228,7 +228,7 @@ EOQ;
 						$stmt->store_result();
 
 						if (($stmt->num_rows) > 0) {
-	echo "Product Grouping in DB";
+	
 					
 					$param = array(
 							$Sales_UPC,
@@ -298,8 +298,6 @@ EOQ;
 							if($result_insert) {
 							$input4 = "Record : $Record, $Sales_Description";
 							$linked_sales->push($input4);
-}else{
-	echo "query failed";
 }
 							if ($Product_Description != null) {
 
