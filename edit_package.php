@@ -187,8 +187,8 @@ $('input[name="intervaltype"]').click(function () {
 				<input type="text" class="form-control" name="Label_Description" id="Label_Description" placeholder="Enter the Description of the Package Label" value="<?PHP echo $row['Label_Description']; ?>" required/>
 			</div>
 			<div class="form-group col-sm-4">
-				<label for="Common_Measure" class="required">Common Household Measure <strong class="required"><br>(required)</strong></label>
-				<input type="text" class="form-control" name="Common_Measure" id="Common_Measure" placeholder="Enter the Common Household Measure of the Package Label" value="<?PHP echo $row['Common_Measure']; ?>" required/>
+				<label for="Common_Measure" >Common Household Measure </label>
+				<input type="text" class="form-control" name="Common_Measure" id="Common_Measure" placeholder="Enter the Common Household Measure of the Package Label" value="<?PHP echo $row['Common_Measure']; ?>"/>
 			</div>
 		
 		</div>

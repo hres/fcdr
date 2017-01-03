@@ -71,7 +71,7 @@ if (isset($_POST['search'])) {
 					$query2 = "Insert into $dbname.Images (Image, ImageName,LabelID,Extension) VALUES ('$image', '$withoutExt', '$ID','$ext')";	 
 					$result2 = mysqli_query($conn,$query2);
 					if(!$result2){
-						echo "error";
+						
 						continue;
 					}else{
 						
