@@ -2,37 +2,20 @@
 <?php include 'connection.php';?>
 
 <?php
-error_reporting(0);   
-$dir=substr(uniqid(),-7);
-require_once "Classes/PHPExcel.php";
+/* error_reporting(0);   
+$dir=substr(uniqid(),-7); */
   $valid_formats = array("jpg", "png", "gif", "jpeg");
 $max_file_size = 	10240*10000; //10000 kb
 
- objPHPExcel = new PHPExcel();
-            $objWorkSheet = $objPHPExcel->createSheet();            
-
-             // Set the active Excel worksheet to sheet 0 
-            $objPHPExcel->setActiveSheetIndex(0);  
-
-            //Taslak Verileri
-            $objPHPExcel->getActiveSheet()->SetCellValue('D'.'1', 'Firm'); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('J'.'1', 'SFUFORMU - FR.PS.21'); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('J'.'3', 'NO:'); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('D'.'2', 'Name Surname Signature'); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('A'.'4', 'Date');
-            $objPHPExcel->getActiveSheet()->SetCellValue('A'.'5', 'Stock No:'); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('C'.'5', 'Image'); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('E'.'5', 'Image'); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('G'.'5', 'Resim'); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('I'.'5', 'Image'); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('K'.'5', 'Quantity'); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('M'.'5', 'Price'); 
-
-
-
-     
-            $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel); 
-            $objWriter->save('some_excel_file.xlsx'); 
+require_once 'Classes/PHPExcel.php';
+$objPHPExcel = new PHPExcel();
+$objPHPExcel->getActiveSheet()->setCellValue('A1', 'hello world!');
+$objPHPExcel->getActiveSheet()->setTitle('Chesse1');
+header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+header('Content-Disposition: attachment;filename="helloworld.xlsx"');
+header('Cache-Control: max-age=0');
+$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+$objWriter->save('php://output');
 
 /* $path = "Prototype/uploads/"; // Upload directory
 mkdir ($path, 0744); */
