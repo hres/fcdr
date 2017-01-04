@@ -111,7 +111,7 @@ if (isset($_POST['search'])) {
 		if(strlen ($senditem) < 1) continue;
 		echo "$senditem <br>";
    } */
-	echo "<h4>Successfully Imported Images</h4>";
+
    while (!$imported->isEmpty()) { 
                             
         $senditem = $imported->shift(); 
