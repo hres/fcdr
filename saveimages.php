@@ -7,8 +7,9 @@ $dir=substr(uniqid(),-7); */
 ini_set('display_errors', 1);
  */
 
-   header("Content-type: text/plain");
+   header("Content-type: text/plain; charset=utf-8");
    header("Content-Disposition: attachment; filename=savethis.txt");
+    echo "\x00This is some text";
    print "This is some text...\n";
 
    // do your Db stuff here to get t
