@@ -4,10 +4,12 @@
 <?php
 /* error_reporting(0);   
 $dir=substr(uniqid(),-7); */
-  $valid_formats = array("jpg", "png", "gif", "jpeg");
-$max_file_size = 	10240*10000; //10000 kb
-/* 
-require_once 'Classes/PHPExcel.php';
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require_once "Classes/PHPExcel.php";
+
 $objPHPExcel = new PHPExcel();
 $objPHPExcel->getActiveSheet()->setCellValue('A1', 'hello world!');
 $objPHPExcel->getActiveSheet()->setTitle('Chesse1');
@@ -15,7 +17,11 @@ header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetm
 header('Content-Disposition: attachment;filename="helloworld.xlsx"');
 header('Cache-Control: max-age=0');
 $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
-$objWriter->save('php://output'); */
+$objWriter->save('php://output');
+
+  $valid_formats = array("jpg", "png", "gif", "jpeg");
+$max_file_size = 	10240*10000; //10000 kb
+
 
 /* $path = "Prototype/uploads/"; // Upload directory
 mkdir ($path, 0744); */
