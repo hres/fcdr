@@ -52,18 +52,18 @@ if (isset($_POST['search'])) {
 				$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $image_name);
 				
 				$Label_UPC = $withoutExt;
-				$withoutExt .= "-$count";
 				
 				
+			$flag = false;	
 			$query = "Select * from $dbname.Package where Label_UPC = '$Label_UPC'"; 
 			$result = mysqli_query($conn,$query);
 			
 			$rowcount=mysqli_num_rows($result);
+			
 			if($rowcount>0){
-				//echo "UPC10 Code already belongs to a different product ";
 		
 			
-			$imported->push($withoutExt);
+			
 				while($row = $result->fetch_assoc()) {
 					
 					
@@ -75,12 +75,17 @@ if (isset($_POST['search'])) {
 						continue;
 					}else{
 						
-						++$count;
+						$flag =true;
 					}
 					
 					
 				}
 			
+			if($flag) {
+				++$count; 
+				$withoutExt .= "-$count";
+				$imported->push($withoutExt);
+				}
 					
 				
 				
