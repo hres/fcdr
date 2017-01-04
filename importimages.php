@@ -119,7 +119,7 @@
 <form  action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
 	
 	<label class="btn btn-primary" for="my-file-selector">
-    <input id="my-file-selector" type="file"  name="files[]" style="display:none;" multiple>
+    <input id="my-file-selector" type="file"  name="files[]" style="display:none;" multiple onchange ="$('#upload-file-info').html($(this).val());">
 	
    Browse
 </label>
