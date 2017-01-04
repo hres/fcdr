@@ -118,8 +118,8 @@ if (isset($_POST['search'])) {
 	        }
 	    }
 	}
-	/* 
-	echo "<h3>$count files were imported <h3>";
+	
+/* 	echo "<h3>$count files were imported <h3>";
 	
 
 
@@ -137,9 +137,9 @@ if (isset($_POST['search'])) {
         $senditem = $skippedimages->shift(); 
 		if(strlen ($senditem) < 1) continue;
 		echo "$senditem <br>";
-   }  
+   }  */ 
   }
-   */
+  
   
   
 	
