@@ -3,29 +3,19 @@ include("connection.php");
 /* error_reporting(0);   
 $dir=substr(uniqid(),-7); */
 
-error_reporting(E_ALL);
+/* error_reporting(E_ALL);
 ini_set('display_errors', 1);
+ */
 
+   header("Content-type: text/plain");
+   header("Content-Disposition: attachment; filename=savethis.txt");
+    print "This is some text...\n";
 
-
+   // do your Db stuff here to get t
   $valid_formats = array("jpg", "png", "gif", "jpeg");
 $max_file_size = 	10240*10000; //10000 kb
 
-header("Content-Type: text/csv");
-header("Content-Disposition: attachment; filename=file.csv");
 
-function outputCSV($data) {
-  $output = fopen("php://output", "w");
-  foreach ($data as $row)
-    fputcsv($output, $row); // here you can change delimiter/enclosure
-  fclose($output);
-}
-
-outputCSV(array(
-  array("name 1", "age 1", "city 1"),
-  array("name 2", "age 2", "city 2"),
-  array("name 3", "age 3", "city 3")
-));
 /* $path = "Prototype/uploads/"; // Upload directory
 mkdir ($path, 0744); */
 $count = 0;
@@ -125,7 +115,7 @@ if (isset($_POST['search'])) {
 	
 
 
-   while (!$imported->isEmpty()) { 
+/*    while (!$imported->isEmpty()) { 
                             
         $senditem = $imported->shift(); 
 		if(strlen ($senditem) < 1) continue;
@@ -139,7 +129,7 @@ if (isset($_POST['search'])) {
         $senditem = $skippedimages->shift(); 
 		if(strlen ($senditem) < 1) continue;
 		echo "$senditem <br>";
-   }  
+   }  */ 
   }
   
   

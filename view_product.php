@@ -304,7 +304,7 @@ $(window).resize();
   </header>
 
   <div class="modal-body" style="background-color:#F8F8F8;">
-   <div style="display:inline-block;"> <strong><h3>Are you sure you want to delete this Product?</h3></strong></div>
+   <div style="display:inline-block;"> <strong><h4>Are you sure you want to delete this Product and all associated Labels and Market Share?</h4></strong></div>
  <div style="display:inline-block;"> <form action="#" method="post">
 
   <input type="submit" value="Cancel" class="btn btn-default">

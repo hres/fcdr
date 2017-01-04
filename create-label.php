@@ -460,7 +460,7 @@ $('input[name="intervaltype"]').click(function () {
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
 
- <select class="form-control" id="Fat_Unit" name="Fat_Unit">
+ <select class="form-control" id="Fat_Unit" name="Fat_Unit" required>
   <option value="" selected="selected"></option>
 			<?php include 'Units.php';?>
       
@@ -548,12 +548,12 @@ $('input[name="intervaltype"]').click(function () {
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label for="Carbohydrates_Amount" class="col-sm-3 control-label required">Carbohydrates<strong class="required">(required)</strong></label>
+  <label for="Carbohydrates_Amount" class="col-sm-3 control-label required">Carbohydrates <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="Amount of Carbohydrates" name="Carbohydrates_Amount" id="Carbohydrates_Amount" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="Carbohydrates_Unit" name="Carbohydrates_Unit">
+ <select class="form-control" id="Carbohydrates_Unit" name="Carbohydrates_Unit" required>
   <option value="" selected="selected"></option>
 			<?php include 'Units.php';?>
       
@@ -570,7 +570,7 @@ $('input[name="intervaltype"]').click(function () {
    <input type="text" class="form-control" placeholder="Amount of Fibre" name="Fibre_Amount" id="Fibre_Amount">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="Fibre_Unit" name="Fibre_Unit">
+ <select class="form-control" id="Fibre_Unit" name="Fibre_Unit" required>
   <option value="" selected="selected"></option>
 			<?php include 'Units.php';?>
       
