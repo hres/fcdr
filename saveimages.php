@@ -4,6 +4,7 @@
 <?php
 /* error_reporting(0);   
 $dir=substr(uniqid(),-7); */
+require_once "Classes/PHPExcel.php";
   $valid_formats = array("jpg", "png", "gif", "jpeg");
 $max_file_size = 	10240*10000; //10000 kb
 
@@ -29,14 +30,7 @@ $max_file_size = 	10240*10000; //10000 kb
 
 
 
-            $objDrawing = new PHPExcel_Worksheet_Drawing();
-                  $objDrawing->setWorksheet($objWorkSheet);
-                  $objDrawing->setName("name");
-                  $objDrawing->setDescription("Description");
-                  $objDrawing->setPath('temp/3.jpeg');
-                  $objDrawing->setCoordinates('F9');
-                  $objDrawing->setOffsetX(1);
-                  $objDrawing->setOffsetY(5);
+     
             $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel); 
             $objWriter->save('some_excel_file.xlsx'); 
 

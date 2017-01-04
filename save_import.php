@@ -31,8 +31,7 @@ ini_set('memory_limit', '256M');
 
 		// OPEN THE FILE FOR WRITING OR APPENDING...
 			
-	error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 		
 		$count_skipped = 0;
 		$skipped_sales = new SplQueue();
