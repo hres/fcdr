@@ -2,8 +2,8 @@
 <?php include 'connection.php';?>
 
 <?php
-/* error_reporting(0);   
-$dir=substr(uniqid(),-7); */
+error_reporting(0);   
+$dir=substr(uniqid(),-7);
 require_once "Classes/PHPExcel.php";
   $valid_formats = array("jpg", "png", "gif", "jpeg");
 $max_file_size = 	10240*10000; //10000 kb
