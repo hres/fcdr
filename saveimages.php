@@ -3,20 +3,10 @@ include("connection.php");
 /* error_reporting(0);   
 $dir=substr(uniqid(),-7); */
 
-error_reporting(E_ALL);
+/* error_reporting(E_ALL);
 ini_set('display_errors', 1);
+ */
 
-require_once "Classes/PHPExcel.php";
-
-$objPHPExcel = new PHPExcel();
-$objPHPExcel->getActiveSheet()->setCellValue('A1', 'hello world!');
-$objPHPExcel->getActiveSheet()->setTitle('Chesse1');
-header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-header('Content-Disposition: attachment;filename="helloworld.xlsx"');
-header('Cache-Control: max-age=0');
-$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
-//ob_end_clean();
-$objWriter->save('php://output');
 
   $valid_formats = array("jpg", "png", "gif", "jpeg");
 $max_file_size = 	10240*10000; //10000 kb
@@ -117,7 +107,7 @@ if (isset($_POST['search'])) {
 	    }
 	}
 	
-/* 	echo "<h3>$count files were imported <h3>";
+	echo "<h3>$count files were imported <h3>";
 	
 
 
@@ -135,7 +125,7 @@ if (isset($_POST['search'])) {
         $senditem = $skippedimages->shift(); 
 		if(strlen ($senditem) < 1) continue;
 		echo "$senditem <br>";
-   }  */ 
+   }  
   }
   
   
