@@ -1,7 +1,5 @@
-
-<?php include 'connection.php';?>
-
 <?php
+<?php include 'connection.php';?>
 /* error_reporting(0);   
 $dir=substr(uniqid(),-7); */
 
@@ -154,11 +152,3 @@ if (isset($_POST['search'])) {
     } */
 
 ?>
-	
- 	
-	
-	
-	
-	
-	
-	
