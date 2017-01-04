@@ -1,13 +1,9 @@
 <?php include 'connection.php';?>
 <?php
 
-	$xllquery =  "Insert INTO Unit_Of_Measure (UofM_Name) VALUE ('µm')"	;	
 
-		$resultxx33 = mysqli_query($conn,$xllquery);	
-
-	
  
-/* 
+
 	$query2 =  "Delete from $dbname.Sales where SalesID > 0"; 	
 	$result = mysqli_query($conn,$query2);	
 	
@@ -30,7 +26,7 @@
 		$result7 = mysqli_query($conn,$query);	
 	echo "Database Cleared out";
 
-		 */					
+							
 
 
 $conn->close();
