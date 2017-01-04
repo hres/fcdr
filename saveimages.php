@@ -2,10 +2,43 @@
 <?php include 'connection.php';?>
 
 <?php
-error_reporting(0);   
-$dir=substr(uniqid(),-7);
+/* error_reporting(0);   
+$dir=substr(uniqid(),-7); */
   $valid_formats = array("jpg", "png", "gif", "jpeg");
 $max_file_size = 	10240*10000; //10000 kb
+
+ objPHPExcel = new PHPExcel();
+            $objWorkSheet = $objPHPExcel->createSheet();            
+
+             // Set the active Excel worksheet to sheet 0 
+            $objPHPExcel->setActiveSheetIndex(0);  
+
+            //Taslak Verileri
+            $objPHPExcel->getActiveSheet()->SetCellValue('D'.'1', 'Firm'); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('J'.'1', 'SFUFORMU - FR.PS.21'); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('J'.'3', 'NO:'); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('D'.'2', 'Name Surname Signature'); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('A'.'4', 'Date');
+            $objPHPExcel->getActiveSheet()->SetCellValue('A'.'5', 'Stock No:'); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('C'.'5', 'Image'); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('E'.'5', 'Image'); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('G'.'5', 'Resim'); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('I'.'5', 'Image'); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('K'.'5', 'Quantity'); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('M'.'5', 'Price'); 
+
+
+
+            $objDrawing = new PHPExcel_Worksheet_Drawing();
+                  $objDrawing->setWorksheet($objWorkSheet);
+                  $objDrawing->setName("name");
+                  $objDrawing->setDescription("Description");
+                  $objDrawing->setPath('temp/3.jpeg');
+                  $objDrawing->setCoordinates('F9');
+                  $objDrawing->setOffsetX(1);
+                  $objDrawing->setOffsetY(5);
+            $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel); 
+            $objWriter->save('some_excel_file.xlsx'); 
 
 /* $path = "Prototype/uploads/"; // Upload directory
 mkdir ($path, 0744); */
@@ -104,13 +137,7 @@ if (isset($_POST['search'])) {
 	
 	echo "<h3>$count files were imported <h3>";
 	
-/* 	echo "<h4>Skipped Images</h4>";
-   while (!$skippedimages->isEmpty()) { 
-                            
-        $senditem = $skippedimages->shift(); 
-		if(strlen ($senditem) < 1) continue;
-		echo "$senditem <br>";
-   } */
+
 
    while (!$imported->isEmpty()) { 
                             
@@ -118,9 +145,16 @@ if (isset($_POST['search'])) {
 		if(strlen ($senditem) < 1) continue;
 		echo "$senditem <br>";
    }	
-}
-  
-  
+
+ 
+	echo "<h4>Skipped Images</h4>";
+   while (!$skippedimages->isEmpty()) { 
+                            
+        $senditem = $skippedimages->shift(); 
+		if(strlen ($senditem) < 1) continue;
+		echo "$senditem <br>";
+   }  
+  }
   
   
   
