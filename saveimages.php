@@ -4,7 +4,7 @@
 <?php
 /* error_reporting(0);   
 $dir=substr(uniqid(),-7); */
-
+/* 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -19,7 +19,7 @@ header('Cache-Control: max-age=0');
 $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
 ob_end_clean();
 $objWriter->save('php://output');
-
+ */
   $valid_formats = array("jpg", "png", "gif", "jpeg");
 $max_file_size = 	10240*10000; //10000 kb
 
