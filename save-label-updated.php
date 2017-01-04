@@ -151,8 +151,8 @@ UPDATE Package AS P
 EOQ;
 							for ($row = 0; $row < 45; $row++) {
 								$stmt = $conn->prepare($query_insert_asprepred);
-								$as_prepared[$row][1] =  (!empty($as_prepared[$row][1]) && !is_numeric($as_prepared[$row][1])?$as_prepared[$row][1] :NULL);
-								$as_prepared[$row][3] = (!empty($as_prepared[$row][3]) && !is_numeric($as_prepared[$row][3])?$as_prepared[$row][3] :NULL);
+								$as_prepared[$row][1] =  (!empty($as_prepared[$row][1]) or is_numeric($as_prepared[$row][1])?$as_prepared[$row][1] :NULL);
+								$as_prepared[$row][3] = (!empty($as_prepared[$row][3]) or is_numeric($as_prepared[$row][3])?$as_prepared[$row][3] :NULL);
 								
 								$stmt->bind_param("dsdiis",$as_prepared[$row][1],$as_prepared[$row][2],$as_prepared[$row][3],$packageID,$as_prepared[$row][0],$as_prepared[$row][4]);
 								$results = $stmt->execute();
@@ -233,8 +233,8 @@ UPDATE Package AS P
 EOQ;
 							for ($row1 = 0; $row1 < 45; $row1++) {
 								$stmt = $conn->prepare($query_insert_as_sold);
-								$as_sold[$row1][1] =  (!empty($as_sold[$row1][1]) && !is_numeric($as_sold[$row1][1]) ?$as_sold[$row1][1] :NULL);
-								$as_sold[$row1][3] = (!empty($as_sold[$row1][3]) && !is_numeric($as_sold[$row1][3])?$as_sold[$row1][3] :NULL);
+								$as_sold[$row1][1] =  (!empty($as_sold[$row1][1]) or is_numeric($as_sold[$row1][1]) ?$as_sold[$row1][1] :NULL);
+								$as_sold[$row1][3] = (!empty($as_sold[$row1][3]) or is_numeric($as_sold[$row1][3])?$as_sold[$row1][3] :NULL);
 								$stmt->bind_param("dsdiii",$as_sold[$row1][1],$as_sold[$row1][2],$as_sold[$row1][3],$packageID,$as_sold[$row1][0],$as_sold[$row1][4]);
 								$results = $stmt->execute();
 
