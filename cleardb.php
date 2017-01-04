@@ -1,19 +1,9 @@
 <?php include 'connection.php';?>
 <?php
 
-	$xllquery =  "Insert INTO Unit_Of_Measure (UofM_Name) VALUE ('kg')"	;	
-	$xllquery2 =  "Insert INTO Unit_Of_Measure (UofM_Name) VALUE ('RE')";		
-	
-	$xllquery3 =  "Insert INTO Unit_Of_Measure (UofM_Name) VALUE ('mL')";	
-	$xllquery23 =  "Insert INTO Unit_Of_Measure (UofM_Name) VALUE ('L')";	
-	
-		$xllquery4 =  "Insert INTO Unit_Of_Measure (UofM_Name) VALUE ('µg')";	
-	$resultxx = mysqli_query($conn,$xllquery);	
-	$resultxy = mysqli_query($conn,$xllquery2);	
+	$xllquery =  "Insert INTO Unit_Of_Measure (UofM_Name) VALUE ('µm')"	;	
 
-	$resultxxx = mysqli_query($conn,$xllquery3);	
-	$resultxxy = mysqli_query($conn,$xllquery23);	
-		$resultxx33 = mysqli_query($conn,$xllquery4);	
+		$resultxx33 = mysqli_query($conn,$xllquery);	
 
 	
  

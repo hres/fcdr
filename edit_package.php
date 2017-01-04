@@ -401,12 +401,12 @@ $('input[name="intervaltype"]').click(function () {
 <div class="well" style="margin-right:2%;">	
 			<div class="row">
 		<div class="form-group col-xs-6">
-				<label for="Per_Serving_Amount">Per Serving Amount <strong class="required">(required)</strong></label>
+				<label for="Per_Serving_Amount" class="required">Per Serving Amount <strong class="required">(required)</strong></label>
 				<input type="text" style="width:540px" class="form-control" name="Per_Serving_Amount" id="manufacturer" placeholder="Enter the Amount in the Package Label" value="<?PHP echo $row['Per_Serving_Amount']; ?>" required/>
 			</div>
 	
 					<div class="form-group col-xs-6">
-	<label for="sel1" name="Per_Serving_Unit" required> Per Serving  Unit of measure <strong class="required">(required)</strong></label>
+	<label for="sel1" name="Per_Serving_Unit" class="required"> Per Serving  Unit of measure <strong class="required">(required)</strong></label>
     <select class="form-control" id="sel1" name="Per_Serving_Unit" style="width:540px" required>
 		  <option value="<?PHP echo $row['Per_Serving_Unit']; ?>" selected="selected"><?PHP echo $row['Per_Serving_Unit']; ?></option>
 		<?php include 'Units.php';?>
