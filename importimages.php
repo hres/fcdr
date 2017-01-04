@@ -119,7 +119,7 @@
 <form  action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
 	
 	<label class="btn btn-primary" for="my-file-selector">
-    <input id="my-file-selector" type="file"  name="files[]" style="display:none;" multiple onchange ="$('#upload-file-info').html($(this).val());">
+    <input id="my-file-selector" type="file"  name="files[]" style="display:none;" multiple>
 	
    Browse
 </label>
@@ -163,7 +163,17 @@
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<script>
 
+$('#my-file-selector').on('change', function(e){
+	var files = $(this).prop('files');
+  for (var i = 0; i < files.length; i++) {
+  console.log(files[i]);
+  	$('#upload-file-info').append((files[i].name).fontsize(5) +", ");
+  }
+});
+
+</script>
 
 </body>
 </html>
