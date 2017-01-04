@@ -9,7 +9,7 @@ ini_set('display_errors', 1);
 
    header("Content-type: text/plain");
    header("Content-Disposition: attachment; filename=savethis.txt");
-    print "This is some text...\n";
+   print "This is some text...\n";
 
    // do your Db stuff here to get t
   $valid_formats = array("jpg", "png", "gif", "jpeg");
