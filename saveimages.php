@@ -11,6 +11,12 @@ ini_set('display_errors', 1);
   $valid_formats = array("jpg", "png", "gif", "jpeg");
 $max_file_size = 	10240*10000; //10000 kb
 
+$data = "Romy, Abel, Audi";
+
+
+header('Content-Type: application/csv');
+header('Content-Disposition: attachement; filename="filename.csv"');
+echo $data; exit();
 
 /* $path = "Prototype/uploads/"; // Upload directory
 mkdir ($path, 0744); */
