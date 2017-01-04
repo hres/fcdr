@@ -3,21 +3,29 @@ include("connection.php");
 /* error_reporting(0);   
 $dir=substr(uniqid(),-7); */
 
-/* error_reporting(E_ALL);
+error_reporting(E_ALL);
 ini_set('display_errors', 1);
- */
+
 
 
   $valid_formats = array("jpg", "png", "gif", "jpeg");
 $max_file_size = 	10240*10000; //10000 kb
 
-header("Content-type: text/csv");
+header("Content-Type: text/csv");
 header("Content-Disposition: attachment; filename=file.csv");
-header("Pragma: no-cache");
-header("Expires: 0");
 
-echo "record1,record2,record3\n";
+function outputCSV($data) {
+  $output = fopen("php://output", "w");
+  foreach ($data as $row)
+    fputcsv($output, $row); // here you can change delimiter/enclosure
+  fclose($output);
+}
 
+outputCSV(array(
+  array("name 1", "age 1", "city 1"),
+  array("name 2", "age 2", "city 2"),
+  array("name 3", "age 3", "city 3")
+));
 /* $path = "Prototype/uploads/"; // Upload directory
 mkdir ($path, 0744); */
 $count = 0;
