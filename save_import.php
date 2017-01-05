@@ -9,12 +9,18 @@ if (isset($_POST['search'])) {
 
 ini_set('memory_limit', '256M');
 	if (is_uploaded_file($_FILES['file_save']['tmp_name'])) {
-		echo "<h3>" . "File ". $_FILES['file_save']['name'] ." uploaded successfully." . "</h3>";
 
 		//	readfile($_FILES['file_save']['tmp_name']);
-
+		$allowed =  array('xlsx','xls');	
+		
 		$tmpfname = $_FILES['file_save']['tmp_name'];
 
+		$ext = pathinfo($_FILES['file_save']['name'], PATHINFO_EXTENSION);
+		if(!in_array($ext,$allowed) ) {
+		echo "<h3>Selected File is Not an Excel Sheet</h3>";
+
+	
+		}else{
 		//echo "0";
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
 		//echo "1";
@@ -722,9 +728,9 @@ EOQ;
 		
 		print "Import done";
 		
-		
+	}	
 	} else {
-		echo "Unable to read the file";
+		echo "<h3>Unable to read the file<h3>";
 
 	}
 
