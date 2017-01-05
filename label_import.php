@@ -25,7 +25,7 @@ if (isset($_POST['search'])) {
 		$ext = pathinfo($_FILES['file_save']['name'], PATHINFO_EXTENSION);
 		echo "$tmpfname";
 		if(!in_array($ext,$allowed) ) {
-		exit("Not an Excel Sheet");
+		exit("Selected File is Not an Excel Sheet");
 		}		
 	
 		//echo "2";
@@ -771,14 +771,16 @@ for ($row3 = 0; $row3 < 92; $row3++) {
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem";
 		}
+		
+		fclose($handle);
+
+	print "Import done";	
 
 	} else {
 		echo "Unable to read the file";
 	}
 
-	fclose($handle);
 
-	print "Import done";
 
 	//view upload form
 } else {
