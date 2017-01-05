@@ -133,6 +133,8 @@ array(42,$_POST['Molybdenium_Amount'],		$_POST['Molybdenium_Unit'], 		$_POST['Mo
 array(43,$_POST['Chloride_Amount'],			$_POST['Chloride_Unit'], 			$_POST['Chloride_DValue'], TRUE),
 array(46,$_POST['Saturated_Plus_Trans_Amount'],$_POST['Saturated_Plus_Trans_UofM'], $_POST['Saturated_Plus_Trans_DValue'], TRUE),
 array(47,$_POST['Energy_kj_Amount'],		$_POST['Energy_kj_Unit'], 			$_POST['Energy_kj_DValue'], TRUE),
+array(44,$_POST['Polyunsaturated_Amount'],  $_POST['Polyunsaturated_Unit'],    $_POST['Polyunsaturated_DValue'], TRUE),
+array(45,$_POST['Monounsaturated_Amount'],  $_POST['Monounsaturated_Unit'],     $_POST['Monounsaturated_DValue'], TRUE)
 
 
 							);
@@ -149,7 +151,7 @@ UPDATE Package AS P
 				PC.Daily_Value = ?
 			WHERE PC.PackageID = ? AND PC.ComponentID = ? AND PPD = ?
 EOQ;
-							for ($row = 0; $row < 45; $row++) { //empty($as_prepared[$row][1]) && strlen($as_prepared[$row][1]) == 0
+							for ($row = 0; $row < 47; $row++) { //empty($as_prepared[$row][1]) && strlen($as_prepared[$row][1]) == 0
 								$stmt = $conn->prepare($query_insert_asprepred);
 								$as_prepared[$row][1] =  (empty($as_prepared[$row][1]) && strlen($as_prepared[$row][1]) == 0 ?NULL :$as_prepared[$row][1]);
 								$as_prepared[$row][3] = (empty($as_prepared[$row][3]) && strlen($as_prepared[$row][3]) == 0 ?NULL :$as_prepared[$row][3]);
@@ -217,6 +219,8 @@ EOQ;
 					array(46,	$_POST['Saturated_Trans_Amount_S'],$_POST['Saturated_Trans_Unit_S'],$_POST['Saturated_Trans_DValue_S'], FALSE),
 
 					array(47,	$_POST['Energy_Amount_kj_S'],$_POST['Energy_Unit_kj_S'],$_POST['Energy_DValue_kj_S'], FALSE),
+					array(44,$_POST['Polyunsaturated_Amount_S'],  $_POST['Polyunsaturated_Unit_S'],    $_POST['Polyunsaturated_DValue_S'], FALSE),
+					array(45,$_POST['Monounsaturated_Amount_S'],  $_POST['Monounsaturated_Unit_S'],     $_POST['Monounsaturated_DValue_S'], FALSE)
 
 							);
 
@@ -231,7 +235,7 @@ UPDATE Package AS P
 				PC.Daily_Value = ?
 			WHERE PC.PackageID = ? AND PC.ComponentID = ? AND PPD = ?
 EOQ;
-							for ($row1 = 0; $row1 < 45; $row1++) {
+							for ($row1 = 0; $row1 < 47; $row1++) {
 								$stmt = $conn->prepare($query_insert_as_sold);
 								//$as_sold[$row1][3] = (!empty($as_sold[$row1][3])?$as_sold[$row1][3] :NULL);
 								

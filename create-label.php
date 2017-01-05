@@ -569,7 +569,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label for="Monounsaturated_Amount" class="col-sm-3 control-label">Monounsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Monounsaturated Fat" name="Polyunsaturated_Amount" id="Monounsaturated_Amount" >
+   <input type="text" class="form-control" placeholder="Amount of Monounsaturated Fat" name="Monounsaturated_Amount" id="Monounsaturated_Amount" >
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Monounsaturated_Unit" name="Monounsaturated_Unit">

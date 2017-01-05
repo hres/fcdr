@@ -653,6 +653,46 @@ $('input[name="intervaltype"]').click(function () {
   </div>
  </div>
  </div>
+ 
+    <div class= "row" style="margin-top:4px;">
+
+		 <div class="form-group">
+		 <?php include 'connection.php';?>
+		   <?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat Polyunsaturated' AND   K.PackageID=$UPC12 AND PPD = 1
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+		 
+  <label class="col-sm-3 control-label ">Polyunsaturated Fat</label>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="Amount" name="Polyunsaturated_Amount" value="<?PHP echo $row['Amount']; ?>">
+  </div><!-- /col-sm-9 -->
+  <div class="col-sm-3">
+ <select class="form-control" id="sel1" name="Polyunsaturated_Unit">
+	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+	<?php include 'Units.php';?>
+		 <option value=""></option>
+      
+      </select>  </div>
+  <div class="col-sm-3">
+<?php include 'connection.php';?>  
+  <?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat Polyunsaturated' AND   K.PackageID=$UPC12 AND PPD = 1
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+   <input type="text" class="form-control" placeholder="% Daily value" name="Polyunsaturated_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+  </div>
+ </div>
+ </div>
+ 
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
@@ -724,6 +764,50 @@ $('input[name="intervaltype"]').click(function () {
   </div>
  </div>
  </div>
+ 
+ 
+   <div class= "row" style="margin-top:4px;">
+
+		 <div class="form-group">
+		 <?php include 'connection.php';?>
+		   <?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat Monounsaturated' AND   K.PackageID=$UPC12 AND PPD = 1
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+		 
+  <label class="col-sm-3 control-label ">Monounsaturated Fat</label>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="Amount" name="Monounsaturated_Amount" value="<?PHP echo $row['Amount']; ?>">
+  </div><!-- /col-sm-9 -->
+  <div class="col-sm-3">
+ <select class="form-control" id="sel1" name="Monounsaturated_Unit">
+	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+	<?php include 'Units.php';?>
+		 <option value=""></option>
+      
+      </select>  </div>
+  <div class="col-sm-3">
+<?php include 'connection.php';?>  
+  <?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat Monounsaturated' AND   K.PackageID=$UPC12 AND PPD = 1
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+   <input type="text" class="form-control" placeholder="% Daily value" name="Monounsaturated_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+  </div>
+ </div>
+ </div>
+ 
+ 
+ 
+ 
   <div class= "row" style="margin-top:4px;">
 
 		 <div class="form-group">
@@ -2362,6 +2446,49 @@ $('input[name="intervaltype"]').click(function () {
   </div>
  </div>
  </div>
+ 
+ 
+    <div class= "row" style="margin-top:4px;">
+
+		 <div class="form-group">
+		 <?php include 'connection.php';?>
+		   <?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat Polyunsaturated' AND   K.PackageID=$UPC12 AND PPD = 0
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+		 
+  <label class="col-sm-3 control-label ">Polyunsaturated Fat</label>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="Amount" name="Polyunsaturated_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+  </div><!-- /col-sm-9 -->
+  <div class="col-sm-3">
+ <select class="form-control" id="sel1" name="Polyunsaturated_Unit_S">
+	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+	<?php include 'Units.php';?>
+		 <option value=""></option>
+      
+      </select>  </div>
+  <div class="col-sm-3">
+<?php include 'connection.php';?>  
+  <?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat Polyunsaturated' AND   K.PackageID=$UPC12 AND PPD = 1
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+   <input type="text" class="form-control" placeholder="% Daily value" name="Polyunsaturated_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+  </div>
+ </div>
+ </div>
+ 
+ 
+ 
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
@@ -2432,6 +2559,48 @@ $('input[name="intervaltype"]').click(function () {
   </div>
  </div>
  </div>
+ 
+ 
+    <div class= "row" style="margin-top:4px;">
+
+		 <div class="form-group">
+		 <?php include 'connection.php';?>
+		   <?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat Monounsaturated' AND   K.PackageID=$UPC12 AND PPD = 0
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+		 
+  <label class="col-sm-3 control-label ">Monounsaturated Fat</label>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="Amount" name="Monounsaturated_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+  </div><!-- /col-sm-9 -->
+  <div class="col-sm-3">
+ <select class="form-control" id="sel1" name="Monounsaturated_Unit_S">
+	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+	<?php include 'Units.php';?>
+		 <option value=""></option>
+      
+      </select>  </div>
+  <div class="col-sm-3">
+<?php include 'connection.php';?>  
+  <?php 
+	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat Monounsaturated' AND   K.PackageID=$UPC12 AND PPD = 0
+";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+
+	
+	?>
+   <input type="text" class="form-control" placeholder="% Daily value" name="Monounsaturated_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+  </div>
+ </div>
+ </div>
+ 
+ 
   <div class= "row" style="margin-top:4px;">
   	<?php include 'connection.php';?>
   		 		    <?php 
