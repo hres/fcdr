@@ -2,9 +2,8 @@
 
 <?php
 	
-	error_reporting(E_ALL);
-ini_set('display_errors', 1);
-	
+
+	require_once "Classes/PHPExcel.php";
 $objPHPExcel = new PHPExcel();
 $objPHPExcel->getActiveSheet()->setCellValue('A1', 'hello world!');
 $objPHPExcel->getActiveSheet()->setTitle('Chesse1');
@@ -14,8 +13,9 @@ header('Cache-Control: max-age=0');
 $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
 $objWriter->save('php://output');
 
+	error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-require_once "Classes/PHPExcel.php";
 
 if (isset($_POST['search'])) {
 
