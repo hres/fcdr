@@ -776,7 +776,7 @@ for ($row3 = 0; $row3 < 92; $row3++) {
 	print "Import done";	
 }
 	} else {
-		echo "Unable to read the file";
+		echo "<h3>Unable to read the file</h3>";
 	}
 
 
