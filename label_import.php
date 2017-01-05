@@ -10,19 +10,24 @@ require_once "Classes/PHPExcel.php";
 if (isset($_POST['search'])) {
 
 
+
 	if (is_uploaded_file($_FILES['file_save']['tmp_name'])) {
 		
-	$exten = pathinfo($_FILES['file_save']['tmp_name'], PATHINFO_EXTENSION) ;
-	if($exten!== 'xlsx' or $exten !== 'xls') {
-		
-		exit("Not an Excel Sheet");
-	}
+
+	
 		//echo "<h1>" . "File ". $_FILES['file_save']['name'] ." uploaded successfully." . "</h1>";
 
 	//	readfile($_FILES['file_save']['tmp_name']);
 
 		//echo "1";
+		$allowed =  array('xlsx','xls');		
 		$tmpfname = $_FILES['file_save']['tmp_name'];
+		$ext = pathinfo($tmpfname, PATHINFO_EXTENSION);
+		echo "$tmpfname";
+		if(!in_array($ext,$allowed) ) {
+		exit("Not an Excel Sheet");
+		}		
+	
 		//echo "2";
 		$cacheMethod = PHPExcel_CachedObjectStorageFactory:: cache_to_phpTemp;
 		$cacheSettings = array( ' memoryCacheSize ' => '8MB');
