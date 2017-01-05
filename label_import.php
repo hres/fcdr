@@ -13,7 +13,7 @@ if (isset($_POST['search'])) {
 	if (is_uploaded_file($_FILES['file_save']['tmp_name'])) {
 		
 	$exten = pathinfo($_FILES['file_save']['tmp_name'], PATHINFO_EXTENSION) ;
-	if($exten!== 'xlsx' or $exten !== 'xls' {
+	if($exten!== 'xlsx' or $exten !== 'xls') {
 		
 		exit("Not an Excel Sheet");
 	}
