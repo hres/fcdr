@@ -11,6 +11,9 @@ if (isset($_POST['search'])) {
 
 
 	if (is_uploaded_file($_FILES['file_save']['tmp_name'])) {
+		
+		//$exten = pathinfo($_FILES['file_save']['tmp_name'], PATHINFO_EXTENSION) ;
+	//	if($exten!== 'xlsx' or $exten ! == 'xls' {}
 		//echo "<h1>" . "File ". $_FILES['file_save']['name'] ." uploaded successfully." . "</h1>";
 
 	//	readfile($_FILES['file_save']['tmp_name']);
