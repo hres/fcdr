@@ -22,7 +22,7 @@ if (isset($_POST['search'])) {
 		//echo "1";
 		$allowed =  array('xlsx','xls');		
 		$tmpfname = $_FILES['file_save']['tmp_name'];
-		$ext = pathinfo($tmpfname, PATHINFO_EXTENSION);
+		$ext = pathinfo($_FILES['file_save']['name'], PATHINFO_EXTENSION);
 		echo "$tmpfname";
 		if(!in_array($ext,$allowed) ) {
 		exit("Not an Excel Sheet");
