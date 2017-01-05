@@ -771,7 +771,7 @@ for ($row3 = 0; $row3 < 92; $row3++) {
 			echo "$senditem";
 		}
 		
-		fclose($handle);
+		//fclose($handle);
 
 	print "Import done";	
 }
@@ -782,8 +782,6 @@ for ($row3 = 0; $row3 < 92; $row3++) {
 
 
 	//view upload form
-} else {
-	//print "Upload new csv by browsing to file and clicking on Upload<br/>\n";
 }
 
 ?>
