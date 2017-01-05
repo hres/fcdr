@@ -123,7 +123,6 @@
 	
    Browse
 </label>
-<span class='label label-info' id="upload-file-info"></span>
 <div style="float:right;">
 <label class="btn btn-primary" for="my-file-selector2">
     <input id="my-file-selector2" type="Submit" style="display:none;" name="search">
@@ -150,6 +149,8 @@
   
   
     <div style="margin-top:10px;"><strong><h3>Report log file(s)</h3></strong></div>
+	<span class='label label-info' id="upload-file-info"></span>
+
 	  <?php include 'saveimages.php';?>
 </div>
 
@@ -169,7 +170,7 @@ $('#my-file-selector').on('change', function(e){
 	var files = $(this).prop('files');
   for (var i = 0; i < files.length; i++) {
   console.log(files[i]);
-  	$('#upload-file-info').append((files[i].name).fontsize(5) +", ");
+  	$('#upload-file-info').append((files[i].name).fontsize(5) +"\n ");
   }
 });
 

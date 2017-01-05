@@ -513,6 +513,24 @@ $('input[name="intervaltype"]').click(function () {
   </div>
  </div>
  </div>
+   <div class= "row" style="margin-top:4px;">
+		 <div class="form-group">
+  <label for="Polyunsaturated_Amount" class="col-sm-3 control-label">Polyunsaturated Fat</label>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="Amount of Polyunsaturated Fat" name="Polyunsaturated_Amount" id="Polyunsaturated_Amount" >
+  </div><!-- /col-sm-9 -->
+  <div class="col-sm-3">
+ <select class="form-control" id="Polyunsaturated_Unit" name="Polyunsaturated_Unit">
+  <option value="" selected="selected"></option>
+			<?php include 'Units.php';?>
+      
+      </select>  </div>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="% Daily value of Polyunsaturated Fat" name="Polyunsaturated_DValue" id="Polyunsaturated_DValue">
+  </div>
+ </div>
+ </div> 
+ 
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
   <label for="Omega6_Amount" class="col-sm-3 control-label">Omega-6 Polyunsaturated Fat</label>
@@ -546,6 +564,25 @@ $('input[name="intervaltype"]').click(function () {
   </div>
  </div>
  </div>
+ 
+   <div class= "row" style="margin-top:4px;">
+		 <div class="form-group">
+  <label for="Monounsaturated_Amount" class="col-sm-3 control-label">Monounsaturated Fat</label>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="Amount of Monounsaturated Fat" name="Polyunsaturated_Amount" id="Monounsaturated_Amount" >
+  </div><!-- /col-sm-9 -->
+  <div class="col-sm-3">
+ <select class="form-control" id="Monounsaturated_Unit" name="Monounsaturated_Unit">
+  <option value="" selected="selected"></option>
+			<?php include 'Units.php';?>
+      
+      </select>  </div>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="% Daily value of Monounsaturated Fat" name="Monounsaturated_DValue" id="Monounsaturated_DValue">
+  </div>
+ </div>
+ </div>
+ 
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
   <label for="Carbohydrates_Amount" class="col-sm-3 control-label required">Carbohydrates <strong class="required">(required)</strong></label>
@@ -1313,6 +1350,25 @@ $('input[name="intervaltype"]').click(function () {
   </div>
  </div>
  </div>
+ 
+    <div class= "row" style="margin-top:4px;">
+		 <div class="form-group">
+  <label for="Polyunsaturated_Amount_S" class="col-sm-3 control-label">Polyunsaturated Fat</label>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="Amount of Polyunsaturated Fat" name="Polyunsaturated_Amount_S" id="Polyunsaturated_Amount_S" >
+  </div><!-- /col-sm-9 -->
+  <div class="col-sm-3">
+ <select class="form-control" id="Polyunsaturated_Unit_S" name="Polyunsaturated_Unit_S">
+  <option value="" selected="selected"></option>
+			<?php include 'Units.php';?>
+      
+      </select>  </div>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="% Daily value of Polyunsaturated Fat" name="Polyunsaturated_DValue_S" id="Polyunsaturated_DValue_S">
+  </div>
+ </div>
+ </div> 
+ 
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
   <label for="Omega6_Amount_S" class="col-sm-3 control-label">Omega-6 Polyunsaturated Fat</label>
@@ -1345,6 +1401,26 @@ $('input[name="intervaltype"]').click(function () {
   </div>
  </div>
  </div>
+ 
+    <div class= "row" style="margin-top:4px;">
+		 <div class="form-group">
+  <label for="Monounsaturated_Amount_S" class="col-sm-3 control-label">Monounsaturated Fat</label>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="Amount of Monounsaturated Fat" name="Monounsaturated_Amount_S" id="Monounsaturated_Amount_S" >
+  </div><!-- /col-sm-9 -->
+  <div class="col-sm-3">
+ <select class="form-control" id="Monounsaturated_Unit_S" name="Monounsaturated_Unit_S">
+  <option value="" selected="selected"></option>
+			<?php include 'Units.php';?>
+      
+      </select>  </div>
+  <div class="col-sm-3">
+   <input type="text" class="form-control" placeholder="% Daily value of Monounsaturated Fat" name="Monounsaturated_DValue_S" id="Monounsaturated_DValue_S">
+  </div>
+ </div>
+ </div>
+ 
+ 
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
   <label for="Carbohydrates_Amount_S" class="col-sm-3 control-label">Carbohydrates</label>

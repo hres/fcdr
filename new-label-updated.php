@@ -9,6 +9,11 @@
 						  array("44",'','', '', FALSE),
 						  array("45",'$Fat_Monounsaturated_Per_Serving','g', '', TRUE),
 						  array("45",'','', '', FALSE),
+  array("44",$Fat_PolyUnsaturated,'g', NULL, TRUE),
+  array("44",NULL,NULL,NULL, FALSE),
+
+  array("45",$Fat_Monounsaturated_Per_Serving,'g', NULL, TRUE),
+  array("45",NULL,NULL,NULL, FALSE), 
 
  */
  
@@ -246,8 +251,14 @@ EOQ;
 						  array(46,$_POST['Saturated_Trans_kj_Amount_S'],$_POST['Saturated_Trans_kj_Unit_S'],$_POST['Saturated_Trans_DValue_S'], FALSE),
 
 						  array(47,$_POST['Energy_kj_Amount'],$_POST['Energy_kj_Unit'], $_POST['Engergy_kj_DValue'], TRUE),
-						  array(47,$_POST['Energy_kj_Amount_S'],'kj',$_POST['Energy_kj_DValue_S'], FALSE)
+						  array(47,$_POST['Energy_kj_Amount_S'],'kj',$_POST['Energy_kj_DValue_S'], FALSE),
 
+						  array(45,$_POST['Monounsaturated_Amount'],$_POST['Monounsaturated_Unit'], $_POST['Monounsaturated_DValue'], TRUE),
+						  array(45,$_POST['Monounsaturated_Amount_S'],$_POST['Monounsaturated_Unit_S'], $_POST['Monounsaturated_DValue_S'], FALSE),
+
+
+						  array(44,$_POST['Polyunsaturated_Amount'],$_POST['Polyunsaturated_Unit'], $_POST['Polyunsaturated_DValue'], TRUE),
+						  array(44,$_POST['Polyunsaturated_Amount_S'],$_POST['Polyunsaturated_Unit_S'], $_POST['Polyunsaturated_DValue_S'], FALSE)
 
 			);
 $query_insert =<<<EOQ
@@ -261,17 +272,14 @@ INSERT INTO Product_Component(
 )
 VALUES ( ?, ?, ?, ?, ?, ?)
 EOQ;
-for ($row = 0; $row < 90; $row++) {
+for ($row = 0; $row < 94; $row++) {
 								$stmt = $conn->prepare($query_insert);
-								$cars[$row][3] = (!empty($cars[$row][3])?$cars[$row][3]:NULL);
-								if(!empty($cars[$row][1])){
+					
+								$cars[$row][1] =  (empty($cars[$row][1]) && strlen($cars[$row][1]) == 0 ?NULL :$cars[$row][1]);
+								$cars[$row][3] =  (empty($cars[$row][3]) && strlen($cars[$row][3]) == 0 ?NULL :$cars[$row][3]);
 								$stmt->bind_param("iidsds",$last_id, $cars[$row][0],$cars[$row][1],$cars[$row][2],$cars[$row][3],$cars[$row][4]);
 								$results = $stmt->execute();
-								}else{
-								$dummyarg = NULL;	
-							      $stmt->bind_param("iidsds",$last_id, $cars[$row][0],$dummyarg,$cars[$row][2],$cars[$row][3],$cars[$row][4]);
-								 $results = $stmt->execute();
-								}
+							
 								
 								
 
