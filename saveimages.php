@@ -10,7 +10,7 @@ ini_set('display_errors', 1);
 
    // do your Db stuff here to get t
   $valid_formats = array("jpg", "png", "gif", "jpeg");
-$max_file_size = 	10240*10000; //10000 kb
+$max_file_size = 		32768*32000; //32000 kb
 
 
 /* $path = "Prototype/uploads/"; // Upload directory
