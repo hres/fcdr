@@ -25,7 +25,7 @@ if (isset($_POST['search'])) {
 		$ext = pathinfo($_FILES['file_save']['name'], PATHINFO_EXTENSION);
 		if(!in_array($ext,$allowed) ) {
 		exit("<h3>Selected File is Not an Excel Sheet</h3>");
-		}		
+		}else {		
 	
 		//echo "2";
 		$cacheMethod = PHPExcel_CachedObjectStorageFactory:: cache_to_phpTemp;
@@ -774,7 +774,7 @@ for ($row3 = 0; $row3 < 92; $row3++) {
 		fclose($handle);
 
 	print "Import done";	
-
+}
 	} else {
 		echo "Unable to read the file";
 	}

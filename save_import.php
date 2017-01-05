@@ -719,12 +719,16 @@ EOQ;
 			if (strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
+		
+		print "Import done";
+		
+		
 	} else {
 		echo "Unable to read the file";
 
 	}
 
-	print "Import done";
+	
 
 	//view upload form
 } else {
