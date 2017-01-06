@@ -23,7 +23,7 @@ $count = 0;
 if (isset($_POST['search'])) {
 	// Loop $_FILES to exeicute all files
 	
-	var_dump($_FILES['files']);
+	// var_dump($_FILES['files']);
 	exit;
 	
 	foreach ($_FILES['files']['name'] as $f => $name) {   
