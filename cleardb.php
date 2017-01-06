@@ -3,7 +3,8 @@
 
 
  
-
+$query = "ALTER TABLE Sales MODIFY Dollar_Rank text";
+$xresult = mysqli_query($conn,$query);	
 	$query2 =  "Delete from $dbname.Sales where SalesID > 0"; 	
 	$result = mysqli_query($conn,$query2);	
 	
