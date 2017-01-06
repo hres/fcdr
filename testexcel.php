@@ -1,13 +1,16 @@
 <?php
-header('Content-Type: 'application/vnd.ms-excel');
-header('Content-Disposition: attachment;filename="test.xlsx"');
-header('Cache-Control: max-age=0');
+// Connection 
 
-$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
-ob_end_clean();
-// We'll be outputting an excel file
-header('Content-type: application/vnd.ms-excel');
-// It will be called file.xls
-header('Content-Disposition: attachment; filename="sectionlist.xlsx"');
-$objWriter->save('php://output');
+
+$filename = "Webinfopen.xls"; // File Name
+// Download file
+header("Content-Disposition: attachment; filename=\"$filename\"");
+header("Content-Type: application/vnd.ms-excel");
+// Write data to file
+$row = 0;
+while ($row <10) {
+
+    echo "Romy";
+	++$row;
+}
 ?>
