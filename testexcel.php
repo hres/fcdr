@@ -2,7 +2,7 @@
 // Connection 
 
 
-$filename = "Webinfopen.xls"; // File Name
+$filename = "Webinfopen.xlsx"; // File Name
 // Download file
 header("Content-Disposition: attachment; filename=\"$filename\"");
 header("Content-Type: application/vnd.ms-excel");
