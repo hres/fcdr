@@ -67,9 +67,11 @@ ini_set('memory_limit', '256M');
 			$Source                    = $worksheet->getCell('O'.$row)->getValue();
 			//$Neilsen_Category_Number = $data[14];
 			$Nielsen_Category          = $worksheet->getCell('P'.$row)->getValue();
+/* 			$date1 = strtr($worksheet->getCell('Q'.$row)->getValue(), '/', '-');
+echo date('Y-m-d', strtotime(strtr($worksheet->getCell('Q'.$row)->getValue(), '/', '-')); */
 			
 			// date('Y-m-d H:i:s', strtotime($worksheet->getCell('Q'.$row)->getValue()));
-			$Collection_Date           = date('Y-m-d', $worksheet->getCell('Q'.$row)->getValue());//$worksheet->getCell('Q'.$row)->getValue();
+			$Collection_Date           = date('Y-m-d', strtotime(strtr($worksheet->getCell('Q'.$row)->getValue(), '/', '-'));//$worksheet->getCell('Q'.$row)->getValue();
 			$Sales_Year                = $worksheet->getCell('R'.$row)->getValue();
 			$Control_Label             = $worksheet->getCell('S'.$row)->getValue();
 			$Kilo_Vol_Total            = $worksheet->getCell('T'.$row)->getValue();

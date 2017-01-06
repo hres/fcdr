@@ -176,8 +176,8 @@
 		</div>
 				<div class="row">
 			<div class="form-group col-sm-4">
-				<label for="Brand" class="required">Brand <strong class="required">(required)</strong></label>
-				<input type="text" class="form-control" name="Brand" id="Brand" placeholder="Enter the Brand the Market Share" value="<?PHP echo $row['Brand']; ?>" required/>
+				<label for="Brand" >Brand</label>
+				<input type="text" class="form-control" name="Brand" id="Brand" placeholder="Enter the Brand the Market Share" value="<?PHP echo $row['Brand']; ?>"/>
 			</div>
 			
 				<div class="form-group col-sm-4">

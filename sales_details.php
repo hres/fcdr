@@ -628,7 +628,7 @@ $(window).resize();
   </tr>
   <tr>
   <td><?php echo " ". $row['Brand'] ."";  ?></td>
-  <td><?php echo " ". $row['Dollar_Rank'] ."";  ?></td>  
+  <td><?php echo " ". number_format($row['Dollar_Rank']) ."";  ?></td>  
   <td><?php echo " ". $row['Dollar_Volume_PerCentage_Change'] ."";  ?></td>
   <td><?php echo " ". $row['Kilo_Volume_Percent_Change'] ."";  ?></td>
   </tr>
