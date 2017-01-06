@@ -9,7 +9,7 @@ if (isset($_POST['search'])) {
 
 ini_set('memory_limit', '256M');
 	if (is_uploaded_file($_FILES['file_save']['tmp_name'])) {
-
+ini_set('max_execution_time', 0);
 		//	readfile($_FILES['file_save']['tmp_name']);
 		$allowed =  array('xlsx','xls');	
 		
