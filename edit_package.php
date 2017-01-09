@@ -880,7 +880,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value of Fibre" name="Fibre_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Fibre" name="Fibre_DValue" value="<?PHP echo $row['Daily_Value']; ?>" required>
   </div>
  </div>
  </div>
