@@ -37,6 +37,8 @@
    }*/
 	$result = mysqli_query($conn,$query);
 	 $rowcount=mysqli_num_rows($result);
+		 echo "<script>document.getElementById(\"noResult\").innerHTML = \"$rowcount records\" </script>";
+ 
  if($rowcount < 1){
 	 echo "<script>document.getElementById(\"noResult\").innerHTML = \"No data found \" </script>";
  }
