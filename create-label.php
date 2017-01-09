@@ -604,7 +604,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label for="Fibre_Amount" class="col-sm-3 control-label required">Fibre <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Fibre" name="Fibre_Amount" id="Fibre_Amount">
+   <input type="text" class="form-control" placeholder="Amount of Fibre" name="Fibre_Amount" id="Fibre_Amount" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Fibre_Unit" name="Fibre_Unit" required>
