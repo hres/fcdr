@@ -437,7 +437,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label class="col-sm-3 control-label required">Energy <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Energy_Amount" value="<?PHP echo $row['Amount']; ?>" required>
+   <input type="text" class="form-control" placeholder="Amount of Energy" name="Energy_Amount" value="<?PHP echo $row['Amount']; ?>" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Energy_Unit">
@@ -454,7 +454,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Energy_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Energy" name="Energy_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  
@@ -473,7 +473,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Energy kj</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Energy_kj_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Energy kj" name="Energy_kj_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Energy_kj_Unit">
@@ -490,7 +490,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Energy_kj_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Energy kj" name="Energy_kj_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  
@@ -510,7 +510,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Saturated + Trans Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Saturated_Plus_Trans_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Saturated + Trans Fat" name="Saturated_Plus_Trans_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
 <select class="form-control" id="sel1" name="Saturated_Plus_Trans_UofM">
@@ -530,7 +530,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Saturated_Plus_Trans_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Saturated + Trans Fat" name="Saturated_Plus_Trans_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  
@@ -552,7 +552,7 @@ $('input[name="intervaltype"]').click(function () {
 
   <label class="col-sm-3 control-label required">Fat <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Fat_Amount" value="<?PHP echo $row['Amount']; ?>" required> 
+   <input type="text" class="form-control" placeholder="Amount of Fat" name="Fat_Amount" value="<?PHP echo $row['Amount']; ?>" required> 
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
 <select class="form-control" id="sel1" name="Fat_Unit_Of" required>
@@ -572,7 +572,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Fat_DValue" value="<?PHP echo $row['Daily_Value']; ?>" required>
+   <input type="text" class="form-control" placeholder="% Daily value of Fat" name="Fat_DValue" value="<?PHP echo $row['Daily_Value']; ?>" required>
   </div>
  </div>
  </div>
@@ -591,7 +591,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>	 
   <label class="col-sm-3 control-label">Saturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Saturated_Fat_Amount" value="<?PHP echo $row['Amount']; ?>"> 
+   <input type="text" class="form-control" placeholder="Amount of Saturated Fat" name="Saturated_Fat_Amount" value="<?PHP echo $row['Amount']; ?>"> 
 
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
@@ -611,7 +611,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Saturated_Fat_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Saturated Fat" name="Saturated_Fat_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -630,7 +630,7 @@ $('input[name="intervaltype"]').click(function () {
 
   
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Trans_Fat_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Trans Fat" name="Trans_Fat_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Trans_Fat_Unit">
@@ -649,7 +649,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Trans_Fat_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Trans Fat" name="Trans_Fat_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -669,7 +669,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label ">Polyunsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Polyunsaturated_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Polyunsaturated Fat" name="Polyunsaturated_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Polyunsaturated_Unit">
@@ -688,7 +688,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Polyunsaturated_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Polyunsaturated Fat" name="Polyunsaturated_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -706,7 +706,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Omega-6 Polyunsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Omega6_Amount" value = "<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Omega-6 Polyunsaturated Fat" name="Omega6_Amount" value = "<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Omega6_Unit">
@@ -725,7 +725,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Omega6_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Omega-6 Polyunsaturated Fat" name="Omega6_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -742,7 +742,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Omega-3 Polyunsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Omega3_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Omega-3 Polyunsaturated Fat" name="Omega3_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Omega3_Unit">
@@ -760,7 +760,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Omega3_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Omega-3 Polyunsaturated Fat" name="Omega3_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -781,7 +781,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label ">Monounsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Monounsaturated_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Monounsaturated Fat" name="Monounsaturated_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Monounsaturated_Unit">
@@ -800,7 +800,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Monounsaturated_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Monounsaturated Fat" name="Monounsaturated_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -823,7 +823,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label required">Carbohydrates <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Carbohydrates_Amount" value="<?PHP echo $row['Amount']; ?>" required>
+   <input type="text" class="form-control" placeholder="Amount of Carbohydrates" name="Carbohydrates_Amount" value="<?PHP echo $row['Amount']; ?>" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Carbohydrates_Unit">
@@ -842,7 +842,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Carbohydrates_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Carbohydrates" name="Carbohydrates_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -861,7 +861,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label required">Fibre <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Fibre_Amount" value="<?PHP echo $row['Amount']; ?>" required>
+   <input type="text" class="form-control" placeholder="Amount of Fibre" name="Fibre_Amount" value="<?PHP echo $row['Amount']; ?>" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Fibre_Unit" required>
@@ -880,7 +880,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Fibre_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Fibre" name="Fibre_DValue" value="<?PHP echo $row['Daily_Value']; ?>" required>
   </div>
  </div>
  </div>
@@ -900,7 +900,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Soluble Fibre</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Soluble_Fibre_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Soluble Fibre" name="Soluble_Fibre_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Soluble_Fibre_Unit">
@@ -919,7 +919,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Soluble_Fibre_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Soluble Fibre" name="Soluble_Fibre_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -938,7 +938,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Insolube Fibre</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Insoluble_Fibre_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Insolube Fibre" name="Insoluble_Fibre_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1"  name="Insoluble_Fibre_Unit">
@@ -958,7 +958,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Insolube_Fibre_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Insolube Fibre" name="Insolube_Fibre_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -975,7 +975,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Sugar</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Sugar_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Sugar" name="Sugar_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sugar_Unit">
@@ -994,7 +994,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Sugar_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Sugar" name="Sugar_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1009,9 +1009,9 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-  <label class="col-sm-3 control-label">Sugars Alcohol</label>
+  <label class="col-sm-3 control-label">Sugar Alcohols</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Sugar_Alcohols_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Sugar Alcohols" name="Sugar_Alcohols_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sugar_Alcohols_Unit">
@@ -1030,7 +1030,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Sugar_Alcohols_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Sugar Alcohols" name="Sugar_Alcohols_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1047,7 +1047,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Starch</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Starch_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Starch" name="Starch_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Starch_Unit">
@@ -1066,7 +1066,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Starch_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Starch" name="Starch_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1084,7 +1084,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label required">Protein <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Protein_Amount" value="<?PHP echo $row['Amount']; ?>" >
+   <input type="text" class="form-control" placeholder="Amount of Protein" name="Protein_Amount" value="<?PHP echo $row['Amount']; ?>" >
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Protein_Unit">
@@ -1103,7 +1103,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Protein_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Protein" name="Protein_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1120,7 +1120,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Cholesterol</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Cholesterol_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Cholesterol" name="Cholesterol_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Cholesterol_Unit">
@@ -1140,7 +1140,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Cholesterol_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Cholesterol" name="Cholesterol_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1157,7 +1157,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Sodium</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Sodium_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Sodium" name="Sodium_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sodium_Unit">
@@ -1177,7 +1177,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Sodium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Sodium" name="Sodium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1194,7 +1194,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Potassium</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Potassium_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Potassium" name="Potassium_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Potassium_Unit">
@@ -1215,7 +1215,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Potassium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Potassium" name="Potassium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1232,7 +1232,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Calcium</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Calcium_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Calcium" name="Calcium_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Calcium_Unit">
@@ -1252,7 +1252,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Calcium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Calcium" name="Calcium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1269,7 +1269,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Iron</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Iron_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Iron" name="Iron_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Iron_Unit">
@@ -1290,7 +1290,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Iron_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Iron" name="Iron_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1308,7 +1308,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Vitamin A</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminA_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin A" name="VitaminA_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminA_Unit">
@@ -1328,7 +1328,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminA_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin A" name="VitaminA_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1347,7 +1347,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Vitamin C</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminC_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin C" name="VitaminC_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminC_Unit">
@@ -1367,7 +1367,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminC_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin C" name="VitaminC_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1384,7 +1384,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Vitamin D</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminD_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin D" name="VitaminD_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminD_Unit">
@@ -1404,7 +1404,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminD_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin D" name="VitaminD_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1422,7 +1422,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Vitamin E</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminE_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin E" name="VitaminE_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminE_Unit">
@@ -1442,7 +1442,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminE_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin E" name="VitaminE_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1459,7 +1459,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Vitamin K</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminK_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin K" name="VitaminK_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminK_Unit">
@@ -1479,7 +1479,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminK_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin K" name="VitaminK_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1496,7 +1496,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Thiamine</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Thiamine_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Thiamine" name="Thiamine_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Thiamine_Unit">
@@ -1515,7 +1515,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Thiamine_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Thiamine" name="Thiamine_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1532,7 +1532,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Riboflavin</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Riboflavin_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Riboflavin" name="Riboflavin_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Riboflavin_Unit">
@@ -1550,7 +1550,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Riboflavin_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Riboflavin" name="Riboflavin_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1568,7 +1568,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Niacin</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Niacin_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Niacin" name="Niacin_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Niacin_Unit">
@@ -1587,7 +1587,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Niacin_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Niacin" name="Niacin_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1605,7 +1605,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Vitamin B6</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminB6_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin B6" name="VitaminB6_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminB6_Unit">
@@ -1623,7 +1623,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminB6_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin B6" name="VitaminB6_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1640,7 +1640,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Folate</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Folate_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Folate" name="Folate_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Folate_Unit">
@@ -1659,7 +1659,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Folate_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Folate" name="Folate_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1677,7 +1677,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Vitamin B12</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminB12_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin B12" name="VitaminB12_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminB12_Unit">
@@ -1695,7 +1695,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminB12_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin B12" name="VitaminB12_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1712,7 +1712,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Biotin</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Biotin_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Biotin" name="Biotin_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Biotin_Unit">
@@ -1731,7 +1731,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Biotin_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Biotin" name="Biotin_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1748,7 +1748,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Choline</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Choline_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Choline" name="Choline_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Choline_Unit">
@@ -1767,7 +1767,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Choline_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Choline" name="Choline_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1784,7 +1784,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Pantothenate</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Pantothenate_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Pantothenate" name="Pantothenate_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Pantothenate_Unit">
@@ -1803,7 +1803,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Pantothenate_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Pantothenate" name="Pantothenate_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1821,7 +1821,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Phosphorus</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Phosphorus_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Phosphorus" name="Phosphorus_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Phosphorus_Unit">
@@ -1841,7 +1841,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?> 
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Phosphorus_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Phosphorus" name="Phosphorus_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1860,7 +1860,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Iodide</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Iodide_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Iodide" name="Iodide_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Iodide_Unit">
@@ -1882,7 +1882,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
 		
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Iodide_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Iodide" name="Iodide_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1899,7 +1899,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="Amount" name="Magnesium_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Magnesium" name="Magnesium_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Magnesium_Unit">
@@ -1917,7 +1917,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Magnesium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Magnesium" name="Magnesium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1935,7 +1935,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Zinc</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Zinc_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Zinc" name="Zinc_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Zinc_Unit">
@@ -1955,7 +1955,7 @@ $('input[name="intervaltype"]').click(function () {
 	?> 
 	  
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="% Daily value" name="Zinc_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Zinc" name="Zinc_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -1973,7 +1973,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Selenium</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Selenium_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Selenium" name="Selenium_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Selenium_Unit">
@@ -1992,7 +1992,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Selenium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Selenium" name="Selenium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2010,7 +2010,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Copper</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Copper_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Copper" name="Copper_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Copper_Unit">
@@ -2029,7 +2029,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>	
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Copper_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Copper" name="Copper_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2046,7 +2046,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Manganese</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Manganese_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Manganese" name="Manganese_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Manganese_Unit">
@@ -2066,7 +2066,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Manganese_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Manganese" name="Manganese_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2084,7 +2084,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Chromium</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Chromium_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Chromium" name="Chromium_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Chromium_Unit">
@@ -2103,7 +2103,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Chromium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Chromium" name="Chromium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2120,7 +2120,7 @@ $('input[name="intervaltype"]').click(function () {
 	?> 
   <label class="col-sm-3 control-label">Molybdenum</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Molybdenium_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Molybdenum" name="Molybdenium_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Molybdenium_Unit">
@@ -2140,7 +2140,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?> 
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Molybdenium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Molybdenum" name="Molybdenium_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2158,7 +2158,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Chloride</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Chloride_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Chloride" name="Chloride_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Chloride_Unit">
@@ -2177,7 +2177,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
 		
-   <input type="text" class="form-control" placeholder="% Daily value" name="Chloride_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Chloride" name="Chloride_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2235,7 +2235,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Energy</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Energy_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Energy" name="Energy_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Energy_Unit_S" >
@@ -2254,7 +2254,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Energy_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Energy" name="Energy_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2328,7 +2328,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Saturated_Trans_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Saturated + Trans Fat" name="Saturated_Trans_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2348,7 +2348,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Fat_Amount_S" value="<?PHP echo $row['Amount']; ?>"> 
+   <input type="text" class="form-control" placeholder="Amount of Fat" name="Fat_Amount_S" value="<?PHP echo $row['Amount']; ?>"> 
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Fat_Unit_S">
@@ -2367,7 +2367,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Fat_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Fat" name="Fat_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2385,7 +2385,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Saturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Saturated_Fat_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Saturated Fat" name="Saturated_Fat_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Saturated_Fat_Unit_S" >
@@ -2404,7 +2404,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Saturated_Fat_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Saturated Fat" name="Saturated_Fat_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2422,7 +2422,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Trans_Fat_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Trans Fat" name="Trans_Fat_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Trans_Fat_Unit_S">
@@ -2442,7 +2442,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Trans_Fat_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Trans Fat" name="Trans_Fat_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2463,7 +2463,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label ">Polyunsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Polyunsaturated_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Polyunsaturated Fat" name="Polyunsaturated_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Polyunsaturated_Unit_S">
@@ -2482,7 +2482,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Polyunsaturated_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Polyunsaturated Fat" name="Polyunsaturated_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2502,7 +2502,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Omega-6 Polyunsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Omega6_Amount_S" value = "<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Omega-6 Polyunsaturated Fat" name="Omega6_Amount_S" value = "<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Omega6_Unit_S">
@@ -2520,7 +2520,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Omega6_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Omega-6 Polyunsaturated Fat" name="Omega6_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2537,7 +2537,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Omega-3 Polyunsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Omega3_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Omega-3 Polyunsaturated Fat" name="Omega3_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Omega3_Unit_S">
@@ -2555,7 +2555,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Omega3_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Omega-3 Polyunsaturated Fat" name="Omega3_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2576,7 +2576,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label ">Monounsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Monounsaturated_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Monounsaturated Fat" name="Monounsaturated_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Monounsaturated_Unit_S">
@@ -2595,7 +2595,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Monounsaturated_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Monounsaturated Fat" name="Monounsaturated_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2614,7 +2614,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Carbohydrates</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Carbohydrates_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Carbohydrates" name="Carbohydrates_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Carbohydrates_Unit_S">
@@ -2633,7 +2633,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Carbohydrates_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Carbohydrates" name="Carbohydrates_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2650,7 +2650,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Fibre</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Fibre_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Fibre" name="Fibre_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Fibre_Unit_S">
@@ -2669,7 +2669,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Fibre_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Fibre" name="Fibre_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2686,7 +2686,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Soluble Fibre</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Soluble_Fibre_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Soluble Fibre" name="Soluble_Fibre_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Soluble_Fibre_Unit_S">
@@ -2706,7 +2706,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Soluble_Fibre_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Soluble Fibre" name="Soluble_Fibre_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2723,7 +2723,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Insolube Fibre</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Insoluble_Fibre_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Insolube Fibre" name="Insoluble_Fibre_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1"  name="Insolube_Fibre_Unit_S">
@@ -2742,7 +2742,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Insolube_Fibre_DValue_S" value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Insolube Fibre" name="Insolube_Fibre_DValue_S" value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>">
   </div>
  </div>
  </div>
@@ -2759,7 +2759,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Sugar</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Sugar_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Sugar" name="Sugar_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sugar_Unit_S">
@@ -2778,7 +2778,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Sugar_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Sugar" name="Sugar_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2793,9 +2793,9 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-  <label class="col-sm-3 control-label">Sugars Alcohol</label>
+  <label class="col-sm-3 control-label">Sugar Alcohols</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Sugar_Alcohols_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Sugar Alcohols" name="Sugar_Alcohols_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sugar_Alcohols_Unit_S">
@@ -2813,7 +2813,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Sugar_Alcohol_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Sugar Alcohols" name="Sugar_Alcohol_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2830,7 +2830,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Starch</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Starch_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Starch" name="Starch_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Starch_Unit_S">
@@ -2848,7 +2848,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Starch_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Starch" name="Starch_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2866,7 +2866,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Protein</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Protein_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Protein" name="Protein_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Protein_Unit_S">
@@ -2885,7 +2885,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Protein_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Protein" name="Protein_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2902,7 +2902,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Cholesterol</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Cholesterol_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Cholesterol" name="Cholesterol_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Cholesterol_Unit_S">
@@ -2922,7 +2922,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Cholesterol_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Cholesterol" name="Cholesterol_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2939,7 +2939,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Sodium</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Sodium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Sodium" name="Sodium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sodium_Unit_S">
@@ -2959,7 +2959,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Sodium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Sodium" name="Sodium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2976,7 +2976,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Potassium</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Potassium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Potassium" name="Potassium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Potassium_Unit_S">
@@ -2996,7 +2996,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Potassium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Potassium" name="Potassium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3013,7 +3013,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Calcium</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Calcium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Calcium" name="Calcium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Calcium_Unit_S">
@@ -3033,7 +3033,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Calcium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Calcium" name="Calcium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3050,7 +3050,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Iron</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Iron_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Iron" name="Iron_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Iron_Unit_S">
@@ -3069,7 +3069,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Iron_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Iron" name="Iron_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3086,7 +3086,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Vitamin A</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminA_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin A" name="VitaminA_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminA_Unit_S">
@@ -3105,7 +3105,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminA_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin A" name="VitaminA_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3122,7 +3122,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Vitamin C</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminC_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin C" name="VitaminC_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminC_Unit_S">
@@ -3141,7 +3141,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminC_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin C" name="VitaminC_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3158,7 +3158,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Vitamin D</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminD_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin D" name="VitaminD_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminD_Unit_S">
@@ -3177,7 +3177,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminD_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin D" name="VitaminD_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3195,7 +3195,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Vitamin E</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminE_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin E" name="VitaminE_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminE_Unit_S">
@@ -3214,7 +3214,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminE_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin E" name="VitaminE_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3231,7 +3231,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Vitamin K</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminK_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin K" name="VitaminK_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminK_Unit_S">
@@ -3250,7 +3250,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminK_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin K" name="VitaminK_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3267,7 +3267,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Thiamine</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Thiamine_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Thiamine" name="Thiamine_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Thiamine_Unit_S">
@@ -3286,7 +3286,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Thiamine_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Thiamine" name="Thiamine_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3303,7 +3303,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Riboflavin</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Riboflavin_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Riboflavin" name="Riboflavin_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Riboflavin_Unit_S" value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>">
@@ -3322,7 +3322,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Riboflavin_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Riboflavin" name="Riboflavin_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3340,7 +3340,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Niacin</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Niacin_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Niacin" name="Niacin_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Niacin_Unit_S">
@@ -3359,7 +3359,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Niacin_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Niacin" name="Niacin_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3377,7 +3377,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Vitamin B6</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminB6_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin B6" name="VitaminB6_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminB6_Unit_S">
@@ -3395,7 +3395,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminB6_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin B6" name="VitaminB6_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3412,7 +3412,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Folate</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Folate_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Folate" name="Folate_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Folate_Unit_S">
@@ -3431,7 +3431,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Folate_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Folate" name="Folate_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3449,7 +3449,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Vitamin B12</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="VitaminB12_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Vitamin B12" name="VitaminB12_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminB12_Unit_S">
@@ -3467,7 +3467,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="VitaminB12_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Vitamin B12" name="VitaminB12_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3484,7 +3484,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Biotin</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Biotin_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Biotin" name="Biotin_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Biotin_Unit_S">
@@ -3504,7 +3504,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Biotin_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Biotin" name="Biotin_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3522,7 +3522,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Choline</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Choline_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Choline" name="Choline_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Choline_Unit_S">
@@ -3541,7 +3541,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Choline_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Choline" name="Choline_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3558,7 +3558,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Pantothenate</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Pantothenate_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Pantothenate" name="Pantothenate_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Pantothenate_Unit_S">
@@ -3577,7 +3577,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Pantothenate_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily of value Pantothenate" name="Pantothenate_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3595,7 +3595,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Phosphorus</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Phosphorus_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Phosphorus" name="Phosphorus_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Phosphorus_Unit_S">
@@ -3614,7 +3614,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Phosphorus_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Phosphorus" name="Phosphorus_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3633,7 +3633,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Iodide</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Iodide_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Iodide" name="Iodide_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Iodide_Unit_S">
@@ -3653,7 +3653,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
 		 
-   <input type="text" class="form-control" placeholder="% Daily value" name="Iodide_Dvalue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Iodide" name="Iodide_Dvalue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3670,7 +3670,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="Amount" name="Magnesium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Magnesium" name="Magnesium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Magnesium_Unit_S">
@@ -3688,7 +3688,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Magnesium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Magnesium" name="Magnesium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3706,7 +3706,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Zinc</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Zinc_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Zinc" name="Zinc_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Zinc_Unit_S">
@@ -3725,7 +3725,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Zinc_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Zinc" name="Zinc_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3743,7 +3743,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Selenium</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Selenium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Selenium" name="Selenium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Selenium_Unit_S">
@@ -3761,7 +3761,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Selenium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Selenium" name="Selenium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3779,7 +3779,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Copper</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Copper_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Copper" name="Copper_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Copper_Unit_S">
@@ -3797,7 +3797,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>	
-   <input type="text" class="form-control" placeholder="% Daily value" name="Copper_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Copper" name="Copper_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3814,7 +3814,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Manganese</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Manganese_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Manganese" name="Manganese_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Manganese_Unit_S">
@@ -3833,7 +3833,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Manganese_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Manganese" name="Manganese_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3850,7 +3850,7 @@ $('input[name="intervaltype"]').click(function () {
 	?>
   <label class="col-sm-3 control-label">Chromium</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Chromium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Chromium" name="Chromium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Chromium_Unit_S">
@@ -3869,7 +3869,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Chromium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Chromium" name="Chromium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3886,7 +3886,7 @@ $('input[name="intervaltype"]').click(function () {
 	?> 
   <label class="col-sm-3 control-label">Molybdenum</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Molybdenium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Molybdenum" name="Molybdenium_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Molybdenium_Unit_S">
@@ -3906,7 +3906,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?> 
   
-   <input type="text" class="form-control" placeholder="% Daily value" name="Molybdenium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Molybdenum" name="Molybdenium_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -3924,7 +3924,7 @@ $('input[name="intervaltype"]').click(function () {
 		 
   <label class="col-sm-3 control-label">Chloride</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount" name="Chloride_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Chloride" name="Chloride_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Chloride_Unit_S">
@@ -3943,7 +3943,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value" name="Chloride_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Chloride" name="Chloride_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>

@@ -770,7 +770,7 @@ for ($row3 = 0; $row3 < 92; $row3++) {
 		while (!$new_product->isEmpty()) {
 			$senditem = $new_product->shift();
 			if(strlen ($senditem) < 1) continue;
-			echo "$senditem";
+			echo "$senditem <br>";
 		}
 		
 		//fclose($handle);
