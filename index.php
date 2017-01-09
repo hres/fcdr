@@ -283,15 +283,14 @@ $(document).ready(function() {
  
 
   </div>
-    <div >
-	</div>
+ 
   </div>
 </div>
 		<form id="clearbd">
 
 				<button style=" float:right;" type="submit" class="btn btn-default" name="clearbd">Clear DB</button>
 </form> 
-<div></div>
+
 		</main>
 
 <?php include 'footer.php';?>
