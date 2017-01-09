@@ -193,7 +193,7 @@ $('input[name="intervaltype"]').click(function () {
 			</div>
 				<div class="form-group col-sm-4">
 				<label for="Manufacturer" class="required">Manufacturer <strong class="required">(required)</strong></label>
-				<input type="text" class="form-control" name="Manufacturer" id="Manufacturer" placeholder="Enter the Manufacturer " />
+				<input type="text" class="form-control" name="Manufacturer" id="Manufacturer" placeholder="Enter the Manufacturer " required/>
 			</div>
 		</div>
 		<div class="row">
