@@ -26,35 +26,35 @@ if (isset($_POST['search'])) {
 	
 			//echo "in<br>";
 			$Record                    = $data[1];
-			$Sales_UPC                 = $data[2]
-			$Sales_Description         = $data[3]
-			$Brand                     = 
-			$Manufacturer              = $data[4]
+			$Sales_UPC                 = $data[2];
+			$Sales_Description         = $data[3];
+			$Brand                     = $data[4];
+			$Manufacturer              = $data[5];
 			//$Package_Size            = 
-			$Rank                      = $data[5]
-			$Dollar_Volume             = $data[6]
-			$Shr                       = $data[7]
-			$Vol_PerCent_Change        = $data[8]
-			$Kilo_Vol                  = $data[9]
-			$Kilo_Shr                  = $data[10]
-			$Kilo_Vol_PerCent_Change   = $data[11]
-			$Avg_AC_Disk               = $data[12]
-			$Ave_Retail_Unit_Price     = $data[13]
-			$Source                    = $data[14]
-			$Nielsen_Category          = $data[15]
+			$Rank                      = $data[6];
+			$Dollar_Volume             = $data[7];
+			$Shr                       = $data[8];
+			$Vol_PerCent_Change        = $data[9];
+			$Kilo_Vol                  = $data[10];
+			$Kilo_Shr                  = $data[11];
+			$Kilo_Vol_PerCent_Change   = $data[12];
+			$Avg_AC_Disk               = $data[13];
+			$Ave_Retail_Unit_Price     = $data[14];
+			$Source                    = $data[15];
+			$Nielsen_Category          = $data[16];
 		
-			$Collection_Date           = $data[16]
-			$Sales_Year                = $data[17]
-			$Control_Label             = $data[18]
-			$Kilo_Vol_Total            = $data[19]
-			$Kilo_Vol_Rank             = $data[20]
-			$Dollar_Volume_Total       = $data[21]
-			$Cluster_Number            = $data[22]
-			$Product_Grouping          = $data[23]
-			$Product_Description       = $data[24]
-			$Classification_Number     = $data[25]
-			$Classification_Type       = $data[26]
-			$Comments                  = $data[27]
+			$Collection_Date           = $data[17];
+			$Sales_Year                = $data[18];
+			$Control_Label             = $data[19];
+			$Kilo_Vol_Total            = $data[20];
+			$Kilo_Vol_Rank             = $data[21];
+			$Dollar_Volume_Total       = $data[22];
+			$Cluster_Number            = $data[23];
+			$Product_Grouping          = $data[24];
+			$Product_Description       = $data[25];
+			$Classification_Number     = $data[26];
+			$Classification_Type       = $data[27];
+			$Comments                  = $data[28];
 
 
 
