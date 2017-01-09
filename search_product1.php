@@ -26,7 +26,7 @@
 	//$query = "Select * from Product";
 	if(count($conditions) > 0) {
         // append the conditions
-      //  $query .= "WHERE " . implode (' AND ', $conditions); // you can change to 'OR', but I suggest to apply the filters cumulative
+       $query .= "WHERE " . implode (' AND ', $conditions); // you can change to 'OR', but I suggest to apply the filters cumulative
 		
    }
   /* $query .=" UNION Select * from FCDR.Product P RIGHT JOIN Product_Classification PC ON P.ProductID = PC.ProductID RIGHT JOIN Classification C ON PC.ClassificationID = C.ClassificationID ";
@@ -37,7 +37,6 @@
    }*/
 	$result = mysqli_query($conn,$query);
 	 $rowcount=mysqli_num_rows($result);
-		 echo "<script>document.getElementById(\"noResult\").innerHTML = \"$rowcount records\" </script>";
  
  if($rowcount < 1){
 	 echo "<script>document.getElementById(\"noResult\").innerHTML = \"No data found \" </script>";
