@@ -22,7 +22,7 @@
 	
 	
 	
-	$query = "Select *  from $dbname.Product P LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID ";
+	$query = "Select P.ProductID, P.Description, C.Classification_Name, C.Classification_Number, P.Brand, P.Manufacturer, P.CNF_CODE, C.Classification_Type   from $dbname.Product P LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID ";
 	//$query = "Select * from Product";
 	if(count($conditions) > 0) {
         // append the conditions
@@ -37,6 +37,7 @@
    }*/
 	$result = mysqli_query($conn,$query);
 	 $rowcount=mysqli_num_rows($result);
+		 echo "<script>document.getElementById(\"noResult\").innerHTML = \"$rowcount records\" </script>";
  
  if($rowcount < 1){
 	 echo "<script>document.getElementById(\"noResult\").innerHTML = \"No data found \" </script>";
