@@ -1,8 +1,9 @@
+<?php include 'connection.php';?>
 <?php
 // Connection 
 
 
-$filename = "Webinfopen.xlsx"; // File Name
+$filename = "newfile.xlsx"; // File Name
 // Download file
 header("Content-Disposition: attachment; filename=\"$filename\"");
 header("Content-Type: application/vnd.ms-excel");
