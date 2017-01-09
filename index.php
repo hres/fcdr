@@ -45,36 +45,6 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 
-<script type="text/javascript">
-$(document).ready(function()
-{
- $(document).on('submit', '#clearbd', function()
- {
-
-  var data = $(this).serialize();
-  
-  
-  $.ajax({
-  
-  type : 'POST',
-  url  :  'cleardb.php',
-  data : data,
-  success :  function(data) {
-                $('.result-modal').html(data);
-				
-            },
-            error: function (request, status, error) {
-                alert(error.responseText);
-                //or console.log(request.responseText), or status or error;
-            }
-  });
-  return false;
- });
- 
-});
-</script>
-	
-	
 
 <script>
 function mainInfo(str) {
@@ -170,7 +140,7 @@ $(document).ready(function() {
 	
 		<div class="container" id="tabs" >
   <ul class="nav nav-tabs">
-    <li class="active"><a href="index.php">Search Product</a></li>
+    <li class="active"><a href="index.php">Search Product </a></li>
     <li><a href="home-market.php">Search Market Share</a></li>
     <li><a  href="home-label.php">Search Package Label</a></li>
   </ul>
@@ -287,11 +257,7 @@ $(document).ready(function() {
 	</div>
   </div>
 </div>
-		<form id="clearbd">
-
-				<button style=" float:right;" type="submit" class="btn btn-default" name="clearbd">Clear DB</button>
-</form> 
-<div class="result-modal"></div>
+		
 		</main>
 
 <?php include 'footer.php';?>
