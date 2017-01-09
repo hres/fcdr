@@ -244,6 +244,10 @@ $(document).ready(function() {
 
 					</tbody>
 				</table>
+								<form id="clearbd">
+
+				<button style=" float:right;" type="submit" class="btn btn-default" name="clearbd">Clear DB</button>
+</form> 
 	</div>		
 	  </div> 
     <div id="menu1" class="tab-pane fade">
@@ -258,10 +262,7 @@ $(document).ready(function() {
   </div>
   
 </div>
-				<form id="clearbd">
 
-				<button style=" float:right;" type="submit" class="btn btn-default" name="clearbd">Clear DB</button>
-</form> 
 		</main>
 
 <?php include 'footer.php';?>
