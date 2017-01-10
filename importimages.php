@@ -169,16 +169,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 <script>
 
-$('#my-file-selector').on('change', function(e){
+$('#my-file-selector').on('change', function() {
 	var files = $(this).prop('files');
-  for (var i = 0; i < files.length; i++) {
-  console.log(files[i]);
-  	$('#upload-file-info').append("<br/>" + (files[i].name).fontsize(3));
-  }
+	for (var i = 0; i < files.length; i++) {
+		console.log(files[i]);
+		$('#upload-file-info').append("<br/>" + (files[i].name).fontsize(3));
+	}
 });
 
 $('#my-file-selector2').on('click', function() {
-	alert($('#my-file-selector').prop('files').length);
+	var files = $(this).prop('files');
+	var size = 0;
+	for (var i = 0; i < files.length; ++i) {
+		size += files[i].size;
+	}
+	alert(size);
 });
 
 </script>
