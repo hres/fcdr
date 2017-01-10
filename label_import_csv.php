@@ -496,7 +496,7 @@ EOQ;
 
 
 
-for ($row1 = 0; $row1 < 92; $row1++) {
+for ($row1 = 0; $row1 < 94; $row1++) {
 
 								$stmt = $conn->prepare($query_insert);
 								
@@ -606,7 +606,7 @@ EOQ;
 
 
 
-for ($row2 = 0; $row2 < 92; $row2++) {
+for ($row2 = 0; $row2 < 94; $row2++) {
 
 								$stmt = $conn->prepare($query_insertx);
 								$cars[$row2][1] =  (empty($cars[$row2][1]) && strlen($cars[$row2][1]) == 0 ?NULL :$cars[$row2][1]);
@@ -697,7 +697,7 @@ EOQ;
 
 
 
-for ($row3 = 0; $row3 < 92; $row3++) {
+for ($row3 = 0; $row3 < 94; $row3++) {
 
 								$stmt = $conn->prepare($query_insert1);
 								
