@@ -178,7 +178,7 @@ $('#my-file-selector').on('change', function(e){
 });
 
 $('#my-file-selector2').on('click', function() {
-	alert($('#my-file-selector').prop('files'));
+	alert($('#my-file-selector').prop('files').length);
 });
 
 </script>
