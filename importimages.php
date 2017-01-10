@@ -183,7 +183,7 @@ $('#my-file-selector2').on('click', function() {
 	for (var i = 0; i < files.length; ++i) {
 		size += files[i].size;
 	}
-	alert(size);
+	alert(size + ' > ' + 33554432);
 });
 
 </script>
