@@ -113,25 +113,24 @@
  
 <section style="margin-top: 15px;" class="hidethis">
 
-<div class="well" style="margin-right:2%;">
-<div style="margin-top:-37px;"><strong><h3>Select your images (allowed types: jpg, png, gif, jpeg)</h3></strong></div>
+	<div class="well" style="margin-right:2%;">
+		<div style="margin-top:-37px;"><strong><h3>Select your images (allowed types: jpg, png, gif, jpeg)</h3></strong></div>
 
-<form  action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
-	
-	<label class="btn btn-primary" for="my-file-selector">
-    <input id="my-file-selector" type="file"  name="files[]" style="display:none;" multiple>
-	
-   Browse
-</label>
-<div style="float:right;">
-<label class="btn btn-primary" for="my-file-selector2">
-    <input id="my-file-selector2" type="Submit" style="display:none;" name="search">
-	
-    Import
-</label></div>
+		<form id="first" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
+			<label class="btn btn-primary" for="my-file-selector">
+				<input id="my-file-selector" type="file"  name="files[]" style="display:none;" multiple>
+				Browse
+			</label>
+			<div style="float:right;">
+				<label class="btn btn-primary" for="my-file-selector2">
+					<!--<input id="my-file-selector2" type="Submit" style="display:none;" name="search">-->
+					Import
+				</label>
+			</div>
+		</form>
 
-	</form>
-	
+		<form id="second">
+		</form>
 	</div>
 </section>
 
@@ -172,6 +171,9 @@ $('#my-file-selector').on('change', function(e){
   console.log(files[i]);
   	$('#upload-file-info').append((files[i].name).fontsize(3) +"</br>");
   }
+});
+
+$('#button').on('click', function() {
 });
 
 </script>
