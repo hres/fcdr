@@ -6,6 +6,16 @@ ini_set('display_errors', 1);  */
 
 if (isset($_POST['search'])) {
 	
+	
+			$allowed =  array('csv');		
+		$tmpfname = $_FILES['file_save']['tmp_name'];
+		$ext = pathinfo($_FILES['file_save']['name'], PATHINFO_EXTENSION);
+		if(!in_array($ext,$allowed) ) {
+		echo "<h3>Selected File is Not an Excel Sheet</h3>";
+
+	
+		} else{
+	
 
 		$count = 0;
 		$skipped_label = new SplQueue();
@@ -752,6 +762,7 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 		}
 		
 		print "Import done";
+}
  }
    
 
