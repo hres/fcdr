@@ -271,11 +271,41 @@ if (!$result) {
   
   </div>
 </div>
+		<form id="clearbd">
 
+				<button style=" float:right;" type="submit" class="btn btn-default" name="clearbd">Clear DB</button>
+</form> 
 
 		</main>
 <?php include 'footer.php';?>
+	<script type="text/javascript">
+$(document).ready(function()
+{
+ $(document).on('submit', '#clearbd', function()
+ {
 
+  var data = $(this).serialize();
+  
+  
+  $.ajax({
+  
+  type : 'POST',
+  url  :  'cleardb.php',
+  data : data,
+  success :  function(data) {
+                $('.result-modal').html(data);
+				
+            },
+            error: function (request, status, error) {
+                alert(error.responseText);
+                //or console.log(request.responseText), or status or error;
+            }
+  });
+  return false;
+ });
+ 
+});
+</script>
 <!-- Include Date Range Picker -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
