@@ -49,7 +49,7 @@ if (isset($_POST['search'])) {
 			$Kilo_Vol_Total            = (empty($data[19]) && strlen($data[19]) == 0 ?NULL :$data[19]);
 			$Kilo_Vol_Rank             = (empty($data[20]) && strlen($data[20]) == 0 ?NULL :$data[20]);
 			$Dollar_Volume_Total       = (empty($data[21]) && strlen($data[21]) == 0 ?NULL :$data[21]);
-			$Cluster_Number            = (empty($data[22]) && strlen($data[22]) == 0 ?NULL :$data[22])];
+			$Cluster_Number            = (empty($data[22]) && strlen($data[22]) == 0 ?NULL :$data[22]);
 			$Product_Grouping          = (empty($data[23]) && strlen($data[23]) == 0 ?NULL :$data[23]);
 			$Product_Description       = (empty($data[24]) && strlen($data[24]) == 0 ?NULL :$data[24]);
 			$Classification_Number     = (empty($data[25]) && strlen($data[26]) == 0 ?NULL :$data[27]);
