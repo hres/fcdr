@@ -496,7 +496,7 @@ hr {
     <h3>Delete Package Label</h3>
 </div>
 <div id="relink-message" style="display:none;">
-    <h3>Relink Package Label</h3>
+    <h3>Re-link Package Label</h3>
 </div>
 
   </header>

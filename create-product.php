@@ -126,21 +126,12 @@
 	
 	
 		<div class="row">
-			<div class="form-group col-sm-4">
+			<div class="form-group col-xs-6">
 				<label for="Description" class="required">Description <strong class="required">(required)</strong></label>
-				<input type="text" class="form-control" name="Description" id="Description" placeholder="Enter the Description" required="required"/>
+				<input type="text" class="form-control" style="width:540px" name="Description" id="Description" placeholder="Enter the Description" required="required"/>
 			</div>
-			<div class="form-group col-sm-4">
-				<label for="Brand">Brand</label>
-				<input type="text" class="form-control" name="Brand" id="Brand" placeholder="Enter the Brand" />
-			</div>
-			<div class="form-group col-sm-4">
-				<label for="manufacturer">Manufacturer</label>
-				<input type="text" class="form-control" name="Manufacturer_Name" id="manufacturer" placeholder="Enter the  Manufacturer" />
-			</div>
-		</div>
-		<div class="row">
-		<div class="form-group col-sm-4">
+			
+				<div class="form-group col-xs-6">
 				<label for="Classification_Number">Classification Number</label>
 			
     <select class="form-control" id="Classification_Number" name="Classification_Number" style="width:540px" >
@@ -149,29 +140,47 @@
 		
 			 </select>
 			</div>
+	
+		</div>
+		<div class="row">
+		
+	
 
 					<div class="form-group col-sm-4">
 				<label for="Classification_Type">Classification Type</label>
-				<input type="text" class="form-control" name="Classification_Type" style="width:540px" id="Classification_Type" placeholder="Enter the Target level" disabled="disabled" value="Sodium Guidance Benchmark Level" />
+				<input type="text" class="form-control" name="Classification_Type"  id="Classification_Type" placeholder="Enter the Target level" disabled="disabled" value="Sodium Guidance Benchmark Level" />
 			</div>
-				<div class="form-group col-sm-4">
-				<label for="CNF_Code">CNF Code</label>
-				<input type="text" class="form-control" name="CNF_CODE" id="CNF_Code" placeholder="Enter the CNF Code" />
+					<div class="form-group col-sm-4">
+				<label for="Brand">Brand</label>
+				<input type="text" class="form-control" name="Brand" id="Brand" placeholder="Enter the Brand" />
 			</div>
+			<div class="form-group col-sm-4">
+				<label for="manufacturer">Manufacturer</label>
+				<input type="text" class="form-control" name="Manufacturer_Name" id="manufacturer" placeholder="Enter the  Manufacturer" />
+			</div>
+		
 			
 
 		</div>
 		<div class="row">
-		
+				<div class="form-group col-sm-4">
+				<label for="CNF_Code">CNF Code</label>
+				<input type="text" class="form-control" name="CNF_CODE" id="CNF_Code" placeholder="Enter the CNF Code" />
+			</div>
+						<div class="form-group col-sm-4">
+				<label for="Comments">Comment</label>
+				<input type="text" class="form-control" name="Comments" id="Comments" placeholder="Enter the Comment" />
+			</div>
 						<div class="form-group col-sm-4">
 				<label for="Cluster_Number">Cluster Number</label>
 				<input type="text" class="form-control" name="Cluster_Number" id="Cluster_Number" placeholder="Enter the Cluster Number" />
 			</div>
-				<div class="form-group col-sm-4">
-				<label for="Comments">Comment</label>
-				<input type="text" class="form-control" name="Comments" id="Comments" placeholder="Enter the Comment" />
-			</div>
 	
+	
+	
+		</div>
+		
+					<div class="row">
 			<div class="form-group col-sm-4" >
 				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search">Save</button>
 			</div>

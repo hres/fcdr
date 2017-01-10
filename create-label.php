@@ -669,9 +669,9 @@ $('input[name="intervaltype"]').click(function () {
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label for="Sugar_Alcohols_Amount" class="col-sm-3 control-label">Sugars Alcohol</label>
+  <label for="Sugar_Alcohols_Amount" class="col-sm-3 control-label">Sugar Alcohols</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Sugars Alcohol" name="Sugar_Alcohols_Amount" id="Sugar_Alcohols_Amount">
+   <input type="text" class="form-control" placeholder="Amount of Sugar Alcohols" name="Sugar_Alcohols_Amount" id="Sugar_Alcohols_Amount">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Sugar_Alcohols_Unit" name="Sugar_Alcohols_Unit">
@@ -679,7 +679,7 @@ $('input[name="intervaltype"]').click(function () {
 			<?php include 'Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="% Daily value of Sugars Alcohol" name="Sugar_Alcohols_DValue" id="Sugar_Alcohols_DValue">
+   <input type="text" class="form-control" placeholder="% Daily value of Sugar Alcohols" name="Sugar_Alcohols_DValue" id="Sugar_Alcohols_DValue">
   </div>
  </div>
  </div>
@@ -1507,9 +1507,9 @@ $('input[name="intervaltype"]').click(function () {
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label for="Sugar_Alcohols_Amount_S" class="col-sm-3 control-label">Sugars Alcohol</label>
+  <label for="Sugar_Alcohols_Amount_S" class="col-sm-3 control-label">Sugar Alcohols</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Sugars Alcohol" name="Sugar_Alcohols_Amount_S" id="Sugar_Alcohols_Amount_S">
+   <input type="text" class="form-control" placeholder="Amount of Sugar Alcohols" name="Sugar_Alcohols_Amount_S" id="Sugar_Alcohols_Amount_S">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sugar_Alcohols_Unit_S">
@@ -1517,7 +1517,7 @@ $('input[name="intervaltype"]').click(function () {
 			<?php include 'Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="% Daily value of Sugars Alcohol" name="Sugar_Alcohols_DValue_S">
+   <input type="text" class="form-control" placeholder="% Daily value of Sugar Alcohols" name="Sugar_Alcohols_DValue_S">
   </div>
  </div>
  </div>

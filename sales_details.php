@@ -495,7 +495,7 @@ $(window).resize();
     <h3>Delete Market Share</h3>
 </div>
 <div id="relink-message" style="display:none;">
-    <h3>Relink Market Share</h3>
+    <h3>Re-link Market Share</h3>
 </div>
   </header>
 
