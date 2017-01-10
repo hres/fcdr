@@ -177,7 +177,8 @@ $('#my-file-selector').on('change', function(e){
   }
 });
 
-$('#button').on('click', function() {
+$('#my-file-selector2').on('click', function() {
+	alert($('#my-file-selector').val());
 });
 
 </script>
