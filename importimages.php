@@ -114,6 +114,7 @@
 <section style="margin-top: 15px;" class="hidethis">
 
 	<div class="well" style="margin-right:2%;">
+
 		<div style="margin-top:-37px;"><strong><h3>Select your images (allowed types: jpg, png, gif, jpeg)</h3></strong></div>
 
 		<form id="first" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
@@ -124,6 +125,7 @@
 			<div style="float:right;">
 				<label class="btn btn-primary" for="my-file-selector2">
 					<!--<input id="my-file-selector2" type="Submit" style="display:none;" name="search">-->
+					<input id="my-file-selector2" type="button" style="display:none"/>
 					Import
 				</label>
 			</div>
@@ -131,7 +133,9 @@
 
 		<form id="second">
 		</form>
+
 	</div>
+
 </section>
 
 
