@@ -178,7 +178,7 @@ $('#my-file-selector').on('change', function() {
 });
 
 $('#my-file-selector2').on('click', function() {
-	var files = $(this).prop('files');
+	var files = $('#my-file-selector').prop('files');
 	var size = 0;
 	for (var i = 0; i < files.length; ++i) {
 		size += files[i].size;
