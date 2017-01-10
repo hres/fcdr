@@ -44,35 +44,6 @@
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-	<script type="text/javascript">
-$(document).ready(function()
-{
- $(document).on('submit', '#clearbd', function()
- {
-
-  var data = $(this).serialize();
-  
-  
-  $.ajax({
-  
-  type : 'POST',
-  url  :  'cleardb.php',
-  data : data,
-  success :  function(data) {
-                $('.result-modal').html(data);
-				
-            },
-            error: function (request, status, error) {
-                alert(error.responseText);
-                //or console.log(request.responseText), or status or error;
-            }
-  });
-  return false;
- });
- 
-});
-</script>
-
 
 
 <script>
@@ -282,15 +253,11 @@ $(document).ready(function() {
  
 
   </div>
-
+    <div >
+	</div>
   </div>
 </div>
 		
-		<form id="clearbd">
-
-				<button style=" float:right;" type="submit" class="btn btn-default" name="clearbd">Clear DB</button>
-</form> 
-
 		</main>
 
 <?php include 'footer.php';?>
