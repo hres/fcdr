@@ -1,9 +1,8 @@
-<?php include 'connection.php';?>
 <?php
 // Connection 
 
 
-$filename = "success.xlsx"; // File Name
+$filename = "success1.xlsx"; // File Name
 // Download file
 header("Content-Disposition: attachment; filename=\"$filename\"");
 header("Content-Type: application/vnd.ms-excel");
