@@ -1,12 +1,10 @@
 <?php
-// Connection 
+ob_start();
 
-
-$filename = "success1.xlsx"; // File Name
-// Download file
-header("Content-Disposition: attachment; filename=\"$filename\"");
-header("Content-Type: application/vnd.ms-excel");
-// Write data to file
-
-echo "OYYESOOO";
+ob_get_clean();
+header( "Content-Type: application/vnd.ms-excel" );
+header( "Content-disposition: attachment; filename=spreadsheet.xlsx" );
+echo 'First Name' . "\t" . 'Last Name' . "\t" . 'Phone' . "\n";
+echo 'John' . "\t" . 'Doe' . "\t" . '555-5555' . "\n";
+die();
 ?>
