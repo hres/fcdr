@@ -65,7 +65,10 @@
 
 
 		<style>
-		
+		.submit_button{
+		float:right;
+		margin-bottom:-5px;
+	}	
 
 		.mainsearch{
 			border-style: solid;
@@ -181,7 +184,7 @@
 		</div>
 		
 					<div class="row">
-			<div class="form-group col-sm-4" >
+			<div class="form-group col-sm-4 submit_button" >
 				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search">Save</button>
 			</div>
 		</div>
