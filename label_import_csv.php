@@ -604,6 +604,11 @@ EOQ;
 for ($row2 = 0; $row2 < 92; $row2++) {
 
 								$stmt = $conn->prepare($query_insertx);
+								$cars[$row2][1] =  (empty($cars[$row2][1]) && strlen($cars[$row2][1]) == 0 ?NULL :$cars[$row2][1]);
+								$cars[$row2][3] =  (empty($cars[$row2][3]) && strlen($cars[$row2][3]) == 0 ?NULL :$cars[$row2][3]);
+								$cars[$row2][2] =  (empty($cars[$row2][1]) && strlen($cars[$row2][1]) == 0 ?NULL :$cars[$row2][2]);
+
+							
 								$stmt->bind_param("iidsds",$nid, $cars[$row2][0],$cars[$row2][1],$cars[$row2][2],$cars[$row][3],$cars[$row2][4]);
 								$results = $stmt->execute();
 
@@ -690,6 +695,12 @@ EOQ;
 for ($row3 = 0; $row3 < 92; $row3++) {
 
 								$stmt = $conn->prepare($query_insert1);
+								
+								$cars[$row3][1] =  (empty($cars[$row3][1]) && strlen($cars[$row3][1]) == 0 ?NULL :$cars[$row3][1]);
+								$cars[$row3][3] =  (empty($cars[$row3][3]) && strlen($cars[$row3][3]) == 0 ?NULL :$cars[$row3][3]);
+								$cars[$row3][2] =  (empty($cars[$row3][1]) && strlen($cars[$row3][1]) == 0 ?NULL :$cars[$row3][2]);
+
+								
 								$stmt->bind_param("iidsds",$xid, $cars[$row3][0],$cars[$row3][1],$cars[$row3][2],$cars[$row3][3],$cars[$row3][4]);
 								$results = $stmt->execute();
 
