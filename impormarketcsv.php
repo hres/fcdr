@@ -64,28 +64,12 @@ if (isset($_POST['search'])) {
 			
 			if ($Sales_UPC == null or $Sales_Description == null or $Kilo_Vol == null or $Source == null or $Sales_Year == null or $Collection_Date == null) {
 
-				if ($Sales_Description) {
 
-					$input1 = "Record : $Record, $Sales_Description";
-					$skipped_sales->push($input1);
-					//**********************
-
-					continue;
-				} else if ($Sales_UPC != null and $Sales_Description == null) {
-
-					$input2 = "Record : $Record, $Sales_UPC";
-					$skipped_sales->push($input2);
-					//fwrite($myfile, $Sales_Description);
-
-					continue;
-
-				} else {
-
-					$inputX = "Record : $Record, No Description and Sales UPC available";
+					$inputX = "Record : $Record, $Sales_UPC, $Sales_Description ";
 					$skipped_sales->push($inputX);
 
 					continue;
-				}
+				
 
 			} else {
 				if (is_numeric  ($Product_Grouping)) {
