@@ -173,7 +173,7 @@ $('#my-file-selector').on('change', function(e){
 	var files = $(this).prop('files');
   for (var i = 0; i < files.length; i++) {
   console.log(files[i]);
-  	$('#upload-file-info').append((files[i].name).fontsize(3) +"</br>");
+  	$('#upload-file-info').append((files[i].name).fontsize(3) +"<br/>");
   }
 });
 
