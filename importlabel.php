@@ -402,7 +402,7 @@ a.close:hover {
 <section style="margin-top: 15px;" class="hidethis">
 
 <div class="well" style="margin-right:2%;">
-<div style="margin-top:-37px;"><strong><h3>Select an Excel File</h3></strong></div>
+<div style="margin-top:-37px;"><strong><h3>Select a CSV file</h3></strong></div>
 
 <form method="post"  action="" enctype="multipart/form-data" id="form1">
 	

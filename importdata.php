@@ -425,7 +425,7 @@ a.close:hover {
 <section style="margin-top: 15px;" class="hidethis">
 
 <div class="well" style="margin-right:2%;">
-<div style="margin-top:-37px;"><strong><h3>Select an Excel File</h3></strong></div>
+<div style="margin-top:-37px;"><strong><h3>Select a CSV File</h3></strong></div>
 
 <form method="post"  action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data" id="form1">
 	
@@ -459,7 +459,7 @@ a.close:hover {
   </div>
   <div style="margin-top:10px;"><strong><h3>Report log file(s)</h3></strong></div>
   	<div id="hide" style="display:none; margin-bottom:3%;"><h3>Your data is being processed, this can take several minutes...</h3></div>
-  <div style="height:400px; overflow:auto;"><?php include 'save_import.php';?></div>
+  <div style="height:400px; overflow:auto;"><?php include 'impormarketcsv.php';?></div>
 </div>
 
 		

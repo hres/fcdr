@@ -11,7 +11,7 @@ if (isset($_POST['search'])) {
 		$tmpfname = $_FILES['file_save']['tmp_name'];
 		$ext = pathinfo($_FILES['file_save']['name'], PATHINFO_EXTENSION);
 		if(!in_array($ext,$allowed) ) {
-		echo "<h3>Selected File is Not an Excel Sheet</h3>";
+		echo "<h3>Selected File is Not a CSV file</h3>";
 
 	
 		} else{
