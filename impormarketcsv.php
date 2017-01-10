@@ -25,34 +25,34 @@ if (isset($_POST['search'])) {
 			++$count;
 	
 			//echo "in<br>";
-			$Record                    = $data[0];
+			$Record                    = $data[0]; //(empty($data[0]) && strlen($data[0]) == 0 ?NULL :$data[0]);
 			$Sales_UPC                 = $data[1];
 			$Sales_Description         = $data[2];
 			$Brand                     = $data[3];
 			$Manufacturer              = $data[4];
 			//$Package_Size            = 
-			$Rank                      = $data[5];
-			$Dollar_Volume             = $data[6];
-			$Shr                       = $data[7];
-			$Vol_PerCent_Change        = $data[8];
-			$Kilo_Vol                  = $data[9];
-			$Kilo_Shr                  = $data[10];
-			$Kilo_Vol_PerCent_Change   = $data[11];
-			$Avg_AC_Disk               = $data[12];
-			$Ave_Retail_Unit_Price     = $data[13];
+			$Rank                      = (empty($data[5]) && strlen($data[5]) == 0 ?NULL :$data[5]);
+			$Dollar_Volume             = (empty($data[6]) && strlen($data[6]) == 0 ?NULL :$data[6]);
+			$Shr                       = (empty($data[7]) && strlen($data[7]) == 0 ?NULL :$data[7]);
+			$Vol_PerCent_Change        = (empty($data[8]) && strlen($data[8]) == 0 ?NULL :$data[8]);
+			$Kilo_Vol                  = (empty($data[9]) && strlen($data[9]) == 0 ?NULL :$data[9]);
+			$Kilo_Shr                  = (empty($data[10]) && strlen($data[10]) == 0 ?NULL :$data[10]);
+			$Kilo_Vol_PerCent_Change   = (empty($data[11]) && strlen($data[11]) == 0 ?NULL :$data[11]);
+			$Avg_AC_Disk               = (empty($data[12]) && strlen($data[12]) == 0 ?NULL :$data[12]);
+			$Ave_Retail_Unit_Price     = (empty($data[13]) && strlen($data[13]) == 0 ?NULL :$data[13]);
 			$Source                    = $data[14];
 			$Nielsen_Category          = $data[15];
 		
-			$Collection_Date           = $data[16];
-			$Sales_Year                = $data[17];
+			$Collection_Date           = (empty($data[16]) && strlen($data[16]) == 0 ?NULL :$data[16]);
+			$Sales_Year                = (empty($data[17]) && strlen($data[17]) == 0 ?NULL :$data[17]);
 			$Control_Label             = $data[18];
-			$Kilo_Vol_Total            = $data[19];
-			$Kilo_Vol_Rank             = $data[20];
-			$Dollar_Volume_Total       = $data[21];
-			$Cluster_Number            = $data[22];
-			$Product_Grouping          = $data[23];
-			$Product_Description       = $data[24];
-			$Classification_Number     = $data[25];
+			$Kilo_Vol_Total            = (empty($data[19]) && strlen($data[19]) == 0 ?NULL :$data[19]);
+			$Kilo_Vol_Rank             = (empty($data[20]) && strlen($data[20]) == 0 ?NULL :$data[20]);
+			$Dollar_Volume_Total       = (empty($data[21]) && strlen($data[21]) == 0 ?NULL :$data[21]);
+			$Cluster_Number            = (empty($data[22]) && strlen($data[22]) == 0 ?NULL :$data[22])];
+			$Product_Grouping          = (empty($data[23]) && strlen($data[23]) == 0 ?NULL :$data[23]);
+			$Product_Description       = (empty($data[24]) && strlen($data[24]) == 0 ?NULL :$data[24]);
+			$Classification_Number     = (empty($data[25]) && strlen($data[26]) == 0 ?NULL :$data[27]);
 			$Classification_Type       = $data[26];
 			$Comments                  = $data[27];
 
