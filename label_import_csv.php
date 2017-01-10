@@ -499,6 +499,11 @@ EOQ;
 for ($row1 = 0; $row1 < 92; $row1++) {
 
 								$stmt = $conn->prepare($query_insert);
+								
+								$cars[$row1][1] =  (empty($cars[$row1][1]) && strlen($cars[$row1][1]) == 0 ?NULL :$cars[$row1][1]);
+								$cars[$row1][3] =  (empty($cars[$row1][3]) && strlen($cars[$row1][3]) == 0 ?NULL :$cars[$row1][3]);
+								$cars[$row1][2] =  (empty($cars[$row1][1]) && strlen($cars[$row1][1]) == 0 ?NULL :$cars[$row1][2]);
+
 								$stmt->bind_param("iidsds",$id2, $cars[$row1][0],$cars[$row1][1],$cars[$row1][2],$cars[$row1][3],$cars[$row1][4]);
 								$results = $stmt->execute();
 
