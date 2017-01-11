@@ -31,13 +31,12 @@
 
 <script type="text/javascript">
 $(function(){
-	console.log('hello');
-	$("testJason").submit(function(){
-		
+	$("#testJSON").submit(function(event){
+		event.preventDefault();
 		var password = $(this).find("input[name=psw]").val();
 		var username = $(this).find("input[name=uname]").val();
-		var url = $(this).attr("data-action");
-		alert(password);
+		var url = $(this).attr("action");
+		alert();
 		return false;
 				
 		
@@ -160,7 +159,7 @@ span.psw {
 </header>
 <main role="main" property="mainContentOfPage" class="container">
 <h2>Login Form</h2>
-<form  method="post" id="testJason"  data-action="save_session.php">
+<form  method="post" id="testJSON"  action="save_session.php">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
