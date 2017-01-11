@@ -33,10 +33,20 @@
 $(function(){
 	$("#testJSON").submit(function(event){
 		event.preventDefault();
-		var password = $(this).find("input[name=psw]").val();
-		var username = $(this).find("input[name=uname]").val();
+		var pass = $(this).find("input[name=psw]").val();
+		var user = $(this).find("input[name=uname]").val();
 		var url = $(this).attr("action");
-		alert(username);
+		$.post(url,{password:pass, username:user}, function(data){	
+			if(data.error =="No"){
+				$("#testJSON").fadeOut();
+				$("#testJSON").before(data.success);
+				
+			}else{
+				
+				
+			}
+		
+		}, 'json');
 		return false;
 				
 		
