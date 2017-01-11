@@ -39,10 +39,7 @@ $(function(){
 		url = $(this).attr("action");
 		alert(password);
 		return false;
-		
-		
-		
-		
+				
 		
 	});
 	
