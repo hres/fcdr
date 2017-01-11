@@ -1,6 +1,28 @@
 <?php
-	session_start();
+	//session_start();
 	
+	
+	$pass = "pass2";
+	$user = "admin";
+	
+	$tableau = array();
+	$tableau["error"] = "Incorrect fields";
+	if($_POST['uname']!=$user){
+		$tableau["errorUsername"] = "Wrong username";
+		
+	}else{
+			if($_POST['psw']!=$pass){
+		$tableau["errorPassword"] = "Wrong password";
+		
+	}else{
+		
+		$tableau["error"] = "No";
+		$tableau["success"] = "<p>You have successfully logged in</p>";
+	}
+	
+	}
+	echo json_decode($tableau);
+	/* 
 	if(array_key_exists('sign-in',$_POST))
 	{
 		$email=$_POST['email'];
@@ -22,5 +44,5 @@
 		//pg_free_result($result);
 		pg_free_result($result1);
 		pg_close($dbconn);
-	}
+	} */
 ?>
