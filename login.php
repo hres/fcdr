@@ -45,7 +45,7 @@ $(function(){
 				alert("hellor");
 			}
 		
-		}, 'json');
+		},"json");
 		return false;
 				
 		
