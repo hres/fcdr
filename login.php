@@ -32,7 +32,6 @@
 <script type="text/javascript">
 $(function(){
 	$("#testJSON").submit(function(event){
-		event.preventDefault();
 		var password = $(this).find("input[name=psw]").val();
 		var username = $(this).find("input[name=uname]").val();
 		var url = $(this).attr("action");
