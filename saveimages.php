@@ -20,7 +20,7 @@ $count = 0;
 	$skippedimages = new SplQueue();
 	$imported = new SplQueue();
 
-if (isset($_POST['search'])) {
+//if (isset($_POST['search'])) {
 	// Loop $_FILES to exeicute all files
 	
 	// var_dump($_FILES['files']);
@@ -131,7 +131,7 @@ if (isset($_POST['search'])) {
 		if(strlen ($senditem) < 1) continue;
 		echo "$senditem <br>";
    }  
-  }
+  //}
   
   
   
