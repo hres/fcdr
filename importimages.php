@@ -150,8 +150,11 @@
   
     <div style="margin-top:10px;"><strong><h3>Report log file(s)</h3></strong></div>
 
+<?php echo $_SERVER['REQUEST_METHOD'];?>
 
-	  <?php // include 'saveimages.php';?>
+<?php var_dump($_POST);?>
+
+	  <?php include 'saveimages.php';?>
 </div>
 
 		
