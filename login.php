@@ -34,8 +34,8 @@
 $(function(){
 	$("testJason").submit(function(){
 		
-		password = $(this).find(input[name="psw"]).val();
-		username = $(this).find(input[name="uname"]).val();
+		password = $(this).find("input[name=psw]").val();
+		username = $(this).find("input[name=uname]").val();
 		url = $(this).attr("action");
 		alert(password);
 		return false;
