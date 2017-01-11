@@ -174,6 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 $('#my-file-selector').on('change', function() {
 	var files = $(this).prop('files');
 	$("#upload-file-info").html("");
+	$('#post-file-info').html("");
 	for (var i = 0; i < files.length; i++) {
 		console.log(files[i]);
 		$('#upload-file-info').append("<br/>" + (files[i].name).fontsize(3));
