@@ -7,8 +7,7 @@
 	<title>FCDR</title>
 	<link rel="shortcut icon" type="image/png" href="/media/images/favicon.png">
 
-	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
-	</script>  
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 
 <link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
