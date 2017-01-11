@@ -35,6 +35,7 @@ $(function(){
 		 pass = $(this).find("input[name=psw]").val();
 		 user = $(this).find("input[name=uname]").val();
 		 url = $(this).attr("action");
+		 console.log(user);
 		$.post(url,{psw:pass, uname:user}, function(data){	
 			if(data.error =="No"){
 				$("#testJSON").fadeOut();
@@ -45,7 +46,7 @@ $(function(){
 				alert("hellor");
 			}
 		
-		}, 'json');
+		},"json");
 		return false;
 				
 		
