@@ -150,7 +150,7 @@
   
     <div style="margin-top:10px;"><strong><h3>Report log file(s)</h3></strong></div>
 
-<div class='label label-info' id="post-file-info">
+<div id="post-file-info">
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	include 'saveimages.php';
