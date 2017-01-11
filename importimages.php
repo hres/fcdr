@@ -185,6 +185,7 @@ $('#my-file-selector2').on('click', function() {
 		$('#upload-file-info').html("<h2>Total size of images too big!<br/>Upload less images.</h2>");
 	} else {
 		$("#first").submit();
+		$('#upload-file-info').html("");
 	}
 });
 
