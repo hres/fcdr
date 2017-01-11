@@ -36,7 +36,7 @@ $(function(){
 		var password = $(this).find("input[name=psw]").val();
 		var username = $(this).find("input[name=uname]").val();
 		var url = $(this).attr("action");
-		alert();
+		alert(username);
 		return false;
 				
 		
