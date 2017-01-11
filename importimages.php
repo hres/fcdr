@@ -182,8 +182,7 @@ $('#my-file-selector2').on('click', function() {
 		size += files[i].size;
 	}
 	if (size > 33554432) {
-		alert(size + ' > ' + 33554432);
-		$('#upload-file-info').html("<h2>Total size of images too big! Upload less images.</h2>");
+		$('#upload-file-info').html("<h2>Total size of images too big!<br/>Upload less images.</h2>");
 	} else {
 		$("#first").submit();
 	}
