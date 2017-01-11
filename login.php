@@ -32,11 +32,10 @@
 <script type="text/javascript">
 $(function(){
 	$("#testJSON").submit(function(event){
-		event.preventDefault();
 		var pass = $(this).find("input[name=psw]").val();
 		var user = $(this).find("input[name=uname]").val();
 		var url = $(this).attr("action");
-		$.post(url,{password:pass, username:user}, function(data){	
+		$.post(url,{psw:pass, uname:user}, function(data){	
 			if(data.error =="No"){
 				$("#testJSON").fadeOut();
 				$("#testJSON").before(data.success);
