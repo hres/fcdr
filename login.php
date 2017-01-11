@@ -30,6 +30,30 @@
 <script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
 
+<script type="text/javascript">
+$(function(){
+	$("testJason").submit(function(){
+		
+		password = $(this).find(input[name="psw"]).val();
+		username = $(this).find(input[name="uname"]).val();
+		url = $(this).attr("action");
+		alert(password);
+		return false;
+		
+		
+		
+		
+		
+	});
+	
+	
+	
+	
+});
+
+
+</script>
+
 
 <style>
 form {
@@ -140,8 +164,8 @@ span.psw {
 </header>
 <main role="main" property="mainContentOfPage" class="container">
 <h2>Login Form</h2>
-<form action="action_page.php">
-  <div class="imgcontainer">
+<form  method="post" id="testJason">
+  <div class="imgcontainer" action="save_session.php">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
 
@@ -153,7 +177,6 @@ span.psw {
     <input type="password" placeholder="Enter Password" name="psw" required>
         
     <button type="submit">Login</button>
-    <input type="checkbox" checked="checked"> Remember me
   </div>
 
 
