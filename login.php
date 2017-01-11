@@ -48,7 +48,6 @@ $(function(){
 	
 });
 
-
 </script>
 
 
@@ -161,8 +160,8 @@ span.psw {
 </header>
 <main role="main" property="mainContentOfPage" class="container">
 <h2>Login Form</h2>
-<form  method="post" id="testJason">
-  <div class="imgcontainer" action="save_session.php">
+<form  method="post" id="testJason"  action="save_session.php">
+  <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
 
