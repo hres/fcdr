@@ -30,7 +30,7 @@
 <![endif]-->
 
 <script type="text/javascript">
-$(function(){
+(function(){
 	console.log('hello');
 	$("testJason").submit(function(){
 		
