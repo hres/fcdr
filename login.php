@@ -31,6 +31,7 @@
 
 <script type="text/javascript">
 $(function(){
+	console.log('hello');
 	$("testJason").submit(function(){
 		
 		var password = $(this).find("input[name=psw]").val();
