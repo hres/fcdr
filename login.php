@@ -71,7 +71,7 @@ img.avatar {
     border-radius: 50%;
 }
 
-.container {
+.container2 {
     padding: 16px;
 }
 
@@ -145,7 +145,7 @@ span.psw {
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
 
-  <div class="container">
+  <div class="container2">
     <label><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
 
