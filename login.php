@@ -37,6 +37,7 @@ $(function(){
 		 url = $(this).attr("action");
 		 console.log(user);
 		$.post(url,{psw:pass, uname:user}, function(data){	
+		 console.log(pass);
 			if(data.error =="No"){
 				$("#testJSON").fadeOut();
 				$("#testJSON").before(data.success);
