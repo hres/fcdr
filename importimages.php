@@ -131,9 +131,6 @@
 			</div>
 		</form>
 
-		<form id="second">
-		</form>
-
 	</div>
 
 </section>
@@ -171,6 +168,7 @@
 
 $('#my-file-selector').on('change', function() {
 	var files = $(this).prop('files');
+	$("#upload-file-info").html("");
 	for (var i = 0; i < files.length; i++) {
 		console.log(files[i]);
 		$('#upload-file-info').append("<br/>" + (files[i].name).fontsize(3));
@@ -183,7 +181,11 @@ $('#my-file-selector2').on('click', function() {
 	for (var i = 0; i < files.length; ++i) {
 		size += files[i].size;
 	}
-	alert(size + ' > ' + 33554432);
+	if (size > 33554432) {
+		$('#upload-file-info').html("<h2>Total size of images too big!<br/>Upload less images.</h2>");
+	} else {
+		$("#first").submit();
+	}
 });
 
 </script>
