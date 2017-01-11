@@ -67,7 +67,7 @@ button {
 }
 
 img.avatar {
-    width: 40%;
+    width: 20%;
     border-radius: 50%;
 }
 
