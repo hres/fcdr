@@ -39,14 +39,15 @@ $(function(){
 		 console.log(user);
 		$.post(url,{psw:pass, uname:user}, function(data){	
 		 console.log(data);
-			/* if(data.error =="No"){
+			 if(data.error =="No"){
+				 console.log("OYESSSOo");
 				$("#testJSON").fadeOut();
 				$("#testJSON").before(data.success);
 				
 			}else{
 				
 				alert("hellor");
-			} */
+			} 
 		
 		},"json");
 		return false;
