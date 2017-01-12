@@ -38,15 +38,15 @@ $(function(){
 		  console.log(url);
 		 console.log(user);
 		$.post(url,{psw:pass, uname:user}, function(data){	
-		 console.log(pass);
-			if(data.error =="No"){
+		 console.log(data);
+			/* if(data.error =="No"){
 				$("#testJSON").fadeOut();
 				$("#testJSON").before(data.success);
 				
 			}else{
 				
 				alert("hellor");
-			}
+			} */
 		
 		},"json");
 		return false;
