@@ -21,7 +21,7 @@
 	}
 	
 	}
-	echo json_decode($tableau);
+	echo json_encode($tableau);
 	/* 
 	if(array_key_exists('sign-in',$_POST))
 	{
