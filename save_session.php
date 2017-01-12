@@ -19,7 +19,7 @@
 		
 		$tableau["error"] = "No";
 		$tableau["success"] = "<p style=\"color: #00b300;\">You have successfully logged in <a href=\"index.php\">Go to the home page...</a></p>";
-		//echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
+		echo "<script>setTimeout(\"location.href = 'index.php?';\",1000);</script>";
 
 		
 	
