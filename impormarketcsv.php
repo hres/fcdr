@@ -710,6 +710,7 @@ EOQ;
 
  }
   mysqli_autocommit($conn,TRUE);  
+  mysqli_close($conn);
 
 	 else {
 
