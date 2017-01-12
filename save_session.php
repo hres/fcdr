@@ -15,11 +15,14 @@
 		$tableau["errorPassword"] = "<div class=\"error\">Wrong password</div>";
 		
 	}else{
+		$_SESSION['currentuser'] = $user;
 		
 		$tableau["error"] = "No";
 		$tableau["success"] = "<p>You have successfully logged in</p>";
+		//echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
+
 		
-		$_SESSION['currentuser'] = $user;
+	
 
 	}
 	

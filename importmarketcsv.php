@@ -404,7 +404,8 @@ a.close:hover {
 <?php 
             session_start();
             if(!(isset($_SESSION['currentuser']) && $_SESSION['currentuser'] != '')){
-                header ("Location: login.php");
+				//echo "<script>setTimeout(\"location.href = 'g.php?SalesID=$salesID';\",3000);</script>"
+                header ("Location.href: login.php");
             }
 			?>
 <body class="wide comments example">
