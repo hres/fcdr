@@ -35,6 +35,7 @@ $(function(){
 		 pass = $(this).find("input[name=psw]").val();
 		 user = $(this).find("input[name=uname]").val();
 		 url = $(this).attr("action");
+		  console.log(url);
 		 console.log(user);
 		$.post(url,{psw:pass, uname:user}, function(data){	
 		 console.log(pass);

@@ -66,7 +66,7 @@ if (isset($_POST['search'])) {
 			$Classification_Type       = $data[26];
 			$Comments                  = $data[27];
 
-			$Control_Label = ($Control_Label===0?'No':':Yes');
+			$Control_Label = (empty($Control_Label)?'No':'Yes');
 
 				
 

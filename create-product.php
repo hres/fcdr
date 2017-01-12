@@ -151,7 +151,7 @@
 
 					<div class="form-group col-sm-4">
 				<label for="Classification_Type">Classification Type</label>
-				<input type="text" class="form-control" name="Classification_Type"  id="Classification_Type" placeholder="Enter the Target level" disabled="disabled" value="Sodium Guidance Benchmark Level" />
+				<input type="text" class="form-control" name="Classification_Type"  id="Classification_Type" placeholder="Enter the Classification Type" disabled="disabled" value="Sodium GBL" />
 			</div>
 					<div class="form-group col-sm-4">
 				<label for="Brand">Brand</label>
