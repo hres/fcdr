@@ -6,13 +6,13 @@
 	$user = "admin";
 	
 	$tableau = array();
-	$tableau["error"] = "Incorrect fields";
+	$tableau["error"] = "<div class=\"error\">Incorrect fields<div>";
 	if($_POST['uname']!=$user){
-		$tableau["errorUsername"] = "Wrong username";
+		$tableau["errorUsername"] = "<div class=\"error\">Wrong username</div>";
 		
 	}else{
 			if($_POST['psw']!=$pass){
-		$tableau["errorPassword"] = "Wrong password";
+		$tableau["errorPassword"] = "<div class=\"error\">Wrong password</div>";
 		
 	}else{
 		
