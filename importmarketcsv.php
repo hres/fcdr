@@ -412,9 +412,12 @@ a.close:hover {
 <?php include 'connection.php';?>
 	<?php
 	
-	$query = "Create table Users(UserID int NOT NULL AUTO_INCREMENT,
-	Username text NOT NULL UNIQUE,Password varchar(20) NOT NULL,  
-	PRIMARY KEY (UserID))";
+	$query = "CREATE TABLE Users(
+	UserID int NOT NULL auto_increment PRIMARY KEY,
+	Username text NOT NULL UNIQUE,
+	Password varchar(20) NOT NULL
+	)";
+	
 	$result = mysqli_query($conn,$query);
 	
 	if($result){
