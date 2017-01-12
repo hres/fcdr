@@ -34,6 +34,10 @@ $(function(){
 	$("#testJSON").submit(function(event){
 		 pass = $(this).find("input[name=psw]").val();
 		 user = $(this).find("input[name=uname]").val();
+		 loginInput = $(this).find("input[name=uname]");
+		 passordInput= $(this).find("input[name=psw]");
+		 form=$(this);
+
 		 url = $(this).attr("action");
 		  console.log(url);
 		 console.log(user);
@@ -41,12 +45,17 @@ $(function(){
 		 console.log(data);
 			 if(data.error =="No"){
 				 console.log("OYESSSOo");
-				$("#testJSON").fadeOut();
-				$("#testJSON").before(data.success);
+				form.fadeOut();
+				form.before(data.success);
 				
 			}else{
-				
-				alert("hellor");
+				if(data.errorUsername){
+					loginInput.after(data.errorUsername);
+				}
+					if(data.errorPassword){
+					passordInput.after(data.errorPassword);
+				}
+				form.prepend(data.error);
 			} 
 		
 		},"json");
