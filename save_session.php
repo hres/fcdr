@@ -18,7 +18,7 @@
 		$_SESSION['currentuser'] = $user;
 		
 		$tableau["error"] = "No";
-		$tableau["success"] = "<p style=\"color: #00b300; padding-top:50px;\"><h3>You have successfully logged in <a href=\"index.php\">Go to the home page...</a></h3></p>";
+		$tableau["success"] = "<p style=\"color: #00b300; padding:25px;\"><h3>You have successfully logged in <a href=\"index.php\">Go to the home page...</a></h3></p>";
 		//echo "<script>setTimeout(\"location.href = 'index.php?';\",1000);</script>";
 
 		
