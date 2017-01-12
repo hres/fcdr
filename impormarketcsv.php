@@ -10,7 +10,7 @@ if (isset($_POST['search'])) {
 	$handle = fopen($fname, "r");
 	 $filesize = filesize($fname); */
 	 
-	 mysqli_autocommit($conn,FALSE);
+
 		$allowed =  array('csv');		
 		$tmpfname = $_FILES['file_save']['tmp_name'];
 		$ext = pathinfo($_FILES['file_save']['name'], PATHINFO_EXTENSION);
@@ -706,7 +706,7 @@ EOQ;
 		
 		print "Import done";
 }
-	  mysqli_commit($conn);  
+	 
   mysqli_close($conn);
 
  }
