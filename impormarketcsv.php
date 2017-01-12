@@ -1,7 +1,7 @@
 <?php include 'connection.php';?>
 <?php
-/* error_reporting(E_ALL);
-ini_set('display_errors', 1);  */
+error_reporting(E_ALL);
+ini_set('display_errors', 1); 
 
 
 if (isset($_POST['search'])) {
@@ -709,7 +709,7 @@ EOQ;
 	
 
  }
-  mysqli_autocommit($conn,TRUE);  
+  mysqli_commit($conn);  
   mysqli_close($conn);
 
 	 else {
