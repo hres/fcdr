@@ -706,11 +706,11 @@ EOQ;
 		
 		print "Import done";
 }
-	
+	  mysqli_commit($conn);  
+  mysqli_close($conn);
 
  }
-  mysqli_commit($conn);  
-  mysqli_close($conn);
+
 
 	 else {
 
