@@ -45,8 +45,8 @@ $(function(){
 		$.post(url,{psw:pass, uname:user}, function(data){	
 		 
 			 if(data.error =="No"){
-				//form.fadeOut();
-				form.after(data.success);
+				form.fadeOut();
+				form.before(data.success);
 				
 			}else{
 				if(data.errorUsername){
@@ -182,9 +182,7 @@ span.psw {
 <main role="main" property="mainContentOfPage" class="container">
 
 <form  method="post" id="testJSON"  action="save_session.php">
-  <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
+
 
   <div class="container2">
     <label><b>Username</b></label>
