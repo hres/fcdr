@@ -56,7 +56,7 @@ $(function(){
 					if(data.errorPassword){
 					passordInput.after(data.errorPassword);
 				}
-				form.prepend(data.error);
+				form.append(data.error);
 			} 
 		
 		},"json");

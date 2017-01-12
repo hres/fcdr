@@ -400,6 +400,13 @@ a.close:hover {
 	
 	</style>
 </head>
+
+<?php 
+            session_start();
+            if(!(isset($_SESSION['currentuser']) && $_SESSION['currentuser'] != '')){
+                header ("Location: login.php");
+            }
+			?>
 <body class="wide comments example">
 
 <?php include 'header.php';?>

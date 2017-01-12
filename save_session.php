@@ -1,5 +1,5 @@
 <?php
-	//session_start();
+	session_start();
 	
 	
 	$pass = "pass2";
@@ -18,6 +18,9 @@
 		
 		$tableau["error"] = "No";
 		$tableau["success"] = "<p>You have successfully logged in</p>";
+		
+		$_SESSION['currentuser'] = $user;
+
 	}
 	
 	}
