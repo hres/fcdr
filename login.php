@@ -40,14 +40,13 @@ $(function(){
 		 form=$(this);
 
 		 url = $(this).attr("action");
-		  console.log(url);
-		 console.log(user);
+		
+	
 		$.post(url,{psw:pass, uname:user}, function(data){	
-		 console.log(data);
+		 
 			 if(data.error =="No"){
-				 console.log("OYESSSOo");
-				form.fadeOut();
-				form.before(data.success);
+				//form.fadeOut();
+				form.after(data.success);
 				
 			}else{
 				if(data.errorUsername){
