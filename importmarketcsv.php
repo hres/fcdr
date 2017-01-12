@@ -1,4 +1,10 @@
-
+<?php 
+            session_start();
+            if(!isset($_SESSION['currentuser'])){
+				echo "<script>setTimeout(\"location.href = 'login.php;\",1);</script>"
+             // header ("Location.href: login.php");
+            }
+			?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -401,13 +407,7 @@ a.close:hover {
 	</style>
 </head>
 
-<?php 
-            session_start();
-            if(!(isset($_SESSION['currentuser']) && $_SESSION['currentuser'] != '')){
-				//echo "<script>setTimeout(\"location.href = 'g.php?SalesID=$salesID';\",3000);</script>"
-                header ("Location.href: login.php");
-            }
-			?>
+
 <body class="wide comments example">
 
 <?php include 'header.php';?>
