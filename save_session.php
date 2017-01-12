@@ -6,19 +6,19 @@
 	$user = "admin";
 	
 	$tableau = array();
-	$tableau["error"] = "<div class=\"error\">Incorrect fields<div>";
+	$tableau["error"] = "<div class=\"error\" style=\"color:#FF0000;\">Try again<div>";
 	if($_POST['uname']!=$user){
-		$tableau["errorUsername"] = "<div class=\"error\">Wrong username</div>";
+		$tableau["errorUsername"] = "<div class=\"error\" style=\"color:#FF0000;\">Wrong username</div>";
 		
 	}else{
 			if($_POST['psw']!=$pass){
-		$tableau["errorPassword"] = "<div class=\"error\">Wrong password</div>";
+		$tableau["errorPassword"] = "<div class=\"error\" style=\"color:#FF0000;\">Wrong password</div>";
 		
 	}else{
 		$_SESSION['currentuser'] = $user;
 		
 		$tableau["error"] = "No";
-		$tableau["success"] = "<p>You have successfully logged in</p>";
+		$tableau["success"] = "<p style=\"color:	#00FF00;\">You have successfully logged in <a href=\"importdata.php\">Go to the home page...</a></p>";
 		//echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
 
 		
