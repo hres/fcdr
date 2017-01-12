@@ -1,13 +1,4 @@
-<?php 
 
-			
-			session_start();
-		if(!isset($_SESSION['currentuser'])) {
-			header("Location: login.php");
-			die();
-		//echo "Your session is running " . $_SESSION['userName'];
-		}
-			?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>

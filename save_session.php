@@ -18,7 +18,7 @@
 		$_SESSION['currentuser'] = $user;
 		
 		$tableau["error"] = "No";
-		$tableau["success"] = "<p style=\"color:	#00FF00;\">You have successfully logged in <a href=\"importdata.php\">Go to the home page...</a></p>";
+		$tableau["success"] = "<p style=\"color: #00b300;\">You have successfully logged in <a href=\"importdata.php\">Go to the home page...</a></p>";
 		//echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
 
 		
