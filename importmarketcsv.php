@@ -1,7 +1,7 @@
 <?php 
             session_start();
             if(!isset($_SESSION['currentuser'])){
-				echo "<script>setTimeout(\"location.href = 'login.php;\",1);</script>"
+				echo "<script>setTimeout(\"location.href = 'login.php;\",1);</script>";
              // header ("Location.href: login.php");
             }
 			?>
