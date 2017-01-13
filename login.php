@@ -49,12 +49,9 @@ $(function(){
 				form.before(data.success);
 				
 			}else{
-				if(data.errorUsername){
-					loginInput.after(data.errorUsername);
-				}
-					if(data.errorPassword){
+			
 					passordInput.after(data.errorPassword);
-				}
+				
 				form.append(data.error);
 			} 
 		

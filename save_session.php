@@ -24,16 +24,10 @@
 	}else{
 	
 	
-	$pass = $row['Password'];
-	$user = $row['Username'];
-		if($username!=$user){
-		$tableau["errorUsername"] = "<div class=\"error\" style=\"color:#FF0000;\">Wrong username</div>";
+	
+		$tableau["errorPassword"] = "<div class=\"error\" style=\"color:#FF0000;\">Wrong user nname or password</div>";
 		
-		}
-		if($password!=$pass){
-		$tableau["errorPassword"] = "<div class=\"error\" style=\"color:#FF0000;\">Wrong password</div>";
-		
-	}
+	
 		
 	}
 	

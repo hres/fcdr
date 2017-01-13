@@ -409,40 +409,7 @@ a.close:hover {
 
 <main role="main" property="mainContentOfPage" class="container">
 
-<?php include 'connection.php';?>
-	<?php
-	
 
-	
-
-	
-	$query_id2 = "INSERT INTO Users (Username,Password) VALUES ('karvaniti','karvaniti244')";
-	$result2 = mysqli_query($conn,$query_id2);
-	if($result2 ){
-		echo "Created 1";
-	}
-	$query_id3 = "INSERT INTO Users (Username,Password) VALUES ('mvigneault','mvigneault430')";
-	$result3 = mysqli_query($conn,$query_id3);
-		if($result3 ){
-		echo "Created 2";
-	}
-	$query_id4 = "INSERT INTO Users (Username,Password) VALUES ('irondeau','irondeau252')";
-	$result4 = mysqli_query($conn,$query_id4);
-		if($result4 ){
-		echo "Created 3";
-	}
-		$query_id5 = "INSERT INTO Users (Username,Password) VALUES ('lloukine','lloukine330')";
-	$result5 = mysqli_query($conn,$query_id5);
-			if($result5 ){
-		echo "Created 4";
-	}
-	$query_id6 = "INSERT INTO Users (Username,Password) VALUES ('shatt','shatt692')";
-	$result6 = mysqli_query($conn,$query_id6);
-
-		if($result6 ){
-		echo "Created 5";
-	}
-	?>
 		
 		<div class="container" id="tabs" >
   <ul class="nav nav-tabs">
