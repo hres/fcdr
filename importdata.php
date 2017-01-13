@@ -8,15 +8,13 @@
 	<link rel="shortcut icon" type="image/png" href="/media/images/favicon.png">
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
 
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
 	</script>  
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js">
-	</script>
+
 
 
 	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
@@ -32,7 +30,6 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
-<noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
@@ -54,21 +51,7 @@
     position: relative;
     overflow: hidden;
 }
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-}
+
 		.button1{
 			margin-left:84.5%;
 			
@@ -90,177 +73,13 @@
 	
 	
 
-#hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid red;
-    margin: 1em 0;
-    padding: 0; 
-}
 
 
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: lightblue;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {background-color: #000066}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover #button {
-    background-color: #006699;
-}
-
-
-
-.modal-box {
-
-  display: none;
-
-  position: absolute;
-
-  z-index: 1000;
-
-  width: 98%;
-
-  background: white;
-
-  border-bottom: 1px solid #aaa;
-
-  border-radius: 4px;
-
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-
-  border: 1px solid rgba(0, 0, 0, 0.1);
-
-  background-clip: padding-box;
-
-}
 
  
-
-.modal-box header,
-
-.modal-box .modal-header {
-
-  padding: 1.25em 1.5em;
-
-  border-bottom: 1px solid #ddd;
-
-}
-
- 
-
-.modal-box header h3,
-
-.modal-box header h4,
-
-.modal-box .modal-header h3,
-
-.modal-box .modal-header h4 { margin: 0; }
-
- 
-
-.modal-box .modal-body { padding: 2em 1.5em; }
-
-
-.modal-box footer,
-
-.modal-box .modal-footer {
-
-  padding: 1em;
-
-  border-top: 1px solid #ddd;
-
-  background: rgba(0, 0, 0, 0.02);
-
-  text-align: right;
-
-}
-
- 
-
-.modal-overlay {
-
-  opacity: 0;
-
-  filter: alpha(opacity=0);
-
-  position: absolute;
-
-  top: 0;
-
-  left: 0;
-
-  z-index: 900;
-
-  width: 100%;
-
-  height: 100%;
-
-  background: rgba(0, 0, 0, 0.3) !important;
-
-}
-
- 
-
-a.close {
-
-  line-height: 1;
-
-  font-size: 1.5em;
-
-  position: absolute;
-
-  top: 5%;
-
-  right: 2%;
-
-  text-decoration: none;
-
-  color: #bbb;
-
-}
-
- 
-
-a.close:hover {
-
-  color: #222;
-
-  -webkit-transition: color 1s ease;
-
-  -moz-transition: color 1s ease;
-
-  transition: color 1s ease;
-
-}
-
-@media (min-width: 32em) {
-
-  .modal-box { width: 61.5%; }
-
-}	
+	
 .hidethis2{
 	margin-bottom:2%;
 }

@@ -40,7 +40,7 @@
 <object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="./theme-gcwu-fegc/assets/wmms.svg" aria-label="Symbol of the Government of Canada"></object>
 
 </div>
-<div id= "logout-but" style="float:right; margin-right:-10px;">					<?php
+<div id= "logout-but" style="float:right; margin-right:-13px;">					<?php
 					if(isset($_SESSION['currentuser'])){
 					echo "<li><a href='logout.php' class = 'btn btn-default'>Logout</a></li>"; }					
 					
