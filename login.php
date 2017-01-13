@@ -43,7 +43,7 @@ $(function(){
 		
 	
 		$.post(url,{psw:pass, uname:user}, function(data){	
-		 
+			console.log(data);
 			 if(data.error =="No"){
 				form.fadeOut();
 				form.before(data.success);
