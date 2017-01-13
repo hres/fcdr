@@ -13,22 +13,24 @@
 	$query = "Select * from Users where Username = $username AND Password = $password";
 	$result = mysqli_query($conn,$query);
 	
+	$row = $result->fetch_assoc();	
 	if(mysqli_num_rows($result)>0){
+		
 	$_SESSION['currentuser'] = $username;
 		
 		$tableau["error"] = "No";
-		$tableau["success"] = "<p style=\"color: #00b300; padding:25px;\"><h3>You have successfully logged in as $username, <a href=\"index.php\">go to the home page...</a></h3></p>";	
+		$tableau["success"] = "<p style=\"color: #00b300; padding:25px;\"><h3>You have successfully logged in as '$username', <a href=\"index.php\">go to the home page...</a></h3></p>";	
 		
 	}else{
-	$row = $result->fetch_assoc();	
+	
 	
 	$pass = $row['Password'];
 	$user = $row['Username'];
-		if($_POST['uname']!=$user){
+		if($username!=$user){
 		$tableau["errorUsername"] = "<div class=\"error\" style=\"color:#FF0000;\">Wrong username</div>";
 		
 		}
-		if($_POST['psw']!=$pass){
+		if($password!=$pass){
 		$tableau["errorPassword"] = "<div class=\"error\" style=\"color:#FF0000;\">Wrong password</div>";
 		
 	}
