@@ -409,33 +409,6 @@ a.close:hover {
 
 <main role="main" property="mainContentOfPage" class="container">
 
-<?php include 'connection.php';?>
-	<?php
-	
-	$query = "CREATE TABLE Users(
-	UserID int NOT NULL auto_increment PRIMARY KEY,
-	Username varchar(50) NOT NULL UNIQUE,
-	Password varchar(20) NOT NULL
-	)";
-	
-	$result = mysqli_query($conn,$query);
-	
-	if($result){
-			echo "Table created";
-	$query2 = "INSERT INTO Users (Username,Password) VALUES ('admin','fcdr2017')";
-	$result2 = mysqli_query($conn,$query2);
-	if($result2){
-		echo "Values inserted";
-	}else{
-		echo "Table created but Values **not inserted";
-	}
-		
-	}else{
-		echo "Table not created";
-	}
-	
-	
-	?>
 		
 		<div class="container" id="tabs" >
   <ul class="nav nav-tabs">

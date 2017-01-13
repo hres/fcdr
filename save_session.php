@@ -1,9 +1,18 @@
+<?php include 'connection.php';?>
 <?php
 	session_start();
 	
 	
-	$pass = "pass2";
-	$user = "admin";
+	
+	
+	
+	
+	$query = "Select * from Users where UserID = 1";
+	$result = mysqli_query($conn,$query);
+	$row = $result->fetch_assoc();
+	
+	$pass = $row['Password'];
+	$user = $row['Username'];
 	
 	$tableau = array();
 	$tableau["error"] = "<div class=\"error\" style=\"color:#FF0000;\">Try again<div>";
