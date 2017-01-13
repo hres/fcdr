@@ -40,12 +40,13 @@
 <object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="./theme-gcwu-fegc/assets/wmms.svg" aria-label="Symbol of the Government of Canada"></object>
 
 </div>
-</div>
-<div id= "logout-but" style="float:right;">					<?php
+<div id= "logout-but" style="float:right; margin-left:10px;">					<?php
 					if(isset($_SESSION['currentuser'])){
 					echo "<li><a href='logout.php' class = 'btn btn-default'>Logout</a></li>"; }					
 					
 					?> </div>
+</div>
+
 </div>
 <nav role="navigation" id="wb-sm" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
 	<div class="container nvbar">
