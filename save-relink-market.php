@@ -13,7 +13,7 @@ $newProductID = ($_GET['NewProductID']?$_GET['NewProductID']:'');
 														
 
 if (!$result) {
-    echo "ERRORS";
+    //echo "ERRORS";
 }else{
 	//header( "refresh:10; url=home.php" );
 	echo "<h3><strong>Market Share was successfully re-linked, redirecting to the previous page...</strong><h3>";

@@ -2,20 +2,7 @@
 
 <?php
 
-/*
-						ADD THIS TO ALL CREATE/EDIT LABEL
 
-						  array("44",'$Fat_PolyUnsaturated','g', '', TRUE),
-						  array("44",'','', '', FALSE),
-						  array("45",'$Fat_Monounsaturated_Per_Serving','g', '', TRUE),
-						  array("45",'','', '', FALSE),
-  array("44",$Fat_PolyUnsaturated,'g', NULL, TRUE),
-  array("44",NULL,NULL,NULL, FALSE),
-
-  array("45",$Fat_Monounsaturated_Per_Serving,'g', NULL, TRUE),
-  array("45",NULL,NULL,NULL, FALSE), 
-
- */
  
 
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');

@@ -25,7 +25,7 @@
 	
 	
 	
-		$tableau["errorPassword"] = "<div class=\"error\" style=\"color:#FF0000;\">Wrong username or password</div>";
+		$tableau["errorPassword"] = "<div class=\"error\" style=\"color:#FF0000;\">Wrong username and/or password</div>";
 		
 	
 		
