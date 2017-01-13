@@ -41,6 +41,11 @@
 
 </div>
 </div>
+<div id= "logout-but" style="float:right;">					<?php
+					if(isset($_SESSION['currentuser'])){
+					echo "<li><a href='logout.php' class = 'btn btn-default'>Logout</a></li>"; }					
+					
+					?> </div>
 </div>
 <nav role="navigation" id="wb-sm" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
 	<div class="container nvbar">
