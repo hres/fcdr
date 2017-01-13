@@ -2,8 +2,7 @@
 <?php
 /* error_reporting(E_ALL);
 ini_set('display_errors', 1);  */
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 
 if (isset($_POST['search'])) {
 	
@@ -620,7 +619,7 @@ EOQ;
 
 
 for ($row2 = 0; $row2 < 94; $row2++) {
- echo "$row2";
+
 								$stmt = $conn->prepare($query_insertx);
 								$cars[$row2][1] =  (empty($cars[$row2][1]) && strlen($cars[$row2][1]) == 0 ?NULL :$cars[$row2][1]);
 								$cars[$row2][3] =  (empty($cars[$row2][3]) && strlen($cars[$row2][3]) == 0 ?NULL :$cars[$row2][3]);
