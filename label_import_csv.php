@@ -627,7 +627,7 @@ for ($row2 = 0; $row2 < 94; $row2++) {
 								$cars[$row2][2] =  (empty($cars[$row2][1]) && strlen($cars[$row2][1]) == 0 ?NULL :$cars[$row2][2]);
 
 							
-								$stmt->bind_param("iidsds",$nid, $cars[$row2][0],$cars[$row2][1],$cars[$row2][2],$cars[$row][3],$cars[$row2][4]);
+								$stmt->bind_param("iidsds",$nid, $cars[$row2][0],$cars[$row2][1],$cars[$row2][2],$cars[$row2][3],$cars[$row2][4]);
 								$results = $stmt->execute();
 
 }
