@@ -17,12 +17,7 @@
 	</script>  
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js">
 	</script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/colreorder/1.3.2/js/dataTables.colReorder.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js">
-	</script>
+
 
 	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
@@ -43,129 +38,8 @@
 
 
 
-
-
-<script>
-
-$(document).ready(function()
-{
- $(document).on('submit', '#vids-search-form3', function()
- {
-
-  
-  
-$.ajax({ 
-   type    : "POST",
-   url     : "search_package.php",
-	 dataType: "json",
-   data:  $(this).serialize(),
-     
-   success:function(data) {
-	 
-	 var table = $('#example3').DataTable();
-  $.each(data, function(idx, elem){
-      // table.append("<tr><td>"+elem.UPC12+"</td><td>"+elem.Description+"</td>   <td>"+elem.Sample_Date+"</td> <td>"+elem.Sources+"</td> <td>"+elem.Create_Date+"</td> <td>"+elem.Last_Edit+"</td> <td>"+elem.Edited_by+"</td></tr>");
-    
-  table.row.add( [elem.UPC12, elem.Description, elem.Sample_Date, elem.Sources,elem.Create_Date,elem.Last_Edit,elem.Edited_by] )
-  .draw();
-	});
-  
-   
-   }
-});
-
-
-  return false;
- });
- 
-});
-</script>
-
-
-
-	<script>
-
-$(document).ready(function() {
-    var table = $('#example').DataTable( {
-        dom: 'Bfrtip',
-        colReorder: true,
-		  stateSave: true,
-        buttons: [
-        	'colvis'
-        ]
-	} );
-} );
-
-
-	</script>
-
 	
-		<script>
 
-$(document).ready(function() {
-    var table = $('#example2').DataTable( {
-        dom: 'Bfrtip',
-        colReorder: true,
-		 
-        buttons: [
-        	'colvis'
-        ]
-	} );
-} );
-
-
-	</script>
-			<script>
-
-$(document).ready(function() {
-    var table = $('#example3').DataTable( {
-        dom: 'Bfrtip',
-        colReorder: true,
-		  
-        buttons: [
-        	'colvis'
-        ]
-	} );
-} );
-
-
-	</script>
-	
-	
-	<script>
-	
-	$(function(){
-
-var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
-
-  $('a[data-modal-id]').click(function(e) {
-    e.preventDefault();
-    $("body").append(appendthis);
-    $(".modal-overlay").fadeTo(500, 0.7);
-    //$(".js-modalbox").fadeIn(500);
-    var modalBox = $(this).attr('data-modal-id');
-    $('#'+modalBox).fadeIn($(this).data());
-  });  
-  
-  
-$(".js-modal-close, .modal-overlay").click(function() {
-  $(".modal-box, .modal-overlay").fadeOut(500, function() {
-    $(".modal-overlay").remove();
-  });
-});
- 
-$(window).resize(function() {
-  $(".modal-box").css({
-    top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
-    left: ($(window).width() - $(".modal-box").outerWidth()) / 2
-  });
-});
- 
-$(window).resize();
- 
-});
-	
-	</script>
 
 	
 		<style>

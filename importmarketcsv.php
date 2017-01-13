@@ -414,7 +414,7 @@ a.close:hover {
 	
 	$query = "CREATE TABLE Users(
 	UserID int NOT NULL auto_increment PRIMARY KEY,
-	Username text NOT NULL UNIQUE,
+	Username varchar(50) NOT NULL UNIQUE,
 	Password varchar(20) NOT NULL
 	)";
 	
