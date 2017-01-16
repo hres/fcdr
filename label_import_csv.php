@@ -531,7 +531,7 @@ EOQ;
 						$stmt->bind_param("ssssssssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $params[29]);
 						$result_insert = $stmt->execute();
 						$id2 = mysqli_insert_id($conn);
-			
+						++$new_product_count;
 	
 $query_insert =<<<EOQ
 INSERT INTO Product_Component(
@@ -611,7 +611,7 @@ EOQ;
 						$stmt->bind_param("sssssssssssssssssssssssssssssi", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $Neilsen_Item_Rank_UPC);
 						$stmt->execute();
 						$nid = mysqli_insert_id($conn);
-
+						++$linked_to_market_count;
 						$params = array($Brand, $Manufacturer, $Neilsen_Item_Rank_UPC);
 						if ($Product_Description != null) {
 							$params = array($Product_Description) + $params;
@@ -723,6 +723,7 @@ EOQ;
 					$stmt->bind_param("sssssssssssssssssssssssssssssi", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $Label_UPC);
 					$stmt->execute();
 					$xid = mysqli_insert_id($conn);
+					++$linked_to_label_count;
 					$params = array($Brand, $Manufacturer, $Label_UPC);
 
 				if($Product_Description != null){
@@ -778,33 +779,34 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 } 
 
  fclose($handle); 
- 	echo "<h2>Labels Linked to existing Products via Market Share UPCs Codes</h2>";
+						
+ 	echo "<h2>$linked_to_market_count Label(s) Linked to existing Products via Market Share UPCs Codes</h2>";
 		while (!$linked_sales->isEmpty()) {
 			$senditem = $linked_sales->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
 
-		echo "<h2> Labels Linked to existing Products via other Labels UPCs Codes</h2>";
+		echo "<h2> $linked_to_label_count Label(s) Linked to existing Products via other Labels UPCs Codes</h2>";
 		while (!$linked_label->isEmpty()) {
 			$senditem = $linked_label->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
-		echo "<h2> Records skipped</h2>";
+		echo "<h2>$skipped_count Record(s) skipped</h2>";
 		while (!$skipped_label->isEmpty()) {
 			$senditem = $skipped_label->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
 
-				echo "<h2>Labels linked to new products</h2>";
+				echo "<h2>$new_product_count Label(s) linked to new products</h2>";
 		while (!$new_product->isEmpty()) {
 			$senditem = $new_product->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
-				echo "<h2>$duplicate_count duplicates </h2>";
+				echo "<h2>$duplicate_count duplicate(s) </h2>";
 		while (!$duplicate_label->isEmpty()) {
 			$senditem = $duplicate_label->shift();
 			if(strlen ($senditem) < 1) continue;
