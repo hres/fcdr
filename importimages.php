@@ -186,27 +186,15 @@ $('#my-file-selector2').on('click', function() {
 	$('#post-file-info').html("");
 	if (size > 33554432) {
 		$('#upload-file-info').html("<h2>Total size of images too big!<br/>Upload less images.</h2>");
-	} else {
+	} else if(size > 0) {
+		 $('input:submit').attr('disabled',false);
 		$("#first").submit();
 	}
 });
 
 </script>
 
-<script type="text/javascript">
-$(document).ready(
-    function(){
-        $('input:file').change(
-            function(){
-                if ($(this).val()) {
-                    $('input:submit').attr('disabled',false);
-                    // or, as has been pointed out elsewhere:
-                    // $('input:submit').removeAttr('disabled'); 
-                } 
-            }
-            );
-    });
-	</script>
+
 
 </body>
 </html>
