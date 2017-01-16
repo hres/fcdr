@@ -30,7 +30,7 @@ if (isset($_POST['search'])) {
 		$duplicate_count = 0;
    $handle = fopen($_FILES['file_save']['tmp_name'], "r");
     while (($data = fgetcsv($handle, ",")) !== FALSE) {
-mysqli_query("SET NAMES 'utf8';")
+mysqli_query("SET NAMES 'utf8';");
     ++$count;
     if($count>1){
   
