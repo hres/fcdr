@@ -399,7 +399,7 @@ $cars = array
 							$query_duplicate =<<<EOQ
 SELECT PackageID 
 FROM Package
-WHERE Label_UPC = ? AND Label_Description = AND Collection_Date = ?
+WHERE Label_UPC = ? AND Label_Description = ? AND Collection_Date = ?
 
 EOQ;
 
