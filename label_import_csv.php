@@ -779,34 +779,41 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 } 
 
  fclose($handle); 
-						
+
  	echo "<h2>$linked_to_market_count Label(s) Linked to existing Products via Market Share UPCs Codes</h2>";
+	echo "<h2> $linked_to_label_count Label(s) Linked to existing Products via other Labels UPCs Codes</h2>";
+	echo "<h2>$skipped_count Record(s) skipped</h2>";
+	echo "<h2>$new_product_count Label(s) linked to new products</h2>";
+	echo "<h2>$duplicate_count duplicate(s) </h2>";
+
+
+ 	echo "<h2> Labels Linked to existing Products via Market Share UPCs Codes</h2>";
 		while (!$linked_sales->isEmpty()) {
 			$senditem = $linked_sales->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
 
-		echo "<h2> $linked_to_label_count Label(s) Linked to existing Products via other Labels UPCs Codes</h2>";
+		echo "<h2> Labels Linked to existing Products via other Labels UPCs Codes</h2>";
 		while (!$linked_label->isEmpty()) {
 			$senditem = $linked_label->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
-		echo "<h2>$skipped_count Record(s) skipped</h2>";
+		echo "<h2> Records skipped</h2>";
 		while (!$skipped_label->isEmpty()) {
 			$senditem = $skipped_label->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
 
-				echo "<h2>$new_product_count Label(s) linked to new products</h2>";
+				echo "<h2>Labels linked to new products</h2>";
 		while (!$new_product->isEmpty()) {
 			$senditem = $new_product->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
-				echo "<h2>$duplicate_count duplicate(s) </h2>";
+				echo "<h2>duplicates </h2>";
 		while (!$duplicate_label->isEmpty()) {
 			$senditem = $duplicate_label->shift();
 			if(strlen ($senditem) < 1) continue;
