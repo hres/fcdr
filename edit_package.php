@@ -477,8 +477,8 @@ $('input[name="intervaltype"]').click(function () {
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Energy_kj_Unit">
-  <option value="kJ" selected="selected">kJ</option>
-	
+  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+  <option value="kJ" selected="selected">kJ</option>	
       </select>  </div>
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
@@ -2276,7 +2276,8 @@ $('input[name="intervaltype"]').click(function () {
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Energy_Unit_kj_S">
-  <option value="kJ" selected="selected">kJ</option>
+  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+  <option value="kJ" selected="selected">kJ</option>	
 	
       
       </select>  </div>
