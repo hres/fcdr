@@ -416,8 +416,8 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
 
  <select class="form-control" id="Fat_Unit" name="Energy_kj_Unit">
-  <option value=""></option>
-  <option value="kJ" selected="selected">kJ</option>
+  <option value="" selected="selected"></option>
+  <option value="kJ" >kJ</option>
 		
       
       </select>  </div>
