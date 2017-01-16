@@ -30,7 +30,7 @@ if (isset($_POST['search'])) {
 		$duplicate_count = 0;
    $handle = fopen($_FILES['file_save']['tmp_name'], "r");
     while (($data = fgetcsv($handle, ",")) !== FALSE) {
-
+mysqli_query("SET NAMES 'utf8';")
     ++$count;
     if($count>1){
   
@@ -41,7 +41,7 @@ if (isset($_POST['search'])) {
 			$Neilsen_Item_Rank_UPC                          = $data[2];
 
 			$Nielsen_Category                               = $data[3];
-			$Label_Description                              = mysqli_real_escape_string($conn,$data[4]);
+			$Label_Description                              = $data[4];
 			$Brand                                          = $data[5];
 			$Manufacturer                                   = $data[6];
 			$Country                                        = $data[7];
