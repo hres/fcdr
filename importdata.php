@@ -126,7 +126,7 @@
 <span class='label label-info' id="upload-file-info"></span>
 <div style="float:right;">
 <label class="btn btn-primary" for="my-file-selector2">
-    <input id="my-file-selector2" type="submit" onclick="myFunction()" style="display:none;" name="search" onchange="$('#upload-file-info').html($(this).val());">
+    <input id="my-file-selector2" type="submit" onclick="myFunction()" style="display:none;" name="search" onchange="$('#upload-file-info').html($(this).val());" disabled>
     Import
 </label></div>
 
@@ -175,5 +175,19 @@ function myFunction() {
     document.getElementById("hide").style.display="block";;
 }
 </script>
+<script type="text/javascript">
+$(document).ready(
+    function(){
+        $('input:file').change(
+            function(){
+                if ($(this).val()) {
+                    $('input:submit').attr('disabled',false);
+                    // or, as has been pointed out elsewhere:
+                    // $('input:submit').removeAttr('disabled'); 
+                } 
+            }
+            );
+    });
+	</script>
 </body>
 </html>
