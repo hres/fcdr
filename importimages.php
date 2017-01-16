@@ -121,7 +121,7 @@
 			<div style="float:right;">
 				<label class="btn btn-primary" for="my-file-selector2">
 					<!--<input id="my-file-selector2" type="Submit" style="display:none;" name="search">-->
-					<input id="my-file-selector2" type="button" style="display:none"/>
+					<input id="my-file-selector2" type="button" style="display:none" disabled/>
 					Import
 				</label>
 			</div>
@@ -192,6 +192,21 @@ $('#my-file-selector2').on('click', function() {
 });
 
 </script>
+
+<script type="text/javascript">
+$(document).ready(
+    function(){
+        $('input:file').change(
+            function(){
+                if ($(this).val()) {
+                    $('input:submit').attr('disabled',false);
+                    // or, as has been pointed out elsewhere:
+                    // $('input:submit').removeAttr('disabled'); 
+                } 
+            }
+            );
+    });
+	</script>
 
 </body>
 </html>
