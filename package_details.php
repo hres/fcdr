@@ -510,7 +510,7 @@ hr {
 <div style="display:inline-block;" id="toHide">
   <form action="#" method="post" id="vids-search-form2">
 
-  <input type="submit" value="Delete!" class="btn btn-default" name="delete-label" >
+  <input type="submit" value="Delete" class="btn btn-default" name="delete-label" >
 </form>
 
 </div>

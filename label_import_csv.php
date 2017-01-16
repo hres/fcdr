@@ -19,9 +19,15 @@ if (isset($_POST['search'])) {
 
 		$count = 0;
 		$skipped_label = new SplQueue();
+		$skipped_count = 0;
 		$new_product   = new SplQueue();
+		$new_product_count = 0;
 		$linked_sales  = new SplQueue();
+		$linked_to_market_count = 0;
 		$linked_label  = new SplQueue();
+		$linked_to_label_count = 0;
+		$duplicate_label  = new SplQueue();
+		$duplicate_count = 0;
    $handle = fopen($_FILES['file_save']['tmp_name'], "r");
     while (($data = fgetcsv($handle, ",")) !== FALSE) {
 
@@ -374,6 +380,8 @@ $cars = array
 
 			if ($Label_UPC === null or $Label_Description === null or $Brand === null or $Manufacturer === null or $Nielsen_Category === null or $Ingredients === null or $Nutrition_Fact_Table=== null or $Per_Serving_Amount=== null or $Per_Serving_UofM === null or $Per_Serving_Energy_Kcal === null or $Fat_Per_Serving === null or $Fat_Daily_Value=== null or $Carbohydrates_Per_Serving === null or $Carbohydrates_Daily_Value === null or $Fibre_Daily_Value_PPD === null or $Protein_Per_Serving === null)
 			{
+
+				++$skipped_count;
 				if ($Label_Description === null) {
 					$no_description = "Label without Description";
 					$input1 = "Record : $Record, $no_description";
@@ -385,6 +393,37 @@ $cars = array
 			} else {
 				/* We have all mandadory fields */
 				/* Check to see if we already have that Label_UPC in the Label's table */
+//Check for duplicates
+
+							$query_duplicate =<<<EOQ
+SELECT PackageID 
+FROM Package
+WHERE Label_UPC = ? AND Label_Description = AND, Collection_Date = ?
+
+EOQ;
+
+				$stmt_duplicate = $conn->prepare($query_duplicate);
+				$stmt_duplicate->bind_param("sss", $Label_UPC,$Label_Description, $Collection_Date);
+				$stmt_duplicate->execute();
+				$stmt_duplicate->store_result();
+				if (($stmt_duplicate->num_rows) > 0 ){
+
+					$input_dup = "Record : $Record, $Label_Description";
+					$duplicate_label->push($input_dup);	
+					++$duplicate_count;
+						//duplicate_label
+				}else{
+						
+
+				
+//End of check
+
+
+
+
+
+
+
 				$label_query =<<<EOQ
 SELECT DISTINCT ProductIDP
   FROM Package
@@ -730,7 +769,7 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 					$input2= "Record : $Record, $Label_Description";
 					$linked_label->push($input2);
 				}
-			}
+	} }
 	
 
     }
@@ -764,7 +803,14 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
-		
+				echo "<h2>$duplicate_count duplicates </h2>";
+		while (!$duplicate_label->isEmpty()) {
+			$senditem = $duplicate_label->shift();
+			if(strlen ($senditem) < 1) continue;
+			echo "$senditem <br>";
+		}
+
+	
 		print "Import done";
 }
  }
