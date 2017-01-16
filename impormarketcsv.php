@@ -22,9 +22,12 @@ if (isset($_POST['search'])) {
 	 
 		$count_skipped = 0;
 		$skipped_sales = new SplQueue();
+		$skipped_market_share = 0;
 		$new_product   = new SplQueue();
+		$new_product_count = 0;
 		$linked_sales  = new SplQueue();
 		$count = 0;	
+		$market_share_linked = 0;
 		$duplicate_market_share = new SplQueue();
 		$duplicate_count = 0;
 
@@ -80,7 +83,7 @@ if (isset($_POST['search'])) {
 
 					$inputX = "Record : $Record, $Sales_UPC, $Sales_Description ";
 					$skipped_sales->push($inputX);
-
+					++$skipped_market_share;
 					continue;
 				
 
@@ -192,7 +195,8 @@ EOQ;
 						$stmt = $conn->prepare($insert_query);
 						$stmt->bind_param("sssssddddddddsssisdddsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25], $Sales_UPC);
 						$result_insert = $stmt->execute();
-			 
+						++$market_share_linked;
+						
 						if ($Product_Description != null) {
 
 							$query_update =<<<EOQ
@@ -296,6 +300,7 @@ EOQ;
 						$stmt->bind_param("sssssddddddddsssisdddsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25], $Product_Grouping);
 							$result_insert = $stmt->execute();
 							if($result_insert) {
+								++$market_share_linked;
 							$input4 = "Record : $Record, $Sales_Description";
 							$linked_sales->push($input4);
 }
@@ -414,7 +419,8 @@ EOQ;
 							$stmt = $conn->prepare($insert_query2);
 							$stmt->bind_param("isssssddddddddsssisdddss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26]);
 							$result_insert = $stmt->execute();
-							if (!$result_insert) {
+							if ($result_insert) {
+								++$new_product_count;
 							}
 
 
@@ -569,7 +575,7 @@ EOQ;
 							$stmt = $conn->prepare($insert_query);
 						$stmt->bind_param("sssssddddddddsssisdddsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25], $Sales_UPC);
 							$result_insert = $stmt->execute();
-
+							++$market_share_linked;
 							$input7 = "Record : $Record, $Sales_Description";
 							$linked_sales->push($input7);
 							continue;
@@ -655,7 +661,7 @@ EOQ;
 								$stmt = $conn->prepare($insert_queryt);
 							$stmt->bind_param("ssssssddddddddsssisdddss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26]);
 								$result_insertt = $stmt->execute();
-	
+								++$new_product_count;
 
 							if (strlen($Classification_Number) != 0) {
 								/* Must check if Classification number exist */
@@ -706,7 +712,15 @@ EOQ;
 } 
 
  fclose($handle); 
- 
+ //$skipped_market_share, $market_share_linked,new_product_count
+
+  echo "<h3>$skipped_market_share Skipped Market Share</h3>";
+  echo "<h3>$new_product_count New Product(s) created</h3>";
+  echo "<h3>$market_share_linked Market Share Linked to Existing Product</h3>";
+  echo "<h3>$duplicate_count Duplicate(s) Market Share</h3> <br>";
+
+  echo "<hr style=\" border-top: 1px solid red;\">";
+
  echo "<h2>Skipped Market Share</h2>";
 		while (!$skipped_sales->isEmpty()) {
 
@@ -729,7 +743,7 @@ EOQ;
 			echo "$senditem <br>";
 		} 
 
-		echo "<h2>$duplicate_count Duplicates Market Share</h2>";
+		echo "<h2> Duplicates Market Share</h2>";
 		while (!$duplicate_market_share->isEmpty()) {
 
 			$senditem = $duplicate_market_share->shift();
