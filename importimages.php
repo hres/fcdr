@@ -121,7 +121,7 @@
 			<div style="float:right;">
 				<label class="btn btn-primary" for="my-file-selector2">
 					<!--<input id="my-file-selector2" type="Submit" style="display:none;" name="search">-->
-					<input id="my-file-selector2" type="button" style="display:none" disabled/>
+					<input id="my-file-selector2" type="button" style="display:none" />
 					Import
 				</label>
 			</div>
@@ -186,9 +186,11 @@ $('#my-file-selector2').on('click', function() {
 	$('#post-file-info').html("");
 	if (size > 33554432) {
 		$('#upload-file-info').html("<h2>Total size of images too big!<br/>Upload less images.</h2>");
-	} else if(size > 0) {
-		 $('input:submit').attr('disabled',false);
+	} else if(size > 0 && size < 33554432) {
 		$("#first").submit();
+	}else{
+			$('#upload-file-info').html("<h2>Must select at least one file.</h2>");
+
 	}
 });
 
