@@ -22,6 +22,8 @@ if (!$result) {
 		if($row['PPD']==FALSE AND ($row['Amount'] !='' or $row['Daily_Value'] !=null )) {
 		
 		$row['Component_Name'] = ($row['Component_Name']==='Sugars Alcohol'?'Sugar Alcohols':$row['Component_Name']); 
+		$row['Component_Name'] = ($row['Component_Name']==='Energy kj'?'Energy kJ':$row['Component_Name']); 
+
 
 		 echo "<tr><td>". $row['Component_Name'] . "</td><td >". $row['Amount'] . "</td><td >". $row['Amount_Unit_Of_Measure'] . "</td><td> ".$row['Daily_Value']."</td></tr>";                       
 	}}
