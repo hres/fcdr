@@ -572,35 +572,6 @@ EOQ;
 						$nid = mysqli_insert_id($conn);
 						$stmt->execute();
 
-						$params = array($Brand, $Manufacturer, $Neilsen_Item_Rank_UPC);
-						if ($Product_Description != null) {
-							$params = array($Product_Description) + $params;
-							$query_update =<<<EOQ
-UPDATE Product
-   SET Description = ?, Brand = ?, Manufacturer = ?
- WHERE ProductID = (
-          SELECT DISTINCT ProductIDS
-            FROM Sales
-           WHERE Sales_UPC = ?
-       )
-EOQ;
-							$stmt = $conn->prepare($query_update);
-							$stmt->bind_param("sssi", $params[0], $params[1], $params[2], $params[3]);
-						} else {
-							$query_update =<<<EOQ
-UPDATE Product
-   SET Brand = ?, Manufacturer = ?
- WHERE ProductID = (
-          SELECT DISTINCT ProductIDS
-            FROM Sales
-           WHERE Sales_UPC = ?
-       )
-EOQ;
-							$stmt = $conn->prepare($query_update);
-							$stmt->bind_param("ssi", $params[0], $params[1], $params[2]);
-						
-							$stmt->execute();
-}
 
 
 $query_insertx =<<<EOQ
@@ -628,7 +599,6 @@ for ($row2 = 0; $row2 < 94; $row2++) {
 							
 								$stmt->bind_param("iidsds",$nid, $cars[$row2][0],$cars[$row2][1],$cars[$row2][2],$cars[$row2][3],$cars[$row2][4]);
 								$results = $stmt->execute();
-
 }
 
 						$input3= "Record : $Record, $Label_Description";
