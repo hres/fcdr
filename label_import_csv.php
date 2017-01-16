@@ -5,7 +5,8 @@ ini_set('display_errors', 1);  */
 
 
 if (isset($_POST['search'])) {
-	
+error_reporting(E_ALL);
+ini_set('display_errors', 1); 	
 	
 			$allowed =  array('csv');		
 		$tmpfname = $_FILES['file_save']['tmp_name'];
