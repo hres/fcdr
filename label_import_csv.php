@@ -2,7 +2,7 @@
 <?php
 /* error_reporting(E_ALL);
 ini_set('display_errors', 1);  */
-
+//mysqli_query("SET NAMES 'utf8';");
 
 if (isset($_POST['search'])) {
 
@@ -41,7 +41,7 @@ if (isset($_POST['search'])) {
 			$Neilsen_Item_Rank_UPC                          = $data[2];
 
 			$Nielsen_Category                               = $data[3];
-			$Label_Description                              = $data[4];
+			$Label_Description                              = mysqli_real_escape_string($conn,$data[4]);
 			$Brand                                          = $data[5];
 			$Manufacturer                                   = $data[6];
 			$Country                                        = $data[7];
