@@ -409,21 +409,21 @@ $('input[name="intervaltype"]').click(function () {
  
   <div class= "row" style="margin-top:4px;">
 	<div class="form-group">
-  <label for="Fat_Amount" class="col-sm-3 control-label">Energy KJ</label>
+  <label for="Fat_Amount" class="col-sm-3 control-label">Energy kJ</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Energy KJ" name="Energy_kj_Amount" id="Fat_Amount">
+   <input type="text" class="form-control" placeholder="Amount of Energy kJ" name="Energy_kj_Amount" id="Fat_Amount">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
 
  <select class="form-control" id="Fat_Unit" name="Energy_kj_Unit">
-  <option value="KJ" selected="selected">KJ</option>
+  <option value="kJ" selected="selected">kJ</option>
 		
       
       </select>  </div>
   <div class="col-sm-3">
 
 
-   <input type="text" class="form-control" placeholder="% Daily value of Energy KJ" name="Engergy_kj_DValue" id="Fat_DValue">
+   <input type="text" class="form-control" placeholder="% Daily value of Energy kJ" name="Engergy_kj_DValue" id="Fat_DValue">
   </div>
  </div>
  </div>
@@ -468,7 +468,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
 
 
-   <input type="text" class="form-control" placeholder="% Daily value of Fat" name="Fat_DValue" id="Fat_DValue" required>
+   <input type="text" class="form-control" placeholder="% Daily value of Fat" name="Fat_DValue" id="Fat_DValue">
   </div>
  </div>
  </div>
@@ -596,7 +596,7 @@ $('input[name="intervaltype"]').click(function () {
       
       </select>  </div>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="% Daily value of Carbohydrates" name="Carbohydrates_DValue" id="Carbohydrates_DValue" required>
+   <input type="text" class="form-control" placeholder="% Daily value of Carbohydrates" name="Carbohydrates_DValue" id="Carbohydrates_DValue">
   </div>
  </div>
  </div>
@@ -613,7 +613,7 @@ $('input[name="intervaltype"]').click(function () {
       
       </select>  </div>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="% Daily value of Fibre" name="Fibre_DValue" id="Fibre_DValue" required>
+   <input type="text" class="form-control" placeholder="% Daily value of Fibre" name="Fibre_DValue" id="Fibre_DValue">
   </div>
  </div>
  </div>
@@ -1264,18 +1264,18 @@ $('input[name="intervaltype"]').click(function () {
  
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label for="Fat_Amount_S" class="col-sm-3 control-label">Energy KJ</label>
+  <label for="Fat_Amount_S" class="col-sm-3 control-label">Energy kJ</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Energy KJ" name="Energy_kj_Amount_S" id="Fat_Amount_S">
+   <input type="text" class="form-control" placeholder="Amount of Energy kJ" name="Energy_kj_Amount_S" id="Fat_Amount_S">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Energy_kj_Unit_S">
-  <option value="KJ" selected="selected">KJ</option>
+  <option value="kJ" selected="selected">kJ</option>
 			
       
       </select>  </div>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="% Daily value of Energy KJ" name="Energy_kj_DValue_S">
+   <input type="text" class="form-control" placeholder="% Daily value of Energy kJ" name="Energy_kj_DValue_S">
   </div>
  </div>
  </div>

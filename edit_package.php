@@ -471,13 +471,13 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
 		 <div class="form-group">
-  <label class="col-sm-3 control-label">Energy KJ</label>
+  <label class="col-sm-3 control-label">Energy kJ</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Energy KJ" name="Energy_kj_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Energy kJ" name="Energy_kj_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Energy_kj_Unit">
-  <option value="KJ" selected="selected">KJ</option>
+  <option value="kJ" selected="selected">kJ</option>
 	
       </select>  </div>
   <div class="col-sm-3">
@@ -490,7 +490,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value of Energy KJ" name="Energy_kj_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Energy kJ" name="Energy_kj_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  
@@ -572,7 +572,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value of Fat" name="Fat_DValue" value="<?PHP echo $row['Daily_Value']; ?>" required>
+   <input type="text" class="form-control" placeholder="% Daily value of Fat" name="Fat_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -880,7 +880,7 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value of Fibre" name="Fibre_DValue" value="<?PHP echo $row['Daily_Value']; ?>" required>
+   <input type="text" class="form-control" placeholder="% Daily value of Fibre" name="Fibre_DValue" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
@@ -2270,13 +2270,13 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
 		 <div class="form-group">
-  <label class="col-sm-3 control-label">Energy KJ</label>
+  <label class="col-sm-3 control-label">Energy kJ</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Energy KJ" name="Energy_Amount_kj_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Energy kJ" name="Energy_Amount_kj_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Energy_Unit_kj_S">
-  <option value="kj" selected="selected">KJ</option>
+  <option value="kJ" selected="selected">kJ</option>
 	
       
       </select>  </div>
@@ -2291,7 +2291,7 @@ $('input[name="intervaltype"]').click(function () {
 	
 	?>
   
-   <input type="text" class="form-control" placeholder="% Daily value of Energy KJ" name="Energy_DValue_kj_S" value="<?PHP echo $row['Daily_Value']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Energy kJ" name="Energy_DValue_kj_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>

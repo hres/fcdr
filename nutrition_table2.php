@@ -30,10 +30,6 @@ if (!$result) {
 	$query2 = "  SELECT * FROM Package P where P.PackageID = $PackageID";
 	$result2 = mysqli_query($conn,$query2);
 
-	
-if (!$result2) {
-    echo "ERRORS";
-}
 
 	$row = $result2->fetch_assoc();
 
