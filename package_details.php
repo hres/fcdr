@@ -465,6 +465,10 @@ hr {
 		
     background-color:  	hsl(60, 100%, 98%);
 		}
+
+
+
+		
 	</style>
 </head>
 <body class="wide comments example" >

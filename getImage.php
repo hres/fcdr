@@ -26,7 +26,7 @@ $result = mysqli_query($conn,$query);
 		   
 		    echo "  <div class=\"col-sm-2\">";
 			echo " <a href=\"viewimage.php?ImageID=$ImageID\" class=\"thumbnail\">";
-			echo '<img src="data:image/$ext;base64,'.base64_encode( $row['Image'] ).'" style=\"width:130px;height:130px\"/>';
+			echo '<img id=\"myImg\" src="data:image/$ext;base64,'.base64_encode( $row['Image'] ).'" style=\"width:130px;height:130px\"/>';
 			echo"</a></div>";	   
 		   
 		 
@@ -35,7 +35,7 @@ $result = mysqli_query($conn,$query);
 	   }else{
 		   	    echo "  <div class=\"col-sm-2\">";
 			echo " <a href=\"viewimage.php?ImageID=$ImageID\" class=\"thumbnail\">";
-			echo '<img src="data:image/$ext;base64,'.base64_encode( $row['Image'] ).'" style=\"width:130px;height:130px\"/>';
+			echo '<img id=\"myImg\" src="data:image/$ext;base64,'.base64_encode( $row['Image'] ).'" style=\"width:130px;height:130px\"/>';
 			echo"</a></div>";
 			++$count;
 		   
