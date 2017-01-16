@@ -25,6 +25,9 @@ if (isset($_POST['search'])) {
 		$new_product   = new SplQueue();
 		$linked_sales  = new SplQueue();
 		$count = 0;	
+		$duplicate_market_share = new SplQueue();
+		$duplicate_count = 0;
+
 
    $handle = fopen($_FILES['file_save']['tmp_name'], "r");
     while (($data = fgetcsv($handle, ",")) !== FALSE) {
@@ -82,6 +85,28 @@ if (isset($_POST['search'])) {
 				
 
 			} else {
+
+							$query_duplicate =<<<EOQ
+SELECT SalesID 
+FROM Sales
+WHERE Sales_UPC = ? AND Sales_Description = ? AND Collection_Date = ? AND Kilo_Vol = ?
+
+EOQ;
+
+				$stmt_duplicate = $conn->prepare($query_duplicate);
+				$stmt_duplicate->bind_param("sssd", $Sales_UPC,$Sales_Description, $Collection_Date,$Kilo_Vol);
+				$stmt_duplicate->execute();
+				$stmt_duplicate->store_result();
+					if (($stmt_duplicate->num_rows) > 0 ){
+
+					$input_dup = "Record : $Record, $Sales_Description";
+					$duplicate_market_share->push($input_dup);	
+					++$duplicate_count;
+						//duplicate_label
+				}else{
+
+
+
 				if (is_numeric  ($Product_Grouping)) {
 
 				
@@ -671,7 +696,7 @@ EOQ;
 					
 				}
 			}
-	
+	}
 	
 	
 	
@@ -702,7 +727,16 @@ EOQ;
 			$senditem = $linked_sales->shift();
 			if (strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
+		} 
+
+		echo "<h2>$duplicate_count Duplicates Market Share</h2>";
+		while (!$duplicate_market_share->isEmpty()) {
+
+			$senditem = $duplicate_market_share->shift();
+			if (strlen ($senditem) < 1) continue;
+			echo "$senditem <br>";
 		}
+		
 		
 		print "Import done";
 }
