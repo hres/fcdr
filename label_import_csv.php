@@ -780,11 +780,12 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 
  fclose($handle); 
 
- 	echo "<h2>$linked_to_market_count Label(s) Linked to existing Products via Market Share UPCs Codes</h2>";
-	echo "<h2> $linked_to_label_count Label(s) Linked to existing Products via other Labels UPCs Codes</h2>";
-	echo "<h2>$skipped_count Record(s) skipped</h2>";
-	echo "<h2>$new_product_count Label(s) linked to new products</h2>";
-	echo "<h2>$duplicate_count duplicate(s) </h2>";
+ 	echo "<h3>$linked_to_market_count Label(s) Linked to existing Products via Market Share UPCs Codes</h3>";
+	echo "<h3> $linked_to_label_count Label(s) Linked to existing Products via other Labels UPCs Codes</h3>";
+	echo "<h3>$skipped_count Record(s) skipped</h3>";
+	echo "<h3>$new_product_count Label(s) linked to new products</h3>";
+	echo "<h3>$duplicate_count duplicate(s) </h3><br>";
+	echo "<hr style=\" border-top: 1px solid red;\">";
 
 
  	echo "<h2> Labels Linked to existing Products via Market Share UPCs Codes</h2>";
