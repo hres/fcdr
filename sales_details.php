@@ -643,7 +643,7 @@ $(window).resize();
   </tr>
   <tr>
   <td><?php echo " ". $row['Average_AC_Dist'] ."";  ?></td>
-  <td><?php echo " $". (is_float($row['Average_Retail_Price'])? $row['Average_Retail_Price']: number_format($row['Average_Retail_Price']))."";  ?></td>
+  <td><?php echo " $".$row['Average_Retail_Price']."";  ?></td>
   <td><?php echo " $". number_format($row['Dollar_Volume_Total']) ."";  ?></td>  
   <td><?php echo " ". number_format($row['Kilo_Volume_Total']) ."";  ?></td>
 
