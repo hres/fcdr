@@ -74,7 +74,7 @@ ini_set('display_errors', 1);
 			$Comments                  = $data[27];
 
 			$Control_Label = ($Control_Label==0?'No':'Yes');
-
+			echo "$Dollar_Volume";
 					
 			
 			if ($Sales_UPC == null or $Sales_Description == null or $Kilo_Vol == null or $Source == null or $Sales_Year == null or $Collection_Date == null) {
