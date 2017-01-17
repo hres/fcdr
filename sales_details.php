@@ -657,6 +657,7 @@ $(window).resize();
 	<th>Kilo Share</th>
 	<th>Cluster Number</th>
 	<th>Product Grouping</th>
+	<th>Kilo Rank</th>
 	
   </tr>
   <tr>
@@ -665,6 +666,7 @@ $(window).resize();
   <td><?php echo " ". $row['Kilo_Share'] ."";  ?></td>
   <td><?php echo " ". $row['Cluster_Number'] ."";  ?></td>
   <td><?php echo " ". $row['Product_Grouping'] ."";  ?></td>
+  <td><?php echo " ". $row['Kilo_Rank'] ."";  ?></td>
   </tr>
 </table>
  <div class="well1">

@@ -649,16 +649,17 @@ INSERT INTO Sales (
 							Dollar_Volume_Total,
 							Cluster_Number,
 							Product_Grouping,
-							Comments  
+							Comments,
+							Kilo_Rank  
 							
 							
 )
-VALUES ( NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES ( NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
 
 								$stmt = $conn->prepare($insert_queryt);
-							$stmt->bind_param("ssssssddddddddsssisdddss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26]);
+							$stmt->bind_param("ssssssddddddddsssisdddsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26],$Kilo_Vol_Rank);
 								$result_insertt = $stmt->execute();
 								++$new_product_count;
 
