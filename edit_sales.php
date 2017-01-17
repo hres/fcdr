@@ -261,7 +261,7 @@
 					<div class="form-group col-sm-4">
 				<label for="Kilo_Rank">Kilo Rank</label>
 				<input type="text" class="form-control" name="Kilo_Rank" style="" id="Kilo_Rank"  placeholder="Enter the Kilo Rank " value="<?PHP echo $row['Kilo_Rank']; ?>" />
-						
+				</div>		
 			<div class="form-group col-sm-4">
 			
 				<button style="margin-top: 30px;  margin-bottom:0px; float:right;" type="submit" class="btn btn-default" name="search" >Save</button>
