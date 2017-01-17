@@ -49,7 +49,7 @@ ini_set('display_errors', 1);
 			$Manufacturer              = $data[4];
 			//$Package_Size            = 
 			$Rank                      = (empty($data[5]) && strlen($data[5]) == 0 ?NULL :$data[5]);
-			$Dollar_Volume             = (empty($data[6]) && strlen($data[6]) == 0 ?NULL :$data[6]);
+			$Dollar_Volume             = str_replace(",", "",(empty($data[6]) && strlen($data[6]) == 0 ?NULL :$data[6])); //str_replace(",", "", $data[8])
 			$Shr                       = (empty($data[7]) && strlen($data[7]) == 0 ?NULL :$data[7]);
 			$Vol_PerCent_Change        = (empty($data[8]) && strlen($data[8]) == 0 ?NULL :$data[8]);
 			$Kilo_Vol                  = (empty($data[9]) && strlen($data[9]) == 0 ?NULL :$data[9]);
@@ -75,7 +75,7 @@ ini_set('display_errors', 1);
 
 			$Control_Label = ($Control_Label==0?'No':'Yes');
 
-			echo "$Dollar_Volume";			
+					
 			
 			if ($Sales_UPC == null or $Sales_Description == null or $Kilo_Vol == null or $Source == null or $Sales_Year == null or $Collection_Date == null) {
 
