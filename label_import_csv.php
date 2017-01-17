@@ -786,7 +786,7 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 	echo "<h3>$duplicate_count duplicate(s) </h3><br>";
 	echo "<hr style=\" border-top: 1px solid red;\">";
 
-
+    $tosend = " ";
  	echo "<h2> Labels Linked to existing Products via Market Share UPCs Codes</h2>";
 		while (!$linked_sales->isEmpty()) {
 			$senditem = $linked_sales->shift();
@@ -812,6 +812,7 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 			$senditem = $new_product->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
+			$tosend . = $senditem;
 		}
 				echo "<h2>duplicates </h2>";
 		while (!$duplicate_label->isEmpty()) {
@@ -820,7 +821,13 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 			echo "$senditem <br>";
 		}
 
-	
+$to = "nelsonromario@hotmail.com";
+$subject = "My subject";
+$txt = "Hello world!";
+$headers = "From: webmaster@example.com" . "\r\n" .
+"CC: somebodyelse@example.com";
+
+mail($to,$subject,$tosend,$headers);	
 		print "Import done";
 }
  }
