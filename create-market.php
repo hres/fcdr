@@ -277,12 +277,13 @@
 		</div>
 				<div class="row">
 
-				<div class="form-group col-sx-6">
+				<div class="form-group col-sm-4">
 				<label for="Kilo_Rank">Kilo Rank</label>
-				<input type="text" class="form-control" name="Kilo_Rank" id="Kilo_Rank" placeholder="Enter the Kilo Rank"/>
+				<input type="text" class="form-control" name="Kilo_Rank" id="Kilo_Rank" placeholder="Enter the Kilo Rank "/>
 			</div>
-						<div class="form-group col-sx-6 submit_button">
 
+	
+			<div class="form-group col-sm-4" style="float:right;">
 				<button style="float:right;" type="submit" class="btn btn-default" name="search" >Save</button>
 			</div>
 		
