@@ -408,8 +408,21 @@ a.close:hover {
 
 
 <main role="main" property="mainContentOfPage" class="container">
+<?php include 'connection.php';?>
+<?php 
+
+$query = "Alter table Sales add column Kilo_Rank varchar(8)";
+	$result = mysqli_query($conn,$query);
+  if($result){
+    echo "Kilo_Rank was created";
+  }else{
+    echo "Wasn't created";
+  }
 
 
+
+
+?>
 		
 		<div class="container" id="tabs" >
   <ul class="nav nav-tabs">
