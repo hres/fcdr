@@ -6,7 +6,8 @@ ini_set('display_errors', 1);  */
 
 if (isset($_POST['search'])) {
 
-	
+	ignore_user_abort(true);
+set_time_limit(0);
 			$allowed =  array('csv');		
 		$tmpfname = $_FILES['file_save']['tmp_name'];
 		$ext = pathinfo($_FILES['file_save']['name'], PATHINFO_EXTENSION);
@@ -812,7 +813,7 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 			$senditem = $new_product->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
-			$tosend = $senditem;
+			$tosend =$tosend . ' ' . $senditem;
 		}
 				echo "<h2>duplicates </h2>";
 		while (!$duplicate_label->isEmpty()) {
