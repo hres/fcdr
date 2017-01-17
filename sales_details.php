@@ -628,7 +628,7 @@ $(window).resize();
   </tr>
   <tr>
   <td><?php echo " ". $row['Brand'] ."";  ?></td>
-  <td><?php echo " ".(is_float($row['Dollar_Rank'])? $row['Dollar_Rank']: number_format($row['Dollar_Rank'])) ."";  ?></td>  
+  <td><?php echo " ".number_format($row['Dollar_Rank']) ."";  ?></td>  
   <td><?php echo " ". $row['Dollar_Volume_PerCentage_Change'] ."";  ?></td>
   <td><?php echo " ". $row['Kilo_Volume_Percent_Change'] ."";  ?></td>
   </tr>
@@ -644,8 +644,8 @@ $(window).resize();
   <tr>
   <td><?php echo " ". $row['Average_AC_Dist'] ."";  ?></td>
   <td><?php echo " $".$row['Average_Retail_Price']."";  ?></td>
-  <td><?php echo " $". number_format($row['Dollar_Volume_Total']) ."";  ?></td>  
-  <td><?php echo " ". number_format($row['Kilo_Volume_Total']) ."";  ?></td>
+  <td><?php echo " $". number_format($row['Dollar_Volume_Total'],2) ."";  ?></td>  
+  <td><?php echo " ". number_format($row['Kilo_Volume_Total'],2) ."";  ?></td>
 
   </tr>
 </table>
