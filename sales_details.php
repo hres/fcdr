@@ -660,7 +660,7 @@ $(window).resize();
 	
   </tr>
   <tr>
-  <td><?php echo " ". $row['Brand'] ."";  ?></td>
+  <td><?php echo " ". $row['Control_Label_Flag'] ."";  ?></td>
   <td><?php echo " ". $row['Dollar_Share'] ."";  ?></td>  
   <td><?php echo " ". $row['Kilo_Share'] ."";  ?></td>
   <td><?php echo " ". $row['Cluster_Number'] ."";  ?></td>
