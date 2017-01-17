@@ -423,6 +423,7 @@ $('input[name="intervaltype"]').click(function () {
 
  <select class="form-control" id="Fat_Unit" name="Energy_kj_Unit">
   <option value="" selected="selected"></option>
+  
   <option value="kJ" >kJ</option>
 		
       
@@ -2126,7 +2127,9 @@ $('input[name="intervaltype"]').click(function () {
 });
 		})
 </script>
-<br>	<button class="btn btn-default" onclick="goBack()">Back</button>
+<br>	
+	 <?php echo " <a class=\"btn btn-default\" href=view_product.php?ProductID=" . $_GET['ProductID'] . ">Back</a>";  ?>
+
 <script>
 function goBack() {
     window.history.back();
