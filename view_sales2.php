@@ -17,7 +17,9 @@ if (!$result) {
 }
 	
 $row = $result->fetch_assoc();
-		 echo "<tr><td>" . $row['Sales_UPC'] . "</td><td>$" . number_format($row['Dollar_Volume']) . "</td><td>" . $row['Kilo_Vol'] . "</td><td>" . $row['Sales_Year'] . "</td><td>" . $row['Nielsen_Category'] . "</td><td>" . $row['Source'] . "</td></tr>";                       
+$row['Dollar_Volume'] = is_float($row['Dollar_Volume'])? $row['Dollar_Volume']: number_format($row['Dollar_Volume']);
+		//is_float 
+		 echo "<tr><td>" . $row['Sales_UPC'] . "</td><td>$" . $row['Dollar_Volume'] . "</td><td>" . $row['Kilo_Vol'] . "</td><td>" . $row['Sales_Year'] . "</td><td>" . $row['Nielsen_Category'] . "</td><td>" . $row['Source'] . "</td></tr>";                       
 		
 	
 	
