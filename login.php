@@ -32,6 +32,8 @@
 <script type="text/javascript">
 $(function(){
 	$("#testJSON").submit(function(event){
+          event.preventDefault();
+
 		$(this).find(".error").remove();
 		 pass = $(this).find("input[name=psw]").val();
 		 user = $(this).find("input[name=uname]").val();
