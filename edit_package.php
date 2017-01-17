@@ -226,10 +226,13 @@ $('input[name="intervaltype"]').click(function () {
 				<input type="text" class="form-control" name="Package_Size" id="Package_Size" placeholder="Enter the Package Size of the Package Label" value="<?PHP echo $row['Package_Size']; ?>" />
 			</div>
 
+
+			
+
 								<div class="form-group col-sm-4">
 	<label for="Package_Size_UofM" > Package Size Unit of Measure </label>
     <select class="form-control" id="Package_Size_UofM" name="Package_Size_UofM" > 
-		   <option value="" selected="selected">Select the Per Serving Unit</option>
+		   <option value="<?PHP echo $row['Package_Size_UofM']; ?>" selected="selected"><?PHP echo $row['Package_Size_UofM']; ?></option>
 			<?php include 'Units.php';?>
       
       </select></div>
