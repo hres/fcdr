@@ -283,7 +283,7 @@
 			</div>
 						<div class="form-group col-sx-6 submit_button">
 
-				<button style="margin-top: 30px 0px; margin-right:16px; float:right;" type="submit" class="btn btn-default" name="search" >Save</button>
+				<button style="float:right;" type="submit" class="btn btn-default" name="search" >Save</button>
 			</div>
 		
 		</div>
