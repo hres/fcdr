@@ -41,6 +41,7 @@ ini_set('display_errors', 1);
 			++$count;
 	
 			//echo "in<br>";
+			//$data = 
 			$Record                    = $data[0]; //(empty($data[0]) && strlen($data[0]) == 0 ?NULL :$data[0]);
 			$Sales_UPC                 = $data[1];
 			$Sales_Description         = $data[2];
@@ -74,8 +75,7 @@ ini_set('display_errors', 1);
 
 			$Control_Label = ($Control_Label==0?'No':'Yes');
 
-				echo "$Control_Label";
-			
+			echo "$Dollar_Volume";			
 			
 			if ($Sales_UPC == null or $Sales_Description == null or $Kilo_Vol == null or $Source == null or $Sales_Year == null or $Collection_Date == null) {
 
