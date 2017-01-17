@@ -2242,7 +2242,8 @@ $('input[name="intervaltype"]').click(function () {
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Energy_Unit_S" >
-  <option value="kcal" selected="selected">kcal</option>
+  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+  <option value="kcal" >kcal</option>
 		
       
       </select>  </div>
@@ -2280,7 +2281,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Energy_Unit_kj_S">
   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-  <option value="kJ" selected="selected">kJ</option>	
+  <option value="kJ">kJ</option>	
 	
       
       </select>  </div>

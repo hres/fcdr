@@ -372,8 +372,8 @@ $cars = array
   array("46",NULL,NULL, $Trans_And_Saturated_Fat_Daily_Vaue, TRUE),
   array("46",NULL,NULL, $Trans_And_Saturated_Fat_Daily_Vaue_PPD, FALSE), 
   
-  array("47",$Per_Serving_Energy_Kj,'kj', NULL, TRUE),
-  array("47",$Per_Serving_Energy_PPD_Kj,'kj', NULL, FALSE), 
+  array("47",$Per_Serving_Energy_Kj,'kJ', NULL, TRUE),
+  array("47",$Per_Serving_Energy_PPD_Kj,'kJ', NULL, FALSE), 
   
   );			
 
