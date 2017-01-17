@@ -206,10 +206,16 @@ $('input[name="intervaltype"]').click(function () {
 				<label for="Package_Size" > Package Size</label>
 				<input type="text" class="form-control" name="Package_Size" id="Package_Size" placeholder="Enter the Package Size "/>
 			</div>
-				<div class="form-group col-sm-4">
-				<label for="Package_Size_UofM" >Package Size Unit of Measure </label>
-				<input type="text" class="form-control" name="Package_Size_UofM" id="Package_Size_UofM" placeholder="Enter the Package Size Unit of Measure " />
-			</div>
+
+					<div class="form-group col-sm-4">
+	<label for="Package_Size_UofM" name="Package_Size_UofM" >Package Size Unit of Measure </label>
+    <select class="form-control" id="Package_Size_UofM" name="Package_Size_UofM"> 
+		   <option value="" selected="selected">Select the Per Serving Unit</option>
+			<?php include 'Units.php';?>
+      
+      </select></div>
+
+
 		</div>		
 		
 		<div class="row">
