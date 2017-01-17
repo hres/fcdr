@@ -183,16 +183,17 @@ INSERT INTO Sales (
 							Dollar_Volume_Total,
 							Cluster_Number,
 							Product_Grouping,
-							Comments  
+							Comments,
+							Kilo_Rank   
 )
-SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Sales_UPC = ?
 EOQ;
 
 
 						$stmt = $conn->prepare($insert_query);
-						$stmt->bind_param("sssssddddddddsssisdddsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25], $Sales_UPC);
+						$stmt->bind_param("sssssddddddddsssisdddssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank, $Sales_UPC);
 						$result_insert = $stmt->execute();
 						++$market_share_linked;
 						
@@ -287,16 +288,17 @@ INSERT INTO Sales (
 							Dollar_Volume_Total,
 							Cluster_Number,
 							Product_Grouping,
-							Comments  
+							Comments,
+							Kilo_Rank   
 )
-SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Product_Grouping = ?
 EOQ;
 
 
 							$stmt = $conn->prepare($insert_query22);
-						$stmt->bind_param("sssssddddddddsssisdddsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25], $Product_Grouping);
+						$stmt->bind_param("sssssddddddddsssisdddssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank, $Product_Grouping);
 							$result_insert = $stmt->execute();
 							if($result_insert) {
 								++$market_share_linked;
@@ -408,15 +410,16 @@ INSERT INTO Sales (
 							Dollar_Volume_Total,
 							Cluster_Number,
 							Product_Grouping,
-							Comments  
+							Comments,
+							Kilo_Rank   
 							
 							
 )
-VALUES ( NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES ( NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)
 EOQ;
 
 							$stmt = $conn->prepare($insert_query2);
-							$stmt->bind_param("isssssddddddddsssisdddss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26]);
+							$stmt->bind_param("isssssddddddddsssisdddsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26],$Kilo_Rank);
 							$result_insert = $stmt->execute();
 							if ($result_insert) {
 								++$new_product_count;
@@ -563,16 +566,17 @@ INSERT INTO Sales (
 							Dollar_Volume_Total,
 							Cluster_Number,
 							Product_Grouping,
-							Comments  
+							Comments,
+							Kilo_Rank
 )
-SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Sales_UPC = ?
 EOQ;
 
 
 							$stmt = $conn->prepare($insert_query);
-						$stmt->bind_param("sssssddddddddsssisdddsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25], $Sales_UPC);
+						$stmt->bind_param("sssssddddddddsssisdddssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank, $Sales_UPC);
 							$result_insert = $stmt->execute();
 							++$market_share_linked;
 							$input7 = "Record : $Record, $Sales_Description";
@@ -659,7 +663,7 @@ EOQ;
 
 
 								$stmt = $conn->prepare($insert_queryt);
-							$stmt->bind_param("ssssssddddddddsssisdddsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26],$Kilo_Vol_Rank);
+							$stmt->bind_param("ssssssddddddddsssisdddsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26],$Kilo_Rank);
 								$result_insertt = $stmt->execute();
 								++$new_product_count;
 
