@@ -75,7 +75,7 @@ ini_set('display_errors', 1);
 			$Control_Label = (empty($Control_Label)?'No':'Yes');
 
 				
-
+			echo "$Classification_Number";
 			
 			
 			if ($Sales_UPC == null or $Sales_Description == null or $Kilo_Vol == null or $Source == null or $Sales_Year == null or $Collection_Date == null) {
