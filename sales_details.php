@@ -508,7 +508,7 @@ $(window).resize();
 <div style="display:inline-block;" id="toHide">
   <form action="#" method="post" id="vids-search-formxx">
 
-  <input type="submit" value="Delete!" class="btn btn-default" name="delete-market-share" >
+  <input type="submit" value="Delete" class="btn btn-default" name="delete-market-share" >
 </form>
 
 </div>

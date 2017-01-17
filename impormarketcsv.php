@@ -1,7 +1,6 @@
 <?php include 'connection.php';?>
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1); 
+
 
 
 if (isset($_POST['search'])) {
@@ -9,7 +8,8 @@ if (isset($_POST['search'])) {
 /* 	$fname = $_FILES['file_save']['tmp_name']; 
 	$handle = fopen($fname, "r");
 	 $filesize = filesize($fname); */
-	 
+	 error_reporting(E_ALL);
+ini_set('display_errors', 1); 
 
 		$allowed =  array('csv');		
 		$tmpfname = $_FILES['file_save']['tmp_name'];
@@ -665,7 +665,7 @@ EOQ;
 
 							if (strlen($Classification_Number) != 0) {
 								/* Must check if Classification number exist */
-
+echo "Classification exist";
 								$classification_check =<<<EOQ
 SELECT *
   FROM Classification
@@ -673,11 +673,12 @@ SELECT *
 EOQ;
 
 								$stmt = $conn->prepare($classification_check);
-								$stmt->bind_param("s", $Classification_Number);
+								$stmt->bind_param("d", $Classification_Number);
 								$classification_check_result = $stmt->execute();
 
 								$stmt->store_result();
 								if (($stmt->num_rows) > 0) {
+									echo "Oyesssooo";
 									$query2 =<<<EOQ
 INSERT INTO Product_Classification (ClassificationID, ProductID)
 SELECT ClassificationID, ?
@@ -688,6 +689,11 @@ EOQ;
 									$stmt = $conn->prepare($query2);
 									$stmt->bind_param("id", $id, $Classification_Number);
 									$result2 = $stmt->execute();
+
+
+
+
+
 
 								}
 							}	
