@@ -68,7 +68,7 @@ ini_set('display_errors', 1);
 			$Cluster_Number            = (empty($data[22]) && strlen($data[22]) == 0 ?NULL :$data[22]);
 			$Product_Grouping          = (empty($data[23]) && strlen($data[23]) == 0 ?NULL :$data[23]);
 			$Product_Description       = (empty($data[24]) && strlen($data[24]) == 0 ?NULL :$data[24]);
-			$Classification_Number     = (empty($data[25]) && strlen($data[26]) == 0 ?NULL :$data[27]);
+			$Classification_Number     = (empty($data[25]) && strlen($data[25]) == 0 ?NULL :$data[25]);
 			$Classification_Type       = $data[26];
 			$Comments                  = $data[27];
 
