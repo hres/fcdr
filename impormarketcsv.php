@@ -63,7 +63,7 @@ ini_set('display_errors', 1);
 			$Sales_Year                = (empty($data[17]) && strlen($data[17]) == 0 ?NULL :$data[17]);
 			$Control_Label             = $data[18];
 			$Kilo_Vol_Total            = (empty($data[19]) && strlen($data[19]) == 0 ?NULL :$data[19]);
-			$Kilo_Vol_Rank             = (empty($data[20]) && strlen($data[20]) == 0 ?NULL :$data[20]);
+			$Kilo_Rank             = (empty($data[20]) && strlen($data[20]) == 0 ?NULL :$data[20]);
 			$Dollar_Volume_Total       = (empty($data[21]) && strlen($data[21]) == 0 ?NULL :$data[21]);
 			$Cluster_Number            = (empty($data[22]) && strlen($data[22]) == 0 ?NULL :$data[22]);
 			$Product_Grouping          = (empty($data[23]) && strlen($data[23]) == 0 ?NULL :$data[23]);
