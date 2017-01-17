@@ -812,7 +812,7 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 			$senditem = $new_product->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
-			$tosend . = $senditem;
+			$tosend = $senditem;
 		}
 				echo "<h2>duplicates </h2>";
 		while (!$duplicate_label->isEmpty()) {
