@@ -30,7 +30,8 @@ if (isset($_POST['search'])) {
 			$_POST['Kilo_Volume_Total'],
 			$_POST['Control_Label_Flag'],
 			$_POST['Dollar_Share'], 
-			$_POST['Cluster_Number']
+			$_POST['Cluster_Number'],
+			$_POST['Kilo_Rank']
 		);
 
 
@@ -69,15 +70,16 @@ INSERT INTO Sales (
        Kilo_Volume_Total,
        Control_Label_Flag,
        Dollar_Share,
-       Cluster_Number
+       Cluster_Number,
+	   Kilo_Rank
 )
-VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
 	
 		$stmt = $conn->prepare($query);
 
-		$stmt->bind_param("iiddissssssddddddddsdi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21]);
+		$stmt->bind_param("iiddissssssddddddddsdis", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21],$param[22]);
 	
 	$result = $stmt->execute();
 
@@ -88,7 +90,7 @@ EOQ;
 	
 		} else {
 		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Market Share Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
-		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",3000);</script>";
+		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",2500);</script>";
 
 
 		}
