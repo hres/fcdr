@@ -253,12 +253,16 @@
 		
 		</div>
 				<div class="row">
-					<div class="form-group col-xs-6">
+					<div class="form-group col-sm-4">
 				<label for="Product_Grouping">Product Grouping</label>
 				<input type="text" class="form-control" name="Product_Grouping" style="" id="Product_Grouping"  placeholder="Enter the Product Grouping " value="<?PHP echo $row['Product_Grouping']; ?>" />
 			</div>
-			
-			<div class="form-group col-xs-6">
+				<div class="row">
+					<div class="form-group col-sm-4">
+				<label for="Kilo_Rank">Kilo Rank</label>
+				<input type="text" class="form-control" name="Kilo_Rank" style="" id="Kilo_Rank"  placeholder="Enter the Kilo Rank " value="<?PHP echo $row['Kilo_Rank']; ?>" />
+			</div>			
+			<div class="form-group col-sm-4">
 			
 				<button style="margin-top: 30px;  margin-bottom:0px; float:right;" type="submit" class="btn btn-default" name="search" >Save</button>
 			</div>
