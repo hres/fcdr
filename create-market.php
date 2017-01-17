@@ -284,7 +284,7 @@
 
 	
 			<div class="form-group col-sm-4" style="float:right;">
-				<button style="float:right;" type="submit" class="btn btn-default" name="search" >Save</button>
+				<button style="float:right; margin-top:30px;" type="submit" class="btn btn-default" name="search" >Save</button>
 			</div>
 		
 		</div>
