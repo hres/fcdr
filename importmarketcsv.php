@@ -408,6 +408,31 @@ a.close:hover {
 
 
 <main role="main" property="mainContentOfPage" class="container">
+<?php include 'connection.php';?>
+<?php
+$Classification_Number = '99.9999';
+$Classification_Type = 'Sodium GBL';
+$Classification_Name = 'EXCLUDED - BEYOND THE SALES INCLUSION THRESHOLD';
+
+
+										$query3 =<<<EOQ
+INSERT INTO Classification (Classification_Number, Classification_Type, Classification_Name)
+VALUES (?, ?, ?)
+EOQ;
+
+										$stmt = $conn->prepare($query3);
+										$stmt->bind_param("dss", $Classification_Number, $Classification_Type, $Classification_Name);
+										$result3 = $stmt->execute();
+                    if($result3){
+                      echo "Classification added";
+                    }else{
+                      echo "Error";
+
+                    }
+
+
+
+?>
 
 		
 		<div class="container" id="tabs" >
