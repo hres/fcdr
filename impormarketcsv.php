@@ -30,7 +30,7 @@ ini_set('display_errors', 1);
 		$market_share_linked = 0;
 		$duplicate_market_share = new SplQueue();
 		$duplicate_count = 0;
-
+		$count_row=0;
 
    $handle = fopen($_FILES['file_save']['tmp_name'], "r");
     while (($data = fgetcsv($handle, ",")) !== FALSE) {
@@ -39,7 +39,7 @@ ini_set('display_errors', 1);
     if($count>1){
   
 			++$count;
-	
+	if($count_row >4999) break;
 			//echo "in<br>";
 			//$data = 
 			$Record                    = $data[0]; //(empty($data[0]) && strlen($data[0]) == 0 ?NULL :$data[0]);
