@@ -410,9 +410,9 @@ a.close:hover {
 <main role="main" property="mainContentOfPage" class="container">
 <?php include 'connection.php';?>
 <?php
-$Classification_Number = '99.9999';
+$Classification_Number = '99.9998';
 $Classification_Type = 'Sodium GBL';
-$Classification_Name = 'EXCLUDED - BEYOND THE SALES INCLUSION THRESHOLD';
+$Classification_Name = 'NOT ASSIGNED A CATEGORY';
 
 
 										$query3 =<<<EOQ
