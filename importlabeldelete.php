@@ -279,7 +279,7 @@ console.log("in function");
 	}
 
 	}
-	
+});	
 	
 	</script>
 </body>
