@@ -275,7 +275,7 @@ console.log("in function");
 	if (size > 1600000) {
 		$('#upload-file-info2').html("<h2>File is too big<br/>Upload a smaller file.</h2>");
 	} else {
-		$('#upload-file-info2').html("<h2>Your data is being processed, this can take several minutes...</h2>");
+		//$('#upload-file-info2').html("<h2>Your data is being processed, this can take several minutes...</h2>");
 
 		$("#form1").submit();
 	}
