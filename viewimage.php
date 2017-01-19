@@ -47,7 +47,7 @@ $result = mysqli_query($conn,$query);
 $row = $result->fetch_assoc();
 $ext = $row['Extension'];
   echo "<div id=\"Container\">"; 
-echo '<img src="data:image/$ext;base64,'.base64_encode( $row['Image'] ).'" onclick="resizeImg(this)"/>';
+echo '<img src="data:image/$ext;base64,'.base64_encode( $row['Image'] ).'" onclick=\"resizeImg(this)\"/>';
 
 echo "</div>";
 
