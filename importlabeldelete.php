@@ -249,8 +249,8 @@ $(document).ready(
 	$('#my-file-selector2').on('click', function() {
 		
 
-
-	input = document.getElementById('my-file-selector');
+console.log("in function");
+	var input = document.getElementById('my-file-selector');
 	var file= input.files[0];
 	var size = file.size;
 	$("#upload-file-info").html("");
