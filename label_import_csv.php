@@ -825,13 +825,7 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 			echo "$senditem <br>";
 		}
 
-$to = "nelsonromario@hotmail.com";
-$subject = "My subject";
-$txt = "Hello world!";
-$headers = "From: webmaster@example.com" . "\r\n" .
-"CC: somebodyelse@example.com";
 
-mail($to,$subject,$tosend,$headers);	
 		print "Import done";
 }
  }
