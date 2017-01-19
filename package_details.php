@@ -214,6 +214,14 @@ $(function(){
 	document.getElementById('toHide3').style.display = "none";
 }
 	</script>
+
+	<script type="text/javascript">
+		function view(img){
+			viewwin = window.open(img,'viewwin', 'width= 600, height=300');
+		}
+
+
+	</script>
 	
 		<style>
 		#ingredients{
