@@ -10,9 +10,7 @@ if (isset($_POST['search'])) {
 			$allowed =  array('csv');		
 		$tmpfname = $_FILES['file_save']['tmp_name'];
 		$ext = pathinfo($_FILES['file_save']['name'], PATHINFO_EXTENSION);
-		$fp = file($tmpfname, FILE_SKIP_EMPTY_LINES);
 
-		echo count($fp);
 
 	//	$num_rows = count($_FILES['file_save']['name']);
 
@@ -36,7 +34,7 @@ if (isset($_POST['search'])) {
 		$duplicate_count = 0;
    $handle = fopen($_FILES['file_save']['tmp_name'], "r");
     while (($data = fgetcsv($handle, ",")) !== FALSE) {
-break;
+
     ++$count;
     if($count>1){
   
