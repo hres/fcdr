@@ -142,7 +142,7 @@
     <div >
 	</div>
   </div>
-  	<div class='label label-info' id="upload-file-info"></div>
+  	<div class='label label-info' id="upload-file-info2"></div>
 
 
     <div style="margin-top:10px;"><strong><h3>Report log file(s)</h3></strong></div>
@@ -251,29 +251,31 @@ $(document).ready(
 
 console.log("in function");
 	var input = document.getElementById('my-file-selector');
-	var file= input.files[0];
-	var size = file.size;
-	$("#upload-file-info").html("");
-	$('#upload-file-info').append("<br/>" + (file.name).fontsize(3));
+
+	$("#upload-file-info2").html("");
+
 		
 
 	$('#post-file-info').html("");
 	if(!input){
-			$('#upload-file-info').html("<h2>Couldn't find the file input elemet</h2>");
+			$('#upload-file-info2').html("<h2>Couldn't find the file input elemet</h2>");
 
 	}else if(!input.files){
 
-				$('#upload-file-info').html("<h2>This Browser doesn't seem to support your file</h2>");
+				$('#upload-file-info2').html("<h2>This Browser doesn't seem to support your file</h2>");
 	
 	}else if(!input.files[0]){
-				$('#upload-file-info').html("<h2>Must select a file</h2>");
+				$('#upload-file-info2').html("<h2>Must select a file</h2>");
 
 
 	}else{
+
+    var file= input.files[0];
+	var size = file.size;
 	if (size > 1600000) {
-		$('#upload-file-info').html("<h2>File is too big<br/>Upload a smaller file.</h2>");
+		$('#upload-file-info2').html("<h2>File is too big<br/>Upload a smaller file.</h2>");
 	} else {
-		$('#upload-file-info').html("<h2>Your data is being processed, this can take several minutes...</h2>");
+		$('#upload-file-info2').html("<h2>Your data is being processed, this can take several minutes...</h2>");
 
 		$("#form1").submit();
 	}
