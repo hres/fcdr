@@ -113,7 +113,7 @@
 <div class="well" style="margin-right:2%;">
 <div style="margin-top:-37px;"><strong><h3>Select a CSV file</h3></strong></div>
 
-<form method="post"  action="" enctype="multipart/form-data" id="form1">
+<form method="post"  action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data" id="form1">
 	
 	<label class="btn btn-primary" for="my-file-selector">
     <input id="my-file-selector" type="file" name="file_save" style="display:none;" onchange="$('#upload-file-info').html($(this).val());">
@@ -122,7 +122,9 @@
 <span class='label label-info' id="upload-file-info"></span>
 <div style="float:right;">
 <label class="btn btn-primary" for="my-file-selector2">
-    <input id="my-file-selector2" type="submit" style="display:none;" onclick="myFunction()" name="search" onchange="$('#upload-file-info').html($(this).val());" disabled>
+  <!--  <input id="my-file-selector2" type="submit" style="display:none;" onclick="myFunction()" name="search" onchange="$('#upload-file-info').html($(this).val());" disabled>-->
+   	<input id="my-file-selector2" type="button" style="display:none" />
+
     Import
 </label></div>
 
@@ -140,9 +142,23 @@
     <div >
 	</div>
   </div>
-    <div style="margin-top:10px;"><strong><h3>Report log file(s)</h3></strong></div>
-	<div id="hide" style="display:none; margin-bottom:3%;"><h3>Your data is being processed, this can take several minutes...</h3></div>
- <div style="height:400px; overflow:auto;"><?php include 'label_import_csv.php';?></div>
+  	<div class='label label-info' id="upload-file-info2"></div>
+
+
+    <div style="margin-top:10px;"> <strong><h3>Report log file(s)</h3></strong></div>
+
+ <div style="height:400px; overflow:auto;">
+ 
+	<div id="post-file-info">
+<?php
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+	include 'label_save_delete.php';
+}
+?>
+</div>
+ 
+ 
+ </div>
 </div>
 
 		
@@ -227,6 +243,45 @@ $(document).ready(
             }
             );
     });
+	</script>
+
+	<script type="text/javascript">
+	$('#my-file-selector2').on('click', function() {
+		
+
+console.log("in function");
+	var input = document.getElementById('my-file-selector');
+
+	$("#upload-file-info2").html("");
+
+		
+
+	$('#post-file-info').html("");
+	if(!input){
+			$('#upload-file-info2').html("<h2>Couldn't find the file input elemet</h2>");
+
+	}else if(!input.files){
+
+				$('#upload-file-info2').html("<h2>This Browser doesn't seem to support your file</h2>");
+	
+	}else if(!input.files[0]){
+				$('#upload-file-info2').html("<h2>Must select a file</h2>");
+
+
+	}else{
+
+    var file= input.files[0];
+	var size = file.size;
+	if (size > 1171875) {
+		$('#upload-file-info2').html("<h2>File is too big<br/>Upload a smaller file.</h2>");
+	} else {
+		$('#upload-file-info2').html("<h2>Your data is being processed, this can take several minutes...</h2>");
+		$("#form1").submit();
+	}
+
+	}
+});	
+	
 	</script>
 </body>
 </html>

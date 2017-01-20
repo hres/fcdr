@@ -4,7 +4,7 @@
 ini_set('display_errors', 1);  */
 //mysqli_query("SET NAMES 'utf8';");
 
-if (isset($_POST['search'])) {
+
 
 
 			$allowed =  array('csv');		
@@ -835,12 +835,6 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 
 		print "Import done";
 }
- }
-   
 
-	 else {
-
-	//print "Upload new csv by browsing to file and clicking on Upload<br/>\n";
-}
 
 ?>

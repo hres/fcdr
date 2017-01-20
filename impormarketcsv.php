@@ -38,8 +38,7 @@ ini_set('display_errors', 1);
     ++$count;
     if($count>1){
   
-			++$count;
-	if($count_row >4999) break;
+	
 			//echo "in<br>";
 			//$data = 
 			$Record                    = $data[0]; //(empty($data[0]) && strlen($data[0]) == 0 ?NULL :$data[0]);
@@ -74,7 +73,7 @@ ini_set('display_errors', 1);
 			$Comments                  = $data[27];
 
 			$Control_Label = ($Control_Label==0?'No':'Yes');
-			echo "$Dollar_Volume";
+			
 					
 			
 			if ($Sales_UPC == null or $Sales_Description == null or $Kilo_Vol == null or $Source == null or $Sales_Year == null or $Collection_Date == null) {

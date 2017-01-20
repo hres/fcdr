@@ -272,7 +272,7 @@ console.log("in function");
 
     var file= input.files[0];
 	var size = file.size;
-	if (size > 1600000) {
+	if (size > 1171875) {
 		$('#upload-file-info2').html("<h2>File is too big<br/>Upload a smaller file.</h2>");
 	} else {
 		$('#upload-file-info2').html("<h2>Your data is being processed, this can take several minutes...</h2>");
