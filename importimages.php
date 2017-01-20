@@ -144,7 +144,7 @@
   
   
   
-    <div style="margin-top:10px;"><strong><h3>Report log file(s)</h3></strong></div>
+    <div style="margin-top:10px;"><strong><h3>Import Results:</h3></strong></div>
 
 <div id="post-file-info">
 <?php
