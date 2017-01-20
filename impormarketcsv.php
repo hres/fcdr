@@ -196,8 +196,8 @@ EOQ;
 						$stmt->bind_param("sssssddddddddsssisdddssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank, $Sales_UPC);
 						$result_insert = $stmt->execute();
 						++$market_share_linked;
-						
-						if ($Product_Description != null) {
+			//			
+						if (!empty($Product_Description) && strlen($Product_Description) != 0) {
 
 							$query_update =<<<EOQ
 UPDATE Product
@@ -305,7 +305,7 @@ EOQ;
 							$input4 = "Record : $Record, $Sales_Description";
 							$linked_sales->push($input4);
 }
-							if ($Product_Description != null) {
+							if (!empty($Product_Description) && strlen($Product_Description) != 0) {
 
 								$query_update =<<<EOQ
 UPDATE Product
@@ -329,7 +329,7 @@ EOQ;
 
 							/* Create a new Product */
 
-							if ($Product_Description == null) {
+							if (empty($Product_Description) && strlen($Product_Description) == 0) {
 								$Product_Description = $Sales_Description;
 							}
 
@@ -490,7 +490,7 @@ EOQ;
 					
 
 
-						if ($Product_Description === null) {
+						if (empty($Product_Description) && strlen($Product_Description) == 0) {
 							$Product_Description = $Sales_Description;
 						}
 						

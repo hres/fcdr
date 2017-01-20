@@ -616,7 +616,14 @@ EOQ;
 						$nid = mysqli_insert_id($conn);
 						++$linked_to_market_count;
 						$params = array($Brand, $Manufacturer, $Neilsen_Item_Rank_UPC);
-						if ($Product_Description != null) {
+
+
+
+							//!empty($Product_Description) && strlen($Product_Description) != 0
+
+
+
+						if (!empty($Product_Description) && strlen($Product_Description) != 0) {
 							$params = array($Product_Description) + $params;
 							$query_update =<<<EOQ
 UPDATE Product
@@ -729,7 +736,7 @@ EOQ;
 					++$linked_to_label_count;
 					$params = array($Brand, $Manufacturer, $Label_UPC);
 
-				if($Product_Description != null){
+				if(!empty($Product_Description) && strlen($Product_Description) != 0){
 					
 					$query_update="UPDATE  $dbname.Product SET Description='$Product_Description', Brand='$Brand', Manufacturer='$Manufacturer' WHERE ProductID=(Select Distinct ProductIDP from $dbname.Package Where Label_UPC = '$Label_UPC')";
 					$result_update = mysqli_query($conn,$query_update);

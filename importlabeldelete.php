@@ -113,7 +113,7 @@
 <div class="well" style="margin-right:2%;">
 <div style="margin-top:-37px;"><strong><h3>Select a CSV file</h3></strong></div>
 
-<form method="post"  action="" enctype="multipart/form-data" id="form1">
+<form method="post"  action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data" id="form1">
 	
 	<label class="btn btn-primary" for="my-file-selector">
     <input id="my-file-selector" type="file" name="file_save" style="display:none;" onchange="$('#upload-file-info').html($(this).val());">
@@ -145,7 +145,7 @@
   	<div class='label label-info' id="upload-file-info2"></div>
 
 
-    <div style="margin-top:10px;"><strong><h3>Report log file(s)</h3></strong></div>
+    <div style="margin-top:10px;"> <strong><h3>Report log file(s)</h3></strong></div>
 
  <div style="height:400px; overflow:auto;">
  
