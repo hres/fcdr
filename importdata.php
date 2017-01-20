@@ -154,7 +154,7 @@
 <div class='label label-info' id="upload-file-info2"></div>
 
 
-    <div style="margin-top:10px;"> <strong><h3>Report log file(s)</h3></strong></div>
+    <div style="margin-top:10px;"> <strong><h3>Import Results:</h3></strong></div>
 
  <div style="height:400px; overflow:auto;">
  
