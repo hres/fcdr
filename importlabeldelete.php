@@ -113,7 +113,7 @@
 <div class="well" style="margin-right:2%;">
 <div style="margin-top:-37px;"><strong><h3>Select a CSV file</h3></strong></div>
 
-<form method="post"  action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data" id="form1">
+<form method="post"  action="" enctype="multipart/form-data" id="form1">
 	
 	<label class="btn btn-primary" for="my-file-selector">
     <input id="my-file-selector" type="file" name="file_save" style="display:none;" onchange="$('#upload-file-info').html($(this).val());">
@@ -152,7 +152,7 @@
 	<div id="post-file-info">
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	include 'label_import_csv.php';
+	include 'label_save_delete.php.php';
 }
 ?>
 </div>
@@ -276,7 +276,6 @@ console.log("in function");
 		$('#upload-file-info2').html("<h2>File is too big<br/>Upload a smaller file.</h2>");
 	} else {
 		//$('#upload-file-info2').html("<h2>Your data is being processed, this can take several minutes...</h2>");
-
 		$("#form1").submit();
 	}
 
