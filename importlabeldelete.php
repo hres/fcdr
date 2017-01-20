@@ -116,7 +116,7 @@
 <form method="post"  action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data" id="form1">
 	
 	<label class="btn btn-primary" for="my-file-selector">
-    <input id="my-file-selector" type="file" name="file_save" style="display:none;" onchange="$('#upload-file-info').html($(this).val());">
+    <input id="my-file-selector" type="file" name="file_save" style="display:none;">
     Browse
 </label>
 <span class='label label-info' id="upload-file-info"></span>
@@ -152,7 +152,7 @@
 	<div id="post-file-info">
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	include 'label_save_delete.php';
+	include 'label_import_csv.php';
 }
 ?>
 </div>
@@ -169,6 +169,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 		<?php include 'footer.php';?>
 
+
+	<script type="text/javascript">
+	$('#my-file-selector').on('change', function(){
+
+		var filename = $('input[type=file]').val();
+		$('#upload-file-info').html(filename);
+
+
+
+	});
+
+
+
+</script>
 	<script type="text/javascript">
 				  var _gaq = _gaq || [];
 				  _gaq.push(['_setAccount', 'UA-365466-5']);

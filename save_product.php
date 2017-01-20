@@ -10,6 +10,10 @@ $salesID = ($_GET['SalesID']?$_GET['SalesID']:'');
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 		if(isset($_POST['search'])) {
+
+	
+	$_POST['Cluster_Number'] =  (empty($_POST['Cluster_Number']) && strlen($_POST['Cluster_Number']) == 0 ?NULL :(int)$_POST['Cluster_Number']);		
+	$_POST['CNF_CODE'] =  (empty($_POST['CNF_CODE']) && strlen($_POST['CNF_CODE'])) == 0 ?NULL :(int)$_POST['CNF_CODE']);	
 		
 	$params = array($_POST['Description'],$_POST['Brand'], $_POST['Manufacturer'],$_POST['Comments'],$_POST['CNF_CODE'],$_POST['Classification_Name'],$_POST['Classification_Type'],$_POST['Classification_Number'],$_POST['Cluster_Number']);
 
