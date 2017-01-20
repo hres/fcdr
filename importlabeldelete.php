@@ -152,7 +152,7 @@
 	<div id="post-file-info">
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	include 'label_save_delete.php.php';
+	include 'label_save_delete.php';
 }
 ?>
 </div>
