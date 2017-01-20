@@ -3,7 +3,7 @@
 
 
 
-if (isset($_POST['search'])) {
+
 	
 /* 	$fname = $_FILES['file_save']['tmp_name']; 
 	$handle = fopen($fname, "r");
@@ -767,12 +767,6 @@ EOQ;
 	 
   mysqli_close($conn);
 
- }
 
-
-	 else {
-
-	//print "Upload new csv by browsing to file and clicking on Upload<br/>\n";
-}
 
 ?>

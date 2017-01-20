@@ -126,7 +126,9 @@
 <span class='label label-info' id="upload-file-info"></span>
 <div style="float:right;">
 <label class="btn btn-primary" for="my-file-selector2">
-    <input id="my-file-selector2" type="submit" onclick="myFunction()" style="display:none;" name="search" onchange="$('#upload-file-info').html($(this).val());" disabled>
+  <!--  <input id="my-file-selector2" type="submit" onclick="myFunction()" style="display:none;" name="search" onchange="$('#upload-file-info').html($(this).val());" disabled>-->
+     	<input id="my-file-selector2" type="button" style="display:none" />
+
     Import
 </label></div>
 
@@ -147,9 +149,27 @@
     <div >
 	</div>
   </div>
-  <div style="margin-top:10px;"><strong><h3>Report log file(s)</h3></strong></div>
-  	<div id="hide" style="display:none; margin-bottom:3%;"><h3>Your data is being processed, this can take several minutes...</h3></div>
-  <div style="height:400px; overflow:auto;"><?php include 'impormarketcsv.php';?></div>
+
+
+<div class='label label-info' id="upload-file-info2"></div>
+
+
+    <div style="margin-top:10px;"> <strong><h3>Report log file(s)</h3></strong></div>
+
+ <div style="height:400px; overflow:auto;">
+ 
+	<div id="post-file-info">
+<?php
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+	include 'impormarketcsv.php';
+}
+?>
+</div>
+ 
+ 
+ </div>
+
+  
 </div>
 
 		
@@ -170,24 +190,47 @@
 					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 				  })();
 	</script>
-	<script>
-function myFunction() {
-    document.getElementById("hide").style.display="block";;
-}
-</script>
-<script type="text/javascript">
-$(document).ready(
-    function(){
-        $('input:file').change(
-            function(){
-                if ($(this).val()) {
-                    $('input:submit').attr('disabled',false);
-                    // or, as has been pointed out elsewhere:
-                    // $('input:submit').removeAttr('disabled'); 
-                } 
-            }
-            );
-    });
+
+
+
+
+	<script type="text/javascript">
+	$('#my-file-selector2').on('click', function() {
+		
+
+console.log("in function");
+	var input = document.getElementById('my-file-selector');
+
+	$("#upload-file-info2").html("");
+
+		
+
+	$('#post-file-info').html("");
+	if(!input){
+			$('#upload-file-info2').html("<h2>Couldn't find the file input elemet</h2>");
+
+	}else if(!input.files){
+
+				$('#upload-file-info2').html("<h2>This Browser doesn't seem to support your file</h2>");
+	
+	}else if(!input.files[0]){
+				$('#upload-file-info2').html("<h2>Must select a file</h2>");
+
+
+	}else{
+
+    var file= input.files[0];
+	var size = file.size;
+	if (size > 1600000) {
+		$('#upload-file-info2').html("<h2>File is too big<br/>Upload a smaller file.</h2>");
+	} else {
+		$('#upload-file-info2').html("<h2>Your data is being processed, this can take several minutes...</h2>");
+		$("#form1").submit();
+	}
+
+	}
+});	
+	
 	</script>
 </body>
 </html>
