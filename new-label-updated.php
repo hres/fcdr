@@ -13,6 +13,12 @@ $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 ini_set('display_errors', 1);
 		$Label_UPC = $_POST['Label_UPC'];
 
+
+$_POST['Number_Of_Units'] = (empty($_POST['Number_Of_Units']) && strlen($_POST['Number_Of_Units']) == 0 ?NULL :$_POST['Number_Of_Units']);
+$_POST['PPD_Per_Serving_Amount'] = (empty($_POST['PPD_Per_Serving_Amount']) && strlen($_POST['PPD_Per_Serving_Amount']) == 0 ?NULL :$_POST['PPD_Per_Serving_Amount']);
+$_POST['Per_Serving_Amount'] = (empty($_POST['Per_Serving_Amount']) && strlen($_POST['Per_Serving_Amount']) == 0 ?NULL :$_POST['Per_Serving_Amount']);
+
+
 	$param = array(
 			$productID,
 			$_POST['Label_UPC'],

@@ -364,7 +364,7 @@ $cars = array
   array("42",$Molybdenum_Per_Serving,'ug', $Molybdenum_Daily_Value, TRUE),
   array("42",NULL,NULL, $Molybdenum_Daily_Value_PPD, FALSE), 
 
-  array("43",$Chloride_Per_Serving,'mg', '$Chloride_Daily_Value', TRUE),
+  array("43",$Chloride_Per_Serving,'mg', $Chloride_Daily_Value, TRUE),
   array("43",NULL,NULL, $Chloride_Daily_Value_PPD, FALSE), 
  
   array("44",$Fat_PolyUnsaturated,'g', NULL, TRUE),
