@@ -19,6 +19,7 @@ $_POST['PPD_Per_Serving_Amount'] = (empty($_POST['PPD_Per_Serving_Amount']) && s
 $_POST['Per_Serving_Amount'] = (empty($_POST['Per_Serving_Amount']) && strlen($_POST['Per_Serving_Amount']) == 0 ?NULL :$_POST['Per_Serving_Amount']);
 $_POST['Per_Serving_Amount_In_Grams'] = (empty($_POST['Per_Serving_Amount_In_Grams']) && strlen($_POST['Per_Serving_Amount_In_Grams']) == 0 ?NULL :$_POST['Per_Serving_Amount_In_Grams']);
 $_POST['Per_Serving_Amount_In_Grams_PPD'] = (empty($_POST['Per_Serving_Amount_In_Grams_PPD']) && strlen($_POST['Per_Serving_Amount_In_Grams_PPD']) == 0 ?NULL :$_POST['Per_Serving_Amount_In_Grams_PPD']);
+$_POST['date1'] = (empty($_POST['date1']) && strlen($_POST['date1']) == 0 ?NULL :$_POST['date1']);
 
 
 	$param = array(
