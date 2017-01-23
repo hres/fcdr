@@ -279,6 +279,7 @@ $(document).ready(function() {
 			var flag = false;
 			var elements = document.getElementByTagName("input").elements;
 			for(var i = 0; i < elements.length; i++){
+				console.log(elements[i].value)
 				if(elements[i].value === ""){
 					console.log(elements[i].value);
 						continue;
