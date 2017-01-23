@@ -8,12 +8,12 @@
 	$field2 = array('Label_UPC', 'Source', 'Ingredients', 'Label_Description', 'date1');
 
     $conditions = array();
-	    $flag = false;
+	    $flag1 = false;
 //(empty($_POST[$field]) && strlen($_POST[$field]) == 0 ?NULL :$data[5])
 
  foreach($field2 as $field){
       if(!empty($_POST[$field]) && strlen($_POST[$field]) != 0 ){
-          $flag = true;
+          $flag1 = true;
           break;
       }else {
           continue;
@@ -21,8 +21,8 @@
 
  }
 
-if($flag){
-
+if($flag1){
+	$flag ='0';
    foreach($fields as $field){
 	
 
