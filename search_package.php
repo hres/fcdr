@@ -5,12 +5,13 @@
 
 	if(isset($_POST['search2'])) {
 	$fields = array('Label_UPC', 'Source', 'Ingredients', 'Label_Description');
+	$field2 = array('Label_UPC', 'Source', 'Ingredients', 'Label_Description', 'date1');
 
     $conditions = array();
 	    $flag = false;
 //(empty($_POST[$field]) && strlen($_POST[$field]) == 0 ?NULL :$data[5])
 
- foreach($fields as $field){
+ foreach($field2 as $field){
       if(!empty($_POST[$field]) && strlen($_POST[$field]) != 0 ){
           $flag = true;
           break;
