@@ -829,7 +829,7 @@ $('input[name="intervaltype"]').click(function () {
    <input type="text" class="form-control" placeholder="Amount of Carbohydrates" name="Carbohydrates_Amount" value="<?PHP echo $row['Amount']; ?>" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Carbohydrates_Unit">
+ <select class="form-control" id="sel1" name="Carbohydrates_Unit" required>
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected" required><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	<?php include 'Units.php';?>
 		 <option value=""></option>
