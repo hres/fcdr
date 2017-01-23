@@ -230,6 +230,9 @@ ini_set('display_errors', 1);  */
 			$Per_Serving_Amount_In_Grams                    = $data[142];
 			$Per_Serving_Amount_In_Grams_PPD                = $data[143];
 
+
+			$Per_Serving_Amount_In_Grams=  (empty($Per_Serving_Amount_In_Grams) && strlen($Per_Serving_Amount_In_Grams) == 0 ?NULL :$Per_Serving_Amount_In_Grams);
+			$Per_Serving_Amount_In_Grams_PPD =  (empty($Per_Serving_Amount_In_Grams_PPD) && strlen($Per_Serving_Amount_In_Grams_PPD) == 0 ?NULL :$Per_Serving_Amount_In_Grams_PPD);
 			
 
 $cars = array

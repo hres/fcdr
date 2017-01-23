@@ -7,6 +7,20 @@
 	$fields = array('Label_UPC', 'Source', 'Ingredients', 'Label_Description');
 
     $conditions = array();
+	    $flag = false;
+//(empty($_POST[$field]) && strlen($_POST[$field]) == 0 ?NULL :$data[5])
+
+ foreach($fields as $field){
+      if(!empty($_POST[$field]) && strlen($_POST[$field]) != 0 ){
+          $flag = true;
+          break;
+      }else {
+          continue;
+      }
+
+ }
+
+if($flag){
 
    foreach($fields as $field){
 	
@@ -43,7 +57,7 @@
 		$result = mysqli_query($conn,$query);
 			 $rowcount=mysqli_num_rows($result);
  if($rowcount < 1){
-	 echo "<script>document.getElementById(\"noResult\").innerHTML = \"No data found \" </script>";
+	 echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3 >No data found </h3 >\" </script>";
  }
 	
 
@@ -54,7 +68,10 @@
 		echo "<tr><td> <a href=view_product.php?ProductID=" .$row['ProductIDP'] . ">". $row['Label_UPC'] . "</a></td> <td>" . $row['Label_Description'] . "</td>  <td>" . $row['Source'] . "</td><td>" . $row['Collection_Date'] . "</td><td>" . $row['Create_Date'] . "</td><td>" . $row['Last_Edit_Date'] . "</td><td>" . $row['Last_Edited_By'] . "</td></tr>";                       
 
 	 }
+	}else{
 
+        echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3 >Must enter at least one fields</h3>\" </script>";
+    }
 	}
 	
 $conn->close();

@@ -221,7 +221,7 @@ $(document).ready(function() {
 	</form>
 	</div>
 </section>
-<div id="noResult"></div>
+<div id="noResult" style="color:#FF0000;"></div>
 <div class="well" style="margin-right:2%; overflow:auto;">
 <table id="example" class="display" cellspacing="0" width="100%">
 					<thead>
