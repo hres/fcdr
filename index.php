@@ -264,13 +264,15 @@ $(document).ready(function() {
 		</main>
 
 <?php include 'footer.php';?>
-	<script type="text/javascript">
+	<script>
 
 		function myFunct(){
+			console.log("in console");
 			var flag = false;
 			var elements = document.getElementByTagName("input").elements;
 			for(var i = 0; i < elements.length; i++){
 				if(elements[i].value === ''){
+					console.log((elements[i].value);
 						continue;
 				}else{
 					flag = true;
