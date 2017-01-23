@@ -40,13 +40,6 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
-
-
-
-<!--Font Awesome (added because you use icons in your prepend/append)-->
-<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
-
 <noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -160,14 +153,13 @@ $(document).ready(function() {
 <section style="margin-top: 15px;" class="hidethis">
 
 <div class="well" style="margin-right:2%;">
-<div id="noField"></div>
-	<form role="form" method="post" action="#" id="vids-search-form" onsubmit="return myFunct()">
+	<form role="form" method="post" action="#" id="vids-search-form">
 	
 	
 		<div class="row">
 			<div class="form-group col-sm-4">
 				<label for="Description">Description</label>
-				<input type="text" class="form-control" name="Description" id="Description" placeholder="Enter the Description" />
+				<input type="text" class="form-control" name="Description" id="Description" placeholder="Enter the Description" required/>
 			</div>
 			<div class="form-group col-sm-4">
 				<label for="Brand">Brand</label>
@@ -229,9 +221,7 @@ $(document).ready(function() {
 	</form>
 	</div>
 </section>
-
 <div id="noResult"></div>
-
 <div class="well" style="margin-right:2%; overflow:auto;">
 <table id="example" class="display" cellspacing="0" width="100%">
 					<thead>
@@ -271,6 +261,7 @@ $(document).ready(function() {
 		</main>
 
 <?php include 'footer.php';?>
+
 	<script>
 
 		function myFunct(){
