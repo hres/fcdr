@@ -54,9 +54,9 @@ if($flag1){
 				$to_date = $_POST['date2'];
 			 if($flag==1){
 		     
-			            $query .= " AND Sales_Year between '$from_date' and '$to_date'";
+			            $query .= " AND Collection_Date between '$from_date' and '$to_date'";
 						}else{
-							$query .= " WHERE Sales_Year between '$from_date' and '$to_date'";
+							$query .= " WHERE Collection_Date between '$from_date' and '$to_date'";
 
 						}
 }
