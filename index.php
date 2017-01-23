@@ -280,7 +280,7 @@ $(document).ready(function() {
 			var elements = document.getElementByTagName("input").elements;
 			for(var i = 0; i < elements.length; i++){
 				if(elements[i].value === ""){
-					console.log((elements[i].value);
+					console.log(elements[i].value);
 						continue;
 				}else{
 					flag = true;
