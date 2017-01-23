@@ -57,7 +57,7 @@ if($flag){
 		// echo "<script>document.getElementById(\"noResult\").innerHTML = \"$rowcount records returned\" </script>";
  
  if($rowcount < 1){
-	 echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3 style=\"color: #ff0000\">No data found</h3> \" </script>";
+	 echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3 >No data found</h3> \" </script>";
  }
 /* mysqli_query('SET NAMES utf8');
 mysqli_query('SET CHARACTER SET utf8'); */
@@ -73,7 +73,7 @@ if (!$result) {
 	 }
     }else{
 
-        echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3 style=\"color: #ff0000\">Must enter at least one fields</h3>\" </script>";
+        echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3 >Must enter at least one fields</h3>\" </script>";
     }
 
 	}
