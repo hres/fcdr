@@ -153,13 +153,14 @@ $(document).ready(function() {
 <section style="margin-top: 15px;" class="hidethis">
 
 <div class="well" style="margin-right:2%;">
-	<form role="form" method="post" action="#" id="vids-search-form">
+<div id="noField"></div>
+	<form role="form" method="post" action="#" id="vids-search-form" onSubmit="myFunct()">
 	
 	
 		<div class="row">
 			<div class="form-group col-sm-4">
 				<label for="Description">Description</label>
-				<input type="text" class="form-control" name="Description" id="Description" placeholder="Enter the Description" required/>
+				<input type="text" class="form-control" name="Description" id="Description" placeholder="Enter the Description" />
 			</div>
 			<div class="form-group col-sm-4">
 				<label for="Brand">Brand</label>
@@ -221,7 +222,9 @@ $(document).ready(function() {
 	</form>
 	</div>
 </section>
+
 <div id="noResult"></div>
+
 <div class="well" style="margin-right:2%; overflow:auto;">
 <table id="example" class="display" cellspacing="0" width="100%">
 					<thead>
@@ -261,6 +264,30 @@ $(document).ready(function() {
 		</main>
 
 <?php include 'footer.php';?>
+	<script type="text/javascript">
+
+		function myFunct(){
+			var flag = false;
+			var elements = document.getElementByTagName("input").elements;
+			for(var i = 0; i < elements.length; i++){
+				if(elements[i].value === ''){
+						continue;
+				}else{
+					flag = true;
+					break;
+				}
+			}
+			if(!flag) {
+				document.getElementById('noField').innerHTML = "<h3>Must Enter at least one field</h3>";
+				
+				return false;
+			}
+		}
+
+
+
+
+	</script>
 
 </body>
 </html>

@@ -6,8 +6,14 @@
 $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 
 		if(isset($_POST['search'])) {
- 	error_reporting(E_ALL);
+ 	//error_reporting(E_ALL);
 ini_set('display_errors', 1);
+
+
+$_POST['Number_Of_Units'] = (empty($_POST['Number_Of_Units']) && strlen($_POST['Number_Of_Units']) == 0 ?NULL :$_POST['Number_Of_Units']);
+$_POST['PPD_Per_Serving_Amount'] = (empty($_POST['PPD_Per_Serving_Amount']) && strlen($_POST['PPD_Per_Serving_Amount']) == 0 ?NULL :$_POST['PPD_Per_Serving_Amount']);
+$_POST['Per_Serving_Amount'] = (empty($_POST['Per_Serving_Amount']) && strlen($_POST['Per_Serving_Amount']) == 0 ?NULL :$_POST['Per_Serving_Amount']);
+
 
 		$param = array(
 			$_POST['Label_Description'],

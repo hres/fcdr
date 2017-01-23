@@ -453,7 +453,7 @@ EOQ;
 									$stmt->bind_param("id", $id, $Classification_Number);
 									$result2 = $stmt->execute();
 
-								} else {
+								} /*else {
 									if (strlen($Classification_Type) != 0) {
 
 										$query3 =<<<EOQ
@@ -477,7 +477,7 @@ EOQ;
 										$resultC = $stmt->execute();
 
 									}
-								}
+								} */
 							}
 						}
 					}
