@@ -154,7 +154,7 @@ $(document).ready(function() {
 
 <div class="well" style="margin-right:2%;">
 <div id="noField"></div>
-	<form role="form" method="post" action="#" id="vids-search-form" onSubmit="myFunct()">
+	<form role="form" method="post" action="#" id="vids-search-form">
 	
 	
 		<div class="row">
@@ -215,7 +215,7 @@ $(document).ready(function() {
 		</div>
 		<div class="row">
 			<div class="form-group col-sm-4 submit_button">
-				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search">Search</button>
+				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search" onclick="myFunct()">Search</button>
 			</div>
 		</div>
 		
@@ -272,7 +272,7 @@ $(document).ready(function() {
 			var elements = document.getElementByTagName("input").elements;
 			for(var i = 0; i < elements.length; i++){
 				if(elements[i].value === ''){
-					console.log((elements[i].value);
+					console.log((elements[i].value)
 						continue;
 				}else{
 					flag = true;
@@ -280,7 +280,7 @@ $(document).ready(function() {
 				}
 			}
 			if(!flag) {
-				document.getElementById('noField').innerHTML = "<h3>Must Enter at least one field</h3>";
+				document.getElementById("noField").innerHTML = "<h3>Must Enter at least one field</h3>";
 				
 				return false;
 			}
