@@ -4,7 +4,7 @@
 
 
 	
-$query = "Select Distinct Classification_Number from $dbname.Classification ORDER BY Classification_Number ASC";
+$query = "Select Distinct Classification_Number from $dbname.Classification ORDER BY CAST(Classification_Number as UNSIGNED) ASC";
 	$result = mysqli_query($conn,$query);
 
 
