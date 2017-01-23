@@ -247,7 +247,7 @@ EOQ;
 						  array(46,$_POST['Saturated_Trans_kj_Amount_S'],$_POST['Saturated_Trans_kj_Unit_S'],$_POST['Saturated_Trans_DValue_S'], FALSE),
 
 						  array(47,$_POST['Energy_kj_Amount'],$_POST['Energy_kj_Unit'], $_POST['Engergy_kj_DValue'], TRUE),
-						  array(47,$_POST['Energy_kj_Amount_S'],'kj',$_POST['Energy_kj_DValue_S'], FALSE),
+						  array(47,$_POST['Energy_kj_Amount_S'],$_POST['Energy_kj_Unit_S'],$_POST['Energy_kj_DValue_S'], FALSE),
 
 						  array(45,$_POST['Monounsaturated_Amount'],$_POST['Monounsaturated_Unit'], $_POST['Monounsaturated_DValue'], TRUE),
 						  array(45,$_POST['Monounsaturated_Amount_S'],$_POST['Monounsaturated_Unit_S'], $_POST['Monounsaturated_DValue_S'], FALSE),
@@ -273,6 +273,8 @@ for ($row = 0; $row < 94; $row++) {
 					
 								$cars[$row][1] =  (empty($cars[$row][1]) && strlen($cars[$row][1]) == 0 ?NULL :$cars[$row][1]);
 								$cars[$row][3] =  (empty($cars[$row][3]) && strlen($cars[$row][3]) == 0 ?NULL :$cars[$row][3]);
+								$cars[$row][2] =  (empty($cars[$row][1]) && strlen($cars[$row][1]) == 0 ?NULL :$cars[$row][2]);
+
 								$stmt->bind_param("iidsds",$last_id, $cars[$row][0],$cars[$row][1],$cars[$row][2],$cars[$row][3],$cars[$row][4]);
 								$results = $stmt->execute();
 							
