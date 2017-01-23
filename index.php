@@ -7,6 +7,7 @@
 	<title>FCDR</title>
 	<link rel="shortcut icon" type="image/png" href="/media/images/favicon.png">
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
+
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/colreorder/1.3.2/css/colReorder.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css">
@@ -153,7 +154,7 @@ $(document).ready(function() {
 
 <div class="well" style="margin-right:2%;">
 <div id="noField"></div>
-	<form role="form" method="post" action="#" id="vids-search-form">
+	<form role="form" method="post" action="#" id="vids-search-form" onsubmit="return myFunct()">
 	
 	
 		<div class="row">
@@ -214,7 +215,7 @@ $(document).ready(function() {
 		</div>
 		<div class="row">
 			<div class="form-group col-sm-4 submit_button">
-				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search" onclick="myFunct()">Search</button>
+				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search">Search</button>
 			</div>
 		</div>
 		
@@ -279,7 +280,7 @@ $(document).ready(function() {
 				}
 			}
 			if(!flag) {
-				document.getElementById("noField").innerHTML = "Must Enter at least one field";
+				document.getElementById("noResult").innerHTML = "<h3>Must Enter at least one field</h3>";
 				
 				return false;
 			}
@@ -288,7 +289,7 @@ $(document).ready(function() {
 
 
 
-</script>
+	</script>
 
 </body>
 </html>
