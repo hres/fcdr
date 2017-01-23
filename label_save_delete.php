@@ -74,6 +74,7 @@ ini_set('display_errors', 1);  */
 
 			$Per_Serving_Amount=  (empty($Per_Serving_Amount) && strlen($Per_Serving_Amount) == 0 ?NULL :$Per_Serving_Amount);
 			$Per_Serving_Amount_PPD =  (empty($Per_Serving_Amount_PPD) && strlen($Per_Serving_Amount_PPD) == 0 ?NULL :$Per_Serving_Amount_PPD);
+			$Collection_Date=  (empty($Collection_Date) && strlen($Collection_Date) == 0 ?NULL :$Collection_Date);
 
 			
 			
