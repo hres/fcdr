@@ -71,7 +71,7 @@ if($flag1){
 	 }
 	}else{
 
-        echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3 >Must enter at least one fields</h3>\" </script>";
+        echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3 >Must enter at least one field</h3>\" </script>";
     }
 	}
 	
