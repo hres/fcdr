@@ -482,6 +482,7 @@ $('input[name="intervaltype"]').click(function () {
  <select class="form-control" id="sel1" name="Energy_kj_Unit">
   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
   <option value="kJ" >kJ</option>	
+   <option value="" ></option>
       </select>  </div>
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
