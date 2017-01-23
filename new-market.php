@@ -8,6 +8,8 @@ $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 if (isset($_POST['search'])) {
 
+			$_POST['Collection_Date']=  (empty($_POST['Collection_Date']) && strlen($_POST['Collection_Date']) == 0 ?NULL :$_POST['Collection_Date']);
+
 		$param = array(
 			$productID,
 			$_POST['Sales_UPC'],

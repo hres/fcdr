@@ -20,6 +20,9 @@ $des = mysqli_real_escape_string($conn,$_POST['Description']);
 			$Comments = mysqli_real_escape_string($conn,$_POST['Comments']);
 			
 			$Collection_Date = mysqli_real_escape_string($conn,$_POST['Collection_Date']);
+			$Collection_Date     = (empty($Collection_Date) && strlen($Collection_Date) == 0 ?NULL :$Collection_Date);
+
+			
 			$Brand = mysqli_real_escape_string($conn,$_POST['Brand']);
 			$Dollar_Rank =mysqli_real_escape_string($conn,$_POST['Dollar_Rank']);
 			$Dollar_Volume_PerCentage_Change = mysqli_real_escape_string($conn,$_POST['Dollar_Volume_PerCentage_Change']);
