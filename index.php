@@ -159,7 +159,7 @@ $(document).ready(function() {
 		<div class="row">
 			<div class="form-group col-sm-4">
 				<label for="Description">Description</label>
-				<input type="text" class="form-control" name="Description" id="Description" placeholder="Enter the Description" required/>
+				<input type="text" class="form-control" name="Description" id="Description" placeholder="Enter the Description"/>
 			</div>
 			<div class="form-group col-sm-4">
 				<label for="Brand">Brand</label>

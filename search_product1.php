@@ -10,6 +10,23 @@
 	
 	 $fields = array('Brand','Description', 'Manufacturer', 'Classification_Number','Classification_Name', 'CNF_CODE','Classification_Type', 'Comments','Cluster_Number');
     $conditions = array();
+    $flag = false;
+//(empty($_POST[$field]) && strlen($_POST[$field]) == 0 ?NULL :$data[5])
+
+ foreach($fields as $field){
+      if(!empty($_POST[$field]) && strlen($_POST[$field]) != 0 ){
+          $flag = true;
+          break;
+      }else {
+          continue;
+      }
+
+ }
+
+if($flag){
+
+
+
 
     // loop through the defined fields
     foreach($fields as $field){
@@ -54,7 +71,10 @@ if (!$result) {
 		
 
 	 }
-	
+    }else{
+
+        echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3>Must enter at least one field</h3>\" </script>";
+    }
 
 	}
 	
