@@ -7,7 +7,6 @@
 	<title>FCDR</title>
 	<link rel="shortcut icon" type="image/png" href="/media/images/favicon.png">
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
-
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/colreorder/1.3.2/css/colReorder.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css">
@@ -271,7 +270,7 @@ $(document).ready(function() {
 			var flag = false;
 			var elements = document.getElementByTagName("input").elements;
 			for(var i = 0; i < elements.length; i++){
-				if(elements[i].value === ''){
+				if(elements[i].value === ""){
 					console.log((elements[i].value)
 						continue;
 				}else{
@@ -280,7 +279,7 @@ $(document).ready(function() {
 				}
 			}
 			if(!flag) {
-				document.getElementById("noField").innerHTML = "<h3>Must Enter at least one field</h3>";
+				document.getElementById("noField").innerHTML = "Must Enter at least one field";
 				
 				return false;
 			}
@@ -289,7 +288,7 @@ $(document).ready(function() {
 
 
 
-	</script>
+</script>
 
 </body>
 </html>
