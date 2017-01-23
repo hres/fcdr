@@ -42,8 +42,7 @@
 <![endif]-->
 <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
 
-<!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
 
 <!--Font Awesome (added because you use icons in your prepend/append)-->
 <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
@@ -277,7 +276,7 @@ $(document).ready(function() {
 		function myFunct(){
 			console.log("in console");
 			var flag = false;
-			var elements = document.getElementByTagName("input").elements;
+			var elements = document.getElementsByTagName("input").elements;
 			for(var i = 0; i < elements.length; i++){
 				console.log(elements[i].value)
 				if(elements[i].value === ""){
