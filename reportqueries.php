@@ -70,42 +70,37 @@ EOQC;
 
 
 
-$count = 0;
-
-foreach ($list_of_classification as $value) {
-echo "$value";
-
-}
-echo "###################";
-
 ////////////////////////////////
 
 
 								$stmt_first = $conn->prepare($first_query);
 								$stmt_second = $conn->prepare($second_query);
-                        	$stmt_third = $conn->prepare($third_query);
+                        	    $stmt_third = $conn->prepare($third_query);
                                     if(!$stmt_first){
                                         echo "something went wrong ".$conn->error;
                                         
                                     }
 
 foreach ($list_of_nielsen_category as $value) {
-echo "$value*** <br>";
-++$count;
 
 
-									$stmt_first->bind_param("s", $value); //mysqli_real_escape_string($conn, $value));
+
+									$stmt_first->bind_param("s", $value); 
 								    $stmt_first->execute();
                                     $stmt_first->bind_result($number_of_product, $sum_kilo_vol);
                                     $stmt_first->fetch();
 
-  									$stmt_second->bind_param("s",$value); //mysqli_real_escape_string($conn, $value));
+  									$stmt_second->bind_param("s",$value); 
 								    $stmt_second->execute();
                                     $stmt_second->bind_result($number_of_product_1, $sum_kilo_vol_1);
                                     $stmt_second->fetch();
 
-    
-   echo "'$value--', '$number_of_product', '$number_of_product_1', '$sum_kilo_vol_1'*** <br>"; //, '$sum_kilo_vol','$number_of_product_1','$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2'
+   									$stmt_third->bind_param("s",$value); 
+								    $stmt_third->execute();
+                                    $stmt_third->bind_result($number_of_product_2, $sum_kilo_vol_2);
+                                    $stmt_third->fetch();
+
+   echo "'$value', '$number_of_product', '$number_of_product_1', '$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2' <br>"; //, '$sum_kilo_vol','$number_of_product_1','$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2'
                                  
 
 
