@@ -15,19 +15,19 @@ if($stmt = $conn->prepare("Select distinct Nielsen_Category from Sales")){
 
 }
 
-$query = "Select Classification_Number 
-		 from Classification 
-         where Classification_Number 
-         NOT IN ('99.9999','99.9998')";
-if($stmt_classification = $conn->prepare($query)){
+
+if($stmt_classification = $conn->prepare("Select Classification_Number from Classification where Classification_Number NOT IN ('99.9999','99.9998')")){
     $stmt_classification->execute();
     $stmt_classification->bind_result($Classification_Number);
     
-    while($stmt->fetch()){
+    while($stmt_classification->fetch()){
         $list_of_classification[] = $Classification_Number;
 
     }
 
+}else{
+
+    echo "something went wrong.. ohh noo";
 }
 //Now we have the list of Classification and Nielsen Category
 //  $query .= "WHERE " . implode (' AND ', $conditions);
@@ -108,4 +108,3 @@ EOQ;
 }
  $conn->close();
 
-?>
