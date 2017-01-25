@@ -34,7 +34,7 @@ if($stmt_classification = $conn->prepare("Select Classification_Number from Clas
 //  $query .= "WHERE " . implode (' AND ', $conditions);
 
 $array1 = implode(',', array_fill(0, count($list_of_classification), '?'));
-
+echo "$array1";
 $first_query=<<<EOQA
  select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
  from Product P 
@@ -42,7 +42,7 @@ $first_query=<<<EOQA
  LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
  INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
  WHERE Sales.Nielsen_Category = ? 
- and C.Classification_Number IN $array1
+ and C.Classification_Number IN ($array1)
 
 EOQA;
 
