@@ -67,7 +67,7 @@ $third_query=<<<EOQ
 
 EOQ;
 
-foreach ($list_of_nielsen_category as $value) {
+foreach ($list_of_classification as $value) {
 echo "$value";
 
 }
@@ -77,6 +77,11 @@ foreach ($list_of_nielsen_category as $value) {
 
 
 									$stmt_first = $conn->prepare($first_query);
+
+                                    if(!$stmt_first){
+                                        echo "something went wrong ".$conn->error;
+                                        
+                                    }
 									$stmt_first->bind_param("s",'$value');
 								    $stmt_first->execute();
                                     $stmt_first->bind_result($number_of_product, $sum_kilo_vol);
