@@ -43,7 +43,7 @@ foreach ($list_of_classification as $value) {
 echo "$value";
 
 }
-
+echo "###################";
 foreach ($list_of_nielsen_category as $value) {
 
 $first_query=<<<EOQ
@@ -101,10 +101,11 @@ EOQ;
                                     $stmt_third->bind_result($number_of_product_2, $sum_kilo_vol_2);
                                     $stmt_third->fetch();
    
-   echo "$value, $number_of_product, $sum_kilo_vol,$number_of_product_1,$sum_kilo_vol_1,$number_of_product_2,$sum_kilo_vol_2";
+   echo "'$value', '$number_of_product', '$sum_kilo_vol','$number_of_product_1','$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2'";
                                  
 
 
 }
  $conn->close();
 
+?>
