@@ -33,6 +33,19 @@ if($stmt_classification = $conn->prepare($query)){
 //  $query .= "WHERE " . implode (' AND ', $conditions);
 
 
+
+
+
+
+
+
+foreach ($list_of_classification as $value) {
+echo "$value";
+
+}
+
+foreach ($list_of_nielsen_category as $value) {
+
 $first_query=<<<EOQ
  select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
  from Product P 
@@ -43,37 +56,6 @@ $first_query=<<<EOQ
  and C.Classification_Number IN ('1.5101','1.6001')
 
 EOQ;
-
-
-$second_query=<<<EOQ
- select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
- from Product P 
- LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
- LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
- INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
- WHERE Sales.Nielsen_Category = ? 
- and C.Classification_Number ='99.9998' 
-
-EOQ;
-
-$third_query=<<<EOQ
- select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
- from Product P 
- LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
- LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
- INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
- WHERE Sales.Nielsen_Category = ? 
- and C.Classification_Number ='99.9999' 
-
-EOQ;
-
-foreach ($list_of_classification as $value) {
-echo "$value";
-
-}
-
-foreach ($list_of_nielsen_category as $value) {
-
 
 
 									$stmt_first = $conn->prepare($first_query);
@@ -87,12 +69,32 @@ foreach ($list_of_nielsen_category as $value) {
                                     $stmt_first->bind_result($number_of_product, $sum_kilo_vol);
                                     $stmt_first->fetch();
 
+$second_query=<<<EOQ
+ select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number ='99.9998' 
+
+EOQ;
 									$stmt_second = $conn->prepare($second_query);
 									$stmt_second->bind_param("s",'$value');
 								    $stmt_second->execute();
                                     $stmt_second->bind_result($number_of_product_1, $sum_kilo_vol_1);
                                     $stmt_second->fetch();
-								
+
+$third_query=<<<EOQ
+ select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number ='99.9999' 
+
+EOQ;								
                                 	$stmt_third = $conn->prepare($third_query);
 									$stmt_third->bind_param("s",'$value');
 								    $stmt_third->execute();
@@ -104,5 +106,6 @@ foreach ($list_of_nielsen_category as $value) {
 
 
 }
- $conn->close(); 
+ $conn->close();
+
 ?>
