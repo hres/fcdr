@@ -45,70 +45,9 @@ echo "$value";
 
 }
 echo "###################";
-foreach ($list_of_nielsen_category as $value) {
-
-$first_query=<<<EOQ
- select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
- from Product P 
- LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
- LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
- INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
- WHERE Sales.Nielsen_Category = ? 
- and C.Classification_Number IN ('1.5101','1.6001')
-
-EOQ;
 
 
-									$stmt_first = $conn->prepare($first_query);
-
-                                    if(!$stmt_first){
-                                        echo "something went wrong ".$conn->error;
-                                        
-                                    }
-									$stmt_first->bind_param("s",'$value');
-								    $stmt_first->execute();
-                                    $stmt_first->bind_result($number_of_product, $sum_kilo_vol);
-                                    $stmt_first->fetch();
-
-$second_query=<<<EOQ
- select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
- from Product P 
- LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
- LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
- INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
- WHERE Sales.Nielsen_Category = ? 
- and C.Classification_Number ='99.9998' 
-
-EOQ;
-									$stmt_second = $conn->prepare($second_query);
-									$stmt_second->bind_param("s",'$value');
-								    $stmt_second->execute();
-                                    $stmt_second->bind_result($number_of_product_1, $sum_kilo_vol_1);
-                                    $stmt_second->fetch();
-
-$third_query=<<<EOQ
- select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
- from Product P 
- LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
- LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
- INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
- WHERE Sales.Nielsen_Category = ? 
- and C.Classification_Number ='99.9999' 
-
-EOQ;								
-                                	$stmt_third = $conn->prepare($third_query);
-									$stmt_third->bind_param("s",'$value');
-								    $stmt_third->execute();
-                                    $stmt_third->bind_result($number_of_product_2, $sum_kilo_vol_2);
-                                    $stmt_third->fetch();
-   
-   echo "'$value', '$number_of_product', '$sum_kilo_vol','$number_of_product_1','$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2'";
-                                 
-
-
-}
-
-$conn->close();
+ mysqli_close($conn);
 
 ?>
 

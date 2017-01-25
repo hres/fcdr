@@ -79,6 +79,8 @@ if (!$result) {
 	}
 	
 	
-  mysqli_close($conn);
+$conn->close();
 ?>
+
+
 
