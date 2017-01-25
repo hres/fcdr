@@ -94,18 +94,18 @@ echo "$value*** <br>";
 ++$count;
 
 
-									$stmt_first->bind_param("s",mysqli_real_escape_string($conn, $value)); //mysqli_real_escape_string($conn, $value));
+									$stmt_first->bind_param("s", $value); //mysqli_real_escape_string($conn, $value));
 								    $stmt_first->execute();
                                     $stmt_first->bind_result($number_of_product, $sum_kilo_vol);
                                     $stmt_first->fetch();
 
-  									$stmt_second->bind_param("s",mysqli_real_escape_string($conn, $value)); //mysqli_real_escape_string($conn, $value));
+  									$stmt_second->bind_param("s",$value); //mysqli_real_escape_string($conn, $value));
 								    $stmt_second->execute();
                                     $stmt_second->bind_result($number_of_product_1, $sum_kilo_vol);
                                     $stmt_second->fetch();
 
     
-   echo "'$value--', '$number_of_product', '$number_of_product_1'*** <br>"; //, '$sum_kilo_vol','$number_of_product_1','$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2'
+   echo "'$value--', '$number_of_product', '---$number_of_product_1',*** <br>"; //, '$sum_kilo_vol','$number_of_product_1','$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2'
                                  
 
 
