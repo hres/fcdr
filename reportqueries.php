@@ -39,7 +39,7 @@ $first_query=<<<EOQ
  LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
  INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
  WHERE Sales.Nielsen_Category = ? 
- and C.Classification_Number (implode (',', $conlist_of_classificationditions))
+ and C.Classification_Number IN (implode (',', $conlist_of_classificationditions))
 
 EOQ;
 
