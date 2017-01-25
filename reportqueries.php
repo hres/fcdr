@@ -49,7 +49,7 @@ echo "###################";
 ////////////////////////////////
 
 foreach ($list_of_nielsen_category as $value) {
-
+echo "$value <br>";
 $first_query=<<<EOQ
  select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
  from Product P 
