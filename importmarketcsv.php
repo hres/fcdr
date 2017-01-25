@@ -410,58 +410,7 @@ a.close:hover {
 <main role="main" property="mainContentOfPage" class="container">
 
 		
-		<div class="container" id="tabs" >
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="importdata.php">Import Market Share </a></li>
-    <li><a href="importlabel.php">Import Package Label</a></li>
-    <li><a  href="importimages.php">Import Images</a></li>
-  </ul>
-
-  
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-
-
-<section style="margin-top: 15px;" class="hidethis">
-
-<div class="well" style="margin-right:2%;">
-<div style="margin-top:-37px;"><strong><h3>Select an Excel File</h3></strong></div>
-
-<form method="post"  action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data" id="form1">
-	
-	<label class="btn btn-primary" for="my-file-selector">
-    <input id="my-file-selector" type="file" name="file_save" style="display:none;" onchange="$('#upload-file-info').html($(this).val());">
-    Browse
-</label>
-<span class='label label-info' id="upload-file-info"></span>
-<div style="float:right;">
-<label class="btn btn-primary" for="my-file-selector2">
-    <input id="my-file-selector2" type="submit" onclick="myFunction()" style="display:none;" name="search" onchange="$('#upload-file-info').html($(this).val());">
-    Import
-</label></div>
-
-	</form>
-	
-	</div>
-</section>
-
-	
-	  </div> 
-    <div id="menu1" class="tab-pane fade">
-
-  </div>
-    <div id="menu2" class="tab-pane fade">
- 
-
-  </div>
-    <div >
-	</div>
-  </div>
-  <div style="margin-top:10px;"><strong><h3>Report log file(s)</h3></strong></div>
-  	<div id="hide" style="display:none; margin-bottom:3%;"><h3>Your data is being processed, this can take several minutes...</h3></div>
-  <div style="height:400px; overflow:auto;"><?php include 'impormarketcsv.php';?></div>
-</div>
-
+<?php include 'reportqueries.php';?>
 		
 	
 		
