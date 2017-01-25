@@ -91,7 +91,7 @@ echo "$value*** <br>";
                                         echo "something went wrong ".$conn->error;
                                         
                                     }
-									$stmt_first->bind_param("s",$mysqli_real_escape_string($conn, $value)); //mysqli_real_escape_string($conn, $value));
+									$stmt_first->bind_param("s",mysqli_real_escape_string($conn, $value)); //mysqli_real_escape_string($conn, $value));
 								    $stmt_first->execute();
                                     $stmt_first->bind_result($number_of_product, $sum_kilo_vol);
                                     $stmt_first->fetch();
