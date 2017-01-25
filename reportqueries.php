@@ -41,7 +41,7 @@ $first_query=<<<EOQA
  LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
  INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
  WHERE Sales.Nielsen_Category = ? 
- and C.Classification_Number IN ('1.5101','1.6001')
+ and C.Classification_Number IN implode (',', $list_of_classification)
 
 EOQA;
 
@@ -107,7 +107,6 @@ foreach ($list_of_nielsen_category as $value) {
 }
 
 
-///////////////////////////////
 
  mysqli_close($conn);
 
