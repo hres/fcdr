@@ -34,6 +34,38 @@ if($stmt_classification = $conn->prepare("Select Classification_Number from Clas
 //  $query .= "WHERE " . implode (' AND ', $conditions);
 
 
+$first_query=<<<EOQA
+ select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number IN ('1.5101','1.6001')
+
+EOQA;
+
+$second_query=<<<EOQB
+ select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number = '99.9998'
+
+EOQB;
+
+$third_query=<<<EOQC
+ select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number = '99.9999'
+
+EOQC;
 
 
 
@@ -50,16 +82,7 @@ echo "###################";
 
 foreach ($list_of_nielsen_category as $value) {
 echo "$value <br>";
-$first_query=<<<EOQ
- select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
- from Product P 
- LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
- LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
- INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
- WHERE Sales.Nielsen_Category = ? 
- and C.Classification_Number IN ('1.5101','1.6001')
 
-EOQ;
 
 
 									$stmt_first = $conn->prepare($first_query);
