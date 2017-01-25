@@ -101,7 +101,7 @@ echo "$value*** <br>";
 
   									$stmt_second->bind_param("s",$value); //mysqli_real_escape_string($conn, $value));
 								    $stmt_second->execute();
-                                    $stmt_second->bind_result($number_of_product_1, $sum_kilo_vol);
+                                    $stmt_second->bind_result($number_of_product_1, $sum_kilo_vol_1);
                                     $stmt_second->fetch();
 
     
