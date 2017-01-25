@@ -81,8 +81,9 @@ echo "###################";
 ////////////////////////////////
 
 
-									$stmt_first = $conn->prepare($first_query);
-
+								$stmt_first = $conn->prepare($first_query);
+								$stmt_second = $conn->prepare($second_query);
+                        	$stmt_third = $conn->prepare($third_query);
                                     if(!$stmt_first){
                                         echo "something went wrong ".$conn->error;
                                         
@@ -98,7 +99,12 @@ echo "$value*** <br>";
                                     $stmt_first->bind_result($number_of_product, $sum_kilo_vol);
                                     $stmt_first->fetch();
 
-   
+  									$stmt_second->bind_param("s",mysqli_real_escape_string($conn, $value)); //mysqli_real_escape_string($conn, $value));
+								    $stmt_second->execute();
+                                    $stmt_second->bind_result($number_of_product, $sum_kilo_vol);
+                                    $stmt_second->fetch();
+
+    
    echo "'$value--', '$number_of_product'*** <br>"; //, '$sum_kilo_vol','$number_of_product_1','$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2'
                                  
 
