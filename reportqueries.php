@@ -81,7 +81,7 @@ echo "###################";
 ////////////////////////////////
 
 foreach ($list_of_nielsen_category as $value) {
-echo "$value <br>";
+echo "$value*** <br>";
 
 
 
@@ -97,7 +97,7 @@ echo "$value <br>";
                                     $stmt_first->fetch();
 
    
-   echo "'$value', '$number_of_product', '$sum_kilo_vol','$number_of_product_1','$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2'";
+   echo "'$value--', '$number_of_product'"; //, '$sum_kilo_vol','$number_of_product_1','$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2'
                                  
 
 
