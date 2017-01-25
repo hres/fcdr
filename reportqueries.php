@@ -68,6 +68,11 @@ $third_query=<<<EOQ
 EOQ;
 
 foreach ($list_of_nielsen_category as $value) {
+echo "$value";
+
+}
+
+foreach ($list_of_nielsen_category as $value) {
 
 
 
