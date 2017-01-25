@@ -70,7 +70,7 @@ EOQC;
 
 
 
-
+$count = 0;
 
 foreach ($list_of_classification as $value) {
 echo "$value";
@@ -80,9 +80,11 @@ echo "###################";
 
 ////////////////////////////////
 
+
 foreach ($list_of_nielsen_category as $value) {
 echo "$value*** <br>";
-
+++$count;
+if($count <3) continue;
 
 
 									$stmt_first = $conn->prepare($first_query);
