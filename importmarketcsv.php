@@ -252,29 +252,29 @@ $(document).ready(function() {
 
 <div class="well" style="margin-right:2%;">
 
-	<form role="form" method="post" action="#" id="vids-search-form1">
+	<form role="form" method="post" action="#" id="vids-search-form1" >
 
 	
 		<div class="row">
 
-			<div class="form-group col-sm-4">
-				<label for="Sales_UPC">Sales UPC</label>
-				<input type="text" class="form-control" name="Sales_UPC" id="Sales_UPC" placeholder="Enter The Sales UPC code" />
-			</div>
-				<div class="form-group col-sm-4">
-				<label for="Sales_Description">Sales Description</label>
-				<input type="text" class="form-control" name="Sales_Description" id="Sales_Description" placeholder="Enter the Sales Description" />
-			</div>
-		
-			<div class="form-group col-sm-4">
-				<label for="Source">Source</label>
-				<input type="text" class="form-control" name="Source" id="Source" placeholder="Enter the Source" />
-			</div>
-		</div>
-		
-		<div class="row">
-		<div class="form-group col-sm-4">
-	<label for="Sales_Year" name="Year_Recorded">Sales Year</label>
+				   <div class="form-group col-sm-4" >
+      <label for="date2">
+     Collection Date (YYYY-MM-DD) <br>From
+      </label>
+      <div class="">
+       <div class="input-group">
+      
+        <input class="form-control" id="date2" name="date2" placeholder="YYYY/MM/DD" type="text" value=""/>
+ <div class="input-group-addon">
+         <i class="fa fa-calendar">
+         </i>
+        </div>      
+	  </div>
+      </div>
+     </div>
+
+	 <div class="form-group col-sm-4">
+	<label for="Sales_Year" name="Year_Recorded"><br>Sales Year</label>
       <select class="form-control" id="Sales_Year" name="Sales_Year">
 	    <option value="">Select a year</option>
 	
@@ -296,21 +296,17 @@ if (!$result) {
 ?>	
       
       </select></div>
-		
-			<div class="form-group col-sm-4">
-				<label for="Nielsen_Category">Nielsen Category</label>
+	  			<div class="form-group col-sm-4">
+				<label for="Nielsen_Category"><br>Classification Number</label>
 				<input type="text" class="form-control" name="Nielsen_Category" id="Nielsen_Category" placeholder="Enter the Neilson Category" />
 			</div>
-				<div class="form-group col-sm-4">
-				<label for="Comments">Comments</label>
-				<input type="text" class="form-control" name="Comments" id="Comments" placeholder="Enter the Comments" />
-			</div>
-		
 		</div>
-				<div class="row">
+		
+		<div class="row">
+		
 	   <div class="form-group col-sm-4">
       <label for="date1">
-     Collection Date (YYYY-MM-DD)<br> From
+     Collection Date (YYYY-MM-DD)<br> To
       </label>
       <div class="">
        <div class="input-group">
@@ -324,23 +320,19 @@ if (!$result) {
       </div>
      </div>
 		
-				   <div class="form-group col-sm-4" >
-      <label for="date2">
-     Collection Date (YYYY-MM-DD) <br>To
-      </label>
-      <div class="">
-       <div class="input-group">
-      
-        <input class="form-control" id="date2" name="date2" placeholder="YYYY/MM/DD" type="text" value=""/>
- <div class="input-group-addon">
-         <i class="fa fa-calendar">
-         </i>
-        </div>      
-	  </div>
-      </div>
-     </div>
-			<div class="form-group col-sm-4 "> <br>
-				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search1">Search</button>
+			<div class="form-group col-sm-4">
+				<label for="Nielsen_Category"><br>Nielsen Category</label>
+				<input type="text" class="form-control" name="Nielsen_Category" id="Nielsen_Category" placeholder="Enter the Neilson Category" />
+			</div>
+			<div class="form-group col-sm-4">
+				<label for="Nielsen_Category"><br>Classification Type</label>
+				<input type="text" class="form-control" name="Nielsen_Category" id="Nielsen_Category" placeholder="Enter the Neilson Category" />
+			</div>
+		
+		</div>
+					<div class="row">
+			<div class="form-group col-sm-4 submit_button" >
+				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search">Save</button>
 			</div>
 		</div>
 	</form>
