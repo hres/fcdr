@@ -80,7 +80,7 @@ EOQC;
 								$stmt_second = $conn->prepare($second_query);
                         	    $stmt_third = $conn->prepare($third_query);
                                     if(!$stmt_first){
-                                        echo "something went wrong ".$conn->error;
+                                        echo "something went wrong sds".$conn->error;
                                         
                                     }
 
