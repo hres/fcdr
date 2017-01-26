@@ -36,7 +36,7 @@ if($stmt_classification = $conn->prepare("Select Classification_Number from Clas
 $array1 = implode(',', array_fill(0, count($list_of_classification), '?'));
 
 $num_s = str_repeat('s',count($list_of_classification));
-echo "$list_of_classification";
+
 $first_query=<<<EOQA
  select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
  from Product P 
