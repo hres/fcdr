@@ -238,6 +238,10 @@ $(document).ready(function() {
 
 
 }
+		.submit_button{
+		float:right;
+		margin-bottom:-5px;
+	}
 </style>
 </head>
 
