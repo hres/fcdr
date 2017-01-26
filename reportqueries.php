@@ -1,8 +1,8 @@
 <?php
 
 include ('connection.php');
-	 error_reporting(E_ALL);
-ini_set('display_errors', 1); 
+	 //error_reporting(E_ALL);
+//ini_set('display_errors', 1); 
 $list_of_classification = array();
 $list_of_nielsen_category = array();
 
@@ -17,7 +17,7 @@ if($stmt = $conn->prepare("Select distinct Nielsen_Category from Sales")){
 }
 
 
-if($stmt_classification = $conn->prepare("Select Classification_Number from Classification where Classification_Number NOT IN ('99.9999','99.9998')")){
+if($stmt_classification = $conn->prepare("Select Distinct Classification_Number from Classification where Classification_Number NOT IN ('99.9999','99.9998')")){
     $stmt_classification->execute();
     $stmt_classification->bind_result($Classification_Number);
     
@@ -35,9 +35,8 @@ if($stmt_classification = $conn->prepare("Select Classification_Number from Clas
 
 $array1 = implode(",",$list_of_classification);
 
-echo "$array1";
 $first_query=<<<EOQA
- select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
+ select count(Sales.SalesID), SUM(Sales.Kilo_Vol)
  from Product P 
  LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
  LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
@@ -48,7 +47,7 @@ $first_query=<<<EOQA
 EOQA;
 
 $second_query=<<<EOQB
- select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
+ select count(Sales.SalesID), SUM(Sales.Kilo_Vol)
  from Product P 
  LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
  LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
@@ -59,7 +58,7 @@ $second_query=<<<EOQB
 EOQB;
 
 $third_query=<<<EOQC
- select count(distinct P.ProductID), SUM(Sales.Kilo_Vol)
+ select count(Sales.SalesID), SUM(Sales.Kilo_Vol)
  from Product P 
  LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
  LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
@@ -83,6 +82,16 @@ EOQC;
                                         
                                     }
 
+
+ echo "<thead> <tr><th rowspan=\"2\">Neilsen Category Name </th><th colspan=\"3\"> Product assigned in <br> Sodium Categories </th>
+    <th colspan=\"3\"> Product assigned outise <br> Sodium Categories </th><th colspan=\"3\"> Product excluded</th><th colspan=\"2\"> Total </th></tr>";
+
+ echo "<tr><th>N</th> <th>Kilo Volume</th><th>Pct</th><th>N</th>  <th>Kilo Volume</th><th>Pct</th> <th>N</th>  <th>Kilo Volume</th><th>Pct</th><th>N</th>  <th>Kilo Volume</th></tr></thead> <tbody></tr> ";
+    
+
+
+                                 
+
 foreach ($list_of_nielsen_category as $value) {
 
 
@@ -102,13 +111,25 @@ foreach ($list_of_nielsen_category as $value) {
                                     $stmt_third->bind_result($number_of_product_2, $sum_kilo_vol_2);
                                     $stmt_third->fetch();
 
-   echo "'$value', '$number_of_product', '$number_of_product_1', '$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2' <br>"; //, '$sum_kilo_vol','$number_of_product_1','$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2'
-                                 
+   //echo "'$value', '$number_of_product', '$number_of_product_1', '$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2' <br>"; //, '$sum_kilo_vol','$number_of_product_1','$sum_kilo_vol_1','$number_of_product_2','$sum_kilo_vol_2'
+                                   //Total number of Product
+                                    $total_number_of_product = $number_of_product + $number_of_product_1 + $number_of_product_2;
+                                   //Total Kilo vol
+                                    $total_kilo_vol = $sum_kilo_vol + $sum_kilo_vol_1 + $sum_kilo_vol_2;
+                                  //Pct Product assigned in sodium Category
+                                    $pct_1 = (empty($total_kilo_vol) || $total_kilo_vol == 0 ?0 :(($sum_kilo_vol/$total_kilo_vol) * 100));
+                                    //Pct Product assigned Outside sodium Category
+                                    $pct_2 =  (empty($total_kilo_vol) || $total_kilo_vol == 0 ?0 :(($sum_kilo_vol_1/$total_kilo_vol) * 100));
+                                    //Pct Product excluded
+                                    $pct_3 = (empty($total_kilo_vol) || $total_kilo_vol == 0 ?0 :(($sum_kilo_vol_2/$total_kilo_vol) * 100));
 
+
+                                    //echo "<br> Total # of  $total_number_of_product";
+        echo "<tr><td>$value</td><td>$number_of_product</td><td>$sum_kilo_vol</td><td>$pct_1</td><td>$number_of_product_1</td><td>$sum_kilo_vol_1</td><td>$pct_2</td><td>$number_of_product_2</td><td>$sum_kilo_vol_2</td><td>$pct_3</td><td>$total_number_of_product</td><td>$sum_kilo_vol</td></tr>";                            
 
 }
 
-
+echo " </tbody></table>";
 
  mysqli_close($conn);
 
