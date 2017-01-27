@@ -56,7 +56,6 @@
 	<script type="text/javascript" class="init">
 	
 
-<script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
 
 <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
 <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
