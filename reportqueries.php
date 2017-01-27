@@ -1,8 +1,10 @@
 <?php
 
 include ('connection.php');
-	 //error_reporting(E_ALL);
-//ini_set('display_errors', 1); 
+
+	if(isset($_POST['search'])) {
+	 error_reporting(E_ALL);
+ini_set('display_errors', 1); 
 $list_of_classification = array();
 $list_of_nielsen_category = array();
 
@@ -34,6 +36,137 @@ if($stmt_classification = $conn->prepare("Select Distinct Classification_Number 
 //  $query .= "WHERE " . implode (' AND ', $conditions);
 
 $array1 = implode(",",$list_of_classification);
+ if(isset($_POST['date1']) && $_POST['date1'] != ''){
+			 
+			   $from_date = $_POST['date1'];
+
+				$to_date = $_POST['date2'];
+
+// AND Collection_Date between '$from_date' and '$to_date'
+
+ 
+ if(isset($_POST['Sales_Year']) && $_POST['Sales_Year'] != ''){
+
+
+
+     $Sales_year = $_POST['Sales_Year'];
+$first_query=<<<EOQA
+ select count(Sales.SalesID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number IN ($array1) AND Collection_Date between '$from_date' and '$to_date' AND Sales_Year = '$Sales_Year'
+
+EOQA;
+
+$second_query=<<<EOQB
+ select count(Sales.SalesID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number = '99.9998' AND Collection_Date between '$from_date' and '$to_date' AND Sales_Year = '$Sales_Year'
+
+EOQB;
+
+$third_query=<<<EOQC
+ select count(Sales.SalesID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number = '99.9999' AND Collection_Date between '$from_date' and '$to_date' AND Sales_Year = '$Sales_Year'
+
+EOQC;
+
+
+ }else{
+
+ 
+
+
+
+$first_query=<<<EOQA
+ select count(Sales.SalesID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number IN ($array1) AND Collection_Date between '$from_date' and '$to_date'
+
+EOQA;
+
+$second_query=<<<EOQB
+ select count(Sales.SalesID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number = '99.9998' AND Collection_Date between '$from_date' and '$to_date'
+
+EOQB;
+
+$third_query=<<<EOQC
+ select count(Sales.SalesID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number = '99.9999' AND Collection_Date between '$from_date' and '$to_date'
+
+EOQC;
+}
+}else{
+
+ if(isset($_POST['Sales_Year']) && $_POST['Sales_Year'] != ''){
+
+
+ $Sales_year1 = $_POST['Sales_Year'];
+
+$first_query=<<<EOQA
+ select count(Sales.SalesID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number IN ($array1) AND Sales_Year ="$Sales_year1"
+
+EOQA;
+
+$second_query=<<<EOQB
+ select count(Sales.SalesID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number = '99.9998' AND Sales_Year ="$Sales_year1"
+
+EOQB;
+
+$third_query=<<<EOQC
+ select count(Sales.SalesID), SUM(Sales.Kilo_Vol)
+ from Product P 
+ LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID 
+ LEFT JOIN Classification C  ON PC.ClassificationID = C.ClassificationID
+ INNER JOIN Sales ON P.ProductID = Sales.ProductIDS
+ WHERE Sales.Nielsen_Category = ? 
+ and C.Classification_Number = '99.9999' AND Sales_Year ="$Sales_year1"
+
+EOQC;
+
+
+
+
+ }else{ 
 
 $first_query=<<<EOQA
  select count(Sales.SalesID), SUM(Sales.Kilo_Vol)
@@ -68,6 +201,8 @@ $third_query=<<<EOQC
 
 EOQC;
 
+}
+}
 
 
 
@@ -130,8 +265,10 @@ foreach ($list_of_nielsen_category as $value) {
 }
 
 echo " </tbody></table>";
+echo "<script>document.getElementById(\"toHide\").style.display= \"block\";</script>";
 
  mysqli_close($conn);
+    }
 
 ?>
 

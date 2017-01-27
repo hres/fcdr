@@ -252,11 +252,18 @@ $(document).ready(function() {
 <?php include 'header.php';?>
 
 
+
 <main role="main" property="mainContentOfPage" class="container">
+
+<br>
+<details style="margin-right:2%;">
+  <summary><h3>Sampling Frame Summury Report</h3></summary>
+  <h4>Leave the search fields blank for a full report</h4>
+</details>
 
 <div class="well" style="margin-right:2%;">
 
-	<form role="form" method="post" action="#" id="vids-search-form1" >
+	<form role="form" method="post" action="#" id="vids-search-form1" onsubmit ="showDiv()">
 
 	
 		<div class="row">
@@ -342,7 +349,7 @@ if (!$result) {
 	</form>
 	</div>
 
-<div class="well" style="margin-right:2%; overflow:auto;">
+<div class="well" style="margin-right:2%; overflow:auto;" id="toHide">
 <table id="example" class="display nowrap" cellspacing="0" width="100%">
 
 
