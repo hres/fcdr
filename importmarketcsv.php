@@ -53,16 +53,6 @@
 	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js">
 	</script>
 
-
-
-<script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
-
-<!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
-
-<!--Font Awesome (added because you use icons in your prepend/append)-->
-<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
-
 	<script type="text/javascript" class="init">
 	
 
@@ -200,7 +190,9 @@ $(document).ready(function() {
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"></script>
 
 <style type="text/css">
-
+#toHide{
+	display:none;
+}
 
 	.mainsearch{
 			border-style: solid;
@@ -238,10 +230,18 @@ $(document).ready(function() {
 
 
 }
-		.submit_button{
+
+		.button1{
+			margin-left:84.5%;
+			
+		}
+		.btn-default{
+			width:150px;
+		}
+				.submit_button{
 		float:right;
 		margin-bottom:-5px;
-	}
+	}	
 </style>
 </head>
 
@@ -254,9 +254,15 @@ $(document).ready(function() {
 
 <main role="main" property="mainContentOfPage" class="container">
 
+<br>
+<details style="margin-right:2%;">
+  <summary><h3>Sampling Frame Summury Report</h3></summary>
+  <h4>Leave the search fields blank for a full report</h4>
+</details>
+
 <div class="well" style="margin-right:2%;">
 
-	<form role="form" method="post" action="#" id="vids-search-form1" >
+	<form role="form" method="post" action="#" id="vids-search-form1" onsubmit ="showDiv()">
 
 	
 		<div class="row">
@@ -342,7 +348,7 @@ if (!$result) {
 	</form>
 	</div>
 
-<div class="well" style="margin-right:2%; overflow:auto;">
+<div class="well" style="margin-right:2%; overflow:auto;" id="toHide">
 <table id="example" class="display nowrap" cellspacing="0" width="100%">
 
 
@@ -371,11 +377,6 @@ if (!$result) {
 					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 				  })();
 	</script>
-	<script>
-function myFunction() {
-    document.getElementById("hide").style.display="block";;
-}
-</script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
@@ -423,6 +424,10 @@ function myFunction() {
 });
 		})
 </script>
+
+
+</script>
+
 
 </body>
 </html>
