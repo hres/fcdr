@@ -10,6 +10,9 @@
 	$username = $_POST['uname'];
 	$password = $_POST['psw'];
 	//Username,Password
+
+
+	
 	$query = "Select * from Users where Username = '$username' AND Password = '$password'";
 	$result = mysqli_query($conn,$query);
 	

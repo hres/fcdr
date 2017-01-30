@@ -23,11 +23,22 @@ if (!$result) {
 }
 
 
-	$query2 = "  SELECT * FROM Package P where P.PackageID = $PackageID";
-	$result2 = mysqli_query($conn,$query2);
 
 
-	$row = $result2->fetch_assoc();
+	$fill_package =<<<EOQ
+		Select * from Package P 
+		where P.PackageID = ?
+
+
+EOQ;
+
+							$stmt = $conn->prepare($fill_package);
+					     	$stmt->bind_param("i",$PackageID);
+							$result1 = $stmt->execute();	
+							$result = $stmt->get_result();											
+							
+				
+	$row = $result->fetch_assoc();
 
 $conn->close();
 

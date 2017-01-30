@@ -5,7 +5,21 @@
 $PackageID = $_GET['PackageID'];
 $query = "Select * from $dbname.Images where LabelID = $PackageID";
 
-$result = mysqli_query($conn,$query);
+
+	$get_images =<<<EOQ
+		Select * from Images 
+		where LabelID = ?
+
+EOQ;
+
+							$stmt = $conn->prepare($get_images);
+					     	$stmt->bind_param("i",$PackageID);
+							$result1 = $stmt->execute();	
+							$result = $stmt->get_result();											
+							
+				
+
+
 
   
   $count = 0;
