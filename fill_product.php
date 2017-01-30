@@ -7,11 +7,9 @@ $PID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 
 	$fill_product=<<<EOQ
-		Select * Product P LEFT JOIN Product_Classification PC
+		Select * from Product P LEFT JOIN Product_Classification PC
 		ON P.ProductID = PC.ProductID LEFT JOIN Classification
 		C ON PC.ClassificationID = C.ClassificationID  where P.ProductID = ?
-
-
 EOQ;
 
 							$stmt = $conn->prepare($fill_product);
