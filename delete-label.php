@@ -11,6 +11,25 @@ $ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
 		if(isset($_POST['delete-label'])) {
 			
 			//$query = "Delete from $dbname.Product_Component where PackageID = $packageID"; 
+
+
+
+$delete_images =<<<EOQ
+		Delete from Images
+		where LabelID = ?
+
+
+EOQ;
+
+							$stmt = $conn->prepare($delete_images);
+					     	$stmt->bind_param("i",$packageID);
+							$resultX = $stmt->execute();
+
+
+
+
+
+
 $delete_component =<<<EOQ
 		Delete from Product_Component
 		where PackageID = ?

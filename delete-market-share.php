@@ -8,8 +8,20 @@ $ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 		if(isset($_POST['delete-market-share'])) {
 			
-			$query = "Delete from $dbname.Sales where SalesID = $salesID"; 
-			$result = mysqli_query($conn,$query);
+
+
+$delete_sales =<<<EOQ
+		Delete from Sales
+		where SalesID = ?
+
+
+EOQ;
+
+							$stmt = $conn->prepare($delete_sales);
+					     	$stmt->bind_param("i",$salesID);
+							$result = $stmt->execute();
+
+
 			if (!$result ) {
     echo "failed to delete the Market Share";
 
