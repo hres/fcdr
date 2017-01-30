@@ -9,7 +9,6 @@ $salesID = ($_GET['SalesID']?$_GET['SalesID']:'');
 
 
 		if(isset($_POST['search'])) {
-$des = mysqli_real_escape_string($conn,$_POST['Description']);
 			$Dollar_Volume = mysqli_real_escape_string($conn,$_POST['Dollar_Volume']);
 			$kilo_vol = mysqli_real_escape_string($conn,$_POST['Kilo_Vol']);
 			
