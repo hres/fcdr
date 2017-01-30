@@ -9,53 +9,94 @@ $salesID = ($_GET['SalesID']?$_GET['SalesID']:'');
 
 
 		if(isset($_POST['search'])) {
-			$Dollar_Volume = mysqli_real_escape_string($conn,$_POST['Dollar_Volume']);
-			$kilo_vol = mysqli_real_escape_string($conn,$_POST['Kilo_Vol']);
-			
-			$Sales_Year = mysqli_real_escape_string($conn,$_POST['Sales_Year']);
-			$Nielsen_Category = mysqli_real_escape_string($conn,$_POST['Nielsen_Category']);
-			$Source = mysqli_real_escape_string($conn,$_POST['Source']);
-			$Sales_Description = mysqli_real_escape_string($conn,$_POST['Sales_Description']);
-			$Comments = mysqli_real_escape_string($conn,$_POST['Comments']);
-			
-			$Collection_Date = mysqli_real_escape_string($conn,$_POST['Collection_Date']);
-			$Collection_Date     = (empty($Collection_Date) && strlen($Collection_Date) == 0 ?NULL :$Collection_Date);
+
+
 
 			
-			$Brand = mysqli_real_escape_string($conn,$_POST['Brand']);
-			$Dollar_Rank =mysqli_real_escape_string($conn,$_POST['Dollar_Rank']);
-			$Dollar_Volume_PerCentage_Change = mysqli_real_escape_string($conn,$_POST['Dollar_Volume_PerCentage_Change']);
-			$Kilo_Volume_Percent_Change = mysqli_real_escape_string($conn,$_POST['Kilo_Volume_Percent_Change']);
-			$Average_AC_Dist = mysqli_real_escape_string($conn,$_POST['Average_AC_Dist']);
-			$Average_Retail_Price = mysqli_real_escape_string($conn,$_POST['Average_Retail_Price']);
-			$Dollar_Volume_Total = mysqli_real_escape_string($conn,$_POST['Dollar_Volume_Total']);
-			$Kilo_Volume_Total =mysqli_real_escape_string($conn,$_POST['Kilo_Volume_Total']);
-			$Control_Label_Flag = mysqli_real_escape_string($conn,$_POST['Control_Label_Flag']);
-			$Dollar_Share = mysqli_real_escape_string($conn,$_POST['Dollar_Share']);
-			$Kilo_Share = mysqli_real_escape_string($conn,$_POST['Kilo_Share']);
-			$Cluster_Number = mysqli_real_escape_string($conn,$_POST['Cluster_Number']);
-			$Product_Grouping = mysqli_real_escape_string($conn,$_POST['Product_Grouping']);
-			$Kilo_Rank = mysqli_real_escape_string($conn,$_POST['Kilo_Rank']);
 			
-			
-$query="UPDATE  $dbname.Sales SET Dollar_Volume='$Dollar_Volume',Kilo_Vol='$kilo_vol',Sales_Year='$Sales_Year',
-		Nielsen_Category = '$Nielsen_Category', Source = '$Source', Sales_Description ='$Sales_Description', 
-		Comments='$Comments',Collection_Date='$Collection_Date',
-		Brand = '$Brand', Dollar_Rank = '$Dollar_Rank', Dollar_Volume_PerCentage_Change = '$Dollar_Volume_PerCentage_Change', 
-		Kilo_Volume_Percent_Change = '$Kilo_Volume_Percent_Change',
- 		Average_AC_Dist = '$Average_AC_Dist', Average_Retail_Price='$Average_Retail_Price',
- 		Dollar_Volume_Total='$Dollar_Volume_Total', Kilo_Volume_Total='$Kilo_Volume_Total',
-		Control_Label_Flag ='$Control_Label_Flag', Dollar_Share = '$Dollar_Share',
-		Cluster_Number ='$Cluster_Number', Product_Grouping = '$Product_Grouping',
- 		Kilo_Share = '$Kilo_Share', Kilo_Rank = $Kilo_Rank WHERE SalesID='$salesID'";
+
+		$_POST['Collection_Date']=  (empty($_POST['Collection_Date']) && strlen($_POST['Collection_Date']) == 0 ?NULL :$_POST['Collection_Date']);
+		$_POST['Dollar_Volume']=  (empty($_POST['Dollar_Volume']) && strlen($_POST['Dollar_Volume']) == 0 ?NULL :$_POST['Dollar_Volume']);
+		$_POST['Kilo_Vol']=  (empty($_POST['Kilo_Vol']) && strlen($_POST['Kilo_Vol']) == 0 ?NULL :$_POST['Kilo_Vol']);
+		$_POST['Sales_Year']=  (empty($_POST['Sales_Year']) && strlen($_POST['Sales_Year']) == 0 ?NULL :$_POST['Sales_Year']);
+		$_POST['Dollar_Rank']=  (empty($_POST['Dollar_Rank']) && strlen($_POST['Dollar_Rank']) == 0 ?NULL :$_POST['Dollar_Rank']);
+		$_POST['Dollar_Volume_PerCentage_Change']=  (empty($_POST['Dollar_Volume_PerCentage_Change']) && strlen($_POST['Dollar_Volume_PerCentage_Change']) == 0 ?NULL :$_POST['Dollar_Volume_PerCentage_Change']);
+		$_POST['Kilo_Volume_Percent_Change']=  (empty($_POST['Kilo_Volume_Percent_Change']) && strlen($_POST['Kilo_Volume_Percent_Change']) == 0 ?NULL :$_POST['Kilo_Volume_Percent_Change']);
+		$_POST['Average_AC_Dist']=  (empty($_POST['Average_AC_Dist']) && strlen($_POST['Average_AC_Dist']) == 0 ?NULL :$_POST['Average_AC_Dist']);
+		$_POST['Average_Retail_Price']=  (empty($_POST['Average_Retail_Price']) && strlen($_POST['Average_Retail_Price']) == 0 ?NULL :$_POST['Average_Retail_Price']);
+		$_POST['Dollar_Volume_Total']=  (empty($_POST['Dollar_Volume_Total']) && strlen($_POST['Dollar_Volume_Total']) == 0 ?NULL :$_POST['Dollar_Volume_Total']);
+
+		$_POST['Kilo_Volume_Total']=  (empty($_POST['Kilo_Volume_Total']) && strlen($_POST['Kilo_Volume_Total']) == 0 ?NULL :$_POST['Kilo_Volume_Total']);
+		$_POST['Dollar_Share']=  (empty($_POST['Dollar_Share']) && strlen($_POST['Dollar_Share']) == 0 ?NULL :$_POST['Dollar_Share']);
+		$_POST['Cluster_Number']=  (empty($_POST['Cluster_Number']) && strlen($_POST['Cluster_Number']) == 0 ?NULL :$_POST['Cluster_Number']);
+
+		$_POST['Kilo_Volume_Total']=  (empty($_POST['Product_Grouping']) && strlen($_POST['Product_Grouping']) == 0 ?NULL :$_POST['Product_Grouping']);
+		$_POST['Kilo_Share']=  (empty($_POST['Kilo_Share']) && strlen($_POST['Kilo_Share']) == 0 ?NULL :$_POST['Kilo_Share']);
+		$_POST['Kilo_Rank']=  (empty($_POST['Kilo_Rank']) && strlen($_POST['Kilo_Rank']) == 0 ?NULL :$_POST['Kilo_Rank']);
 		
-$sql = "Select * from $dbname.Sales WHERE SalesID='$salesID'";
+		$param = array(
 	
-	$result = mysqli_query($conn,$query);
-	$result1 = mysqli_query($conn,$sql);
+			$_POST['Dollar_Volume'],
+			$_POST['Kilo_Vol'],
+			$_POST['Sales_Year'],
+			$_POST['Nielsen_Category'],
+			$_POST['Source'],
+			$_POST['Sales_Description'],
+			$_POST['Comments'],
+			$_POST['Collection_Date'],
+			$_POST['Brand'],
+			$_POST['Dollar_Rank'],
+			$_POST['Dollar_Volume_PerCentage_Change'],
+			$_POST['Kilo_Volume_Percent_Change'],	
+			$_POST['Average_AC_Dist'],
+			$_POST['Average_Retail_Price'],							
+			$_POST['Dollar_Volume_Total'],
+			$_POST['Kilo_Volume_Total'],
+			$_POST['Control_Label_Flag'],
+			$_POST['Dollar_Share'], 
+			$_POST['Cluster_Number'],
+			$_POST['Product_Grouping'],
+			$_POST['Kilo_Share'],
+			$_POST['Kilo_Rank'],
+			
+		);
+
+
+		$query =<<<EOQ
+UPDATE Sales SET
+       Dollar_Volume = ?,
+       Kilo_Vol = ?,
+       Sales_Year = ?,
+       Nielsen_Category = ?,
+       Source = ?,
+       Sales_Description = ?,
+       Comments = ?,
+       Collection_Date = ?,
+       Brand = ?,
+       Dollar_Rank = ?,
+       Dollar_Volume_PerCentage_Change = ?,
+	   Kilo_Volume_Percent_Change = ?,
+	   Average_AC_Dist = ?,
+	   Average_Retail_Price = ?,   
+       Dollar_Volume_Total = ?,
+       Kilo_Volume_Total = ?,
+       Control_Label_Flag = ?,
+       Dollar_Share = ?,
+       Cluster_Number = ?,
+	   Product_Grouping = ?,
+	   Kilo_Share = ?,
+	   Kilo_Rank = ?
+WHERE SalesID = ?
+EOQ;
+
+		$stmt = $conn->prepare($query);
+
+		$stmt->bind_param("ddissssssdddddddsddsdds", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21],$salesID);
 	
-	$row = $result1->fetch_assoc();
-	$pid= $row['ProductIDS'];
+	$result = $stmt->execute();
+
+		
+
 if (!$result) {
 		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to updated Market share</strong></h3>\";</script>";
 

@@ -131,19 +131,6 @@ $count = 0;
 		if(strlen ($senditem) < 1) continue;
 		echo "$senditem <br>";
    }  
-  //}
-  
-  
-  
-	
-    //show success message
-/*     echo "<h1>Uploaded:</h1>";    
-    if(is_array($files)){
-        echo "<ul>";
-        foreach($files as $file){
-            echo "<li>$file</li>";
-        }
-        echo "</ul>";
-    } */
+
 
 ?>
