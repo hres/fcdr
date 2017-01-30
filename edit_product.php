@@ -47,7 +47,6 @@
 <![endif]-->
 <noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
 
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 
 
