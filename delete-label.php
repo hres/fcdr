@@ -10,11 +10,33 @@ $ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 		if(isset($_POST['delete-label'])) {
 			
-			$query = "Delete from $dbname.Product_Component where PackageID = $packageID"; 
-			$result = mysqli_query($conn,$query);
-			$query2 = "Delete from $dbname.Package where PackageID = $packageID";
-			$result2 = mysqli_query($conn,$query2);
-		if (!$result or !result2 ) {
+			//$query = "Delete from $dbname.Product_Component where PackageID = $packageID"; 
+$delete_component =<<<EOQ
+		Delete from Product_Component
+		where PackageID = ?
+
+
+EOQ;
+
+							$stmt = $conn->prepare($delete_component);
+					     	$stmt->bind_param("i",$packageID);
+							$result = $stmt->execute();
+
+if($result){
+$delete_package =<<<EOQ
+		Delete from Package
+		where PackageID = ?
+
+
+EOQ;
+
+							$stmt_label = $conn->prepare($delete_package);
+					     	$stmt_label->bind_param("i",$packageID);
+							$result2 = $stmt_label->execute();
+
+
+
+		if (!$result or !$result2 ) {
     echo "failed to delete the Package Label";
 
 }else{
@@ -24,7 +46,10 @@ $ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
 	
 }
 
-		
+		}else{
+				echo "<h3>Failed to delete the package label...</h3>";
+
+		}	
 		}
 $conn->close();
 ?>
