@@ -34,7 +34,6 @@
 <script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 
 	
