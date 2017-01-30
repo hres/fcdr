@@ -22,7 +22,7 @@ EOQ;
 						
 							
 
-if (!$result) {
+if (!$result1) {
     echo "ERRORS";
 }
 	

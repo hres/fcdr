@@ -3,13 +3,25 @@
 <?php
 $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 	
-	
-	$query = "  SELECT * FROM $dbname.Package P WHERE P.PackageID = $packageID";
-	$result = mysqli_query($conn,$query);
-							
-							
 
-if (!$result) {
+	$fill_package =<<<EOQ
+		Select * from Package P 
+		where P.PackageID = ?
+
+
+EOQ;
+
+							$stmt = $conn->prepare($fill_package);
+					     	$stmt->bind_param("i",$packageID);
+							$result1 = $stmt->execute();	
+							$result = $stmt->get_result();											
+							
+				
+
+
+
+
+if (!$result1) {
     echo "ERRORS";
 }
 	
