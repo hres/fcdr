@@ -433,7 +433,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 <div class= "row">
 	<?php include 'connection.php';?>
 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Energy' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -453,7 +453,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Energy' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -471,7 +471,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
  <div class= "row" style="margin-top:4px;">
 	<?php include 'connection.php';?>
 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Energy kj' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -492,7 +492,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Energy kj' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -511,7 +511,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class= "row" style="margin-top:4px;">
 	<?php include 'connection.php';?>
 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Saturated + Trans Fat' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -534,7 +534,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Saturated + Trans Fat' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -552,7 +552,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
  <div class= "row" style="margin-top:4px;">
  		<?php include 'connection.php';?> 
 		 	<?php 
-			 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+			 
 			
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
@@ -578,7 +578,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 	<?php 
-			   $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+			   
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -596,7 +596,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 	  <?php 
-	  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Saturated Fat' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -619,7 +619,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Saturated Fat' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -635,7 +635,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		   <?php 
-		   $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+		   
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Trans Fat' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -659,7 +659,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Trans Fat' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -677,7 +677,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		   <?php 
-		   $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+		   
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat Polyunsaturated' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -700,7 +700,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
 <?php include 'connection.php';?>  
   <?php 
-   $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+   
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat Polyunsaturated' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -717,7 +717,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Omega-6 Polyunsaturated Fat' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -739,7 +739,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Omega-6 Polyunsaturated Fat' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -755,7 +755,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Omega-3 Polyunsaturated Fat' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -776,7 +776,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Omega-3 Polyunsaturated Fat' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -795,7 +795,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		   <?php
-		   $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:''); 
+		    
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat Monounsaturated' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -818,7 +818,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
 <?php include 'connection.php';?>  
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat Monounsaturated' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -839,7 +839,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		   <?php
-		   $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:''); 
+		    
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Carbohydrates' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -862,7 +862,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
 <?php include 'connection.php';?>  
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Carbohydrates' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -879,7 +879,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 	  <?php 
-	  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fibre' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -902,7 +902,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">   
 <?php include 'connection.php';?>  
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fibre' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -920,7 +920,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		   <?php 
-		   $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+		   
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Soluble Fibre' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -943,7 +943,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">  
   <?php include 'connection.php';?>
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Soluble Fibre' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -960,7 +960,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		  <?php 
-		  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+		  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.ComponentID = '10' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -984,7 +984,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">  
   <?php include 'connection.php';?>
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Insolube Fibre' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1000,7 +1000,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Sugars' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1022,7 +1022,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">	
 <?php include 'connection.php';?>  
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Sugars' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1038,7 +1038,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Sugars Alcohol' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1060,7 +1060,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">	
   <?php include 'connection.php';?>
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Sugars Alcohol' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1076,7 +1076,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Starch' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1098,7 +1098,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">	
 <?php include 'connection.php';?>
   <?php 
-  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Starch' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1114,7 +1114,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 		 		 <?php 
-									$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+									
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Protein' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1137,7 +1137,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 	  <?php 	
-				 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:''); 		 		    		 		  
+				  		 		    		 		  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Protein' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1153,7 +1153,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 <?php 
-$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Cholesterol' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1176,7 +1176,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   <?php 
-  	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+  	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Cholesterol' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1192,7 +1192,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 <?php 
-		 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+		 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Sodium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1215,7 +1215,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 <?php 
-		   $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+		   
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Sodium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1231,7 +1231,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 <?php 
-				  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+				  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Potassium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1254,7 +1254,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		 <?php 
-				$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+				
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Potassium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1271,7 +1271,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 		 <?php 
-		 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+		 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Calcium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1294,7 +1294,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		 		 <?php 
-				 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+				 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Calcium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1310,7 +1310,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 		 		 <?php 
-		$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Iron' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1333,7 +1333,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		 		 		 <?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Iron' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1351,7 +1351,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 	<?php 
-			$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+			
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin A' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1374,7 +1374,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		 <?php 
-					$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+					
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin A' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1392,7 +1392,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 		 		 		 <?php 
-		$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin C' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1415,7 +1415,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		 		 		 		 <?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin C' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1431,7 +1431,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 		 		 		 		 <?php 
-		$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin D' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1454,7 +1454,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		 		 		 		 		 <?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin D' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1471,7 +1471,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 		 		 		 		 		 <?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin E' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1494,7 +1494,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		 		 		 		 		 		 <?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin E' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1510,7 +1510,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 	 <?php 	 
-		$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');		 		 		 		 		
+				 		 		 		 		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin K' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1533,7 +1533,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 			 <?php  
-		$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');		 		 		 		 		 	
+				 		 		 		 		 	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin K' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1549,7 +1549,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 		 <?php 	
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');	 		 		 		 		 		 
+		 		 		 		 		 		 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Thiamine' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1571,7 +1571,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		 <?php
-					$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+					
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Thiamine' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1587,7 +1587,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 <?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');		 		 		 		 		 		 		 		 
+			 		 		 		 		 		 		 		 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Riboflavin' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1608,7 +1608,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 	 		 <?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Riboflavin' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1624,7 +1624,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		  <?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');		 		 		 		 		 		 		 		 		
+			 		 		 		 		 		 		 		 		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Niacin' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1647,7 +1647,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 	 <?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');	 		 		 		 		 		 		 		 		 		
+		 		 		 		 		 		 		 		 		 		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Niacin' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1663,7 +1663,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 		 		<?php 	
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');	 		 		 		 		 		 		 		  
+		 		 		 		 		 		 		 		  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin B6' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1685,7 +1685,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		 		 <?php  
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');		 		 		 		 		 		 		 		 		
+			 		 		 		 		 		 		 		 		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin B6' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1701,7 +1701,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 	 <?php	 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');		 		 		 		 
+			 		 		 		 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Folate' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1722,7 +1722,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		  <?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Folate' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1739,7 +1739,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 		 <?php  	
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');	 		 		 		 		 		 		 		 		 		 		
+		 		 		 		 		 		 		 		 		 		 		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin B12' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1761,7 +1761,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		 	 <?php	 	
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');	 		 		 		 		 		 		 		 		 		 		 
+		 		 		 		 		 		 		 		 		 		 		 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Vitamin B12' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1777,7 +1777,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 	 <?php
-		$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:''); 	 		 		 		 			
+		 	 		 		 		 			
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Biotin' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1799,7 +1799,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
    <?php 
-   $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');	 		 		 		 			
+   	 		 		 		 			
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Biotin' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1815,7 +1815,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		  <?php 
-		  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');		 		 		 		 		 		 		 		 		 		 		 		 		 		 		
+		  		 		 		 		 		 		 		 		 		 		 		 		 		 		 		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Choline' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1837,7 +1837,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		  <?php 		
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:''); 		 		 		 		 		 		 		 		 		 		 		 		 		 		
+	 		 		 		 		 		 		 		 		 		 		 		 		 		 		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Choline' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1853,7 +1853,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 	 <?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');	 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		
+		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Choline' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1875,7 +1875,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 	 <?php
-				$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:''); 	 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		
+				 	 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Choline' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1891,7 +1891,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 	 <?php 
-			  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+			  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Phosphorus' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1914,7 +1914,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
  	 <?php	
-	  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:''); 		 		 		 		 		 	 		 		 		 		 		 		 		 		 		 		 		 	
+	   		 		 		 		 		 	 		 		 		 		 		 		 		 		 		 		 		 	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Phosphorus' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1931,7 +1931,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		<?php 
-		$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');	 		 		 		 		 		 		 		 		 		 		 		 		 	
+			 		 		 		 		 		 		 		 		 		 		 		 		 	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Iodide' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1956,7 +1956,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		 		<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');	 		 		 		 		 		 		 		 		 		 		 		 		 	
+		 		 		 		 		 		 		 		 		 		 		 		 		 	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Iodide' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1976,7 +1976,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		 <?php 
-					$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+					
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Magnesium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -1995,7 +1995,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
 	 		 <?php 
-			  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+			  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Magnesium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2011,7 +2011,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 	 <?php 
-	 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Zinc' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2033,7 +2033,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
       </select>  </div>
 	  <?php include 'connection.php';?>
  		 <?php 
-		  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+		  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Zinc' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2051,7 +2051,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 <?php 
-				  $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+				  
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Selenium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2073,7 +2073,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
 		 		 		 		 <?php 
-									$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+									
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Selenium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2090,7 +2090,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 	 <?php 
-	 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Copper' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2112,7 +2112,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
 	 <?php 
-	 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Copper' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2129,7 +2129,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 	 <?php 
-	 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Manganese' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2151,7 +2151,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
  <?php 
- $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+ 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Manganese' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2169,7 +2169,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		 		 		 		 		 <?php 
-		$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Chromium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2191,7 +2191,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 		  <?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Chromium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2207,7 +2207,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 	 <?php 
-	 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Molybdenium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2229,7 +2229,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
 	 <?php 
-	 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Molybdenium' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2246,7 +2246,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
  <?php  
- $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+ 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Chloride' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2269,7 +2269,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   		 				 	<?php include 'connection.php';?>	 	
 	 <?php 
-	 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Chloride' AND   K.PackageID=$UPC12 AND PPD = 1
 ";
 	$result = mysqli_query($conn,$query);
@@ -2326,7 +2326,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 <div class= "row">
 	<?php include 'connection.php';?>
 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Energy' AND   K.PackageID=$UPC12 AND PPD = 0
 ";
 	$result = mysqli_query($conn,$query);
@@ -2349,7 +2349,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Energy' AND   K.PackageID=$UPC12 AND PPD = 0
 ";
 	$result = mysqli_query($conn,$query);
@@ -2366,7 +2366,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
  <div class= "row" style="margin-top:4px;">
 	<?php include 'connection.php';?>
 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Energy kj' AND   K.PackageID=$UPC12 AND PPD = 0
 ";
 	$result = mysqli_query($conn,$query);
@@ -2389,7 +2389,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Energy kj' AND   K.PackageID=$UPC12 AND PPD = 0
 ";
 	$result = mysqli_query($conn,$query);
@@ -2407,7 +2407,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 	<?php 
-			 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+			 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Saturated + Trans Fat' AND   K.PackageID=$UPC12 AND PPD = 0
 ";
 	$result = mysqli_query($conn,$query);
@@ -2429,7 +2429,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Saturated + Trans Fat' AND   K.PackageID=$UPC12 AND PPD = 0
 ";
 	$result = mysqli_query($conn,$query);
@@ -2448,7 +2448,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat' AND   K.PackageID=$UPC12 AND PPD = 0
 ";
 	$result = mysqli_query($conn,$query);
@@ -2470,7 +2470,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   <?php include 'connection.php';?>
   		 	<?php 
-	$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat' AND   K.PackageID=$UPC12 AND PPD = 0
 ";
 	$result = mysqli_query($conn,$query);
@@ -2485,7 +2485,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
  <div class= "row" style="margin-top:4px;">
  	<?php include 'connection.php';?>
  <?php 
- $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+ 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Saturated Fat' AND   K.PackageID=$UPC12 AND PPD = 0
 ";
 	$result = mysqli_query($conn,$query);
@@ -2509,7 +2509,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
    <?php 
-   $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+   
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Saturated Fat' AND   K.PackageID=$UPC12 AND PPD = 0
 ";
 	$result = mysqli_query($conn,$query);
@@ -2526,7 +2526,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <label class="col-sm-3 control-label">Trans Fat</label>
   	<?php include 'connection.php';?>
    <?php 
-   $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+   
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Trans Fat' AND   K.PackageID=$UPC12 AND PPD = 0
 ";
 	$result = mysqli_query($conn,$query);
@@ -2548,7 +2548,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
      <?php 
-	 $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+	 
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Trans Fat' AND   K.PackageID=$UPC12 AND PPD = 0
 ";
 	$result = mysqli_query($conn,$query);
@@ -2568,7 +2568,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		   <?php 
-		$UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
+		
 	$query= "select * from $dbname.Package K INNER JOIN $dbname.Product_Component PC ON K.PackageID=PC.PackageID INNER JOIN $dbname.Components C On  PC.ComponentID = C.ComponentID where  C.Component_Name = 'Fat Polyunsaturated' AND   K.PackageID=$UPC12 AND PPD = 0
 ";
 	$result = mysqli_query($conn,$query);
