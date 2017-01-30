@@ -30,7 +30,7 @@ $salesID = ($_GET['SalesID']?$_GET['SalesID']:'');
 		$_POST['Dollar_Share']=  (empty($_POST['Dollar_Share']) && strlen($_POST['Dollar_Share']) == 0 ?NULL :$_POST['Dollar_Share']);
 		$_POST['Cluster_Number']=  (empty($_POST['Cluster_Number']) && strlen($_POST['Cluster_Number']) == 0 ?NULL :$_POST['Cluster_Number']);
 
-		$_POST['Kilo_Volume_Total']=  (empty($_POST['Product_Grouping']) && strlen($_POST['Product_Grouping']) == 0 ?NULL :$_POST['Product_Grouping']);
+		$_POST['Product_Grouping']=  (empty($_POST['Product_Grouping']) && strlen($_POST['Product_Grouping']) == 0 ?NULL :$_POST['Product_Grouping']);
 		$_POST['Kilo_Share']=  (empty($_POST['Kilo_Share']) && strlen($_POST['Kilo_Share']) == 0 ?NULL :$_POST['Kilo_Share']);
 		$_POST['Kilo_Rank']=  (empty($_POST['Kilo_Rank']) && strlen($_POST['Kilo_Rank']) == 0 ?NULL :$_POST['Kilo_Rank']);
 		
