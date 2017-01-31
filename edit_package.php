@@ -469,7 +469,11 @@ $editpackagestmt = $conn->prepare($editpackagequery);
   	<?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Energy'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->store_result();
+	$Component_Name = 'Energy';
+	$PPD = 1;
+	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
+	$editpackagestmt->execute();
+	$result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -485,7 +489,11 @@ $editpackagestmt = $conn->prepare($editpackagequery);
 	<?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Energy kj'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->store_result();
+	$Component_Name = 'Energy kj';
+	$PPD = 1;
+	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
+	$editpackagestmt->execute();
+	$result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 	
 	?>
