@@ -56,7 +56,7 @@ $array1 = implode (' AND ', $conditions);
 EOQ;
 
 
-echo "$first_query";
+
 $stmt_first = $conn->prepare($first_query);
     $stmt_first->execute(); 
     $result = $stmt_first->get_result();
