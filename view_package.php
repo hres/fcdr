@@ -5,12 +5,24 @@
 $ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 
+
+	$view_package =<<<EOQ
+		SELECT * FROM Package
+		WHERE ProductIDP = ?
+
+EOQ;
+
+							$stmt = $conn->prepare($view_package);
+					     	$stmt->bind_param("i",$ProductID);
+							$result1 = $stmt->execute();	
+							$result = $stmt->get_result();									
+							
 	
-	$query = "  SELECT * FROM Package where ProductIDP = $ProductID";
-	$result = mysqli_query($conn,$query);
+	
+		
 
 
-if (!$result) {
+if (!$result1) {
     echo "ERRORS";
 }
 	 while($row = $result->fetch_assoc()) {

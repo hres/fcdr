@@ -8,10 +8,23 @@ $ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
 	$result = mysqli_query($conn,$query);
 						
 							
+	$view_sales =<<<EOQ
+		SELECT * FROM Sales P
+		WHERE P.ProductIDS = ?
+
+EOQ;
+
+							$stmt = $conn->prepare($view_sales);
+					     	$stmt->bind_param("i",$ProductID);
+							$result1 = $stmt->execute();	
+							$result = $stmt->get_result();									
 							
+	
+	
+									
 							
 
-if (!$result) {
+if (!$result1) {
     echo "ERRORS";
 }
 	

@@ -8,7 +8,19 @@ $query = "Select * from $dbname.Unit_Of_Measure";
 	$result = mysqli_query($conn,$query);
 
 
-if (!$result) {
+			$get_user =<<<EOQ
+		Select * from Unit_Of_Measure
+		
+EOQ;
+
+							$stmt = $conn->prepare($get_user);
+							$result1 = $stmt->execute();	
+							$result = $stmt->get_result();
+	
+
+
+
+if (!$result1) {
     echo "ERRORS";
 }
 
