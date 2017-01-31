@@ -10,13 +10,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
+
+
+
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+
+
+<script type="text/javascript" src="js/formden.js"></script>
 
 <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
-
-<!--Font Awesome (added because you use icons in your prepend/append)-->
-<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="css/bootstrap-iso.css" />
 
 	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
 	</script>  
@@ -54,7 +58,6 @@ $('input[name="intervaltype"]').click(function () {
 <script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 
 
 	

@@ -14,7 +14,7 @@
 //(empty($_POST[$field]) && strlen($_POST[$field]) == 0 ?NULL :$data[5])
 
  foreach($fields as $field){
-      if(!empty($_POST[$field]) && strlen($_POST[$field]) != 0 ){
+      if(!empty($_POST[$field]) && strlen($_POST[$field]) != 0 && !ctype_space($_POST[$field]) ){
           $flag = true;
           break;
       }else {
@@ -36,31 +36,33 @@ if($flag){
             $conditions[] = "`$field` LIKE '%" . mysqli_real_escape_string($conn,$_POST[$field]) . "%'";
         }
     }
+
+
+
+
+
+$array1 = implode (' AND ', $conditions);
+	$first_query =<<<EOQ
+    SELECT P.ProductID, P.Description, P.Cluster_Number,C.Classification_Name, C.Classification_Number, P.Brand, P.Manufacturer, P.CNF_CODE, C.Classification_Type
+    FROM Product P 
+    LEFT JOIN Product_Classification PC
+    ON P.ProductID = PC.ProductID 
+    LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID
+    WHERE $array1
+EOQ;
+
+$stmt_first = $conn->prepare($first_query);
+    $stmt_first->execute(); 
+    $result = $stmt_first->get_result();
 	
-	
-	
-	$query = "Select P.ProductID, P.Description, C.Classification_Name, C.Classification_Number, P.Brand, P.Manufacturer, P.CNF_CODE, C.Classification_Type   from $dbname.Product P LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID ";
-	//$query = "Select * from Product";
-	if(count($conditions) > 0) {
-        // append the conditions
-       $query .= "WHERE " . implode (' AND ', $conditions); // you can change to 'OR', but I suggest to apply the filters cumulative
-		
-   }
-  /* $query .=" UNION Select * from FCDR.Product P RIGHT JOIN Product_Classification PC ON P.ProductID = PC.ProductID RIGHT JOIN Classification C ON PC.ClassificationID = C.ClassificationID ";
-	if(count($conditions) > 0) {
-        // append the conditions
-        $query .= "WHERE " . implode (' AND ', $conditions); // you can change to 'OR', but I suggest to apply the filters cumulative
-		
-   }*/
-	$result = mysqli_query($conn,$query);
+
+
 	 $rowcount=mysqli_num_rows($result);
-		// echo "<script>document.getElementById(\"noResult\").innerHTML = \"$rowcount records returned\" </script>";
  
  if($rowcount < 1){
 	 echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3 >No data found</h3> \" </script>";
  }
-/* mysqli_query('SET NAMES utf8');
-mysqli_query('SET CHARACTER SET utf8'); */
+
 if (!$result) {
     echo "ERRORS";
 }
