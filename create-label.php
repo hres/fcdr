@@ -3004,9 +3004,9 @@ document.getElementById("demo").style.color = 'red';
 		document.getElementById("demo").innerHTML = "Missing Unit of measure for amount or missing amount for a Unit of measure for Chloride -as prepared";
 document.getElementById("demo").style.color = 'red';
 		return false;
-	}
+	}*/
 
-}*/
+}
 </script>
 		</main>
 	<?php include 'footer.php';?>
