@@ -4,9 +4,7 @@
 
 $ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
 	
-	$query = "  SELECT * FROM $dbname.Sales P where P.ProductIDS = $ProductID";
-	$result = mysqli_query($conn,$query);
-						
+					
 							
 	$view_sales =<<<EOQ
 		SELECT * FROM Sales P
