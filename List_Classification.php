@@ -18,7 +18,7 @@ EOQ;
 
 
 if (!$result) {
-    echo "ERRORS";
+    echo "An error occured";
 }
 
 	while($row = $result->fetch_assoc()){

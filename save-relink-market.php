@@ -9,6 +9,23 @@ $newProductID = ($_GET['NewProductID']?$_GET['NewProductID']:'');
 
 	$query = "Update $dbname.Sales SET ProductIDS = '$newProductID' where SalesID = '$SalesID'";
 	$result = mysqli_query($conn,$query);
+
+
+
+		$relink =<<<EOQ
+		Update Sales
+		SET ProductIDS = ?
+		WHERE SalesID = ?
+
+EOQ;
+
+							$stmt = $conn->prepare($relink);
+					     	$stmt->bind_param("ii",$newProductID,$SalesID);
+							$result = $stmt->execute();	
+																	
+							
+	
+	
 						
 														
 
