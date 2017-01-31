@@ -434,7 +434,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 	<?php include 'connection.php';?>
 <?php
 
-$query = <<<EOQ
+$editpackagequery = <<<EOQ
 SELECT *
   FROM Package K
  INNER JOIN Product_Component PC
@@ -446,12 +446,12 @@ SELECT *
    AND PPD              = ?
 EOQ;
 
-$stmt = $conn->prepare($query);
+$editpackagestmt = $conn->prepare($editpackagequery);
 
 ?>
 	<?php 
 	
-	$Component_Name = 'Energy'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Energy'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 	
 	?>
@@ -469,8 +469,12 @@ $stmt = $conn->prepare($query);
   	<?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Energy'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->store_result();
-	$row = $result->fetch();
+	$Component_Name = 'Energy';
+	$PPD = 1;
+	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
+	$editpackagestmt->execute();
+	$result = $editpackagestmt->get_result();
+	$row = $result->fetch_assoc();
 
 	
 	?>
@@ -485,8 +489,12 @@ $stmt = $conn->prepare($query);
 	<?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Energy kj'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->store_result();
-	$row = $result->fetch();
+	$Component_Name = 'Energy kj';
+	$PPD = 1;
+	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
+	$editpackagestmt->execute();
+	$result = $editpackagestmt->get_result();
+	$row = $result->fetch_assoc();
 	
 	?>
 		 <div class="form-group">
@@ -504,7 +512,7 @@ $stmt = $conn->prepare($query);
   	<?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Energy kj'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Energy kj'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -521,7 +529,7 @@ $stmt = $conn->prepare($query);
 	<?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Saturated + Trans Fat'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Saturated + Trans Fat'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 	
 	?>
@@ -542,7 +550,7 @@ $stmt = $conn->prepare($query);
   	<?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Saturated + Trans Fat'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Saturated + Trans Fat'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -559,7 +567,7 @@ $stmt = $conn->prepare($query);
 		 	<?php 
 			 
 			
-	$Component_Name = 'Fat'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fat'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -582,7 +590,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 	<?php 
 			   
-	$Component_Name = 'Fat'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fat'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -598,7 +606,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 	  <?php 
 	  
-	$Component_Name = 'Saturated Fat'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Saturated Fat'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -619,7 +627,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   <?php 
   
-	$Component_Name = 'Saturated Fat'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Saturated Fat'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -633,7 +641,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		   <?php 
 		   
-	$Component_Name = 'Trans Fat'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Trans Fat'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -655,7 +663,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   <?php 
   
-	$Component_Name = 'Trans Fat'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Trans Fat'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -671,7 +679,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		   <?php 
 		   
-	$Component_Name = 'Fat Polyunsaturated'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fat Polyunsaturated'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -692,7 +700,7 @@ $stmt = $conn->prepare($query);
 <?php include 'connection.php';?>  
   <?php 
    
-	$Component_Name = 'Fat Polyunsaturated'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fat Polyunsaturated'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -707,7 +715,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Omega-6 Polyunsaturated Fat'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Omega-6 Polyunsaturated Fat'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -727,7 +735,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Omega-6 Polyunsaturated Fat'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Omega-6 Polyunsaturated Fat'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -741,7 +749,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
   <?php 
   
-	$Component_Name = 'Omega-3 Polyunsaturated Fat'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Omega-3 Polyunsaturated Fat'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -760,7 +768,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   <?php 
   
-	$Component_Name = 'Omega-3 Polyunsaturated Fat'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Omega-3 Polyunsaturated Fat'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -777,7 +785,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		   <?php
 		    
-	$Component_Name = 'Fat Monounsaturated'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fat Monounsaturated'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -798,7 +806,7 @@ $stmt = $conn->prepare($query);
 <?php include 'connection.php';?>  
   <?php 
   
-	$Component_Name = 'Fat Monounsaturated'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fat Monounsaturated'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -817,7 +825,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		   <?php
 		    
-	$Component_Name = 'Carbohydrates'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Carbohydrates'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -838,7 +846,7 @@ $stmt = $conn->prepare($query);
 <?php include 'connection.php';?>  
   <?php 
   
-	$Component_Name = 'Carbohydrates'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Carbohydrates'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -853,7 +861,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 	  <?php 
 	  
-	$Component_Name = 'Fibre'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fibre'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -874,7 +882,7 @@ $stmt = $conn->prepare($query);
 <?php include 'connection.php';?>  
   <?php 
   
-	$Component_Name = 'Fibre'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fibre'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -890,7 +898,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		   <?php 
 		   
-	$Component_Name = 'Soluble Fibre'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Soluble Fibre'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -911,7 +919,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   <?php 
   
-	$Component_Name = 'Soluble Fibre'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Soluble Fibre'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -926,7 +934,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		  <?php 
 		  
-	$Component_Name = 'Insolube Fibre'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Insolube Fibre'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -948,7 +956,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   <?php 
   
-	$Component_Name = 'Insolube Fibre'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Insolube Fibre'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -962,7 +970,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
   <?php 
   
-	$Component_Name = 'Sugars'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Sugars'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -982,7 +990,7 @@ $stmt = $conn->prepare($query);
 <?php include 'connection.php';?>  
   <?php 
   
-	$Component_Name = 'Sugars'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Sugars'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -996,7 +1004,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
   <?php 
   
-	$Component_Name = 'Sugars Alcohol'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Sugars Alcohol'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1016,7 +1024,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   <?php 
   
-	$Component_Name = 'Sugars Alcohol'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Sugars Alcohol'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1030,7 +1038,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
   <?php 
   
-	$Component_Name = 'Starch'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Starch'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1050,7 +1058,7 @@ $stmt = $conn->prepare($query);
 <?php include 'connection.php';?>
   <?php 
   
-	$Component_Name = 'Starch'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Starch'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1064,7 +1072,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 		 		 <?php 
 									
-	$Component_Name = 'Protein'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Protein'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1085,7 +1093,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 	  <?php 	
 				  		 		    		 		  
-	$Component_Name = 'Protein'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Protein'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1099,7 +1107,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 <?php 
 
-	$Component_Name = 'Cholesterol'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Cholesterol'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1120,7 +1128,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   <?php 
   	
-	$Component_Name = 'Cholesterol'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Cholesterol'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1134,7 +1142,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 <?php 
 		 
-	$Component_Name = 'Sodium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Sodium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1155,7 +1163,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 <?php 
 		   
-	$Component_Name = 'Sodium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Sodium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1169,7 +1177,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 <?php 
 				  
-	$Component_Name = 'Potassium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Potassium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1190,7 +1198,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		 <?php 
 				
-	$Component_Name = 'Potassium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Potassium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1205,7 +1213,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 		 <?php 
 		 
-	$Component_Name = 'Calcium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Calcium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1226,7 +1234,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		 		 <?php 
 				 
-	$Component_Name = 'Calcium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Calcium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1240,7 +1248,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 		 		 <?php 
 		
-	$Component_Name = 'Iron'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Iron'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1261,7 +1269,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		 		 		 <?php 
 	
-	$Component_Name = 'Iron'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Iron'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1277,7 +1285,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 	<?php 
 			
-	$Component_Name = 'Vitamin A'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin A'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1298,7 +1306,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		 <?php 
 					
-	$Component_Name = 'Vitamin A'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin A'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1314,7 +1322,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 		 		 		 <?php 
 		
-	$Component_Name = 'Vitamin C'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin C'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1335,7 +1343,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		 		 		 		 <?php 
 	
-	$Component_Name = 'Vitamin C'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin C'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1349,7 +1357,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 		 		 		 		 <?php 
 		
-	$Component_Name = 'Vitamin D'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin D'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1370,7 +1378,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		 		 		 		 		 <?php 
 	
-	$Component_Name = 'Vitamin D'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin D'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1385,7 +1393,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 		 		 		 		 		 <?php 
 	
-	$Component_Name = 'Vitamin E'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin E'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1406,7 +1414,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		 		 		 		 		 		 <?php 
 	
-	$Component_Name = 'Vitamin E'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin E'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1420,7 +1428,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 	 <?php 	 
 				 		 		 		 		
-	$Component_Name = 'Vitamin K'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin K'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1441,7 +1449,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 			 <?php  
 				 		 		 		 		 	
-	$Component_Name = 'Vitamin K'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin K'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1455,7 +1463,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 		 <?php 	
 		 		 		 		 		 		 
-	$Component_Name = 'Thiamine'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Thiamine'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1475,7 +1483,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		 <?php
 					
-	$Component_Name = 'Thiamine'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Thiamine'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1489,7 +1497,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 <?php 
 			 		 		 		 		 		 		 		 
-	$Component_Name = 'Riboflavin'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Riboflavin'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1508,7 +1516,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 	 		 <?php 
 	
-	$Component_Name = 'Riboflavin'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Riboflavin'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1522,7 +1530,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		  <?php 
 			 		 		 		 		 		 		 		 		
-	$Component_Name = 'Niacin'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Niacin'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1543,7 +1551,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 	 <?php 
 		 		 		 		 		 		 		 		 		 		
-	$Component_Name = 'Niacin'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Niacin'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1557,7 +1565,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 		 		<?php 	
 		 		 		 		 		 		 		 		  
-	$Component_Name = 'Vitamin B6'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin B6'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1577,7 +1585,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		 		 <?php  
 			 		 		 		 		 		 		 		 		
-	$Component_Name = 'Vitamin B6'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin B6'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1591,7 +1599,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 	 <?php	 
 			 		 		 		 
-	$Component_Name = 'Folate'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Folate'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1610,7 +1618,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		  <?php 
 	
-	$Component_Name = 'Folate'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Folate'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1625,7 +1633,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 		 <?php  	
 		 		 		 		 		 		 		 		 		 		 		
-	$Component_Name = 'Vitamin B12'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin B12'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1645,7 +1653,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		 	 <?php	 	
 		 		 		 		 		 		 		 		 		 		 		 
-	$Component_Name = 'Vitamin B12'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin B12'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1659,7 +1667,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 	 <?php
 		 	 		 		 		 			
-	$Component_Name = 'Biotin'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Biotin'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1679,7 +1687,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
    <?php 
    	 		 		 		 			
-	$Component_Name = 'Biotin'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Biotin'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1693,7 +1701,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		  <?php 
 		  		 		 		 		 		 		 		 		 		 		 		 		 		 		 		
-	$Component_Name = 'Choline'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Choline'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1713,7 +1721,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		  <?php 		
 	 		 		 		 		 		 		 		 		 		 		 		 		 		 		
-	$Component_Name = 'Choline'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Choline'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1727,7 +1735,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 	 <?php 
 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		
-	$Component_Name = 'Choline'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Choline'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1747,7 +1755,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 	 <?php
 				 	 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		
-	$Component_Name = 'Choline'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Choline'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1761,7 +1769,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 	 <?php 
 			  
-	$Component_Name = 'Phosphorus'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Phosphorus'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1782,7 +1790,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
  	 <?php	
 	   		 		 		 		 		 	 		 		 		 		 		 		 		 		 		 		 		 	
-	$Component_Name = 'Phosphorus'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Phosphorus'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1797,7 +1805,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		<?php 
 			 		 		 		 		 		 		 		 		 		 		 		 		 	
-	$Component_Name = 'Iodide'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Iodide'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1820,7 +1828,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		 		<?php 
 		 		 		 		 		 		 		 		 		 		 		 		 		 	
-	$Component_Name = 'Iodide'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Iodide'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1838,7 +1846,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		 <?php 
 					
-	$Component_Name = 'Magnesium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Magnesium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1855,7 +1863,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
 	 		 <?php 
 			  
-	$Component_Name = 'Magnesium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Magnesium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1869,7 +1877,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 	 <?php 
 	 
-	$Component_Name = 'Zinc'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Zinc'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1889,7 +1897,7 @@ $stmt = $conn->prepare($query);
 	  <?php include 'connection.php';?>
  		 <?php 
 		  
-	$Component_Name = 'Zinc'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Zinc'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1905,7 +1913,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 <?php 
 				  
-	$Component_Name = 'Selenium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Selenium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1925,7 +1933,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
 		 		 		 		 <?php 
 									
-	$Component_Name = 'Selenium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Selenium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1940,7 +1948,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 	 <?php 
 	 
-	$Component_Name = 'Copper'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Copper'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1960,7 +1968,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
 	 <?php 
 	 
-	$Component_Name = 'Copper'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Copper'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1975,7 +1983,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 	 <?php 
 	 
-	$Component_Name = 'Manganese'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Manganese'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -1995,7 +2003,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
  <?php 
  
-	$Component_Name = 'Manganese'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Manganese'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2011,7 +2019,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 		 		 		 		 <?php 
 		
-	$Component_Name = 'Chromium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Chromium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2031,7 +2039,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 		  <?php 
 	
-	$Component_Name = 'Chromium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Chromium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2045,7 +2053,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 	 <?php 
 	 
-	$Component_Name = 'Molybdenium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Molybdenium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2065,7 +2073,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
 	 <?php 
 	 
-	$Component_Name = 'Molybdenium'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Molybdenium'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2080,7 +2088,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
  <?php  
  
-	$Component_Name = 'Chloride'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Chloride'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2101,7 +2109,7 @@ $stmt = $conn->prepare($query);
   		 				 	<?php include 'connection.php';?>	 	
 	 <?php 
 	 
-	$Component_Name = 'Chloride'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Chloride'; $PPD = 1; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2156,7 +2164,7 @@ $stmt = $conn->prepare($query);
 	<?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Energy'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Energy'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2177,7 +2185,7 @@ $stmt = $conn->prepare($query);
   	<?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Energy'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Energy'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2192,7 +2200,7 @@ $stmt = $conn->prepare($query);
 	<?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Energy kj'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Energy kj'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2213,7 +2221,7 @@ $stmt = $conn->prepare($query);
   	<?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Energy kj'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Energy kj'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2229,7 +2237,7 @@ $stmt = $conn->prepare($query);
 		 	<?php include 'connection.php';?>
 		 	<?php 
 			 
-	$Component_Name = 'Saturated + Trans Fat'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Saturated + Trans Fat'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2249,7 +2257,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 	<?php 
 	
-	$Component_Name = 'Saturated + Trans Fat'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Saturated + Trans Fat'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2266,7 +2274,7 @@ $stmt = $conn->prepare($query);
 		 	<?php include 'connection.php';?>
 		 	<?php 
 	
-	$Component_Name = 'Fat'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fat'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2286,7 +2294,7 @@ $stmt = $conn->prepare($query);
   <?php include 'connection.php';?>
   		 	<?php 
 	
-	$Component_Name = 'Fat'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fat'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2299,7 +2307,7 @@ $stmt = $conn->prepare($query);
  	<?php include 'connection.php';?>
  <?php 
  
-	$Component_Name = 'Saturated Fat'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Saturated Fat'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2321,7 +2329,7 @@ $stmt = $conn->prepare($query);
   	<?php include 'connection.php';?>
    <?php 
    
-	$Component_Name = 'Saturated Fat'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Saturated Fat'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2336,7 +2344,7 @@ $stmt = $conn->prepare($query);
   	<?php include 'connection.php';?>
    <?php 
    
-	$Component_Name = 'Trans Fat'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Trans Fat'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2356,7 +2364,7 @@ $stmt = $conn->prepare($query);
   	<?php include 'connection.php';?>
      <?php 
 	 
-	$Component_Name = 'Trans Fat'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Trans Fat'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2374,7 +2382,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		   <?php 
 		
-	$Component_Name = 'Fat Polyunsaturated'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fat Polyunsaturated'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2394,7 +2402,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
 <?php include 'connection.php';?>  
   <?php 
-	$Component_Name = 'Fat Polyunsaturated'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fat Polyunsaturated'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2410,7 +2418,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		    <?php 
-	$Component_Name = 'Omega-6 Polyunsaturated Fat'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Omega-6 Polyunsaturated Fat'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2428,7 +2436,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		    <?php 
-	$Component_Name = 'Omega-6 Polyunsaturated Fat'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Omega-6 Polyunsaturated Fat'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2441,7 +2449,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		    <?php 
-	$Component_Name = 'Omega-3 Polyunsaturated Fat'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Omega-3 Polyunsaturated Fat'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2459,7 +2467,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		    <?php 
-	$Component_Name = 'Omega-3 Polyunsaturated Fat'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Omega-3 Polyunsaturated Fat'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2475,7 +2483,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 <?php include 'connection.php';?>
 		   <?php 
-	$Component_Name = 'Fat Monounsaturated'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fat Monounsaturated'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2495,7 +2503,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
 <?php include 'connection.php';?>  
   <?php 
-	$Component_Name = 'Fat Monounsaturated'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fat Monounsaturated'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2509,7 +2517,7 @@ $stmt = $conn->prepare($query);
   <div class= "row" style="margin-top:4px;">
   	<?php include 'connection.php';?>
   		 		    <?php 
-	$Component_Name = 'Carbohydrates'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Carbohydrates'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2529,7 +2537,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
     		 		    <?php 
-	$Component_Name = 'Carbohydrates'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Carbohydrates'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2541,7 +2549,7 @@ $stmt = $conn->prepare($query);
   <div class= "row" style="margin-top:4px;">
   	<?php include 'connection.php';?>
    		 		    <?php 
-	$Component_Name = 'Fibre'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fibre'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2561,7 +2569,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
      		 		    <?php 
-	$Component_Name = 'Fibre'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Fibre'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2573,7 +2581,7 @@ $stmt = $conn->prepare($query);
   <div class= "row" style="margin-top:4px;">
   	<?php include 'connection.php';?>
     		 		    <?php 
-	$Component_Name = 'Soluble Fibre'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Soluble Fibre'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2593,7 +2601,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
     	<?php include 'connection.php';?>
     		 		    <?php 
-	$Component_Name = 'Soluble Fibre'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Soluble Fibre'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2606,7 +2614,7 @@ $stmt = $conn->prepare($query);
   <div class= "row" style="margin-top:4px;">
   	<?php include 'connection.php';?>
    		 		    <?php 
-	$Component_Name = 'Insolube Fibre'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Insolube Fibre'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2626,7 +2634,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
      		 		    <?php 
-	$Component_Name = 'Insolube Fibre'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Insolube Fibre'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2639,7 +2647,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		    		 		    <?php 
-	$Component_Name = 'Sugars'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Sugars'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2658,7 +2666,7 @@ $stmt = $conn->prepare($query);
   	<?php include 'connection.php';?>
   
   		    		 		    <?php 
-	$Component_Name = 'Sugars'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Sugars'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2671,7 +2679,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		    		 		    <?php 
-	$Component_Name = 'Sugars Alcohol'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Sugars Alcohol'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2689,7 +2697,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		    		 		    <?php 
-	$Component_Name = 'Sugars Alcohol'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Sugars Alcohol'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2702,7 +2710,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		    		 		    <?php 
-	$Component_Name = 'Starch'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Starch'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2720,7 +2728,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		    		 		    <?php 
-	$Component_Name = 'Starch'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Starch'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2733,7 +2741,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 		    		 		    <?php 
-	$Component_Name = 'Protein'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Protein'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2753,7 +2761,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 <?php 
-	$Component_Name = 'Protein'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Protein'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2766,7 +2774,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 <?php 
-	$Component_Name = 'Cholesterol'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Cholesterol'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2785,7 +2793,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   <?php 
-	$Component_Name = 'Cholesterol'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Cholesterol'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2799,7 +2807,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 <?php 
-	$Component_Name = 'Sodium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Sodium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2818,7 +2826,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 <?php 
-	$Component_Name = 'Sodium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Sodium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2832,7 +2840,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 <?php 
-	$Component_Name = 'Potassium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Potassium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2852,7 +2860,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 <?php 
-	$Component_Name = 'Potassium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Potassium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2865,7 +2873,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 <?php 
-	$Component_Name = 'Calcium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Calcium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2884,7 +2892,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		 <?php 
-	$Component_Name = 'Calcium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Calcium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2898,7 +2906,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 		 <?php 
-	$Component_Name = 'Iron'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Iron'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2917,7 +2925,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 <?php 
-	$Component_Name = 'Iron'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Iron'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2930,7 +2938,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 		 		 <?php 
-	$Component_Name = 'Vitamin A'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin A'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2949,7 +2957,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		 		 		 <?php 
-	$Component_Name = 'Vitamin A'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin A'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2962,7 +2970,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 	<?php include 'connection.php';?>		 		 		 		 	
 									<?php 
-	$Component_Name = 'Vitamin C'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin C'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2981,7 +2989,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		 		 		 <?php 
-	$Component_Name = 'Vitamin C'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin C'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -2994,7 +3002,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Vitamin D'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin D'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3013,7 +3021,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		 		 		 		 <?php 
-	$Component_Name = 'Vitamin D'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin D'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3027,7 +3035,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Vitamin E'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin E'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3046,7 +3054,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Vitamin E'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin E'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3059,7 +3067,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Vitamin K'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin K'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3078,7 +3086,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Vitamin K'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin K'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3091,7 +3099,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Thiamine'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Thiamine'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3109,7 +3117,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Thiamine'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Thiamine'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3123,7 +3131,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Riboflavin'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Riboflavin'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3142,7 +3150,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Riboflavin'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Riboflavin'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3155,7 +3163,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Niacin'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Niacin'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3175,7 +3183,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Niacin'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Niacin'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3188,7 +3196,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Vitamin B6'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin B6'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3207,7 +3215,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Vitamin B6'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin B6'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3220,7 +3228,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 		 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Folate'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Folate'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3239,7 +3247,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		 		 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Folate'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Folate'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3252,7 +3260,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 		 		 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Vitamin B12'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin B12'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3271,7 +3279,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		 		 		 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Vitamin B12'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Vitamin B12'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3284,7 +3292,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 	<?php include 'connection.php';?>
 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Biotin'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Biotin'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3304,7 +3312,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   	<?php include 'connection.php';?>
   		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Biotin'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Biotin'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3318,7 +3326,7 @@ $stmt = $conn->prepare($query);
 		 <?php include 'connection.php';?>
 		 
 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Choline'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Choline'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3337,7 +3345,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   		 	<?php include 'connection.php';?>
 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 <?php 
-	$Component_Name = 'Choline'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Choline'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3350,7 +3358,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 		<?php include 'connection.php';?>
 				<?php 
-	$Component_Name = 'Choline'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Choline'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3369,7 +3377,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   		 		 		 		<?php include 'connection.php';?>
 								<?php 
-	$Component_Name = 'Choline'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Choline'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3382,7 +3390,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 		 	<?php include 'connection.php';?>
 					<?php 
-	$Component_Name = 'Phosphorus'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Phosphorus'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3402,7 +3410,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   		 		<?php include 'connection.php';?>
 				<?php 
-	$Component_Name = 'Phosphorus'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Phosphorus'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3415,7 +3423,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 		<?php include 'connection.php';?>
 				<?php 
-	$Component_Name = 'Iodide'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Iodide'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3436,7 +3444,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   		 		<?php include 'connection.php';?>
 				<?php 
-	$Component_Name = 'Iodide'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Iodide'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3452,7 +3460,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   		 		 		<?php include 'connection.php';?>
 						<?php 
-	$Component_Name = 'Magnesium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Magnesium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3468,7 +3476,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
     		 			<?php include 'connection.php';?>
 						<?php 
-	$Component_Name = 'Magnesium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Magnesium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3481,7 +3489,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		   		 		<?php include 'connection.php';?>
 						<?php 
-	$Component_Name = 'Zinc'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Zinc'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3501,7 +3509,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   		   		 			<?php include 'connection.php';?>
 							<?php 
-	$Component_Name = 'Zinc'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Zinc'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3514,7 +3522,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 		   	<?php include 'connection.php';?>
 					<?php 
-	$Component_Name = 'Selenium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Selenium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3533,7 +3541,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   		 		   		<?php include 'connection.php';?>
 						<?php 
-	$Component_Name = 'Selenium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Selenium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3546,7 +3554,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 		   			<?php include 'connection.php';?>
 							<?php 
-	$Component_Name = 'Copper'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Copper'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3565,7 +3573,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   		 		   		 	<?php include 'connection.php';?>
 							<?php 
-	$Component_Name = 'Copper'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Copper'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3578,7 +3586,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 		 		  	<?php include 'connection.php';?>
 							<?php 
-	$Component_Name = 'Manganese'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Manganese'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3597,7 +3605,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   		 		 		<?php include 'connection.php';?>
 						<?php 
-	$Component_Name = 'Manganese'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Manganese'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3610,7 +3618,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 		 	<?php include 'connection.php';?>
 					<?php 
-	$Component_Name = 'Chromium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Chromium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3629,7 +3637,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   		 		 		<?php include 'connection.php';?>
 						<?php 
-	$Component_Name = 'Chromium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Chromium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3642,7 +3650,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 					<?php include 'connection.php';?>
 					<?php 
-	$Component_Name = 'Molybdenium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Molybdenium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3661,7 +3669,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   				 		<?php include 'connection.php';?>
 						<?php 
-	$Component_Name = 'Molybdenium'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Molybdenium'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3675,7 +3683,7 @@ $stmt = $conn->prepare($query);
 		 <div class="form-group">
 		 			<?php include 'connection.php';?>
 					<?php 
-	$Component_Name = 'Chloride'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Chloride'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
@@ -3695,7 +3703,7 @@ $stmt = $conn->prepare($query);
   <div class="col-sm-3">
   		 				<?php include 'connection.php';?>
 						<?php 
-	$Component_Name = 'Chloride'; $PPD = 0; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
+	$Component_Name = 'Chloride'; $PPD = 0; $editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $editpackagestmt->execute(); $result = $editpackagestmt->get_result();
 	$row = $result->fetch_assoc();
 
 	
