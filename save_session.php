@@ -11,10 +11,18 @@
 	$password = $_POST['psw'];
 	//Username,Password
 
+		$get_user =<<<EOQ
+		Select * from Users
+		where Username = ? AND Password = ?
 
+EOQ;
+
+							$stmt = $conn->prepare($get_user);
+					     	$stmt->bind_param("ss",$username,$password);
+							$result1 = $stmt->execute();	
+							$result = $stmt->get_result();
 	
-	$query = "Select * from Users where Username = '$username' AND Password = '$password'";
-	$result = mysqli_query($conn,$query);
+
 	
 	$row = $result->fetch_assoc();	
 	if(mysqli_num_rows($result)>0){
