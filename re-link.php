@@ -7,8 +7,21 @@ $oldProductID = ($_GET['OldProductID']?$_GET['OldProductID']:'');
 $newProductID = ($_GET['NewProductID']?$_GET['NewProductID']:'');
 
 
-	$query = "Update $dbname.Package SET ProductIDP = '$newProductID' where PackageID = '$PackageID'";
-	$result = mysqli_query($conn,$query);
+
+	$relink =<<<EOQ
+		Update Package
+		SET ProductIDP = ?
+		WHERE PackageID = ?
+
+EOQ;
+
+							$stmt = $conn->prepare($relink);
+					     	$stmt->bind_param("ii",$newProductID,$PackageID);
+							$result = $stmt->execute();	
+																	
+							
+	
+	
 						
 														
 
