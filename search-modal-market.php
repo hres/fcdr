@@ -54,7 +54,7 @@ $stmt_first = $conn->prepare($first_query);
 
 
 	$get_ID =<<<EOQ
-		Select SalesID 
+		Select ProductIDS 
         FROM Sales
         WHERE SalesID = ?
 
