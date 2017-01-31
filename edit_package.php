@@ -583,10 +583,10 @@ EOQ;
  </div>
  
  <div class= "row" style="margin-top:4px;">
- 		<?php include 'connection.php';?> 
-		 	<?php 
-			 
-			
+	<?php include 'connection.php';?> 
+	<?php 
+
+	$editpackagestmt = $conn->prepare($editpackagequery);	
 	$Component_Name = 'Fat';
 	$PPD = 1;
 	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
@@ -751,9 +751,10 @@ EOQ;
       
       </select>  </div>
   <div class="col-sm-3">
-<?php include 'connection.php';?>  
-  <?php 
-   
+	<?php include 'connection.php';?>
+	<?php
+
+	$editpackagestmt = $conn->prepare($editpackagequery);		   
 	$Component_Name = 'Fat Polyunsaturated';
 	$PPD = 1;
 	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
@@ -886,9 +887,10 @@ EOQ;
       
       </select>  </div>
   <div class="col-sm-3">
-<?php include 'connection.php';?>  
-  <?php 
-  
+	<?php include 'connection.php';?>  
+	<?php 
+
+	$editpackagestmt = $conn->prepare($editpackagequery);		    
 	$Component_Name = 'Fat Monounsaturated';
 	$PPD = 1;
 	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
@@ -935,9 +937,10 @@ EOQ;
       
       </select>  </div>
   <div class="col-sm-3">
-<?php include 'connection.php';?>  
-  <?php 
-  
+	<?php include 'connection.php';?>  
+	<?php
+
+	$editpackagestmt = $conn->prepare($editpackagequery);		    
 	$Component_Name = 'Carbohydrates';
 	$PPD = 1;
 	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
@@ -980,9 +983,10 @@ EOQ;
       
       </select>  </div>
   <div class="col-sm-3">   
-<?php include 'connection.php';?>  
-  <?php 
-  
+	<?php include 'connection.php';?>  
+	<?php 
+
+	$editpackagestmt = $conn->prepare($editpackagequery);		   
 	$Component_Name = 'Fibre';
 	$PPD = 1;
 	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
@@ -1117,9 +1121,10 @@ EOQ;
 
       </select>  </div>
   <div class="col-sm-3">	
-<?php include 'connection.php';?>  
-  <?php 
-  
+	<?php include 'connection.php';?>  
+	<?php 
+
+	$editpackagestmt = $conn->prepare($editpackagequery);		   
 	$Component_Name = 'Sugars';
 	$PPD = 1;
 	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
@@ -1378,7 +1383,7 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Potassium_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-<?php include 'Units.php';?>	
+	<?php include 'Units.php';?>	
 	<option value=""></option>
 
       
@@ -2555,8 +2560,8 @@ EOQ;
       
       </select>  </div>
   <div class="col-sm-3">
-  		 				 	<?php include 'connection.php';?>	 	
-	 <?php 
+	<?php include 'connection.php';?>	 	
+	<?php 
 	 
 	$Component_Name = 'Chloride';
 	$PPD = 1;
@@ -2918,8 +2923,8 @@ EOQ;
       
       </select>  </div>
   <div class="col-sm-3">
-<?php include 'connection.php';?>  
-  <?php 
+	<?php include 'connection.php';?>  
+	<?php 
 	$Component_Name = 'Fat Polyunsaturated';
 	$PPD = 0;
 	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
@@ -3048,8 +3053,8 @@ EOQ;
       
       </select>  </div>
   <div class="col-sm-3">
-<?php include 'connection.php';?>  
-  <?php 
+	<?php include 'connection.php';?>  
+	<?php 
 	$Component_Name = 'Fat Monounsaturated';
 	$PPD = 0;
 	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
@@ -4122,9 +4127,9 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">	
-		 <?php include 'connection.php';?>
-		 
-		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 <?php 
+	<?php include 'connection.php';?>
+	<?php 
+
 	$Component_Name = 'Choline';
 	$PPD = 0;
 	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
