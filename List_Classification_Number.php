@@ -3,9 +3,20 @@
 <?php
 
 
+
+	$list_classification =<<<EOQ
+		SELECT Distinct Classification_Number 
+		 FROM Classification ORDER BY CAST(Classification_Number as UNSIGNED) ASC
+
+EOQ;
+
+							$stmt = $conn->prepare($list_classification);
+					  
+							$result1 = $stmt->execute();	
+							$result = $stmt->get_result();											
+							
 	
-$query = "Select Distinct Classification_Number from $dbname.Classification ORDER BY CAST(Classification_Number as UNSIGNED) ASC";
-	$result = mysqli_query($conn,$query);
+
 
 
 if (!$result) {

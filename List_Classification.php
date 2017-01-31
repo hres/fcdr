@@ -2,9 +2,19 @@
 
 <?php
 
+	$list_classification =<<<EOQ
+		Select Distinct Classification_Name 
+		 from Classification ORDER BY Classification_Name
+
+EOQ;
+
+							$stmt = $conn->prepare($list_classification);
+					  
+							$result1 = $stmt->execute();	
+							$result = $stmt->get_result();											
+							
 	
-$query = "Select Distinct Classification_Name   from $dbname.Classification ORDER BY Classification_Name";
-	$result = mysqli_query($conn,$query);
+
 
 
 if (!$result) {
