@@ -15,8 +15,7 @@
 	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
 	</script>  
 	
-	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js">
-	</script>
+
 
 	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
