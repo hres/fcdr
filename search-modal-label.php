@@ -21,17 +21,59 @@ $PackageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 	
 	
 	
-	$query = "Select P.ProductID, P.Description, C.Classification_Name, C.Classification_Number, P.Brand, P.Manufacturer, P.CNF_CODE, C.Classification_Type   from $dbname.Product P LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID ";
-	$query2 = "Select ProductIDP From $dbname.Package where PackageID = $PackageID";
+	//$query = "Select P.ProductID, P.Description, C.Classification_Name, C.Classification_Number, P.Brand, P.Manufacturer, P.CNF_CODE, C.Classification_Type   from $dbname.Product P LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID ";
+	//$query2 = "Select ProductIDP From $dbname.Package where PackageID = $PackageID";
 	if(count($conditions) > 0) {
         // append the conditions
-        $query .= "WHERE " . implode (' AND ', $conditions); // you can change to 'OR', but I suggest to apply the filters cumulative
+       // $query .= "WHERE " . implode (' AND ', $conditions); 
+      
+	$array1 = implode (' AND ', $conditions);
+
+	$first_query =<<<EOQ
+    SELECT P.ProductID, P.Description, C.Classification_Name, 
+    C.Classification_Number, P.Brand, P.Manufacturer, P.CNF_CODE, C.Classification_Type  
+     from 
+     Product P LEFT JOIN Product_Classification PC 
+     ON P.ProductID = PC.ProductID 
+     LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID
+     WHERE $array1
+EOQ;
 		
+   }else{
+	$first_query =<<<EOQ
+    SELECT P.ProductID, P.Description, C.Classification_Name, 
+    C.Classification_Number, P.Brand, P.Manufacturer, P.CNF_CODE, C.Classification_Type  
+     from 
+     Product P LEFT JOIN Product_Classification PC 
+     ON P.ProductID = PC.ProductID 
+     LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID
+    
+EOQ;
+
+
    }
 
-	$result = mysqli_query($conn,$query);
-	$result2= mysqli_query($conn,$query2);
+   $stmt_first = $conn->prepare($first_query);
+    $stmt_first->execute(); 
+    $result = $stmt_first->get_result();
 
+	//$result = mysqli_query($conn,$query);
+	//$result2= mysqli_query($conn,$query2);
+
+	$get_ID =<<<EOQ
+		Select ProductIDP 
+        FROM Package
+        WHERE PackageID = ?
+
+EOQ;
+
+							$stmt1 = $conn->prepare($get_ID);
+                             $stmt1->bind_param("i",$PackageID);
+						     $stmt1->execute();	
+							$result2 = $stmt1->get_result();									
+							
+	
+	
 		
 if (!$result) {
     echo "ERRORS";
