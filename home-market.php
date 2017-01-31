@@ -42,13 +42,25 @@
 
 
 
-<script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
+<!--<script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>-->
 
-<!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+<!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso 
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />-->
 
 <!--Font Awesome (added because you use icons in your prepend/append)-->
 <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+
+
+<script type="text/javascript" src="js/formden.js"></script>
+
+<!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
+<link rel="stylesheet" href="css/bootstrap-iso.css" />
+
+<!--Font Awesome (added because you use icons in your prepend/append)
+<link rel="stylesheet" href="css/font-awesome.min.css" />-->
+
+
 
 <noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
 
