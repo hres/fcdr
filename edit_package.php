@@ -469,8 +469,8 @@ $stmt = $conn->prepare($query);
   	<?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Energy'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
-	$row = $result->fetch_assoc();
+	$Component_Name = 'Energy'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->store_result();
+	$row = $result->fetch();
 
 	
 	?>
@@ -485,8 +485,8 @@ $stmt = $conn->prepare($query);
 	<?php include 'connection.php';?>
 	<?php 
 	
-	$Component_Name = 'Energy kj'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->get_result();
-	$row = $result->fetch_assoc();
+	$Component_Name = 'Energy kj'; $PPD = 1; $stmt->bind_param("sii", $Component_Name, $UPC12, $PPD); $stmt->execute(); $result = $stmt->store_result();
+	$row = $result->fetch();
 	
 	?>
 		 <div class="form-group">
