@@ -3,16 +3,27 @@
 <?php
 
 $SalesID = ($_GET['SalesID']?$_GET['SalesID']:'');
+				
 
+		$view_sales =<<<EOQ
+		SELECT * FROM Sales P
+		WHERE P.SalesID = ?
 
-	$query = "  SELECT * FROM $dbname.Sales P where P.SalesID = $SalesID";
-	$result = mysqli_query($conn,$query);
-						
+EOQ;
+
+							$stmt = $conn->prepare($view_sales);
+					     	$stmt->bind_param("i",$SalesID);
+							$result1 = $stmt->execute();	
+							$result = $stmt->get_result();									
+							
+	
+	
+									
+									
 							
 							
-							
 
-if (!$result) {
+if (!$result1) {
     echo "ERRORS";
 }
 	
