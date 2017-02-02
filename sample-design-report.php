@@ -214,11 +214,11 @@ if (!$result) {
 
 		
 			<div class="form-group col-sm-4">
-				<label for="Sales_Description"><br>Sales Description Contains</label>
+				<label for="Sales_Description">Sales Description Contains</label>
 				<input type="text" class="form-control" name="Sales_Description" id="Sales_Description" placeholder="Enter the Sales Description" />
 			</div>
 			<div class="form-group col-sm-4">
-				<label for="Description"><br>Product Description Contains</label>
+				<label for="Description">Product Description Contains</label>
 				<input type="text" class="form-control" name="Description" id="Description" placeholder="Enter the Product Description" />
 			</div>
 		
