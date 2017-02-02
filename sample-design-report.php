@@ -321,10 +321,8 @@ $(document).ready(function() {
        "target": -1
      }
    ],
-		dom: 'Bfrtip',
-		colReorder: true,
+		dom: 'Bfrtip',		
 	"lengthChange": true,
-	 "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
         "iDisplayLength": 25,
     "bFilter": false,
     
