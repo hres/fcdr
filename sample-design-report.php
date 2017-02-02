@@ -164,6 +164,21 @@
 	  </div>
       </div>
      </div>
+	   <div class="form-group col-sm-4">
+      <label for="date1">
+     Collection Date (YYYY-MM-DD)<br> To
+      </label>
+      <div class="">
+       <div class="input-group">
+     
+        <input class="form-control" id="date1" name="date1" placeholder="YYYY/MM/DD" type="text" value=""/>
+          <div class="input-group-addon" >
+         <i class="fa fa-calendar">
+         </i>
+        </div>
+	   </div>
+      </div>
+     </div>
 
 	 <div class="form-group col-sm-4">
 	<label for="Sales_Year" name="Year_Recorded">Sales Year<br><br></label>
@@ -188,29 +203,15 @@ if (!$result) {
 ?>	
       
       </select></div>
-	  			<div class="form-group col-sm-4">
-				<label for="Sales_UPC">Sales UPC Contains<br><br></label>
-				<input type="number" class="form-control" name="Sales_UPC" id="Sales_UPC" placeholder="Enter a Sales UPC" />
-			</div>
+
 		</div>
 		
 		<div class="row">
-		
-	   <div class="form-group col-sm-4">
-      <label for="date1">
-     Collection Date (YYYY-MM-DD)<br> To
-      </label>
-      <div class="">
-       <div class="input-group">
-     
-        <input class="form-control" id="date1" name="date1" placeholder="YYYY/MM/DD" type="text" value=""/>
-          <div class="input-group-addon" >
-         <i class="fa fa-calendar">
-         </i>
-        </div>
-	   </div>
-      </div>
-     </div>
+			  			<div class="form-group col-sm-4">
+				<label for="Sales_UPC">Sales UPC Contains</label>
+				<input type="number" class="form-control" name="Sales_UPC" id="Sales_UPC" placeholder="Enter a Sales UPC" />
+			</div>
+
 		
 			<div class="form-group col-sm-4">
 				<label for="Sales_Description"><br>Sales Description Contains</label>
