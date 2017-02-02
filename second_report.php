@@ -85,32 +85,7 @@ EOQ;
 
 
 
- echo "<thead> <tr>
-        <th>Description (Product)</th>
-        <th>Market Share Year</th>
-        <th>Market Share Collection Date</th>
-        <th>Market Share UPC</th>
-        <th>Description (Market Share)</th>
-        <th>Product Grouping</th>
-        <th>Manufacturer</th>
-        <th>Brand</th>
-        <th>Nielsen Category</th>
-        <th>GBL Classification Number</th>
-        <th>Custer Number</th>
-        <th>Control Label?</th>
-        <th>Kilo<br>Share</th>
-        <th>Kilo<br> Volume</th>
-        <th>Kilo<br> Volume<br> % <br>Change</th>
-        <th>Kilo <br>Volume <br>Rank</th>
-        <th>Kilo<br>Volume <br>Total</th>
-        <th>Dollar <br>Share</th>
-        <th>Dollar<br> Volume</th>
-        <th>Dollar<br> Volume <br>Total</th> 
-        <th>Average <br>AC <br>Dist</th>
-        <th>Average<br> Retail <br>Price</th>
-        <th>Comments<br> (Market Share)</th>
-        <th>Comments <br>(Product)</th>                     
-    </tr></thead> <tbody>";
+
 
 	while($row = $result->fetch_assoc())  {
 
