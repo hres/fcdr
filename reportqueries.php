@@ -3,8 +3,7 @@
 include ('connection.php');
 
 	if(isset($_POST['search'])) {
-	 error_reporting(E_ALL);
-ini_set('display_errors', 1); 
+
 $list_of_classification = array();
 $list_of_nielsen_category = array();
 
