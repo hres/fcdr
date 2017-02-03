@@ -1,5 +1,4 @@
 
-<?php include 'session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -11,9 +10,12 @@
 
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
+	</script>  
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
 	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
@@ -32,12 +34,6 @@
 	
 	</style>
 
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
-	</script>  
-
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js">
 	</script>
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js">
@@ -55,8 +51,6 @@
 	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js">
 	</script>
 
-
-
 <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
 
 
@@ -66,6 +60,8 @@
 <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
 <link rel="stylesheet" href="css/bootstrap-iso.css" />
 
+<!--Font Awesome (added because you use icons in your prepend/append)
+<link rel="stylesheet" href="css/font-awesome.min.css" />-->
 
 
 
@@ -137,9 +133,9 @@
 
 <main role="main" property="mainContentOfPage" class="container">
 
-
+<br>
 <details style="margin-right:2%;">
-  <summary><h3>Design Report</h3></summary>
+  <summary><h3>Sampling Frame Summary Report</h3></summary>
   <h4>Leave the search fields blank for a full report</h4>
 </details>
 
@@ -181,6 +177,7 @@
       </div>
      </div>
 
+
 	 <div class="form-group col-sm-4">
 	<label for="Sales_Year" name="Year_Recorded">Sales Year<br><br></label>
       <select class="form-control" id="Sales_Year" name="Sales_Year">
@@ -207,23 +204,33 @@ if (!$result) {
 
 		</div>
 		
-		<div class="row">
-			  			<div class="form-group col-sm-4">
-				<label for="Sales_UPC">Sales UPC Contains</label>
-				<input type="number" class="form-control" name="Sales_UPC" id="Sales_UPC" placeholder="Enter a Sales UPC" />
-			</div>
+<div class="row">
+
+ <div class="form-group col-md-6" >
+	<label for="Classification_Number" name="Classification_Number">Classification Number</label>
+      <select class="form-control" id="Classification_Number" name="Classification_Number[]" style="width:100%" multiple>
+<?php include 'List_Classification_Number.php';?>
+	  
+		
+
+
+      </select></div>
+
+
+ <div class="form-group col-md-6">
+	<label for="Nielsen_Category" name="Nielsen_Category">Nielsen Category</label>
+      <select class="form-control" id="Nielsen_Category" name="Nielsen_Category[]" style="width:100%"  multiple>
+	    <?php include 'Nielsen_List.php';?>
 
 		
-			<div class="form-group col-sm-4">
-				<label for="Sales_Description">Sales Description Contains</label>
-				<input type="text" class="form-control" name="Sales_Description" id="Sales_Description" placeholder="Enter the Sales Description" />
-			</div>
-			<div class="form-group col-sm-4">
-				<label for="Description">Product Description Contains</label>
-				<input type="text" class="form-control" name="Description" id="Description" placeholder="Enter the Product Description" />
-			</div>
-		
-		</div>
+
+
+      </select></div>
+
+</div>
+
+
+
 					<div class="row">
 			<div class="form-group col-sm-4 submit_button" >
 				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search">Save</button>
@@ -234,34 +241,9 @@ if (!$result) {
 
 <div class="well" style="margin-right:2%; overflow:auto;" id="toHide">
 <table id="example" class="display nowrap" cellspacing="0" width="100%">
-<thead> <tr>
-        <th>Description (Product)</th>
-        <th>Market Share Year</th>
-        <th>Market Share Collection Date</th>
-        <th>Market Share UPC</th>
-        <th>Description (Market Share)</th>
-        <th>Product Grouping</th>
-        <th>Manufacturer</th>
-        <th>Brand</th>
-        <th>Nielsen Category</th>
-        <th>GBL Classification Number</th>
-        <th>Custer Number</th>
-        <th>Control Label?</th>
-        <th>Kilo<br>Share</th>
-        <th>Kilo<br> Volume</th>
-        <th>Kilo<br> Volume<br> % <br>Change</th>
-        <th>Kilo <br>Volume <br>Rank</th>
-        <th>Kilo<br>Volume <br>Total</th>
-        <th>Dollar <br>Share</th>
-        <th>Dollar<br> Volume</th>
-        <th>Dollar<br> Volume <br>Total</th> 
-        <th>Average <br>AC <br>Dist</th>
-        <th>Average<br> Retail <br>Price</th>
-        <th>Comments<br> (Market Share)</th>
-        <th>Comments <br>(Product)</th>                     
-    </tr></thead> <tbody>
 
-<?php include 'second_report.php';?>
+
+<?php include 'reportqueries.php';?>
        
 
            
@@ -288,6 +270,7 @@ if (!$result) {
 	</script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
 	<script>
 	$(document).ready(function(){
@@ -334,7 +317,6 @@ if (!$result) {
 </script>
 
 
-
 	<script type="text/javascript" class="init">
 
 
@@ -348,8 +330,10 @@ $(document).ready(function() {
        "target": -1
      }
    ],
-		dom: 'Bfrtip',		
+		dom: 'Bfrtip',
+		colReorder: true,
 	"lengthChange": true,
+	 "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
         "iDisplayLength": 25,
     "bFilter": false,
     
@@ -362,6 +346,8 @@ $(document).ready(function() {
 
 
 	</script>
+
+
 
 
 
