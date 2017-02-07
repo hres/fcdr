@@ -224,7 +224,7 @@ if (!$result) {
 	<label for="Nielsen_Category" name="Year_Recorded">Nielsen Category</label>
       <select class="form-control" id="Nielsen_Category" name="Nielsen_Category">
 		  <option value="" selected>Select a Nielsen Category</option>
-		<?php include 'List_Nielsen.php';?>
+		<?php include 'Nielsen_List.php';?>
 	
 			 </select></div>
 				<div class="form-group col-sm-4">
