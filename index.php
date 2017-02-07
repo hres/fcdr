@@ -142,6 +142,7 @@ $(document).ready(function() {
     <li class="active"><a href="index.php">Search Product </a></li>
     <li><a href="home-market.php">Search Market Share</a></li>
     <li><a  href="home-label.php">Search Package Label</a></li>
+	  <li><a  href="search.php">Search All</a></li>
   </ul>
 
   
