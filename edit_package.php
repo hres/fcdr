@@ -203,8 +203,8 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		
 		<div class="row">
 			<div class="form-group col-sm-4">
-				<label for="Nielsen_Category" class="required">Nielsen Category <strong class="required">(required)</strong></label>
-				<input type="text" class="form-control" name="Nielsen_Category"  id="Nielsen_Category" placeholder="Enter the Nielsen of the Package Label" value="<?PHP echo $row['Nielsen_Category']; ?>" required/> 
+				<label for="Nielsen_Category" >Nielsen Category </label>
+				<input type="text" class="form-control" name="Nielsen_Category"  id="Nielsen_Category" placeholder="Enter the Nielsen of the Package Label" value="<?PHP echo $row['Nielsen_Category']; ?>"/> 
 			</div>
 			<div class="form-group col-sm-4">
 				<label for="Brand" class="required">Brand <strong class="required">(required)</strong></label>
@@ -336,13 +336,13 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 				<input type="text" class="form-control" name="Comments" id="Comments" value="<?PHP echo $row['Comments']; ?>" placeholder="Enter a Comment on a Package Label"/>
 			</div>
 						   <div class="form-group col-sm-4">
-      <label for="date1">
-     Collection Date
+      <label for="date1" class="required">
+     Collection Date <strong class="required">(required)</strong>
       </label>
       <div class="">
        <div class="input-group">
      
-        <input class="form-control" id="date1" name="Collection_Date" placeholder="YYYY/MM/DD" type="text" value="<?PHP echo $row['Collection_Date']; ?>"/>
+        <input class="form-control" id="date1" name="Collection_Date" placeholder="YYYY/MM/DD" type="text" value="<?PHP echo $row['Collection_Date']; ?>" required/>
           <div class="input-group-addon" >
          <i class="fa fa-calendar">
          </i>

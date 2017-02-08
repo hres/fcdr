@@ -98,7 +98,7 @@ for($i = 0; $i < 20; ++$i){
       $from_date1 = $_POST['dateFrom'];
 
 				$to_date1 = $_POST['dateTo'];
-				$conditions[] 	 = " PK.Collection_Date between '$from_date1' and '$to_date1'";
+				$conditions[] 	 = " S.Collection_Date between '$from_date1' and '$to_date1'";
 
      $conditions_2[]  = " PK.Collection_Date between ? and ?";
      $conditions_name[] = $from_date1;  

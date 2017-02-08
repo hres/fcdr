@@ -170,8 +170,8 @@ $('input[name="intervaltype"]').click(function () {
 	
 		<div class="row">
 			<div class="form-group col-sm-4">
-				<label for="Nielsen_Category" class="required">Nielsen Category <strong class="required">(required)</strong></label>
-				<input type="text" class="form-control" name="Nielsen_Category" id="Nielsen_Category" placeholder="Enter the Nielsen Category " required/>
+				<label for="Nielsen_Category">Nielsen Category </label>
+				<input type="text" class="form-control" name="Nielsen_Category" id="Nielsen_Category" placeholder="Enter the Nielsen Category "/>
 			</div>
 		
 			<div class="form-group col-sm-4">
@@ -278,13 +278,13 @@ $('input[name="intervaltype"]').click(function () {
 				<input type="text" class="form-control" name="Comments" id="Comments"  placeholder="Enter a Comment on a Package Label"/>
 			</div>
 						   <div class="form-group col-sm-4">
-      <label for="date1">
-     Collection Date (YYYY-MM-DD)
+      <label for="date1" class="required">
+     Collection Date  <strong class="required">(required)</strong>
       </label>
       <div class="">
        <div class="input-group">
      
-        <input class="form-control" id="date1" name="date1" placeholder="YYYY/MM/DD" type="text" value=""/>
+        <input class="form-control" id="date1" name="date1" placeholder="YYYY/MM/DD" type="text" value="" required/> 
           <div class="input-group-addon" >
          <i class="fa fa-calendar">
          </i>
