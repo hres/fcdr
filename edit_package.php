@@ -388,7 +388,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 	  	<option value"<?PHP echo $row['Multipart']; ?>" selected></option>
 		 <option value="No">No</option>
 		 <option value="Yes">Yes</option>
-      </select></div
+      </select></div>
 		</div>
 	
 	</div>

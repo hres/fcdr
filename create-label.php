@@ -325,7 +325,7 @@ $('input[name="intervaltype"]').click(function () {
       <select class="form-control" id="Multi_Part_Package" style="width:540px" name="Multi_Part_Package">
 		 <option value="No" selected>No</option>
 		 <option value="Yes">Yes</option>
-      </select></div
+      </select></div>
 </div>	
 
 		
