@@ -57,8 +57,8 @@ $salesID = ($_GET['SalesID']?$_GET['SalesID']:'');
 			$_POST['Cluster_Number'],
 			$_POST['Product_Grouping'],
 			$_POST['Kilo_Share'],
-			$_POST['Kilo_Rank'],
-			
+			$_POST['Kilo_Rank'], 
+			$_POST['Manufacturer']
 		);
 
 
@@ -85,13 +85,14 @@ UPDATE Sales SET
        Cluster_Number = ?,
 	   Product_Grouping = ?,
 	   Kilo_Share = ?,
-	   Kilo_Rank = ?
+	   Kilo_Rank = ?,
+	   Manufacturer = ?
 WHERE SalesID = ?
 EOQ;
 
 		$stmt = $conn->prepare($query);
 
-		$stmt->bind_param("ddissssssdddddddsddsdds", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21],$salesID);
+		$stmt->bind_param("ddissssssdddddddsddsddss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21],$param[22],$salesID);
 	
 	$result = $stmt->execute();
 

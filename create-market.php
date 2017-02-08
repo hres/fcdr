@@ -273,7 +273,10 @@
 				<label for="Kilo_Rank">Kilo Rank</label>
 				<input type="text" class="form-control" name="Kilo_Rank" id="Kilo_Rank" placeholder="Enter the Kilo Rank "/>
 			</div>
-
+				<div class="form-group col-sm-4">
+				<label for="Manufacturer">Manufacturer</label>
+				<input type="text" class="form-control" name="Manufacturer" id="Manufacturer" placeholder="Enter the Manufacturer"/>
+			</div>
 	
 			<div class="form-group col-sm-4" style="float:right;">
 				<button style="float:right; margin-top:30px;" type="submit" class="btn btn-default" name="search" >Save</button>

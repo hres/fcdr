@@ -37,7 +37,8 @@ if (isset($_POST['search'])) {
 			$_POST['Control_Label_Flag'],
 			$_POST['Dollar_Share'], 
 			$_POST['Cluster_Number'],
-			$_POST['Kilo_Rank']
+			$_POST['Kilo_Rank'],
+			$_POST['Manufacturer']
 		);
 
 
@@ -77,15 +78,16 @@ INSERT INTO Sales (
        Control_Label_Flag,
        Dollar_Share,
        Cluster_Number,
-	   Kilo_Rank
+	   Kilo_Rank, 
+	   Manufacturer
 )
-VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
 	
 		$stmt = $conn->prepare($query);
 
-		$stmt->bind_param("iiddissssssddddddddsdds", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21],$param[22]);
+		$stmt->bind_param("iiddissssssddddddddsddss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21],$param[22],$param[23]);
 	
 	$result = $stmt->execute();
 
