@@ -640,33 +640,35 @@ $(window).resize();
     <th>Average Retail Price</th>
     <th>Dollar Volume Total</th>
 	<th>Kilo Volume Total</th>
+	    <th>Control Label Flag</th>
   </tr>
   <tr>
   <td><?php echo " ". $row['Average_AC_Dist'] ."";  ?></td>
   <td><?php echo " $".$row['Average_Retail_Price']."";  ?></td>
   <td><?php echo " $". number_format($row['Dollar_Volume_Total'],2) ."";  ?></td>  
   <td><?php echo " ". number_format($row['Kilo_Volume_Total'],2) ."";  ?></td>
-
+ <td><?php echo " ". $row['Control_Label_Flag'] ."";  ?></td>
   </tr>
 </table>
 
 <table style="width:100%" class="table2">
   <tr >
-    <th>Control Label Flag</th>
+
     <th>Dollar Share</th>
 	<th>Kilo Share</th>
 	<th>Cluster Number</th>
 	<th>Product Grouping</th>
 	<th>Kilo Rank</th>
-	
+	<th>Manufacturer</th>
   </tr>
   <tr>
-  <td><?php echo " ". $row['Control_Label_Flag'] ."";  ?></td>
+ 
   <td><?php echo " ". $row['Dollar_Share'] ."";  ?></td>  
   <td><?php echo " ". $row['Kilo_Share'] ."";  ?></td>
   <td><?php echo " ". $row['Cluster_Number'] ."";  ?></td>
   <td><?php echo " ". $row['Product_Grouping'] ."";  ?></td>
   <td><?php echo " ". $row['Kilo_Rank'] ."";  ?></td>
+  <td><?php echo " ". $row['Manufacturer'] ."";  ?></td>
   </tr>
 </table>
  <div class="well1">

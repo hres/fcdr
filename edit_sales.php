@@ -268,7 +268,10 @@
 					<div class="form-group col-sm-4">
 				<label for="Manufacturer">Manufacturer</label>
 				<input type="text" class="form-control" name="Manufacturer" style="" id="Manufacturer"  placeholder="Enter the Manufacturer " value="<?PHP echo $row['Manufacturer']; ?>" />
-				</div>	
+				</div>
+
+				</div>
+				<div class="row">	
 			<div class="form-group col-sm-4">
 			
 				<button style="margin-top: 30px;  margin-bottom:0px; float:right;" type="submit" class="btn btn-default" name="search" >Save</button>
