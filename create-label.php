@@ -293,38 +293,28 @@ $('input[name="intervaltype"]').click(function () {
       </div>
      </div>
 		
->
-					<div class="form-group col-sm-4">
-				<label for="Product_Description">Product Description</label>
-				<input type="text" class="form-control" name="Product_Description"  id="Product_Description" placeholder="Enter the Product Description " /> 
+			<div class="form-group col-sm-4">
+				<label for="Source">Source</label>
+				<input type="text" class="form-control" name="Source"  id="Source" placeholder="Enter the Source "  /> 
 			</div>
+		
 			
 			
 		</div>
 	
 				<div class="row">
-			<div class="form-group col">
-				<label for="Source">Source</label>
-				<input type="text" class="form-control" name="Source"  id="Source" placeholder="Enter the Source "  /> 
-			</div
-
-
-
-			<div class="form-group col">
+			<div class="form-group col-sm-4">
+				<label for="Product_Description">Product Description</label>
+				<input type="text" class="form-control" name="Product_Description"  id="Product_Description" placeholder="Enter the Product Description " /> 
+			</div>
+			<div class="form-group col-sm-4">
 				<label for="Per_Serving_Amount_In_Grams">Per Serving Amount (in grams)</label>
 				<input type="text" class="form-control" name="Per_Serving_Amount_In_Grams" id="Per_Serving_Amount_In_Grams" placeholder="Enter the Serving Amount (in grams) "/>
 			</div>
-			<div class="form-group col">
+			<div class="form-group col-sm-4">
 				<label for="Per_Serving_Amount_In_Grams_PPD">PPD Per Serving Amount (in grams) </label>
 				<input type="text" class="form-control" name="Per_Serving_Amount_In_Grams_PPD" id="Per_Serving_Amount_In_Grams_PPD" placeholder="Enter the PPD Serving Amount (in grams) "/>
 			</div>
-
-            		<div class="form-group col">
-	<label for="Multi_Part_Package" name="Multi_Part_Package">Multi Part Package</label>
-      <select class="form-control" id="Multi_Part_Package" name="Multi_Part_Package">
-		 <option value="No" selected>No</option>
-		 <option value="Yes">Yes</option>
-      </select></div
 		
 		</div>
 	
