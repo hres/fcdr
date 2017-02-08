@@ -367,11 +367,11 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 
 			<div class="form-group col-xs-6">
 				<label for="Per_Serving_Amount_In_Grams">Per Serving Amount (in grams)</label>
-				<input type="text" class="form-control" name="Per_Serving_Amount_In_Grams" id="Per_Serving_Amount_In_Grams" placeholder="Enter the Serving Amount (in grams) of the Package Label" value="<?PHP echo $row['Per_Serving_Amount_In_Grams']; ?>" />
+				<input type="text" class="form-control" style="width:540px" name="Per_Serving_Amount_In_Grams" id="Per_Serving_Amount_In_Grams" placeholder="Enter the Serving Amount (in grams) of the Package Label" value="<?PHP echo $row['Per_Serving_Amount_In_Grams']; ?>" />
 			</div>
 			<div class="form-group col-xs-6">
 				<label for="Per_Serving_Amount_In_Grams_PPD">PPD Per Serving Amount (in grams) </label>
-				<input type="text" class="form-control" name="Per_Serving_Amount_In_Grams_PPD" id="Per_Serving_Amount_In_Grams_PPD" placeholder="Enter the PPD Serving Amount (in grams) of the Package Label" value="<?PHP echo $row['Per_Serving_Amount_In_Grams_PPD']; ?>"/>
+				<input type="text" class="form-control" style="width:540px" name="Per_Serving_Amount_In_Grams_PPD" id="Per_Serving_Amount_In_Grams_PPD" placeholder="Enter the PPD Serving Amount (in grams) of the Package Label" value="<?PHP echo $row['Per_Serving_Amount_In_Grams_PPD']; ?>"/>
 			</div>
 		
 		</div>
@@ -379,7 +379,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		<div class="row">
 			<div class="form-group col-xs-6">
 				<label for="Product_Description">Product Description</label>
-				<input type="text" class="form-control" name="Product_Description"  id="Product_Description" placeholder="Enter the Product Description of the Package Label" value="<?PHP echo $row['Product_Description']; ?>" /> 
+				<input type="text" class="form-control" style="width:540px" name="Product_Description"  id="Product_Description" placeholder="Enter the Product Description of the Package Label" value="<?PHP echo $row['Product_Description']; ?>" /> 
 			</div>
 
             		<div class="form-group col-xs-6">
