@@ -45,8 +45,8 @@ $_POST['Collection_Date'] = (empty($_POST['Collection_Date']) && strlen($_POST['
 			$_POST['Product_Description'],
 			$_POST['Per_Serving_Amount_In_Grams'],
 			$_POST['Per_Serving_Amount_In_Grams_PPD'],
-			$_POST['Storage_Statement']
-
+			$_POST['Storage_Statement'],
+			$_POST['Multi_Part_Package']
 		);
 
 
@@ -79,13 +79,14 @@ UPDATE Package SET
 	Product_Description = ?,
 	Per_Serving_Amount_In_Grams = ?,
 	Per_Serving_Amount_In_Grams_PPD = ?,
-	Storage_Statement = ?
+	Storage_Statement = ?,
+	Multipart = ?
 
 	WHERE PackageID=?
 EOQ;
 
 							$stmt = $conn->prepare($query);
-							$stmt->bind_param("sssdsdsssssssssssssssissddsi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26],$packageID);
+							$stmt->bind_param("sssdsdsssssssssssssssissddssi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26],$packageID);
 							$result_insert = $stmt->execute();
 							//$last_id = mysqli_insert_id($conn);
 
