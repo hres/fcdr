@@ -364,19 +364,31 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 	<div class="well" style="margin-right:2%;">
 		
 		<div class="row">
-			<div class="form-group col-sm-4">
-				<label for="Product_Description">Product Description</label>
-				<input type="text" class="form-control" name="Product_Description"  id="Product_Description" placeholder="Enter the Product Description of the Package Label" value="<?PHP echo $row['Product_Description']; ?>" /> 
-			</div>
-			<div class="form-group col-sm-4">
+
+			<div class="form-group col-xs-6">
 				<label for="Per_Serving_Amount_In_Grams">Per Serving Amount (in grams)</label>
 				<input type="text" class="form-control" name="Per_Serving_Amount_In_Grams" id="Per_Serving_Amount_In_Grams" placeholder="Enter the Serving Amount (in grams) of the Package Label" value="<?PHP echo $row['Per_Serving_Amount_In_Grams']; ?>" />
 			</div>
-			<div class="form-group col-sm-4">
+			<div class="form-group col-xs-6">
 				<label for="Per_Serving_Amount_In_Grams_PPD">PPD Per Serving Amount (in grams) </label>
 				<input type="text" class="form-control" name="Per_Serving_Amount_In_Grams_PPD" id="Per_Serving_Amount_In_Grams_PPD" placeholder="Enter the PPD Serving Amount (in grams) of the Package Label" value="<?PHP echo $row['Per_Serving_Amount_In_Grams_PPD']; ?>"/>
 			</div>
 		
+		</div>
+
+		<div class="row">
+			<div class="form-group col-xs-6">
+				<label for="Product_Description">Product Description</label>
+				<input type="text" class="form-control" name="Product_Description"  id="Product_Description" placeholder="Enter the Product Description of the Package Label" value="<?PHP echo $row['Product_Description']; ?>" /> 
+			</div>
+
+            		<div class="form-group col-xs-6">
+	<label for="Multi_Part_Package" name="Multi_Part_Package">Multi Part Package</label>
+      <select class="form-control" id="Multi_Part_Package" style="width:540px" name="Multi_Part_Package">
+	  	<option value"<?PHP echo $row['Multipart']; ?>" selected></option>
+		 <option value="No">No</option>
+		 <option value="Yes">Yes</option>
+      </select></div
 		</div>
 	
 	</div>

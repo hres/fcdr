@@ -629,10 +629,11 @@ hr {
     <th>Storage Type</th>
 	<th>Storage Statements</th>
 	<th>Number Of Units</th>
+	<th>Multi Parts?</th>
 	
 	
   </tr>
-  			<?php echo "<tr><td>". $row['Package_Size_UofM'] . "</td><td>". $row['Storage_Type'] . "</td><td>". $row['Storage_Statement'] . "</td><td>". $row['Number_Of_Units'] . "</td></tr>"?>
+  			<?php echo "<tr><td>". $row['Package_Size_UofM'] . "</td><td>". $row['Storage_Type'] . "</td><td>". $row['Storage_Statement'] . "</td><td>". $row['Number_Of_Units'] . "</td><td>". $row['Multipart'] . "</td></tr>"?>
 		
 
 </table>
