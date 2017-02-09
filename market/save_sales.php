@@ -1,6 +1,6 @@
 
 
-<?php include 'connection.php';?>
+<?php include '../connection.php';?>
 
 <?php
 

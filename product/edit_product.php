@@ -1,6 +1,6 @@
 
 
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -18,8 +18,8 @@
 	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
 	</script>  
 	
-	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
+	<link href="../theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="../theme-gcwu-fegc/css/theme.min.css">
 
 
 
@@ -31,7 +31,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
-<noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
+<noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
 
 
 
@@ -82,10 +82,10 @@
 	}
 	
 	</style>
-	<?php include("fill_product.php"); ?>
+
 </head>
 <body class="wide comments example">
-	<?php include("header.php"); ?>
+	<?php include("../header.php"); ?>
 	
 	
 	<main role="main" property="mainContentOfPage" class="container">
@@ -96,7 +96,7 @@
 		<div class="fw-body" style="margin-left:-5px; margin-right:-5px;">
 		
 		<div class="container" >
-
+	<?php include("fill_product.php"); ?>
 
   
 
@@ -193,7 +193,7 @@ function goBack() {
 		
 
 		</main>
-<?php include 'footer.php';?>
+<?php include '../footer.php';?>
 
 	</div>
 	<script type="text/javascript">

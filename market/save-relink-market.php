@@ -1,4 +1,4 @@
-<?php include 'connection.php';?>
+<?php include '../connection.php';?>
 
 <?php
 
@@ -34,7 +34,7 @@ if (!$result) {
 }else{
 	//header( "refresh:10; url=home.php" );
 	echo "<h3><strong>Market Share was successfully re-linked, redirecting to the previous page...</strong><h3>";
-		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$oldProductID';\",3000);</script>";
+		echo "<script>setTimeout(\"location.href = '/product/view_product.php?ProductID=$oldProductID';\",3000);</script>";
 
 	
 }

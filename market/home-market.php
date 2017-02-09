@@ -1,4 +1,4 @@
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html lang="en">
 <head>
@@ -26,18 +26,18 @@
 	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js">
 	</script>
 
-	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
+	<link href="../theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="../theme-gcwu-fegc/css/theme.min.css">
 
 
 
 
 <!--<![endif]-->
 <!--[if lt IE 9]>
-<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/ie8-theme.min.css" />
+<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="/theme-gcwu-fegc/css/ie8-theme.min.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
+<script src="/wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
 
 
@@ -52,17 +52,17 @@
 
 
 
-<script type="text/javascript" src="js/formden.js"></script>
+<script type="text/javascript" src="/js/formden.js"></script>
 
 <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="css/bootstrap-iso.css" />
+<link rel="stylesheet" href="../css/bootstrap-iso.css" />
 
 <!--Font Awesome (added because you use icons in your prepend/append)
-<link rel="stylesheet" href="css/font-awesome.min.css" />-->
+<link rel="stylesheet" href="/css/font-awesome.min.css" />-->
 
 
 
-<noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
+<noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
 
 
 
@@ -131,16 +131,16 @@ $(document).ready(function() {
 <body class="wide comments example">
 <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
 
-<?php include 'header.php';?>
+<?php include '../header.php';?>
 
 <main role="main" property="mainContentOfPage" class="container">
 		
 		<div class="container" id="tabs" >
   <ul class="nav nav-tabs">
-    <li ><a  href="index.php">Search Product </a></li>
-    <li  class="active"><a  href="home-market.php">Search Market Share</a></li>
-    <li><a  href="home-label.php">Search Package Label</a></li>
-	  <li><a  href="search.php">Search All</a></li>
+    <li ><a  href="/index.php">Search Product </a></li>
+    <li  class="active"><a  href="/market/home-market.php">Search Market Share</a></li>
+    <li><a  href="/home-label.php">Search Package Label</a></li>
+	  <li><a  href="/search.php">Search All</a></li>
   </ul>
 
   
@@ -182,7 +182,7 @@ $(document).ready(function() {
       <select class="form-control" id="Sales_Year" name="Sales_Year">
 	    <option value="">Select a year</option>
 	
-<?php include 'connection.php';?>	
+<?php include '../connection.php';?>	
 		<?php
 
 		$query = "select distinct Sales_Year from $dbname.Sales";
@@ -290,7 +290,7 @@ if (!$result) {
 </form> 
 
 		</main>
-<?php include 'footer.php';?>
+<?php include '../footer.php';?>
 	<script type="text/javascript">
 $(document).ready(function()
 {
@@ -303,7 +303,7 @@ $(document).ready(function()
   $.ajax({
   
   type : 'POST',
-  url  :  'cleardb.php',
+  url  :  '/cleardb.php',
   data : data,
   success :  function(data) {
                 $('.result-modal').html(data);

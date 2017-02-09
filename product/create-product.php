@@ -1,4 +1,4 @@
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -17,8 +17,8 @@
 	
 
 
-	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
+	<link href="../theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="../theme-gcwu-fegc/css/theme.min.css">
 
 
 
@@ -31,7 +31,7 @@
 <script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
 
-<noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
+<noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
 
 
 
@@ -95,7 +95,7 @@
 <body class="wide comments example">
 <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
 
-<?php include 'header.php';?>
+<?php include '../header.php';?>
 <main role="main" property="mainContentOfPage" class="container">
 
 
@@ -119,7 +119,7 @@
 			
     <select class="form-control" id="Classification_Number" name="Classification_Number" style="width:540px" >
 		   <option value="" selected>Select a Classification Number</option>
-	<?php include 'List_Classification_Number.php';?>
+	<?php include '../List_Classification_Number.php';?>
 		
 			 </select>
 			</div>
@@ -233,7 +233,7 @@ function goBack() {
 }
 </script>
 		</main>
-			<?php include 'footer.php';?>
+			<?php include '../footer.php';?>
 	</div>
 
 </body>

@@ -1,4 +1,4 @@
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -17,8 +17,8 @@
 	</script>  
 
 
-	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
+	<link href="../theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="../theme-gcwu-fegc/css/theme.min.css">
 
 
 
@@ -35,16 +35,16 @@
 
 
 
-<script type="text/javascript" src="js/formden.js"></script>
+<script type="text/javascript" src="/js/formden.js"></script>
 
 <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="css/bootstrap-iso.css" />
+<link rel="stylesheet" href="/css/bootstrap-iso.css" />
 
 <!--Font Awesome (added because you use icons in your prepend/append)
 <link rel="stylesheet" href="css/font-awesome.min.css" />-->
 
 
-<noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
+<noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
 
 
 
@@ -95,7 +95,7 @@
 </head>
 <body class="wide comments example">
 
-<?php include 'header.php';?>
+<?php include '../header.php';?>
 
 <main role="main" property="mainContentOfPage" class="container">
 
@@ -272,9 +272,9 @@
 
 				</div>
 				<div class="row">	
-			<div class="form-group col-sm-4">
+			<div class="form-group ">
 			
-				<button style="margin-top: 30px;  margin-bottom:0px; float:right;" type="submit" class="btn btn-default" name="search" >Save</button>
+				<button style="margin-top: 30px; margin-right:15px; margin-bottom:0px; float:right;" type="submit" class="btn btn-default" name="search" >Save</button>
 			</div>
 		
 		</div>
@@ -307,7 +307,7 @@ function goBack() {
 	
 
 		</main>
-<?php include 'footer.php';?>
+<?php include '../footer.php';?>
 
 	</div>
 	<!-- Include Date Range Picker -->

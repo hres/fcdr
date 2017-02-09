@@ -1,4 +1,4 @@
-<?php include 'connection.php';?>
+<?php include '../connection.php';?>
 
 <?php
 $ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');

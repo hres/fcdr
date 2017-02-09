@@ -1,4 +1,4 @@
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -16,8 +16,8 @@
 	</script>  
 
 
-	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
+	<link href="../theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="../theme-gcwu-fegc/css/theme.min.css">
 
 
 
@@ -38,13 +38,13 @@
 <script type="text/javascript" src="js/formden.js"></script>
 
 <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="css/bootstrap-iso.css" />
+<link rel="stylesheet" href="../css/bootstrap-iso.css" />
 
 <!--Font Awesome (added because you use icons in your prepend/append)
 <link rel="stylesheet" href="css/font-awesome.min.css" />-->
 
 
-<noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
+<noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
 
 
 
@@ -107,7 +107,7 @@
 <body class="wide comments example">
 <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
 
-<?php include 'header.php';?>
+<?php include '../header.php';?>
 
 <main role="main" property="mainContentOfPage" class="container">
 
@@ -378,7 +378,7 @@ function goBack() {
 }
 </script>
 		</main>
-	<?php include 'footer.php';?>
+	<?php include '../footer.php';?>
 	</div>
 
 </body>

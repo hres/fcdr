@@ -1,4 +1,4 @@
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -23,8 +23,8 @@
 	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js">
 	</script>
 
-	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
+	<link href="../theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="../theme-gcwu-fegc/css/theme.min.css">
 
 
 
@@ -36,7 +36,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
-<noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
+<noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
 
 	
 <script type="text/javascript">
@@ -70,34 +70,6 @@ $(document).ready(function()
 
 
 
-<script type="text/javascript">
-$(document).ready(function()
-{
- $(document).on('submit', '#vids-search-form222', function()
- {
-
-  var data = $(this).serialize();
-  
-  
-  $.ajax({
-  
-  type : 'POST',
-  url  : 'search_package.php',
-  data : data,
-  success :  function(data) {
-                $('.result2').html(data);
-				
-            },
-            error: function (request, status, error) {
-                alert(request.responseText);
-                //or console.log(request.responseText), or status or error;
-            }
-  });
-  return false;
- });
- 
-});
-</script>
 
 
 
@@ -467,7 +439,7 @@ $(window).resize();
 	</style>
 </head>
 <body class="wide comments example">
-<?php include 'header.php';?>
+<?php include '../header.php';?>
 
 
 <main role="main" property="mainContentOfPage" class="container">
@@ -540,7 +512,7 @@ $(window).resize();
 			
     <select class="form-control" id="Classification_Number" name="Classification_Number" style="width:540px" onkeyup="showHint(this.value)">
 		  <option value="" selected="selected"></option>
-	<?php include 'List_Classification_Number.php';?>
+	<?php include '../List_Classification_Number.php';?>
 		
 			 </select>
 			</div>
@@ -548,7 +520,7 @@ $(window).resize();
 				<label for="Classification_Name">Classification Name</label>
 				 <select class="form-control" id="Classification_Name" name="Classification_Name" style="width:540px">
 		  <option value="" selected="selected"></option>
-		<?php include 'List_Classification.php';?>
+		<?php include '../List_Classification.php';?>
 	
 			 </select>
 			</div>
@@ -768,7 +740,7 @@ $(window).resize();
 		})
 </script>
 		</main>
-	<?php include 'footer.php';?>
+	<?php include '../footer.php';?>
 	<script type="text/javascript">
 				  var _gaq = _gaq || [];
 				  _gaq.push(['_setAccount', 'UA-365466-5']);
