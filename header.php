@@ -24,7 +24,7 @@
 <div class="container">
 <div class="row">
 <div id="wb-sttl" class="col-md-5">
-<a href=<?php echo $_SERVER["CONTEXT_PREFIX"];?>"/index.php">
+<a href="<?php echo $_SERVER["CONTEXT_PREFIX"];?>/index.php">
 <span>Food Component Data Repository</span>
 </a>
 </div>
@@ -45,9 +45,9 @@
 		<div class="row">
 			<ul class="list-inline menu">
 
-  <li><a href=<?php echo $_SERVER["CONTEXT_PREFIX"];?>"/index.php">Search</a></li>
-  <li> <a href=<?php echo $_SERVER["CONTEXT_PREFIX"];?>"/product/create-product.php">Create Product</a></li>
-				   <li><a  href=<?php echo $_SERVER["CONTEXT_PREFIX"];?>"/market/importdata.php" >Import</a></li>
+  <li><a href="<?php echo $_SERVER["CONTEXT_PREFIX"];?>/index.php">Search</a></li>
+  <li> <a href="<?php echo $_SERVER["CONTEXT_PREFIX"];?>/product/create-product.php">Create Product</a></li>
+				   <li><a  href="<?php echo $_SERVER["CONTEXT_PREFIX"];?>/market/importdata.php" >Import</a></li>
 
 				<li><a href="#">Export</a></li>
 			</ul>
