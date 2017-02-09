@@ -1,4 +1,4 @@
-<?php include 'connection.php';?>
+<?php include '../connection.php';?>
 
 <?php
 
@@ -85,8 +85,8 @@ if (!$result) {
 	$row2 = $result2->fetch_assoc();
 	$OldProductID = $row2['ProductIDP'];
 	 while($row = $result->fetch_assoc()) {
-		//echo "<div> <a href=view_product.php?ProductID=" .$row['ProductID'] . "> ". $row['Description'] . "</a></div>"
-	echo "<div > <a href=relink_product.php?OldProductID=$OldProductID&PackageID=$PackageID&NewProductID=" .$row['ProductID'] . " onClick=\"return confirm('Re-link to this Product?')\">". $row['Description'] . "</a><div><br>";                       
+		//echo "<div> <a href=\"/product/view_product.php?ProductID=" .$row['ProductID'] . "\"> ". $row['Description'] . "</a></div>"
+	echo "<div > <a href=\"/product/relink_product.php?OldProductID=$OldProductID&PackageID=$PackageID&NewProductID=" .$row['ProductID'] . "\" onClick=\"return confirm('Re-link to this Product?')\">". $row['Description'] . "</a><div><br>";                       
 
 	}
 

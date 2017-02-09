@@ -1,4 +1,4 @@
-<?php include 'connection.php';?>
+<?php include '../connection.php';?>
 
 <?php
 
@@ -60,7 +60,7 @@ EOQ;
 
 }else{
 	echo "<h3>Package was successfully deleted, redirecting to the product page...</h3>";
-		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$ProductID';\",3000);</script>";
+		echo "<script>setTimeout(\"location.href = '/product/view_product.php?ProductID=$ProductID';\",3000);</script>";
 
 	
 }

@@ -1,4 +1,4 @@
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -17,10 +17,10 @@
 
 
 
-<script type="text/javascript" src="js/formden.js"></script>
+<script type="text/javascript" src="/js/formden.js"></script>
 
 <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="css/bootstrap-iso.css" />
+<link rel="stylesheet" href="/css/bootstrap-iso.css" />
 
 	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
 	</script>  
@@ -28,8 +28,8 @@
 
 
 
-	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
+	<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/theme-gcwu-fegc/css/theme.min.css">
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -52,10 +52,10 @@ $('input[name="intervaltype"]').click(function () {
 
 <!--<![endif]-->
 <!--[if lt IE 9]>
-<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/ie8-theme.min.css" />
+<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="/theme-gcwu-fegc/css/ie8-theme.min.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
+<script src="/wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
 
 
@@ -158,7 +158,7 @@ $('input[name="intervaltype"]').click(function () {
 </head>
 <body class="wide comments example">
 
-<?php include 'header.php';?>
+<?php include '../header.php';?>
 <main role="main" property="mainContentOfPage" class="container">
 
 <?php
@@ -238,7 +238,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 	<label for="Package_Size_UofM" > Package Size Unit of Measure </label>
     <select class="form-control" id="Package_Size_UofM" name="Package_Size_UofM" > 
 		   <option value="<?PHP echo $row['Package_Size_UofM']; ?>" selected="selected"><?PHP echo $row['Package_Size_UofM']; ?></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select></div>
 			<?php include("fill_package.php"); ?>	
@@ -429,7 +429,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 	<label for="sel1" name="Per_Serving_Unit" class="required"> Per Serving  Unit of measure <strong class="required">(required)</strong></label>
     <select class="form-control" id="sel1" name="Per_Serving_Unit" style="width:540px" required>
 		  <option value="<?PHP echo $row['Per_Serving_Unit']; ?>" selected="selected"><?PHP echo $row['Per_Serving_Unit']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select></div>
@@ -446,7 +446,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 	<div class="well" style="margin-right:2%;">
 
 <div class= "row">
-<?php include 'connection.php';?>
+<?php include '../connection.php';?>
 <?php
 
 $editpackagequery = <<<EOQ
@@ -484,7 +484,7 @@ EOQ;
 	
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -505,7 +505,7 @@ EOQ;
  </div>
  
  <div class= "row" style="margin-top:4px;">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -529,7 +529,7 @@ EOQ;
    <option value="" ></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -551,7 +551,7 @@ EOQ;
  
  
   <div class= "row" style="margin-top:4px;">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -572,12 +572,12 @@ EOQ;
 <select class="form-control" id="sel1" name="Saturated_Plus_Trans_UofM">
   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select> </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -598,7 +598,7 @@ EOQ;
  </div>
  
  <div class= "row" style="margin-top:4px;">
-	<?php include 'connection.php';?> 
+	<?php include '../connection.php';?> 
 	<?php 
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -621,12 +621,12 @@ EOQ;
 <select class="form-control" id="sel1" name="Fat_Unit_Of" required>
   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select> </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);			   
@@ -647,7 +647,7 @@ EOQ;
 
  
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	  
@@ -668,12 +668,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Saturated_Fat_Unit">
          <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);  
@@ -692,7 +692,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		   
@@ -714,12 +714,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Trans_Fat_Unit">
 	  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);  
@@ -740,7 +740,7 @@ EOQ;
     <div class= "row" style="margin-top:4px;">
 
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		   
@@ -761,12 +761,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Polyunsaturated_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		   
@@ -786,7 +786,7 @@ EOQ;
  
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -806,12 +806,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Omega6_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
 	  
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -830,7 +830,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);  
@@ -850,11 +850,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Omega3_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);  
@@ -876,7 +876,7 @@ EOQ;
    <div class= "row" style="margin-top:4px;">
 
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		    
@@ -897,12 +897,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Monounsaturated_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>  
+	<?php include '../connection.php';?>  
 	<?php 
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		    
@@ -926,7 +926,7 @@ EOQ;
   <div class= "row" style="margin-top:4px;">
 
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		    
@@ -947,12 +947,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Carbohydrates_Unit" required>
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>  
+	<?php include '../connection.php';?>  
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		    
@@ -972,7 +972,7 @@ EOQ;
   <div class= "row" style="margin-top:4px;">
 
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	  
@@ -993,12 +993,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Fibre_Unit" required>
 	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected" required><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">   
-	<?php include 'connection.php';?>  
+	<?php include '../connection.php';?>  
 	<?php 
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		   
@@ -1019,7 +1019,7 @@ EOQ;
   
 
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		   
@@ -1040,12 +1040,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Soluble_Fibre_Unit">
 	     <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">  
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);  
@@ -1065,7 +1065,7 @@ EOQ;
   <div class= "row" style="margin-top:4px;">
 
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		  
@@ -1086,13 +1086,13 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1"  name="Insoluble_Fibre_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-<?php include 'Units.php';?>	
+<?php include '../Units.php';?>	
 	<option value=""></option>
 	
       
       </select>  </div>
   <div class="col-sm-3">  
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);  
@@ -1111,7 +1111,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);  
@@ -1131,12 +1131,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sugar_Unit">
 	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		<option value=""></option>
 
       </select>  </div>
   <div class="col-sm-3">	
-	<?php include 'connection.php';?>  
+	<?php include '../connection.php';?>  
 	<?php 
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		   
@@ -1155,7 +1155,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);  
@@ -1176,11 +1176,11 @@ EOQ;
  <select class="form-control" id="sel1" name="Sugar_Alcohols_Unit">
 	<option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 	<option value=""></option>
       </select>  </div>
   <div class="col-sm-3">	
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);  
@@ -1199,7 +1199,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);  
@@ -1219,12 +1219,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Starch_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>	
+	<?php include '../Units.php';?>	
 	<option value=""></option>
 
       </select>  </div>
   <div class="col-sm-3">	
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);  
@@ -1243,7 +1243,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);									
@@ -1265,11 +1265,11 @@ EOQ;
  <select class="form-control" id="sel1" name="Protein_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
      <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);				  		 		    		 		  
@@ -1288,7 +1288,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -1308,13 +1308,13 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Cholesterol_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-<?php include 'Units.php';?>	
+<?php include '../Units.php';?>	
 	<option value=""></option>
 
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);  	
@@ -1333,7 +1333,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		 
@@ -1353,13 +1353,13 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sodium_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>	
+	<?php include '../Units.php';?>	
 	<option value=""></option>
 
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		   
@@ -1378,7 +1378,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);				  
@@ -1398,13 +1398,13 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Potassium_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>	
+	<?php include '../Units.php';?>	
 	<option value=""></option>
 
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);				
@@ -1424,7 +1424,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		 
@@ -1444,13 +1444,13 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Calcium_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	 <?php include 'Units.php';?>	
+	 <?php include '../Units.php';?>	
 	 <option value=""></option>
 
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);				 
@@ -1469,7 +1469,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		
@@ -1489,13 +1489,13 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Iron_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>	
+	<?php include '../Units.php';?>	
 	<option value=""></option>
 
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -1516,7 +1516,7 @@ EOQ;
  
    <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);			
@@ -1536,13 +1536,13 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminA_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 	   <option value=""></option>
 
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);					
@@ -1563,7 +1563,7 @@ EOQ;
  
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		
@@ -1583,13 +1583,13 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminC_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>	
+	<?php include '../Units.php';?>	
 	<option value=""></option>
 
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -1608,7 +1608,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		
@@ -1628,13 +1628,13 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminD_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-<?php include 'Units.php';?>		
+<?php include '../Units.php';?>		
 	<option value=""></option>
 
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -1654,7 +1654,7 @@ EOQ;
 
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -1674,13 +1674,13 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminE_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>	
+	<?php include '../Units.php';?>	
 	<option value=""></option>
 
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -1699,7 +1699,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);				 		 		 		 		
@@ -1719,13 +1719,13 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminK_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
 		<option value=""></option>
 
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);				 		 		 		 		 	
@@ -1744,7 +1744,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		 		 		 		 		 		 
@@ -1764,12 +1764,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Thiamine_Unit">
 	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	 	<?php include 'Units.php';?>
+	 	<?php include '../Units.php';?>
 	 <option value=""></option>
 
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);					
@@ -1788,7 +1788,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);			 		 		 		 		 		 		 		 
@@ -1808,11 +1808,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Riboflavin_Unit">
 	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	 	<?php include 'Units.php';?>
+	 	<?php include '../Units.php';?>
 	 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -1831,7 +1831,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);			 		 		 		 		 		 		 		 		
@@ -1852,12 +1852,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Niacin_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
- 	<?php include 'Units.php';?>
+ 	<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		 		 		 		 		 		 		 		 		 		
@@ -1876,7 +1876,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		 		 		 		 		 		 		 		  
@@ -1897,11 +1897,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminB6_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);			 		 		 		 		 		 		 		 		
@@ -1920,7 +1920,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);			 		 		 		 
@@ -1940,11 +1940,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Folate_Unit">
 	  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -1964,7 +1964,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		 		 		 		 		 		 		 		 		 		 		
@@ -1985,11 +1985,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminB12_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		 		 		 		 		 		 		 		 		 		 		 
@@ -2008,7 +2008,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		 	 		 		 		 			
@@ -2028,12 +2028,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Biotin_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-<?php include 'Units.php';?>
+<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);   	 		 		 		 			
@@ -2052,7 +2052,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		  		 		 		 		 		 		 		 		 		 		 		 		 		 		 		
@@ -2072,12 +2072,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Choline_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	 		 		 		 		 		 		 		 		 		 		 		 		 		 		
@@ -2096,7 +2096,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		
@@ -2116,12 +2116,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Pantothenate_Unit">
 	  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);				 	 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		
@@ -2140,7 +2140,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);			  
@@ -2161,12 +2161,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Phosphorus_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value="Tbsp"></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	   		 		 		 		 		 	 		 		 		 		 		 		 		 		 		 		 		 	
@@ -2186,7 +2186,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);			 		 		 		 		 		 		 		 		 		 		 		 		 	
@@ -2208,13 +2208,13 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Iodide_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-<?php include 'Units.php';?>	
+<?php include '../Units.php';?>	
 	<option value=""></option>
 		
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		 		 		 		 		 		 		 		 		 		 		 		 		 	
@@ -2237,7 +2237,7 @@ EOQ;
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Magnesium</label>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);					
@@ -2255,11 +2255,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Magnesium_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);			  
@@ -2278,7 +2278,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	 
@@ -2299,11 +2299,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Zinc_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		  
@@ -2324,7 +2324,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);				  
@@ -2345,11 +2345,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Selenium_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);									
@@ -2369,7 +2369,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	 
@@ -2390,11 +2390,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Copper_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	 
@@ -2414,7 +2414,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	 
@@ -2434,12 +2434,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Manganese_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery); 
@@ -2460,7 +2460,7 @@ EOQ;
  
    <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		
@@ -2480,12 +2480,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Chromium_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -2504,7 +2504,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	 
@@ -2524,12 +2524,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Molybdenium_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	 
@@ -2549,7 +2549,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery); 
@@ -2570,12 +2570,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Chloride_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>	 	
+	<?php include '../connection.php';?>	 	
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery); 
@@ -2620,7 +2620,7 @@ EOQ;
 	<label for="sel1" name="Year_Recorded"> PPD Per Serving Unit of Measure</label>
       <select class="form-control" id="sel1" name="PPD_Per_Serving_UofM" style="width:540px">
 		  <option value="<?PHP echo $row['PPD_Per_Serving_UofM']; ?>" selected="selected"><?PHP echo $row['PPD_Per_Serving_UofM']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select></div>
@@ -2635,7 +2635,7 @@ EOQ;
 	<div class="well" style="margin-right:2%;">
 
 <div class= "row">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -2661,7 +2661,7 @@ EOQ;
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -2681,7 +2681,7 @@ EOQ;
  </div>
  
  <div class= "row" style="margin-top:4px;">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -2707,7 +2707,7 @@ EOQ;
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -2728,7 +2728,7 @@ EOQ;
  
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);			 
@@ -2748,12 +2748,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Saturated_Trans_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -2775,7 +2775,7 @@ EOQ;
  
  <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -2795,12 +2795,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Fat_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	
@@ -2818,7 +2818,7 @@ EOQ;
  </div>
  </div>
  <div class= "row" style="margin-top:4px;">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery); 
@@ -2840,12 +2840,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Saturated_Fat_Unit_S" >
 	  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);   
@@ -2865,7 +2865,7 @@ EOQ;
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Trans Fat</label>
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);   
@@ -2885,12 +2885,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Trans_Fat_Unit_S">
 	  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);	 
@@ -2913,7 +2913,7 @@ EOQ;
     <div class= "row" style="margin-top:4px;">
 
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		
@@ -2934,12 +2934,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Polyunsaturated_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>  
+	<?php include '../connection.php';?>  
 	<?php 
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -2961,7 +2961,7 @@ EOQ;
  
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -2981,11 +2981,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Omega6_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3004,7 +3004,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3024,11 +3024,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Omega3_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3050,7 +3050,7 @@ EOQ;
     <div class= "row" style="margin-top:4px;">
 
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3071,12 +3071,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Monounsaturated_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>  
+	<?php include '../connection.php';?>  
 	<?php 
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3096,7 +3096,7 @@ EOQ;
  
  
   <div class= "row" style="margin-top:4px;">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3117,12 +3117,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Carbohydrates_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3140,7 +3140,7 @@ EOQ;
  </div>
  </div>
   <div class= "row" style="margin-top:4px;">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3161,12 +3161,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Fibre_Unit_S">
 	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>	
+		<?php include '../Units.php';?>	
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3184,7 +3184,7 @@ EOQ;
  </div>
  </div>
   <div class= "row" style="margin-top:4px;">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3205,12 +3205,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Soluble_Fibre_Unit_S">
 	     <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>	
+		<?php include '../Units.php';?>	
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3229,7 +3229,7 @@ EOQ;
  </div>
  </div>
   <div class= "row" style="margin-top:4px;">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3250,12 +3250,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1"  name="Insolube_Fibre_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3274,7 +3274,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3294,11 +3294,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sugar_Unit_S">
 	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php 
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3317,7 +3317,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3337,11 +3337,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sugar_Alcohols_Unit_S">
 	<option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3360,7 +3360,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3380,11 +3380,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Starch_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3403,7 +3403,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3424,12 +3424,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Protein_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3448,7 +3448,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3468,12 +3468,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Cholesterol_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3493,7 +3493,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3513,12 +3513,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sodium_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	  <?php include 'Units.php';?>
+	  <?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3538,7 +3538,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3559,12 +3559,12 @@ EOQ;
  <select class="form-control" id="sel1" name="Potassium_Unit_S">
 	    <option value="" selected="selected"></option>
 	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3583,7 +3583,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3603,12 +3603,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Calcium_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3628,7 +3628,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3648,12 +3648,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Iron_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3672,7 +3672,7 @@ EOQ;
  </div>
    <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3692,12 +3692,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminA_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3716,7 +3716,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>		 		 		 		 	
+	<?php include '../connection.php';?>		 		 		 		 	
 	<?php 
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3736,12 +3736,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminC_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3760,7 +3760,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3780,12 +3780,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminD_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3805,7 +3805,7 @@ EOQ;
 
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3825,12 +3825,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminE_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3849,7 +3849,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3869,12 +3869,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminK_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3893,7 +3893,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3913,11 +3913,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Thiamine_Unit_S">
 	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3937,7 +3937,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3957,12 +3957,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Riboflavin_Unit_S" value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>">
 	    <option value="" selected="selected"></option>
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -3981,7 +3981,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4002,12 +4002,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Niacin_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4026,7 +4026,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4047,11 +4047,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminB6_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4070,7 +4070,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4090,12 +4090,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Folate_Unit_S">
 	  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value="Tbsp">Tbsp</option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4114,7 +4114,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4135,11 +4135,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminB12_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4158,7 +4158,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4179,12 +4179,12 @@ EOQ;
  <select class="form-control" id="sel1" name="Biotin_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 
-	<?php include 'Units.php';?>
+	<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4203,7 +4203,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">	
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php 
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4223,12 +4223,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Choline_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4247,7 +4247,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4267,12 +4267,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Pantothenate_Unit_S">
 	  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4291,7 +4291,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4312,12 +4312,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Phosphorus_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4336,7 +4336,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4358,12 +4358,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Iodide_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4385,7 +4385,7 @@ EOQ;
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Magnesium</label>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4403,11 +4403,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Magnesium_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4426,7 +4426,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4447,12 +4447,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Zinc_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4471,7 +4471,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4492,11 +4492,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Selenium_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4515,7 +4515,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4536,11 +4536,11 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Copper_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4559,7 +4559,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4579,12 +4579,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Manganese_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4603,7 +4603,7 @@ EOQ;
  </div>
    <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4623,12 +4623,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Chromium_Unit_S">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4647,7 +4647,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4667,12 +4667,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Molybdenium_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4692,7 +4692,7 @@ EOQ;
  </div>
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4713,12 +4713,12 @@ EOQ;
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Chloride_Unit_S">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
-		<?php include 'Units.php';?>
+		<?php include '../Units.php';?>
 		 <option value=""></option>
       
       </select>  </div>
   <div class="col-sm-3">
-	<?php include 'connection.php';?>
+	<?php include '../connection.php';?>
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -4756,7 +4756,7 @@ EOQ;
 </div>
 <div id="demo"></div>	
 		<div style="float:left; display:inline-block;">
-			 <?php echo " <a class=\"btn btn-default\" href=package_details.php?PackageID=" . $_GET['PackageID'] . ">Back</a>";  ?>
+			 <?php echo " <a class=\"btn btn-default\" href=/label/package_details.php?PackageID=" . $_GET['PackageID'] . ">Back</a>";  ?>
 		</div>
 		<div style="float:right; display:inline-block; margin-right:2%;">
 				<button  type="submit" class="btn btn-default" name="search" >Save</button>
@@ -4788,7 +4788,7 @@ function goBack() {
 		
 
 		</main>
-<?php include 'footer.php';?>
+<?php include '../footer.php';?>
 
 	</div>
 	

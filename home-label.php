@@ -1,4 +1,4 @@
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html lang="en">
 <head>
@@ -26,29 +26,29 @@
 	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js">
 	</script>
 
-	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
+	<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/theme-gcwu-fegc/css/theme.min.css">
 
 
 <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
 
 
 
-<script type="text/javascript" src="js/formden.js"></script>
+<script type="text/javascript" src="/js/formden.js"></script>
 
 <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="css/bootstrap-iso.css" />
+<link rel="stylesheet" href="/css/bootstrap-iso.css" />
 
 <!--Font Awesome (added because you use icons in your prepend/append)
-<link rel="stylesheet" href="css/font-awesome.min.css" />-->
+<link rel="stylesheet" href="/css/font-awesome.min.css" />-->
 
 
 <!--<![endif]-->
 <!--[if lt IE 9]>
-<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/ie8-theme.min.css" />
+<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="/theme-gcwu-fegc/css/ie8-theme.min.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
+<script src="/wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
 
 
@@ -122,17 +122,17 @@ $(document).ready(function() {
 <body class="wide comments example">
 <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
 
-<?php include 'header.php';?>
+<?php include '../header.php';?>
 
 <main role="main" property="mainContentOfPage" class="container">
 
 		
 		<div class="container" id="tabs" >
   <ul class="nav nav-tabs">
-    <li ><a  href="index.php">Search Product </a></li>
-    <li ><a  href="home-market.php">Search Market Share</a></li>
-    <li class="active"><a  href="home-label.php">Search Package Label</a></li>
-		  <li><a  href="search.php">Search All</a></li>
+    <li ><a  href="/index.php">Search Product </a></li>
+    <li ><a  href="/market/home-market.php">Search Market Share</a></li>
+    <li class="active"><a  href="/label/home-label.php">Search Package Label</a></li>
+		  <li><a  href="/search.php">Search All</a></li>
   </ul>
 
   
@@ -245,7 +245,7 @@ $(document).ready(function() {
 </div>
 	
 		</main>
-<?php include 'footer.php';?>
+<?php include '../footer.php';?>
 
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>

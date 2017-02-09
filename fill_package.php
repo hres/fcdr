@@ -1,4 +1,4 @@
-<?php include 'connection.php';?>
+<?php include '../connection.php';?>
 
 <?php
 $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');

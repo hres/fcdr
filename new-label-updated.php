@@ -1,4 +1,4 @@
-<?php include 'connection.php';?>
+<?php include '../connection.php';?>
 
 <?php
 
@@ -286,7 +286,7 @@ for ($row = 0; $row < 94; $row++) {
 }
 
 		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Label Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
-		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",3000);</script>";
+		echo "<script>setTimeout(\"location.href = '/product/view_product.php?ProductID=$productID';\",3000);</script>";
 
 						}else{
 							

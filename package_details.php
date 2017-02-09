@@ -1,4 +1,4 @@
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -31,8 +31,8 @@
 	</script>
 
 	
-	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
+	<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/theme-gcwu-fegc/css/theme.min.css">
 
 
 
@@ -44,12 +44,12 @@
 
 <!--<![endif]-->
 <!--[if lt IE 9]>
-<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/ie8-theme.min.css" />
+<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="/theme-gcwu-fegc/css/ie8-theme.min.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
+<script src="/wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
-<noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
+<noscript><link rel="stylesheet" href="/wet-boew/css/noscript.min.css" /></noscript>
 
 
 	<script>
@@ -473,7 +473,7 @@ hr {
 </head>
 <body class="wide comments example" >
 
-<?php include 'header.php';?>
+<?php include '../header.php';?>
 
 <main role="main" property="mainContentOfPage" class="container">
 
@@ -484,7 +484,7 @@ hr {
 
 <div style="float:right; ">
 
-<?php echo " <a class=\"btn btn-default\" href=edit_package.php?PackageID=" .$_GET['PackageID'] . ">Edit</a>";  ?>
+<?php echo " <a class=\"btn btn-default\" href=/label/edit_package.php?PackageID=" .$_GET['PackageID'] . ">Edit</a>";  ?>
 <a class="js-open-modal btn btn-default btn-large" href="#" style="margin-left:4px;" data-modal-id="popup" id="button"  onclick="return hidedeletemessage();">Delete Label</a>
 <a class="js-open-modal btn btn-default btn-large" href="#" data-modal-id="popup" id="button" onclick="return hiderelinkmessage();">Re-Link</a>
 
@@ -544,7 +544,7 @@ hr {
 			
     <select class="form-control" id="sel1" name="Classification_Number" style="width:540px" onkeyup="showHint(this.value)">
 		  <option value="" selected="selected"></option>
-	<?php include 'List_Classification_Number.php';?>
+	<?php include '../List_Classification_Number.php';?>
 		
 			 </select>
 			</div>
@@ -552,7 +552,7 @@ hr {
 				<label for="immunizing_agent">Classification Name</label>
 				 <select class="form-control" id="class_num" name="Classification_Name" style="width:540px">
 		  <option value="" selected="selected"></option>
-		<?php include 'List_Classification.php';?>
+		<?php include '../List_Classification.php';?>
 	
 			 </select>
 			</div>
@@ -707,7 +707,7 @@ hr {
 			
 					<tbody >
 				
-<?php include("nutrition_table.php"); ?>
+<?php include("../nutrition_table.php"); ?>
 					</tbody>
 				</table>
 			
@@ -758,7 +758,7 @@ hr {
 			
 					<tbody >
 				
-<?php include("nutrition_table2.php"); ?>
+<?php include("../nutrition_table2.php"); ?>
 					</tbody>
 				</table>
 			
@@ -797,7 +797,7 @@ hr {
 <div class="container" style="width:1080px;">
   <h2>Image Gallery</h2>
 
-  <?php include("getImage.php"); ?>
+  <?php include("../getImage.php"); ?>
 </div>
 
     </div>
@@ -805,7 +805,7 @@ hr {
   </div>
  
 </div>
-<?php include 'connection.php';?>
+<?php include '../connection.php';?>
 <?php
 
 $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');
@@ -876,7 +876,7 @@ $conn->close();
 </table>
 	<div class="div2"> 
 	
-			 		<?php include 'connection.php';?>
+			 		<?php include '../connection.php';?>
 					<?php 
 					$PackageID =  $_GET['PackageID'];
 	$query= "select ProductIDP from $dbname.Package where PackageID=$PackageID";
@@ -885,8 +885,8 @@ $conn->close();
 	$row = $result->fetch_assoc();
 	
 	?>
-	 <?php echo " <a class=\"btn btn-default\" href=view_product.php?ProductID=" . $row['ProductIDP'] . ">Back</a>";  ?>
-	<!--<a class ="btn btn-default" href="home.php">Back</a>-->
+	 <?php echo " <a class=\"btn btn-default\" href=/product/view_product.php?ProductID=" . $row['ProductIDP'] . ">Back</a>";  ?>
+	<!--<a class ="btn btn-default" href="/home.php">Back</a>-->
 	
 	</div>
 
@@ -895,7 +895,7 @@ $conn->close();
 
 
 		</main>
-	<?php include 'footer.php';?>
+	<?php include '../footer.php';?>
 	<script type="text/javascript">
 				  var _gaq = _gaq || [];
 				  _gaq.push(['_setAccount', 'UA-365466-5']);

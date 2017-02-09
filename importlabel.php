@@ -1,4 +1,4 @@
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -17,18 +17,18 @@
 
 
 
-	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
+	<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/theme-gcwu-fegc/css/theme.min.css">
 
 
 
 
 <!--<![endif]-->
 <!--[if lt IE 9]>
-<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/ie8-theme.min.css" />
+<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="/theme-gcwu-fegc/css/ie8-theme.min.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
+<script src="/wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
 
 
@@ -88,16 +88,16 @@
 </head>
 <body class="wide comments example">
 
-<?php include 'header.php';?>
+<?php include '../header.php';?>
 
 <main role="main" property="mainContentOfPage" class="container">
 
 		
 		<div class="container" id="tabs" >
   <ul class="nav nav-tabs">
-    <li ><a  href="importdata.php">Import Market Share</a></li>
-    <li class="active"><a  href="importlabel.php">Import Package Label</a></li>
-	 <li ><a  href="importimages.php">Import Images</a></li>
+    <li ><a  href="/importdata.php">Import Market Share</a></li>
+    <li class="active"><a  href="/label/importlabel.php">Import Package Label</a></li>
+	 <li ><a  href="/importimages.php">Import Images</a></li>
   </ul>
 
   

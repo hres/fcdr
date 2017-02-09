@@ -1,4 +1,4 @@
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html lang="en">
 <head>
@@ -16,30 +16,30 @@
 	</script>  
 
 
-	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
+	<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/theme-gcwu-fegc/css/theme.min.css">
 
 
 
 
 <!--<![endif]-->
 <!--[if lt IE 9]>
-<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/ie8-theme.min.css" />
+<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="/theme-gcwu-fegc/css/ie8-theme.min.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
+<script src="/wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
 
 <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
 
 
 
-<script type="text/javascript" src="js/formden.js"></script>
+<script type="text/javascript" src="/js/formden.js"></script>
 
 <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="css/bootstrap-iso.css" />
+<link rel="stylesheet" href="/css/bootstrap-iso.css" />
 
-<noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
+<noscript><link rel="stylesheet" href="/wet-boew/css/noscript.min.css" /></noscript>
 
 
 
@@ -133,7 +133,7 @@ $('input[name="intervaltype"]').click(function () {
 <body class="wide comments example">
 <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
 
-<?php include 'header.php';?>
+<?php include '../header.php';?>
 
 <main role="main" property="mainContentOfPage" class="container">
 
@@ -198,7 +198,7 @@ $('input[name="intervaltype"]').click(function () {
 	<label for="Package_Size_UofM" name="Package_Size_UofM" >Package Size Unit of Measure </label>
     <select class="form-control" id="Package_Size_UofM" name="Package_Size_UofM"> 
 		   <option value="" selected="selected">Select the Per Serving Unit</option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select></div>
 
@@ -375,7 +375,7 @@ $('input[name="intervaltype"]').click(function () {
 	<label for="Per_Serving_Unit" name="Year_Recorded" class="required"> Per Serving Unit <strong class="required">(required)</strong></label>
     <select class="form-control" id="Per_Serving_Unit" name="Per_Serving_Unit" style="width:540px" required> 
 		   <option value="" selected="selected">Select the Per Serving Unit</option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select></div>
 			
@@ -444,7 +444,7 @@ $('input[name="intervaltype"]').click(function () {
 
  <select class="form-control" id="Fat_Unit" name="Saturated_Trans_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
 		
       
       </select>  </div>
@@ -466,7 +466,7 @@ $('input[name="intervaltype"]').click(function () {
 
  <select class="form-control" id="Fat_Unit" name="Fat_Unit" required>
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -487,7 +487,7 @@ $('input[name="intervaltype"]').click(function () {
 
  <select class="form-control" id="Saturated_Fat_Unit" name="Saturated_Fat_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -508,7 +508,7 @@ $('input[name="intervaltype"]').click(function () {
 
  <select class="form-control" id="Trans_Fat_Unit" name="Trans_Fat_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -526,7 +526,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Polyunsaturated_Unit" name="Polyunsaturated_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -544,7 +544,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Omega6_Unit" name="Omega6_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Omega-6 Polyunsaturated Fat" name="Omega6_DValue">
@@ -560,7 +560,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Omega3_Unit" name="Omega3_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
 
@@ -578,7 +578,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Monounsaturated_Unit" name="Monounsaturated_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -596,7 +596,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Carbohydrates_Unit" name="Carbohydrates_Unit" required>
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -613,7 +613,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Fibre_Unit" name="Fibre_Unit" required>
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -630,7 +630,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Soluble_Fibre_Unit" name="Soluble_Fibre_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -647,7 +647,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Insolube_Fibre_Unit"  name="Insolube_Fibre_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -664,7 +664,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Sugar_Unit" name="Sugar_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Sugar" name="Sugar_DValue" id="Sugar_DValue">
@@ -680,7 +680,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Sugar_Alcohols_Unit" name="Sugar_Alcohols_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Sugar Alcohols" name="Sugar_Alcohols_DValue" id="Sugar_Alcohols_DValue">
@@ -696,7 +696,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Starch_Unit" name="Starch_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Starch" name="Starch_DValue" id="Starch_DValue">
@@ -712,7 +712,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Protein_Unit" name="Protein_Unit" required>
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -729,7 +729,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Cholesterol_Unit" name="Cholesterol_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -746,7 +746,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Sodium_Unit" name="Sodium_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -763,7 +763,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Potassium_Unit" name="Potassium_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -780,7 +780,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Calcium_Unit" name="Calcium_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -797,7 +797,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Iron_Unit" name="Iron_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -814,7 +814,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="VitaminA_Unit" name="VitaminA_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -831,7 +831,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="VitaminC_Unit" name="VitaminC_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -848,7 +848,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="VitaminD_Unit" name="VitaminD_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -866,7 +866,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="VitaminE_Unit" name="VitaminE_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -883,7 +883,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="VitaminK_Unit" name="VitaminK_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -900,7 +900,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Thiamine_Unit" name="Thiamine_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Thiamine" name="Thiamine_DValue" id="Thiamine_DValue">
@@ -916,7 +916,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Riboflavin_Unit" name="Riboflavin_Unit">
 	<option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -933,7 +933,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Niacin_Unit" name="Niacin_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -950,7 +950,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="VitaminB6_Unit" name="VitaminB6_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Vitamin B6" name="VitaminB6_DValue" id="VitaminB6_DValue"> 
@@ -966,7 +966,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Folate_Unit" name="Folate_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -983,7 +983,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="VitaminB12_Unit" name="VitaminB12_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Vitamin B12" name="VitaminB12_DValue" id="VitaminB12_Unit_DValue">
@@ -999,7 +999,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Biotin_Unit" name="Biotin_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1017,7 +1017,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Choline_Unit" name="Choline_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1034,7 +1034,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Pantothenate_Unit" name="Pantothenate_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1051,7 +1051,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Phosphorus_Unit" name="Phosphorus_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1068,7 +1068,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Iodide_Unit" name="Iodide_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1085,7 +1085,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Magnesium_Unit" name="Magnesium_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Magnesium" name="Magnesium_DValue" id="Magnesium_DValue">
@@ -1101,7 +1101,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Zinc_Unit" name="Zinc_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1118,7 +1118,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Selenium_Unit" name="Selenium_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Selenium" name="Selenium_DValue" id="Selenium_DValue">
@@ -1134,7 +1134,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Copper_Unit" name="Copper_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Copper" name="Copper_DValue" id="Copper_DValue">
@@ -1150,7 +1150,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Manganese_Unit" name="Manganese_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1167,7 +1167,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Chromium_Unit" name="Chromium_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1184,7 +1184,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Molybdenium_Unit" name="Molybdenium_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1201,7 +1201,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Chloride_Unit" name="Chloride_Unit">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1236,7 +1236,7 @@ $('input[name="intervaltype"]').click(function () {
 	<label for="PPD_Per_Serving_UofM" name="Year_Recorded"> Per Serving Size Unit of Measure</label>
       <select class="form-control" id="PPD_Per_Serving_UofM" name="PPD_Per_Serving_UofM" style="width:540px">
   <option value="" selected="selected">Select the Per Serving Size Unit of Measure</option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select></div>
 			
@@ -1294,7 +1294,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Saturated_Trans_kj_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1313,7 +1313,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Fat_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1330,7 +1330,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Saturated_Fat_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1347,7 +1347,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Trans_Fat_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1365,7 +1365,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Polyunsaturated_Unit_S" name="Polyunsaturated_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1383,7 +1383,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Omega6_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Omega-6 Polyunsaturated Fat" name="Omega6_DValue_S">
@@ -1399,7 +1399,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Omega3_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Omega-3 Polyunsaturated Fat" name="Omega3_DValue_S">
@@ -1416,7 +1416,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="Monounsaturated_Unit_S" name="Monounsaturated_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1435,7 +1435,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Carbohydrates_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1452,7 +1452,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Fibre_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1469,7 +1469,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Soluble_Fibre_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1486,7 +1486,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1"  name="Insolube_Fibre_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1503,7 +1503,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sugar_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Sugar" name="Sugar_DValue_S">
@@ -1519,7 +1519,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sugar_Alcohols_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Sugar Alcohols" name="Sugar_Alcohols_DValue_S">
@@ -1535,7 +1535,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Starch_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Starch" name="Starch_DValue_S">
@@ -1551,7 +1551,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Protein_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1568,7 +1568,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Cholesterol_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1585,7 +1585,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Sodium_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1602,7 +1602,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Potassium_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1619,7 +1619,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Calcium_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1636,7 +1636,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Iron_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1653,7 +1653,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminA_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1670,7 +1670,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminC_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1687,7 +1687,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminD_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1705,7 +1705,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminE_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1722,7 +1722,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminK_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1739,7 +1739,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Thiamine_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Thiamine" name="Thiamine_DValue_S">
@@ -1755,7 +1755,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Riboflavin_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1772,7 +1772,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Niacin_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1789,7 +1789,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminB6_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Vitamin B6" name="VitaminB6_DValue_S">
@@ -1805,7 +1805,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Folate_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1822,7 +1822,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="VitaminB12_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Vitamin B12" name="VitaminB12_DValue_S">
@@ -1838,7 +1838,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Biotin_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1855,7 +1855,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Choline_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1872,7 +1872,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Pantothenate_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1889,7 +1889,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Phosphorus_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1906,7 +1906,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Iodide_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1923,7 +1923,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Magnesium_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Magnesium" name="Magnesium_DValue_S">
@@ -1939,7 +1939,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Zinc_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -1956,7 +1956,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Selenium_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Selenium" name="Selenium_DValue_S">
@@ -1972,7 +1972,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Copper_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       </select>  </div>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="% Daily value of Copper" name="Copper_DValue_S">
@@ -1988,7 +1988,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Manganese_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -2005,7 +2005,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Chromium_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -2023,7 +2023,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Molybdenium_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -2040,7 +2040,7 @@ $('input[name="intervaltype"]').click(function () {
   <div class="col-sm-3">
  <select class="form-control" id="sel1" name="Chloride_Unit_S">
   <option value="" selected="selected"></option>
-			<?php include 'Units.php';?>
+			<?php include '../Units.php';?>
       
       </select>  </div>
   <div class="col-sm-3">
@@ -2125,7 +2125,7 @@ $('input[name="intervaltype"]').click(function () {
 		})
 </script>
 <br>	
-	 <?php echo " <a class=\"btn btn-default\" href=view_product.php?ProductID=" . $_GET['ProductID'] . ">Back</a>";  ?>
+	 <?php echo " <a class=\"btn btn-default\" href=\"/product/view_product.php?ProductID=" . $_GET['ProductID'] . "\">Back</a>";  ?>
 
 <script>
 function goBack() {
@@ -3018,7 +3018,7 @@ document.getElementById("demo").style.color = 'red';
 }
 </script>
 		</main>
-	<?php include 'footer.php';?>
+	<?php include '../footer.php';?>
 	</div>
 
 </body>

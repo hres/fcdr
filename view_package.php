@@ -1,4 +1,4 @@
-<?php include 'connection.php';?>
+<?php include '../connection.php';?>
 
 <?php
 
@@ -26,7 +26,7 @@ if (!$result1) {
     echo "ERRORS";
 }
 	 while($row = $result->fetch_assoc()) {
-		 echo "<tr><td> <a href=package_details.php?ProductID=$ProductID&PackageID=" .$row['PackageID'] . ">". $row['Label_UPC'] . "</a></td><td>" . $row['Label_Description'] . "</td><td>" . $row['Collection_Date'] . "</td><td>" . $row['Source'] . "</td><td>" . $row['Create_Date'] . "</td><td>" . $row['Last_Edit_Date'] . "</td><td>" . $row['Last_Edited_By'] . "</td></tr>";                       
+		 echo "<tr><td> <a href=/label/package_details.php?ProductID=$ProductID&PackageID=" .$row['PackageID'] . ">". $row['Label_UPC'] . "</a></td><td>" . $row['Label_Description'] . "</td><td>" . $row['Collection_Date'] . "</td><td>" . $row['Source'] . "</td><td>" . $row['Create_Date'] . "</td><td>" . $row['Last_Edit_Date'] . "</td><td>" . $row['Last_Edited_By'] . "</td></tr>";                       
 		
 	 }
 	
