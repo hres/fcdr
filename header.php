@@ -46,8 +46,8 @@
 			<ul class="list-inline menu">
 			
   <li><a href="index.php">Search</a></li>
-  <li> <a href="create-product.php">Create Product</a></li>
-				   <li><a  href="importdata.php" >Import</a></li>
+  <li> <a href="product/create-product.php">Create Product</a></li>
+				   <li><a  href="market/importdata.php" >Import</a></li>
 
 				<li><a href="#">Export</a></li>
 			</ul>
