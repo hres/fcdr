@@ -234,7 +234,7 @@ $(document).ready(function() {
 			
 					<tbody >
 
-					<?php include("search_package.php"); ?>
+					<?php include("../search_package.php"); ?>
 					</tbody>
 </table>
 </div>
