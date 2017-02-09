@@ -24,11 +24,11 @@
 <div class="container">
 <div class="row">
 <div id="wb-sttl" class="col-md-5">
-<a href="index.php">
+<a href=<?php echo $_SERVER["CONTEXT_PREFIX"];?>"/index.php">
 <span>Food Component Data Repository</span>
 </a>
 </div>
-<object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="./theme-gcwu-fegc/assets/wmms.svg" aria-label="Symbol of the Government of Canada"></object>
+<object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="/theme-gcwu-fegc/assets/wmms.svg" aria-label="Symbol of the Government of Canada"></object>
 
 </div>
 <div id= "logout-but" style="float:right; margin-right:-13px;">					<?php
@@ -44,10 +44,10 @@
 		<h2>Topics menu</h2>
 		<div class="row">
 			<ul class="list-inline menu">
-			
-  <li><a href="index.php">Search</a></li>
-  <li> <a href="product/create-product.php">Create Product</a></li>
-				   <li><a  href="market/importdata.php" >Import</a></li>
+
+  <li><a href=<?php echo $_SERVER["CONTEXT_PREFIX"];?>"/index.php">Search</a></li>
+  <li> <a href=<?php echo $_SERVER["CONTEXT_PREFIX"];?>"/product/create-product.php">Create Product</a></li>
+				   <li><a  href=<?php echo $_SERVER["CONTEXT_PREFIX"];?>"/market/importdata.php" >Import</a></li>
 
 				<li><a href="#">Export</a></li>
 			</ul>
