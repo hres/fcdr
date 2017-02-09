@@ -136,8 +136,8 @@
 		<div class="container" id="tabs" >
   <ul class="nav nav-tabs">
     <li ><a  href="index.php">Search Product </a></li>
-    <li ><a  href="home-market.php">Search Market Share</a></li>
-    <li><a  href="home-label.php">Search Package Label</a></li>
+    <li ><a  href="market/home-market.php">Search Market Share</a></li>
+    <li><a  href="label/home-label.php">Search Package Label</a></li>
     <li class="active"> <a href="search.php">Search All</a></li>
   </ul>
 

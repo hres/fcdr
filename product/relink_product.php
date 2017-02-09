@@ -30,7 +30,7 @@
 <link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
 
 
-<script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
+<script type="text/javascript" src="../js/bootstrap-filestyle.min.js"> </script>
 
 
 <!--<![endif]-->

@@ -1,4 +1,4 @@
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -27,8 +27,8 @@
 	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js">
 	</script>
 
-	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
+	<link href="../theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="../theme-gcwu-fegc/css/theme.min.css">
 <!--<![endif]-->
 <!--[if lt IE 9]>
 <link href="./theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
@@ -36,7 +36,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
-<noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
+<noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
 
 
 <script>
@@ -276,7 +276,7 @@ $(window).resize();
 </head>
 <body class="wide comments example">
 
-<?php include 'header.php';?>
+<?php include '../header.php';?>
 
 <main role="main" property="mainContentOfPage" class="container">
 
@@ -428,16 +428,16 @@ Edited By: <?php echo " ". $row['Last_Edited_By'] ."";  ?>
 					</thead>
 			
 					<tbody>
-						<?php include("view_sales.php"); ?>
+						<?php include("../market/view_sales.php"); ?>
 
 					</tbody>
 				</table>
 		
 </div>
 	<div style="float:right;">	
-	 <?php echo " <a class=\"btn btn-default\" href=create-market.php?ProductID=" .$_GET['ProductID'] . ">Add Market Share</a>";  ?>
+	 <?php echo " <a class=\"btn btn-default\" href=../market/create-market.php?ProductID=" .$_GET['ProductID'] . ">Add Market Share</a>";  ?>
 	</div>	
-		<br> <a class ="btn btn-default" href="index.php">Back</a>
+		<br> <a class ="btn btn-default" href="../index.php">Back</a>
 
 <script>
 function goBack() {
@@ -446,7 +446,7 @@ function goBack() {
 </script>
 
 		</main>
-	<?php include 'footer.php';?>
+	<?php include '../footer.php';?>
 
 <!--	</div> -->
 

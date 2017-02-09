@@ -26,15 +26,15 @@
 	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js">
 	</script>
 
-	<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="/theme-gcwu-fegc/css/theme.min.css">
+	<link href="../theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="../theme-gcwu-fegc/css/theme.min.css">
 
 
 <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
 
 
 
-<script type="text/javascript" src="/js/formden.js"></script>
+<script type="text/javascript" src="../js/formden.js"></script>
 
 <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
 <link rel="stylesheet" href="/css/bootstrap-iso.css" />
@@ -129,10 +129,10 @@ $(document).ready(function() {
 		
 		<div class="container" id="tabs" >
   <ul class="nav nav-tabs">
-    <li ><a  href="/index.php">Search Product </a></li>
-    <li ><a  href="/market/home-market.php">Search Market Share</a></li>
-    <li class="active"><a  href="/label/home-label.php">Search Package Label</a></li>
-		  <li><a  href="/search.php">Search All</a></li>
+    <li ><a  href="../index.php">Search Product </a></li>
+    <li ><a  href="market/home-market.php">Search Market Share</a></li>
+    <li class="active"><a  href="label/home-label.php">Search Package Label</a></li>
+		  <li><a  href="../search.php">Search All</a></li>
   </ul>
 
   
@@ -234,7 +234,7 @@ $(document).ready(function() {
 			
 					<tbody >
 
-					<?php include("../search_package.php"); ?>
+					<?php include("search_package.php"); ?>
 					</tbody>
 </table>
 </div>
