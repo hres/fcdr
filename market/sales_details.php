@@ -684,7 +684,7 @@ $(window).resize();
 <div class="div2">
 
 
-	 <?php echo " <a class=\"btn btn-default\" href=view_product.php?ProductID=" . $row['ProductIDS'] . ">Back</a>";  ?>
+	 <?php echo " <a class=\"btn btn-default\" href=../product/view_product.php?ProductID=" . $row['ProductIDS'] . ">Back</a>";  ?>
 </div>	
 
 

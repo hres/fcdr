@@ -113,7 +113,7 @@ EOQ;
 
 	}else{
 		echo"<script>document.getElementById(\"deletemess\").innerHTML = \"<h3><strong>Product was successfully deleted, redirecting to the home page...</strong></h3>\" </script>";
-		echo "<script>setTimeout(\"location.href = '/index.php';\",2000);</script>";
+		echo "<script>setTimeout(\"location.href = '../index.php';\",2000);</script>";
 
 	
 }

@@ -1,5 +1,6 @@
-<?php // include '../connection.php';?>
+<?php  include '../connection.php';?>
 <?php
+
 if (count($argv) == 2) {
 
 		$count_skipped = 0;
@@ -14,22 +15,29 @@ if (count($argv) == 2) {
 		$duplicate_count = 0;
 		$count_row=0;
 
+
+
+try{
+	$conn->autocommit(FALSE);
+
+
+
    $handle = fopen($argv[1], "r");
     while (($data = fgetcsv($handle, ",")) !== FALSE) {
 
     ++$count;
     if($count>1){
-
-
+	
 			//echo "in<br>";
 			//$data =
 			$Record                    = $data[0]; //(empty($data[0]) && strlen($data[0]) == 0 ?NULL :$data[0]);
 			$Sales_UPC                 = $data[1];
-			echo $Sales_UPC . "\n";
-			continue;
+			
+	
 			$Sales_Description         = $data[2];
 			$Brand                     = $data[3];
 			$Manufacturer              = $data[4];
+			echo "$Sales_UPC -- $Sales_Description -- $Brand \n";
 			//$Package_Size            =
 			$Rank                      = (empty($data[5]) && strlen($data[5]) == 0 ?NULL :$data[5]);
 			$Dollar_Volume             = str_replace(",", "",(empty($data[6]) && strlen($data[6]) == 0 ?NULL :$data[6])); //str_replace(",", "", $data[8])
@@ -71,6 +79,7 @@ if (count($argv) == 2) {
 
 			} else {
 
+echo "Ok passed the first loop \n";
 							$query_duplicate =<<<EOQ
 SELECT SalesID
 FROM Sales
@@ -92,13 +101,13 @@ EOQ;
 
 
 
-				if (is_numeric  ($Product_Grouping)) {
+				if (is_numeric ($Product_Grouping)) {
 
 
 
 					/* Check if grouping already exists in Market Share table */
 					$check_grouping =<<<EOQ
-SELECT *
+SELECT SalesID
   FROM Sales
  WHERE Sales_UPC = ?
 EOQ;
@@ -110,6 +119,8 @@ EOQ;
 					$stmt->store_result();
 
 					if (($stmt->num_rows) > 0) {
+
+
 
 					$param = array(
 							$Sales_UPC,
@@ -204,7 +215,7 @@ EOQ;
 					} else {
 
 						$grouping =<<<EOQ
-SELECT *
+SELECT SalesID
   FROM Sales
  WHERE Product_Grouping = ?
 EOQ;
@@ -415,7 +426,7 @@ EOQ;
 								/* 		Must check if Classification number exist */
 
 								$classification_check =<<<EOQ
-SELECT *
+SELECT ClassificationID
   FROM Classification
  WHERE Classification_Number = ?
 EOQ;
@@ -470,7 +481,7 @@ EOQ;
 
 
 
-
+					echo "Grouping doesn't exist";
 
 
 						if (empty($Product_Description) && strlen($Product_Description) == 0) {
@@ -481,7 +492,7 @@ EOQ;
 SELECT * FROM Sales WHERE Sales_UPC = ?
 EOQ; */
 
-$query = " SELECT * FROM Sales where Sales_UPC = $Sales_UPC";
+$query = " SELECT SalesID FROM Sales where Sales_UPC = $Sales_UPC";
 $result3 = mysqli_query($conn,$query);
 
 // AND ProductIDS <> (Select Distinct ProductIDS From $dbname.Sales Where Product_Grouping= $Product_Grouping)";
@@ -566,6 +577,7 @@ EOQ;
 							$linked_sales->push($input7);
 							continue;
 						} else {
+
 							$query =<<<EOQ
 INSERT INTO Product (Description, Brand, Manufacturer, Cluster_Number) VALUES (?, ?, ?, ?)
 EOQ;
@@ -573,7 +585,11 @@ EOQ;
 							$stmt = $conn->prepare($query);
 							$stmt->bind_param("sssd", $Product_Description, $Brand, $Manufacturer, $Cluster_Number);
 							$result = $stmt->execute();
-
+							if($result){
+								echo "Sucessfully executed \n";
+							}else{
+								echo "Failed to execute \n";
+							}
 							$id =  mysqli_insert_id($conn);
 
 					$param = array(
@@ -648,13 +664,15 @@ EOQ;
 								$stmt = $conn->prepare($insert_queryt);
 							$stmt->bind_param("ssssssddddddddsssisdddsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26],$Kilo_Rank);
 								$result_insertt = $stmt->execute();
+
+
 								++$new_product_count;
 
 							if (strlen($Classification_Number) != 0) {
 								/* Must check if Classification number exist */
 
 								$classification_check =<<<EOQ
-SELECT *
+SELECT ClassificationID
   FROM Classification
  WHERE Classification_Number = ?
 EOQ;
@@ -702,53 +720,67 @@ EOQ;
 
     }
 
+
+
 }
 
- fclose($handle);
+
+
+$conn->commit();
+
+
+
  //$skipped_market_share, $market_share_linked,new_product_count
 
-  echo "<h3>$skipped_market_share Skipped Market Share</h3>";
-  echo "<h3>$new_product_count New Product(s) created</h3>";
-  echo "<h3>$market_share_linked Market Share Linked to Existing Product</h3>";
-  echo "<h3>$duplicate_count Duplicate(s) Market Share</h3> <br>";
+  echo "$skipped_market_share Skipped Market Share \n \n";
+  echo "$new_product_count New Product(s) create \n \n";
+  echo "$market_share_linked Market Share Linked to Existing Product \n \n";
+  echo "$duplicate_count Duplicate(s) Market Share \n \n";
 
-  echo "<hr style=\" border-top: 1px solid red;\">";
-
- echo "<h2>Skipped Market Share</h2>";
+ echo "Skipped Market Share \n \n";
 		while (!$skipped_sales->isEmpty()) {
 
 			$senditem = $skipped_sales->shift();
 			if (strlen ($senditem) < 1) continue;
-			echo "$senditem <br>";
+			echo "$senditem \n";
 		}
-		echo "<h2>New Products</h2>";
+		echo "\n \n New Products \n \n";
 		while (!$new_product->isEmpty()) {
 
 			$senditem = $new_product->shift();
 			if (strlen ($senditem) < 1) continue;
-			echo "$senditem <br>";
+			echo "$senditem \n";
 		}
-		echo "<h2>Market Share Linked to Existing Product</h2>";
+		echo "\n \n Market Share Linked to Existing Product \n \n";
 		while (!$linked_sales->isEmpty()) {
 
 			$senditem = $linked_sales->shift();
 			if (strlen ($senditem) < 1) continue;
-			echo "$senditem <br>";
+			echo "$senditem \n";
 		}
 
-		echo "<h2> Duplicates Market Share</h2>";
+		echo "\n \n Duplicates Market Share \n \n";
 		while (!$duplicate_market_share->isEmpty()) {
 
 			$senditem = $duplicate_market_share->shift();
 			if (strlen ($senditem) < 1) continue;
-			echo "$senditem <br>";
+			echo "$senditem \n";
 		}
 
 
 		print "Import done";
-  mysqli_close($conn);
-}
 
+
+} catch(Exception $e){
+	echo "\n \n \n ERORRR";
+	$conn->rollback();
+}	
+
+
+
+}
+ fclose($handle);
+  mysqli_close($conn);
 
 
 ?>

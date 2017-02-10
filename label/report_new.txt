@@ -1,0 +1,203 @@
+ 0 Label(s) Linked to existing Products via Market Share UPCs Codes 
+ 
+0 Label(s) Linked to existing Products via other Labels UPCs Codes 
+ 
+0 Record(s) skipped 
+ 
+0 Label(s) linked to new products 
+ 
+171 duplicate(s) 
+ 
+ 
+ 
+Labels Linked to existing Products via Market Share UPCs Codes 
+ 
+
+ Labels Linked to existing Products via other Labels UPCs Codes 
+ 
+
+ 
+ Records skipped 
+ 
+
+ 
+ Labels linked to new products 
+ 
+
+ 
+ duplicates 
+ 
+Record : 1, Oakrun Farm Bakery 6 English Muffins 100 % Whole Wheat 340 g 
+Record : 2, Ace Bakery Bread White Baguette 350 g 
+Record : 3, Ace Bakery Bread Ciabatta Pezzetti Duo 12 Pack 840 g 
+Record : 4, Agropur Signature Brie Normandie Double Crème 550 g 
+Record : 5, Alexia Sweet Potato Fries with Sea Salt 425 g 
+Record : 6, Allen's Cocktail 10-Vegetable 1 L 
+Record : 7, Alpen Muesli Cereal Delicious Whole Grain Swiss Style 650 g 
+Record : 8, Anco Fine Swiss Cheese Light 170 g 
+Record : 9, Anco Fine Cheese Havarti Jalapeño Cheese 180 g 
+Record : 10, Anco Fine Cheese Gouda Light 170 g 
+Record : 11, Armstrong Cheese Cheddar Old 700 g 
+Record : 12, Armstrong Cheese Cheddar Medium 700 g 
+Record : 13, Armstrong Marble Cheddar Cheese Light 700 g 
+Record : 14, Armstrong Pizza Mozzarella Snacking Cheese 700 g 
+Record : 15, Armstrong Cheese Cheddar Medium 360 g 
+Record : 16, Arthur's Fresh Company Smoothies Fruit + Veg Carrot Energizer 900 ml 
+Record : 17, Auger White Bread Italian Style 675 g 
+Record : 18, Aurora Bouillon Mix Beef 6 Tablets 66 g 
+Record : 19, Aurora Bouillon Mix Chicken 6 Tablets 66 g 
+Record : 20, Aurora Bouillon Mix Vegetable 6 Tablets 66 g 
+Record : 21, Aylmer Vegetable Soup 284 ml 
+Record : 22, Aylmer Condensed Soup Chicken Noodle 284 ml 
+Record : 23, Aylmer Condensed Soup Tomato 284 ml 
+Record : 24, Aylmer Condensed Soup Tomato 284 ml 
+Record : 25, Baby Gourmet Organic Baby Food Chicken Minestrone Soup 8 Months+ 128 ml 
+Record : 26, Babybel Mini Light Firm Ripened Cheese 6 x 20 g (120 g) 
+Record : 27, Bagels 4 Bagels Plain Pre-Sliced 340 g 
+Record : 28, Bagels 4 Bagels Whole Wheat Pre-Sliced 340 g 
+Record : 29, Balderson Aged 2 Years Royal Canadian Cheddar Cheese 280 g 
+Record : 30, Baxters Favourites Soup Butternut Squash & Red Pepper 540 ml 
+Record : 31, Baxters Favourites Soup Carrot & Butter Bean 540 ml 
+Record : 32, Baxters Favourites Soup Chicken & Vegetable 540 ml 
+Record : 33, Berthelet Nutri Option Instant Broth Mix Beef 400 g 
+Record : 34, Betty Enriched White Bread 675 g 
+Record : 35, Bilopage Cretons Home Style 150 g 
+Record : 36, Biotta Organic Beetroot Juice 500 ml 
+Record : 37, Black Diamond Old Cheddar Cheese Family Size 907 g 
+Record : 38, Black Diamond Cheestrings Ficello Pizza Mozarella Cheese 40 Pack 840 g 
+Record : 39, Black Diamond Cheestrings Ficello Pizza Mozzarella Cheese with Mild Cheddar Taste 16 Pack 336 g 
+Record : 40, Black Diamond Cheddar Cheese Marble 450 g 
+Record : 41, Black Diamond Cheddar Cheese Old 450 g 
+Record : 42, Black Diamond Genre Cheddar Style 24 Slices 450 g 
+Record : 43, Black Diamond Cheddar Genre Style 24 Slices 450 g 
+Record : 44, Black Diamond Cheddar Genre Style 24 Slices 450 g 
+Record : 45, Black Diamond Cheese Spread Original 185 g 
+Record : 46, Black Diamond Cheestrings Ficello Pizza Mozzarella Cheese 885 g 
+Record : 47, Black Diamond Genre Swiss Style 24 Slices 450 g 
+Record : 48, Bob's Red Mill Cornbread Mix 566 g 
+Record : 49, Bob's Red Mill Pizza Crust Mix 453 g 
+Record : 50, Bob's Red Mill Bread Mix 453 g 
+Record : 51, Bolthouse Farms 100% Carrot Vegetable Juice 946 ml 
+Record : 52, Bon Matin 14 Bread with Whole Grain 600 g 
+Record : 53, Bon Matin Multigrains Whole Grain Bread 600 g 
+Record : 54, Boulange Des Campagnards Rye Bread Belgian Style Artisan 675 g 
+Record : 55, Boulange des Campagnards Artisan Bread 12 Grain Belgian Style 550 g 
+Record : 56, Boursin Spiced Fresh Soft Cheese Cranberry & Pepper 150 g 
+Record : 57, Boursin Spiced Fresh Soft Cheese Red Chili Pepper 150 g 
+Record : 58, Bovril Bouillon Concentrate Vegetable 250 ml 
+Record : 59, Bovril Instant Bouillon Beef 16 Sachets 80 g 
+Record : 60, Bovril Instant Bouillon Chicken 16 Sachets 80 g 
+Record : 61, Bovril Bouillon Concentrate Beef 500 ml 
+Record : 62, Bovril Bouillon Mix Chinese Fondue 142 g 
+Record : 63, Bovril Bouillon Concentrate Chicken 250 ml 
+Record : 64, Bovril Bouillon Concentrate Chicken 500 ml 
+Record : 65, Brandt Sausage Kolbassa 250 g 
+Record : 66, Brandt Sausage Polish 300 g 
+Record : 67, Buddig Ham Honey 55 g 
+Record : 68, Campbell's Ready to Serve Soup Classic Chicken Noodle 540 ml 
+Record : 69, Campbell's Soup at Hand Chicken with Mini-Pasta 284 ml 
+Record : 70, Campbell's Soup at Hand Garden Tomato 284 ml 
+Record : 71, Campbell's Organic Free Range Chicken Broth 900 ml 
+Record : 72, Campbell's Condensed Soup Hearty Favourites Golden Mushroom 284 ml 
+Record : 73, Campbell's Broth Condensed Soup Consommé 284 ml 
+Record : 74, Campbell's Condensed Soup Chicken Broth 284 ml 
+Record : 75, Campbell's Condensed Soup Cream of Broccoli 284 ml 
+Record : 76, Campbell's Condensed Soup Cream of Celery 284 ml 
+Record : 77, Campbell's Condensed Soup Cream of Mushroom 284 ml 
+Record : 78, Campbell's Condensed Soup Cream of Mushroom Champignons 284 ml 
+Record : 79, Campbell's Condensed Soup Cream of Wild Mushroom 284 ml 
+Record : 80, Campbell's Condensed Soup Tomato with Basil & Oregano 284 ml 
+Record : 81, Campbell's Cream of Chicken Condensed Soup Honey Mustard Chicken 284 ml 
+Record : 82, Campbell's Creams Cream of Chicken Condensed Soup 284 ml 
+Record : 83, Campbell's Everyday Gourmet Moroccan Spiced 8 Vegetables & Chickpea 540 ml 
+Record : 84, Campbell's Healthy Request Lemon Chicken Orzo with Chickpeas & Zucchini 540 ml 
+Record : 85, Campbell's Healthy Request Ready to Serve Soup Spicy Vegetable Turkey with Rutabaga 540 ml 
+Record : 86, Campbell's Healthy Request Tomato Garden Vegetable with Pea Beans & Spinach 540 ml 
+Record : 87, Campbell's Healthy Request Vegetable with Beef & Black-Eyed Peas 540 ml 
+Record : 88, Campbell's Homestyle Rustic Lentil 540 ml 
+Record : 89, Campbell's Ready to Serve Soup Cream of Mushroom 540 ml 
+Record : 90, Campbell's Ready to Serve Soup Garden Vegetable Minestrone 540 ml 
+Record : 91, Campbell's Ready to Serve Soup Hearty Vegetable Beef 540 ml 
+Record : 92, Campbell's Ready to Serve Soup Herbed Chicken with Rice 540 ml 
+Record : 93, Campbell's Ready to Serve Soup Light Classic Chicken Noodle 540 ml 
+Record : 94, Campbell's Ready to Serve Soup Light Cream of Mushroom 540 ml 
+Record : 95, Campbell's Ready to Serve Soup New England Clam Chowder 540 ml 
+Record : 96, Campbell's Wedding Soup Italian 540 ml 
+Record : 97, Campbell's Chunky Chicken & Sausage Gumbo 540 ml 
+Record : 98, Campbell's Chunky BBQ Chipotle Sirloin Burger 540 ml 
+Record : 99, Campbell's Chunky Beef 540 ml 
+Record : 100, Campbell's Chunky Chicken Vegetable Pot Pie 540 ml 
+Record : 101, Campbell's Chunky New England Clam Chowder 540 ml 
+Record : 102, Campbell's Chunky Pepper Steak and Potato 540 ml 
+Record : 103, Campbell's Chunky Prime Rib with Vegetables 540 ml 
+Record : 104, Campbell's Chunky Ready to Serve Soup Chicken À La King 540 ml 
+Record : 105, Campbell's Chunky Ready to Serve Soup Chicken Noodle 540 ml 
+Record : 106, Campbell's Chunky Ready to Serve Soup Chicken with Rice 540 ml 
+Record : 107, Campbell's Chunky Ready to Serve Soup Meatball Bustin' Sausage Rigatoni 540 ml 
+Record : 108, Campbell's Chunky Ready to Serve Soup Seafood Chowder 540 ml 
+Record : 109, Campbell's Chunky Ready to Serve Soup Smokin' Bacon Cheese Sliders 540 ml 
+Record : 110, Campbell's Chunky Vegetable Beef 540 ml 
+Record : 111, Campbell's Condensed Soup Light Homestyle Chicken Noodle 284 ml 
+Record : 112, Campbell's Broth Beef 900 ml 
+Record : 113, Campbell's Broth Chicken 900 ml 
+Record : 114, Campbell's Broth Chicken 900 ml 
+Record : 115, Campbell's Beef Broth 30% Less Sodium 900 ml 
+Record : 116, Campbell's Beef Broth 900 ml 
+Record : 117, Campbell's Chicken Broth 30% Less Sodium 900 ml 
+Record : 118, Campbell's Vegetable Broth 900 ml 
+Record : 119, Campbell's Vegetable Broth No Salt Added 900 ml 
+Record : 120, Campbell's Condensed Soup Beef Broth 284 ml 
+Record : 121, Campbell's Condensed Soup Chicken Gumbo 284 ml 
+Record : 122, Campbell's Condensed Soup Chicken Noodle 284 ml 
+Record : 123, Campbell's Condensed Soup Homestyle Chicken Noodle 284 ml 
+Record : 124, Campbell's Condensed Soup Homestyle Vegetable 284 ml 
+Record : 125, Campbell's Condensed Soup Tomato 284 ml 
+Record : 126, Campbell's Condensed Soup Tomato Rice 284 ml 
+Record : 127, Campbell's Condensed Soup Vegetable 284 ml 
+Record : 128, Campbell's Everyday Gourmet Asparagus with Sweet Basil 500 ml 
+Record : 129, Campbell's Everyday Gourmet Fire Roasted Sweet Pepper & Tomato 500 ml 
+Record : 130, Campbell's Everyday Gourmet Garden Market Vegetable 500 ml 
+Record : 131, Campbell's Everyday Gourmet Golden Butternut Squash 500 ml 
+Record : 132, Campbell's Everyday Gourmet Harvest Mushroom with White Wine 500 ml 
+Record : 133, Campbell's Everyday Gourmet Ready to Serve Soup Sweet Potato Tomatillo 500 ml 
+Record : 134, Campbell's Everyday Gourmet Ready to Serve Soup Thai Tomato Coconut 500 ml 
+Record : 135, Campbell's Everyday Gourmet Ready to Serve Soup Tomato Basil Bisque 500 ml 
+Record : 136, Campbell's Hearty Favourites Condensed Soup Bean with Bacon 284 ml 
+Record : 137, Campbell's Hearty Favourites Condensed Soup Beef with Vegetables and Barley 284 ml 
+Record : 138, Campbell's Hearty Favourites Condensed Soup Cream of Potato 284 ml 
+Record : 139, Campbell's Condensed Soup Cream of Celery 284 ml 
+Record : 140, Campbell's Creams Condensed Soup Cheddar Cheese 284 ml 
+Record : 141, Campbell's Creams Condensed Soup Cream of Broccoli & Cheese 284 ml 
+Record : 142, Campbell's Condensed Soup Chicken with Rice 284 ml 
+Record : 143, Campbell's Chicken Broth 284 ml 
+Record : 144, Campbell's Chunky Chicken Corn Chowder 540 ml 
+Record : 145, Canton Fondue & Dipping Sauce Oriental 180 ml 
+Record : 146, Canton Fondue & Dipping Sauce 3 Pepper 180 ml 
+Record : 147, Canton Fondue & Dipping Sauce Béarnaise 180 ml 
+Record : 148, Canton Fondue & Dipping Sauce Bourguignonne 180 ml 
+Record : 149, Canton Broth for Hot Pot and Cooking Beef-Onion 1.1 L 
+Record : 150, Canton Broth for Hot Pot and Cooking Mushrooms 1.1 L 
+Record : 151, Canton Broth for Hot Pot and Cooking Oriental Delight 1.1 L 
+Record : 152, Canton Broth for Hot Pot and Cooking The Original 1.1 L 
+Record : 153, Cap'n Crunch Cereal Sweetened Corn & Oat 350 g 
+Record : 154, Cappola Rustico Genoa Salami 500 g 
+Record : 155, Casa di Mama Pizza 3 Meat 395 g 
+Record : 156, Casa di Mama Pizza Deluxe 410 g 
+Record : 157, Casa di Mama Pizza Hawaiian 400 g 
+Record : 158, Cavendish Farms Simply Homestyle Frozen Fried Potatoes Traditional Straight Cut 750 g 
+Record : 159, Cavendish Farms FlavourCrisp Frozen Fried Potatoes Crispy Straight Cut Classic 750 g 
+Record : 160, Cavendish Farms Frozen Fried Potatoes Crinkle Cut 1 kg 
+Record : 161, Cavendish Farms OvenCrisp Frozen Fried Potatoes Crinkle Cut 900 g 
+Record : 162, Cavendish Farms Hash Brown Patties Onion 10 Patties 600 g 
+Record : 163, Cavendish Farms Hash Brown Patties Original 10 Patties 600 g 
+Record : 164, Cavendish Farms Frozen Fried Potatoes Crinkle Cut Large Size 2 kg 
+Record : 165, Cavendish Farms FlavourCrisp Frozen Fried Potatoes Crispy Straight Cut Classic 4.25 kg 
+Record : 166, Cavendish Farms FlavourCrisp Frozen Fried Potatoes Crispy Straight Cut Classic Family Size 4 kg 
+Record : 167, Cavendish Farms Restaurant Style Frozen Fried Potatoes Dinner Style Hash Browns 1.5 kg 
+Record : 168, Cavendish Farms Restaurant Style Frozen Fried Potatoes Garlic & Rosemary Potato Wedges 1.8 kg 
+Record : 169, Cavendish Farms Restaurant Style Frozen Fried Potatoes Hot & Spicy Potato Wedges 1.8 kg 
+Record : 170, Cavendish Farms Premium Oven Crisp Fried Potatoes Straight Cut 900 g 
+Record : 171, Cavendish Farms Potato Wedges Homestyle 750 g 
+
+ 
+ Import done
