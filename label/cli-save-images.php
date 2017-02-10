@@ -1,6 +1,6 @@
 <?php
 $files = array();
-// check for only 2 args: program-script and file-being-imported
+// check for only 2 args: program-script and image-folder
 if (count($argv) == 2) {
 	$dir = $argv[1];
 	// Open a known directory, and proceed to read its contents
