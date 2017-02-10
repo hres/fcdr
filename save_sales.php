@@ -100,6 +100,7 @@ EOQ;
 		
 
 if (!$result) {
+		echo "$query";	
 		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to updated Market share</strong></h3>\";</script>";
 
 }else {
