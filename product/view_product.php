@@ -399,14 +399,14 @@ Edited By: <?php echo " ". $row['Last_Edited_By'] ."";  ?>
 					</thead>
 		
 					<tbody>
-							<?php include("view_package.php"); ?>						    
+							<?php include("../label/view_package.php"); ?>						    
 
 					</tbody>
 				</table>
 
 </div>
 			<div style="float:right;">
- <?php echo " <a class=\"btn btn-default\" href=create-label.php?ProductID=" .$_GET['ProductID'] . ">Add Label</a>";  ?>
+ <?php echo " <a class=\"btn btn-default\" href=../label/create-label.php?ProductID=" .$_GET['ProductID'] . ">Add Label</a>";  ?>
 	</div>	
 	<!--	</div> -->
 

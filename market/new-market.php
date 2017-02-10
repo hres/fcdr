@@ -98,7 +98,7 @@ EOQ;
 	
 		} else {
 		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Market Share Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
-		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",2500);</script>";
+		echo "<script>setTimeout(\"location.href = '../product/view_product.php?ProductID=$productID';\",2500);</script>";
 
 
 		}
