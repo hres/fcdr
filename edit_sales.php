@@ -272,9 +272,9 @@
 
 				</div>
 				<div class="row">	
-			<div class="form-group col-sm-4">
+			<div class="form-group">
 			
-				<button style="margin-top: 30px;  margin-bottom:0px; float:right;" type="submit" class="btn btn-default" name="search" >Save</button>
+				<button style="margin-top: 30px; margin-right:15px;  margin-bottom:0px; float:right;" type="submit" class="btn btn-default" name="search" >Save</button>
 			</div>
 		
 		</div>

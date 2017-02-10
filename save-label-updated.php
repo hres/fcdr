@@ -7,7 +7,7 @@ $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 
 		if(isset($_POST['search'])) {
  	//error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//ini_set('display_errors', 1);
 
 
 $_POST['Number_Of_Units'] = (empty($_POST['Number_Of_Units']) && strlen($_POST['Number_Of_Units']) == 0 ?NULL :$_POST['Number_Of_Units']);
