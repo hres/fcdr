@@ -196,7 +196,15 @@ EOQ;
 						$result_insert = $stmt->execute();
 						++$market_share_linked;
 			//			
-						if (!empty($Product_Description) && strlen($Product_Description) != 0) {
+					//	if (!empty($Product_Description) && strlen($Product_Description) != 0) {
+
+
+			/*Update other fields    !ctype_space($_POST[$field])
+						$Brand                     = $data[3];
+			$Manufacturer              = $data[4]; $Cluster_Number 
+			
+			*/
+
 
 							$query_update =<<<EOQ
 UPDATE Product
@@ -209,10 +217,61 @@ SELECT DISTINCT ProductIDS
 EOQ;
 
 							$stmt = $conn->prepare($query_update);
-							$stmt->bind_param("ss", $Product_Description, $Sales_UPC);
+							$stmt->bind_param("ss", $Sales_Description, $Sales_UPC);
 							$result_update = $stmt->execute();
 
-						}
+if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
+							$query_update1 =<<<EOQ
+UPDATE Product
+   SET Brand = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt1 = $conn->prepare($query_update1);
+							$stmt1->bind_param("ss", $Brand, $Sales_UPC);
+							$stmt1->execute();
+
+
+}
+if (!empty($Manufacturer) && strlen($Manufacturer) != 0 && !ctype_space($Manufacturer)){
+
+				$query_update2 =<<<EOQ
+UPDATE Product
+   SET Manufacturer = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt2 = $conn->prepare($query_update2);
+							$stmt2->bind_param("ss", $Manufacturer, $Sales_UPC);
+							$stmt2->execute();
+
+}
+
+if (!empty($Cluster_Number) && strlen($Cluster_Number) != 0 && !ctype_space($Cluster_Number)){
+				$query_update3 =<<<EOQ
+UPDATE Product
+   SET Cluster_Number = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt3 = $conn->prepare($query_update3);
+							$stmt3->bind_param("ss", $Cluster_Number, $Sales_UPC);
+							$stmt3->execute();
+
+
+}						
 
 						$input3= "Record : $Record, $Sales_Description";
 						$linked_sales->push($input3);
@@ -304,8 +363,8 @@ EOQ;
 							$input4 = "Record : $Record, $Sales_Description";
 							$linked_sales->push($input4);
 }
-							if (!empty($Product_Description) && strlen($Product_Description) != 0) {
-
+						
+			/*Update other fields*/
 								$query_update =<<<EOQ
 UPDATE Product
    SET Description = ?
@@ -317,9 +376,64 @@ UPDATE Product
 EOQ;
 
 								$stmt = $conn->prepare($query_update);
-								$stmt->bind_param("ss", $Product_Description, $Product_Grouping);
+								$stmt->bind_param("ss", $Sales_Description, $Product_Grouping);
 								$result_update = $stmt->execute();
-							}
+
+
+if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
+								
+								$query_update1 =<<<EOQ
+UPDATE Product
+   SET Brand = ?
+ WHERE ProductID = (
+       SELECT DISTINCT ProductIDS
+         FROM Sales
+        WHERE Product_Grouping = ?
+)
+EOQ;
+
+								$stmt1 = $conn->prepare($query_update1);
+								$stmt1->bind_param("ss", $Brand, $Product_Grouping);
+								$result_update = $stmt1->execute();
+
+}
+if (!empty($Manufacturer) && strlen($Manufacturer) != 0 && !ctype_space($Manufacturer)){
+
+								$query_update2 =<<<EOQ
+UPDATE Product
+   SET Manufacturer = ?
+ WHERE ProductID = (
+       SELECT DISTINCT ProductIDS
+         FROM Sales
+        WHERE Product_Grouping = ?
+)
+EOQ;
+
+								$stmt2 = $conn->prepare($query_update2);
+								$stmt2->bind_param("ss", $Manufacturer, $Product_Grouping);
+								$result_update = $stmt2->execute();
+
+}
+
+if (!empty($Cluster_Number) && strlen($Cluster_Number) != 0 && !ctype_space($Cluster_Number)){
+
+								$query_update3 =<<<EOQ
+UPDATE Product
+   SET Cluster_Number = ?
+ WHERE ProductID = (
+       SELECT DISTINCT ProductIDS
+         FROM Sales
+        WHERE Product_Grouping = ?
+)
+EOQ;
+
+								$stmt3 = $conn->prepare($query_update3);
+								$stmt3->bind_param("ss", $Cluster_Number, $Product_Grouping);
+								$result_update = $stmt3->execute();
+
+}						
+
+							
 
 							//echo "$insert_query";
 
@@ -577,6 +691,76 @@ EOQ;
 							$stmt = $conn->prepare($insert_query);
 						$stmt->bind_param("sssssddddddddsssisdddssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank, $Sales_UPC);
 							$result_insert = $stmt->execute();
+
+			/*Update other fields*/
+
+							$query_update =<<<EOQ
+UPDATE Product
+   SET Description = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt = $conn->prepare($query_update);
+							$stmt->bind_param("ss", $Sales_Description, $Sales_UPC);
+							$result_update = $stmt->execute();
+
+if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
+							$query_update1 =<<<EOQ
+UPDATE Product
+   SET Brand = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt1 = $conn->prepare($query_update1);
+							$stmt1->bind_param("ss", $Brand, $Sales_UPC);
+							$stmt1->execute();
+
+
+}
+if (!empty($Manufacturer) && strlen($Manufacturer) != 0 && !ctype_space($Manufacturer)){
+
+				$query_update2 =<<<EOQ
+UPDATE Product
+   SET Manufacturer = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt2 = $conn->prepare($query_update2);
+							$stmt2->bind_param("ss", $Manufacturer, $Sales_UPC);
+							$stmt2->execute();
+
+}
+
+if (!empty($Cluster_Number) && strlen($Cluster_Number) != 0 && !ctype_space($Cluster_Number)){
+				$query_update3 =<<<EOQ
+UPDATE Product
+   SET Cluster_Number = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt3 = $conn->prepare($query_update3);
+							$stmt3->bind_param("ss", $Cluster_Number, $Sales_UPC);
+							$stmt3->execute();
+
+
+}					
+
 							++$market_share_linked;
 							$input7 = "Record : $Record, $Sales_Description";
 							$linked_sales->push($input7);
