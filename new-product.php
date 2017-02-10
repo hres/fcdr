@@ -31,7 +31,7 @@ EOQ;
 						
 			if (!$result_insert ) {
 				
-						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\";</script>";
+						echo "<script type=\"text/javascript\"> document.getElementById (\"cconfirm-message2\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\";</script>";
 				
 				}
 					
@@ -84,7 +84,7 @@ EOQ;
 						
 			if (!$result_insert_x ) {
 				
-						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\";</script>";
+						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\";</script>";
 				
 				}
 					
