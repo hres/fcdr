@@ -4,14 +4,8 @@
 <?php
 
 	if(isset($_POST['search'])) {
-
-
-		if(mysqli_query($conn, $query)){
-				echo "Successfully Created";
-
-		}else{
-			echo "Failed to create";
-		}
+	 error_reporting(E_ALL);
+ini_set('display_errors', 1); 
 
 	$_POST['Cluster_Number'] =  (empty($_POST['Cluster_Number']) && strlen($_POST['Cluster_Number']) == 0 ?NULL :(int)$_POST['Cluster_Number']);		
 	$_POST['CNF_CODE'] =  (empty($_POST['CNF_CODE']) && strlen($_POST['CNF_CODE']) == 0 ?NULL :(int)$_POST['CNF_CODE']);	
