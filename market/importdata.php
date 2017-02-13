@@ -102,7 +102,7 @@
 		
 		<div class="container" id="tabs" >
   <ul class="nav nav-tabs">
-    <li class="active"><a href="importdata.php">Import Market Share </a></li>
+    <li class="active"><a href="importdata.php">Import Market Share* </a></li>
     <li><a href="importlabel.php">Import Package Label</a></li>
     <li><a  href="importimages.php">Import Images</a></li>
   </ul>

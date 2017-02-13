@@ -74,7 +74,7 @@ ini_set('display_errors', 1);
 
 			$Control_Label = ($Control_Label==0?'No':'Yes');
 			
-					
+				
 			
 			if ($Sales_UPC == null or $Sales_Description == null or $Kilo_Vol == null or $Source == null or $Sales_Year == null or $Collection_Date == null) {
 
@@ -271,6 +271,34 @@ EOQ;
 							$stmt3->execute();
 
 
+}
+
+echo "$Classification_Number <br>";	
+if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ctype_space($Classification_Number)){
+echo "$Classification_Number 2<br>";	
+			$stmt_classification = $conn->prepare("Select * From Classification Where Classification_Number= ?");		
+			$stmt_classification->bind_param("d", $Classification_Number);
+			$result_c = $stmt_classification->execute();
+			$stmt_classification->store_result();
+				if(($stmt_classification->num_rows)>0){
+echo "$Classification_Number 3<br>";	
+						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)");		
+	
+						$classification_update->bind_param("di",$Classification_Number, $Sales_UPC);
+						if($classification_update_result = $classification_update->execute()){
+							echo "OYESSOo";
+						}else{
+							echo "NOOOO";
+						}
+
+
+
+				}
+
+
+
+
+
 }						
 
 						$input3= "Record : $Record, $Sales_Description";
@@ -430,6 +458,29 @@ EOQ;
 								$stmt3 = $conn->prepare($query_update3);
 								$stmt3->bind_param("ss", $Cluster_Number, $Product_Grouping);
 								$result_update = $stmt3->execute();
+
+}
+
+if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ctype_space($Classification_Number)){
+
+			$stmt_classification = $conn->prepare("Select * From Classification Where Classification_Number= ?");		
+			$stmt_classification->bind_param("d", $Classification_Number);
+			$result_c = $stmt_classification->execute();
+			$stmt_classification->store_result();
+				if(($stmt_classification->num_rows)>0){
+
+						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Product_Grouping = ?)");		
+	
+						$classification_update->bind_param("di",$Classification_Number, $Product_Grouping);
+						$classification_update_result = $classification_update->execute();
+
+
+
+				}
+
+
+
+
 
 }						
 
@@ -760,6 +811,31 @@ EOQ;
 
 
 }					
+
+if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ctype_space($Classification_Number)){
+
+			$stmt_classification = $conn->prepare("Select * From Classification Where Classification_Number= ?");		
+			$stmt_classification->bind_param("d", $Classification_Number);
+			$result_c = $stmt_classification->execute();
+			$stmt_classification->store_result();
+				if(($stmt_classification->num_rows)>0){
+
+						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)");		
+	
+						$classification_update->bind_param("di",$Classification_Number, $Sales_UPC);
+						$classification_update_result = $classification_update->execute();
+
+
+
+				}
+
+
+
+
+
+}
+
+
 
 							++$market_share_linked;
 							$input7 = "Record : $Record, $Sales_Description";
