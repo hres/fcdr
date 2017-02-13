@@ -81,5 +81,7 @@ if (count($argv) == 2) {
 		if(strlen ($senditem) < 1) continue;
 		echo "$senditem\n";
 	}
+} else {
+	echo "Usage: php cli-save-images.php {images-folder}\n";
 }
 ?>
