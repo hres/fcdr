@@ -17,7 +17,7 @@ while($row = $result->fetch_assoc()) {
 	echo "        classificationItem[" . $row['Classification_Number'] ."] = '". $row['Classification_Name'] ."';\n";
 }
 echo "        $('#Classification_Number').on('change', function() {\n";
-echo "alert(classificationItem[$('#Classification_Number').val()]);\n";
+echo "alert($('#Classification_Number').prop('selectedIndex'));\n";
 echo "            $('#Classification_Name').val(classificationItem[$('#Classification_Number').val()]);\n";
 echo "        });\n";
 echo "    });\n";
