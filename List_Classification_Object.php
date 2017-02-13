@@ -17,8 +17,10 @@ while($row = $result->fetch_assoc()) {
 	echo "        classificationItem[" . $row['Classification_Number'] ."] = '". $row['Classification_Name'] ."';\n";
 }
 echo "        $('#Classification_Number').on('change', function() {\n";
-echo "alert($('#Classification_Number').prop('selectedIndex'));\n";
 echo "            $('#Classification_Name').prop('selectedIndex', $('#Classification_Number').prop('selectedIndex'));\n";
+echo "        });\n";
+echo "        $('#Classification_Name').on('change', function() {\n";
+echo "            $('#Classification_Number').prop('selectedIndex', $('#Classification_Name').prop('selectedIndex'));\n";
 echo "        });\n";
 echo "    });\n";
 echo "</script>\n";
