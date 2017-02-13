@@ -10,13 +10,16 @@ $result = $stmt->get_result();
 if (!$result) {
 	echo "An error occured";
 }
-echo '<script type="text/javascript">';
-echo '    $(document).ready(function() {';
-echo '        classificationItem = Array();';
+echo "<script type=\"text/javascript\">\n";
+echo "    $(document).ready(function() {\n";
+echo "        classificationItem = Array();\n";
 while($row = $result->fetch_assoc()) {
-	echo "        classificationItem[" . $row['Classification_Number'] ."] = '". $row['Classification_Name'] ."';";
+	echo "        classificationItem[" . $row['Classification_Number'] ."] = '". $row['Classification_Name'] ."';\n";
 }
-echo '    });';
-echo '</script>';
+echo "        $('#Classification_Number').on('change', function() {\n";
+echo "            $('#Classification_Name').val(classificationItem[$('#Classification_Number').selectedIndex]);\n";
+echo "        }\n";
+echo "    });\n";
+echo "</script>\n";
 $conn->close();
 ?>
