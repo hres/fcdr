@@ -18,7 +18,7 @@ while($row = $result->fetch_assoc()) {
 }
 echo "        $('#Classification_Number').on('change', function() {\n";
 echo "alert($('#Classification_Number').prop('selectedIndex'));\n";
-echo "            $('#Classification_Name').val(classificationItem[$('#Classification_Number').val()]);\n";
+echo "            $('#Classification_Name').prop('selectedIndex', $('#Classification_Number').prop('selectedIndex'));\n";
 echo "        });\n";
 echo "    });\n";
 echo "</script>\n";
