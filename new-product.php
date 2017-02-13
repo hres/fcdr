@@ -1,8 +1,18 @@
 <?php include 'connection.php';?>
 
+
 <?php
 
 	if(isset($_POST['search'])) {
+	 error_reporting(E_ALL);
+ini_set('display_errors', 1); 
+		$query = "INSERT INTO Product (Description) VALUES ('AAAAA R')";
+		if(mysqli_query($conn, $query)){
+				echo "Successfully Created";
+
+		}else{
+			echo "Failed to create";
+		}
 
 	$_POST['Cluster_Number'] =  (empty($_POST['Cluster_Number']) && strlen($_POST['Cluster_Number']) == 0 ?NULL :(int)$_POST['Cluster_Number']);		
 	$_POST['CNF_CODE'] =  (empty($_POST['CNF_CODE']) && strlen($_POST['CNF_CODE']) == 0 ?NULL :(int)$_POST['CNF_CODE']);	
@@ -43,7 +53,22 @@ EOQ;
 
 					
 					}
-					
+
+/*								$classification_check =<<<EOQ
+SELECT *
+  FROM Classification
+ WHERE Classification_Number = ?
+EOQ;
+
+								$stmt = $conn->prepare($classification_check);
+								$stmt->bind_param("d", $params_product_classification[1]);
+								$classification_check_result = $stmt->execute();
+
+								$stmt->store_result();
+								if (($stmt->num_rows) > 0) {}
+
+
+*/
 							$query2 =<<<EOQ
 INSERT Into Product_Classification(
        ClassificationID,

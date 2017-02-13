@@ -6,7 +6,7 @@
 
 	$list_classification =<<<EOQ
 		SELECT Distinct Classification_Number 
-		 FROM Classification ORDER BY CAST(Classification_Number as UNSIGNED) ASC
+		 FROM Classification ORDER BY Classification_Number+0 ASC 
 
 EOQ;
 
