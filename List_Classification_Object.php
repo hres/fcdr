@@ -18,7 +18,7 @@ while($row = $result->fetch_assoc()) {
 }
 echo "        $('#Classification_Number').on('change', function() {\n";
 echo "            $('#Classification_Name').val(classificationItem[$('#Classification_Number').selectedIndex]);\n";
-echo "        }\n";
+echo "        });\n";
 echo "    });\n";
 echo "</script>\n";
 $conn->close();
