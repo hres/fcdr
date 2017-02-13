@@ -273,25 +273,46 @@ EOQ;
 
 }
 
-echo "$Classification_Number <br>";	
+
 if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ctype_space($Classification_Number)){
-echo "$Classification_Number 2<br>";	
+	
 			$stmt_classification = $conn->prepare("Select * From Classification Where Classification_Number= ?");		
 			$stmt_classification->bind_param("d", $Classification_Number);
 			$result_c = $stmt_classification->execute();
 			$stmt_classification->store_result();
 				if(($stmt_classification->num_rows)>0){
-echo "$Classification_Number 3<br>";	
+					echo "OYESSSSOO <br>";
+
+				$check_if_in = $conn->prepare("Select * From Product_Classification PC Where  ProductID = (Select Distinct ProductIDS from Sales where Sales_UPC = ?) AND PC.ClassificationID =(Select C.ClassificationID From Classification C where C.Classification_Number =?)");						
+				$check_if_in->bind_param("sd",  $Sales_UPC, $Classification_Number);		
+				$check_if_in_r = $check_if_in->execute();
+				$check_if_in->store_result();
+				if(($check_if_in->num_rows)>0){
 						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)");		
 	
-						$classification_update->bind_param("di",$Classification_Number, $Sales_UPC);
-						if($classification_update_result = $classification_update->execute()){
-							echo "OYESSOo";
+						$classification_update->bind_param("ds",$Classification_Number, $Sales_UPC);
+						$classification_update_result = $classification_update->execute();
+						
 						}else{
-							echo "NOOOO";
-						}
 
+				
 
+	$query2 =<<<EOQ
+
+INSERT INTO Product_Classification (ClassificationID, ProductID)
+Select one.ClassificationID, two.ProductID FROM (
+SELECT C.ClassificationID, "a" AS id from Product P LEFT JOIN Product_Classification PC
+ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ? 
+) AS one JOIN (
+Select ProductID, "a" AS id from Product where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
+) AS two ON one.id = two.id 
+EOQ;
+
+								$stmt = $conn->prepare($query2);
+									$stmt->bind_param("ds", $Classification_Number,$Sales_UPC);
+									$result2 = $stmt->execute();
+
+								}
 
 				}
 
@@ -469,12 +490,36 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 			$stmt_classification->store_result();
 				if(($stmt_classification->num_rows)>0){
 
+
+				$check_if_in = $conn->prepare("Select * From Product_Classification Where ClassificationID =(Select ClassificationID From Classification where Classification_Number =?)");						
+				$check_if_in->bind_param("d", $Classification_Number);		
+				$check_if_in_r = $check_if_in->execute();
+				$check_if_in->store_result();
+				if(($check_if_in->num_rows)>0){
 						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Product_Grouping = ?)");		
 	
 						$classification_update->bind_param("di",$Classification_Number, $Product_Grouping);
 						$classification_update_result = $classification_update->execute();
 
+				}else{
 
+				
+	$query2 =<<<EOQ
+
+INSERT INTO Product_Classification (ClassificationID, ProductID)
+Select one.ClassificationID, two.ProductID FROM (
+SELECT C.ClassificationID, "a" AS id from Product P LEFT JOIN Product_Classification PC
+ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ? 
+) AS one JOIN (
+Select ProductID, "a" AS id from Product where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
+) AS two ON one.id = two.id 
+EOQ;
+
+								$stmt = $conn->prepare($query2);
+									$stmt->bind_param("ds", $Classification_Number,$Sales_UPC);
+									$result2 = $stmt->execute();
+
+								}
 
 				}
 
@@ -819,13 +864,36 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 			$result_c = $stmt_classification->execute();
 			$stmt_classification->store_result();
 				if(($stmt_classification->num_rows)>0){
-
+				$check_if_in = $conn->prepare("Select * From Product_Classification Where ClassificationID =(Select ClassificationID From Classification where Classification_Number =?)");						
+				$check_if_in->bind_param("d", $Classification_Number);		
+				$check_if_in_r = $check_if_in->execute();
+				$check_if_in->store_result();
+				if(($check_if_in->num_rows)>0){
 						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)");		
 	
-						$classification_update->bind_param("di",$Classification_Number, $Sales_UPC);
+						$classification_update->bind_param("ds",$Classification_Number, $Sales_UPC);
 						$classification_update_result = $classification_update->execute();
 
+				}else{
 
+				
+	$query2 =<<<EOQ
+
+INSERT INTO Product_Classification (ClassificationID, ProductID)
+Select one.ClassificationID, two.ProductID FROM (
+SELECT C.ClassificationID, "a" AS id from Product P LEFT JOIN Product_Classification PC
+ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ? 
+) AS one JOIN (
+Select ProductID, "a" AS id from Product where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
+) AS two ON one.id = two.id 
+EOQ;
+
+								$stmt = $conn->prepare($query2);
+									$stmt->bind_param("ds", $Classification_Number,$Sales_UPC);
+									$result2 = $stmt->execute();
+			}
+
+				}
 
 				}
 
@@ -833,7 +901,7 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 
 
 
-}
+
 
 
 
@@ -880,9 +948,7 @@ EOQ;
 							$Classification_Number,
 							$Classification_Type,
 							$Comments
-							
-							
-							
+														
 						); 
 
 								$insert_queryt =<<<EOQ
@@ -941,6 +1007,9 @@ EOQ;
 
 								$stmt->store_result();
 								if (($stmt->num_rows) > 0) {
+
+
+									
 									
 									$query2 =<<<EOQ
 INSERT INTO Product_Classification (ClassificationID, ProductID)
