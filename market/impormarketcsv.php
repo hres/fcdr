@@ -1052,36 +1052,38 @@ EOQ;
  fclose($handle); 
  //$skipped_market_share, $market_share_linked,new_product_count
 
-  echo "<h3>$skipped_market_share Skipped Market Share</h3>";
-  echo "<h3>$new_product_count New Product(s) created</h3>";
-  echo "<h3>$market_share_linked Market Share Linked to Existing Product</h3>";
-  echo "<h3>$duplicate_count Duplicate(s) Market Share</h3> <br>";
+
+
+  echo "<h3>$count Records on the spreadsheet</h3>";
 
   echo "<hr style=\" border-top: 1px solid red;\">";
 
- echo "<h2>Skipped Market Share</h2>";
+  echo "<h3>$skipped_market_share Market Share Skipped</h3>";
 		while (!$skipped_sales->isEmpty()) {
 
 			$senditem = $skipped_sales->shift();
 			if (strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
-		echo "<h2>New Products</h2>";
+		  echo "<hr style=\" border-top: 1px solid red;\">";
+  echo "<h3>$new_product_count New Product(s) created</h3>";
 		while (!$new_product->isEmpty()) {
 
 			$senditem = $new_product->shift();
 			if (strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
-		echo "<h2>Market Share Linked to Existing Product</h2>";
-		while (!$linked_sales->isEmpty()) {
+  echo "<hr style=\" border-top: 1px solid red;\">";
+  echo "<h3>$market_share_linked Market Share Linked to Existing Product</h3>";
+  		while (!$linked_sales->isEmpty()) {
 
 			$senditem = $linked_sales->shift();
 			if (strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		} 
 
-		echo "<h2> Duplicates Market Share</h2>";
+	  echo "<hr style=\" border-top: 1px solid red;\">";	
+		echo "<h3>$duplicate_count Duplicate(s) Market Share</h3> <br>";
 		while (!$duplicate_market_share->isEmpty()) {
 
 			$senditem = $duplicate_market_share->shift();

@@ -807,42 +807,43 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 
  fclose($handle); 
 
- 	echo "<h3>$linked_to_market_count Label(s) Linked to existing Products via Market Share UPCs Codes</h3>";
-	echo "<h3> $linked_to_label_count Label(s) Linked to existing Products via other Labels UPCs Codes</h3>";
-	echo "<h3>$skipped_count Record(s) skipped</h3>";
-	echo "<h3>$new_product_count Label(s) linked to new products</h3>";
-	echo "<h3>$duplicate_count duplicate(s) </h3><br>";
+
+  echo "<h3>$count Records on the spreadsheet</h3>";
 	echo "<hr style=\" border-top: 1px solid red;\">";
 
-    $tosend = " ";
- 	echo "<h2> Labels Linked to existing Products via Market Share UPCs Codes</h2>";
+  
+ 	echo "<h3>$linked_to_market_count Label(s) Linked to existing Products via Market Share UPCs Codes</h3>";
 		while (!$linked_sales->isEmpty()) {
 			$senditem = $linked_sales->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
-
-		echo "<h2> Labels Linked to existing Products via other Labels UPCs Codes</h2>";
+	echo "<hr style=\" border-top: 1px solid red;\">";
+	echo "<h3> $linked_to_label_count Label(s) Linked to existing Products via other Labels UPCs Codes</h3>";
 		while (!$linked_label->isEmpty()) {
 			$senditem = $linked_label->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
-		echo "<h2> Records skipped</h2>";
+			echo "<hr style=\" border-top: 1px solid red;\">";
+	echo "<h3>$skipped_count Record(s) skipped Because of Missing Mandatory fields</h3>";
 		while (!$skipped_label->isEmpty()) {
 			$senditem = $skipped_label->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
+			echo "<hr style=\" border-top: 1px solid red;\">";
 
-				echo "<h2>Labels linked to new products</h2>";
+	 echo "<h3>$new_product_count Label(s) linked to new products</h3>";
 		while (!$new_product->isEmpty()) {
 			$senditem = $new_product->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
-			$tosend =$tosend . ' ' . $senditem;
+		
 		}
-				echo "<h2>duplicates </h2>";
+			echo "<hr style=\" border-top: 1px solid red;\">";
+
+		echo "<h3>$duplicate_count duplicate(s) </h3><br>";
 		while (!$duplicate_label->isEmpty()) {
 			$senditem = $duplicate_label->shift();
 			if(strlen ($senditem) < 1) continue;
@@ -850,7 +851,7 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 		}
 
 
-		print "Import done";
+		print "<br> Import done";
 }
 
 
