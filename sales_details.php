@@ -780,5 +780,7 @@ $(window).resize();
 					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 				  })();
 	</script>
+
+	<?php include 'List_Classification_Object.php'?>
 </body>
 </html>
