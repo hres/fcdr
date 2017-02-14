@@ -683,7 +683,7 @@ hr {
 	<th>Per Serving Amount (grams)</th>
 
   </tr>
-   <?php echo "<tr><td> ". $row['Per_Serving_Amount'] ." </td><td> ". $row['Per_Serving_Unit'] ." </td></tr><td> ". $row['Per_Serving_Amount_In_Grams'] ." </td>"; $conn->close(); ?>
+   <?php echo "<tr><td> ". $row['Per_Serving_Amount'] ." </td><td> ". $row['Per_Serving_Unit'] ." </td><td> ". $row['Per_Serving_Amount_In_Grams'] ." </td></tr>"; $conn->close(); ?>
 
 </table>
 
