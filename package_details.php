@@ -678,9 +678,9 @@ hr {
 
 <table style="width:100%; " class="table3" border="0" >
   <tr>
-    <th>Per Serving Size</th>
-    <th>Per Serving UofM</th>
-	<th>Per Serving Amount (grams)</th>
+    <th>Per Serving <br> Size</th>
+    <th>Per Serving <br>Unit of Measure</th>
+	<th>Per Serving Amount<br> (grams)</th>
 
   </tr>
    <?php echo "<tr><td> ". $row['Per_Serving_Amount'] ." </td><td> ". $row['Per_Serving_Unit'] ." </td><td> ". $row['Per_Serving_Amount_In_Grams'] ." </td></tr>"; $conn->close(); ?>
@@ -728,9 +728,9 @@ hr {
 
 <table style="width:100%; " class="table3" border="0" >
   <tr>
-    <th>PPD Per Serving Amount</th>
-    <th>PPD Per Serving UofM</th>
-	<th>PPD Per Serving Amount (grams)</th>
+    <th>PPD Per Serving <br> Amount</th>
+    <th>PPD Per Serving <br> Unit Of Measure</th>
+	<th>PPD Per Serving Amount <br>(grams)</th>
 
   </tr>
  
