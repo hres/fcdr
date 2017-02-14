@@ -8,8 +8,6 @@
 /* 	$fname = $_FILES['file_save']['tmp_name']; 
 	$handle = fopen($fname, "r");
 	 $filesize = filesize($fname); */
-	 error_reporting(E_ALL);
-ini_set('display_errors', 1); 
 
 		$allowed =  array('csv');		
 		$tmpfname = $_FILES['file_save']['tmp_name'];
@@ -74,7 +72,7 @@ ini_set('display_errors', 1);
 
 			$Control_Label = ($Control_Label==0?'No':'Yes');
 			
-					
+				
 			
 			if ($Sales_UPC == null or $Sales_Description == null or $Kilo_Vol == null or $Source == null or $Sales_Year == null or $Collection_Date == null) {
 
@@ -196,7 +194,15 @@ EOQ;
 						$result_insert = $stmt->execute();
 						++$market_share_linked;
 			//			
-						if (!empty($Product_Description) && strlen($Product_Description) != 0) {
+					//	if (!empty($Product_Description) && strlen($Product_Description) != 0) {
+
+
+			/*Update other fields    !ctype_space($_POST[$field])
+						$Brand                     = $data[3];
+			$Manufacturer              = $data[4]; $Cluster_Number 
+			
+			*/
+
 
 							$query_update =<<<EOQ
 UPDATE Product
@@ -209,10 +215,110 @@ SELECT DISTINCT ProductIDS
 EOQ;
 
 							$stmt = $conn->prepare($query_update);
-							$stmt->bind_param("ss", $Product_Description, $Sales_UPC);
+							$stmt->bind_param("ss", $Sales_Description, $Sales_UPC);
 							$result_update = $stmt->execute();
 
-						}
+if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
+							$query_update1 =<<<EOQ
+UPDATE Product
+   SET Brand = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt1 = $conn->prepare($query_update1);
+							$stmt1->bind_param("ss", $Brand, $Sales_UPC);
+							$stmt1->execute();
+
+
+}
+if (!empty($Manufacturer) && strlen($Manufacturer) != 0 && !ctype_space($Manufacturer)){
+
+				$query_update2 =<<<EOQ
+UPDATE Product
+   SET Manufacturer = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt2 = $conn->prepare($query_update2);
+							$stmt2->bind_param("ss", $Manufacturer, $Sales_UPC);
+							$stmt2->execute();
+
+}
+
+if (!empty($Cluster_Number) && strlen($Cluster_Number) != 0 && !ctype_space($Cluster_Number)){
+				$query_update3 =<<<EOQ
+UPDATE Product
+   SET Cluster_Number = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt3 = $conn->prepare($query_update3);
+							$stmt3->bind_param("ss", $Cluster_Number, $Sales_UPC);
+							$stmt3->execute();
+
+
+}
+
+
+if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ctype_space($Classification_Number)){
+	
+			$stmt_classification = $conn->prepare("Select * From Classification Where Classification_Number= ?");		
+			$stmt_classification->bind_param("d", $Classification_Number);
+			$result_c = $stmt_classification->execute();
+			$stmt_classification->store_result();
+				if(($stmt_classification->num_rows)>0){
+					echo "OYESSSSOO <br>";
+
+				$check_if_in = $conn->prepare("Select * From Product_Classification PC Where  ProductID = (Select Distinct ProductIDS from Sales where Sales_UPC = ?) AND PC.ClassificationID =(Select C.ClassificationID From Classification C where C.Classification_Number =?)");						
+				$check_if_in->bind_param("sd",  $Sales_UPC, $Classification_Number);		
+				$check_if_in_r = $check_if_in->execute();
+				$check_if_in->store_result();
+				if(($check_if_in->num_rows)>0){
+						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)");		
+	
+						$classification_update->bind_param("ds",$Classification_Number, $Sales_UPC);
+						$classification_update_result = $classification_update->execute();
+						
+						}else{
+
+				
+
+	$query2 =<<<EOQ
+
+INSERT INTO Product_Classification (ClassificationID, ProductID)
+Select one.ClassificationID, two.ProductID FROM (
+SELECT C.ClassificationID, "a" AS id from Product P LEFT JOIN Product_Classification PC
+ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ? 
+) AS one JOIN (
+Select ProductID, "a" AS id from Product where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
+) AS two ON one.id = two.id 
+EOQ;
+
+								$stmt = $conn->prepare($query2);
+									$stmt->bind_param("ds", $Classification_Number,$Sales_UPC);
+									$result2 = $stmt->execute();
+
+								}
+
+				}
+
+
+
+
+
+}						
 
 						$input3= "Record : $Record, $Sales_Description";
 						$linked_sales->push($input3);
@@ -304,8 +410,8 @@ EOQ;
 							$input4 = "Record : $Record, $Sales_Description";
 							$linked_sales->push($input4);
 }
-							if (!empty($Product_Description) && strlen($Product_Description) != 0) {
-
+						
+			/*Update other fields*/
 								$query_update =<<<EOQ
 UPDATE Product
    SET Description = ?
@@ -317,9 +423,111 @@ UPDATE Product
 EOQ;
 
 								$stmt = $conn->prepare($query_update);
-								$stmt->bind_param("ss", $Product_Description, $Product_Grouping);
+								$stmt->bind_param("ss", $Sales_Description, $Product_Grouping);
 								$result_update = $stmt->execute();
-							}
+
+
+if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
+								
+								$query_update1 =<<<EOQ
+UPDATE Product
+   SET Brand = ?
+ WHERE ProductID = (
+       SELECT DISTINCT ProductIDS
+         FROM Sales
+        WHERE Product_Grouping = ?
+)
+EOQ;
+
+								$stmt1 = $conn->prepare($query_update1);
+								$stmt1->bind_param("ss", $Brand, $Product_Grouping);
+								$result_update = $stmt1->execute();
+
+}
+if (!empty($Manufacturer) && strlen($Manufacturer) != 0 && !ctype_space($Manufacturer)){
+
+								$query_update2 =<<<EOQ
+UPDATE Product
+   SET Manufacturer = ?
+ WHERE ProductID = (
+       SELECT DISTINCT ProductIDS
+         FROM Sales
+        WHERE Product_Grouping = ?
+)
+EOQ;
+
+								$stmt2 = $conn->prepare($query_update2);
+								$stmt2->bind_param("ss", $Manufacturer, $Product_Grouping);
+								$result_update = $stmt2->execute();
+
+}
+
+if (!empty($Cluster_Number) && strlen($Cluster_Number) != 0 && !ctype_space($Cluster_Number)){
+
+								$query_update3 =<<<EOQ
+UPDATE Product
+   SET Cluster_Number = ?
+ WHERE ProductID = (
+       SELECT DISTINCT ProductIDS
+         FROM Sales
+        WHERE Product_Grouping = ?
+)
+EOQ;
+
+								$stmt3 = $conn->prepare($query_update3);
+								$stmt3->bind_param("ss", $Cluster_Number, $Product_Grouping);
+								$result_update = $stmt3->execute();
+
+}
+
+if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ctype_space($Classification_Number)){
+
+			$stmt_classification = $conn->prepare("Select * From Classification Where Classification_Number= ?");		
+			$stmt_classification->bind_param("d", $Classification_Number);
+			$result_c = $stmt_classification->execute();
+			$stmt_classification->store_result();
+				if(($stmt_classification->num_rows)>0){
+
+
+				$check_if_in = $conn->prepare("Select * From Product_Classification Where ClassificationID =(Select ClassificationID From Classification where Classification_Number =?)");						
+				$check_if_in->bind_param("d", $Classification_Number);		
+				$check_if_in_r = $check_if_in->execute();
+				$check_if_in->store_result();
+				if(($check_if_in->num_rows)>0){
+						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Product_Grouping = ?)");		
+	
+						$classification_update->bind_param("di",$Classification_Number, $Product_Grouping);
+						$classification_update_result = $classification_update->execute();
+
+				}else{
+
+				
+	$query2 =<<<EOQ
+
+INSERT INTO Product_Classification (ClassificationID, ProductID)
+Select one.ClassificationID, two.ProductID FROM (
+SELECT C.ClassificationID, "a" AS id from Product P LEFT JOIN Product_Classification PC
+ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ? 
+) AS one JOIN (
+Select ProductID, "a" AS id from Product where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
+) AS two ON one.id = two.id 
+EOQ;
+
+								$stmt = $conn->prepare($query2);
+									$stmt->bind_param("ds", $Classification_Number,$Sales_UPC);
+									$result2 = $stmt->execute();
+
+								}
+
+				}
+
+
+
+
+
+}						
+
+							
 
 							//echo "$insert_query";
 
@@ -577,6 +785,124 @@ EOQ;
 							$stmt = $conn->prepare($insert_query);
 						$stmt->bind_param("sssssddddddddsssisdddssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank, $Sales_UPC);
 							$result_insert = $stmt->execute();
+
+			/*Update other fields*/
+
+							$query_update =<<<EOQ
+UPDATE Product
+   SET Description = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt = $conn->prepare($query_update);
+							$stmt->bind_param("ss", $Sales_Description, $Sales_UPC);
+							$result_update = $stmt->execute();
+
+if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
+							$query_update1 =<<<EOQ
+UPDATE Product
+   SET Brand = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt1 = $conn->prepare($query_update1);
+							$stmt1->bind_param("ss", $Brand, $Sales_UPC);
+							$stmt1->execute();
+
+
+}
+if (!empty($Manufacturer) && strlen($Manufacturer) != 0 && !ctype_space($Manufacturer)){
+
+				$query_update2 =<<<EOQ
+UPDATE Product
+   SET Manufacturer = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt2 = $conn->prepare($query_update2);
+							$stmt2->bind_param("ss", $Manufacturer, $Sales_UPC);
+							$stmt2->execute();
+
+}
+
+if (!empty($Cluster_Number) && strlen($Cluster_Number) != 0 && !ctype_space($Cluster_Number)){
+				$query_update3 =<<<EOQ
+UPDATE Product
+   SET Cluster_Number = ?
+ WHERE ProductID = (
+SELECT DISTINCT ProductIDS
+  FROM Sales
+ WHERE Sales_UPC = ?
+)
+EOQ;
+
+							$stmt3 = $conn->prepare($query_update3);
+							$stmt3->bind_param("ss", $Cluster_Number, $Sales_UPC);
+							$stmt3->execute();
+
+
+}					
+
+if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ctype_space($Classification_Number)){
+
+			$stmt_classification = $conn->prepare("Select * From Classification Where Classification_Number= ?");		
+			$stmt_classification->bind_param("d", $Classification_Number);
+			$result_c = $stmt_classification->execute();
+			$stmt_classification->store_result();
+				if(($stmt_classification->num_rows)>0){
+				$check_if_in = $conn->prepare("Select * From Product_Classification Where ClassificationID =(Select ClassificationID From Classification where Classification_Number =?)");						
+				$check_if_in->bind_param("d", $Classification_Number);		
+				$check_if_in_r = $check_if_in->execute();
+				$check_if_in->store_result();
+				if(($check_if_in->num_rows)>0){
+						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)");		
+	
+						$classification_update->bind_param("ds",$Classification_Number, $Sales_UPC);
+						$classification_update_result = $classification_update->execute();
+
+				}else{
+
+				
+	$query2 =<<<EOQ
+
+INSERT INTO Product_Classification (ClassificationID, ProductID)
+Select one.ClassificationID, two.ProductID FROM (
+SELECT C.ClassificationID, "a" AS id from Product P LEFT JOIN Product_Classification PC
+ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ? 
+) AS one JOIN (
+Select ProductID, "a" AS id from Product where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
+) AS two ON one.id = two.id 
+EOQ;
+
+								$stmt = $conn->prepare($query2);
+									$stmt->bind_param("ds", $Classification_Number,$Sales_UPC);
+									$result2 = $stmt->execute();
+			}
+
+				}
+
+				}
+
+
+
+
+
+
+
+
+
 							++$market_share_linked;
 							$input7 = "Record : $Record, $Sales_Description";
 							$linked_sales->push($input7);
@@ -620,9 +946,7 @@ EOQ;
 							$Classification_Number,
 							$Classification_Type,
 							$Comments
-							
-							
-							
+														
 						); 
 
 								$insert_queryt =<<<EOQ
@@ -681,6 +1005,9 @@ EOQ;
 
 								$stmt->store_result();
 								if (($stmt->num_rows) > 0) {
+
+
+									
 									
 									$query2 =<<<EOQ
 INSERT INTO Product_Classification (ClassificationID, ProductID)
@@ -723,36 +1050,38 @@ EOQ;
  fclose($handle); 
  //$skipped_market_share, $market_share_linked,new_product_count
 
-  echo "<h3>$skipped_market_share Skipped Market Share</h3>";
-  echo "<h3>$new_product_count New Product(s) created</h3>";
-  echo "<h3>$market_share_linked Market Share Linked to Existing Product</h3>";
-  echo "<h3>$duplicate_count Duplicate(s) Market Share</h3> <br>";
+
+
+  echo "<h3>$count Records on the spreadsheet</h3>";
 
   echo "<hr style=\" border-top: 1px solid red;\">";
 
- echo "<h2>Skipped Market Share</h2>";
+  echo "<h3>$skipped_market_share Market Share Skipped</h3>";
 		while (!$skipped_sales->isEmpty()) {
 
 			$senditem = $skipped_sales->shift();
 			if (strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
-		echo "<h2>New Products</h2>";
+		  echo "<hr style=\" border-top: 1px solid red;\">";
+  echo "<h3>$new_product_count New Product(s) created</h3>";
 		while (!$new_product->isEmpty()) {
 
 			$senditem = $new_product->shift();
 			if (strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		}
-		echo "<h2>Market Share Linked to Existing Product</h2>";
-		while (!$linked_sales->isEmpty()) {
+  echo "<hr style=\" border-top: 1px solid red;\">";
+  echo "<h3>$market_share_linked Market Share Linked to Existing Product</h3>";
+  		while (!$linked_sales->isEmpty()) {
 
 			$senditem = $linked_sales->shift();
 			if (strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
 		} 
 
-		echo "<h2> Duplicates Market Share</h2>";
+	  echo "<hr style=\" border-top: 1px solid red;\">";	
+		echo "<h3>$duplicate_count Duplicate(s) Market Share</h3> <br>";
 		while (!$duplicate_market_share->isEmpty()) {
 
 			$senditem = $duplicate_market_share->shift();
