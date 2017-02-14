@@ -287,8 +287,8 @@ $(document).ready(function() {
 
 
 
-
 	</script>
 
+<?php include 'List_Classification_Object.php'?>
 </body>
 </html>
