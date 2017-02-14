@@ -2,10 +2,15 @@
 <html>
 <head>
 
+	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
+	</script>  
+
+<link  href="../viewer.css" rel="stylesheet">
+<script src="../viewer.js"></script>
 </head>
 <body>
 
-<?php include 'connection.php';?>
+<?php include '../connection.php';?>
 
 <?php
 $ImageID = $_GET['ImageID'];
@@ -29,7 +34,7 @@ EOQ;
  
 $row = $result->fetch_assoc();
 $ext = $row['Extension'];
-echo '<img src="data:image/$ext;base64,'.base64_encode( $row['Image'] ).'"/>';
+echo '<a id="image"><img class = \"image\" src="data:image/$ext;base64,'.base64_encode( $row['Image'] ).'"/></a>';
 
 
 
@@ -37,7 +42,18 @@ echo '<img src="data:image/$ext;base64,'.base64_encode( $row['Image'] ).'"/>';
 
 ?>
 
+<script>
 
+$(document).ready(function() {
+	console.log("OYESSOOO");
+   $('#image').on('click',function(){
+ $('.image').viewer();
+
+   });
+   
+});
+
+</script>
 
 
 </body>
