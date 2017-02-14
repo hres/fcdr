@@ -896,6 +896,8 @@ $conn->close();
 
 		</main>
 	<?php include 'footer.php';?>
-<?php include 'List_Classification_Object.php'?>
-</body>
+	
+	<?php include 'List_Classification_Object.php'?>
+	
+	</body>
 </html>

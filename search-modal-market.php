@@ -5,7 +5,7 @@
 $salesID = ($_GET['SalesID']?$_GET['SalesID']:'');
 
 	
-	 $fields = array('Brand','Description', 'Manufacturer', 'Classification_Number','Classification_Name', 'CNF_CODE','Classification_Type', 'Last_Edited_by','Cluster_Number');
+	 $fields = array('Brand','Description', 'Manufacturer', 'Classification_Number','CNF_CODE','Classification_Type', 'Last_Edited_by','Cluster_Number');
     $conditions = array();
 
     // loop through the defined fields
