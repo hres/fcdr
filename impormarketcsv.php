@@ -1056,7 +1056,7 @@ EOQ;
 
   echo "<hr style=\" border-top: 1px solid red;\">";
 
-  echo "<h3>$skipped_market_share Market Share Skipped</h3>";
+  echo "<h3>$skipped_market_share Market Share Skipped Because of Missing Mandatory Fields</h3>";
 		while (!$skipped_sales->isEmpty()) {
 
 			$senditem = $skipped_sales->shift();
