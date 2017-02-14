@@ -542,7 +542,7 @@ hr {
 		<div class="form-group col-sm-4">
 				<label for="immunizing_agent">Classification Number</label>
 			
-    <select class="form-control" id="sel1" name="Classification_Number" style="width:540px" onkeyup="showHint(this.value)">
+    <select class="form-control" id="sel1" name="Classification_Number" style="width:540px">
 		  <option value="" selected="selected"></option>
 	<?php include 'List_Classification_Number.php';?>
 		
