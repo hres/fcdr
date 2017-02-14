@@ -8,7 +8,7 @@
 
 	if(isset($_POST['search'])) {
 	
-	 $fields = array('Brand','Description', 'Manufacturer', 'Classification_Number','Classification_Name', 'CNF_CODE','Classification_Type', 'Comments','Cluster_Number');
+	 $fields = array('Brand','Description', 'Manufacturer', 'Classification_Number', 'CNF_CODE','Classification_Type', 'Comments','Cluster_Number');
     $conditions = array();
     $flag = false;
 //(empty($_POST[$field]) && strlen($_POST[$field]) == 0 ?NULL :$data[5])
