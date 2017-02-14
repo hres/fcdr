@@ -7,9 +7,7 @@
 	<title>FCDR</title>
 	<link rel="shortcut icon" type="image/png" href="/media/images/favicon.png">
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/colreorder/1.3.2/css/colReorder.dataTables.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css">
+
 	
 	
 	
@@ -19,15 +17,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   
 
+
 	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
 	</script>  
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/colreorder/1.3.2/js/dataTables.colReorder.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js">
 	</script>
 
 	
@@ -36,7 +29,6 @@
 
 
 
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
 
@@ -540,17 +532,17 @@ hr {
 		</div>
 		<div class="row">
 		<div class="form-group col-sm-4">
-				<label for="immunizing_agent">Classification Number</label>
+				<label for="Classification_Number">Classification Number</label>
 			
-    <select class="form-control" id="sel1" name="Classification_Number" style="width:540px">
+    <select class="form-control" id="Classification_Number" name="Classification_Number" style="width:540px">
 		  <option value="" selected="selected"></option>
 	<?php include 'List_Classification_Number.php';?>
 		
 			 </select>
 			</div>
 			<div class="form-group col-sm-4">
-				<label for="immunizing_agent">Classification Name</label>
-				 <select class="form-control" id="class_num" name="Classification_Name" style="width:540px">
+				<label for="Classification_Name">Classification Name</label>
+				 <select class="form-control" id="Classification_Name" name="Classification_Name" style="width:540px">
 		  <option value="" selected="selected"></option>
 		<?php include 'List_Classification.php';?>
 	
@@ -896,7 +888,7 @@ $conn->close();
 
 		</main>
 	<?php include 'footer.php';?>
-	
+
 	<?php include 'List_Classification_Object.php'?>
 	
 	</body>
