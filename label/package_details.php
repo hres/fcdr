@@ -31,8 +31,8 @@
 	</script>
 
 	
-	<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="/theme-gcwu-fegc/css/theme.min.css">
+	<link href="../theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="../theme-gcwu-fegc/css/theme.min.css">
 
 
 
@@ -707,7 +707,7 @@ hr {
 			
 					<tbody >
 				
-<?php include("../nutrition_table.php"); ?>
+<?php include("nutrition_table.php"); ?>
 					</tbody>
 				</table>
 			
@@ -758,7 +758,7 @@ hr {
 			
 					<tbody >
 				
-<?php include("../nutrition_table2.php"); ?>
+<?php include("nutrition_table2.php"); ?>
 					</tbody>
 				</table>
 			

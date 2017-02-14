@@ -17,8 +17,8 @@
 
 
 
-	<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="/theme-gcwu-fegc/css/theme.min.css">
+	<link href="../theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="../theme-gcwu-fegc/css/theme.min.css">
 
 
 
@@ -145,7 +145,7 @@
   	<div class='label label-info' id="upload-file-info2"></div>
 
 
-    <div style="margin-top:10px;"> <strong><h3>Import Results:</h3></strong></div>
+    <div style="margin-top:10px;"> <strong><h3>Import Results*:</h3></strong></div>
 
  <div style="height:400px; overflow:auto;">
  
@@ -167,7 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	
 		</main>
 
-		<?php include 'footer.php';?>
+		<?php include '../footer.php';?>
 
 	<script type="text/javascript">
 				  var _gaq = _gaq || [];
