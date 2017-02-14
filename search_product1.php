@@ -67,7 +67,9 @@ if (!$result) {
     echo "ERRORS";
 }
 
+echo "<pre>\n";
 echo "$first_query\n";
+echo "</pre>\n";
 
 	 while($row = $result->fetch_assoc()) {
 		 
