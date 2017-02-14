@@ -67,6 +67,8 @@ if (!$result) {
     echo "ERRORS";
 }
 
+echo "$first_query\n";
+
 	 while($row = $result->fetch_assoc()) {
 		 
 		 echo "<tr><td> <a href=product/view_product.php?ProductID=" .$row['ProductID'] . ">". $row['Description'] . "</a></td><td>" . $row['Brand'] . "</td><td>" . $row['Manufacturer'] . "</td><td>" . $row['Classification_Number'] . "</td><td>" . $row['Classification_Name'] . "</td><td>" . $row['Classification_Type'] . "</td><td>" . $row['CNF_CODE'] . "</td> <td>" . $row['Cluster_Number'] . "</td></tr>";                       
