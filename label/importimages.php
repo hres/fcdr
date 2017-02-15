@@ -1,4 +1,4 @@
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -14,8 +14,8 @@
 
 
 
-	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
+	<link href="../theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="../theme-gcwu-fegc/css/theme.min.css">
 
 
 
@@ -80,7 +80,7 @@
 </head>
 <body class="wide comments example">
 
-<?php include 'header.php';?>
+<?php include '../header.php';?>
 
 <main role="main" property="mainContentOfPage" class="container">
 
@@ -137,7 +137,7 @@
   
   
   
-    <div style="margin-top:10px;"><strong><h3>Import Results:</h3></strong></div>
+    <div style="margin-top:10px;"><strong><h3>Import Results**:</h3></strong></div>
 
 <div id="post-file-info">
 <?php
@@ -153,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		
 	
 		</main>
-	<?php include 'footer.php';?>
+	<?php include '../footer.php';?>
 
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>

@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include("../connection.php");
 /* error_reporting(0);   
 $dir=substr(uniqid(),-7); */
 
@@ -67,7 +67,7 @@ $count = 0;
 			$flag = false;	
 			$query = "Select * from $dbname.Package where Label_UPC = '$Label_UPC'"; 
 			$result = mysqli_query($conn,$query);
-			
+			echo "$query";
 			$rowcount=mysqli_num_rows($result);
 			
 			if($rowcount>0){
