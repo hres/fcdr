@@ -51,7 +51,44 @@
 <script src="/wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
 <noscript><link rel="stylesheet" href="/wet-boew/css/noscript.min.css" /></noscript>
+<script type="text/javascript">
+$(function(){
+	$("#first").submit(function(event){
+          event.preventDefault();
 
+		$(this).find(".error").remove();
+		 file = $(this).find("input[name=file_save]").val();
+		
+		 form=$(this);
+
+		 url = $(this).attr("action");
+		
+	
+		$.post(url,{file_save:file}, function(data){	
+			console.log(data);
+	/*		 if(data.error =="No"){
+				form.fadeOut();
+				form.before(data.success);
+				
+			}else{
+			
+					passordInput.after(data.errorPassword);
+				
+				form.append(data.error);
+			} 
+	*/	
+		},"json");
+		return false;
+				
+		
+	});
+	
+	
+	
+	
+});
+
+</script>
 
 	<script>
 
@@ -808,10 +845,10 @@ hr {
 <input type = "Button" class="btn btn-primary" value = "Add an image" id = "hiddenButton"/>
 <div  id = "hiddenForm">
 
-<form id="first" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
+<form id="first" action="addImage.php" method="post" enctype="multipart/form-data">
 				
 			
-	<div class = "align-input"><input id="my-file-selector"class="btn btn-primary" type="file"  name="files[]" multiple>		
+	<div class = "align-input"><input id="my-file-selector"class="btn btn-primary" type="file"  name="file_save">		
 			
 				</div>
 
