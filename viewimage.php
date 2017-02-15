@@ -4,12 +4,12 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="../dist/viewer.css"/>
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="dist/viewer.css"/>
 	
-		<script src="../assets/js/jquery.min.js"></script>
-		<script src="../assets/js/bootstrap.min.js"></script>
-		<script src="../dist/viewer.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="dist/viewer.js"></script>
 
 	</head>
 	<body>
