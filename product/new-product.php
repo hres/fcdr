@@ -1,8 +1,11 @@
 <?php include '../connection.php';?>
 
+
 <?php
 
 	if(isset($_POST['search'])) {
+	 error_reporting(E_ALL);
+ini_set('display_errors', 1); 
 
 	$_POST['Cluster_Number'] =  (empty($_POST['Cluster_Number']) && strlen($_POST['Cluster_Number']) == 0 ?NULL :(int)$_POST['Cluster_Number']);		
 	$_POST['CNF_CODE'] =  (empty($_POST['CNF_CODE']) && strlen($_POST['CNF_CODE']) == 0 ?NULL :(int)$_POST['CNF_CODE']);	
@@ -31,7 +34,7 @@ EOQ;
 						
 			if (!$result_insert ) {
 				
-						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\";</script>";
+						echo "<script type=\"text/javascript\"> document.getElementById (\"cconfirm-message2\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\";</script>";
 				
 				}
 					
@@ -43,7 +46,22 @@ EOQ;
 
 					
 					}
-					
+
+/*								$classification_check =<<<EOQ
+SELECT *
+  FROM Classification
+ WHERE Classification_Number = ?
+EOQ;
+
+								$stmt = $conn->prepare($classification_check);
+								$stmt->bind_param("d", $params_product_classification[1]);
+								$classification_check_result = $stmt->execute();
+
+								$stmt->store_result();
+								if (($stmt->num_rows) > 0) {}
+
+
+*/
 							$query2 =<<<EOQ
 INSERT Into Product_Classification(
        ClassificationID,
@@ -84,14 +102,14 @@ EOQ;
 						
 			if (!$result_insert_x ) {
 				
-						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\";</script>";
+						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\";</script>";
 				
 				}
 					
 				else {
 					
 						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
-						echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$id';\",3000);</script>";
+						echo "<script>setTimeout(\"location.href = '../view_product.php?ProductID=$id';\",3000);</script>";
 
 
 					
