@@ -124,6 +124,7 @@
 		
 			 </select>
 			</div>
+			<?php include("fill_product.php"); ?>
 				<div class="form-group col-sm-4">
 				<label for="Classification_Name">Classification Name</label>
     <select class="form-control" id="Classification_Name" name="Classification_Name" >
