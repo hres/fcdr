@@ -12,7 +12,9 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css">
 	
 	
-	
+	<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 	
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -33,7 +35,6 @@
 	
 	<link href="../theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="../theme-gcwu-fegc/css/theme.min.css">
-
 
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -216,6 +217,11 @@ $(function(){
 	</script>
 	
 		<style>
+.align-input{
+	display: inline-block
+}
+
+
 		#ingredients{
 			margin:1%;
 		}
@@ -799,6 +805,25 @@ hr {
 
   <?php include("../getImage.php"); ?>
 </div>
+<input type = "Button" class="btn btn-primary" value = "Add an image" id = "hiddenButton"/>
+<div  id = "hiddenForm">
+
+<form id="first" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
+				
+			
+	<div class = "align-input"><input id="my-file-selector"class="btn btn-primary" type="file"  name="files[]" multiple>		
+			
+				</div>
+
+		<div class="align-input" style="margin-left:150px">
+					<input  type="Submit"  class="btn btn-primary" value="Save">
+			</div>
+						</div>
+</form>
+</div>
+
+
+
 
     </div>
 	
@@ -896,16 +921,20 @@ $conn->close();
 
 		</main>
 	<?php include '../footer.php';?>
-	<script type="text/javascript">
-				  var _gaq = _gaq || [];
-				  _gaq.push(['_setAccount', 'UA-365466-5']);
-				  _gaq.push(['_trackPageview']);
 
-				  (function() {
-					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-				  })();
-	</script>
+
+<script>
+$(document).ready(function(){
+ console.log("INN");
+        $("#hiddenForm").hide();
+  
+    $("#hiddenButton").click(function(){
+		  $("#hiddenButton").hide();
+       $("#hiddenForm").show();
+    });
+});
+</script>
+
+
 </body>
 </html>
