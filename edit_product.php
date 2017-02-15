@@ -111,20 +111,27 @@
 	
 	
 		<div class="row">
-		<div class="form-group col-xs-6">
+		<div class="form-group col-sm-4">
 				<label for="Description" class="required">Description <strong class="required">(required)</strong></label>
-				<input type="text" class="form-control" style="width:540px" name="Description" id="Description" placeholder="Enter the Description" value="<?PHP echo $row['Description']; ?>" required/>
+				<input type="text" class="form-control"  name="Description" id="Description" placeholder="Enter the Description" value="<?PHP echo $row['Description']; ?>" required/>
 			</div>
-			<div class="form-group col-xs-6">
+			<div class="form-group col-sm-4">
 				<label for="Classification_Number">Classification Number</label>
 			
-    <select class="form-control" id="Classification_Number" name="Classification_Number"  style="width:540px" onkeyup="showHint(this.value)">
+    <select class="form-control" id="Classification_Number" name="Classification_Number"   onkeyup="showHint(this.value)">
 	   <option value="<?PHP echo $row['Classification_Number']; ?>" selected="selected"><?PHP echo $row['Classification_Number']; ?></option>
 	<?php include 'List_Classification_Number.php';?>
 		
 			 </select>
 			</div>
-
+				<div class="form-group col-sm-4">
+				<label for="Classification_Number">Classification Name</label>
+    <select class="form-control" id="Classification_Name" name="Classification_Name"  onkeyup="showHint(this.value)">
+	   <option value="<?PHP echo $row['Classification_Name']; ?>" selected="selected"><?PHP echo $row['Classification_Name']; ?></option>
+	<?php include 'List_Classification.php';?>
+		
+			 </select>
+			</div>
 			
 			
 		</div>
@@ -196,16 +203,6 @@ function goBack() {
 <?php include 'footer.php';?>
 
 	</div>
-	<script type="text/javascript">
-				  var _gaq = _gaq || [];
-				  _gaq.push(['_setAccount', 'UA-365466-5']);
-				  _gaq.push(['_trackPageview']);
-
-				  (function() {
-					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-				  })();
-	</script>
+<?php include 'List_Classification_Object.php'?>
 </body>
 </html>
