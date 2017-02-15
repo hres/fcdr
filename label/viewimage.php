@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+
+
+
 <html>
-<head>
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="../dist/viewer.css"/>
+	
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/bootstrap.min.js"></script>
+		<script src="../dist/viewer.js"></script>
 
-	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
-	</script>  
-
-<link  href="../viewer.css" rel="stylesheet">
-<script src="../viewer.js"></script>
-</head>
-<body>
-
+	</head>
+	<body>
 <?php include '../connection.php';?>
 
 <?php
@@ -34,7 +37,7 @@ EOQ;
  
 $row = $result->fetch_assoc();
 $ext = $row['Extension'];
-echo '<a id="image"><img class = \"image\" src="data:image/$ext;base64,'.base64_encode( $row['Image'] ).'"/></a>';
+echo ' <div style="text-align:center"><img class = "image" width="700" src="data:image/$ext;base64,'.base64_encode( $row['Image'] ).'"/></div>';
 
 
 
@@ -42,19 +45,17 @@ echo '<a id="image"><img class = \"image\" src="data:image/$ext;base64,'.base64_
 
 ?>
 
-<script>
-
-$(document).ready(function() {
-	console.log("OYESSOOO");
-   $('#image').on('click',function(){
- $('.image').viewer();
-
-   });
-   
-});
-
-</script>
 
 
-</body>
+
+
+
+		<script>
+			$(document).ready(function() {
+				$('.image').viewer();
+				$('.images').viewer();
+			});
+		</script>
+		
+	</body>
 </html>
