@@ -109,20 +109,30 @@
 	
 	
 		<div class="row">
-			<div class="form-group col-xs-6">
+			<div class="form-group col-sm-4">
 				<label for="Description" class="required">Description <strong class="required">(required)</strong></label>
-				<input type="text" class="form-control" style="width:540px" name="Description" id="Description" placeholder="Enter the Description" required="required"/>
+				<input type="text" class="form-control" name="Description" id="Description" placeholder="Enter the Description" required="required"/>
 			</div>
 			
-				<div class="form-group col-xs-6">
+				<div class="form-group col-sm-4">
 				<label for="Classification_Number">Classification Number</label>
 			
-    <select class="form-control" id="Classification_Number" name="Classification_Number" style="width:540px" >
+    <select class="form-control" id="Classification_Number" name="Classification_Number" >
 		   <option value="" selected>Select a Classification Number</option>
 	<?php include '../List_Classification_Number.php';?>
 		
 			 </select>
 			</div>
+
+					<div class="form-group col-sm-4">
+				<label for="Classification_Name">Classification Name</label>
+			
+    <select class="form-control" id="Classification_Name" name="Classification_Name">
+		   <option value="" selected>Select a Classification Name</option>
+	<?php include '../List_Classification.php';?>
+		
+			 </select>
+			</div>		
 	
 		</div>
 		<div class="row">
@@ -235,6 +245,6 @@ function goBack() {
 		</main>
 			<?php include '../footer.php';?>
 	</div>
-
+<?php include '../List_Classification_Object.php'?>
 </body>
 </html>
