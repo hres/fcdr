@@ -249,7 +249,7 @@ if (!$result) {
 			</div>
 			<div class="form-group col-sm-4">
 				<label for="Classification_Name">Classification Name</label>
-				 <select class="form-control" id="Classification_Name" placeholder="Select a Classification Name" name="Classification_Name" style="width:540px">
+				 <select class="form-control" id="Classification_Name"  name="Classification_Name" style="width:540px">
 		  <option value="" selected>Select a Classification Name</option>
 		<?php include 'List_Classification.php';?>
 	
@@ -567,7 +567,7 @@ $(document).ready(function() {
 
 
 	</script>
-
+<?php include 'List_Classification_Object.php'?>
 
 </body>
 </html>
