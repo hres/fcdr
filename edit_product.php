@@ -125,8 +125,8 @@
 			 </select>
 			</div>
 				<div class="form-group col-sm-4">
-				<label for="Classification_Number">Classification Name</label>
-    <select class="form-control" id="Classification_Name" name="Classification_Name"  onkeyup="showHint(this.value)">
+				<label for="Classification_Name">Classification Name</label>
+    <select class="form-control" id="Classification_Name" name="Classification_Name" >
 	   <option value="<?PHP echo $row['Classification_Name']; ?>" selected="selected"><?PHP echo $row['Classification_Name']; ?></option>
 	<?php include 'List_Classification.php';?>
 		
