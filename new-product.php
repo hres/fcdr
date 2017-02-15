@@ -7,16 +7,6 @@
 
 	 error_reporting(E_ALL);
 ini_set('display_errors', 1); 
-		$query = " INSERT INTO Product(Description) VALUES ('AAAAA')";
-
-
-if($conn->query($query)){
-	echo "OYESSSO";
-
-}else{
-
-	echo "NOOOOO";
-}
 
 
 	$_POST['Cluster_Number'] =  (empty($_POST['Cluster_Number']) && strlen($_POST['Cluster_Number']) == 0 ?NULL :(int)$_POST['Cluster_Number']);		
