@@ -52,8 +52,11 @@
 <![endif]-->
 <noscript><link rel="stylesheet" href="/wet-boew/css/noscript.min.css" /></noscript>
 <script type="text/javascript">
+
+
+
 $(function(){
-	$("#first").submit(function(event){
+	$("#first44").submit(function(event){
           event.preventDefault();
 
 		$(this).find(".error").remove();
@@ -66,30 +69,38 @@ $(function(){
 	
 		$.post(url,{file_save:file}, function(data){	
 			console.log(data);
-	/*		 if(data.error =="No"){
-				form.fadeOut();
-				form.before(data.success);
-				
-			}else{
-			
-					passordInput.after(data.errorPassword);
-				
-				form.append(data.error);
-			} 
-	*/	
+
 		},"json");
 		return false;
 				
 		
 	});
-	
-	
-	
-	
+		
 });
 
 </script>
-
+<script type="text/javascript">
+$(document).ready(function(){
+$('#butclicked').on('click', function() {
+    var file_data = $('#my-file-selector').prop('files')[0];   
+    var form_data = new FormData();                  
+    form_data.append('file', file_data);
+    alert(form_data);                             
+    $.ajax({
+				url: 'addImage.php?PackageID=<?php echo  $_GET['PackageID']; ?>', // point to server-side PHP script 
+                dataType: 'text',  // what to expect back from the PHP script, if anything
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: form_data,                         
+                type: 'post',
+                success: function(php_script_response){
+                    alert(php_script_response); // display response from the PHP script, if any
+                }
+     });
+});
+});
+</script>
 	<script>
 
 $(document).ready(function() {
@@ -845,7 +856,7 @@ hr {
 <input type = "Button" class="btn btn-primary" value = "Add an image" id = "hiddenButton"/>
 <div  id = "hiddenForm">
 
-<form id="first" action="addImage.php" method="post" enctype="multipart/form-data">
+<form id="first"  enctype="multipart/form-data">
 				
 			
 	<div class = "align-input"><input id="my-file-selector"class="btn btn-primary" type="file"  name="file_save">		
@@ -853,10 +864,11 @@ hr {
 				</div>
 
 		<div class="align-input" style="margin-left:150px">
-					<input  type="Submit"  class="btn btn-primary" value="Save">
+					<input  type="button" id="butclicked" class="btn btn-primary" value="Save">
 			</div>
 						</div>
 </form>
+
 </div>
 
 
