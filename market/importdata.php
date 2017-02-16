@@ -123,7 +123,7 @@
     <input id="my-file-selector" type="file" name="file_save" style="display:none;" onchange="$('#upload-file-info').html($(this).val());">
     Browse
 </label>
-<span class='label label-info' id="upload-file-info"></span>
+<span class='label label-info' id="upload-file-info">hello</span>
 <div style="float:right;">
 <label class="btn btn-primary" for="my-file-selector2">
   <!--  <input id="my-file-selector2" type="submit" onclick="myFunction()" style="display:none;" name="search" onchange="$('#upload-file-info').html($(this).val());" disabled>-->
