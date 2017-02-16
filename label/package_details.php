@@ -80,6 +80,7 @@ $(function(){
 
 </script>
 <script type="text/javascript">
+/*
 $(document).ready(function(){
 $('#butclicked').on('click', function() {
     var file_data = $('#my-file-selector').prop('files')[0];   
@@ -99,8 +100,36 @@ $('#butclicked').on('click', function() {
                 }
      });
 });
+}); */
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function (e) {
+	$("#first").on('submit',(function(e) {
+		e.preventDefault();
+		$.ajax({
+        	url: 'addImage.php?PackageID=<?php echo  $_GET['PackageID']; ?>', // point to server-side PHP script 
+			type: "POST",
+			data:  new FormData(this),
+			contentType: false,
+    	    cache: false,
+			dataType: 'text',
+			processData:false,
+			success: function(data)
+		    {
+				alert(data);
+			//$("#targetLayer").html(data);
+		    },
+		  	error: function() 
+	    	{
+	    	} 	        
+	   });
+	}));
 });
 </script>
+
+
 	<script>
 
 $(document).ready(function() {
@@ -856,7 +885,8 @@ hr {
 <input type = "Button" class="btn btn-primary" value = "Add an image" id = "hiddenButton"/>
 <div  id = "hiddenForm">
 
-<form id="first"  enctype="multipart/form-data">
+<form id="first" method="post" action="addImage.php">
+
 				
 			
 	<div class = "align-input"><input id="my-file-selector"class="btn btn-primary" type="file"  name="file_save">		
@@ -864,7 +894,7 @@ hr {
 				</div>
 
 		<div class="align-input" style="margin-left:150px">
-					<input  type="button" id="butclicked" class="btn btn-primary" value="Save">
+					<input  type="submit"  class="btn btn-primary" value="Save">
 			</div>
 						</div>
 </form>
