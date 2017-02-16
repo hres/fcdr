@@ -29,13 +29,13 @@ $result =  $stmt_query->execute();
 
 
     if ( 0 < $_FILES['file']['error'] ) {
-        echo $image . "" .$ext ;
+     
         echo  'Error :  ' . $_FILES['file']['error'] . '<br>';
     }else{
 if($result){
 
     
-	$query2 = "Insert into $dbname.Images (Image, ImageName,LabelID,Extension) VALUES ('$image', '$Label_UPC', '$PackageID','$ext')";	 
+	$query2 = "Insert into Images (Image, ImageName,LabelID,Extension) VALUES ('$image', '$Label_UPC', '$PackageID','$ext')";	 
 	$result2 = mysqli_query($conn,$query2);
 
 /*
