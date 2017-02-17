@@ -777,7 +777,7 @@ hr {
 
   </tr>
  
-  <?php echo "<tr><td> ". $row['PPD_Per_Serving_Amount'] ." </td><td> ". $row['PPD_Per_Serving_UofM'] ." </td><td> ". $row['Per_Serving_Amount_In_Grams_PPD'] ." </td></tr>"; $conn->close(); ?>
+  <?php echo "<tr><td> ". $row['PPD_Per_Serving_Amount'] ." </td><td> ". $row['PPD_Per_Serving_UofM'] ." </td><td> ". $row['Per_Serving_Amount_In_Grams_PPD'] ." </td></tr>";  ?>
 </table>
 
 
@@ -848,6 +848,16 @@ hr {
    
 
 	<input type = "Button" class="btn btn-primary" value = "Add an image" id = "hiddenButton"/>
+
+
+
+
+
+
+
+
+
+
 <div  id = "hiddenForm">
 
 <form id="first" method="post" action="addImage.php">
