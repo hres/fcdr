@@ -18,7 +18,7 @@ $result = mysqli_query($conn, $query);
 if($result){
     echo "<h1>Product Successfully created</h1>";
 }else{
-    echo "Failed to Create the product";
+    echo "<h1>Failed to Create the product</h1>";
 }
 
 
