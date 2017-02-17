@@ -52,6 +52,45 @@
 <noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
 
 
+
+
+<script type="text/javascript">
+$(document).ready(function (e) {
+	$("#first").on('submit',(function(e) {
+		e.preventDefault();
+		$.ajax({
+        	url: 'addImage.php?PackageID=<?php echo  $_GET['PackageID']; ?>', // point to server-side PHP script 
+			type: "POST",
+			data:  new FormData(this),
+			contentType: false,
+    	    cache: false,
+			dataType: 'json',
+			processData:false,
+			success: function(data)
+		    {
+			
+		console.log(data);
+			 if(data.error =="No"){
+				$("#first").fadeOut();
+				$("#first").before(data.success);
+				
+			}else{
+			
+				
+				
+				$("#first").append(data.errorPassword);
+			} 
+			//$("#targetLayer").html(data);
+		    },
+		  	error: function() 
+	    	{
+	    	} 	        
+	   });
+	}));
+});
+</script>
+
+
 	<script>
 
 $(document).ready(function() {
