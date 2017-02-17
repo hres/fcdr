@@ -285,7 +285,8 @@ $(window).resize();
 		<!--	<div class="content">-->
 		
 
-<h2 style="margin-top:2px;"> Product</h2>
+<h2 style="margin-top:2px;"> Product </h2>
+<p style="color:#FF0000"><i><?php include 'last_product.php';?></i></p>
 <div id="deletemess"> </div>
 <div style="float:right; ">
 
