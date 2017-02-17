@@ -939,6 +939,19 @@ $conn->close();
 	<?php include 'footer.php';?>
 
 	<?php include 'List_Classification_Object.php'?>
-	
+
+
+	<script> 
+$(document).ready(function(){
+ console.log("INN");
+        $("#hiddenForm").hide();
+  
+    $("#hiddenButton").click(function(){
+		  $("#hiddenButton").hide();
+       $("#hiddenForm").show();
+    });
+});
+</script>
 	</body>
 </html>
+
