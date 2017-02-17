@@ -116,7 +116,7 @@
 <form method="post"  action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data" id="form1">
 	
 	<label class="btn btn-primary" for="my-file-selector">
-    <input id="my-file-selector" type="file" name="file_save" style="display:none;" onchange="$('#upload-file-info').html($(this).val());">
+    <input id="my-file-selector" type="file" name="file_save" style="display:none;" onchange="$('#upload-file-info').html($(this).val().replace(/.*[\/\\]/,''));">
     Browse
 </label>
 <span class='label label-info' id="upload-file-info"></span>
