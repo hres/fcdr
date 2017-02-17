@@ -41,7 +41,7 @@ EOQ;
 		   
 	   }else{
 		   	    echo "  <div class=\"col-sm-2\">";
-			echo " <a href=\"viewimage.php?ImageID=$ImageID\" class=\"thumbnail\" target = '_blank'>>";
+			echo " <a href=\"viewimage.php?ImageID=$ImageID\" class=\"thumbnail\" target = '_blank'>";
 			echo '<img id=\"myImg\" src="data:image/$ext;base64,'.base64_encode( $row['Image'] ).'" style=\"width:130px;height:130px\"/>';
 			echo"</a></div>";
 			++$count;

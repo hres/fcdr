@@ -845,7 +845,7 @@ hr {
   <?php include("getImage.php"); ?>
 </div>
 
-    </div>
+   
 
 	<input type = "Button" class="btn btn-primary" value = "Add an image" id = "hiddenButton"/>
 <div  id = "hiddenForm">
@@ -865,7 +865,7 @@ hr {
 </form>
 
 </div>
-	
+ </div>	
   </div>
  
 </div>
