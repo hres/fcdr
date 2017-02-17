@@ -255,6 +255,10 @@ $(function(){
 	</script>
 	
 		<style>
+
+		.align-input{
+	display: inline-block
+}
 		#ingredients{
 			margin:1%;
 		}
@@ -842,6 +846,25 @@ hr {
 </div>
 
     </div>
+
+	<input type = "Button" class="btn btn-primary" value = "Add an image" id = "hiddenButton"/>
+<div  id = "hiddenForm">
+
+<form id="first" method="post" action="addImage.php">
+
+				
+			
+	<div class = "align-input"><input id="my-file-selector"class="btn btn-primary" type="file"  name="file_save">		
+			
+				</div>
+
+		<div class="align-input" style="margin-left:150px">
+					<input  type="submit"  class="btn btn-primary" value="Save">
+			</div>
+						</div>
+</form>
+
+</div>
 	
   </div>
  
