@@ -114,11 +114,22 @@ $(document).ready(function (e) {
 			data:  new FormData(this),
 			contentType: false,
     	    cache: false,
-			dataType: 'text',
+			dataType: 'json',
 			processData:false,
 			success: function(data)
 		    {
-				alert(data);
+			
+		console.log(data);
+			 if(data.error =="No"){
+				$("#first").fadeOut();
+				$("#first").before(data.success);
+				
+			}else{
+			
+				
+				
+				$("#first").append(data.errorPassword);
+			} 
 			//$("#targetLayer").html(data);
 		    },
 		  	error: function() 
@@ -877,10 +888,11 @@ hr {
 
 
 
-<div class="container" style="width:1080px;">
+<div class="container"  style="width:1080px;">
   <h2>Image Gallery</h2>
-
+<div id="reloadDIv">
   <?php include("../getImage.php"); ?>
+  </div>
 </div>
 <input type = "Button" class="btn btn-primary" value = "Add an image" id = "hiddenButton"/>
 <div  id = "hiddenForm">

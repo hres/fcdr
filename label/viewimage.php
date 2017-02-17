@@ -6,15 +6,20 @@
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="../dist/viewer.css"/>
-	
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/bootstrap.min.js"></script>
 		<script src="../dist/viewer.js"></script>
 
 	</head>
 	<body>
-<?php include '../connection.php';?>
+	  <form action="#" method="post" id="vids-search-form2">
 
+  <input type="submit" value="Delete this image" class="btn btn-primary" name="delete-label" style="width:150px;" >
+</form>
+
+<?php include 'deleteImage.php';?>
+<?php include '../connection.php';?>
 <?php
 $ImageID = $_GET['ImageID'];
 
