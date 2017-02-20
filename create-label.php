@@ -1227,19 +1227,28 @@ $('input[name="intervaltype"]').click(function () {
 
 <div class="well" style="margin-right:2%;">	
 					<div class="row" >
-		<div class="form-group col-xs-6">
+		<div class="form-group col-sm-4">
 				<label for="PPD_Per_Serving_Amount">Per Serving Size as Prepared</label>
-				<input type="text" style="width:540px" class="form-control" name="PPD_Per_Serving_Amount" id="PPD_Per_Serving_Amount" placeholder="Enter the Serving Size " value="<?PHP echo $row['Per_Serving_Amount']; ?>" />
+				<input type="text" class="form-control" name="PPD_Per_Serving_Amount" id="PPD_Per_Serving_Amount" placeholder="Enter the Serving Size " value="<?PHP echo $row['Per_Serving_Amount']; ?>" />
 			</div>
 	
-				<div class="form-group col-xs-6">
+				<div class="form-group col-sm-4">
 	<label for="PPD_Per_Serving_UofM" name="Year_Recorded"> Per Serving Size Unit of Measure</label>
-      <select class="form-control" id="PPD_Per_Serving_UofM" name="PPD_Per_Serving_UofM" style="width:540px">
+      <select class="form-control" id="PPD_Per_Serving_UofM" name="PPD_Per_Serving_UofM">
   <option value="" selected="selected">Select the Per Serving Size Unit of Measure</option>
 			<?php include 'Units.php';?>
       
       </select></div>
-			
+		
+				<div class="form-group col-sm-4">
+	<label for="Calculated" name="Cal"> Calculated</label>
+      <select class="form-control" id="Calculated" name="Calculated">
+  <option value="" selected="selected"></option>
+   <option value="0">0</option>
+   <option value="1">1</option>
+
+      
+      </select></div>		
 
 	</div>
 		
