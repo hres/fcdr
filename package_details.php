@@ -82,7 +82,7 @@ $(document).ready(function (e) {
 		})
 		.then(function() {
 			return $.ajax({
-					url: '../getImage.php?PackageID=<?php echo $_GET['PackageID']; ?>',
+					url: 'getImage.php?PackageID=<?php echo $_GET['PackageID']; ?>',
 					type: 'GET',
 					cache: false,
 					dataType: 'html',
@@ -982,10 +982,12 @@ $conn->close();
 		</main>
 			<script> 
 $(document).ready(function(){
- console.log("INN");
-        $("#hiddenForm").hide();
+
+        $("#first").hide();
   
     $("#hiddenButton").click(function(){
+		$('.success').remove();
+		$('.error').remove();
 		  $("#hiddenButton").hide();
        $("#hiddenForm").show();
     });
