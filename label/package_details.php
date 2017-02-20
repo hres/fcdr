@@ -138,7 +138,6 @@ $(document).ready(function (e) {
 					success: function(data) {
 						console.log(data);
 						$('#reloadDIv').html(data);
-						
 					},
 					error: function() {
 					}
@@ -1029,9 +1028,9 @@ $(document).ready(function(){
 
         $("#hiddenForm").hide();
   
-    $("#hiddenButton").click(function(){
-		  $("#hiddenButton").hide();
-       $("#hiddenForm").show();
+    $('#hiddenButton').click(function(){
+		  $('#hiddenButton').hide();
+       $('#hiddenForm').show();
     });
 });
 </script>
