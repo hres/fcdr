@@ -53,39 +53,50 @@
 
 
 
-
 <script type="text/javascript">
 $(document).ready(function (e) {
-	$("#first").on('submit',(function(e) {
+
+	$("#first").on('submit', (function(e) {
+
 		e.preventDefault();
 		$.ajax({
-        	url: 'addImage.php?PackageID=<?php echo  $_GET['PackageID']; ?>', // point to server-side PHP script 
-			type: "POST",
-			data:  new FormData(this),
-			contentType: false,
-    	    cache: false,
-			dataType: 'json',
-			processData:false,
-			success: function(data)
-		    {
-			
-		console.log(data);
-			 if(data.error =="No"){
-				$("#first").fadeOut();
-				$("#first").before(data.success);
-				
-			}else{
-			
-				
-				
-				$("#first").append(data.errorPassword);
-			} 
-			//$("#targetLayer").html(data);
-		    },
-		  	error: function() 
-	    	{
-	    	} 	        
-	   });
+				url: 'addImage.php?PackageID=<?php echo $_GET['PackageID']; ?>', // point to server-side PHP script 
+				type: "POST",
+				data: new FormData(this),
+				contentType: false,
+				cache: false,
+				dataType: 'json',
+				processData: false,
+				success: function(data) {
+					console.log(data);
+					if (data.error == "No") {
+						$("#first").fadeOut();					
+						$("#first").before(data.success);
+					} else {
+						$("#first").append(data.errorPassword);
+					}
+					// $("#targetLayer").html(data);
+				},
+				error: function() {
+				}
+		})
+		.then(function() {
+			return $.ajax({
+					url: '../getImage.php?PackageID=<?php echo $_GET['PackageID']; ?>',
+					type: 'GET',
+					cache: false,
+					dataType: 'html',
+					success: function(data) {
+						console.log(data);
+						$('#reloadDIv').html(data);
+						$('#hiddenButton').show();
+					},
+					error: function() {
+					}
+			});
+		})
+		.done(function() {
+		});
 	}));
 });
 </script>
