@@ -27,7 +27,7 @@ $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $image_name);
     //echo "You have successfully added your image, reload the page please";
 
     	$tableau["error"] = "No";
-		$tableau["success"] = "<p style=\"color: #00b300; padding:25px;\">You have successfully added your image, reload the page please</p>";	
+		$tableau["success"] = "<div class=\"success\"  style=\"color: #00b300; padding:25px;\">You have successfully added your image, reload the page please</div>";	
 		
  } else{
      $tableau["errorPassword"] = "<div class=\"error\" style=\"color:#FF0000;\"> Failed to add your image</div>";
