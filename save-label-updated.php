@@ -16,6 +16,7 @@ $_POST['Per_Serving_Amount'] = (empty($_POST['Per_Serving_Amount']) && strlen($_
 $_POST['Per_Serving_Amount_In_Grams'] = (empty($_POST['Per_Serving_Amount_In_Grams']) && strlen($_POST['Per_Serving_Amount_In_Grams']) == 0 ?NULL :$_POST['Per_Serving_Amount_In_Grams']);
 $_POST['Per_Serving_Amount_In_Grams_PPD'] = (empty($_POST['Per_Serving_Amount_In_Grams_PPD']) && strlen($_POST['Per_Serving_Amount_In_Grams_PPD']) == 0 ?NULL :$_POST['Per_Serving_Amount_In_Grams_PPD']);
 $_POST['Collection_Date'] = (empty($_POST['Collection_Date']) && strlen($_POST['Collection_Date']) == 0 ?NULL :$_POST['Collection_Date']);
+$_POST['Calculated'] = (empty($_POST['Calculated']) && strlen($_POST['Calculated']) == 0 ?NULL :$_POST['Calculated']);
 
 
 		$param = array(
@@ -46,7 +47,8 @@ $_POST['Collection_Date'] = (empty($_POST['Collection_Date']) && strlen($_POST['
 			$_POST['Per_Serving_Amount_In_Grams'],
 			$_POST['Per_Serving_Amount_In_Grams_PPD'],
 			$_POST['Storage_Statement'],
-			$_POST['Multi_Part_Package']
+			$_POST['Multi_Part_Package'],
+			$_POST['Calculated']
 		);
 
 
@@ -80,13 +82,14 @@ UPDATE Package SET
 	Per_Serving_Amount_In_Grams = ?,
 	Per_Serving_Amount_In_Grams_PPD = ?,
 	Storage_Statement = ?,
-	Multipart = ?
+	Multipart = ?,
+	Calculated = ?
 
 	WHERE PackageID=?
 EOQ;
 
 							$stmt = $conn->prepare($query);
-							$stmt->bind_param("sssdsdsssssssssssssssissddssi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27],$packageID);
+							$stmt->bind_param("sssdsdsssssssssssssssissddssii", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27],$param[28],$packageID);
 							$result_insert = $stmt->execute();
 							//$last_id = mysqli_insert_id($conn);
 

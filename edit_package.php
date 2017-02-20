@@ -2611,20 +2611,27 @@ EOQ;
 	<?php include("fill_package.php"); ?>
 <div class="well" style="margin-right:2%;">	
 					<div class="row" >
-		<div class="form-group col-xs-6">
+		<div class="form-group col-sm-4">
 				<label for="manufacturer">PPD Per Serving Amount</label>
-				<input type="text" style="width:540px" class="form-control" name="PPD_Per_Serving_Amount" id="manufacturer" placeholder="Enter the Serving Size of the Package Label" value="<?PHP echo $row['PPD_Per_Serving_Amount']; ?>" />
+				<input type="text"  class="form-control" name="PPD_Per_Serving_Amount" id="manufacturer" placeholder="Enter the Serving Size of the Package Label" value="<?PHP echo $row['PPD_Per_Serving_Amount']; ?>" />
 			</div>
 	
-				<div class="form-group col-xs-6">
+				<div class="form-group col-sm-4">
 	<label for="sel1" name="Year_Recorded"> PPD Per Serving Unit of Measure</label>
-      <select class="form-control" id="sel1" name="PPD_Per_Serving_UofM" style="width:540px">
+      <select class="form-control" id="sel1" name="PPD_Per_Serving_UofM">
 		  <option value="<?PHP echo $row['PPD_Per_Serving_UofM']; ?>" selected="selected"><?PHP echo $row['PPD_Per_Serving_UofM']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>
       
       </select></div>
-			
+
+					<div class="form-group col-sm-4">
+	<label for="sel1" name="cal"> Calculated</label>
+      <select class="form-control" id="Calculated" name="Calculated" >
+		  <option value="<?PHP echo $row['Calculated']; ?>" selected="selected"><?PHP echo $row['Calculated']; ?></option>
+		 <option value="0">0</option>
+     	 <option value="1">1</option>
+      </select></div>		
 
 	</div>
 		

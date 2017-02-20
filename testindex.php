@@ -13,7 +13,7 @@
 include "connection.php";
 echo "<hr>";
 
-$query = "Insert Into Product (Description) VALUES ('TEST DESCRIPTION')";
+$query = " Alter table Package Add column Calculated TINYINT";
 $result = mysqli_query($conn, $query);
 if($result){
     echo "<h1>Product Successfully created</h1>";

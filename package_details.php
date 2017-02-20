@@ -68,7 +68,6 @@ $(document).ready(function (e) {
 				dataType: 'json',
 				processData: false,
 				success: function(data) {
-					console.log(data);
 					if (data.error == "No") {
 						$("#first").fadeOut();					
 						$("#first").before(data.success);
@@ -87,7 +86,6 @@ $(document).ready(function (e) {
 					cache: false,
 					dataType: 'html',
 					success: function(data) {
-						console.log(data);
 						$('#reloadDIv').html(data);
 						$('#hiddenButton').show();
 					},
@@ -785,14 +783,12 @@ hr {
     <th>PPD Per Serving <br> Amount</th>
     <th>PPD Per Serving <br> Unit Of Measure</th>
 	<th>PPD Per Serving Amount <br>(grams)</th>
+	<th>Calculated</th>
 
   </tr>
  
-  <?php echo "<tr><td> ". $row['PPD_Per_Serving_Amount'] ." </td><td> ". $row['PPD_Per_Serving_UofM'] ." </td><td> ". $row['Per_Serving_Amount_In_Grams_PPD'] ." </td></tr>";  ?>
+  <?php echo "<tr><td> ". $row['PPD_Per_Serving_Amount'] ." </td><td> ". $row['PPD_Per_Serving_UofM'] ." </td><td> ". $row['Per_Serving_Amount_In_Grams_PPD'] ." </td><td> ". $row['Calculated'] ." </td></tr>";  ?>
 </table>
-
-
-
 
 
 </div>
