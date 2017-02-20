@@ -125,23 +125,21 @@ $(document).ready(function (e) {
 						$("#first").append(data.errorPassword);
 					}
 					// $("#targetLayer").html(data);
+					$.ajax({
+							url: 'getImage.php?PackageID=<?php echo $_GET['PackageID']; ?>',
+							type: 'GET',
+							cache: false,
+							dataType: 'html',
+							success: function(data) {
+								console.log(data);
+								$('#reloadDIv').html(data);
+							},
+							error: function() {
+							}
+					});
 				},
 				error: function() {
 				}
-		})
-		.then(function() {
-			$.ajax({
-					url: 'getImage.php?PackageID=<?php echo $_GET['PackageID']; ?>',
-					type: 'GET',
-					cache: false,
-					dataType: 'html',
-					success: function(data) {
-						console.log(data);
-						$('#reloadDIv').html(data);
-					},
-					error: function() {
-					}
-			});
 		});
 	}));
 });
