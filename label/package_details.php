@@ -138,6 +138,7 @@ $(document).ready(function (e) {
 					success: function(data) {
 						console.log(data);
 						$('#reloadDIv').html(data);
+						$('#hiddenButton').show();
 					},
 					error: function() {
 					}
@@ -1026,11 +1027,12 @@ $conn->close();
 <script>
 $(document).ready(function(){
 
-        $("#hiddenForm").hide();
+        $("#first").hide();
   
     $('#hiddenButton').click(function(){
+		
 		  $('#hiddenButton').hide();
-       $('#hiddenForm').show();
+       $('#first').show();
     });
 });
 </script>
