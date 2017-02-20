@@ -138,6 +138,7 @@ $(document).ready(function (e) {
 					success: function(data) {
 						console.log(data);
 						$('#reloadDIv').html(data);
+						$("#hiddenButton").show();
 					},
 					error: function() {
 					}
