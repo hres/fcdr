@@ -6,10 +6,10 @@ $db = parse_ini_file("conn.ini");
 
 
 
-$servername ="127.0.0.1";//   $db['host']; //
-$username ="romario";//   $db['user'];   // 
-$password = "romario";//   $db['pass'];    //
-$dbname ="fcdr";//  $db['name'];//     
+$servername =  $db['host']; //"127.0.0.1";// 
+$username = $db['user'];   // "romario";//  
+$password =   $db['pass'];    // "romario";// 
+$dbname = $db['name'];//     "fcdr";// 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 /*
