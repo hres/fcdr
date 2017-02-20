@@ -131,7 +131,7 @@ $(document).ready(function (e) {
 		})
 		.then(function() {
 			return $.ajax({
-					url: 'getImage.php?PackageID=<?php echo $_GET['PackageID']; ?>',
+					url: '/getImage.php?PackageID=<?php echo $_GET['PackageID']; ?>',
 					type: 'GET',
 					cache: false,
 					dataType: 'html',
