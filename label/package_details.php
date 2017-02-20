@@ -136,6 +136,7 @@ $(document).ready(function (e) {
 					cache: false,
 					dataType: 'html',
 					success: function(data) {
+						console.log(data);
 						$('#reloadDIv').html(data);
 					},
 					error: function() {
