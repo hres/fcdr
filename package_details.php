@@ -980,16 +980,16 @@ $conn->close();
 
 
 		</main>
-			<script> 
+<script>
 $(document).ready(function(){
 
         $("#first").hide();
-  
-    $("#hiddenButton").click(function(){
-		$('.success').remove();
+
+    $('#hiddenButton').click(function(){
+  		$('.success').remove();
 		$('.error').remove();
-		  $("#hiddenButton").hide();
-       $("#hiddenForm").show();
+		  $('#hiddenButton').hide();
+       $('#first').show();
     });
 });
 </script>
