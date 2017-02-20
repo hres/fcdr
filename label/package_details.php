@@ -106,7 +106,9 @@ $('#butclicked').on('click', function() {
 
 <script type="text/javascript">
 $(document).ready(function (e) {
+
 	$("#first").on('submit', (function(e) {
+
 		e.preventDefault();
 		$.ajax({
 				url: 'addImage.php?PackageID=<?php echo $_GET['PackageID']; ?>', // point to server-side PHP script 
@@ -1028,9 +1030,10 @@ $conn->close();
 $(document).ready(function(){
 
         $("#first").hide();
-  
+
     $('#hiddenButton').click(function(){
-		
+  		$('.success').remove();
+		$('.error').remove();
 		  $('#hiddenButton').hide();
        $('#first').show();
     });
