@@ -17,7 +17,7 @@
 
 
 
-<script type="text/javascript" src="/js/formden.js"></script>
+<script type="text/javascript" src="js/formden.js"></script>
 
 <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
 <link rel="stylesheet" href="/css/bootstrap-iso.css" />
@@ -28,9 +28,9 @@
 
 
 
-	<link href="/theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="/theme-gcwu-fegc/css/theme.min.css">
-
+	<link href="../theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="../theme-gcwu-fegc/css/theme.min.css">
+	  <script type="text/javascript" src="../validate-nft.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
@@ -85,6 +85,10 @@ $('input[name="intervaltype"]').click(function () {
 	
 	
 		<style>
+
+		.error {
+    color:red;
+}
 		.mainsearch{
 			border-style: solid;
 			border-color:#F0F0F0 ;
@@ -174,7 +178,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
   
 
 
-<form role="form" method="post" action="#" id="vids-search-form" onsubmit="return validateForm()" name="myForm" >
+<form role="form" method="post" action="#" id="vids-search-form"  name="myForm" >
 <section style="margin-top: 15px;" class="hidethis">
 <h3>Package Label</h3>
 	  <div id="confirm-message" style="color:#008000;"></div>
@@ -520,10 +524,10 @@ EOQ;
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Energy kJ</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Energy kJ" name="Energy_kj_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Energy kJ" id="Energy_kj_Amount" name="Energy_kj_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Energy_kj_Unit">
+ <select class="form-control" id="Energy_kj_Unit" name="Energy_kj_Unit">
   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
   <option value="kJ" >kJ</option>	
    <option value="" ></option>
@@ -4793,6 +4797,8 @@ function goBack() {
 	</div>
 	
 	<!-- Include Date Range Picker -->
+	<script type="text/javascript" src="../jquery.validate.min.js"></script>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
