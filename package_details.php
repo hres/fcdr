@@ -852,8 +852,9 @@ hr {
 
 <div class="container" style="width:1080px;">
   <h2>Image Gallery</h2>
-
+<div id="reloadDIv">
   <?php include("getImage.php"); ?>
+  </div>
 </div>
 
    
