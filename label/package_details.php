@@ -106,7 +106,7 @@ $('#butclicked').on('click', function() {
 
 <script type="text/javascript">
 $(document).ready(function (e) {
-	$("#first").on('submit',(function(e) {
+	$("#first").on('submit', (function(e) {
 		e.preventDefault();
 		$.ajax({
 				url: 'addImage.php?PackageID=<?php echo $_GET['PackageID']; ?>', // point to server-side PHP script 
@@ -125,21 +125,25 @@ $(document).ready(function (e) {
 						$("#first").append(data.errorPassword);
 					}
 					// $("#targetLayer").html(data);
-					$.ajax({
-							url: 'getImage.php?PackageID=<?php echo $_GET['PackageID']; ?>',
-							type: 'GET',
-							cache: false,
-							dataType: 'html',
-							success: function(data) {
-								console.log(data);
-								$('#reloadDIv').html(data);
-							},
-							error: function() {
-							}
-					});
 				},
 				error: function() {
 				}
+		})
+		.then(function() {
+			return $.ajax({
+					url: 'getImage.php?PackageID=<?php echo $_GET['PackageID']; ?>',
+					type: 'GET',
+					cache: false,
+					dataType: 'html',
+					success: function(data) {
+						console.log(data);
+						$('#reloadDIv').html(data);
+					},
+					error: function() {
+					}
+			});
+		})
+		.done(function() {
 		});
 	}));
 });
