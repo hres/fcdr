@@ -138,7 +138,7 @@ $(document).ready(function (e) {
 					success: function(data) {
 						console.log(data);
 						$('#reloadDIv').html(data);
-						$("#hiddenButton").show();
+						$('#hiddenButton').show();
 					},
 					error: function() {
 					}
@@ -1029,9 +1029,9 @@ $(document).ready(function(){
  console.log("INN");
         $("#hiddenForm").hide();
   
-    $("#hiddenButton").click(function(){
-		  $("#hiddenButton").hide();
-       $("#hiddenForm").show();
+    $('#hiddenButton').click(function(){
+		  $('#hiddenButton').hide();
+       $('#hiddenForm').show();
     });
 });
 </script>
