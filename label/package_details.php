@@ -119,7 +119,7 @@ $(document).ready(function (e) {
 				success: function(data) {
 					console.log(data);
 					if (data.error == "No") {
-						$("#first").fadeOut();
+						$("#first").fadeOut();					
 						$("#first").before(data.success);
 					} else {
 						$("#first").append(data.errorPassword);
@@ -138,6 +138,7 @@ $(document).ready(function (e) {
 					success: function(data) {
 						console.log(data);
 						$('#reloadDIv').html(data);
+						
 					},
 					error: function() {
 					}
@@ -1025,7 +1026,7 @@ $conn->close();
 
 <script>
 $(document).ready(function(){
- console.log("INN");
+
         $("#hiddenForm").hide();
   
     $("#hiddenButton").click(function(){
