@@ -2624,7 +2624,7 @@ EOQ;
 		 <option value=""></option>
       
       </select></div>
-
+<?php include("fill_package.php"); ?>
 					<div class="form-group col-sm-4">
 	<label for="sel1" name="cal"> Calculated</label>
       <select class="form-control" id="Calculated" name="Calculated" >
