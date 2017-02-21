@@ -11,13 +11,13 @@ $.validator.addMethod(
 $(document).ready(function() {
 	$("#vids-search-form1").validate({
 			rules: {
-				Collection_Date: {
+				date1: {
 					required: true,
 					date: true
 				}
 			},
 			message: {
-				Collection_Date: "wrong date format"
+				date1: "wrong date format"
 			}
 	});
 });

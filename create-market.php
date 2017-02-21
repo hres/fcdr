@@ -172,21 +172,20 @@
 				<input type="text" class="form-control" name="Comments" id="Comments" placeholder="Enter a Comment "/>
 			</div>
 		
-		   <div class="form-group col-sm-4">
-      <label for="date1">
-     Collection Date
-      </label>
-      <div class="">
-       <div class="input-group">
-     
-        <input class="form-control myDateFormat" id="date1" name="Collection_Date" placeholder="YYYY/MM/DD" type="text" />
-          <div class="input-group-addon" >
-         <i class="fa fa-calendar">
-         </i>
-        </div>
-	   </div>
-      </div>
-     </div>
+		<div class="form-group col-sm-4">
+			<label for="date1">
+			Collection Date
+			</label>
+			<div class="">
+				<div class="input-group">
+					<input class="form-control myDateFormat" id="date1" name="Collection_Date" placeholder="YYYY/MM/DD" type="text" />
+				</div>
+					<div class="input-group-addon" >
+						<i class="fa fa-calendar">
+						</i>
+					</div>
+			</div>
+		</div>
 		
 		
 		</div>
