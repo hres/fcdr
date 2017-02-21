@@ -153,18 +153,25 @@ $('input[name="intervaltype"]').click(function () {
 
 	
 		<div class="row">
-			<div class="form-group col-sm-4">
-				<label for="Label_UPC" class="required">Label UPC <strong class="required"><br>(required)</strong></label>
-				<input type="text" class="form-control" name="Label_UPC" id="Label_UPC" placeholder="Enter Label UPC" required/>
+			<div class="form-group col-xs-6">
+				<label for="Label_UPC" class="required">Label UPC <strong class="required">(required)</strong></label>
+				<input type="text" class="form-control" style="width:540px" name="Label_UPC" id="Label_UPC" placeholder="Enter Label UPC" required/>
 			</div>
+            			<div class="form-group col-xs-6">
+				<label for="Nielsen_Item_Rank_UPC" >Nielsen Item Rank UPC</label>
+				<input type="text" class="form-control" style="width:540px" name="Nielsen_Item_Rank_UPC"  id="Nielsen_Item_Rank_UPC" placeholder="Enter the Nielsen Item Rank UPC of the Package Label"/> 
+			</div>
+
+</div>
+			<div class="row">
 		
-			<div class="form-group col-sm-4">
-				<label for="Label_Description" class="required">Label Description <strong class="required"><br>(required)</strong></label>
-				<input type="text" class="form-control" name="Label_Description" id="Label_Description" placeholder="Enter the Label description " required/>
+			<div class="form-group col-xs-6">
+				<label for="Label_Description" class="required">Label Description <strong class="required">(required)</strong></label>
+				<input type="text" class="form-control" style="width:540px" name="Label_Description" id="Label_Description" placeholder="Enter the Label description " required/>
 			</div>
-				<div class="form-group col-sm-4">
+				<div class="form-group col-xs-6">
 				<label for="Common_Measure" >Common Household Measure </label>
-				<input type="text" class="form-control" name="Common_Measure" id="Common_Measure" placeholder="Enter the Common Household Measure " />
+				<input type="text" class="form-control" style="width:540px" name="Common_Measure" id="Common_Measure" placeholder="Enter the Common Household Measure " />
 			</div>
 		</div>
 	

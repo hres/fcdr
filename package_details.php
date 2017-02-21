@@ -652,14 +652,15 @@ hr {
 <table style="width:100%" class="table2">
   <tr >
     <th>Label UPC</th>
+	<th>Nielsen Item Rank UPC</th>
     <th>Label Description</th>
 	<th>Household Measure</th>
-	<th>Nielsen Category</th>
+	<th>Nielsen Category</th>   
 	
 	
   </tr>
   			<?php include("package_d_1.php"); ?>
-		<?php echo "<tr><td>". $row['Label_UPC'] . "</td><td>". $row['Label_Description'] . "</td><td>". $row['Common_Measure'] . "</td><td>". $row['Nielsen_Category'] . "</td></tr>"?>
+		<?php echo "<tr><td>". $row['Label_UPC'] . "</td><td>". $row['Nielsen_Item_Rank_UPC'] . "</td><td>". $row['Label_Description'] . "</td><td>". $row['Common_Measure'] . "</td><td>". $row['Nielsen_Category'] . "</td></tr>"?>
 
 </table>	
 <table style="width:100%" class="table2">

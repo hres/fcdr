@@ -501,7 +501,8 @@ EOQ;
 							$Per_Serving_UofM,
 							$Source,
 							$Comment,
-							$Product_Description
+							$Product_Description,
+							$Neilsen_Item_Rank_UPC
 						);
 
 						$query_insert =<<<EOQ
@@ -535,11 +536,12 @@ INSERT Into Package(
        Per_Serving_Unit,
        Source,
        Comments,
-       Product_Description
-) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       Product_Description,
+	   Nielsen_Item_Rank_UPC
+) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 						$stmt = $conn->prepare($query_insert);
-						$stmt->bind_param("issdsddsssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $params[29]);
+						$stmt->bind_param("issdsddssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $params[29], $params[30]);
 						$result_insert = $stmt->execute();
 				
 					if($result_insert){
@@ -615,18 +617,19 @@ INSERT INTO Package(
        Per_Serving_Unit,
        Source,
        Comments,
-       Product_Description
+       Product_Description,
+	   Nielsen_Item_Rank_UPC
 )
 SELECT DISTINCT
-       ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+       ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Sales_UPC = ?
 EOQ;
 
-						$params = array($Label_UPC, $Label_Description, $Per_Serving_Amount_PPD, $Per_Serving_Amount_PPD_UofM, $Per_Serving_Amount_In_Grams, $Per_Serving_Amount_In_Grams_PPD, $Package_Size_UofM, $Nielsen_Category, $Brand, $Manufacturer, $Country, $Package_Size, $Number_Of_Units, $Storage_Type, $Storage_Statement, $Collection_Date, $Health_Claim, $Nutrient_Claim, $Other_Package_Statement, $Suggested_Direction, $Ingredients, $Multipart, $Nutrition_Fact_Table, $Common_Household_Measure, $Per_Serving_Amount, $Per_Serving_UofM, $Source, $Comment, $Product_Description);
+						$params = array($Label_UPC, $Label_Description, $Per_Serving_Amount_PPD, $Per_Serving_Amount_PPD_UofM, $Per_Serving_Amount_In_Grams, $Per_Serving_Amount_In_Grams_PPD, $Package_Size_UofM, $Nielsen_Category, $Brand, $Manufacturer, $Country, $Package_Size, $Number_Of_Units, $Storage_Type, $Storage_Statement, $Collection_Date, $Health_Claim, $Nutrient_Claim, $Other_Package_Statement, $Suggested_Direction, $Ingredients, $Multipart, $Nutrition_Fact_Table, $Common_Household_Measure, $Per_Serving_Amount, $Per_Serving_UofM, $Source, $Comment, $Product_Description,$Neilsen_Item_Rank_UPC);
 
 						$stmt = $conn->prepare($query1);
-						$stmt->bind_param("sssssssssssssssssssssssssssssi", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $Neilsen_Item_Rank_UPC);
+						$stmt->bind_param("ssssssssssssssssssssssssssssssi", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28],$params[29], $Neilsen_Item_Rank_UPC);
 						$stmt->execute();
 						$nid = mysqli_insert_id($conn);
 						++$linked_to_market_count;
@@ -724,23 +727,24 @@ INSERT Into Package(
        Per_Serving_Unit,
        Source,
        Comments,
-       Product_Description
+       Product_Description,
+	   Nielsen_Item_Rank_UPC
 )
 SELECT DISTINCT
-       ProductIDP, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+       ProductIDP, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Package
  WHERE Label_UPC = ?
 EOQ;
 
-					$params = array($Label_UPC, $Label_Description, $Per_Serving_Amount_PPD, $Per_Serving_Amount_PPD_UofM, $Per_Serving_Amount_In_Grams, $Per_Serving_Amount_In_Grams_PPD, $Package_Size_UofM, $Nielsen_Category, $Brand, $Manufacturer, $Country, $Package_Size, $Number_Of_Units, $Storage_Type, $Storage_Statement, $Collection_Date, $Health_Claim, $Nutrient_Claim, $Other_Package_Statement, $Suggested_Direction, $Ingredients, $Multipart, $Nutrition_Fact_Table, $Common_Household_Measure, $Per_Serving_Amount, $Per_Serving_UofM, $Source, $Comment, $Product_Description);
+					$params = array($Label_UPC, $Label_Description, $Per_Serving_Amount_PPD, $Per_Serving_Amount_PPD_UofM, $Per_Serving_Amount_In_Grams, $Per_Serving_Amount_In_Grams_PPD, $Package_Size_UofM, $Nielsen_Category, $Brand, $Manufacturer, $Country, $Package_Size, $Number_Of_Units, $Storage_Type, $Storage_Statement, $Collection_Date, $Health_Claim, $Nutrient_Claim, $Other_Package_Statement, $Suggested_Direction, $Ingredients, $Multipart, $Nutrition_Fact_Table, $Common_Household_Measure, $Per_Serving_Amount, $Per_Serving_UofM, $Source, $Comment, $Product_Description,$Neilsen_Item_Rank_UPC);
 					$stmt = $conn->prepare($query2);
-					$stmt->bind_param("sssssssssssssssssssssssssssssi", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $Label_UPC);
+					$stmt->bind_param("ssssssssssssssssssssssssssssssi", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $params[29], $Label_UPC);
 					$result = $stmt->execute();
 					if($result){
-						echo "OYESSSSOOO";
+						//echo "OYESSSSOOO";
 					}else{
 
-						echo "FAILEDD";
+					//	echo "FAILEDD";
 					}
 
 					$xid = mysqli_insert_id($conn);
