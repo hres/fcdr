@@ -847,7 +847,16 @@ $("#vids-search-form").validate({
           return $('#PPD_Per_Serving_Amount').val().length > 0;
         }}
 
-} 
+},
+             Energy_Amount_S: {
+
+         required: {
+             
+             depends: function(element){
+          return $('#Energy_Unit_S').val().length > 0;
+        }}
+
+}
    
    
     },

@@ -2725,6 +2725,7 @@ EOQ;
  <select class="form-control" id="Energy_Unit_kj_S" name="Energy_Unit_kj_S">
   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
   <option value="kJ">kJ</option>	
+  <option value=""></option>	
 	
       
       </select>  </div>
