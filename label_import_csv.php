@@ -751,7 +751,7 @@ EOQ;
 					++$linked_to_label_count;
 					
 							
-							$query_update =<<<EOQ
+							$query_update2 =<<<EOQ
 UPDATE Product
    SET Description = ?, Brand = ?, Manufacturer = ?
  WHERE ProductID = (
@@ -760,8 +760,13 @@ UPDATE Product
            WHERE Label_UPC = ?
        )
 EOQ;
-							$stmt1 = $conn->prepare($query_update);
+
+
+							$stmt1 = $conn->prepare($query_update2);
 							$stmt1->bind_param("ssss", $Label_Description, $Brand, $Manufacturer, $Label_UPC);
+
+
+							
 							if($stmt1->execute()){
 								echo "UPDATED";
 							}else{
