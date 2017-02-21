@@ -85,6 +85,11 @@ $('input[name="intervaltype"]').click(function () {
 	
 	
 		<style>
+.error {
+    color:red;
+}
+
+
 		.mainsearch{
 			border-style: solid;
 			border-color:#F0F0F0 ;
@@ -528,10 +533,10 @@ EOQ;
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Energy kJ</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Energy kJ" name="Energy_kj_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Energy kJ" id="Energy_kj_Amount" name="Energy_kj_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Energy_kj_Unit">
+ <select class="form-control" id="Energy_kj_Unit" name="Energy_kj_Unit">
   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
   <option value="kJ" >kJ</option>	
    <option value="" ></option>
@@ -574,10 +579,10 @@ EOQ;
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Saturated + Trans Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Saturated + Trans Fat" name="Saturated_Plus_Trans_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Saturated + Trans Fat" id="Saturated_Plus_Trans_Amount" name="Saturated_Plus_Trans_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
-<select class="form-control" id="sel1" name="Saturated_Plus_Trans_UofM">
+<select class="form-control" id="Saturated_Plus_Trans_UofM" name="Saturated_Plus_Trans_UofM">
   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	
 	<?php include 'Units.php';?>
@@ -670,12 +675,14 @@ EOQ;
 	?>	 
   <label class="col-sm-3 control-label">Saturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Saturated Fat" name="Saturated_Fat_Amount" value="<?PHP echo $row['Amount']; ?>"> 
+  
+   <input type="text" class="form-control" placeholder="Amount of Saturated Fat" id="Saturated_Fat_Amount" name="Saturated_Fat_Amount" value="<?PHP echo $row['Amount']; ?>"> 
 
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Saturated_Fat_Unit">
-         <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+ <select class="form-control" id="Saturated_Fat_Unit" name="Saturated_Fat_Unit">
+		 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+
 		<?php include 'Units.php';?>
 		 <option value=""></option>
       
@@ -717,10 +724,10 @@ EOQ;
 
   
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Trans Fat" name="Trans_Fat_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Trans Fat" id="Trans_Fat_Amount" name="Trans_Fat_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Trans_Fat_Unit">
+ <select class="form-control" id="Trans_Fat_Unit" name="Trans_Fat_Unit">
 	  <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	<?php include 'Units.php';?>
 		 <option value=""></option>
@@ -4811,6 +4818,9 @@ function goBack() {
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="validate-nft.js"></script>
+
 	<script>
 	$(document).ready(function(){
 		var date_input=$('input[name="Collection_Date"]'); //our date input has the name "date"
@@ -4833,16 +4843,6 @@ function goBack() {
 		})
 </script>
 	
-	<script type="text/javascript">
-				  var _gaq = _gaq || [];
-				  _gaq.push(['_setAccount', 'UA-365466-5']);
-				  _gaq.push(['_trackPageview']);
 
-				  (function() {
-					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-				  })();
-	</script>
 </body>
 </html>
