@@ -55,7 +55,10 @@
 
 
 		<style>
-		
+		.error {
+    color:red;
+}
+
 
 		.mainsearch{
 			border-style: solid;
