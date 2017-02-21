@@ -14,7 +14,7 @@ $(document).ready(function() {
 				}
 			},
 			messages: {
-				date1: "wrong date format"
+				Collection_Date: "wrong date format"
 			}
 	});
 });
