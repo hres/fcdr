@@ -5,6 +5,7 @@ $("#vids-search-form").validate({
 
     rules: {
 
+
         Energy_kj_Amount: {
 
          required: {
@@ -24,54 +25,121 @@ $("#vids-search-form").validate({
         }}
 
 },
-        date1: {
-      
+ Trans_Fat_Amount : {
+
          required: {
              
              depends: function(element){
-          return $('#date2').val().length > 0;
+          return $('#Trans_Fat_Unit').val().length > 0;
+        }}
+
+},
+ Trans_Fat_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Trans_Fat_Amount').val().length > 0;
+        }}
+
+},
+    Saturated_Plus_Trans_Amount : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Saturated_Plus_Trans_UofM').val().length > 0;
+        }}
+
+},  
+    Saturated_Plus_Trans_UofM : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Saturated_Plus_Trans_Amount').val().length > 0;
         }}
 
 },
 
-      date2 : {
-      
+    Saturated_Fat_Amount : {   
+
          required: {
              
              depends: function(element){
-          return $('#date1').val().length > 0;
+          return $('#Saturated_Fat_Unit').val().length > 0;
+        }}
+
+},  
+    Saturated_Fat_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Saturated_Fat_Amount').val().length > 0;
         }}
 
 },
-        dateFrom: {
-      
+
+    Polyunsaturated_Amount : {   
+
          required: {
              
              depends: function(element){
-          return $('#dateTo').val().length > 0;
+          return $('#Polyunsaturated_Unit').val().length > 0;
+        }}
+
+},  
+    Polyunsaturated_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Polyunsaturated_Amount').val().length > 0;
+        }}
+
+},
+    Omega6_Amount : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Omega6_Unit').val().length > 0;
+        }}
+
+},  
+    Omega6_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Omega6_Amount').val().length > 0;
+        }}
+
+},
+    Omega3_Amount : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Omega6_Unit').val().length > 0;
+        }}
+
+},  
+    Omega3_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Omega6_Amount').val().length > 0;
         }}
 
 },
 
-      dateTo : {
-      
-         required: {
-             
-             depends: function(element){
-          return $('#dateFrom').val().length > 0;
-        }}
-
-}
-        
 
     },
     messages: {
-        Dollar_Rank_From: "Fill in this value", 
-        Dollar_Rank_To: "Fill in this value",
-        dateTo: "", 
-        dateFrom: "", 
-        date1: "",
-        date2: ""
+
     }
 
 
