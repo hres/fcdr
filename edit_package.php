@@ -907,10 +907,10 @@ EOQ;
 		 
   <label class="col-sm-3 control-label ">Monounsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Monounsaturated Fat" name="Monounsaturated_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Monounsaturated Fat" id="Monounsaturated_Amount" name="Monounsaturated_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Monounsaturated_Unit">
+ <select class="form-control" id="Monounsaturated_Unit" name="Monounsaturated_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	<?php include 'Units.php';?>
 		 <option value=""></option>
@@ -957,10 +957,10 @@ EOQ;
 		 
   <label class="col-sm-3 control-label required">Carbohydrates <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Carbohydrates" name="Carbohydrates_Amount" value="<?PHP echo $row['Amount']; ?>" required>
+   <input type="text" class="form-control" placeholder="Amount of Carbohydrates" id="Carbohydrates_Amount"  name="Carbohydrates_Amount" value="<?PHP echo $row['Amount']; ?>" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Carbohydrates_Unit" required>
+ <select class="form-control" id="Carbohydrates_Unit" name="Carbohydrates_Unit" required>
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	<?php include 'Units.php';?>
 		 <option value=""></option>
@@ -1003,10 +1003,10 @@ EOQ;
 		 
   <label class="col-sm-3 control-label required">Fibre <strong class="required">(required)</strong></label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Fibre" name="Fibre_Amount" value="<?PHP echo $row['Amount']; ?>" required>
+   <input type="text" class="form-control" placeholder="Amount of Fibre" id="Fibre_Amount" name="Fibre_Amount" value="<?PHP echo $row['Amount']; ?>" required>
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Fibre_Unit" required>
+ <select class="form-control" id="Fibre_Unit" name="Fibre_Unit" required>
 	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected" required><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>
@@ -1050,10 +1050,10 @@ EOQ;
 		 
   <label class="col-sm-3 control-label">Soluble Fibre</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Soluble Fibre" name="Soluble_Fibre_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Soluble Fibre" id="Soluble_Fibre_Amount" name="Soluble_Fibre_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Soluble_Fibre_Unit">
+ <select class="form-control" id="Soluble_Fibre_Unit" name="Soluble_Fibre_Unit">
 	     <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>
@@ -1096,10 +1096,10 @@ EOQ;
 		 
   <label class="col-sm-3 control-label">Insolube Fibre</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Insolube Fibre" name="Insoluble_Fibre_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Insolube Fibre" id="Insoluble_Fibre_Amount" name="Insoluble_Fibre_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1"  name="Insoluble_Fibre_Unit">
+ <select class="form-control" id="Insoluble_Fibre_Unit"  name="Insoluble_Fibre_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 <?php include 'Units.php';?>	
 	<option value=""></option>
@@ -1141,10 +1141,10 @@ EOQ;
 	?>
   <label class="col-sm-3 control-label">Sugar</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Sugar" name="Sugar_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Sugar" id="Sugar_Amount" name="Sugar_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Sugar_Unit">
+ <select class="form-control" id="Sugar_Unit" name="Sugar_Unit">
 	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 		<?php include 'Units.php';?>
 		<option value=""></option>
@@ -1185,10 +1185,10 @@ EOQ;
 	?>
   <label class="col-sm-3 control-label">Sugar Alcohols</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Sugar Alcohols" name="Sugar_Alcohols_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Sugar Alcohols" id="Sugar_Alcohols_Amount" name="Sugar_Alcohols_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Sugar_Alcohols_Unit">
+ <select class="form-control" id="Sugar_Alcohols_Unit" name="Sugar_Alcohols_Unit">
 	<option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 
 	<?php include 'Units.php';?>
@@ -1229,10 +1229,10 @@ EOQ;
 	?>
   <label class="col-sm-3 control-label">Starch</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Starch" name="Starch_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Starch" id="Starch_Amount" name="Starch_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Starch_Unit">
+ <select class="form-control" id="Starch_Unit" name="Starch_Unit">
 	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	<?php include 'Units.php';?>	
 	<option value=""></option>
@@ -1318,10 +1318,10 @@ EOQ;
 	?>
   <label class="col-sm-3 control-label">Cholesterol</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Cholesterol" name="Cholesterol_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Cholesterol" id="Cholesterol_Amount" name="Cholesterol_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Cholesterol_Unit">
+ <select class="form-control" id="Cholesterol_Unit" name="Cholesterol_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 <?php include 'Units.php';?>	
 	<option value=""></option>

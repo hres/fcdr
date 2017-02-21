@@ -122,7 +122,7 @@ $("#vids-search-form").validate({
          required: {
              
              depends: function(element){
-          return $('#Omega6_Unit').val().length > 0;
+          return $('#Omega3_Unit').val().length > 0;
         }}
 
 },  
@@ -131,12 +131,182 @@ $("#vids-search-form").validate({
          required: {
              
              depends: function(element){
-          return $('#Omega6_Amount').val().length > 0;
+          return $('#Omega3_Amount').val().length > 0;
+        }}
+
+},
+    Monounsaturated_Amount : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Monounsaturated_Unit').val().length > 0;
+        }}
+
+},  
+    Monounsaturated_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Monounsaturated_Amount').val().length > 0;
+        }}
+
+},
+    Carbohydrates_Amount : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Carbohydrates_Unit').val().length > 0;
+        }}
+
+},  
+    Carbohydrates_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Carbohydrates_Amount').val().length > 0;
+        }}
+
+},
+
+    Fibre_Amount : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Fibre_Unit').val().length > 0;
+        }}
+
+},  
+    Fibre_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Fibre_Amount').val().length > 0;
         }}
 
 },
 
 
+    Soluble_Fibre_Amount : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Soluble_Fibre_Unit').val().length > 0;
+        }}
+
+},  
+    Soluble_Fibre_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Soluble_Fibre_Amount').val().length > 0;
+        }}
+
+},
+
+
+
+    Insoluble_Fibre_Amount : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Insoluble_Fibre_Unit').val().length > 0;
+        }}
+
+},  
+    Insoluble_Fibre_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Insoluble_Fibre_Amount').val().length > 0;
+        }}
+
+},
+
+    Sugar_Amount : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Sugar_Unit').val().length > 0;
+        }}
+
+},  
+    Sugar_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Sugar_Amount').val().length > 0;
+        }}
+
+},
+
+    Sugar_Alcohols_Amount : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Sugar_Alcohols_Unit').val().length > 0;
+        }}
+
+},  
+    Sugar_Alcohols_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Sugar_Alcohols_Amount').val().length > 0;
+        }}
+
+},
+
+    Starch_Amount : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Starch_Unit').val().length > 0;
+        }}
+
+},  
+    Starch_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Starch_Amount').val().length > 0;
+        }}
+
+},
+
+    Cholesterol_Amount : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Cholesterol_Unit').val().length > 0;
+        }}
+
+},  
+    Cholesterol_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Cholesterol_Amount').val().length > 0;
+        }}
+
+},
     },
     messages: {
 
