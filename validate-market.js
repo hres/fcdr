@@ -1,11 +1,8 @@
-$.validator.addMethod(
-	"myDateFormat",
-	function(value, element) {
-		// yyyy/mm/dd
-		var re = /^\d{4}\/\d{1,2}\/\d{1,2}$/;
+$.validator.addMethod( "myDateFormat", function(value, element) {
+	var re = /^\d{4}\/\d{1,2}\/\d{1,2}$/;
 
-		// valid if optional and empty OR if it passes the regex test
-		return (this.optional(element) && value == "") || re.test(value);
+	// valid if optional and empty OR if it passes the regex test
+	return (this.optional(element) && value == "") || re.test(value);
 });
 
 $(document).ready(function() {
@@ -16,8 +13,8 @@ $(document).ready(function() {
 					date: true
 				}
 			},
-			message: {
-				Collection_Date: "wrong date format"
+			messages: {
+				date1: "wrong date format"
 			}
 	});
 });
