@@ -14,7 +14,7 @@ $(document).ready(function() {
 				}
 			},
 			messages: {
-				Collection_Date: "wrong date format"
+				Collection_Date: "Required Date Format: YYYY/MM/DD"
 			}
 	});
 });
