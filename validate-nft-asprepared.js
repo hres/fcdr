@@ -5,25 +5,7 @@ $("#vids-search-form").validate({
 
     rules: {
 
-             Energy_Amount_S: {
 
-         required: {
-             
-             depends: function(element){
-          return $('#Energy_Unit_S').val().length > 0;
-        }}
-
-},
-
-      Energy_Unit_S : {
-    
-         required: {
-             
-             depends: function(element){
-          return $('#Energy_Amount_S').val().length > 0;
-        }}
-
-}, 
            Energy_Amount_kj_S: {
 
          required: {
