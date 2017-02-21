@@ -16,6 +16,9 @@ $(document).ready(function() {
 					required: true,
 					date: true
 				}
+			},
+			message: {
+				date1: "wrong date format"
 			}
 	});
 });
