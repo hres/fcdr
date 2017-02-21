@@ -771,10 +771,10 @@ EOQ;
 		 
   <label class="col-sm-3 control-label ">Polyunsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Polyunsaturated Fat" name="Polyunsaturated_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Polyunsaturated Fat" id="Polyunsaturated_Amount" name="Polyunsaturated_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Polyunsaturated_Unit">
+ <select class="form-control" id="Polyunsaturated_Unit" name="Polyunsaturated_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	<?php include 'Units.php';?>
 		 <option value=""></option>
@@ -816,10 +816,10 @@ EOQ;
 	?>
   <label class="col-sm-3 control-label">Omega-6 Polyunsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Omega-6 Polyunsaturated Fat" name="Omega6_Amount" value = "<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Omega-6 Polyunsaturated Fat" id="Omega6_Amount" name="Omega6_Amount" value = "<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Omega6_Unit">
+ <select class="form-control" id="Omega6_Unit" name="Omega6_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>
@@ -860,10 +860,10 @@ EOQ;
 	?>
   <label class="col-sm-3 control-label">Omega-3 Polyunsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Omega-3 Polyunsaturated Fat" name="Omega3_Amount" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control" placeholder="Amount of Omega-3 Polyunsaturated Fat" id="Omega3_Amount" name="Omega3_Amount" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Omega3_Unit">
+ <select class="form-control" id="Omega3_Unit" name="Omega3_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>
