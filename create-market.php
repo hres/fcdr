@@ -184,6 +184,7 @@
 						</i>
 					</div>
 				</div>
+				<label id="date1-error" class="error" for="date1"></label>
 			</div>
 		</div>
 		
