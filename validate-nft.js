@@ -867,6 +867,25 @@ $("#vids-search-form").validate({
         }}
 
 },
+  Energy_Amount_kj_S: {
+
+         required: {
+             
+             depends: function(element){
+          return $('#Energy_Unit_kj_S').val().length > 0;
+        }}
+
+},
+
+      Energy_Unit_kj_S : {
+    
+         required: {
+             
+             depends: function(element){
+          return $('#Energy_Amount_kj_S').val().length > 0;
+        }}
+
+},
    
    
     },
