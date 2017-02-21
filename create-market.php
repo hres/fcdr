@@ -179,7 +179,7 @@
       <div class="">
        <div class="input-group">
      
-        <input class="form-control" id="date1" name="Collection_Date" placeholder="YYYY/MM/DD" type="text" />
+        <input class="form-control myDateFormat" id="date1" name="Collection_Date" placeholder="YYYY/MM/DD" type="text" />
           <div class="input-group-addon" >
          <i class="fa fa-calendar">
          </i>
