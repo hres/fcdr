@@ -1,3 +1,10 @@
+$.validator.addMethod( "myDateFormat", function(value, element) {
+	var re = /^\d{4}\/\d{1,2}\/\d{1,2}$/;
+
+	// valid if optional and empty OR if it passes the regex test
+	return (this.optional(element) && value == "") || re.test(value);
+});
+
 $(document).ready(function(){
 
 
@@ -1166,11 +1173,16 @@ Saturated_Fat_Amount_S : {
 
          number: true
 
-}, 
+},
+				Collection_Date: {
+					required: true,
+					date: true
+				},
   },
     messages: {
     Package_Size: "Must be a number",
-    Number_Of_Units: "Must be a number"
+    Number_Of_Units: "Must be a number",
+    Collection_Date: "Enter the correct date format"
     }
 
 
