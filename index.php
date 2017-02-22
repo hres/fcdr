@@ -156,21 +156,16 @@ $(document).ready(function() {
 	<form role="form" method="post" action="#" id="vids-search-form">
 	
 	
+
 		<div class="row">
 			<div class="form-group col-sm-4">
-				<label for="Description">Description</label>
-				<input type="text" class="form-control" name="Description" id="Description" placeholder="Enter the Description"/>
+				<label for="Classification_Name">Classification Name</label>
+				 <select class="form-control" id="Classification_Name" placeholder="Select a Classification Name" name="Classification_Name" style="width:540px">
+		  <option value="" selected>Select a Classification Name</option>
+		<?php include 'List_Classification.php';?>
+	
+			 </select>
 			</div>
-			<div class="form-group col-sm-4">
-				<label for="Brand">Brand</label>
-				<input type="text" class="form-control" name="Brand" id="Brand" placeholder="Enter the Brand" />
-			</div>
-			<div class="form-group col-sm-4">
-				<label for="Manufacturer">Manufacturer</label>
-				<input type="text" class="form-control" name="Manufacturer" id="Manufacturer" placeholder="Enter the name of the manufacturer" />
-			</div>
-		</div>
-		<div class="row">
 		<div class="form-group col-sm-4">
 				<label for="Classification_Number">Classification Number</label>
 			
@@ -180,14 +175,7 @@ $(document).ready(function() {
 		
 			 </select>
 			</div>
-			<div class="form-group col-sm-4">
-				<label for="Classification_Name">Classification Name</label>
-				 <select class="form-control" id="Classification_Name" placeholder="Select a Classification Name" name="Classification_Name" style="width:540px">
-		  <option value="" selected>Select a Classification Name</option>
-		<?php include 'List_Classification.php';?>
-	
-			 </select>
-			</div>
+
 				<div class="form-group col-sm-4">
 				<label for="Classification_Type">Classification Type</label>
 				<input type="text" class="form-control" name="Classification_Type" id="Classification_Type" placeholder="Enter the Classification Type" />		
@@ -195,22 +183,41 @@ $(document).ready(function() {
 			
 		
 		</div>
-		<div class="row">
-	
+
+				<div class="row">
+
+			<div class="form-group col-sm-4">
+				<label for="Manufacturer">Manufacturer</label>
+				<input type="text" class="form-control" name="Manufacturer" id="Manufacturer" placeholder="Enter the name of the manufacturer" />
+			</div>
 				<div class="form-group col-sm-4">
+				<label for="Brand">Brand</label>
+				<input type="text" class="form-control" name="Brand" id="Brand" placeholder="Enter the Brand" />
+			</div>	
+							<div class="form-group col-sm-4">
 				<label for="CNF_Code">CNF Code</label>
 				<input type="text" class="form-control" name="CNF_CODE" id="CNF_Code" placeholder="Enter the CNF Code" />
-			</div>
+			</div>			
+
+
+
+		</div>
+		<div class="row">
+	
+
 				<div class="form-group col-sm-4">
 				<label for="Cluster_Number">Cluster Number</label>
 				<input type="text" class="form-control" name="Cluster_Number" id="Cluster_Number" placeholder="Enter the Cluster Number" />
 			</div>
-			
+				<div class="form-group col-sm-4">
+				<label for="Description">Description</label>
+				<input type="text" class="form-control" name="Description" id="Description" placeholder="Enter the Description"/>
+			</div>				
 		<div class="form-group col-sm-4">
 				<label for="Comments">Comments</label>
 				<input type="text" class="form-control" name="Comments" id="Comments" placeholder="Enter the Comments" />
 			</div>
-		
+
 		</div>
 		<div class="row">
 			<div class="form-group col-sm-4 submit_button">

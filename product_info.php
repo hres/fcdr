@@ -3,9 +3,7 @@
 <?php
 $ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
-if($ProductID==''){
-	header("Location: home.php?");
-}
+
 
 
 	

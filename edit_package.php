@@ -2644,9 +2644,9 @@ EOQ;
 					<div class="form-group col-sm-4">
 	<label for="sel1" name="cal"> Calculated</label>
       <select class="form-control" id="Calculated" name="Calculated" >
-		  <option value="<?PHP echo $row['Calculated']; ?>" selected="selected"><?PHP echo $row['Calculated']; ?></option>
-		 <option value="0">0</option>
-     	 <option value="1">1</option>
+		  <option value="<?PHP echo $row['Calculated']; ?>" selected="selected"><?PHP $var = $row['Calculated']=="1"?"Yes":"No"; echo $var; ?></option>
+		 <option value="0">No</option>
+     	 <option value="1">Yes</option>
       </select></div>		
 
 	</div>

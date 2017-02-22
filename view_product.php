@@ -327,15 +327,7 @@ $(window).resize();
   </footer>
 
 </div>
-
-	<div style="margin-top:3%;">
-<strong>Description</strong> 
-<div class="well">
-	  <?php include("product_info.php"); ?>
- <?php echo " ". $row['Description'] ."";  ?>
-</div>
-</section>
-</div>
+	 <?php include("product_info.php"); ?>
 
 
 
@@ -345,18 +337,39 @@ $(window).resize();
     <th>Classification Name</th>
     <th>Classification Number</th>
 	<th>Classification Type</th>
-	<th>Brand</th>
+
+  </tr>
+
+<?php  echo "<tr><td> ". $row['Classification_Name'] ." </td><td> ". $row['Classification_Number'] ." </td><td> ". $row['Classification_Type'] ." </td></tr>"; ?>
+
+
+</table>
+
+<table style="width:100%; " class="table2" border="0">
+  <tr>
+  
+
 	<th>Manufacturer</th>
+		<th>Brand</th>
 	<th>CNF Code</th>
 	
 	<th>Cluster Number</th>
   </tr>
 
-<?php  echo "<tr><td> ". $row['Classification_Name'] ." </td><td> ". $row['Classification_Number'] ." </td><td> ". $row['Classification_Type'] ." </td><td> ". $row['Brand'] ." </td><td> ". $row['Manufacturer'] ." </td><td> ". $row['CNF_CODE'] ." </td><td> ". $row['Cluster_Number'] ." </td></tr>"; ?>
+<?php  echo "<tr><td> ". $row['Manufacturer'] ." </td><td> ". $row['Brand'] ." </td><td> ". $row['CNF_CODE'] ." </td><td> ". $row['Cluster_Number'] ." </td></tr>"; ?>
 
 
 </table>
 
+	<div>
+
+<strong>Description</strong> 
+<div class="well">
+	 
+ <?php echo " ". $row['Description'] ."";  ?>
+</div>
+</section>
+</div>
     <section>
 	<div>
 <strong>Comments</strong> 
@@ -364,6 +377,7 @@ $(window).resize();
  <?php echo " ". $row['Comments'] ."";  ?></div>
 </div>
 </section>
+
 
 
 <div class="clearfix">

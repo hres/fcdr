@@ -784,11 +784,21 @@ hr {
     <th>PPD Per Serving <br> Amount</th>
     <th>PPD Per Serving <br> Unit Of Measure</th>
 	<th>PPD Per Serving Amount <br>(grams)</th>
-	<th>Calculated</th>
+	<th>Calculated?</th>
 
   </tr>
  
-  <?php echo "<tr><td> ". $row['PPD_Per_Serving_Amount'] ." </td><td> ". $row['PPD_Per_Serving_UofM'] ." </td><td> ". $row['Per_Serving_Amount_In_Grams_PPD'] ." </td><td> ". $row['Calculated'] ." </td></tr>";  ?>
+  <?php 
+  
+  if($row['Calculated']=="1"){
+  echo "<tr><td> ". $row['PPD_Per_Serving_Amount'] ." </td><td> ". $row['PPD_Per_Serving_UofM'] ." </td><td> ". $row['Per_Serving_Amount_In_Grams_PPD'] ." </td><td align=\"center\">  <span class=\"glyphicon glyphicon-ok\"></span> </td></tr>"; 
+  }else{
+	  echo "<tr><td> ". $row['PPD_Per_Serving_Amount'] ." </td><td> ". $row['PPD_Per_Serving_UofM'] ." </td><td> ". $row['Per_Serving_Amount_In_Grams_PPD'] ." </td><td align=\"center\">  <span class=\"glyphicon glyphicon-remove\"></span> </td></tr>"; 
+  
+  }
+  
+  
+   ?>
 </table>
 
 

@@ -111,19 +111,7 @@
 	
 	
 		<div class="row">
-		<div class="form-group col-sm-4">
-				<label for="Description" class="required">Description <strong class="required">(required)</strong></label>
-				<input type="text" class="form-control"  name="Description" id="Description" placeholder="Enter the Description" value="<?PHP echo $row['Description']; ?>" required/>
-			</div>
-			<div class="form-group col-sm-4">
-				<label for="Classification_Number">Classification Number</label>
-			
-    <select class="form-control" id="Classification_Number" name="Classification_Number"   onkeyup="showHint(this.value)">
-	   <option value="<?PHP echo $row['Classification_Number']; ?>" selected="selected"><?PHP echo $row['Classification_Number']; ?></option>
-	<?php include 'List_Classification_Number.php';?>
-		
-			 </select>
-			</div>
+
 			<?php include("fill_product.php"); ?>
 				<div class="form-group col-sm-4">
 				<label for="Classification_Name">Classification Name</label>
@@ -133,44 +121,61 @@
 		
 			 </select>
 			</div>
-			
-			
-		</div>
-			<?php include("fill_product.php"); ?>
-		<div class="row">
+			<div class="form-group col-sm-4">
+				<label for="Classification_Number">Classification Number</label>
+		<?php include("fill_product.php"); ?>	
+    <select class="form-control" id="Classification_Number" name="Classification_Number"   onkeyup="showHint(this.value)">
+	   <option value="<?PHP echo $row['Classification_Number']; ?>" selected="selected"><?PHP echo $row['Classification_Number']; ?></option>
+	<?php include 'List_Classification_Number.php';?>
+		
+			 </select>
+			</div>
 				<div class="form-group col-sm-4">
 				<label for="Classification_Type">Classification Type</label>
 				<input type="text" class="form-control" name="Classification_Type" id="Classification_Type" placeholder="Enter the Classification Type" disabled="disabled" value="Sodium GBL"/>
 			</div>
-		<div class="form-group col-sm-4">
-				<label for="Brand">Brand</label>
-				<input type="text" class="form-control" name="Brand" id="Brand" placeholder="Enter the Brand" value="<?PHP echo $row['Brand']; ?>" />
-			</div>
+	
+			
+		</div>
+
+
+			<?php include("fill_product.php"); ?>
+		<div class="row">
 				<div class="form-group col-sm-4">
 				<label for="Manufacturer">Manufacturer</label>
 				<input type="text" class="form-control" name="Manufacturer" id="Manufacturer" placeholder="Enter the Manufacturer" value="<?PHP echo $row['Manufacturer']; ?>" />
 			</div>
-		
-			
 
-		
-		</div>
-		<div class="row">
+
+		<div class="form-group col-sm-4">
+				<label for="Brand">Brand</label>
+				<input type="text" class="form-control" name="Brand" id="Brand" placeholder="Enter the Brand" value="<?PHP echo $row['Brand']; ?>" />
+			</div>
 					<div class="form-group col-sm-4">
 				<label for="Cluster_ID">CNF Code</label>
 				<input type="text" class="form-control" name="CNF_CODE" id="Cluster_ID"  placeholder="Enter the CNF Code" value="<?PHP echo $row['CNF_CODE']; ?>" />
 			</div>
 		
-			
-			<div class="form-group col-sm-4">
-				<label for="Comments">Comments</label>
-				<input type="text" class="form-control" name="Comments" id="Comments" placeholder="Enter a Comment" value="<?PHP echo $row['Comments']; ?>"/>
-			</div>
+	
+
 		
+		</div>
+		<div class="row">
 			<div class="form-group col-sm-4">
 				<label for="Cluster_Number">Cluster Number</label>
 				<input type="text" class="form-control" name="Cluster_Number" id="Cluster_Number" placeholder="Enter the Cluster of the Product" value="<?PHP echo $row['Cluster_Number']; ?>"/>
 			</div>
+
+
+								<div class="form-group col-sm-4">
+				<label for="Description" class="required">Description <strong class="required">(required)</strong></label>
+				<input type="text" class="form-control"  name="Description" id="Description" placeholder="Enter the Description" value="<?PHP echo $row['Description']; ?>" required/>
+			</div>		
+			<div class="form-group col-sm-4">
+				<label for="Comments">Comments</label>
+				<input type="text" class="form-control" name="Comments" id="Comments" placeholder="Enter a Comment" value="<?PHP echo $row['Comments']; ?>"/>
+			</div>			
+
 		</div>
 			<div class="row">
 			<div class="form-group col-sm-4 submit_button">
