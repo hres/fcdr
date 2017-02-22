@@ -17,7 +17,7 @@ $(document).ready(function() {
    				
 				}
 				
-				/*,
+				,
 				Kilo_Vol: {
 				required: true,
 				number: true
@@ -44,7 +44,7 @@ $(document).ready(function() {
 				Kilo_Volume_Total: {
 				required: true,
 				number: true
-				},
+				},/*
 				Dollar_Share: {
 				required: true,
 				number: true
