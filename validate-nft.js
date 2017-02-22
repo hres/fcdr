@@ -943,7 +943,7 @@ Saturated_Fat_Amount_S : {
         }}
 
 },  
-    /*   Polyunsaturated_Amount_S : {   
+   Polyunsaturated_Amount_S : {   
 
          required: {
              
@@ -981,7 +981,7 @@ Saturated_Fat_Amount_S : {
         }}
 
 },
-
+  /*  
     Omega3_Amount_S : {   
 
          required: {
