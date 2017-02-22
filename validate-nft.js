@@ -1219,7 +1219,43 @@ Saturated_Fat_Amount_S : {
         }}
 
 },
+    Sodium_Amount_S : {   
+    number: true,
+         required: {
+             
+             depends: function(element){
+          return $('#Sodium_Unit_S').val().length > 0;
+        }}
 
+},  
+    Sodium_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Sodium_Amount_S').val().length > 0;
+        }}
+
+},
+
+    Potassium_Amount_S : {   
+    number: true,
+         required: {
+             
+             depends: function(element){
+          return $('#Potassium_Unit_S').val().length > 0;
+        }}
+
+},  
+    Potassium_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Potassium_Amount_S').val().length > 0;
+        }}
+
+},
 
   },
     messages: {
