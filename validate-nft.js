@@ -1148,7 +1148,7 @@ Saturated_Fat_Amount_S : {
     Sugar_Alcohols_Amount_S : {   
 
          required: {
-             
+           number: true,  
              depends: function(element){
           return $('#Sugar_Alcohols_Unit_S').val().length > 0;
         }}
