@@ -1766,6 +1766,21 @@ number: true,
         }}
 
 },
+ Per_Serving_Amount_In_Grams : {   
+    number: true
+   
+
+},
+ Per_Serving_Amount_In_Grams_PPD : {   
+    number: true
+   
+//
+},
+ Per_Serving_Amount : {   
+    number: true,
+   required: true
+//
+},
   },
     messages: {
     Collection_Date: "Enter the correct date format"
