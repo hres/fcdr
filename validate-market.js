@@ -13,8 +13,8 @@ $(document).ready(function() {
 					date: true
 				},
 				Dollar_Volume: {
-    			number: true,
-   				required: true
+    			number: true
+   				
 				},
 				Kilo_Vol: {
 				required: true,
