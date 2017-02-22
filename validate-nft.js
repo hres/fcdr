@@ -886,9 +886,215 @@ $("#vids-search-form").validate({
         }}
 
 },
-   
-   
-    },
+  Saturated_Trans_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Saturated_Trans_Unit_S').val().length > 0;
+        }}
+
+},  
+    Saturated_Trans_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Saturated_Trans_Amount_S').val().length > 0;
+        }}
+
+},
+Saturated_Fat_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Saturated_Fat_Unit_S').val().length > 0;
+        }}
+
+},  
+    Saturated_Fat_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Saturated_Fat_Amount_S').val().length > 0;
+        }}
+
+},
+ Trans_Fat_Amount_S : {
+
+         required: {
+             
+             depends: function(element){
+          return $('#Trans_Fat_Unit_S').val().length > 0;
+        }}
+
+},
+ Trans_Fat_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Trans_Fat_Amount_S').val().length > 0;
+        }}
+
+},  
+       Polyunsaturated_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Polyunsaturated_Unit_S').val().length > 0;
+        }}
+
+},  
+    Polyunsaturated_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Polyunsaturated_Amount_S').val().length > 0;
+        }}
+
+},
+
+
+    Omega6_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Omega6_Unit_S').val().length > 0;
+        }}
+
+},  
+    Omega6_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Omega6_Amount_S').val().length > 0;
+        }}
+
+},
+
+    Omega3_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Omega3_Unit_S').val().length > 0;
+        }}
+
+},  
+    Omega3_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Omega3_Amount_S').val().length > 0;
+        }}
+
+},
+  
+
+    Monounsaturated_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Monounsaturated_Unit_S').val().length > 0;
+        }}
+
+},  
+    Monounsaturated_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Monounsaturated_Amount_S').val().length > 0;
+        }}
+
+},
+
+
+    Carbohydrates_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Carbohydrates_Unit_S').val().length > 0;
+        }}
+
+},  
+    Carbohydrates_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Carbohydrates_Amount_S').val().length > 0;
+        }}
+
+},
+
+    Fibre_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Fibre_Unit_S').val().length > 0;
+        }}
+
+},  
+    Fibre_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Fibre_Amount_S').val().length > 0;
+        }}
+
+},
+
+    Soluble_Fibre_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Soluble_Fibre_Unit_S').val().length > 0;
+        }}
+
+},  
+    Soluble_Fibre_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Soluble_Fibre_Amount_S').val().length > 0;
+        }}
+
+},
+
+    Insoluble_Fibre_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Insoluble_Fibre_Unit_S').val().length > 0;
+        }}
+
+},  
+    Insoluble_Fibre_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Insoluble_Fibre_Amount_S').val().length > 0;
+        }}
+
+},
+  },
     messages: {
 
     }

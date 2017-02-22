@@ -5,44 +5,8 @@ $("#vids-search-form").validate({
 
     rules: {
 
+/*
 
-           Energy_Amount_kj_S: {
-
-         required: {
-             
-             depends: function(element){
-          return $('#Energy_Unit_kj_S').val().length > 0;
-        }}
-
-},
-
-      Energy_Unit_kj_S : {
-    
-         required: {
-             
-             depends: function(element){
-          return $('#Energy_Amount_kj_S').val().length > 0;
-        }}
-
-},
- Trans_Fat_Amount_S : {
-
-         required: {
-             
-             depends: function(element){
-          return $('#Trans_Fat_Unit_S').val().length > 0;
-        }}
-
-},
- Trans_Fat_Unit_S : {   
-
-         required: {
-             
-             depends: function(element){
-          return $('#Trans_Fat_Amount_S').val().length > 0;
-        }}
-
-},
     Saturated_Trans_Amount_S : {   
 
          required: {
@@ -62,24 +26,7 @@ $("#vids-search-form").validate({
 
 },
 
-    Saturated_Fat_Amount_S : {   
-
-         required: {
-             
-             depends: function(element){
-          return $('#Saturated_Fat_Unit_S').val().length > 0;
-        }}
-
-},  
-    Saturated_Fat_Unit_S : {   
-
-         required: {
-             
-             depends: function(element){
-          return $('#Saturated_Fat_Amount_S').val().length > 0;
-        }}
-
-},
+ */   
 
     Polyunsaturated_Amount_S : {   
 
