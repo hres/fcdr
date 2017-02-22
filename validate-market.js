@@ -15,7 +15,9 @@ $(document).ready(function() {
 				Dollar_Volume: {
     			number: true
    				
-				},
+				}
+				
+				/*,
 				Kilo_Vol: {
 				required: true,
 				number: true
@@ -60,7 +62,7 @@ $(document).ready(function() {
 				Sales_UPC: {
 				required: true,
 				number: true
-				},
+				}, */
 			},
 			
 			messages: {
