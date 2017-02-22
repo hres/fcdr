@@ -361,6 +361,7 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
          </i>
         </div>
 	   </div>
+	   <label class="error" for="date1"></label>
       </div>
      </div>
 			<div class="form-group col-sm-4">
