@@ -37,6 +37,9 @@ $(document).ready(function() {
 				Average_AC_Dist: {
 				number: true
 				},
+				Average_Retail_Price: {
+				number: true
+				},
 				Dollar_Volume_Total: {
 				required: true,
 				number: true
@@ -44,7 +47,7 @@ $(document).ready(function() {
 				Kilo_Volume_Total: {
 				required: true,
 				number: true
-				},/*
+				},
 				Dollar_Share: {
 				required: true,
 				number: true
@@ -58,7 +61,7 @@ $(document).ready(function() {
 				},
 				Kilo_Rank: {
 				number: true
-				},
+				},/*
 				Sales_UPC: {
 				required: true,
 				number: true
