@@ -1178,10 +1178,51 @@ Saturated_Fat_Amount_S : {
 					required: true,
 					date: true
 				},
+
+
+
+
+    Starch_Amount_S : {   
+    number: true,
+         required: {
+             
+             depends: function(element){
+          return $('#Starch_Unit_S').val().length > 0;
+        }}
+
+},  
+    Starch_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Starch_Amount_S').val().length > 0;
+        }}
+
+},
+
+    Cholesterol_Amount_S : {   
+    number: true,
+         required: {
+             
+             depends: function(element){
+          return $('#Cholesterol_Unit_S').val().length > 0;
+        }}
+
+},  
+    Cholesterol_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Cholesterol_Amount_S').val().length > 0;
+        }}
+
+},
+
+
   },
     messages: {
-    Package_Size: "Must be a number",
-    Number_Of_Units: "Must be a number",
     Collection_Date: "Enter the correct date format"
     }
 
