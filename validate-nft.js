@@ -1078,7 +1078,7 @@ Saturated_Fat_Amount_S : {
         }}
 
 },
-/* 
+
     Soluble_Fibre_Amount_S : {   
 
          required: {
@@ -1097,7 +1097,7 @@ Saturated_Fat_Amount_S : {
         }}
 
 },
-
+/* 
     Insoluble_Fibre_Amount_S : {   
 
          required: {
