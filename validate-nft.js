@@ -1560,7 +1560,7 @@ number: true,
 
 
     Phosphorus_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1578,7 +1578,7 @@ number: true,
 
 },
     Iodide_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1597,7 +1597,7 @@ number: true,
 },
 
     Magnesium_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1616,7 +1616,7 @@ number: true,
 },
 
     Zinc_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1635,7 +1635,7 @@ number: true,
 },
 
     Selenium_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1654,7 +1654,7 @@ number: true,
 },
 
     Copper_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1673,7 +1673,7 @@ number: true,
 },
 
     Manganese_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1691,6 +1691,62 @@ number: true,
 
 },
 
+
+
+    Chromium_Amount_S : {   
+    number: true,
+         required: {
+             
+             depends: function(element){
+          return $('#Chromium_Unit_S').val().length > 0;
+        }}
+
+},  
+    Chromium_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Chromium_Amount_S').val().length > 0;
+        }}
+
+},
+     Molybdenium_Amount_S : {   
+number: true,
+         required: {
+             
+             depends: function(element){
+          return $('#Molybdenium_Unit_S').val().length > 0;
+        }}
+
+},  
+    Molybdenium_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Molybdenium_Amount_S').val().length > 0;
+        }}
+
+},  
+     Chloride_Amount_S : {   
+number: true,
+         required: {
+             
+             depends: function(element){
+          return $('#Chloride_Unit_S').val().length > 0;
+        }}
+
+},  
+    Chloride_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Chloride_Amount_S').val().length > 0;
+        }}
+
+}, 
   },
     messages: {
     Collection_Date: "Enter the correct date format"
