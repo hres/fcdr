@@ -4821,7 +4821,6 @@ function goBack() {
 
 <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="validate-nft.js"></script>
-<script type="text/javascript" src="validate-nft-asprepared.js"></script>
 
 	<script>
 	$(document).ready(function(){
