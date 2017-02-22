@@ -905,7 +905,7 @@ $("#vids-search-form").validate({
 
 },
 
-/*
+
 Saturated_Fat_Amount_S : {   
 
          required: {
@@ -924,6 +924,7 @@ Saturated_Fat_Amount_S : {
         }}
 
 },
+
  Trans_Fat_Amount_S : {
 
          required: {
@@ -942,7 +943,7 @@ Saturated_Fat_Amount_S : {
         }}
 
 },  
-       Polyunsaturated_Amount_S : {   
+    /*   Polyunsaturated_Amount_S : {   
 
          required: {
              
