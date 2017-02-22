@@ -981,7 +981,26 @@ Saturated_Fat_Amount_S : {
         }}
 
 },
-  /*  
+
+    Fat_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Fat_Unit_S').val().length > 0;
+        }}
+
+},  
+    Fat_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Fat_Amount_S').val().length > 0;
+        }}
+
+},
+   
     Omega3_Amount_S : {   
 
          required: {
@@ -1020,7 +1039,7 @@ Saturated_Fat_Amount_S : {
         }}
 
 },
-
+/* 
 
     Carbohydrates_Amount_S : {   
 
