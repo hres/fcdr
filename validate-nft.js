@@ -1097,7 +1097,7 @@ Saturated_Fat_Amount_S : {
         }}
 
 },
-/* 
+
     Insoluble_Fibre_Amount_S : {   
 
          required: {
@@ -1115,7 +1115,7 @@ Saturated_Fat_Amount_S : {
           return $('#Insoluble_Fibre_Amount_S').val().length > 0;
         }}
 
-}, */
+}, 
   },
     messages: {
 
