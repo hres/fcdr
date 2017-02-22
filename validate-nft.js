@@ -14,7 +14,7 @@ $("#vids-search-form").validate({
 
 
         Energy_kj_Amount: {
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -33,7 +33,7 @@ $("#vids-search-form").validate({
 
 },
  Trans_Fat_Amount : {
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -51,7 +51,7 @@ $("#vids-search-form").validate({
 
 },
     Saturated_Plus_Trans_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -70,7 +70,7 @@ $("#vids-search-form").validate({
 },
 
     Saturated_Fat_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -89,7 +89,7 @@ $("#vids-search-form").validate({
 },
 
     Polyunsaturated_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -107,7 +107,7 @@ $("#vids-search-form").validate({
 
 },
     Omega6_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -125,7 +125,7 @@ $("#vids-search-form").validate({
 
 },
     Omega3_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -143,7 +143,7 @@ $("#vids-search-form").validate({
 
 },
     Monounsaturated_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -161,7 +161,7 @@ $("#vids-search-form").validate({
 
 },
     Carbohydrates_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -180,7 +180,7 @@ $("#vids-search-form").validate({
 },
 
     Fibre_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -200,7 +200,7 @@ $("#vids-search-form").validate({
 
 
     Soluble_Fibre_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -221,7 +221,7 @@ $("#vids-search-form").validate({
 
 
     Insoluble_Fibre_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -240,7 +240,7 @@ $("#vids-search-form").validate({
 },
 
     Sugar_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -259,7 +259,7 @@ $("#vids-search-form").validate({
 },
 
     Sugar_Alcohols_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -278,7 +278,7 @@ $("#vids-search-form").validate({
 },
 
     Starch_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -297,7 +297,7 @@ $("#vids-search-form").validate({
 },
 
     Cholesterol_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -315,7 +315,7 @@ $("#vids-search-form").validate({
 
 },
     Sodium_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -334,7 +334,7 @@ $("#vids-search-form").validate({
 },
 
     Potassium_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -353,7 +353,7 @@ $("#vids-search-form").validate({
 },
 
     Calcium_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -372,7 +372,7 @@ $("#vids-search-form").validate({
 },
 
     Iron_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -391,7 +391,7 @@ $("#vids-search-form").validate({
 },
 
     VitaminA_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -410,7 +410,7 @@ $("#vids-search-form").validate({
 },
 
     VitaminC_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -429,7 +429,7 @@ $("#vids-search-form").validate({
 },
 
     VitaminD_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -448,7 +448,7 @@ $("#vids-search-form").validate({
 },
 
     VitaminE_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -467,7 +467,7 @@ $("#vids-search-form").validate({
 },
 
     VitaminK_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -485,7 +485,7 @@ $("#vids-search-form").validate({
 
 },
     Thiamine_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -503,7 +503,7 @@ $("#vids-search-form").validate({
 
 },
     Riboflavin_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -522,7 +522,7 @@ $("#vids-search-form").validate({
 },
 
     Niacin_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -541,7 +541,7 @@ $("#vids-search-form").validate({
 },
    
     VitaminB6_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -560,7 +560,7 @@ $("#vids-search-form").validate({
 },
 
     Folate_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -579,7 +579,7 @@ $("#vids-search-form").validate({
 },
 
     VitaminB12_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -597,7 +597,7 @@ $("#vids-search-form").validate({
 
 },
     Biotin_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -615,7 +615,7 @@ $("#vids-search-form").validate({
 
 },
     Choline_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -634,7 +634,7 @@ $("#vids-search-form").validate({
 },
 
     Pantothenate_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -652,7 +652,7 @@ $("#vids-search-form").validate({
 
 },
     Phosphorus_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -670,7 +670,7 @@ $("#vids-search-form").validate({
 
 },
     Iodide_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -689,7 +689,7 @@ $("#vids-search-form").validate({
 },
 
     Magnesium_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -708,7 +708,7 @@ $("#vids-search-form").validate({
 },
 
     Zinc_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -727,7 +727,7 @@ $("#vids-search-form").validate({
 },
 
     Selenium_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -746,7 +746,7 @@ $("#vids-search-form").validate({
 },
 
     Copper_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -765,7 +765,7 @@ $("#vids-search-form").validate({
 },
 
     Manganese_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -784,7 +784,7 @@ $("#vids-search-form").validate({
 },
 
     Chromium_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -802,7 +802,7 @@ $("#vids-search-form").validate({
 
 },
      Molybdenium_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -820,7 +820,7 @@ $("#vids-search-form").validate({
 
 },  
      Chloride_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -838,7 +838,7 @@ $("#vids-search-form").validate({
 
 }, 
      PPD_Per_Serving_Amount : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -856,7 +856,7 @@ $("#vids-search-form").validate({
 
 },
              Energy_Amount_S: {
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -875,7 +875,7 @@ $("#vids-search-form").validate({
 
 },
   Energy_Amount_kj_S: {
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -894,7 +894,7 @@ $("#vids-search-form").validate({
 
 },
   Saturated_Trans_Amount_S : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -914,7 +914,7 @@ $("#vids-search-form").validate({
 
 
 Saturated_Fat_Amount_S : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -933,7 +933,7 @@ Saturated_Fat_Amount_S : {
 },
 
  Trans_Fat_Amount_S : {
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -951,7 +951,7 @@ Saturated_Fat_Amount_S : {
 
 },  
    Polyunsaturated_Amount_S : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -971,7 +971,7 @@ Saturated_Fat_Amount_S : {
 
 
     Omega6_Amount_S : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -990,7 +990,7 @@ Saturated_Fat_Amount_S : {
 },
 
     Fat_Amount_S : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -1009,7 +1009,7 @@ Saturated_Fat_Amount_S : {
 },
    
     Omega3_Amount_S : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -1029,7 +1029,7 @@ Saturated_Fat_Amount_S : {
   
 
     Monounsaturated_Amount_S : {   
-
+    number: true, 
          required: {
              
              depends: function(element){
@@ -1049,7 +1049,7 @@ Saturated_Fat_Amount_S : {
 
 
     Carbohydrates_Amount_S : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -1068,7 +1068,7 @@ Saturated_Fat_Amount_S : {
 },
 
     Fibre_Amount_S : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -1087,7 +1087,7 @@ Saturated_Fat_Amount_S : {
 },
 
     Soluble_Fibre_Amount_S : {   
-
+  number: true, 
          required: {
              
              depends: function(element){
@@ -1106,7 +1106,7 @@ Saturated_Fat_Amount_S : {
 },
 
     Insoluble_Fibre_Amount_S : {   
-
+    number: true, 
          required: {
              
              depends: function(element){
@@ -1127,7 +1127,7 @@ Saturated_Fat_Amount_S : {
 
 
     Sugar_Amount_S : {   
-
+    number: true, 
          required: {
              
              depends: function(element){
