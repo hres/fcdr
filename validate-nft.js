@@ -1747,6 +1747,25 @@ number: true,
         }}
 
 }, 
+     Protein_Amount_S : {   
+number: true,
+         required: {
+             
+             depends: function(element){
+          return $('#Protein_Unit_S').val().length > 0;
+        }}
+
+},
+
+ Protein_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Protein_Amount_S').val().length > 0;
+        }}
+
+},
   },
     messages: {
     Collection_Date: "Enter the correct date format"
