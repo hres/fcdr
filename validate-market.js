@@ -13,8 +13,8 @@ $(document).ready(function() {
 					date: true
 				},
 				Dollar_Volume: {
-				required: true,
-				number: true
+    			number: true,
+   				required: true
 				},
 				Kilo_Vol: {
 				required: true,
@@ -59,8 +59,7 @@ $(document).ready(function() {
 				},
 				Sales_UPC: {
 				required: true,
-				digits: true,
-				minlength:10
+				number: true
 				},
 			},
 			
