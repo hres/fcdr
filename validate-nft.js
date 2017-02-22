@@ -1103,11 +1103,11 @@ Saturated_Fat_Amount_S : {
          required: {
              
              depends: function(element){
-          return $('#Insoluble_Fibre_Unit_S').val().length > 0;
+          return $('#Insolube_Fibre_Unit_S').val().length > 0;
         }}
 
 },  
-    Insoluble_Fibre_Unit_S : {   
+    Insolube_Fibre_Unit_S : {   
 
          required: {
              
