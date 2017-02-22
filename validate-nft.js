@@ -1259,7 +1259,7 @@ Saturated_Fat_Amount_S : {
 
 
     Calcium_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1278,7 +1278,7 @@ Saturated_Fat_Amount_S : {
 },
 
     Iron_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1297,7 +1297,7 @@ Saturated_Fat_Amount_S : {
 },
 
     VitaminA_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1316,7 +1316,7 @@ Saturated_Fat_Amount_S : {
 },
 
     VitaminC_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1335,7 +1335,7 @@ Saturated_Fat_Amount_S : {
 },
 
     VitaminD_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1354,7 +1354,7 @@ Saturated_Fat_Amount_S : {
 },
 
     VitaminE_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1373,7 +1373,7 @@ Saturated_Fat_Amount_S : {
 },
 
     VitaminK_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1391,7 +1391,7 @@ Saturated_Fat_Amount_S : {
 
 },
     Thiamine_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1409,7 +1409,7 @@ Saturated_Fat_Amount_S : {
 
 },
     Riboflavin_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1428,7 +1428,7 @@ Saturated_Fat_Amount_S : {
 },
 
     Niacin_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1447,7 +1447,7 @@ Saturated_Fat_Amount_S : {
 },
    
     VitaminB6_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1466,7 +1466,7 @@ Saturated_Fat_Amount_S : {
 },
 
     Folate_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1485,7 +1485,7 @@ Saturated_Fat_Amount_S : {
 },
 
     VitaminB12_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1503,7 +1503,7 @@ Saturated_Fat_Amount_S : {
 
 },
     Biotin_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1521,7 +1521,7 @@ Saturated_Fat_Amount_S : {
 
 },
     Choline_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1540,7 +1540,7 @@ Saturated_Fat_Amount_S : {
 },
 
     Pantothenate_Amount_S : {   
-
+number: true,
          required: {
              
              depends: function(element){
@@ -1558,6 +1558,138 @@ Saturated_Fat_Amount_S : {
 
 },
 
+
+    Phosphorus_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Phosphorus_Unit_S').val().length > 0;
+        }}
+
+},  
+    Phosphorus_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Phosphorus_Amount_S').val().length > 0;
+        }}
+
+},
+    Iodide_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Iodide_Unit_S').val().length > 0;
+        }}
+
+},  
+    Iodide_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Iodide_Amount_S').val().length > 0;
+        }}
+
+},
+
+    Magnesium_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Magnesium_Unit_S').val().length > 0;
+        }}
+
+},  
+    Magnesium_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Magnesium_Amount_S').val().length > 0;
+        }}
+
+},
+
+    Zinc_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Zinc_Unit_S').val().length > 0;
+        }}
+
+},  
+    Zinc_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Zinc_Amount_S').val().length > 0;
+        }}
+
+},
+
+    Selenium_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Selenium_Unit_S').val().length > 0;
+        }}
+
+},  
+    Selenium_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Selenium_Amount_S').val().length > 0;
+        }}
+
+},
+
+    Copper_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Copper_Unit_S').val().length > 0;
+        }}
+
+},  
+    Copper_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Copper_Amount_S').val().length > 0;
+        }}
+
+},
+
+    Manganese_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Manganese_Unit_S').val().length > 0;
+        }}
+
+},  
+    Manganese_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Manganese_Amount_S').val().length > 0;
+        }}
+
+},
 
   },
     messages: {
