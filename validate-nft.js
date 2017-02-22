@@ -1115,10 +1115,62 @@ Saturated_Fat_Amount_S : {
           return $('#Insoluble_Fibre_Amount_S').val().length > 0;
         }}
 
+},
+
+
+
+    Sugar_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Sugar_Unit_S').val().length > 0;
+        }}
+
+},  
+    Sugar_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Sugar_Amount_S').val().length > 0;
+        }}
+
+},
+
+    Sugar_Alcohols_Amount_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Sugar_Alcohols_Unit_S').val().length > 0;
+        }}
+
+},  
+    Sugar_Alcohols_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Sugar_Alcohols_Amount_S').val().length > 0;
+        }}
+
+}, 
+
+ Package_Size : {   
+
+         number: true
+
+},
+ Number_Of_Units : {   
+
+         number: true
+
 }, 
   },
     messages: {
-
+    Package_Size: "Must be a number",
+    Number_Of_Units: "Must be a number"
     }
 
 
@@ -1126,3 +1178,4 @@ Saturated_Fat_Amount_S : {
 
 
 });
+
