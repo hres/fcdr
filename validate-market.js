@@ -61,11 +61,12 @@ $(document).ready(function() {
 				},
 				Kilo_Rank: {
 				number: true
-				},/*
+				},
 				Sales_UPC: {
 				required: true,
-				number: true
-				}, */
+				digits: true,
+				minlength: 10
+				}, 
 			},
 			
 			messages: {
