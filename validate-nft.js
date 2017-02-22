@@ -1039,7 +1039,7 @@ Saturated_Fat_Amount_S : {
         }}
 
 },
-/* 
+
 
     Carbohydrates_Amount_S : {   
 
@@ -1078,7 +1078,7 @@ Saturated_Fat_Amount_S : {
         }}
 
 },
-
+/* 
     Soluble_Fibre_Amount_S : {   
 
          required: {
