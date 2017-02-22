@@ -67,6 +67,11 @@ $(document).ready(function() {
 				digits: true,
 				minlength: 10
 				}, 
+				Sales_Year: {
+				digits: true,
+				maxlength: 4,
+				minlength:4
+				}, 
 			},
 			
 			messages: {

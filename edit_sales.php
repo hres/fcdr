@@ -89,7 +89,9 @@
 .sales_button{
 	float:right;
 }
-	
+		.error {
+    color:red;
+}	
 	</style>
 	<?php include("fill_sales.php"); ?>
 </head>
@@ -111,7 +113,7 @@
   <div id="confirm-message2" style="color:#FF0000;"></div>
 
 <div class="well" style="margin-right:2%;">
-	<form role="form" method="post" action="#" id="vids-search-form">
+	<form role="form" method="post" action="#" id="vids-search-form1">
 	
 	
 		<div class="row">
@@ -166,12 +168,13 @@
       <div class="">
        <div class="input-group">
      
-        <input class="form-control" id="date1" name="Collection_Date" placeholder="YYYY/MM/DD" type="text" value="<?PHP echo $row['Collection_Date']; ?>" required/>
+        <input class="form-control myDateFormat" id="date1" name="Collection_Date" placeholder="YYYY/MM/DD" type="text" value="<?PHP echo $row['Collection_Date']; ?>" required/>
           <div class="input-group-addon" >
          <i class="fa fa-calendar">
          </i>
         </div>
 	   </div>
+	   <label class="error" for="date1"></label>
       </div>
      </div>
 		
@@ -313,7 +316,8 @@ function goBack() {
 	<!-- Include Date Range Picker -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="validate-market.js"></script>
 	<script>
 	$(document).ready(function(){
 		var date_input=$('input[name="Collection_Date"]'); //our date input has the name "date"
