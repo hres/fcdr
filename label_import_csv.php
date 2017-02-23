@@ -385,7 +385,7 @@ $cars = array
   );			
 
 
-			if ($Label_UPC === null or $Label_Description === null or $Brand === null or $Manufacturer === null or $Nielsen_Category === null or $Ingredients === null or $Nutrition_Fact_Table=== null or $Per_Serving_Amount=== null or $Per_Serving_UofM === null or $Per_Serving_Energy_Kcal === null    or $Source === null)
+			if ($Label_UPC === null or $Label_Description === null or $Nielsen_Category === null or $Ingredients === null or $Nutrition_Fact_Table=== null or $Per_Serving_Amount=== null or $Per_Serving_UofM === null or $Per_Serving_Energy_Kcal === null    or $Source === null)
 			{
 
 				++$skipped_count;
