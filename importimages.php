@@ -104,7 +104,7 @@
 
 	<div class="well" style="margin-right:2%;">
 
-		<div style="margin-top:-37px;"><strong><h3>Select your images (allowed types: jpg, png, gif, jpeg)</h3></strong></div>
+		<div style="margin-top:-37px;"><strong><h4>Select your images (jpg, png, gif, jpeg): Total maximum size of 31MB</h4></strong></div>
 
 		<form id="first" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
 			<label class="btn btn-primary" for="my-file-selector">
