@@ -629,7 +629,7 @@ EOQ;
 						$params = array($Label_UPC, $Label_Description, $Per_Serving_Amount_PPD, $Per_Serving_Amount_PPD_UofM, $Per_Serving_Amount_In_Grams, $Per_Serving_Amount_In_Grams_PPD, $Package_Size_UofM, $Nielsen_Category, $Brand, $Manufacturer, $Country, $Package_Size, $Number_Of_Units, $Storage_Type, $Storage_Statement, $Collection_Date, $Health_Claim, $Nutrient_Claim, $Other_Package_Statement, $Suggested_Direction, $Ingredients, $Multipart, $Nutrition_Fact_Table, $Common_Household_Measure, $Per_Serving_Amount, $Per_Serving_UofM, $Source, $Comment, $Product_Description,$Neilsen_Item_Rank_UPC);
 
 						$stmt = $conn->prepare($query1);
-						$stmt->bind_param("ssssssssssssssssssssssssssssssi", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28],$params[29], $Neilsen_Item_Rank_UPC);
+						$stmt->bind_param("sssssssssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28],$params[29], $Neilsen_Item_Rank_UPC);
 						$stmt->execute();
 						$nid = mysqli_insert_id($conn);
 						++$linked_to_market_count;
@@ -673,7 +673,7 @@ VALUES ( ?, ?, ?, ?, ?, ?)
 EOQ;
 
 
-$stmt = $conn->prepare($query_insertx);
+$stmtxx = $conn->prepare($query_insertx);
 
 for ($row2 = 0; $row2 < 94; $row2++) {
 
@@ -683,8 +683,8 @@ for ($row2 = 0; $row2 < 94; $row2++) {
 								$cars[$row2][2] =  (empty($cars[$row2][1]) && strlen($cars[$row2][1]) == 0 ?NULL :$cars[$row2][2]);
 
 							
-								$stmt->bind_param("iidsds",$nid, $cars[$row2][0],$cars[$row2][1],$cars[$row2][2],$cars[$row2][3],$cars[$row2][4]);
-								$results = $stmt->execute();
+								$stmtxx->bind_param("iidsds",$nid, $cars[$row2][0],$cars[$row2][1],$cars[$row2][2],$cars[$row2][3],$cars[$row2][4]);
+								$results = $stmtxx->execute();
 }
 
 
@@ -696,7 +696,7 @@ for ($row2 = 0; $row2 < 94; $row2++) {
 					}				
 					
 				} else {
-					$query2 =<<<EOQ
+					$query_match =<<<EOQ
 INSERT Into Package(
        ProductIDP,
        Label_UPC,
@@ -737,8 +737,13 @@ SELECT DISTINCT
 EOQ;
 
 					$params = array($Label_UPC, $Label_Description, $Per_Serving_Amount_PPD, $Per_Serving_Amount_PPD_UofM, $Per_Serving_Amount_In_Grams, $Per_Serving_Amount_In_Grams_PPD, $Package_Size_UofM, $Nielsen_Category, $Brand, $Manufacturer, $Country, $Package_Size, $Number_Of_Units, $Storage_Type, $Storage_Statement, $Collection_Date, $Health_Claim, $Nutrient_Claim, $Other_Package_Statement, $Suggested_Direction, $Ingredients, $Multipart, $Nutrition_Fact_Table, $Common_Household_Measure, $Per_Serving_Amount, $Per_Serving_UofM, $Source, $Comment, $Product_Description,$Neilsen_Item_Rank_UPC);
-					$stmt4 = $conn->prepare($query2);
-					$stmt4->bind_param("ssssssssssssssssssssssssssssssi", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $params[29], $Label_UPC);
+
+
+
+					$stmt4 = $conn->prepare($query_match);
+
+					$stmt4->bind_param("sssssssssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $params[29], $Label_UPC);
+					
 					$result = $stmt4->execute();
 					if($result){
 						echo "OYESSSSOOO";
@@ -751,7 +756,7 @@ EOQ;
 					++$linked_to_label_count;
 					
 							
-							$query_update2 =<<<EOQ
+							$query_update_nft =<<<EOQ
 UPDATE Product
    SET Description = ?, Brand = ?, Manufacturer = ?
  WHERE ProductID = (
@@ -762,10 +767,9 @@ UPDATE Product
 EOQ;
 
 
-							$stmt1 = $conn->prepare($query_update2);
+							$stmt1 = $conn->prepare($query_update_nft);
 							$stmt1->bind_param("ssss", $Label_Description, $Brand, $Manufacturer, $Label_UPC);
-
-
+echo "$query_update_nft";
 							
 							if($stmt1->execute()){
 								echo "UPDATED";
@@ -786,7 +790,7 @@ INSERT INTO Product_Component(
 VALUES ( ?, ?, ?, ?, ?, ?)
 EOQ;
 
-$stmt = $conn->prepare($query_insert1);
+$stmt_nft = $conn->prepare($query_insert1);
 
 for ($row3 = 0; $row3 < 94; $row3++) {
 
@@ -797,8 +801,8 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 								$cars[$row3][2] =  (empty($cars[$row3][1]) && strlen($cars[$row3][1]) == 0 ?NULL :$cars[$row3][2]);
 
 								
-								$stmt->bind_param("iidsds",$xid, $cars[$row3][0],$cars[$row3][1],$cars[$row3][2],$cars[$row3][3],$cars[$row3][4]);
-								$results = $stmt->execute();
+								$stmt_nft->bind_param("iidsds",$xid, $cars[$row3][0],$cars[$row3][1],$cars[$row3][2],$cars[$row3][3],$cars[$row3][4]);
+								$results = $stmt_nft->execute();
 
 
 
@@ -816,7 +820,7 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 
  fclose($handle); 
 
-
+$count=  $count - 1;
   echo "<h3>$count Records on the spreadsheet</h3>";
 	echo "<hr style=\" border-top: 1px solid red;\">";
 
