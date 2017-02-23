@@ -114,7 +114,7 @@ $skipped_images = 0;
 	    }
 	}
 	
-	echo "<h3>$count files were imported <h3>";
+	echo "<h3>$count imported file(s) <h3>";
 	
 
 
