@@ -93,14 +93,14 @@
     color:red;
 }	
 	</style>
-	<?php include("fill_sales.php"); ?>
+
 </head>
 <body class="wide comments example">
 
 <?php include 'header.php';?>
 
 <main role="main" property="mainContentOfPage" class="container">
-
+	<?php include("fill_sales.php"); ?>
 
 
 
@@ -274,13 +274,32 @@
 				</div>
 
 				</div>
-				<div class="row">	
-			<div class="form-group">
+
+				<div class="row">
+			<div class="form-group col-sm-4">
+				<label for="Classification_Number">Classification Number</label>
+
+    <select class="form-control" id="Classification_Number" name="Classification_Number" >
+	   <option value="<?PHP echo $row['Classification_Number']; ?>" selected="selected"><?PHP echo $row['Classification_Number']; ?></option>
+	<?php include 'List_Classification_Number.php';?>
+		
+			 </select>
+			</div>
+			<?php include("fill_sales.php"); ?>		
+					<div class="form-group col-sm-4">
+				<label for="Kilo_Rank">Classification Type</label>
+				<input type="text" class="form-control" name="Classification_Type" style="" id="Classification_Type"  placeholder="Enter the Classification Type " value="<?PHP echo $row['Classification_Type']; ?>" />
+				</div>		
+			<div class="form-group col-sm-4">
 			
 				<button style="margin-top: 30px; margin-right:15px;  margin-bottom:0px; float:right;" type="submit" class="btn btn-default" name="search" >Save</button>
 			</div>
 		
-		</div>
+
+				</div>
+
+
+
 		
 	</form>
 	</div>

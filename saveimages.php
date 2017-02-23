@@ -16,6 +16,7 @@ $max_file_size = 		32768*32000; //32000 kb
 /* $path = "Prototype/uploads/"; // Upload directory
 mkdir ($path, 0744); */
 $count = 0;
+$skipped_images = 0;
 
 	$skippedimages = new SplQueue();
 	$imported = new SplQueue();
@@ -105,6 +106,7 @@ $count = 0;
 				
 				//echo "Label UPC not found $Label_UPC";
 				$skippedimages->push($withoutExt);
+				++$skipped_images;
 			}
 			 //Number of successfully uploaded file
 
@@ -124,7 +126,7 @@ $count = 0;
    }	
 
  
-	echo "<h4>Skipped Images</h4>";
+	echo "<h4>$skipped_images Images were skipped (Coudn't find a UPC match)</h4>";
    while (!$skippedimages->isEmpty()) { 
                             
         $senditem = $skippedimages->shift(); 

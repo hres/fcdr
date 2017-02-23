@@ -34,6 +34,7 @@ ini_set('display_errors', 1);
 		$_POST['Product_Grouping']=  (empty($_POST['Product_Grouping']) && strlen($_POST['Product_Grouping']) == 0 ?NULL :$_POST['Product_Grouping']);
 		$_POST['Kilo_Share']=  (empty($_POST['Kilo_Share']) && strlen($_POST['Kilo_Share']) == 0 ?NULL :$_POST['Kilo_Share']);
 		$_POST['Kilo_Rank']=  (empty($_POST['Kilo_Rank']) && strlen($_POST['Kilo_Rank']) == 0 ?NULL :$_POST['Kilo_Rank']);
+		$_POST['Classification_Type']=  (empty($_POST['Classification_Type']) && strlen($_POST['Classification_Type']) == 0 ?NULL :$_POST['Classification_Type']);
 		
 		$param = array(
 	
@@ -59,9 +60,11 @@ ini_set('display_errors', 1);
 			$_POST['Product_Grouping'],
 			$_POST['Kilo_Share'],
 			$_POST['Kilo_Rank'], 
-			$_POST['Manufacturer']
+			$_POST['Manufacturer'],
+			$_POST['Classification_Number'], 
+			$_POST['Classification_Type']
 		);
-
+ 
 
 		$query =<<<EOQ
 UPDATE Sales SET
@@ -87,13 +90,15 @@ UPDATE Sales SET
 	   Product_Grouping = ?,
 	   Kilo_Share = ?,
 	   Kilo_Rank = ?,
-	   Manufacturer = ?
+	   Manufacturer = ?,
+	   Classification_Number = ?,
+	   Classification_Type = ?
 WHERE SalesID = ?
 EOQ;
 
 		$stmt = $conn->prepare($query);
 
-		$stmt->bind_param("ddissssssdddddddsddsddsi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21],$param[22],$salesID);
+		$stmt->bind_param("ddissssssdddddddsddsddsdsi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21],$param[22],$param[23],$param[24],$salesID);
 	
 	$result = $stmt->execute();
 

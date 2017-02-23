@@ -272,13 +272,32 @@
 		</div>
 				<div class="row">
 
-				<div class="form-group col-sm-4">
+				<div class="form-group col-xs-6">
 				<label for="Kilo_Rank">Kilo Rank</label>
-				<input type="text" class="form-control" name="Kilo_Rank" id="Kilo_Rank" placeholder="Enter the Kilo Rank "/>
+				<input type="text" class="form-control" name="Kilo_Rank" style="width:540px" id="Kilo_Rank" placeholder="Enter the Kilo Rank "/>
+			</div>
+				<div class="form-group col-xs-6">
+				<label for="Manufacturer">Manufacturer</label>
+				<input type="text" class="form-control" name="Manufacturer" style="width:540px" id="Manufacturer" placeholder="Enter the Manufacturer"/>
+			</div>
+	
+
+		
+		</div>
+						<div class="row">
+
+<div class="form-group col-sm-4">
+				<label for="Classification_Number">Classification Number</label>
+			
+    <select class="form-control" id="Classification_Number" name="Classification_Number" >
+		   <option value="" selected>Select a Classification Number</option>
+	<?php include 'List_Classification_Number.php';?>
+		
+			 </select>
 			</div>
 				<div class="form-group col-sm-4">
-				<label for="Manufacturer">Manufacturer</label>
-				<input type="text" class="form-control" name="Manufacturer" id="Manufacturer" placeholder="Enter the Manufacturer"/>
+				<label for="Classification_Type">Classification Type</label>
+				<input type="text" class="form-control" name="Classification_Type" id="Classification_Type" placeholder="Enter the Classification Type"/>
 			</div>
 	
 			<div class="form-group col-sm-4" style="float:right;">
