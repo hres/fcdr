@@ -101,7 +101,6 @@
 
 <main role="main" property="mainContentOfPage" class="container">
 	<?php include("fill_sales.php"); ?>
-
 	<div class="container">
 		<section style="margin-top: 15px;" class="hidethis">
 			<h3>Market Share</h3>
@@ -114,7 +113,6 @@
 			<br/>	 
 			<?php echo " <a \" class=\"btn btn-default\" href=sales_details.php?SalesID=" .  $_GET['SalesID'] . ">Back</a>";  ?>
 		</section>
-
 	</div>
 	<script type="text/javascript">
 		function goBack() {
