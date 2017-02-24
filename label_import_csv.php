@@ -32,12 +32,12 @@ ini_set('display_errors', 1);
 		$linked_to_label_count = 0;
 		$duplicate_label  = new SplQueue();
 		$duplicate_count = 0;
-   $handle = fopen($_FILES['file_save']['tmp_name'], "r");
+  
 
 try {
 $conn->autocommit(FALSE);
 
-
+ $handle = fopen($_FILES['file_save']['tmp_name'], "r");
 
 
     while (($data = fgetcsv($handle, ",")) !== FALSE) {

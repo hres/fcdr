@@ -31,7 +31,13 @@ ini_set('display_errors', 1);
 		$duplicate_count = 0;
 		$count_row=0;
 
-   $handle = fopen($_FILES['file_save']['tmp_name'], "r");
+  
+
+try {
+$conn->autocommit(FALSE);
+
+
+ $handle = fopen($_FILES['file_save']['tmp_name'], "r");
     while (($data = fgetcsv($handle, ",")) !== FALSE) {
 
     ++$count;
@@ -1056,9 +1062,9 @@ EOQ;
 	
 } 
 
- fclose($handle); 
- //$skipped_market_share, $market_share_linked,new_product_count
 
+ //$skipped_market_share, $market_share_linked,new_product_count
+$conn->commit();
 
 $count = $count -1;
   echo "<h3>$count Records on the spreadsheet</h3>";
@@ -1100,8 +1106,15 @@ $count = $count -1;
 		
 		
 		print "Import done";
+
+		}catch(Exception $e){
+				echo "An Error occur during import, could not complete the transaction";
+	$conn->rollback();
+		}
+
+
 }
-	 
+	  fclose($handle); 
   mysqli_close($conn);
 
 
