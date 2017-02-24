@@ -33,7 +33,16 @@ ini_set('display_errors', 1);
 		$duplicate_label  = new SplQueue();
 		$duplicate_count = 0;
    $handle = fopen($_FILES['file_save']['tmp_name'], "r");
+
+try {
+$conn->autocommit(FALSE);
+
+
+
+
     while (($data = fgetcsv($handle, ",")) !== FALSE) {
+
+
 
     ++$count;
     if($count>1){
@@ -464,11 +473,8 @@ INSERT INTO Product (Description, Brand, Manufacturer) VALUES (?, ?, ?)
 EOQ;
 						$stmt = $conn->prepare($query_product);
 						$stmt->bind_param("sss", $paramss[0], $paramss[1], $paramss[2]);
-						if($stmt->execute()){
-							echo "Product Created";
-						}else{
-							echo "Unable to create a product";
-						}
+						$stmt->execute();
+
 						$id = mysqli_insert_id($conn);
 
 						$params = array(
@@ -544,12 +550,7 @@ EOQ;
 						$stmt->bind_param("issdsddssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $params[29], $params[30]);
 						$result_insert = $stmt->execute();
 				
-					if($result_insert){
-						echo "OYESSSSOOO";
-					}else{
 
-						echo "FAILEDD";
-					}
 						$id2 = mysqli_insert_id($conn);
 						++$new_product_count;
 	
@@ -638,14 +639,11 @@ EOQ;
 
 
 							//!empty($Product_Description) && strlen($Product_Description) != 0
+if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
 
-
-
-
-							$params = array($Label_Description) + $params;
 							$query_update =<<<EOQ
 UPDATE Product
-   SET Description = ?, Brand = ?, Manufacturer = ?
+   SET Brand = ?
  WHERE ProductID = (
           SELECT DISTINCT ProductIDS
             FROM Sales
@@ -653,13 +651,54 @@ UPDATE Product
        )
 EOQ;
 							$stmt2 = $conn->prepare($query_update);
-							$stmt2->bind_param("ssss", $Label_Description, $Brand, $Manufacturer, $Neilsen_Item_Rank_UPC);
+							$stmt2->bind_param("ss", $Brand,  $Neilsen_Item_Rank_UPC);
+							$stmt2->execute();
 
-							if($stmt2->execute()){
-								echo "SUCCESS";
-							}else{
-								echo "NOOOO";
-							}
+
+}
+
+if (!empty($Manufacturer) && strlen($Manufacturer) != 0 && !ctype_space($Manufacturer)){
+
+							$query_update1 =<<<EOQ
+UPDATE Product
+   SET Manufacturer = ?
+ WHERE ProductID = (
+          SELECT DISTINCT ProductIDS
+            FROM Sales
+           WHERE Sales_UPC = ?
+       )
+EOQ;
+							$stmt22 = $conn->prepare($query_update1);
+							$stmt22->bind_param("ss", $Manufacturer,  $Neilsen_Item_Rank_UPC);
+
+						$stmt22->execute();
+
+
+
+}
+
+							$query_updatep =<<<EOQ
+UPDATE Product
+   SET Description = ?
+ WHERE ProductID = (
+          SELECT DISTINCT ProductIDS
+            FROM Sales
+           WHERE Sales_UPC = ?
+       )
+EOQ;
+							$stmt2p = $conn->prepare($query_updatep);
+							$stmt2p->bind_param("ss", $Label_Description,  $Neilsen_Item_Rank_UPC);
+
+							$stmt2p->execute();
+
+
+
+
+
+
+							$params = array($Label_Description) + $params;
+
+
 $query_insertx =<<<EOQ
 INSERT INTO Product_Component(
 			PackageID,
@@ -745,20 +784,44 @@ EOQ;
 					$stmt4->bind_param("sssssssssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $params[29], $Label_UPC);
 					
 					$result = $stmt4->execute();
-					if($result){
-						echo "OYESSSSOOO";
-					}else{
 
-					//	echo "FAILEDD";
-					}
 
 					$xid = mysqli_insert_id($conn);
 					++$linked_to_label_count;
 					
+//if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){}
+
+
+if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
+
+							$query_update_nft1 =<<<EOQ
+UPDATE Product
+   SET Brand = ?
+ WHERE ProductID = (
+          SELECT DISTINCT ProductIDP
+            FROM Package
+           WHERE Label_UPC = ?
+       )
+EOQ;
+
+
+							$stmt11 = $conn->prepare($query_update_nft1);
+							$stmt11->bind_param("ss",  $Brand, $Label_UPC);
+
 							
+							$stmt11->execute();
+
+
+
+}
+
+
+
+if (!empty($Manufacturer) && strlen($Manufacturer) != 0 && !ctype_space($Manufacturer)){
+
 							$query_update_nft =<<<EOQ
 UPDATE Product
-   SET Description = ?, Brand = ?, Manufacturer = ?
+   SET   Manufacturer = ?
  WHERE ProductID = (
           SELECT DISTINCT ProductIDP
             FROM Package
@@ -768,14 +831,34 @@ EOQ;
 
 
 							$stmt1 = $conn->prepare($query_update_nft);
-							$stmt1->bind_param("ssss", $Label_Description, $Brand, $Manufacturer, $Label_UPC);
-echo "$query_update_nft";
+							$stmt1->bind_param("ss",  $Manufacturer, $Label_UPC);
+
 							
-							if($stmt1->execute()){
-								echo "UPDATED";
-							}else{
-								echo "NOPE";
-							}	
+							$stmt1->execute();
+
+
+	
+}
+
+
+
+							$query_update_nftt =<<<EOQ
+UPDATE Product
+   SET Description = ?
+ WHERE ProductID = (
+          SELECT DISTINCT ProductIDP
+            FROM Package
+           WHERE Label_UPC = ?
+       )
+EOQ;
+
+
+							$stmt12 = $conn->prepare($query_update_nftt);
+							$stmt12->bind_param("ss", $Label_Description, $Label_UPC);
+
+							
+							$stmt12->execute();
+
 
 
 $query_insert1 =<<<EOQ
@@ -818,7 +901,8 @@ for ($row3 = 0; $row3 < 94; $row3++) {
 	
 } 
 
- fclose($handle); 
+$conn->commit();
+
 
 $count=  $count - 1;
   echo "<h3>$count Records on the spreadsheet</h3>";
@@ -865,7 +949,11 @@ $count=  $count - 1;
 
 
 		print "<br> Import done";
+}catch(Exception $e){
+	echo "An Error occur during import, could not complete the transaction";
+	$conn->rollback();
 }
-
-
+ fclose($handle); 
+ mysqli_close($conn);
+		}
 ?>
