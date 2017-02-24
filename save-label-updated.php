@@ -8,7 +8,7 @@ $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 		if(isset($_POST['search'])) {
  	//error_reporting(E_ALL);
 //ini_set('display_errors', 1);
-
+$Username = $_SESSION['currentuser'];
 
 $_POST['Number_Of_Units'] = (empty($_POST['Number_Of_Units']) && strlen($_POST['Number_Of_Units']) == 0 ?NULL :$_POST['Number_Of_Units']);
 $_POST['PPD_Per_Serving_Amount'] = (empty($_POST['PPD_Per_Serving_Amount']) && strlen($_POST['PPD_Per_Serving_Amount']) == 0 ?NULL :$_POST['PPD_Per_Serving_Amount']);
@@ -85,13 +85,14 @@ UPDATE Package SET
 	Storage_Statement = ?,
 	Multipart = ?,
 	Calculated = ?,
-	Nielsen_Item_Rank_UPC = ?
+	Nielsen_Item_Rank_UPC = ?,
+	Last_Edited_By = ?
 
 	WHERE PackageID=?
 EOQ;
 
 							$stmt = $conn->prepare($query);
-							$stmt->bind_param("sssdsdsssssssssssssssissddssisi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27],$param[28],$param[29],$packageID);
+							$stmt->bind_param("sssdsdsssssssssssssssissddssissi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27],$param[28],$param[29],$Username,$packageID);
 							$result_insert = $stmt->execute();
 							//$last_id = mysqli_insert_id($conn);
 
