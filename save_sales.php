@@ -114,7 +114,7 @@ if (!$result) {
 			echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\").style.display =  \"block\"</script>";
 
 		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Market Share Successfully updated. Redirecting to the previous page...</strong></h3>\";</script>";
-		echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
+		//echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
 
 
 }
