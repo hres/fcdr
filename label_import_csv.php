@@ -950,7 +950,7 @@ $count=  $count - 1;
 
 		print "<br> Import done";
 }catch(Exception $e){
-	echo "An Error occur during import, could not complete the transaction";
+	echo "An Error occured during import, could not complete the transaction";
 	$conn->rollback();
 }
  fclose($handle); 
