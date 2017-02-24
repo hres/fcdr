@@ -119,7 +119,47 @@ if (!$result) {
 
 }
 
-echo "<script type=\"text/javascript\">alert('hello');</script>";
+echo "<script type=\"text/javascript\">\n";
+echo "    alert('hello');\n";
+echo "    $(document).ready(function() {\n";
+echo "        $("vids-search-form1 Dollar_Volume")                   .val (" . $_POST["Dollar_Volume"] . ");                   \n";
+echo "        $("vids-search-form1 Kilo_Volume")                     .val (" . $_POST["Kilo_Volume"] . ");                     \n";
+echo "        $("vids-search-form1 Sales_Year")                      .val (" . $_POST["Sales_Year"] . ");                      \n";
+echo "        $("vids-search-form1 Nielsen_Category")                .val (" . $_POST["Nielsen_Category"] . ");                \n";
+echo "        $("vids-search-form1 Source")                          .val (" . $_POST["Source"] . ");                          \n";
+echo "        $("vids-search-form1 Sales_Description")               .val (" . $_POST["Sales_Description"] . ");               \n";
+echo "        $("vids-search-form1 Comments")                        .val (" . $_POST["Comments"] . ");                        \n";
+echo "        $("vids-search-form1 date1")                           .val (" . $_POST["date1"] . ");                           \n";
+echo "        $("vids-search-form1 Brand")                           .val (" . $_POST["Brand"] . ");                           \n";
+echo "        $("vids-search-form1 Dollar_Rank")                     .val (" . $_POST["Dollar_Rank"] . ");                     \n";
+echo "        $("vids-search-form1 Dollar_Volume_PerCentage_Change") .val (" . $_POST["Dollar_Volume_PerCentage_Change"] . "); \n";
+echo "        $("vids-search-form1 Kilo_Volume_Percent_Change")      .val (" . $_POST["Kilo_Volume_Percent_Change"] . ");      \n";
+echo "        $("vids-search-form1 Average_AC_Dist")                 .val (" . $_POST["Average_AC_Dist"] . ");                 \n";
+echo "        $("vids-search-form1 Average_Retail_Price")            .val (" . $_POST["Average_Retail_Price"] . ");            \n";
+echo "        $("vids-search-form1 Dollar_Volume_Total")             .val (" . $_POST["Dollar_Volume_Total"] . ");             \n";
+echo "        $("vids-search-form1 Kilo_Volume_Total")               .val (" . $_POST["Kilo_Volume_Total"] . ");               \n";
+echo "        $("vids-search-form1 Dollar_Share")                    .val (" . $_POST["Dollar_Share"] . ");                    \n";
+echo "        $("vids-search-form1 Kilo_Share")                      .val (" . $_POST["Kilo_Share"] . ");                      \n";
+echo "        $("vids-search-form1 Cluster_Number")                  .val (" . $_POST["Cluster_Number"] . ");                  \n";
+echo "        $("vids-search-form1 Product_Grouping")                .val (" . $_POST["Product_Grouping"] . ");                \n";
+echo "        $("vids-search-form1 Kilo_Rank")                       .val (" . $_POST["Kilo_Rank"] . ");                       \n";
+echo "        $("vids-search-form1 Manufacturer")                    .val (" . $_POST["Manufacturer"] . ");                    \n";
+echo "        $("vids-search-form1 Classification_Type")             .val (" . $_POST["Classification_Type"] . ");             \n";
+echo "        $("vids-search-form1 Classification_Number")           .val (" . $_POST["Classification_Number"] . ");           \n";
+echo "        $("vids-search-form1 Control_Label_Flag")              .val (" . $_POST["Control_Label_Flag"] . ");              \n";
+echo "        \n";
+echo "        \n";
+echo "        \n";
+echo "        \n";
+echo "        \n";
+echo "        \n";
+echo "        \n";
+echo "        \n";
+echo "        \n";
+echo "        \n";
+echo "        \n";
+echo "    }\n";
+echo "</script>\n";
 
 }
 $conn->close();
