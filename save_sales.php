@@ -115,6 +115,8 @@ if (!$result) {
 
 }
 
+echo "<script type=\"text/javascript\">alert('hello');</script>";
+
 }
 $conn->close();
 ?>
