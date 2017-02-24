@@ -90,6 +90,10 @@
 		float:right;
 		margin-bottom:-5px;
 	}
+			.error {
+    color:red;
+}
+
 	</style>
 </head>
 <body class="wide comments example">
@@ -197,6 +201,9 @@
 <!-- Include Date Range Picker -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="validate-product.js"></script>
+
 
 	<script>
 	$(document).ready(function(){

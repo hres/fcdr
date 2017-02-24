@@ -5,7 +5,7 @@
 
 
 
-
+$Username = $_SESSION['currentuser'];
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 		if(isset($_POST['search'])) {
@@ -22,14 +22,15 @@ UPDATE Product
        Manufacturer=?,
        Comments=?,
        CNF_CODE=?,
-       Cluster_Number=? 
+       Cluster_Number=?,
+	   Last_Edited_By=? 
 	   WHERE ProductID = ?
 
 
 EOQ;
 	
 						$stmt = $conn->prepare($query);
-						$stmt->bind_param("ssssddi", $params[0], $params[1], $params[2], $params[3], $params[4], $params[8],$productID);
+						$stmt->bind_param("ssssddsi", $params[0], $params[1], $params[2], $params[3], $params[4], $params[8],$Username,$productID);
 						$result_insert = $stmt->execute();	
 	
 

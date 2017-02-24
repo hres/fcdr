@@ -264,7 +264,15 @@ $(function(){
 	</script>
 	
 		<style>
-
+.panel-body{
+     padding: 5px;
+  
+}
+.panel-heading{
+     padding: 3px;
+     font-weight: bold;
+  
+}
 		.align-input{
 	display: inline-block
 }
@@ -536,10 +544,11 @@ hr {
 
 <div style="float:right; ">
 
+<div class= "btn-group">
 <?php echo " <a class=\"btn btn-default\" href=edit_package.php?PackageID=" .$_GET['PackageID'] . ">Edit</a>";  ?>
-<a class="js-open-modal btn btn-default btn-large" href="#" style="margin-left:4px;" data-modal-id="popup" id="button"  onclick="return hidedeletemessage();">Delete Label</a>
+<a class="js-open-modal btn btn-default btn-large" href="#"  data-modal-id="popup" id="button"  onclick="return hidedeletemessage();">Delete Label</a>
 <a class="js-open-modal btn btn-default btn-large" href="#" data-modal-id="popup" id="button" onclick="return hiderelinkmessage();">Re-Link</a>
-
+</div>
 
 	</div>
 
@@ -654,15 +663,16 @@ hr {
     <th>Label UPC</th>
 	<th>Nielsen Item Rank UPC</th>
     <th>Label Description</th>
-	<th>Household Measure</th>
 	<th>Nielsen Category</th>   
 	
 	
   </tr>
   			<?php include("package_d_1.php"); ?>
-		<?php echo "<tr><td>". $row['Label_UPC'] . "</td><td>". $row['Nielsen_Item_Rank_UPC'] . "</td><td>". $row['Label_Description'] . "</td><td>". $row['Common_Measure'] . "</td><td>". $row['Nielsen_Category'] . "</td></tr>"?>
+		<?php echo "<tr><td>". $row['Label_UPC'] . "</td><td>". $row['Nielsen_Item_Rank_UPC'] . "</td><td>". $row['Label_Description'] . "</td><td>". $row['Nielsen_Category'] . "</td></tr>"?>
 
-</table>	
+</table>
+
+
 <table style="width:100%" class="table2">
   <tr >
     <th>Brand</th>
@@ -676,6 +686,9 @@ hr {
 		
 
 </table>
+
+
+
 <table style="width:100%" class="table2">
   <tr >
     <th>Package  Size Unit Of Measure</th>
@@ -725,27 +738,44 @@ hr {
 	    <div style="margin-top:4%;">  
 	 <section>
 
-<div class="well">
+<div class = "row">
+<div class="col-sm-4">  
+  <div class="panel panel-default">
+  <div class="panel-heading"> Per Serving <br> Size</div>
+  <div class="panel-body">
+    <?php echo " ". $row['Per_Serving_Amount'] ."";  ?>
+  </div>
 
+</div>
+</div>
 
-
-<table style="width:100%; " class="table3" border="0" >
-  <tr>
-    <th>Per Serving <br> Size</th>
-    <th>Per Serving <br>Unit of Measure</th>
-	<th>Per Serving Amount<br> (grams)</th>
-
-  </tr>
-   <?php echo "<tr><td> ". $row['Per_Serving_Amount'] ." </td><td> ". $row['Per_Serving_Unit'] ." </td><td> ". $row['Per_Serving_Amount_In_Grams'] ." </td></tr>"; $conn->close(); ?>
-
-</table>
-
-
+<div class="col-sm-4">
+  <div class="panel panel-default">
+  <div class="panel-heading"> Per Serving <br>Unit of Measure</div>
+  <div class="panel-body">
+    <?php echo " ". $row['Per_Serving_Unit'] ."";  ?>
+  </div>
+</div>
+</div>
+<div class="col-sm-4">
+  <div class="panel panel-default">
+  <div class="panel-heading"> Per Serving Amount<br> (grams)</div>
+  <div class="panel-body">
+    <?php echo " ". $row['Per_Serving_Amount_In_Grams'] ."";  ?>
+  </div>
+</div>
 
 
 
 </div>
+</div>
 </section>
+</div>
+  <div class="panel panel-info">
+  <div class="panel-heading"> Household Measure</div>
+  <div class="panel-body">
+    <?php echo " ". $row['Common_Measure'] ."";  ?>
+  </div>
 </div>
 		<strong>Nutrition Fact Table</strong>
       <p>   <table class="table table-striped" >
@@ -775,34 +805,61 @@ hr {
 	    <div style="margin-top:4%;">  
 	 <section>
 
-<div class="well">
 
+<div class = "row">
+<div class="col-xs-6">  
+  <div class="panel panel-default">
+  <div class="panel-heading"> Per Serving  Amount</div>
+  <div class="panel-body">
+    <?php echo " ". $row['PPD_Per_Serving_Amount'] ."";  ?>
+  </div>
 
+</div>
+</div>
 
-<table style="width:100%; " class="table3" border="0" >
-  <tr>
-    <th>PPD Per Serving <br> Amount</th>
-    <th>PPD Per Serving <br> Unit Of Measure</th>
-	<th>PPD Per Serving Amount <br>(grams)</th>
-	<th>Calculated?</th>
+<div class="col-xs-6">
+  <div class="panel panel-default">
+  <div class="panel-heading"> Per Serving Unit of Measure</div>
+  <div class="panel-body">
+    <?php echo " ". $row['PPD_Per_Serving_UofM'] ."";  ?>
+  </div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-6">
+  <div class="panel panel-default">
+  <div class="panel-heading"> Per Serving Amount (grams)</div>
+  <div class="panel-body">
+    <?php echo " ". $row['Per_Serving_Amount_In_Grams_PPD'] ."";  ?>
+  </div>
+</div>
+</div>
 
-  </tr>
- 
-  <?php 
-  
-  if($row['Calculated']=="1"){
-  echo "<tr><td> ". $row['PPD_Per_Serving_Amount'] ." </td><td> ". $row['PPD_Per_Serving_UofM'] ." </td><td> ". $row['Per_Serving_Amount_In_Grams_PPD'] ." </td><td align=\"center\">  <span class=\"glyphicon glyphicon-ok\"></span> </td></tr>"; 
-  }else{
-	  echo "<tr><td> ". $row['PPD_Per_Serving_Amount'] ." </td><td> ". $row['PPD_Per_Serving_UofM'] ." </td><td> ". $row['Per_Serving_Amount_In_Grams_PPD'] ." </td><td align=\"center\">  <span class=\"glyphicon glyphicon-remove\"></span> </td></tr>"; 
-  
-  }
-  
-  
-   ?>
-</table>
+<div class="col-xs-6">
+  <div class="panel panel-default">
+  <div class="panel-heading"> Calculated?</div>
+  <div class="panel-body">
+    <?php 
+	 $row['Calculated'] =  ($row['Calculated']=="1"? "Yes":$row['Calculated']);
+	
+	echo " ". $row['Calculated'] .""; 
+	
+	
+	 ?>
+  </div>
+</div>
+
 
 
 </div>
+</div>
+
+
+
+
+
+
 </section>
 
 
@@ -846,7 +903,6 @@ hr {
   <?php echo " ". $row['Ingredients'] ."";  ?>
 </div>
 </section>
-  
 
 	<section>
 <strong>Nutrition Fact Table</strong>

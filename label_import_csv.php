@@ -39,8 +39,9 @@ $conn->autocommit(FALSE);
 
  $handle = fopen($_FILES['file_save']['tmp_name'], "r");
 
-
+ $Username = $_SESSION['currentuser'];
     while (($data = fgetcsv($handle, ",")) !== FALSE) {
+
 
 
 
@@ -394,7 +395,7 @@ $cars = array
   );			
 
 
-			if ($Label_UPC === null or $Label_Description === null or $Nielsen_Category === null or $Ingredients === null or $Nutrition_Fact_Table=== null or $Per_Serving_Amount=== null or $Per_Serving_UofM === null or $Per_Serving_Energy_Kcal === null    or $Source === null)
+			if ($Label_UPC === null or $Label_Description === null  or $Ingredients === null or $Nutrition_Fact_Table=== null or $Per_Serving_Amount=== null or $Per_Serving_UofM === null or $Per_Serving_Energy_Kcal === null    or $Source === null)
 			{
 
 				++$skipped_count;
@@ -462,17 +463,17 @@ EOQ;
 					$sales_result = $stmt2->execute();
 					$stmt2->store_result();
 								if (($stmt2->num_rows) < 1) {
-						/* Create new Product and attach the label to it */
+						/* Create new Product and attach the label to it $Username  Last_Edited_By Last_Edited_By Last_Edited_by */
 						
 						if (empty($Product_Description) || strlen($Product_Description) == 0) {
 							$Product_Description = $Label_Description;
 						}
 						$paramss = array($Product_Description, $Brand, $Manufacturer);
 						$query_product =<<<EOQ
-INSERT INTO Product (Description, Brand, Manufacturer) VALUES (?, ?, ?)
+INSERT INTO Product (Description, Brand, Manufacturer, Last_Edited_By) VALUES (?, ?, ?, ?)
 EOQ;
 						$stmt = $conn->prepare($query_product);
-						$stmt->bind_param("sss", $paramss[0], $paramss[1], $paramss[2]);
+						$stmt->bind_param("ssss", $paramss[0], $paramss[1], $paramss[2],$Username);
 						$stmt->execute();
 
 						$id = mysqli_insert_id($conn);
@@ -543,11 +544,12 @@ INSERT Into Package(
        Source,
        Comments,
        Product_Description,
-	   Nielsen_Item_Rank_UPC
-) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	   Nielsen_Item_Rank_UPC,
+	   Last_Edited_By
+) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 						$stmt = $conn->prepare($query_insert);
-						$stmt->bind_param("issdsddssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $params[29], $params[30]);
+						$stmt->bind_param("issdsddsssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $params[29], $params[30],$Username);
 						$result_insert = $stmt->execute();
 				
 
@@ -586,7 +588,7 @@ for ($row1 = 0; $row1 < 94; $row1++) {
 						$new_product->push($input4);
 
 					} else {
-						/* attach label to corresponding Product --Found in Sales Table*/
+						/* attach label to corresponding Product --Found in Sales Table */
 						$query1 =<<<EOQ
 INSERT INTO Package(
        ProductIDP,
@@ -619,10 +621,11 @@ INSERT INTO Package(
        Source,
        Comments,
        Product_Description,
-	   Nielsen_Item_Rank_UPC
+	   Nielsen_Item_Rank_UPC,
+	   Last_Edited_By
 )
 SELECT DISTINCT
-       ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+       ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Sales_UPC = ?
 EOQ;
@@ -630,7 +633,7 @@ EOQ;
 						$params = array($Label_UPC, $Label_Description, $Per_Serving_Amount_PPD, $Per_Serving_Amount_PPD_UofM, $Per_Serving_Amount_In_Grams, $Per_Serving_Amount_In_Grams_PPD, $Package_Size_UofM, $Nielsen_Category, $Brand, $Manufacturer, $Country, $Package_Size, $Number_Of_Units, $Storage_Type, $Storage_Statement, $Collection_Date, $Health_Claim, $Nutrient_Claim, $Other_Package_Statement, $Suggested_Direction, $Ingredients, $Multipart, $Nutrition_Fact_Table, $Common_Household_Measure, $Per_Serving_Amount, $Per_Serving_UofM, $Source, $Comment, $Product_Description,$Neilsen_Item_Rank_UPC);
 
 						$stmt = $conn->prepare($query1);
-						$stmt->bind_param("sssssssssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28],$params[29], $Neilsen_Item_Rank_UPC);
+						$stmt->bind_param("ssssssssssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28],$params[29],$Username, $Neilsen_Item_Rank_UPC);
 						$stmt->execute();
 						$nid = mysqli_insert_id($conn);
 						++$linked_to_market_count;
@@ -638,12 +641,12 @@ EOQ;
 
 
 
-							//!empty($Product_Description) && strlen($Product_Description) != 0
+							//!empty($Product_Description) && strlen($Product_Description) != 0 $Username  Last_Edited_By
 if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
 
 							$query_update =<<<EOQ
 UPDATE Product
-   SET Brand = ?
+   SET Brand = ?, Last_Edited_By = ?
  WHERE ProductID = (
           SELECT DISTINCT ProductIDS
             FROM Sales
@@ -651,7 +654,7 @@ UPDATE Product
        )
 EOQ;
 							$stmt2 = $conn->prepare($query_update);
-							$stmt2->bind_param("ss", $Brand,  $Neilsen_Item_Rank_UPC);
+							$stmt2->bind_param("sss", $Brand,$Username,$Neilsen_Item_Rank_UPC);
 							$stmt2->execute();
 
 
@@ -661,7 +664,7 @@ if (!empty($Manufacturer) && strlen($Manufacturer) != 0 && !ctype_space($Manufac
 
 							$query_update1 =<<<EOQ
 UPDATE Product
-   SET Manufacturer = ?
+   SET Manufacturer = ?, Last_Edited_By = ?
  WHERE ProductID = (
           SELECT DISTINCT ProductIDS
             FROM Sales
@@ -669,7 +672,7 @@ UPDATE Product
        )
 EOQ;
 							$stmt22 = $conn->prepare($query_update1);
-							$stmt22->bind_param("ss", $Manufacturer,  $Neilsen_Item_Rank_UPC);
+							$stmt22->bind_param("sss", $Manufacturer,$Username,$Neilsen_Item_Rank_UPC);
 
 						$stmt22->execute();
 
@@ -679,7 +682,7 @@ EOQ;
 
 							$query_updatep =<<<EOQ
 UPDATE Product
-   SET Description = ?
+   SET Description = ?, Last_Edited_By = ?
  WHERE ProductID = (
           SELECT DISTINCT ProductIDS
             FROM Sales
@@ -687,7 +690,7 @@ UPDATE Product
        )
 EOQ;
 							$stmt2p = $conn->prepare($query_updatep);
-							$stmt2p->bind_param("ss", $Label_Description,  $Neilsen_Item_Rank_UPC);
+							$stmt2p->bind_param("sss", $Label_Description,$Username,$Neilsen_Item_Rank_UPC);
 
 							$stmt2p->execute();
 
@@ -767,10 +770,11 @@ INSERT Into Package(
        Source,
        Comments,
        Product_Description,
-	   Nielsen_Item_Rank_UPC
+	   Nielsen_Item_Rank_UPC,
+	   Last_Edited_By
 )
 SELECT DISTINCT
-       ProductIDP, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+       ProductIDP, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Package
  WHERE Label_UPC = ?
 EOQ;
@@ -781,7 +785,7 @@ EOQ;
 
 					$stmt4 = $conn->prepare($query_match);
 
-					$stmt4->bind_param("sssssssssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $params[29], $Label_UPC);
+					$stmt4->bind_param("ssssssssssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28], $params[29],$Username, $Label_UPC);
 					
 					$result = $stmt4->execute();
 
@@ -789,14 +793,14 @@ EOQ;
 					$xid = mysqli_insert_id($conn);
 					++$linked_to_label_count;
 					
-//if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){}
+//if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){} $Username  Last_Edited_By
 
 
 if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
 
 							$query_update_nft1 =<<<EOQ
 UPDATE Product
-   SET Brand = ?
+   SET Brand = ?, Last_Edited_By = ?
  WHERE ProductID = (
           SELECT DISTINCT ProductIDP
             FROM Package
@@ -806,7 +810,7 @@ EOQ;
 
 
 							$stmt11 = $conn->prepare($query_update_nft1);
-							$stmt11->bind_param("ss",  $Brand, $Label_UPC);
+							$stmt11->bind_param("sss",  $Brand,$Username, $Label_UPC);
 
 							
 							$stmt11->execute();
@@ -821,7 +825,7 @@ if (!empty($Manufacturer) && strlen($Manufacturer) != 0 && !ctype_space($Manufac
 
 							$query_update_nft =<<<EOQ
 UPDATE Product
-   SET   Manufacturer = ?
+   SET   Manufacturer = ?, Last_Edited_By = ?
  WHERE ProductID = (
           SELECT DISTINCT ProductIDP
             FROM Package
@@ -831,7 +835,7 @@ EOQ;
 
 
 							$stmt1 = $conn->prepare($query_update_nft);
-							$stmt1->bind_param("ss",  $Manufacturer, $Label_UPC);
+							$stmt1->bind_param("sss",  $Manufacturer,$Username, $Label_UPC);
 
 							
 							$stmt1->execute();
@@ -844,7 +848,7 @@ EOQ;
 
 							$query_update_nftt =<<<EOQ
 UPDATE Product
-   SET Description = ?
+   SET Description = ?, Last_Edited_By = ?
  WHERE ProductID = (
           SELECT DISTINCT ProductIDP
             FROM Package
@@ -854,7 +858,7 @@ EOQ;
 
 
 							$stmt12 = $conn->prepare($query_update_nftt);
-							$stmt12->bind_param("ss", $Label_Description, $Label_UPC);
+							$stmt12->bind_param("sss", $Label_Description,$Username, $Label_UPC);
 
 							
 							$stmt12->execute();

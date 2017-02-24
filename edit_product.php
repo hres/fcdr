@@ -39,6 +39,11 @@
 	
 	
 		<style>
+			.error {
+    color:red;
+}
+
+
 		.mainsearch{
 			border-style: solid;
 			border-color:#F0F0F0 ;
@@ -202,7 +207,8 @@ function goBack() {
     window.history.back();
 }
 </script>
-		
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="validate-product.js"></script>		
 		
 
 		</main>

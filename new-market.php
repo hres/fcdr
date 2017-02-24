@@ -4,7 +4,7 @@
 
 
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
-
+$Username = $_SESSION['currentuser'];
 
 if (isset($_POST['search'])) {
 
@@ -13,6 +13,7 @@ if (isset($_POST['search'])) {
 			$_POST['Cluster_Number']=  (empty($_POST['Cluster_Number']) && strlen($_POST['Cluster_Number']) == 0 ?NULL :$_POST['Cluster_Number']);
 			$_POST['Average_AC_Dist']=  (empty($_POST['Average_AC_Dist']) && strlen($_POST['Average_AC_Dist']) == 0 ?NULL :$_POST['Average_AC_Dist']);
 			$_POST['Average_Retail_Price']=  (empty($_POST['Average_Retail_Price']) && strlen($_POST['Average_Retail_Price']) == 0 ?NULL :$_POST['Average_Retail_Price']);
+			$_POST['Classification_Number']=  (empty($_POST['Classification_Number']) && strlen($_POST['Classification_Number']) == 0 ?NULL :$_POST['Classification_Number']);
 
 		$param = array(
 			$productID,
@@ -50,7 +51,6 @@ if (isset($_POST['search'])) {
 			
 			$rowcount=mysqli_num_rows($result2);
 			if($rowcount>0){
-				echo "Sales UPC Code already belongs to a different product ";
 		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to create Market Share: Sales UPC Code already belongs to a different product ...</strong></h3>\";</script>";
 			
 				
@@ -83,15 +83,16 @@ INSERT INTO Sales (
 	   Kilo_Rank, 
 	   Manufacturer,
 	   Classification_Number,
-	   Classification_Type
+	   Classification_Type,
+	   Last_Edited_by
 )
-VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
 	
 		$stmt = $conn->prepare($query);
 
-		$stmt->bind_param("iiddissssssddddddddsddssds", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21],$param[22],$param[23],$param[24],$param[25]);
+		$stmt->bind_param("iiddissssssddddddddsddssdss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21],$param[22],$param[23],$param[24],$param[25],$Username);
 	
 	$result = $stmt->execute();
 

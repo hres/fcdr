@@ -6,11 +6,10 @@
  
 
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
-
+$Username = $_SESSION['currentuser'];
 
 		if(isset($_POST['search'])) {
- 	error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 		$Label_UPC = $_POST['Label_UPC'];
 
 
@@ -106,13 +105,14 @@ INSERT INTO Package (
 	Storage_Statement,
 	Multipart,
 	Calculated,
-	Nielsen_Item_Rank_UPC
+	Nielsen_Item_Rank_UPC,
+	Last_Edited_By
 )
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
 							$stmt = $conn->prepare($query);
-							$stmt->bind_param("issssdsdsssssssssssssssissddssis", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27], $param[28],$param[29],$param[30],$param[31]);
+							$stmt->bind_param("issssdsdsssssssssssssssissddssiss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27], $param[28],$param[29],$param[30],$param[31],$Username);
 							$result_insert = $stmt->execute();
 							$last_id = mysqli_insert_id($conn);
 

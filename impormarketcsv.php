@@ -36,7 +36,7 @@ ini_set('display_errors', 1);
 try {
 $conn->autocommit(FALSE);
 
-
+ $Username = $_SESSION['currentuser']; 
  $handle = fopen($_FILES['file_save']['tmp_name'], "r");
     while (($data = fgetcsv($handle, ",")) !== FALSE) {
 
@@ -161,6 +161,9 @@ EOQ;
 							
 						); 
  
+
+
+
 						$insert_query =<<<EOQ
 INSERT INTO Sales (
 							ProductIDS,
@@ -189,16 +192,17 @@ INSERT INTO Sales (
 							Comments,
 							Kilo_Rank,
 							Classification_Number,
-							Classification_Type  
+							Classification_Type,
+							Last_Edited_By  
 )
-SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Sales_UPC = ?
 EOQ;
 				
 
 						$stmt = $conn->prepare($insert_query);
-						$stmt->bind_param("sssssddddddddsssisdddsssdss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank,$Classification_Number,$Classification_Type, $Sales_UPC);
+						$stmt->bind_param("sssssddddddddsssisdddsssdsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank,$Classification_Number,$Classification_Type,$Username, $Sales_UPC);
 						$result_insert = $stmt->execute();
 						++$market_share_linked;
 			//			
@@ -214,7 +218,7 @@ EOQ;
 
 							$query_update =<<<EOQ
 UPDATE Product
-   SET Description = ?
+   SET Description = ?, Last_Edited_By = ?
  WHERE ProductID = (
 SELECT DISTINCT ProductIDS
   FROM Sales
@@ -223,7 +227,7 @@ SELECT DISTINCT ProductIDS
 EOQ;
 
 							$stmt = $conn->prepare($query_update);
-							$stmt->bind_param("ss", $Sales_Description, $Sales_UPC);
+							$stmt->bind_param("sss", $Sales_Description,$Username, $Sales_UPC);
 							$result_update = $stmt->execute();
 
 if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
@@ -243,6 +247,8 @@ EOQ;
 
 
 }
+
+
 if (!empty($Manufacturer) && strlen($Manufacturer) != 0 && !ctype_space($Manufacturer)){
 
 				$query_update2 =<<<EOQ
@@ -404,16 +410,17 @@ INSERT INTO Sales (
 							Comments,
 							Kilo_Rank,
 							Classification_Number,
-							Classification_Type   
+							Classification_Type,
+							Last_Edited_By   
 )
-SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Product_Grouping = ?
 EOQ;
 
 
 							$stmt = $conn->prepare($insert_query22);
-						$stmt->bind_param("sssssddddddddsssisdddsssdss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank,$Classification_Number,$Classification_Type, $Product_Grouping);
+						$stmt->bind_param("sssssddddddddsssisdddsssdsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank,$Classification_Number,$Classification_Type,$Username, $Product_Grouping);
 							$result_insert = $stmt->execute();
 							if($result_insert) {
 								++$market_share_linked;
@@ -421,10 +428,10 @@ EOQ;
 							$linked_sales->push($input4);
 }
 						
-			/*Update other fields*/
+			
 								$query_update =<<<EOQ
 UPDATE Product
-   SET Description = ?
+   SET Description = ?, Last_Edited_By = ?
  WHERE ProductID = (
        SELECT DISTINCT ProductIDS
          FROM Sales
@@ -433,7 +440,7 @@ UPDATE Product
 EOQ;
 
 								$stmt = $conn->prepare($query_update);
-								$stmt->bind_param("ss", $Sales_Description, $Product_Grouping);
+								$stmt->bind_param("sss", $Sales_Description,$Username, $Product_Grouping);
 								$result_update = $stmt->execute();
 
 
@@ -557,12 +564,13 @@ INSERT INTO Product (
        Description,
        Brand,
        Manufacturer,
-       Cluster_Number
+       Cluster_Number,
+	   Last_Edited_By
 )
-VALUES (?, ?, ?, ?)
+VALUES (?, ?, ?, ?, ?)
 EOQ;
 							$stmt = $conn->prepare($query);
-							$stmt->bind_param("sssd", $param[0], $param[1], $param[2], $param[3]);
+							$stmt->bind_param("sssds", $param[0], $param[1], $param[2], $param[3], $Username);
 							$result = $stmt->execute();
 
 							$id = mysqli_insert_id($conn);
@@ -630,14 +638,15 @@ INSERT INTO Sales (
 							Comments,
 							Kilo_Rank,
 							Classification_Number,
-							Classification_Type   
+							Classification_Type,
+							Last_Edited_By   
 							
 )
-VALUES ( NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?)
+VALUES ( NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?)
 EOQ;
-
+/*Update other fields*/ 
 							$stmt = $conn->prepare($insert_query2);
-							$stmt->bind_param("isssssddddddddsssisdddsssds", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26],$Kilo_Rank,$Classification_Number,$Classification_Type);
+							$stmt->bind_param("isssssddddddddsssisdddsssds", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26],$Kilo_Rank,$Classification_Number,$Classification_Type,$Username);
 							$result_insert = $stmt->execute();
 							if ($result_insert) {
 								++$new_product_count;
@@ -787,23 +796,25 @@ INSERT INTO Sales (
 							Comments,
 							Kilo_Rank,
 							Classification_Number,
-							Classification_Type
+							Classification_Type,
+							Last_Edited_By
 )
-SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+SELECT DISTINCT ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Sales_UPC = ?
 EOQ;
 
 
+
 							$stmt = $conn->prepare($insert_query);
-						$stmt->bind_param("sssssddddddddsssisdddssssds", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank,$Classification_Number,$Classification_Type, $Sales_UPC);
+						$stmt->bind_param("sssssddddddddsssisdddsssdsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank,$Classification_Number,$Classification_Type,$Username, $Sales_UPC);
 							$result_insert = $stmt->execute();
 
 			/*Update other fields*/
 
 							$query_update =<<<EOQ
 UPDATE Product
-   SET Description = ?
+   SET Description = ?, Last_Edited_By = ?
  WHERE ProductID = (
 SELECT DISTINCT ProductIDS
   FROM Sales
@@ -812,7 +823,7 @@ SELECT DISTINCT ProductIDS
 EOQ;
 
 							$stmt = $conn->prepare($query_update);
-							$stmt->bind_param("ss", $Sales_Description, $Sales_UPC);
+							$stmt->bind_param("sss", $Sales_Description,$Username, $Sales_UPC);
 							$result_update = $stmt->execute();
 
 if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
@@ -922,11 +933,11 @@ EOQ;
 							continue;
 						} else {
 							$query =<<<EOQ
-INSERT INTO Product (Description, Brand, Manufacturer, Cluster_Number) VALUES (?, ?, ?, ?)
+INSERT INTO Product (Description, Brand, Manufacturer, Cluster_Number,Last_Edited_By) VALUES (?, ?, ?, ?, ?)
 EOQ;
-
+//$Username Last_Edited_By
 							$stmt = $conn->prepare($query);
-							$stmt->bind_param("sssd", $Product_Description, $Brand, $Manufacturer, $Cluster_Number);
+							$stmt->bind_param("sssds", $Product_Description, $Brand, $Manufacturer, $Cluster_Number,$Username);
 							$result = $stmt->execute();
 
 							$id =  mysqli_insert_id($conn);
@@ -992,16 +1003,17 @@ INSERT INTO Sales (
 							Comments,
 							Kilo_Rank,
 							Classification_Number,
-							Classification_Type  
+							Classification_Type,
+							Last_Edited_By  
 							
 							
 )
-VALUES ( NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES ( NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
 
 								$stmt = $conn->prepare($insert_queryt);
-							$stmt->bind_param("ssssssddddddddsssisdddsssds", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26],$Kilo_Rank,$Classification_Number,$Classification_Type);
+							$stmt->bind_param("ssssssddddddddsssisdddsssdss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26],$Kilo_Rank,$Classification_Number,$Classification_Type,$Username);
 								$result_insertt = $stmt->execute();
 								++$new_product_count;
 
