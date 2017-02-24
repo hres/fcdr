@@ -109,7 +109,7 @@
 
 <section style="margin-top: 15px;" class="hidethis">
 <h3>Market Share</h3>
- <div id="confirm-message" style="color:#008000;"></div>
+ <div id="confirm-message" style="display:none" class="alert alert-success" style="color:#008000;"></div>
   <div id="confirm-message2" style="color:#FF0000;"></div>
 
 <div class="well" style="margin-right:2%;">
@@ -281,8 +281,10 @@
 
     <select class="form-control" id="Classification_Number" name="Classification_Number" >
 	   <option value="<?PHP echo $row['Classification_Number']; ?>" selected="selected"><?PHP echo $row['Classification_Number']; ?></option>
+	   <option value=""></option>
 	<?php include 'List_Classification_Number.php';?>
 		
+	
 			 </select>
 			</div>
 			<?php include("fill_sales.php"); ?>		
