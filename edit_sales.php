@@ -110,8 +110,8 @@
 				<?php include("sales_form.php"); ?>
 			</div>
 			<?php include("save_sales.php"); ?>
-			<br/>	 
-			<?php echo " <a class=\"btn btn-default\" href=\"sales_details.php?SalesID=" .  $_GET['SalesID'] . "\">Back</a>";  ?>
+			<br/>
+			<?php echo "<a class=\"btn btn-default\" href=\"sales_details.php?SalesID=" .  $_GET['SalesID'] . "\">Back</a>\n";  ?>
 		</section>
 	</div>
 	<script type="text/javascript">
