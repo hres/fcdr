@@ -114,11 +114,6 @@
 			<?php echo "<a class=\"btn btn-default\" href=\"sales_details.php?SalesID=" .  $_GET['SalesID'] . "\">Back</a>\n";  ?>
 		</section>
 	</div>
-	<script type="text/javascript">
-		function goBack() {
-			window.history.back();
-		}
-	</script>
 </main>
 
 <?php include 'footer.php';?>
@@ -129,47 +124,53 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="validate-market.js"></script>
-	<script>
-	$(document).ready(function(){
-		var date_input=$('input[name="Collection_Date"]'); //our date input has the name "date"
-		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-		date_input.datepicker({
-			format: 'yyyy/mm/dd',
-			container: container,
-			todayHighlight: true,
-			autoclose: true,
-		})
-	})
+
+<script>
+$(document).ready(function(){
+	var date_input=$('input[name="Collection_Date"]'); //our date input has the name "date"
+	var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+	date_input.datepicker({
+	format: 'yyyy/mm/dd',
+		container: container,
+		todayHighlight: true,
+		autoclose: true,
+	});
+});
 </script>	
 
-
-		<script>
-	$(document).ready(function(){
-				$('.input-group').find('.fa-calendar').on('click', function(){
-    $(this).parent().siblings('#date1').trigger('focus');
-});
-		})
+<script type="text/javascript">
+function goBack() {
+	window.history.back();
+}
 </script>
-	<script>
-	$(document).ready(function(){
-		var date_input=$('input[name="Sales_Reference_Date"]'); //our date input has the name "date"
-		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-		date_input.datepicker({
-			format: 'yyyy/mm/dd',
-			container: container,
-			todayHighlight: true,
-			autoclose: true,
-		})
-	})
+
+<script>
+$(document).ready(function(){
+	$('.input-group').find('.fa-calendar').on('click', function(){
+		$(this).parent().siblings('#date1').trigger('focus');
+	});
+});
+</script>
+
+<script>
+$(document).ready(function(){
+	var date_input=$('input[name="Sales_Reference_Date"]'); //our date input has the name "date"
+	var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+	date_input.datepicker({
+	format: 'yyyy/mm/dd',
+		container: container,
+		todayHighlight: true,
+		autoclose: true,
+	});
+	});
 </script>	
 
-
-		<script>
-	$(document).ready(function(){
-				$('.input-group').find('.fa-calendar').on('click', function(){
-    $(this).parent().siblings('#date2').trigger('focus');
+<script>
+$(document).ready(function(){
+	$('.input-group').find('.fa-calendar').on('click', function(){
+		$(this).parent().siblings('#date2').trigger('focus');
+	});
 });
-		})
 </script>
 
 </body>
