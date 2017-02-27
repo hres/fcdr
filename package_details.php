@@ -695,7 +695,7 @@ hr {
     <th>Storage Type</th>
 	<th>Storage Statements</th>
 	<th>Number Of Units</th>
-	<th>Multi Parts?</th>
+	<th>Multi-part Package?</th>
 	
 	
   </tr>
@@ -842,6 +842,8 @@ hr {
   <div class="panel-body">
     <?php 
 	 $row['Calculated'] =  ($row['Calculated']=="1"? "Yes":$row['Calculated']);
+
+	 $row['Calculated'] =  ($row['Calculated']=="0"? "No":$row['Calculated']);
 	
 	echo " ". $row['Calculated'] .""; 
 	
@@ -1020,7 +1022,7 @@ $conn->close();
     <td><?php echo " ". $row['Collection_Date'] ."";  ?></td>
     <td><?php echo " ". $row['Create_Date'] ."";  ?></td>
 	<td><?php echo " ". $row['Last_Edit_Date'] ."";  ?></td>
-	<td><?php echo " ". $row['Last_Edited_By'] ."";  ?></td>
+	<td><?php echo " ". $row['Last_Edited_by'] ."";  ?></td>
   </tr>
 </table>
 	<div class="div2"> 

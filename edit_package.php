@@ -397,9 +397,10 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 			</div>
 
             		<div class="form-group col-xs-6">
-	<label for="Multi_Part_Package" name="Multi_Part_Package">Multi Part Package</label>
+	<label for="Multi_Part_Package" name="Multi_Part_Package">Multi-part Package?</label>
       <select class="form-control" id="Multi_Part_Package" style="width:540px" name="Multi_Part_Package">
 	  	<option value"<?PHP echo $row['Multipart']; ?>" selected><?PHP echo $row['Multipart']; ?></option>
+		  <option value=""></option>
 		 <option value="No">No</option>
 		 <option value="Yes">Yes</option>
       </select></div>
@@ -2644,9 +2645,17 @@ EOQ;
 					<div class="form-group col-sm-4">
 	<label for="sel1" name="cal"> Calculated</label>
       <select class="form-control" id="Calculated" name="Calculated" >
-		  <option value="<?PHP echo $row['Calculated']; ?>" selected="selected"><?PHP $var = $row['Calculated']=="1"?"Yes":"No"; echo $var; ?></option>
+		  <option value="<?PHP echo $row['Calculated']; ?>" selected="selected"><?PHP 
+		  
+		  
+		  $var = $row['Calculated']=="1"?"Yes":$row['Calculated']; //echo $var;
+		  $var = $var =="0"?"No":$var;
+		  echo $var;
+		   ?></option>
+		
 		 <option value="0">No</option>
      	 <option value="1">Yes</option>
+		   <option value=""></option>
       </select></div>		
 
 	</div>

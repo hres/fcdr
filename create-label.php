@@ -328,9 +328,10 @@ $('input[name="intervaltype"]').click(function () {
 			</div>
 
             		<div class="form-group col-xs-6">
-	<label for="Multi_Part_Package" name="Multi_Part_Package">Multi Part Package</label>
+	<label for="Multi_Part_Package" name="Multi_Part_Package">Multi-part Package?</label>
       <select class="form-control" id="Multi_Part_Package" style="width:540px" name="Multi_Part_Package">
-		 <option value="No" selected>No</option>
+		<option value="" selected></option>
+         <option value="No">No</option>
 		 <option value="Yes">Yes</option>
       </select></div>
 </div>	
