@@ -962,7 +962,7 @@ hr {
 $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 
 	
-	$query = "  SELECT * FROM $dbname.Package P WHERE P.PackageID = $packageID";
+	$query = "SELECT * FROM $dbname.Package P WHERE P.PackageID = $packageID";
 	$result = mysqli_query($conn,$query);
 							
 							
@@ -1022,9 +1022,10 @@ $conn->close();
     <td><?php echo " ". $row['Collection_Date'] ."";  ?></td>
     <td><?php echo " ". $row['Create_Date'] ."";  ?></td>
 	<td><?php echo " ". $row['Last_Edit_Date'] ."";  ?></td>
-	<td><?php echo " ". $row['Last_Edited_by'] ."";  ?></td>
+	<td><?php echo " ". $row['Last_Edited_By'] ."";  ?></td>
   </tr>
 </table>
+
 	<div class="div2"> 
 	
 			 		<?php include 'connection.php';?>
