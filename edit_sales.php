@@ -111,7 +111,7 @@
 			</div>
 			<?php include("save_sales.php"); ?>
 			<br/>	 
-			<?php echo " <a \" class=\"btn btn-default\" href=sales_details.php?SalesID=" .  $_GET['SalesID'] . ">Back</a>";  ?>
+			<?php echo " <a class=\"btn btn-default\" href=\"sales_details.php?SalesID=" .  $_GET['SalesID'] . "\">Back</a>";  ?>
 		</section>
 	</div>
 	<script type="text/javascript">
