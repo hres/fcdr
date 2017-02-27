@@ -161,5 +161,4 @@ EOQ;
 
 		}
 $conn->close();
-header('edit_sales.php?SalesID=' . $salesID);
 ?>
