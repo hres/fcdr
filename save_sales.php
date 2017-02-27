@@ -117,8 +117,6 @@ if (!$result) {
 		//echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
 
 
-}
-
 echo "<script type=\"text/javascript\">\n";
 echo "    alert('hello');\n";
 echo "    $(document).ready(function() {\n";
@@ -160,6 +158,8 @@ echo "        \n";
 echo "        \n";
 echo "    }\n";
 echo "</script>\n";
+}
+
 
 }
 $conn->close();
