@@ -161,4 +161,5 @@ EOQ;
 
 		}
 $conn->close();
+include 'edit_sales.php';
 ?>
