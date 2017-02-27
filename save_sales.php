@@ -110,13 +110,14 @@ EOQ;
 
 		} else {
 			echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\").style.display =  \"block\"</script>";
-
+			echo "<script type=\"text/javascript\">\n";
+			echo "    alert('hello');\n";
+			echo "</script>\n";
 			echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Market Share Successfully updated. Redirecting to the previous page...</strong></h3>\";</script>";
 			//echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
 
 
 			echo "<script type=\"text/javascript\">\n";
-			echo "    alert('hello');\n";
 			echo "    $(document).ready(function() {\n";
 			echo "        $(\"vids-search-form1 Dollar_Volume\")                   .val ('" . $_POST["Dollar_Volume"]                    . "');\n";
 			echo "        $(\"vids-search-form1 Kilo_Volume\")                     .val ('" . $_POST["Kilo_Volume"]                      . "');\n";
