@@ -646,7 +646,7 @@ VALUES ( NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
 EOQ;
 /*Update other fields*/ 
 							$stmt = $conn->prepare($insert_query2);
-							$stmt->bind_param("isssssddddddddsssisdddsssds", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26],$Kilo_Rank,$Classification_Number,$Classification_Type,$Username);
+							$stmt->bind_param("isssssddddddddsssisdddsssdss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[26],$Kilo_Rank,$Classification_Number,$Classification_Type,$Username);
 							$result_insert = $stmt->execute();
 							if ($result_insert) {
 								++$new_product_count;
