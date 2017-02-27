@@ -161,5 +161,5 @@ EOQ;
 
 		}
 $conn->close();
-include 'edit_sales.php';
+include 'edit_sales.php?SalesId=' . $SalesId . '';
 ?>
