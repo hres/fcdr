@@ -109,7 +109,7 @@
 			<div class="well" style="margin-right:2%;">
 				<?php include("sales_form.php"); ?>
 			</div>
-			<?php include("save_sales.php"); ?>
+			<?php // include("save_sales.php"); ?>
 			<br/>
 			<?php echo "<a class=\"btn btn-default\" href=\"sales_details.php?SalesID=" .  $_GET['SalesID'] . "\">Back</a>\n";  ?>
 		</section>
