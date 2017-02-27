@@ -107,11 +107,11 @@
 			<div id="confirm-message" class="alert alert-success" style="display:none" style="color:#008000;"></div>
 			<div id="confirm-message2" style="color:#FF0000;"></div>
 			<div class="well" style="margin-right:2%;">
+				<?php include("fill_sales.php"); ?>
 				<?php include("sales_form.php"); ?>
 			</div>
 			<?php // include("save_sales.php"); ?>
 			<br/>
-	<?php include("fill_sales.php"); ?>
 			<?php echo "<a class=\"btn btn-default\" href=\"sales_details.php?SalesID=" .  $_GET['SalesID'] . "\">Back</a>\n";  ?>
 		</section>
 	</div>
