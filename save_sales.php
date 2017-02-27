@@ -161,6 +161,6 @@ EOQ;
 
 		}
 $conn->close();
-$_GET['SalesId'] = $salesID;
+$_GET['SalesID'] = $salesID;
 include 'edit_sales.php';
 ?>
