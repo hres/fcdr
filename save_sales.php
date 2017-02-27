@@ -102,65 +102,63 @@ EOQ;
 
 		$stmt->bind_param("ddissssssdddddddsddsddsdssi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21],$param[22],$param[23],$param[24],$Username,$salesID);
 	
-	$result = $stmt->execute();
+		$result = $stmt->execute();
 
-		
+		if (!$result) {
 
-if (!$result) {
-	
-		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to updated Market share</strong></h3>\";</script>";
+			echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to updated Market share</strong></h3>\";</script>";
 
-}else {
+		} else {
 			echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\").style.display =  \"block\"</script>";
 
-		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Market Share Successfully updated. Redirecting to the previous page...</strong></h3>\";</script>";
-		//echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
+			echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Market Share Successfully updated. Redirecting to the previous page...</strong></h3>\";</script>";
+			//echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
 
 
-echo "<script type=\"text/javascript\">\n";
-echo "    alert('hello');\n";
-echo "    $(document).ready(function() {\n";
-echo "        $(\"vids-search-form1 Dollar_Volume\")                   .val ('" . $_POST["Dollar_Volume"]                    . "');\n";
-echo "        $(\"vids-search-form1 Kilo_Volume\")                     .val ('" . $_POST["Kilo_Volume"]                      . "');\n";
-echo "        $(\"vids-search-form1 Sales_Year\")                      .val ('" . $_POST["Sales_Year"]                       . "');\n";
-echo "        $(\"vids-search-form1 Nielsen_Category\")                .val ('" . $_POST["Nielsen_Category"]                 . "');\n";
-echo "        $(\"vids-search-form1 Source\")                          .val ('" . $_POST["Source"]                           . "');\n";
-echo "        $(\"vids-search-form1 Sales_Description\")               .val ('" . $_POST["Sales_Description"]                . "');\n";
-echo "        $(\"vids-search-form1 Comments\")                        .val ('" . $_POST["Comments"]                         . "');\n";
-echo "        $(\"vids-search-form1 date1\")                           .val ('" . $_POST["date1"]                            . "');\n";
-echo "        $(\"vids-search-form1 Brand\")                           .val ('" . $_POST["Brand"]                            . "');\n";
-echo "        $(\"vids-search-form1 Dollar_Rank\")                     .val ('" . $_POST["Dollar_Rank"]                      . "');\n";
-echo "        $(\"vids-search-form1 Dollar_Volume_PerCentage_Change\") .val ('" . $_POST["Dollar_Volume_PerCentage_Change"]  . "');\n";
-echo "        $(\"vids-search-form1 Kilo_Volume_Percent_Change\")      .val ('" . $_POST["Kilo_Volume_Percent_Change"]       . "');\n";
-echo "        $(\"vids-search-form1 Average_AC_Dist\")                 .val ('" . $_POST["Average_AC_Dist"]                  . "');\n";
-echo "        $(\"vids-search-form1 Average_Retail_Price\")            .val ('" . $_POST["Average_Retail_Price"]             . "');\n";
-echo "        $(\"vids-search-form1 Dollar_Volume_Total\")             .val ('" . $_POST["Dollar_Volume_Total"]              . "');\n";
-echo "        $(\"vids-search-form1 Kilo_Volume_Total\")               .val ('" . $_POST["Kilo_Volume_Total"]                . "');\n";
-echo "        $(\"vids-search-form1 Dollar_Share\")                    .val ('" . $_POST["Dollar_Share"]                     . "');\n";
-echo "        $(\"vids-search-form1 Kilo_Share\")                      .val ('" . $_POST["Kilo_Share"]                       . "');\n";
-echo "        $(\"vids-search-form1 Cluster_Number\")                  .val ('" . $_POST["Cluster_Number"]                   . "');\n";
-echo "        $(\"vids-search-form1 Product_Grouping\")                .val ('" . $_POST["Product_Grouping"]                 . "');\n";
-echo "        $(\"vids-search-form1 Kilo_Rank\")                       .val ('" . $_POST["Kilo_Rank"]                        . "');\n";
-echo "        $(\"vids-search-form1 Manufacturer\")                    .val ('" . $_POST["Manufacturer"]                     . "');\n";
-echo "        $(\"vids-search-form1 Classification_Type\")             .val ('" . $_POST["Classification_Type"]              . "');\n";
-echo "        $(\"vids-search-form1 Classification_Number\")           .val ('" . $_POST["Classification_Number"]            . "');\n";
-echo "        $(\"vids-search-form1 Control_Label_Flag\")              .val ('" . $_POST["Control_Label_Flag"]               . "');\n";
-echo "        \n";
-echo "        \n";
-echo "        \n";
-echo "        \n";
-echo "        \n";
-echo "        \n";
-echo "        \n";
-echo "        \n";
-echo "        \n";
-echo "        \n";
-echo "        \n";
-echo "    }\n";
-echo "</script>\n";
-}
+			echo "<script type=\"text/javascript\">\n";
+			echo "    alert('hello');\n";
+			echo "    $(document).ready(function() {\n";
+			echo "        $(\"vids-search-form1 Dollar_Volume\")                   .val ('" . $_POST["Dollar_Volume"]                    . "');\n";
+			echo "        $(\"vids-search-form1 Kilo_Volume\")                     .val ('" . $_POST["Kilo_Volume"]                      . "');\n";
+			echo "        $(\"vids-search-form1 Sales_Year\")                      .val ('" . $_POST["Sales_Year"]                       . "');\n";
+			echo "        $(\"vids-search-form1 Nielsen_Category\")                .val ('" . $_POST["Nielsen_Category"]                 . "');\n";
+			echo "        $(\"vids-search-form1 Source\")                          .val ('" . $_POST["Source"]                           . "');\n";
+			echo "        $(\"vids-search-form1 Sales_Description\")               .val ('" . $_POST["Sales_Description"]                . "');\n";
+			echo "        $(\"vids-search-form1 Comments\")                        .val ('" . $_POST["Comments"]                         . "');\n";
+			echo "        $(\"vids-search-form1 date1\")                           .val ('" . $_POST["date1"]                            . "');\n";
+			echo "        $(\"vids-search-form1 Brand\")                           .val ('" . $_POST["Brand"]                            . "');\n";
+			echo "        $(\"vids-search-form1 Dollar_Rank\")                     .val ('" . $_POST["Dollar_Rank"]                      . "');\n";
+			echo "        $(\"vids-search-form1 Dollar_Volume_PerCentage_Change\") .val ('" . $_POST["Dollar_Volume_PerCentage_Change"]  . "');\n";
+			echo "        $(\"vids-search-form1 Kilo_Volume_Percent_Change\")      .val ('" . $_POST["Kilo_Volume_Percent_Change"]       . "');\n";
+			echo "        $(\"vids-search-form1 Average_AC_Dist\")                 .val ('" . $_POST["Average_AC_Dist"]                  . "');\n";
+			echo "        $(\"vids-search-form1 Average_Retail_Price\")            .val ('" . $_POST["Average_Retail_Price"]             . "');\n";
+			echo "        $(\"vids-search-form1 Dollar_Volume_Total\")             .val ('" . $_POST["Dollar_Volume_Total"]              . "');\n";
+			echo "        $(\"vids-search-form1 Kilo_Volume_Total\")               .val ('" . $_POST["Kilo_Volume_Total"]                . "');\n";
+			echo "        $(\"vids-search-form1 Dollar_Share\")                    .val ('" . $_POST["Dollar_Share"]                     . "');\n";
+			echo "        $(\"vids-search-form1 Kilo_Share\")                      .val ('" . $_POST["Kilo_Share"]                       . "');\n";
+			echo "        $(\"vids-search-form1 Cluster_Number\")                  .val ('" . $_POST["Cluster_Number"]                   . "');\n";
+			echo "        $(\"vids-search-form1 Product_Grouping\")                .val ('" . $_POST["Product_Grouping"]                 . "');\n";
+			echo "        $(\"vids-search-form1 Kilo_Rank\")                       .val ('" . $_POST["Kilo_Rank"]                        . "');\n";
+			echo "        $(\"vids-search-form1 Manufacturer\")                    .val ('" . $_POST["Manufacturer"]                     . "');\n";
+			echo "        $(\"vids-search-form1 Classification_Type\")             .val ('" . $_POST["Classification_Type"]              . "');\n";
+			echo "        $(\"vids-search-form1 Classification_Number\")           .val ('" . $_POST["Classification_Number"]            . "');\n";
+			echo "        $(\"vids-search-form1 Control_Label_Flag\")              .val ('" . $_POST["Control_Label_Flag"]               . "');\n";
+			echo "        \n";
+			echo "        \n";
+			echo "        \n";
+			echo "        \n";
+			echo "        \n";
+			echo "        \n";
+			echo "        \n";
+			echo "        \n";
+			echo "        \n";
+			echo "        \n";
+			echo "        \n";
+			echo "    }\n";
+			echo "</script>\n";
+		}
 
 
-}
+		}
 $conn->close();
 ?>
