@@ -730,7 +730,7 @@ $("#vids-search-form").validate({
         }}
 
 },
-  
+ 
     Iodide_Amount : {   
   number: true, 
          required: {
@@ -899,7 +899,7 @@ $("#vids-search-form").validate({
         }}
 
 },
-
+  
     Protein_Amount : {   
 
     number: true
@@ -911,7 +911,7 @@ $("#vids-search-form").validate({
     number: true
 
 }, 
-    
+   /*
              Energy_Amount_S: {
   number: true, 
          required: {
@@ -1823,7 +1823,7 @@ number: true,
     number: true,
    required: true
 //
-    }, /**/
+    }, */
   },
     messages: {
     date1: "Enter the correct date format"
