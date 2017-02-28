@@ -1191,7 +1191,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label for="Molybdenium_Amount" class="col-sm-3 control-label">Molybdenum</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Molybdenum" name="Molybdenium_Amount">
+   <input type="text" class="form-control" placeholder="Amount of Molybdenum" id="Molybdenium_Amount" name="Molybdenium_Amount">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Molybdenium_Unit" name="Molybdenium_Unit">
@@ -1208,7 +1208,7 @@ $('input[name="intervaltype"]').click(function () {
 		 <div class="form-group">
   <label for="Chloride_Amount" class="col-sm-3 control-label">Chloride</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Chloride" name="Chloride_Amount">
+   <input type="text" class="form-control" placeholder="Amount of Chloride" id="Chloride_Amount" name="Chloride_Amount">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Chloride_Unit" name="Chloride_Unit">

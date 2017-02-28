@@ -889,7 +889,7 @@ $("#vids-search-form").validate({
           return $('#Chloride_Unit').val().length > 0;
         }}
 
-},  
+},     
     Chloride_Unit : {   
 
          required: {
@@ -911,7 +911,7 @@ $("#vids-search-form").validate({
     number: true
 
 }, 
-   /*
+
              Energy_Amount_S: {
   number: true, 
          required: {
@@ -1823,7 +1823,7 @@ number: true,
     number: true,
    required: true
 //
-    }, */
+    }, /**/
   },
     messages: {
     date1: "Enter the correct date format"
