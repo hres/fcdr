@@ -72,7 +72,7 @@ if (!$result) {
 }
 	
 	while($row = $result->fetch_assoc())  {
-		 echo "<tr><td><a href=view_product.php?ProductID=" .$row['ProductIDS'] . ">". $row['Sales_UPC'] ."</a></td><td>" . $row['Sales_Description'] . "</td><td>" . $row['Source'] . "</td><td>" . $row['Sales_Year'] . "</td><td>" . $row['Nielsen_Category'] . "</td><td>" . $row['Dollar_Volume'] . "</td><td>" . $row['Kilo_Vol'] . "</td> </tr>";                       
+		 echo "<tr><td><a href=view_product.php?ProductID=" .$row['ProductIDS'] . " target = '_blank'>". $row['Sales_UPC'] ."</a></td><td>" . $row['Sales_Description'] . "</td><td>" . $row['Source'] . "</td><td>" . $row['Sales_Year'] . "</td><td>" . $row['Nielsen_Category'] . "</td><td>" . $row['Dollar_Volume'] . "</td><td>" . $row['Kilo_Vol'] . "</td> </tr>";                       
 		
 	 }
 	}else{

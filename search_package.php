@@ -73,7 +73,7 @@ $stmt_first = $conn->prepare($first_query);
 			echo "ERRORS";
 					}
 	 while($row = mysqli_fetch_assoc($result)){
-		echo "<tr><td> <a href=view_product.php?ProductID=" .$row['ProductIDP'] . ">". $row['Label_UPC'] . "</a></td> <td>" . $row['Label_Description'] . "</td>  <td>" . $row['Source'] . "</td><td>" . $row['Collection_Date'] . "</td><td>" . $row['Create_Date'] . "</td><td>" . $row['Last_Edit_Date'] . "</td><td>" . $row['Last_Edited_By'] . "</td></tr>";                       
+		echo "<tr><td> <a href=view_product.php?ProductID=" .$row['ProductIDP'] . " target = '_blank'>". $row['Label_UPC'] . "</a></td> <td>" . $row['Label_Description'] . "</td>  <td>" . $row['Source'] . "</td><td>" . $row['Collection_Date'] . "</td><td>" . $row['Create_Date'] . "</td><td>" . $row['Last_Edit_Date'] . "</td><td>" . $row['Last_Edited_By'] . "</td></tr>";                       
 
 	 }
 	}else{
