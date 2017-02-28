@@ -105,7 +105,10 @@
 	<div class="container">
 		<section style="margin-top: 15px;" class="hidethis">
 			<h3>Market Share</h3>
-			<div id="confirm-message" class="alert alert-success" style="display:none" style="color:#008000;"></div>
+			<div id="confirm-message" class="alert alert-success alert-dismissable fade in" style="display:none" style="color:#008000;">
+			 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			
+			</div>
 			<div id="confirm-message2" style="color:#FF0000;"></div>
 			<div class="well" style="margin-right:2%;">
 				<?php include("sales_form.php"); ?>
