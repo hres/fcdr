@@ -109,13 +109,9 @@ EOQ;
 			echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to updated Market share</strong></h3>\";</script>";
 
 		} else {
-			echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\").style.display =  \"block\"</script>";
-			echo "<script type=\"text/javascript\">\n";
-			echo "    alert('hello');\n";
-			echo "</script>\n";
-			echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Market Share Successfully updated. Redirecting to the previous page...</strong></h3>\";</script>";
+			echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\").style.display =  \"block\"</script>\n";
+			echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Market Share Successfully updated. Redirecting to the previous page...</strong></h3>\";</script>\n";
 			//echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
-
 
 			echo "<script type=\"text/javascript\">\n";
 			echo "    $(document).ready(function() {\n";
