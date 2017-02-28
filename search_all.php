@@ -170,7 +170,7 @@ call_user_func_array(array($stmt_query, 'bind_param'), $bind_arguments);
 
 
       while($row = $result->fetch_assoc()) {
-		 echo "<tr><td><a href=view_product.php?ProductID=" .$row['ProductID'] . ">". $row['Description'] ."</a></td>
+		 echo "<tr><td><a href=view_product.php?ProductID=" .$row['ProductID'] . " target = '_blank'>". $row['Description'] ."</a></td>
      <td>" . $row['Label_UPC'] . "</td>
      <td>" . $row['Sales_UPC'] . "</td>
      <td>" . $row['Label_Description'] . "</td>
