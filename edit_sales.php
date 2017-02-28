@@ -106,7 +106,7 @@
 		<section style="margin-top: 15px;" class="hidethis">
 			<h3>Market Share</h3>
 			<div id="confirm-message" class="alert alert-success alert-dismissable" style="display:none; margin-right:18px;" >
-			 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
 			
 			</div>
 			<div id="confirm-message2" style="color:#FF0000;"></div>
