@@ -622,12 +622,14 @@ $(window).resize();
 <table style="width:100%" class="table2">
   <tr >
     <th>Brand</th>
+	<th>Manufacturer</th>
     <th>Dollar Rank</th>
 	<th>Dollar Volume % Change</th>
 	<th>Kilo Volume % Change</th>
   </tr>
   <tr>
   <td><?php echo " ". $row['Brand'] ."";  ?></td>
+    <td><?php echo " ". $row['Manufacturer'] ."";  ?></td>
   <td><?php echo " ".number_format($row['Dollar_Rank']) ."";  ?></td>  
   <td><?php echo " ". $row['Dollar_Volume_PerCentage_Change'] ."";  ?></td>
   <td><?php echo " ". $row['Kilo_Volume_Percent_Change'] ."";  ?></td>
@@ -674,14 +676,14 @@ $(window).resize();
   <tr >
 
 	<th>Kilo Rank</th>
-	<th>Manufacturer</th>
+
 	<th>Classification Number</th>
 	<th>Classification Type</th>
   </tr>
   <tr>
  
-  <td><?php echo " ". $row['Dollar_Share'] ."";  ?></td>  
-  <td><?php echo " ". $row['Manufacturer'] ."";  ?></td>
+  <td><?php echo " ". $row['Kilo_Rank'] ."";  ?></td>  
+
   <td><?php echo " ". $row['Classification_Number'] ."";  ?></td>
   <td><?php echo " ". $row['Classification_Type'] ."";  ?></td>
 

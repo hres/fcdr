@@ -420,7 +420,7 @@ EOQ;
 
 
 							$stmt = $conn->prepare($insert_query22);
-						$stmt->bind_param("sssssddddddddsssisdddsssdsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank,$Classification_Number,$Classification_Type,$Username, $Product_Grouping);
+						$stmt->bind_param("sssssddddddddsssisdddsssdsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[23],$Kilo_Rank,$Classification_Number,$Classification_Type,$Username, $Product_Grouping);
 							$result_insert = $stmt->execute();
 							if($result_insert) {
 								++$market_share_linked;
