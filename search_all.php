@@ -171,32 +171,29 @@ call_user_func_array(array($stmt_query, 'bind_param'), $bind_arguments);
 
       while($row = $result->fetch_assoc()) {
 		 echo "<tr><td><a href=view_product.php?ProductID=" .$row['ProductID'] . " target = '_blank'>". $row['Description'] ."</a></td>
-     <td>" . $row['Label_UPC'] . "</td>
-     <td>" . $row['Sales_UPC'] . "</td>
-     <td>" . $row['Label_Description'] . "</td>
-     <td>" . $row['Sales_Description'] . "</td>
-     <td>" . $row['Sales_Year'] . "</td>
-     <td>" . $row['Nielsen_Category'] . "</td>
-
-    <td>" . $row['Product_Manufacturer'] . "</td>
-     <td>" . $row['Product_Brand'] . "</td>
-     <td>" . $row['Classification_Number'] . "</td>
-     <td>" . $row['Classification_Name'] . "</td>
+      <td>" . $row['Product_Brand'] . "</td>
+      <td>" . $row['Product_Manufacturer'] . "</td>
+    <td>" . $row['Classification_Name'] . "</td>
+     <td>" . $row['Classification_Number'] . "</td>    
      <td>" . $row['Classification_Type'] . "</td>
-     <td>" . $row['CNF_CODE'] . "</td>
-
-
-    <td>" . $row['Label_Source'] . "</td>
-     <td>" . $row['Sales_Source'] . "</td>
+    <td>" . $row['CNF_CODE'] . "</td>
+    <td>" . $row['Cluster_Number'] . "</td>
+    <td>" . $row['Product_Comments'] . "</td>
+    <td>" . $row['Sales_UPC'] . "</td>
+    <td>" . $row['Sales_Description'] . "</td>
+    <td>" . $row['Sales_Year'] . "</td>
+    <td>" . $row['Nielsen_Category'] . "</td>
+    <td>" . $row['Sales_Source'] . "</td>
+    <td>" . $row['Sales_Date'] . "</td>
+    <td>" . $row['Dollar_Rank'] . "</td>
+    <td>" . $row['Sales_Comments'] . "</td> 
+     <td>" . $row['Label_UPC'] . "</td>
+     <td>" . $row['Label_Description'] . "</td>
+    <td>" . $row['Label_Source'] . "</td> 
      <td>" . $row['Ingredients'] . "</td>
-     <td>" . $row['Label_Collection_Date'] . "</td>
-     <td>" . $row['Sales_Date'] . "</td>
-     <td>" . $row['Dollar_Rank'] . "</td>
-
-     <td>" . $row['Cluster_Number'] . "</td>
-     <td>" . $row['Product_Comments'] . "</td>
+     <td>" . $row['Label_Collection_Date'] . "</td>    
      <td>" . $row['Label_Comments'] . "</td>
-     <td>" . $row['Sales_Comments'] . "</td>    
+        
       </tr>";      
 
        }

@@ -107,7 +107,7 @@
 		}
 
 .well{
-	background-color:  #ebf0fa;
+	
 
 
 }
@@ -160,39 +160,79 @@
   
   
   <section style="margin-top: 15px;">
-<div class="well" style="margin-right:2%;">
+<div  style="margin-right:2%;">
 
 	<form role="form" method="post" action="" id="vids-search-form1">
 
-	
-		<div class="row">
+<div class="well">	
+<div class="row">
 
 			<div class="form-group col-sm-4">
 				<label for="Description">Product Description</label>
 				<input type="text" class="form-control" name="Description" id="Description" placeholder="Enter The Description of the Product" />
 			</div>
-				<div class="form-group col-sm-4">
-				<label for="Label_UPC">Label UPC</label>
-				<input type="number" class="form-control" name="Label_UPC" id="Label_UPC" placeholder="Enter the Label UPC" />
+			<div class="form-group col-sm-4">
+                <label for="Manufacturer">Manufacturer (Product)</label>
+				<input type="text" class="form-control" name="Manufacturer" id="Manufacturer" placeholder="Enter the Manufacturer of the Product" />
 			</div>
 		
+			<div class="form-group col-sm-4">
+				<label for="Brand">Brand</label>
+				<input type="text" class="form-control" name="Brand" id="Brand" placeholder="Enter the Brand of the Product" />
+			</div>
+						<div class="form-group col-sm-4">
+				<label for="Classification_Name">Classification Name</label>
+				 <select class="form-control" id="Classification_Name"  name="Classification_Name" style="width:540px">
+		  <option value="" selected>Select a Classification Name</option>
+		<?php include 'List_Classification.php';?>
+	
+			 </select>
+			</div>
+		<div class="form-group col-sm-4">
+				<label for="Classification_Number">Classification Number</label>
+			
+    <select class="form-control" id="Classification_Number"   name="Classification_Number" style="width:540px">
+		   <option value="" selected>Select a Classification Number</option>
+	<?php include 'List_Classification_Number.php';?>
+		
+			 </select>
+			</div>
+
+			<div class="form-group col-sm-4">
+				<label for="Classification_Type">Classification Type</label>
+				<input type="text" class="form-control" name="Classification_Type" id="Classification_Type" placeholder="Enter the Classification Type" />
+			</div>
+
+
+			<div class="form-group col-sm-4">
+				<label for="CNF_Code">CNF Code</label>
+				<input type="number" class="form-control" step="any" name="CNF_Code" id="CNF_Code" placeholder="Enter The CNF Code" />
+			</div>
+				 				<div class="form-group col-sm-4">
+				<label for="Cluster_Number">Cluster Number</label>
+				<input type="number" step="any" class="form-control" name="Cluster_Number" id="Cluster_Number" placeholder="Enter the Cluster Number" />
+			</div>
+						<div class="form-group col-sm-4">
+				<label for="Comments">Product Comments</label>
+				<input type="text" class="form-control" name="Comments" id="Comments" placeholder="Enter the Comments of the Product" />
+			</div>
+
+
+</div>
+</div>
+
+<div class="well market" style="background-color:  #ebf0fa;">
+<div class="row" >
 			<div class="form-group col-sm-4">
 				<label for="Sales_UPC">Sales UPC</label>
 				<input type="number" class="form-control" name="Sales_UPC" id="Sales_UPC" placeholder="Enter the Sales UPC" />
 			</div>
-		</div>
-		
-				<div class="row">
 
-			<div class="form-group col-sm-4">
-				<label for="Label_Description">Label Description</label>
-				<input type="text" class="form-control" name="Label_Description" id="Label_Description" placeholder="Enter The Label Description" />
-			</div>
 				<div class="form-group col-sm-4">
 				<label for="Sales_Description">Sales Description</label>
 				<input type="text" class="form-control" name="Sales_Description" id="Sales_Description" placeholder="Enter the Sales Description" />
 			</div>
-            <div class="form-group col-sm-4">
+			            <div class="form-group col-sm-4">
 	<label for="Sales_Year" name="Year_Recorded">Sales Year</label>
       <select class="form-control" id="Sales_Year" name="Sales_Year">
 	    <option value="">Select a year</option>
@@ -214,11 +254,7 @@ if (!$result) {
 	$conn->close();
 ?>	
       
-      </select></div></div>
-		
-        		<div class="row">
-
-
+      </select></div>
 
                         <div class="form-group col-sm-4">
 	<label for="Nielsen_Category" name="Year_Recorded">Nielsen Category</label>
@@ -227,60 +263,84 @@ if (!$result) {
 		<?php include 'Nielsen_List.php';?>
 	
 			 </select></div>
-				<div class="form-group col-sm-4">
-                <label for="Manufacturer">Manufacturer (Product)</label>
-				<input type="text" class="form-control" name="Manufacturer" id="Manufacturer" placeholder="Enter the Manufacturer of the Product" />
-			</div>
-		
-			<div class="form-group col-sm-4">
-				<label for="Brand">Brand</label>
-				<input type="text" class="form-control" name="Brand" id="Brand" placeholder="Enter the Brand of the Product" />
-			</div>
-		</div>
-        		<div class="row">
-		<div class="form-group col-sm-4">
-				<label for="Classification_Number">Classification Number</label>
-			
-    <select class="form-control" id="Classification_Number"   name="Classification_Number" style="width:540px">
-		   <option value="" selected>Select a Classification Number</option>
-	<?php include 'List_Classification_Number.php';?>
-		
-			 </select>
-			</div>
-			<div class="form-group col-sm-4">
-				<label for="Classification_Name">Classification Name</label>
-				 <select class="form-control" id="Classification_Name"  name="Classification_Name" style="width:540px">
-		  <option value="" selected>Select a Classification Name</option>
-		<?php include 'List_Classification.php';?>
-	
-			 </select>
-			</div>
-		
-			<div class="form-group col-sm-4">
-				<label for="Classification_Type">Classification Type</label>
-				<input type="text" class="form-control" name="Classification_Type" id="Classification_Type" placeholder="Enter the Classification Type" />
-			</div>
-		</div>
-        		<div class="row">
-
-			<div class="form-group col-sm-4">
-				<label for="CNF_Code">CNF Code</label>
-				<input type="number" class="form-control" step="any" name="CNF_Code" id="CNF_Code" placeholder="Enter The CNF Code" />
-			</div>
-				<div class="form-group col-sm-4">
-				<label for="Label_Source">Label Source</label>
-				<input type="text" class="form-control" name="Label_Source" id="Label_Source" placeholder="Enter the Source of the Label" />
-			</div>
 		
 			<div class="form-group col-sm-4">
 				<label for="Sales_Source">Sales Source</label>
 				<input type="text" class="form-control" name="Sales_Source" id="Sales_Source" placeholder="Enter the Source of the Sales" />
 			</div>
+			<div class="form-group col-sm-4">
+      <label for="dateFrom">
+     Collection Date Market Share From
+      </label>
+      <div class="">
+       <div class="input-group">
+     
+        <input class="form-control" id="dateFrom" name="dateFrom" placeholder="YYYY/MM/DD" type="text" value=""/>
+          <div class="input-group-addon" >
+         <i class="fa fa-calendar">
+         </i>
+        </div>
+	   </div>
+      </div>
+</div>
+
+<di class="row"> 
+				   <div class="form-group col-sm-4">
+      <label for="dateTo">
+   Collection Date Market Share To
+      </label>
+      <div class="">
+       <div class="input-group">
+      
+        <input class="form-control" id="dateTo" name="dateTo" placeholder="YYYY/MM/DD" type="text" value=""/>
+ <div class="input-group-addon">
+         <i class="fa fa-calendar">
+         </i>
+        </div>
+	   </div>
+      </div>
+</div>
+			<div class="form-group col-sm-4">
+				<label for="Dollar_Rank_From">Dollar Rank From</label>
+				<input type="number" step="any" class="form-control" name="Dollar_Rank_From" id="Dollar_Rank_From" placeholder="Enter The Dollar Rank" />
+			</div>
+
+			<div class="form-group col-sm-4">
+				<label for="Dollar_Rank_To">Dollar Rank to</label>
+				<input type="number" step="any" class="form-control" name="Dollar_Rank_To" id="Dollar_Rank_To" placeholder="Enter The Dollar Rank" />
+			</div>
+
+				<div class="form-group col-sm-4">
+				<label for="Sales_Comments">Market Share Comments</label>
+				<input type="text" class="form-control" name="Sales_Comments" id="Sales_Comments" placeholder="Enter the Comments of the Market Share" />
+			</div>
+
+		
+</div>
+		
+
 		</div>
-        		<div class="row">
+<div class="well" style="background-color:  	hsl(60, 100%, 98%);">	
+<div class="row">
 
+				<div class="form-group col-sm-4">
+				<label for="Sales_Description">Label UPC</label>
+				<input type="text" class="form-control" name="Label_UPC" id="Label_UPC" placeholder="Enter the Label UPC of the Label"/>
+			</div>
+			<div class="form-group col-sm-4">
+				<label for="Label_Description">Label Description</label>
+				<input type="text" class="form-control" name="Label_Description" id="Label_Description" placeholder="Enter The Label Description" />
+			</div>
+				<div class="form-group col-sm-4">
+				<label for="Label_Source">Label Source</label>
+				<input type="text" class="form-control" name="Label_Source" id="Label_Source" placeholder="Enter the Source of the Label" />
+			</div>
+				 			<div class="form-group col-sm-4">
+				<label for="Ingredients">Ingredients</label>
+				<input type="text" class="form-control" name="Ingredients" id="Ingredients" placeholder="Enter The Ingredients of the Label" />
+			</div>
 
-	<div class="form-group col-sm-4">
+				<div class="form-group col-sm-4">
       <label for="date1">
      Collection Date Label From
       </label>
@@ -298,7 +358,7 @@ if (!$result) {
 		
 				   <div class="form-group col-sm-4" >
       <label for="date2">
-    To
+   Collection Date Label To
       </label>
 
        <div class="input-group">
@@ -312,81 +372,32 @@ if (!$result) {
       </div>
      </div>
 	 			<div class="form-group col-sm-4">
-				<label for="Ingredients">Ingredients</label>
-				<input type="text" class="form-control" name="Ingredients" id="Ingredients" placeholder="Enter The Ingredients of the Label" />
-			</div>
-		</div>
-        		<div class="row">
-
-			<div class="form-group col-sm-4">
-      <label for="dateFrom">
-     Collection Date Market Share From
-      </label>
-      <div class="">
-       <div class="input-group">
-     
-        <input class="form-control" id="dateFrom" name="dateFrom" placeholder="YYYY/MM/DD" type="text" value=""/>
-          <div class="input-group-addon" >
-         <i class="fa fa-calendar">
-         </i>
-        </div>
-	   </div>
-      </div>
-     </div>
-		
-				   <div class="form-group col-sm-4" >
-      <label for="dateTo">
-    To
-      </label>
-      <div class="">
-       <div class="input-group">
-      
-        <input class="form-control" id="dateTo" name="dateTo" placeholder="YYYY/MM/DD" type="text" value=""/>
- <div class="input-group-addon">
-         <i class="fa fa-calendar">
-         </i>
-        </div>      
-	  </div>
-      </div>
-     </div>
-	 				<div class="form-group col-sm-4">
-				<label for="Cluster_Number">Cluster Number</label>
-				<input type="number" step="any" class="form-control" name="Cluster_Number" id="Cluster_Number" placeholder="Enter the Cluster Number" />
-			</div>
-
-		</div>
-        		<div class="row">
-					<div class="form-group col-sm-4">
-				<label for="Dollar_Rank_From">Dollar Rank From</label>
-				<input type="number" step="any" class="form-control" name="Dollar_Rank_From" id="Dollar_Rank_From" placeholder="Enter The Dollar Rank" />
-			</div>
-
-			<div class="form-group col-sm-4">
-				<label for="Dollar_Rank_To">Dollar Rank to</label>
-				<input type="number" step="any" class="form-control" name="Dollar_Rank_To" id="Dollar_Rank_To" placeholder="Enter The Dollar Rank" />
-			</div>
-
-		
-			<div class="form-group col-sm-4">
-				<label for="Comments">Product Comments</label>
-				<input type="text" class="form-control" name="Comments" id="Comments" placeholder="Enter the Comments of the Product" />
-			</div>
-		</div>
-        		<div class="row">
-
-			<div class="form-group col-sm-4">
 				<label for="Label_Comments">Label Comments</label>
 				<input type="text" class="form-control" name="Label_Comments" id="Label_Comments" placeholder="Enter The Comments of the Label" />
 			</div>
-				<div class="form-group col-sm-4">
-				<label for="Sales_Comments">Market Share Comments</label>
-				<input type="text" class="form-control" name="Sales_Comments" id="Sales_Comments" placeholder="Enter the Comments of the Market Share" />
+						<div class="form-group  "> 
+				<button style="margin-top: 28px; margin-right:20px; float:right;" type="submit" class="btn btn-default" name="search1">Search</button>
 			</div>
+</div>
 
-			<div class="form-group col-sm-4 "> 
-				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search1">Search</button>
-			</div>
+</div>
+
+
+
+		
+				
+
+
+
+		
+
+
+		
+
+
+
 		</div>
+
 
 	</form>
 
