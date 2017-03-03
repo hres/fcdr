@@ -410,32 +410,29 @@ if (!$result) {
 	<thead>
             <tr>
                 <th>Product Description</th>
-                <th>Label UPC</th>
-                <th>Market Share UPC</th>
-                <th>Label Description</th>
-                <th>Sales Description</th>
-                <th>Sales Year</th>
-
-                <th>Nielsen Category</th>
-                <th>Product Manufacturer</th>
-                <th>Product Brand</th>
-                <th>Classification Nunber</th>
+				<th>Product Brand</th>
+				<th>Product Manufacturer</th>
                 <th>Classification Name</th>
-				  <th>Classification Type</th>
+				<th>Classification Nunber</th>
+				<th>Classification Type</th>
                 <th>CNF Code</th>
-
-
-				<th>Label Source</th>
-                <th>Market Share Source</th>
-                <th>Ingredients</th>
-                <th>Label Collection Date</th>
-                <th>Market Share Collection Date</th>
-
-				<th>Dollar Rank</th>
                 <th>Cluster Number</th>
 				<th>Comments (Product)</th>
-				<th>Comments (Label)</th>
+                <th>Market Share UPC</th>
+                <th>Sales Description</th>
+                <th>Sales Year</th>
+                <th>Nielsen Category</th>
+               <th>Market Share Source</th>
+                <th>Market Share Collection Date</th>
+				<th>Dollar Rank</th>
 				<th>Comments (Market Share)</th>
+                <th>Label UPC</th>
+                <th>Label Description</th>
+				<th>Label Source</th> 
+                <th>Ingredients</th>
+                <th>Label Collection Date</th>
+				<th>Comments (Label)</th>
+
             </tr>
         </thead>
 		<tbody>
