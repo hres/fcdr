@@ -100,12 +100,12 @@
 <?php include 'header.php';?>
 
 <main role="main" property="mainContentOfPage" class="container">
-	<?php include("save_sales.php"); ?>
+	
 	<?php include("fill_sales.php"); ?>
 	<div class="container">
 		<section style="margin-top: 15px;" class="hidethis">
 			<h3>Market Share</h3>
-			<div id="confirm-message" class="alert alert-success alert-dismissable" style="display:none; margin-right:18px;" >
+			<div id="confirm-message"  style="display:none; color:green; margin-right:20px;" >
 			
 			</div>
 			<div id="confirm-message2" style="color:#FF0000;"></div>
@@ -117,7 +117,7 @@
 		</section>
 	</div>
 </main>
-
+<?php include("save_sales.php"); ?>
 <?php include 'footer.php';?>
 
 	</div>

@@ -118,10 +118,10 @@ EOQ;
 		echo "</script>\n";
 		echo "<script type=\"text/javascript\">\n";
 		echo "$(document).ready(function() {\n";
-		echo "	document.getElementById (\"confirm-message\").innerHTML += \"<h3><strong>Market Share Successfully updated.</strong></h3>\";\n";
+		echo "	document.getElementById (\"confirm-message\").innerHTML += \"<h3><strong>Market Share Successfully updated. Redirecting to the previous page..</strong></h3>\";\n";
 		echo "});\n";
 		echo "</script>\n";
-		//echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
+		echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
 	}
 }
 $conn->close();

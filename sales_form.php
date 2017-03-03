@@ -1,4 +1,4 @@
-				<form role="form" method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>?SalesID=<?php echo $_GET['SalesID']; ?>" id="vids-search-form1">
+				<form role="form" method="post" action="" id="vids-search-form1">
 					<div class="row">
 						<div class="form-group col-sm-4">
 							<label for="Sales_UPC" class="required">Sales UPC <strong class="required">(required)</strong></label>
