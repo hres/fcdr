@@ -287,16 +287,14 @@ EOQ;
 
 
 if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ctype_space($Classification_Number)){
-	
+
 			$stmt_classification = $conn->prepare("Select * From Classification Where Classification_Number= ?");		
 			$stmt_classification->bind_param("d", $Classification_Number);
 			$result_c = $stmt_classification->execute();
 			$stmt_classification->store_result();
 				if(($stmt_classification->num_rows)>0){
-					
-
-				$check_if_in = $conn->prepare("Select * From Product_Classification PC Where  ProductID = (Select Distinct ProductIDS from Sales where Sales_UPC = ?) AND PC.ClassificationID =(Select C.ClassificationID From Classification C where C.Classification_Number =?)");						
-				$check_if_in->bind_param("sd",  $Sales_UPC, $Classification_Number);		
+				$check_if_in = $conn->prepare("Select * From Product_Classification Where ClassificationID =(Select ClassificationID From Classification where Classification_Number =?)");						
+				$check_if_in->bind_param("d", $Classification_Number);		
 				$check_if_in_r = $check_if_in->execute();
 				$check_if_in->store_result();
 				if(($check_if_in->num_rows)>0){
@@ -304,8 +302,8 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 	
 						$classification_update->bind_param("ds",$Classification_Number, $Sales_UPC);
 						$classification_update_result = $classification_update->execute();
-						
-						}else{
+
+				}else{
 
 				
 
