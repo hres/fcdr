@@ -293,8 +293,21 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 			$result_c = $stmt_classification->execute();
 			$stmt_classification->store_result();
 				if(($stmt_classification->num_rows)>0){
-				$check_if_in = $conn->prepare("Select * From Product_Classification Where ClassificationID =(Select ClassificationID From Classification where Classification_Number =?)");						
-				$check_if_in->bind_param("d", $Classification_Number);		
+				//$check_if_in = $conn->prepare("Select * From Product_Classification Where ClassificationID =(Select ClassificationID From Classification where Classification_Number =?)");						
+			
+			
+					$check_if_in = $conn->prepare("
+				
+
+				  Select * From Product P  LEFT JOIN Product_Classification  PC ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ?
+  and P.ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)
+  
+				
+				");	
+			
+			
+			
+				$check_if_in->bind_param("ds", $Classification_Number, $Sales_UPC);		
 				$check_if_in_r = $check_if_in->execute();
 				$check_if_in->store_result();
 				if(($check_if_in->num_rows)>0){
@@ -504,8 +517,21 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 				if(($stmt_classification->num_rows)>0){
 
 
-				$check_if_in = $conn->prepare("Select * From Product_Classification Where ClassificationID =(Select ClassificationID From Classification where Classification_Number =?)");						
-				$check_if_in->bind_param("d", $Classification_Number);		
+				//$check_if_in = $conn->prepare("Select * From Product_Classification Where ClassificationID =(Select ClassificationID From Classification where Classification_Number =?)");						
+		
+		$check_if_in = $conn->prepare("
+				
+
+				  Select * From Product P  LEFT JOIN Product_Classification  PC ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ?
+  and P.ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Product_Grouping = ?)
+  
+				
+				");		
+				
+				
+				
+				
+				$check_if_in->bind_param("ds", $Classification_Number,$Product_Grouping);		
 				$check_if_in_r = $check_if_in->execute();
 				$check_if_in->store_result();
 				if(($check_if_in->num_rows)>0){
@@ -875,7 +901,9 @@ EOQ;
 							$stmt3->execute();
 
 
-}					
+}		
+
+			
 
 if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ctype_space($Classification_Number)){
 
@@ -884,15 +912,26 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 			$result_c = $stmt_classification->execute();
 			$stmt_classification->store_result();
 				if(($stmt_classification->num_rows)>0){
-				$check_if_in = $conn->prepare("Select * From Product_Classification Where ClassificationID =(Select ClassificationID From Classification where Classification_Number =?)");						
-				$check_if_in->bind_param("d", $Classification_Number);		
+
+		$check_if_in = $conn->prepare("
+				
+
+				  Select * From Product P  LEFT JOIN Product_Classification  PC ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ?
+  and P.ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)
+  
+				
+				");						
+				$check_if_in->bind_param("ds", $Classification_Number,$Sales_UPC);		
 				$check_if_in_r = $check_if_in->execute();
 				$check_if_in->store_result();
 				if(($check_if_in->num_rows)>0){
+
+				
 						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)");		
 	
 						$classification_update->bind_param("ds",$Classification_Number, $Sales_UPC);
 						$classification_update_result = $classification_update->execute();
+
 
 				}else{
 
@@ -911,8 +950,12 @@ EOQ;
 								$stmt = $conn->prepare($query2);
 									$stmt->bind_param("ds", $Classification_Number,$Sales_UPC);
 									$result2 = $stmt->execute();
+
+
 			}
 
+				}else{
+					//echo "Class doesnt exist";
 				}
 
 				}
