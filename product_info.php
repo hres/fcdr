@@ -6,10 +6,18 @@ $ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 
 
-	
-$query = "Select *   from $dbname.Product P LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID   where P.ProductID = '$ProductID';
-";
-	$result = mysqli_query($conn,$query);
+$query =<<<EOQ
+Select *   from $dbname.Product P
+LEFT JOIN Product_Classification PC ON P.ProductID = PC.ProductID
+LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID
+where P.ProductID = ?
+EOQ;
+
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i",$ProductID);
+ $stmt->execute();
+$result = $stmt->get_result();
+//	$result = mysqli_query($conn,$query);
 
 
 if (!$result) {
