@@ -295,7 +295,7 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 				if(($stmt_classification->num_rows)>0){
 				//$check_if_in = $conn->prepare("Select * From Product_Classification Where ClassificationID =(Select ClassificationID From Classification where Classification_Number =?)");						
 			
-			
+			//echo "YES EXIST";
 					$check_if_in = $conn->prepare("
 				
 
@@ -311,6 +311,7 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 				$check_if_in_r = $check_if_in->execute();
 				$check_if_in->store_result();
 				if(($check_if_in->num_rows)>0){
+				//	echo "YES EXIST 2";
 						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)");		
 	
 						$classification_update->bind_param("ds",$Classification_Number, $Sales_UPC);
@@ -913,6 +914,9 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 			$stmt_classification->store_result();
 				if(($stmt_classification->num_rows)>0){
 
+
+
+//echo "YESOO";
 		$check_if_in = $conn->prepare("
 				
 
@@ -923,9 +927,15 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 				");						
 				$check_if_in->bind_param("ds", $Classification_Number,$Sales_UPC);		
 				$check_if_in_r = $check_if_in->execute();
+
+				if($check_if_in_r){
+						//echo "OUI";
+				}else{
+//echo "NO";
+				}
 				$check_if_in->store_result();
 				if(($check_if_in->num_rows)>0){
-
+//echo "YESSOOO 2";
 				
 						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)");		
 	
@@ -935,6 +945,7 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 
 				}else{
 
+//echo "INSERT";
 				
 	$query2 =<<<EOQ
 
