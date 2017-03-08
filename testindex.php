@@ -10,17 +10,19 @@
 <hr>
 <?php
 include "connection.php";
-$query = "  alter table Product_Classification drop foreign key Product_Classification_ibfk_1";
+$query = " alter table Product_Classification drop foreign key Product_Classification_ibfk_1";
 $result = mysqli_query($conn, $query);
 
 if($result){
     echo "Yes Droped";
-    $query2 = "  alter table Product_Classification add Constraint ClassificationID FOREIGN KEY (ClassificationID) 
+    $query2 = " alter table Product_Classification add Constraint ClassificationID FOREIGN KEY (ClassificationID) 
   REFERENCES Classification (ClassificationID) ";
 $result2 = mysqli_query($conn, $query2);
 if($result2){
 echo "Yes Droped2";
 }
+}else{
+    echo "NOPE";
 }
 
 
