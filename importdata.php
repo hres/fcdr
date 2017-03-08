@@ -115,7 +115,7 @@
 <section style="margin-top: 15px;" class="hidethis">
 
 <div class="well" style="margin-right:2%;">
-<div style="margin-top:-37px;"><strong><h3>Select a CSV File (Maximum size: 1066 kb)</h3></strong></div>
+<div style="margin-top:-37px;"><strong><h3>Select a CSV File (Maximum size: 1999 kb)</h3></strong></div>
 
 <form method="post"  action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data" id="form1">
 	
@@ -209,7 +209,7 @@ console.log("in function");
 
     var file= input.files[0];
 	var size = file.size;
-	if (size > 1091584) {
+	if (size > 2046976) {
 		$('#upload-file-info2').html("<h2>File is too big<br/>Upload a smaller file.</h2>");
 	} else {
 		$('#upload-file-info2').html("<h2>Your data is being processed, this can take several minutes...</h2>");
