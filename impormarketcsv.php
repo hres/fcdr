@@ -299,8 +299,11 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 					$check_if_in = $conn->prepare("
 				
 
-				  Select * From Product P  LEFT JOIN Product_Classification  PC ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ?
-  and P.ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)
+  Select one.ClassificationID, two.ProductID FROM (
+SELECT C.ClassificationID, 'a' AS id from Classification C WHERE C.Classification_Number = ? 
+) AS one JOIN (
+Select ProductID, 'a' AS id from Product_Classification where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
+) AS two ON one.id = two.id 
   
 				
 				");	
@@ -325,10 +328,9 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 
 INSERT INTO Product_Classification (ClassificationID, ProductID)
 Select one.ClassificationID, two.ProductID FROM (
-SELECT C.ClassificationID, "a" AS id from Product P LEFT JOIN Product_Classification PC
-ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ? 
+SELECT C.ClassificationID,'a' AS id from Classification C  WHERE C.Classification_Number = ? 
 ) AS one JOIN (
-Select ProductID, "a" AS id from Product where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
+Select ProductID, 'a' AS id from Product where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
 ) AS two ON one.id = two.id 
 EOQ;
 
@@ -521,11 +523,12 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 				//$check_if_in = $conn->prepare("Select * From Product_Classification Where ClassificationID =(Select ClassificationID From Classification where Classification_Number =?)");						
 		
 		$check_if_in = $conn->prepare("
-				
+  Select one.ClassificationID, two.ProductID FROM (
+SELECT C.ClassificationID, 'a' AS id from Classification C WHERE C.Classification_Number = ? 
+) AS one JOIN (
+Select ProductID, 'a' AS id from Product_Classification where ProductID = (Select Distinct ProductIDS from Sales Where Product_Grouping = ?) 
+) AS two ON one.id = two.id 
 
-				  Select * From Product P  LEFT JOIN Product_Classification  PC ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ?
-  and P.ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Product_Grouping = ?)
-  
 				
 				");		
 				
@@ -548,10 +551,9 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 
 INSERT INTO Product_Classification (ClassificationID, ProductID)
 Select one.ClassificationID, two.ProductID FROM (
-SELECT C.ClassificationID, "a" AS id from Product P LEFT JOIN Product_Classification PC
-ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ? 
+SELECT C.ClassificationID, 'a' AS id from Classification C   WHERE C.Classification_Number = ? 
 ) AS one JOIN (
-Select ProductID, "a" AS id from Product where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
+Select ProductID, 'a' AS id from Product where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
 ) AS two ON one.id = two.id 
 EOQ;
 
@@ -917,25 +919,23 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 
 
 //echo "YESOO";
-		$check_if_in = $conn->prepare("
+		$check_if_in2 = $conn->prepare("
 				
 
-				  Select * From Product P  LEFT JOIN Product_Classification  PC ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ?
-  and P.ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)
+  Select one.ClassificationID, two.ProductID FROM (
+SELECT C.ClassificationID, 'a' AS id from Classification C WHERE C.Classification_Number = ? 
+) AS one JOIN (
+Select ProductID, 'a' AS id from Product_Classification where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
+) AS two ON one.id = two.id 
   
 				
 				");						
-				$check_if_in->bind_param("ds", $Classification_Number,$Sales_UPC);		
-				$check_if_in_r = $check_if_in->execute();
+				$check_if_in2->bind_param("ds", $Classification_Number,$Sales_UPC);		
+				$check_if_in_r = $check_if_in2->execute();
 
-				if($check_if_in_r){
-						//echo "OUI";
-				}else{
-//echo "NO";
-				}
-				$check_if_in->store_result();
-				if(($check_if_in->num_rows)>0){
-//echo "YESSOOO 2";
+				$check_if_in2->store_result();
+				if(($check_if_in2->num_rows)>0){
+
 				
 						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = (SELECT DISTINCT ProductIDS FROM Sales WHERE Sales_UPC = ?)");		
 	
@@ -945,16 +945,15 @@ if (!empty($Classification_Number) && strlen($Classification_Number) != 0 && !ct
 
 				}else{
 
-//echo "INSERT";
+
 				
 	$query2 =<<<EOQ
 
 INSERT INTO Product_Classification (ClassificationID, ProductID)
 Select one.ClassificationID, two.ProductID FROM (
-SELECT C.ClassificationID, "a" AS id from Product P LEFT JOIN Product_Classification PC
-ON P.ProductID = PC.ProductID LEFT JOIN Classification C ON PC.ClassificationID = C.ClassificationID  WHERE C.Classification_Number = ? 
+SELECT C.ClassificationID, 'a' AS id from Classification C WHERE C.Classification_Number = ? 
 ) AS one JOIN (
-Select ProductID, "a" AS id from Product where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
+Select ProductID, 'a' AS id from Product where ProductID = (Select Distinct ProductIDS from Sales Where Sales_UPC = ?) 
 ) AS two ON one.id = two.id 
 EOQ;
 
