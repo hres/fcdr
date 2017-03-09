@@ -72,6 +72,13 @@ $conn->autocommit(FALSE);
 			$Suggested_Direction                            = $data[17];
 			$Ingredients                                    = $data[18];
 			$Multipart                                      = $data[19];
+
+			$Multipart = strtolower($Multipart);
+			$Multipart = ($Multipart=='false'?'No':$Multipart);
+			$Multipart = ($Multipart=='true'?'Yes':$Multipart);
+
+
+			
 			$Nutrition_Fact_Table                           = $data[20];
 			$Common_Household_Measure                       = $data[21];
 			$Per_Serving_Amount                             = $data[22];

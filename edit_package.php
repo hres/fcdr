@@ -399,10 +399,26 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
             		<div class="form-group col-xs-6">
 	<label for="Multi_Part_Package" name="Multi_Part_Package">Multi-part Package?</label>
       <select class="form-control" id="Multi_Part_Package" style="width:540px" name="Multi_Part_Package">
-	  	<option value"<?PHP echo $row['Multipart']; ?>" selected><?PHP echo $row['Multipart']; ?></option>
-		  <option value=""></option>
-		 <option value="No">No</option>
-		 <option value="Yes">Yes</option>
+	  <option value="<?PHP echo $row['Multipart']; ?>" selected> <?PHP echo $row['Multipart']; ?></option>
+	  	<?PHP
+		  
+		   if($row['Multipart']==""){
+
+			   echo "  <option value=\"No\">No</option> <option value=\"Yes\">Yes</option>";
+		
+		   }elseif($row['Multipart']=="No"){
+  			echo "  <option value=\"\"></option> <option value=\"Yes\">Yes</option>";
+
+		   }else{
+
+  			echo "  <option value=\"\"></option> <option value=\"No\">No</option>";
+
+		   }
+		   
+		   
+		   
+		   ?>
+
       </select></div>
 		</div>
 	
