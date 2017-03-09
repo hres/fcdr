@@ -28,7 +28,6 @@ $fields_name = array(
                 'P.Manufacturer',
                 'P.Brand',
                 'C.Classification_Number',
-                'C.Classification_Name',
                 'C.Classification_Type',
                 'P.CNF_Code',
                 'PK.Source',
@@ -52,7 +51,6 @@ $inputs_fields_name = array(
                 'Manufacturer',
                 'Brand',
                 'Classification_Number',
-                'Classification_Name',
                 'Classification_Type',
                 'CNF_Code',
                 'Label_Source',
@@ -66,7 +64,7 @@ $inputs_fields_name = array(
                                 );
 
 
-for($i = 0; $i < 20; ++$i){
+for($i = 0; $i < 19; ++$i){
   if(isset($_POST[$inputs_fields_name[$i]]) && $_POST[$inputs_fields_name[$i]] != '' && !ctype_space($_POST[$inputs_fields_name[$i]])) {
             // create a new condition while escaping the value inputed by the user (SQL Injection) && !ctype_space($_POST[$field])
             $variable = $fields_name[$i];
