@@ -686,7 +686,7 @@ EOQ;
 
 
 }
-
+if (!empty($Product_Description) && strlen($Product_Description) != 0 && !ctype_space($Product_Description)){
 							$query_updatep =<<<EOQ
 UPDATE Product
    SET Description = ?, Last_Edited_By = ?
@@ -697,12 +697,12 @@ UPDATE Product
        )
 EOQ;
 							$stmt2p = $conn->prepare($query_updatep);
-							$stmt2p->bind_param("sss", $Label_Description,$Username,$Neilsen_Item_Rank_UPC);
+							$stmt2p->bind_param("sss", $Product_Description,$Username,$Neilsen_Item_Rank_UPC);
 
 							$stmt2p->execute();
 
 
-
+}
 
 
 
@@ -851,7 +851,7 @@ EOQ;
 	
 }
 
-
+if (!empty($Product_Description) && strlen($Product_Description) != 0 && !ctype_space($Product_Description)){
 
 							$query_update_nftt =<<<EOQ
 UPDATE Product
@@ -865,11 +865,11 @@ EOQ;
 
 
 							$stmt12 = $conn->prepare($query_update_nftt);
-							$stmt12->bind_param("sss", $Label_Description,$Username, $Label_UPC);
+							$stmt12->bind_param("sss", $Product_Description,$Username, $Label_UPC);
 
 							
 							$stmt12->execute();
-
+}
 
 
 $query_insert1 =<<<EOQ

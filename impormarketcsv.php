@@ -202,7 +202,7 @@ EOQ;
 				
 
 						$stmt = $conn->prepare($insert_query);
-						$stmt->bind_param("sssssddddddddsssisdddsssdsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[25],$Kilo_Rank,$Classification_Number,$Classification_Type,$Username, $Sales_UPC);
+						$stmt->bind_param("sssssddddddddsssisdddsssdsss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[23],$Kilo_Rank,$Classification_Number,$Classification_Type,$Username, $Sales_UPC);
 						$result_insert = $stmt->execute();
 						++$market_share_linked;
 			//			
@@ -215,6 +215,7 @@ EOQ;
 			
 			*/
 
+if (!empty($Product_Description) && strlen($Product_Description) != 0 && !ctype_space($Product_Description)){
 
 							$query_update =<<<EOQ
 UPDATE Product
@@ -227,8 +228,9 @@ SELECT DISTINCT ProductIDS
 EOQ;
 
 							$stmt = $conn->prepare($query_update);
-							$stmt->bind_param("sss", $Sales_Description,$Username, $Sales_UPC);
+							$stmt->bind_param("sss", $Product_Description,$Username, $Sales_UPC);
 							$result_update = $stmt->execute();
+}
 
 if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
 							$query_update1 =<<<EOQ
@@ -441,7 +443,7 @@ EOQ;
 							$input4 = "Record : $Record, $Sales_Description";
 							$linked_sales->push($input4);
 }
-						
+if (!empty($Product_Description) && strlen($Product_Description) != 0 && !ctype_space($Product_Description)){						
 			
 								$query_update =<<<EOQ
 UPDATE Product
@@ -454,9 +456,9 @@ UPDATE Product
 EOQ;
 
 								$stmt = $conn->prepare($query_update);
-								$stmt->bind_param("sss", $Sales_Description,$Username, $Product_Grouping);
+								$stmt->bind_param("sss", $Product_Description,$Username, $Product_Grouping);
 								$result_update = $stmt->execute();
-
+}
 
 if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
 								
@@ -838,7 +840,7 @@ EOQ;
 							$result_insert = $stmt->execute();
 
 			/*Update other fields*/
-
+if (!empty($Product_Description) && strlen($Product_Description) != 0 && !ctype_space($Product_Description)){	
 							$query_update =<<<EOQ
 UPDATE Product
    SET Description = ?, Last_Edited_By = ?
@@ -850,9 +852,9 @@ SELECT DISTINCT ProductIDS
 EOQ;
 
 							$stmt = $conn->prepare($query_update);
-							$stmt->bind_param("sss", $Sales_Description,$Username, $Sales_UPC);
+							$stmt->bind_param("sss", $Product_Description,$Username, $Sales_UPC);
 							$result_update = $stmt->execute();
-
+}
 if (!empty($Brand) && strlen($Brand) != 0 && !ctype_space($Brand)){
 							$query_update1 =<<<EOQ
 UPDATE Product
