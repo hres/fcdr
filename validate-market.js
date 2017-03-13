@@ -1,9 +1,10 @@
 $.validator.addMethod( "myDateFormat", function(value, element) {
 	var re = /^\d{4}\/\d{1,2}\/\d{1,2}$/;
+	var re3 = /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
 
 
 	// valid if optional and empty OR if it passes the regex test
-	return (this.optional(element) && value == ""  || re.test(value));// || re.test(value);
+	return (this.optional(element) && value == ""  || re3.test(value)) || re.test(value);
 });
 
 $(document).ready(function() {
