@@ -1007,7 +1007,12 @@ $conn->close();
 <div class="well">
 <?php echo " ". $row['Health_Claim'] ."";  ?></div>
 </section>
-		
+
+<section>
+<strong>Comments</strong>
+<div class="well">
+<?php echo " ". $row['Comments'] ."";  ?></div>
+</section>		
 <table style="width:100%" class="table2">
   <tr>
     <th>Source</th>
