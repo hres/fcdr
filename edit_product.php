@@ -1,6 +1,7 @@
 
 
 <?php include 'session.php';?>
+<?php include 'Check_ProductID.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -191,7 +192,13 @@
 	</form>
 	</div>
 	<?php include("save_product.php"); ?>
-	<br>	 <?php echo " <a class=\"btn btn-default\" href=view_product.php?ProductID=" . $_GET['ProductID'] . ">Back</a>";  ?>
+	<br>	 <?php
+
+	 echo " <a class=\"btn btn-default\" href=view_product.php?ProductID=" . $_GET['ProductID'] . ">Back</a>"; 
+	 
+
+	 
+	  ?>
 
 </section>
 
