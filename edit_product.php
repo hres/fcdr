@@ -104,8 +104,9 @@
 		<div class="container" >
 
 <?php
-if (count($sanitaion_errors) != 0) {
-	foreach ($error in $sanitaion_errors) {
+if (isset($_POST['search'])) {
+	if (count($sanitaion_errors) != 0) {
+		foreach ($error in $sanitaion_errors) {
 ?>
 
 <div class="alert alert-danger">
@@ -113,6 +114,7 @@ if (count($sanitaion_errors) != 0) {
 </div>
 
 <?php
+		}
 	}
 }
 ?>
