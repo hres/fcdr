@@ -122,6 +122,8 @@ if (isset($_POST['search'])) {
 			</div>";
 <?php
 		}
+	} else {
+		include("save_product.php");
 	}
 }
 ?>
@@ -129,8 +131,6 @@ if (isset($_POST['search'])) {
 <section style="margin-top: 15px;" class="hidethis">
 <h3>Edit Product</h3>
 <div id="confirm-message" style="color:#008000;"></div>
-
-<?php include("save_product.php"); ?>
 
 <div class="well" style="margin-right:2%;">
 	<form role="form" method="post" action="#" id="vids-search-form">
