@@ -1,28 +1,28 @@
 <?php
 if (isset($_POST['search'])) {
 
-	if (!filter_var($_POST["Classification_Name"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+	if (!filter_var(!empty($_POST["Classification_Name"])   && $_POST["Classification_Name"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
 		$sanitation_errors[] = "Classification_Name";
 	}
-	if (!filter_var($_POST["Classification_Number"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+	if (!filter_var(!empty($_POST["Classification_Number"]) && $_POST["Classification_Number"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
 		$sanitation_errors[] = "Classification_Number";
 	}
-	if (!filter_var($_POST["Manufacturer"], FILTER_SANITIZE_STRING)) {
+	if (!filter_var(!empty($_POST["Manufacturer"])          && $_POST["Manufacturer"], FILTER_SANITIZE_STRING)) {
 		$sanitation_errors[] = "Manufacturer";
 	}
-	if (!filter_var($_POST["Brand"], FILTER_SANITIZE_STRING)) {
+	if (!filter_var(!empty($_POST["Brand"])                 && $_POST["Brand"], FILTER_SANITIZE_STRING)) {
 		$sanitation_errors[] = "Brand";
 	}
-	if (!filter_var($_POST["CNF_CODE"], FILTER_SANITIZE_NUMBER_FLOAT)) {
+	if (!filter_var(!empty($_POST["CNF_CODE"])              && $_POST["CNF_CODE"], FILTER_SANITIZE_NUMBER_FLOAT)) {
 		$sanitation_errors[] = "CNF_CODE";
 	}
-	if (!filter_var($_POST["Cluster_Number"], FILTER_SANITIZE_NUMBER_INT)) {
+	if (!filter_var(!empty($_POST["Cluster_Number"])        && $_POST["Cluster_Number"], FILTER_SANITIZE_NUMBER_INT)) {
 		$sanitation_errors[] = "Cluster_Number";
 	}
-	if (!filter_var($_POST["Description"], FILTER_SANITIZE_STRING)) {
+	if (!filter_var(!empty($_POST["Description"])           && $_POST["Description"], FILTER_SANITIZE_STRING)) {
 		$sanitation_errors[] = "Description";
 	}
-	if (!filter_var($_POST["Comments"], FILTER_SANITIZE_STRING)) {
+	if (!filter_var(!empty($_POST["Comments"])              && $_POST["Comments"], FILTER_SANITIZE_STRING)) {
 		$sanitation_errors[] = "Comments";
 	}
 	if (!filter_var($_GET["ProductID"], FILTER_SANITIZE_NUMBER_INT)) {
