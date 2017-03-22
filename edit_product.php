@@ -111,7 +111,7 @@ if (isset($_POST['search'])) {
 		foreach ($sanitation_errors as $error) {
 ?>
 			<div class="alert alert-danger">
-				<strong>Error!</strong> Please correct the following field: <?php $error;?>
+				<strong>Error!</strong> Please correct the following field: <?php echo $error;?>
 			</div>";
 <?php
 		}
