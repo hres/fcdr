@@ -109,10 +109,10 @@ if (isset($_POST['search'])) {
 ?>
 
 <div class="alert alert-danger">
-<strong>Error!</strong> Please correct the following field: <?php echo $error;?>
+<strong>Error!</strong> Please correct the following field: <? echo $error;?>
 </div>
 
-<?php
+<?
 		}
 	}
 }
