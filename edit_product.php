@@ -130,6 +130,8 @@ if (isset($_POST['search'])) {
 <h3>Edit Product</h3>
 <div id="confirm-message" style="color:#008000;"></div>
 
+<?php include("save_product.php"); ?>
+
 <div class="well" style="margin-right:2%;">
 	<form role="form" method="post" action="#" id="vids-search-form">
 	
@@ -209,7 +211,7 @@ if (isset($_POST['search'])) {
 		
 	</form>
 	</div>
-	<?php include("save_product.php"); ?>
+	<?php // include("save_product.php"); ?>
 	<br>	 <?php
 
 	 echo " <a class=\"btn btn-default\" href=view_product.php?ProductID=" . $_GET['ProductID'] . ">Back</a>"; 
