@@ -2,31 +2,31 @@
 if (isset($_POST['search'])) {
 
 	if (!filter_var($_POST["Classification_Name"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
-		$sanitaion_errors[] = "Classification_Name";
+		$sanitation_errors[] = "Classification_Name";
 	}
 	if (!filter_var($_POST["Classification_Number"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
-		$sanitaion_errors[] = "Classification_Number";
+		$sanitation_errors[] = "Classification_Number";
 	}
 	if (!filter_var($_POST["Manufacturer"], FILTER_SANITIZE_STRING)) {
-		$sanitaion_errors[] = "Manufacturer";
+		$sanitation_errors[] = "Manufacturer";
 	}
 	if (!filter_var($_POST["Brand"], FILTER_SANITIZE_STRING)) {
-		$sanitaion_errors[] = "Brand";
+		$sanitation_errors[] = "Brand";
 	}
 	if (!filter_var($_POST["CNF_CODE"], FILTER_SANITIZE_NUMBER_FLOAT)) {
-		$sanitaion_errors[] = "CNF_CODE";
+		$sanitation_errors[] = "CNF_CODE";
 	}
 	if (!filter_var($_POST["Cluster_Number"], FILTER_SANITIZE_NUMBER_INT)) {
-		$sanitaion_errors[] = "Cluster_Number";
+		$sanitation_errors[] = "Cluster_Number";
 	}
 	if (!filter_var($_POST["Description"], FILTER_SANITIZE_STRING)) {
-		$sanitaion_errors[] = "Description";
+		$sanitation_errors[] = "Description";
 	}
 	if (!filter_var($_POST["Comments"], FILTER_SANITIZE_STRING)) {
-		$sanitaion_errors[] = "Comments";
+		$sanitation_errors[] = "Comments";
 	}
 	if (!filter_var($_GET["ProductID"], FILTER_SANITIZE_NUMBER_INT)) {
-		$sanitaion_errors[] = "ProductID";
+		$sanitation_errors[] = "ProductID";
 	}
 }
 
