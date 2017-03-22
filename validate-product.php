@@ -1,5 +1,4 @@
 <?php
-$sanitation_errors = array();
 if (isset($_POST['search'])) {
 
 	if (!filter_var($_POST["Classification_Name"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
