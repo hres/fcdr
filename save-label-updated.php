@@ -23,9 +23,9 @@ $_POST['Calculated'] = (empty($_POST['Calculated']) && strlen($_POST['Calculated
 			$_POST['Label_Description'],
 			$_POST['Ingredients'],
 			$_POST['Common_Measure'],
-			$_POST['PPD_Per_Serving_Amount'],
+			preg_replace('/[^\d.]/', '', $_POST['PPD_Per_Serving_Amount']),
 			$_POST['PPD_Per_Serving_UofM'],
-			$_POST['Per_Serving_Amount'],
+			preg_replace('/[^\d.]/', '', $_POST['Per_Serving_Amount']),
 			$_POST['Per_Serving_Unit'],
 			$_POST['Source'],
 			$_POST['Collection_Date'],
@@ -41,11 +41,11 @@ $_POST['Calculated'] = (empty($_POST['Calculated']) && strlen($_POST['Calculated
 			$_POST['Country'],
 			$_POST['Package_Size'],
 			$_POST['Package_Size_UofM'],
-			$_POST['Number_Of_Units'],
+			preg_replace('/[^\d.]/', '', $_POST['Number_Of_Units']),
 			$_POST['Storage_Type'],
 			$_POST['Product_Description'],
-			$_POST['Per_Serving_Amount_In_Grams'],
-			$_POST['Per_Serving_Amount_In_Grams_PPD'],
+			preg_replace('/[^\d.]/', '', $_POST['Per_Serving_Amount_In_Grams']),
+			preg_replace('/[^\d.]/', '', $_POST['Per_Serving_Amount_In_Grams_PPD']),
 			$_POST['Storage_Statement'],
 			$_POST['Multi_Part_Package'],
 			$_POST['Calculated'],
@@ -167,10 +167,17 @@ UPDATE Package AS P
 				PC.Daily_Value = ?
 			WHERE PC.PackageID = ? AND PC.ComponentID = ? AND PPD = ?
 EOQ;
+
+							// number row[1]
+							// number row[3]
+
 							for ($row = 0; $row < 47; $row++) { //empty($as_prepared[$row][1]) && strlen($as_prepared[$row][1]) == 0
 								$stmt = $conn->prepare($query_insert_asprepred);
 								$as_prepared[$row][1] =  (empty($as_prepared[$row][1]) && strlen($as_prepared[$row][1]) == 0 ?NULL :$as_prepared[$row][1]);
 								$as_prepared[$row][3] = (empty($as_prepared[$row][3]) && strlen($as_prepared[$row][3]) == 0 ?NULL :$as_prepared[$row][3]);
+
+								$as_prepared[$row][1] = preg_replace('/[^\d.]/', '', $as_prepared[$row][1]));
+								$as_prepared[$row][3] = preg_replace('/[^\d.]/', '', $as_prepared[$row][3]));
 								
 								$stmt->bind_param("dsdiis",$as_prepared[$row][1],$as_prepared[$row][2],$as_prepared[$row][3],$packageID,$as_prepared[$row][0],$as_prepared[$row][4]);
 								$results = $stmt->execute();
@@ -257,6 +264,9 @@ EOQ;
 								
 								$as_sold[$row1][1] =  (empty($as_sold[$row1][1]) && strlen($as_sold[$row1][1]) == 0 ?NULL :$as_sold[$row1][1]);
 								$as_sold[$row1][3] =  (empty($as_sold[$row1][3]) && strlen($as_sold[$row1][3]) == 0 ?NULL :$as_sold[$row1][3]);
+
+								$as_sold[$row1][1] = preg_replace('/[^\d.]/', '', $as_sold[$row1][1]));
+								$as_sold[$row1][3] = preg_replace('/[^\d.]/', '', $as_sold[$row1][3]));
 
 								$stmt->bind_param("dsdiii",$as_sold[$row1][1],$as_sold[$row1][2],$as_sold[$row1][3],$packageID,$as_sold[$row1][0],$as_sold[$row1][4]);
 								$results = $stmt->execute();
