@@ -104,12 +104,23 @@
 		<div class="container" >
 
 <?php
+// if (isset($_POST['search'])) {
+	// if (count($sanitation_errors) != 0) {
+		// foreach ($sanitation_errors as $error) {
+			// echo "<div class=\"alert alert-danger\">";
+			// echo "<strong>Error!</strong> Please correct the following field: $error";
+			// echo "</div>";
+		// }
+	// }
+// }
 if (isset($_POST['search'])) {
 	if (count($sanitation_errors) != 0) {
 		foreach ($sanitation_errors as $error) {
-			echo "<div class=\"alert alert-danger\">";
-			echo "<strong>Error!</strong> Please correct the following field: $error";
-			echo "</div>";
+?>
+			<div class="alert alert-danger">
+				<strong>Error!</strong> Please correct the following field: <?php $error;?>
+			</div>";
+<?php
 		}
 	}
 }
