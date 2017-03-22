@@ -105,8 +105,8 @@
 
 <?php
 if (isset($_POST['search'])) {
-	if (count($sanitaion_errors) != 0) {
-		foreach ($error in $sanitaion_errors) {
+	if (count($sanitation_errors) != 0) {
+		foreach ($error in $sanitation_errors) {
 			echo "<div class=\"alert alert-danger\">";
 			echo "<strong>Error!</strong> Please correct the following field: $error";
 			echo "</div>";
