@@ -10,7 +10,9 @@ $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 		if(isset($_POST['search'])) {
 
+			echo '<pre>\n';
 			var_export($_POST);
+			echo '</pre>\n';
 
 	$_POST['Cluster_Number'] =  (empty($_POST['Cluster_Number']) && strlen($_POST['Cluster_Number']) == 0 ?NULL :(int)$_POST['Cluster_Number']);		
 	$_POST['CNF_CODE'] =  (empty($_POST['CNF_CODE']) && strlen($_POST['CNF_CODE']) == 0 ?NULL :(int)$_POST['CNF_CODE']);	
