@@ -1,10 +1,26 @@
 <?php
-if(isset($_POST['search'])) {
-			echo '<pre>';
-			var_dump($_POST);
-			echo '</pre>';
+if (isset($_POST['search'])) {
+
+ echo filter_var($_POST["Classification_Name"]     , FILTER_SANITIZE_NUMBER_FLOAT);
+ echo filter_var($_POST["Classification_Number"]   , FILTER_SANITIZE_NUMBER_FLOAT);
+ echo filter_var($_POST["Manufacturer"]            , FILTER_SANITIZE_STRING);
+ echo filter_var($_POST["Brand"]                   , FILTER_SANITIZE_STRING);
+ echo filter_var($_POST["CNF_CODE"]                , FILTER_SANITIZE_NUMBER_FLOAT);
+ echo filter_var($_POST["Cluster_Number"]          , FILTER_SANITIZE_NUMBER_INT);
+ echo filter_var($_POST["Description"]             , FILTER_SANITIZE_STRING);
+ echo filter_var($_POST["Comments"]                , FILTER_SANITIZE_STRING);
+ echo filter_var($_GET ["ProductID"]               , FILTER_SANITIZE_NUMBER_INT);
+
+	echo '<pre>';
+	var_dump($_POST);
+	echo '</pre>';
+}
 
 /*
+
+FILTER_SANITIZE_NUMBER_FLOAT : CNF_CODE
+FILTER_SANITIZE_NUMBER_INT   : ProductID, Cluster_Number
+FILTER_SANITIZE_STRING       : Description, Brand, Manufacturer, Comments
 
 array (
   'Classification_Name'   => '',
@@ -46,7 +62,16 @@ Connection: T(MYSQL)  H(10.148.178.247)  O(mysql)  D(fcdr)   at 08:44
 | Last_Edited_By | text        | YES  |     | NULL                |                |
 +----------------+-------------+------+-----+---------------------+----------------+
 
+UPDATE Product
+   SET Description    = ?,
+       Brand          = ?,
+       Manufacturer   = ?,
+       Comments       = ?,
+       CNF_CODE       = ?,
+       Cluster_Number = ?,
+       Last_Edited_By = ?
+ WHERE ProductID      = ?
+
 */
 
-}
 ?>
