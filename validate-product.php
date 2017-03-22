@@ -1,68 +1,34 @@
 <?php
+$sanitation_errors = array();
 if (isset($_POST['search'])) {
 
-	echo '<pre>';
 	if (!filter_var($_POST["Classification_Name"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
-		echo "fails!";
-	} else {
-		echo filter_var($_POST["Classification_Name"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$sanitaion_errors[] = "Classification_Name";
 	}
-	echo "\n";
 	if (!filter_var($_POST["Classification_Number"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
-		echo "fails!";
-	} else {
-		echo filter_var($_POST["Classification_Number"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$sanitaion_errors[] = "Classification_Number";
 	}
-	echo "\n";
 	if (!filter_var($_POST["Manufacturer"], FILTER_SANITIZE_STRING)) {
-		echo "fails!";
-	} else {
-		echo filter_var($_POST["Manufacturer"], FILTER_SANITIZE_STRING);
+		$sanitaion_errors[] = "Manufacturer";
 	}
-	echo "\n";
 	if (!filter_var($_POST["Brand"], FILTER_SANITIZE_STRING)) {
-		echo "fails!";
-	} else {
-		echo filter_var($_POST["Brand"], FILTER_SANITIZE_STRING);
+		$sanitaion_errors[] = "Brand";
 	}
-	echo "\n";
 	if (!filter_var($_POST["CNF_CODE"], FILTER_SANITIZE_NUMBER_FLOAT)) {
-		echo "fails!";
-	} else {
-		echo filter_var($_POST["CNF_CODE"], FILTER_SANITIZE_NUMBER_FLOAT);
+		$sanitaion_errors[] = "CNF_CODE";
 	}
-	echo "\n";
 	if (!filter_var($_POST["Cluster_Number"], FILTER_SANITIZE_NUMBER_INT)) {
-		echo "fails!";
-	} else {
-		echo filter_var($_POST["Cluster_Number"], FILTER_SANITIZE_NUMBER_INT);
+		$sanitaion_errors[] = "Cluster_Number";
 	}
-	echo "\n";
 	if (!filter_var($_POST["Description"], FILTER_SANITIZE_STRING)) {
-		echo "fails!";
-	} else {
-		echo filter_var($_POST["Description"], FILTER_SANITIZE_STRING);
+		$sanitaion_errors[] = "Description";
 	}
-	echo "\n";
 	if (!filter_var($_POST["Comments"], FILTER_SANITIZE_STRING)) {
-		echo "fails!";
-	} else {
-		echo filter_var($_POST["Comments"], FILTER_SANITIZE_STRING);
+		$sanitaion_errors[] = "Comments";
 	}
-	echo "\n";
-	if (!filter_var($_GET ["ProductID"], FILTER_SANITIZE_NUMBER_INT)) {
-		echo "fails!";
-	} else {
-		echo filter_var($_GET ["ProductID"], FILTER_SANITIZE_NUMBER_INT);
+	if (!filter_var($_GET["ProductID"], FILTER_SANITIZE_NUMBER_INT)) {
+		$sanitaion_errors[] = "ProductID";
 	}
-	echo "\n";
-	echo '</pre>';
-
-	echo '<pre>';
-	var_dump($_POST);
-	print_r(filter_list());
-	echo '</pre>';
-
 }
 
 /*
