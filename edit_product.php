@@ -1,7 +1,6 @@
-
-
 <?php include 'session.php';?>
 <?php include 'Check_ProductID.php';?>
+<?php include 'validate-product.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>

@@ -1,5 +1,4 @@
 <?php include 'connection.php';?>
-<?php include 'validate-product.php';?>
 
 <?php
 
