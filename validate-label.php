@@ -11,20 +11,20 @@
 			//$_POST['Per_Serving_Amount_In_Grams_PPD'] = preg_replace('/[^\d.]/', '', $_POST['Per_Serving_Amount_In_Grams_PPD']);
 
 
-	if (!filter_var($_POST["Per_Serving_Amount"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+	if (!filter_var($_POST["Per_Serving_Amount"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
 		$sanitation_errors[] = "Per Serving Amount";
 	}
 
-    if (!empty($_POST["PPD_Per_Serving_Amount"])           && !filter_var($_POST["PPD_Per_Serving_Amount"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+    if (!empty($_POST["PPD_Per_Serving_Amount"])           && !filter_var($_POST["PPD_Per_Serving_Amount"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
 		$sanitation_errors[] = "PPD Per Serving Amount";
 	}
 
-    	if (!empty($_POST["Per_Serving_Amount_In_Grams"])           && !filter_var($_POST["Per_Serving_Amount_In_Grams"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+    	if (!empty($_POST["Per_Serving_Amount_In_Grams"])           && !filter_var($_POST["Per_Serving_Amount_In_Grams"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
 		$sanitation_errors[] = "Per Serving Amount In Grams";
 	}
 
 
-    	if (!empty($_POST["Per_Serving_Amount_In_Grams_PPD"])           && !filter_var($_POST["Per_Serving_Amount_In_Grams_PPD"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+    	if (!empty($_POST["Per_Serving_Amount_In_Grams_PPD"])           && !filter_var($_POST["Per_Serving_Amount_In_Grams_PPD"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
 		$sanitation_errors[] = "Per Serving Amount In Grams PPD";
 	}
     	if (!empty($_POST["Number_Of_Units"])           && !filter_var($_POST["Number_Of_Units"], FILTER_SANITIZE_NUMBER_INT)) {
