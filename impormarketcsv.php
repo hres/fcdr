@@ -1,14 +1,14 @@
 <?php include 'connection.php';?>
 <?php
 
+	    if (!empty($_POST['token'])) {
+   
+  $_POST['token'] =  rtrim($_POST['token']);
+ $_SESSION['token'] =   rtrim($_SESSION['token']);
+    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+         // Proceed to process the form data
 
- error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
-	
-/* 	$fname = $_FILES['file_save']['tmp_name']; 
-	$handle = fopen($fname, "r");
-	 $filesize = filesize($fname); */
 
 		$allowed =  array('csv');		
 		$tmpfname = $_FILES['file_save']['tmp_name'];
@@ -1178,7 +1178,7 @@ $count = $count -1;
 		}
 
 
-}
+}}}
 	  fclose($handle); 
   mysqli_close($conn);
 

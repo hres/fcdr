@@ -1,4 +1,7 @@
 <?php include 'session.php';?>
+<?php include 'Check_SalesID.php';?>
+<?php $sanitation_errors = array();?>
+<?php include 'validate-sales.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -98,10 +101,25 @@
 <body class="wide comments example">
 
 <?php include 'header.php';?>
-
+<?php include("fill_sales.php"); ?>
 <main role="main" property="mainContentOfPage" class="container">
 	
-	<?php include("fill_sales.php"); ?>
+	<?php
+if (isset($_POST['search'])) {
+	if (count($sanitation_errors) == 0) {
+		include("save_sales.php");
+	} else {
+		foreach ($sanitation_errors as $error) {
+?>
+			<div class="alert alert-danger">
+				<strong>Error!</strong> Please correct the following field: <strong><?php echo $error;?></strong>
+			</div>
+<?php
+		}
+	}
+}
+?>
+	
 	<div class="container">
 		<section style="margin-top: 15px;" class="hidethis">
 			<h3>Market Share</h3>
@@ -117,7 +135,6 @@
 		</section>
 	</div>
 </main>
-<?php include("save_sales.php"); ?>
 <?php include 'footer.php';?>
 
 	</div>

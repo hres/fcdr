@@ -10,35 +10,54 @@ $Username = $_SESSION['currentuser'];
 
 if (isset($_POST['search'])) {
 
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
+	    if (!empty($_POST['token'])) {
+   
+ $_POST['token'] =  rtrim($_POST['token']);
+ $_SESSION['token'] =   rtrim($_SESSION['token']);
+    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+         // Proceed to process the form data
 
 
-	$_POST['Collection_Date']=  (empty($_POST['Collection_Date']) && strlen($_POST['Collection_Date']) == 0 ?NULL :$_POST['Collection_Date']);
+		$_POST['Kilo_Share'] = preg_replace('/[^\d.]/', '', $_POST['Kilo_Share']);
+		$_POST['Kilo_Rank'] = preg_replace('/[^\d.]/', '', $_POST['Kilo_Rank']);
+		$_POST['Dollar_Volume'] = preg_replace('/[^\d.]/', '', $_POST['Dollar_Volume']);
+		$_POST['Kilo_Vol'] = preg_replace('/[^\d.]/', '', $_POST['Kilo_Vol']);
+
+		$_POST['Dollar_Rank'] = preg_replace('/[^\d.]/', '', $_POST['Dollar_Rank']);
+		$_POST['Dollar_Volume_PerCentage_Change'] = preg_replace('/[^\d.]/', '', $_POST['Dollar_Volume_PerCentage_Change']);
+		$_POST['Kilo_Volume_Percent_Change'] = preg_replace('/[^\d.]/', '', $_POST['Kilo_Volume_Percent_Change']);
+		$_POST['Average_AC_Dist'] =preg_replace('/[^\d.]/', '', $_POST['Average_AC_Dist']);
+		$_POST['Average_Retail_Price'] = preg_replace('/[^\d.]/', '', $_POST['Average_Retail_Price']);
+		$_POST['Dollar_Volume_Total'] = preg_replace('/[^\d.]/', '', $_POST['Dollar_Volume_Total']);
+		$_POST['Kilo_Volume_Total'] = preg_replace('/[^\d.]/', '', $_POST['Kilo_Volume_Total']);
+		$_POST['Dollar_Share'] = preg_replace('/[^\d.]/', '', $_POST['Dollar_Share']);
+		
+	$_POST['Kilo_Share']=  (empty($_POST['Kilo_Share']) && strlen($_POST['Kilo_Share']) == 0 ?NULL :$_POST['Kilo_Share']);
+	$_POST['Kilo_Rank']=  (empty($_POST['Kilo_Rank']) && strlen($_POST['Kilo_Rank']) == 0 ?NULL :$_POST['Kilo_Rank']);
 	$_POST['Dollar_Volume']=  (empty($_POST['Dollar_Volume']) && strlen($_POST['Dollar_Volume']) == 0 ?NULL :$_POST['Dollar_Volume']);
 	$_POST['Kilo_Vol']=  (empty($_POST['Kilo_Vol']) && strlen($_POST['Kilo_Vol']) == 0 ?NULL :$_POST['Kilo_Vol']);
-	$_POST['Sales_Year']=  (empty($_POST['Sales_Year']) && strlen($_POST['Sales_Year']) == 0 ?NULL :$_POST['Sales_Year']);
 	$_POST['Dollar_Rank']=  (empty($_POST['Dollar_Rank']) && strlen($_POST['Dollar_Rank']) == 0 ?NULL :$_POST['Dollar_Rank']);
 	$_POST['Dollar_Volume_PerCentage_Change']=  (empty($_POST['Dollar_Volume_PerCentage_Change']) && strlen($_POST['Dollar_Volume_PerCentage_Change']) == 0 ?NULL :$_POST['Dollar_Volume_PerCentage_Change']);
 	$_POST['Kilo_Volume_Percent_Change']=  (empty($_POST['Kilo_Volume_Percent_Change']) && strlen($_POST['Kilo_Volume_Percent_Change']) == 0 ?NULL :$_POST['Kilo_Volume_Percent_Change']);
 	$_POST['Average_AC_Dist']=  (empty($_POST['Average_AC_Dist']) && strlen($_POST['Average_AC_Dist']) == 0 ?NULL :$_POST['Average_AC_Dist']);
 	$_POST['Average_Retail_Price']=  (empty($_POST['Average_Retail_Price']) && strlen($_POST['Average_Retail_Price']) == 0 ?NULL :$_POST['Average_Retail_Price']);
 	$_POST['Dollar_Volume_Total']=  (empty($_POST['Dollar_Volume_Total']) && strlen($_POST['Dollar_Volume_Total']) == 0 ?NULL :$_POST['Dollar_Volume_Total']);
-
 	$_POST['Kilo_Volume_Total']=  (empty($_POST['Kilo_Volume_Total']) && strlen($_POST['Kilo_Volume_Total']) == 0 ?NULL :$_POST['Kilo_Volume_Total']);
+
+	$_POST['Collection_Date']=  (empty($_POST['Collection_Date']) && strlen($_POST['Collection_Date']) == 0 ?NULL :$_POST['Collection_Date']);
+	$_POST['Sales_Year']=  (empty($_POST['Sales_Year']) && strlen($_POST['Sales_Year']) == 0 ?NULL :$_POST['Sales_Year']);
+	
 	$_POST['Dollar_Share']=  (empty($_POST['Dollar_Share']) && strlen($_POST['Dollar_Share']) == 0 ?NULL :$_POST['Dollar_Share']);
 	$_POST['Cluster_Number']=  (empty($_POST['Cluster_Number']) && strlen($_POST['Cluster_Number']) == 0 ?NULL :$_POST['Cluster_Number']);
 
 	$_POST['Product_Grouping']=  (empty($_POST['Product_Grouping']) && strlen($_POST['Product_Grouping']) == 0 ?NULL :$_POST['Product_Grouping']);
-	$_POST['Kilo_Share']=  (empty($_POST['Kilo_Share']) && strlen($_POST['Kilo_Share']) == 0 ?NULL :$_POST['Kilo_Share']);
-	$_POST['Kilo_Rank']=  (empty($_POST['Kilo_Rank']) && strlen($_POST['Kilo_Rank']) == 0 ?NULL :$_POST['Kilo_Rank']);
 	$_POST['Classification_Type']=  (empty($_POST['Classification_Type']) && strlen($_POST['Classification_Type']) == 0 ?NULL :$_POST['Classification_Type']);
 	$_POST['Classification_Number']=  (empty($_POST['Classification_Number']) && strlen($_POST['Classification_Number']) == 0 ?NULL :$_POST['Classification_Number']);
 
 	$param = array(
 
-		preg_replace('/[^\d.]/', '', $_POST['Dollar_Volume']),
-		preg_replace('/[^\d.]/', '', $_POST['Kilo_Vol']),
+		 $_POST['Dollar_Volume'],
+		$_POST['Kilo_Vol'],
 		$_POST['Sales_Year'],
 		$_POST['Nielsen_Category'],
 		$_POST['Source'],
@@ -46,19 +65,19 @@ if (isset($_POST['search'])) {
 		$_POST['Comments'],
 		$_POST['Collection_Date'],
 		$_POST['Brand'],
-		preg_replace('/[^\d.]/', '', $_POST['Dollar_Rank']),
-		preg_replace('/[^\d.]/', '', $_POST['Dollar_Volume_PerCentage_Change']),
-		preg_replace('/[^\d.]/', '', $_POST['Kilo_Volume_Percent_Change']),
-		preg_replace('/[^\d.]/', '', $_POST['Average_AC_Dist']),
-		preg_replace('/[^\d.]/', '', $_POST['Average_Retail_Price']),
-		preg_replace('/[^\d.]/', '', $_POST['Dollar_Volume_Total']),
-		preg_replace('/[^\d.]/', '', $_POST['Kilo_Volume_Total']),
+		$_POST['Dollar_Rank'],
+		$_POST['Dollar_Volume_PerCentage_Change'],
+		$_POST['Kilo_Volume_Percent_Change'],
+		 $_POST['Average_AC_Dist'],
+		 $_POST['Average_Retail_Price'],
+		 $_POST['Dollar_Volume_Total'],
+		 $_POST['Kilo_Volume_Total'],
 		$_POST['Control_Label_Flag'],
 		preg_replace('/[^\d.]/', '', $_POST['Dollar_Share']),
 		$_POST['Cluster_Number'],
 		$_POST['Product_Grouping'],
-		preg_replace('/[^\d.]/', '', $_POST['Kilo_Share']),
-		preg_replace('/[^\d.]/', '', $_POST['Kilo_Rank']),
+		 $_POST['Kilo_Share'],
+		 $_POST['Kilo_Rank'],
 		$_POST['Manufacturer'],
 		$_POST['Classification_Number'],
 		$_POST['Classification_Type']
@@ -123,6 +142,6 @@ EOQ;
 		echo "</script>\n";
 		echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
 	}
-}
+}}}
 $conn->close();
 ?>

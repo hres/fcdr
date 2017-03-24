@@ -243,6 +243,8 @@ if (!$result) {
 	  </div>
       </div>
      </div>
+	 		<input type="hidden" name="token" value = "<?php echo $token; ?>"/>
+
 			<div class="form-group col-sm-4 "> <br>
 				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search1">Search</button>
 			</div>

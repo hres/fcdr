@@ -1,4 +1,7 @@
 <?php include 'session.php';?>
+<?php include 'Check_PackageID.php';?>
+<?php $sanitation_errors = array();?>
+<?php include 'validate-label.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -172,9 +175,24 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 
 
 		<div class="fw-body" style="margin-left:-5px; margin-right:-5px;">
+
 		
 		<div class="container" >
-
+	<?php
+if (isset($_POST['search'])) {
+	if (count($sanitation_errors) == 0) {
+		include("save-label-updated.php");
+	} else {
+		foreach ($sanitation_errors as $error) {
+?>
+			<div class="alert alert-danger">
+				<strong>Error!</strong> Please correct the following field: <strong><?php echo $error;?></strong>
+			</div>
+<?php
+		}
+	}
+}
+?>
 
   
 
@@ -4805,8 +4823,9 @@ EOQ;
 </div>
 <div id="demo"></div>	
 		<div style="float:left; display:inline-block;">
-			 <?php echo " <a class=\"btn btn-default\" href=package_details.php?PackageID=" . $_GET['PackageID'] . ">Back</a>";  ?>
+			 <?php echo " <a class=\"btn btn-default\" href=package_details.php?PackageID=".$_GET['PackageID'].">Back</a>";  ?>
 		</div>
+		<input type="hidden" name="token" value = "<?php echo $token; ?>"/>
 		<div style="float:right; display:inline-block; margin-right:2%;">
 				<button  type="submit" class="btn btn-default" name="search" >Save</button>
 			</div>
@@ -4818,7 +4837,6 @@ EOQ;
 
   </div>
       <div id="result1">
-	  	  <?php include("save-label-updated.php"); ?>
 
 	   
 	

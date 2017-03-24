@@ -6,7 +6,11 @@ $dir=substr(uniqid(),-7); */
 /* error_reporting(E_ALL);
 ini_set('display_errors', 1);
  */
-
+    if (!empty($_POST['token'])) {
+   
+  $_POST['token'] =  rtrim($_POST['token']);
+ $_SESSION['token'] =   rtrim($_SESSION['token']);
+    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
 
    // do your Db stuff here to get t
   $valid_formats = array("jpg", "png", "gif", "jpeg");
@@ -134,5 +138,5 @@ $skipped_images = 0;
 		echo "$senditem <br>";
    }  
 
-
+}}
 ?>

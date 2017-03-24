@@ -1,4 +1,5 @@
 <?php include 'session.php';?>
+<?php include 'Check_ProductID.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html lang="en">
 <head>
@@ -2087,6 +2088,7 @@ $('input[name="intervaltype"]').click(function () {
 		
 		
 	<div id="demo"></div>
+             <input type="hidden" name="token" value = "<?php echo $token; ?>"/>
 			<div class="form-group col-sm-4 submit_button">
 				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search">Save</button>
 			</div>

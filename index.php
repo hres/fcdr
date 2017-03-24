@@ -220,6 +220,7 @@ $(document).ready(function() {
 
 		</div>
 		<div class="row">
+		<input type="hidden" name="token" value = "<?php echo $token; ?>"/>
 			<div class="form-group col-sm-4 submit_button">
 				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search">Search</button>
 			</div>

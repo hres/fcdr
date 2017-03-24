@@ -4,12 +4,21 @@
 
 
 	if(isset($_POST['search2'])) {
+        if (!empty($_POST['token'])) {
+   
+  $_POST['token'] =  rtrim($_POST['token']);
+ $_SESSION['token'] =   rtrim($_SESSION['token']);
+ 
+    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+  
+    
+
+
 	$fields = array('Label_UPC', 'Source', 'Ingredients', 'Label_Description');
 	$field2 = array('Label_UPC', 'Source', 'Ingredients', 'Label_Description', 'date1');
 
     $conditions = array();
 	    $flag1 = false;
-//(empty($_POST[$field]) && strlen($_POST[$field]) == 0 ?NULL :$data[5])
 
  foreach($field2 as $field){
       if(!empty($_POST[$field]) && strlen($_POST[$field]) != 0 && !ctype_space($_POST[$field]) ){
@@ -23,11 +32,11 @@
 
 if($flag){
 
-	//$flag ='0';
+
    foreach($fields as $field){
 	
 
-        // if the field is set and not empty
+
         if(!empty($_POST[$field])&& strlen($_POST[$field]) != 0  && !ctype_space($_POST[$field]) ) {
            
 			 
@@ -80,7 +89,7 @@ $stmt_first = $conn->prepare($first_query);
 
         echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3 >Must enter at least one field</h3>\" </script>";
     }
-	}
+	}}}
 	
 $conn->close();
 ?>

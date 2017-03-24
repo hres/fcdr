@@ -8,6 +8,14 @@ $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 		if(isset($_POST['search'])) {
  	//error_reporting(E_ALL);
 //ini_set('display_errors', 1);
+
+	    if (!empty($_POST['token'])) {
+   
+ $_POST['token'] =  rtrim($_POST['token']);
+ $_SESSION['token'] =   rtrim($_SESSION['token']);
+    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+
+
 $Username = $_SESSION['currentuser'];
 
 $_POST['Number_Of_Units'] = (empty($_POST['Number_Of_Units']) && strlen($_POST['Number_Of_Units']) == 0 ?NULL :$_POST['Number_Of_Units']);
@@ -23,9 +31,9 @@ $_POST['Calculated'] = (empty($_POST['Calculated']) && strlen($_POST['Calculated
 			$_POST['Label_Description'],
 			$_POST['Ingredients'],
 			$_POST['Common_Measure'],
-			preg_replace('/[^\d.]/', '', $_POST['PPD_Per_Serving_Amount']),
+			$_POST['PPD_Per_Serving_Amount'],
 			$_POST['PPD_Per_Serving_UofM'],
-			preg_replace('/[^\d.]/', '', $_POST['Per_Serving_Amount']),
+			$_POST['Per_Serving_Amount'],
 			$_POST['Per_Serving_Unit'],
 			$_POST['Source'],
 			$_POST['Collection_Date'],
@@ -41,11 +49,11 @@ $_POST['Calculated'] = (empty($_POST['Calculated']) && strlen($_POST['Calculated
 			$_POST['Country'],
 			$_POST['Package_Size'],
 			$_POST['Package_Size_UofM'],
-			preg_replace('/[^\d.]/', '', $_POST['Number_Of_Units']),
+			$_POST['Number_Of_Units'],
 			$_POST['Storage_Type'],
 			$_POST['Product_Description'],
-			preg_replace('/[^\d.]/', '', $_POST['Per_Serving_Amount_In_Grams']),
-			preg_replace('/[^\d.]/', '', $_POST['Per_Serving_Amount_In_Grams_PPD']),
+			$_POST['Per_Serving_Amount_In_Grams'],
+			$_POST['Per_Serving_Amount_In_Grams_PPD'],
 			$_POST['Storage_Statement'],
 			$_POST['Multi_Part_Package'],
 			$_POST['Calculated'],
@@ -176,8 +184,8 @@ EOQ;
 								$as_prepared[$row][1] =  (empty($as_prepared[$row][1]) && strlen($as_prepared[$row][1]) == 0 ?NULL :$as_prepared[$row][1]);
 								$as_prepared[$row][3] = (empty($as_prepared[$row][3]) && strlen($as_prepared[$row][3]) == 0 ?NULL :$as_prepared[$row][3]);
 
-								$as_prepared[$row][1] = preg_replace('/[^\d.]/', '', $as_prepared[$row][1]));
-								$as_prepared[$row][3] = preg_replace('/[^\d.]/', '', $as_prepared[$row][3]));
+								//$as_prepared[$row][1] = preg_replace('/[^\d.]/', '',  $as_prepared[$row][1]);
+								///$as_prepared[$row][3] = preg_replace('/[^\d.]/', '', $as_prepared[$row][3]);
 								
 								$stmt->bind_param("dsdiis",$as_prepared[$row][1],$as_prepared[$row][2],$as_prepared[$row][3],$packageID,$as_prepared[$row][0],$as_prepared[$row][4]);
 								$results = $stmt->execute();
@@ -265,20 +273,28 @@ EOQ;
 								$as_sold[$row1][1] =  (empty($as_sold[$row1][1]) && strlen($as_sold[$row1][1]) == 0 ?NULL :$as_sold[$row1][1]);
 								$as_sold[$row1][3] =  (empty($as_sold[$row1][3]) && strlen($as_sold[$row1][3]) == 0 ?NULL :$as_sold[$row1][3]);
 
-								$as_sold[$row1][1] = preg_replace('/[^\d.]/', '', $as_sold[$row1][1]));
-								$as_sold[$row1][3] = preg_replace('/[^\d.]/', '', $as_sold[$row1][3]));
-
+								//$as_sold[$row1][1] = preg_replace('/[^\d.]/', '', $as_sold[$row1][1]);
+								//$as_sold[$row1][3] = preg_replace('/[^\d.]/', '', $as_sold[$row1][3]);
+								//					   preg_replace('/[^\d.]/', '', $_POST['Number_Of_Units'])
 								$stmt->bind_param("dsdiii",$as_sold[$row1][1],$as_sold[$row1][2],$as_sold[$row1][3],$packageID,$as_sold[$row1][0],$as_sold[$row1][4]);
 								$results = $stmt->execute();
 
 							}
 
-		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Label Successfully updated. Redirecting to the previous page...</strong></h3>\";</script>";
+		//echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Label Successfully updated. Redirecting to the previous page...</strong></h3>\";</script>";
+		
+		
+				echo "<script type=\"text/javascript\">\n";
+		echo "$(document).ready(function() {\n";
+		echo "	document.getElementById (\"confirm-message\").innerHTML = \"<h3><strong>Label Successfully updated. Redirecting to the previous page...</strong></h3></h3>\";\n";
+		echo "});\n";
+		echo "</script>";
+		
 		echo "<script>setTimeout(\"location.href = 'package_details.php?PackageID=$packageID';\",3000);</script>";
 
 		}
 
-		}
+		}}}
 			//echo "Success... ";
 $conn->close();
 ?>

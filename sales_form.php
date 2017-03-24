@@ -140,6 +140,7 @@
 							<label for="Kilo_Rank">Classification Type</label>
 							<input type="text" class="form-control" name="Classification_Type" style="" id="Classification_Type"  placeholder="Enter the Classification Type " value="<?PHP echo $row['Classification_Type']; ?>" />
 						</div>
+						<input type="hidden" name="token" value = "<?php echo $token; ?>"/>
 						<div class="form-group col-sm-4">
 							<button style="margin-top: 30px; margin-right:15px;  margin-bottom:0px; float:right;" type="submit" class="btn btn-default" name="search" >Save</button>
 						</div>

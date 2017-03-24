@@ -4,16 +4,25 @@
 
 $PackageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 
-$query ="select C.Component_Name, C.Display_Order, PC.PPD,C.flag, PC.Amount, PC.Amount_Unit_Of_Measure, PC.Daily_Value from  $dbname.Product_Component PC  INNER JOIN $dbname.Components C ON PC.ComponentID=  C.ComponentID
-WHERE PC.PackageID = $PackageID Order by Display_Order asc";
-	
-	$result = mysqli_query($conn,$query);
+		$list_fields =<<<EOQ
+		select C.Component_Name, C.Display_Order, PC.PPD,C.flag, PC.Amount, PC.Amount_Unit_Of_Measure, PC.Daily_Value 
+		from  Product_Component PC  INNER JOIN Components C ON PC.ComponentID=  C.ComponentID
+		WHERE PC.PackageID = ? Order by Display_Order asc
 
 
-if (!$result) {
+EOQ;
+
+							$stmt_list = $conn->prepare($list_fields);
+					     	$stmt_list->bind_param("i",$PackageID);
+							$stmt_list->execute();	
+							$result_list = $stmt_list->get_result();
+
+
+
+if (!$result_list) {
     echo "ERRORS";
 }
-	while($row = $result->fetch_assoc()){
+	while($row = $result_list->fetch_assoc()){
 		if(($row['flag']== 'True' AND $row['PPD']==TRUE) OR ($row['PPD']==TRUE AND $row['flag']== 'False' AND ($row['Amount'] !=null or $row['Daily_Value'] !=null ))) {
 		
 		$row['Component_Name'] = ($row['Component_Name']==='Sugars Alcohol'?'Sugar Alcohols':$row['Component_Name']); 

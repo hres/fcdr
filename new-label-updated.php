@@ -10,6 +10,11 @@ $Username = $_SESSION['currentuser'];
 
 		if(isset($_POST['search'])) {
 
+ if (!empty($_POST['token'])) {
+ $_POST['token'] =  rtrim($_POST['token']);
+ $_SESSION['token'] =   rtrim($_SESSION['token']);
+    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+
 		$Label_UPC = $_POST['Label_UPC'];
 
 
@@ -29,9 +34,9 @@ $_POST['Calculated'] = (empty($_POST['Calculated']) && strlen($_POST['Calculated
 			$_POST['Label_Description'],
 			$_POST['Ingredients'],
 			$_POST['Common_Measure'],
-			preg_replace('/[^\d.]/', '', $_POST['PPD_Per_Serving_Amount']),
+			$_POST['PPD_Per_Serving_Amount'],
 			$_POST['PPD_Per_Serving_UofM'],
-			preg_replace('/[^\d.]/', '', $_POST['Per_Serving_Amount']),
+			$_POST['Per_Serving_Amount'],
 			$_POST['Per_Serving_Unit'],
 			$_POST['Source'],
 			$_POST['date1'],
@@ -47,15 +52,15 @@ $_POST['Calculated'] = (empty($_POST['Calculated']) && strlen($_POST['Calculated
 			$_POST['Country'],
 			$_POST['Package_Size'],
 			$_POST['Package_Size_UofM'],
-			preg_replace('/[^\d.]/', '', $_POST['Number_Of_Units']),
+			$_POST['Number_Of_Units'],
 			$_POST['Storage_Type'],
 			$_POST['Product_Description'],
-			preg_replace('/[^\d.]/', '', $_POST['Per_Serving_Amount_In_Grams']),
-			preg_replace('/[^\d.]/', '', $_POST['Per_Serving_Amount_In_Grams_PPD']),
+			$_POST['Per_Serving_Amount_In_Grams'],
+			$_POST['Per_Serving_Amount_In_Grams_PPD'],
 			$_POST['Storage_Statement'],
 			$_POST['Multi_Part_Package'],
 			$_POST['Calculated'],
-			preg_replace('/[^\d.]/', '', $_POST['Nielsen_Item_Rank_UPC'])
+			$_POST['Nielsen_Item_Rank_UPC']
 		);
 
 		
@@ -282,8 +287,8 @@ for ($row = 0; $row < 94; $row++) {
 								$cars[$row][3] =  (empty($cars[$row][3]) && strlen($cars[$row][3]) == 0 ?NULL :$cars[$row][3]);
 								$cars[$row][2] =  (empty($cars[$row][1]) && strlen($cars[$row][1]) == 0 ?NULL :$cars[$row][2]);
 
-								$cars[$row][1] = preg_replace('/[^\d.]/', '', $cars[$row][1]));
-								$cars[$row][3] = preg_replace('/[^\d.]/', '', $cars[$row][3]));
+								//$cars[$row][1] = preg_replace('/[^\d.]/', '', $cars[$row][1]);
+								//$cars[$row][3] = preg_replace('/[^\d.]/', '', $cars[$row][3]);
 
 								$stmt->bind_param("iidsds",$last_id, $cars[$row][0],$cars[$row][1],$cars[$row][2],$cars[$row][3],$cars[$row][4]);
 								$results = $stmt->execute();
@@ -305,7 +310,7 @@ for ($row = 0; $row < 94; $row++) {
 
 
 
-		}
+		}}}
 	
 $conn->close();
 ?>

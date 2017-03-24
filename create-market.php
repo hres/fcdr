@@ -1,4 +1,7 @@
 <?php include 'session.php';?>
+<?php include 'Check_ProductID.php';?>
+<?php $sanitation_errors = array();?>
+<?php include 'validate-sales.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -113,7 +116,21 @@
 <?php include 'header.php';?>
 
 <main role="main" property="mainContentOfPage" class="container">
-
+	<?php
+if (isset($_POST['search'])) {
+	if (count($sanitation_errors) == 0) {
+		include("new-market.php");
+	} else {
+		foreach ($sanitation_errors as $error) {
+?>
+			<div class="alert alert-danger">
+				<strong>Error!</strong> Please correct the following field: <strong><?php echo $error;?></strong>
+			</div>
+<?php
+		}
+	}
+}
+?>
 
 
 
@@ -299,7 +316,7 @@
 				<label for="Classification_Type">Classification Type</label>
 				<input type="text" class="form-control" name="Classification_Type" id="Classification_Type" placeholder="Enter the Classification Type"/>
 			</div>
-	
+	        <input type="hidden" name="token" value = "<?php echo $token; ?>"/>
 			<div class="form-group col-sm-4" style="float:right;">
 				<button style="float:right; margin-top:30px;" type="submit" class="btn btn-default" name="search" >Save</button>
 			</div>
@@ -309,7 +326,7 @@
 	</form>
 	</div>
 <div>
-	  <?php include("new-market.php"); ?>
+
 	
 	</div>	
 

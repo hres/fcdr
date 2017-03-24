@@ -3,6 +3,17 @@
 <?php
 
 	if(isset($_POST['search1'])) {
+
+        if (!empty($_POST['token'])) {
+   
+  $_POST['token'] =  rtrim($_POST['token']);
+ $_SESSION['token'] =   rtrim($_SESSION['token']);
+ 
+    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+         // Proceed to process the form data
+    
+        
+        
 	 $fields = array('Sales_UPC', 'Nielsen_Category', 'Source', 'Sales_Year', 'Sales_Description', 'Comments');
 	  $field2 = array('Sales_UPC', 'Nielsen_Category', 'Source', 'Sales_Year', 'Sales_Description', 'Comments', 'date1');
     $conditions = array();
@@ -81,6 +92,8 @@ if (!$result) {
 
 	}
 	}
+    }
+    }
 
 $conn->close();
 ?>

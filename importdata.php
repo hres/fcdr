@@ -125,6 +125,8 @@
 </label>
 <span class='label label-info' id="upload-file-info"></span>
 <div style="float:right;">
+		<input type="hidden" name="token" value = "<?php echo $token; ?>"/>
+
 <label class="btn btn-primary" for="my-file-selector2">
   <!--  <input id="my-file-selector2" type="submit" onclick="myFunction()" style="display:none;" name="search" onchange="$('#upload-file-info').html($(this).val());" disabled>-->
      	<input id="my-file-selector2" type="button" style="display:none" />

@@ -375,25 +375,13 @@ if (!$result) {
 				<label for="Label_Comments">Label Comments</label>
 				<input type="text" class="form-control" name="Label_Comments" id="Label_Comments" placeholder="Enter The Comments of the Label" />
 			</div>
+			<input type="hidden" name="token" value = "<?php echo $token; ?>"/>
 						<div class="form-group  "> 
 				<button style="margin-top: 28px; margin-right:20px; float:right;" type="submit" class="btn btn-default" name="search1">Search</button>
 			</div>
 </div>
 
 </div>
-
-
-
-		
-				
-
-
-
-		
-
-
-		
-
 
 
 		</div>

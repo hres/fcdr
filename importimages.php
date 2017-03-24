@@ -111,6 +111,7 @@
 				<input id="my-file-selector" type="file"  name="files[]" style="display:none;" multiple>
 				Browse
 			</label>
+			<input type="hidden" name="token" value = "<?php echo $token; ?>"/>
 			<div style="float:right;">
 				<label class="btn btn-primary" for="my-file-selector2">
 					<!--<input id="my-file-selector2" type="Submit" style="display:none;" name="search">-->

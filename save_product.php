@@ -70,7 +70,19 @@ EOQ;
 }else
 { 		
 
-		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully updated. Redirecting to the view page...</strong></h3>\";</script>";
+		//echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully updated. Redirecting to the view page...</strong></h3>\";</script>";
+		
+		echo "<script type=\"text/javascript\">\n";
+echo "    $(document).ready(function() {\n";
+
+	echo "document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully updated. Redirecting to the view page...</strong></h3>\"";
+
+
+echo "    });\n";
+echo "</script>\n";
+		
+		
+		
 		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",3000);</script>";
 
 
@@ -92,7 +104,17 @@ EOQ;
 		
 						if($result_product_classification){
 							
-						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully updated. Redirecting to the view page...</strong></h3>\";</script>";
+					//	echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully updated. Redirecting to the view page...</strong></h3>\";</script>";
+						
+								echo "<script type=\"text/javascript\">\n";
+echo "    $(document).ready(function() {\n";
+
+	echo "document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully updated. Redirecting to the view page...</strong></h3>\"";
+
+
+echo "    });\n";
+echo "</script>\n";
+						
 						echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",3000);</script>";
 
 

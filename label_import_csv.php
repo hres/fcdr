@@ -1,18 +1,20 @@
 <?php include 'connection.php';?>
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);  
-//mysqli_query("SET NAMES 'utf8';");
 
 
 
+	    if (!empty($_POST['token'])) {
+   
+  $_POST['token'] =  rtrim($_POST['token']);
+ $_SESSION['token'] =   rtrim($_SESSION['token']);
+    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
 
 			$allowed =  array('csv');		
 		$tmpfname = $_FILES['file_save']['tmp_name'];
 		$ext = pathinfo($_FILES['file_save']['name'], PATHINFO_EXTENSION);
 
 
-	//	$num_rows = count($_FILES['file_save']['name']);
+
 
 		if(!in_array($ext,$allowed) ) {
 		echo "<h3>Selected File is Not a CSV file</h3>";
@@ -966,5 +968,5 @@ $count=  $count - 1;
 }
  fclose($handle); 
  mysqli_close($conn);
-		}
+		}}}
 ?>

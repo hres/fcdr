@@ -1,4 +1,6 @@
 <?php include 'session.php';?>
+<?php $sanitation_errors = array();?>
+<?php include 'validate-create-product.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -102,6 +104,21 @@
 <?php include 'header.php';?>
 <main role="main" property="mainContentOfPage" class="container">
 
+<?php
+if (isset($_POST['search'])) {
+	if (count($sanitation_errors) == 0) {
+		include("new-product.php");
+	} else {
+		foreach ($sanitation_errors as $error) {
+?>
+			<div class="alert alert-danger">
+				<strong>Error!</strong> Please correct the following field: <strong><?php echo $error;?></strong>
+			</div>
+<?php
+		}
+	}
+}
+?>
 
 		<div class="fw-body" style="margin-left:-5px; margin-right:-5px;">
 		
@@ -183,6 +200,7 @@
 		</div>
 		
 					<div class="row">
+					<input type="hidden" name="token" value = "<?php echo $token; ?>"/>
 			<div class="form-group col-sm-4 submit_button" >
 				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search">Save</button>
 			</div>
@@ -192,7 +210,7 @@
 	</div>
 		
 	<div>
-	  <?php include("new-product.php"); ?>
+	  
 	
 	</div>	
 

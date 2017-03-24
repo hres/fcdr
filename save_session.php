@@ -3,12 +3,16 @@
 	session_start();
 	
 	
-	
+
 	$tableau = array();
+
 	$tableau["error"] = "<div class=\"error\" style=\"color:#FF0000;\">Try again<div>";
 
 	$username = $_POST['uname'];
 	$password = $_POST['psw'];
+	 //filter_var($_POST['token'], FILTER_SANATIZE_STRING);
+	
+
 	//Username,Password
 
 		$get_user =<<<EOQ
@@ -29,6 +33,7 @@ EOQ;
 		
 		$_SESSION['currentuser'] = $username;
 		
+		
 		$tableau["error"] = "No";
 		$tableau["success"] = "<p style=\"color: #00b300; padding:25px;\"><h3>You have successfully logged in as '$username', <a href=\"index.php\">go to the home page...</a></h3></p>";	
 		
@@ -43,6 +48,8 @@ EOQ;
 	}
 	
 	
+
+
 	
 
 	echo json_encode($tableau);

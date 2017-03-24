@@ -5,19 +5,15 @@
 
 	if(isset($_POST['search'])) {
 
-	 error_reporting(E_ALL);
-ini_set('display_errors', 1); 
+        if (!empty($_POST['token'])) {
+   
+  $_POST['token'] =  rtrim($_POST['token']);
+ $_SESSION['token'] =   rtrim($_SESSION['token']);
+ 
+    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+    
 
-$query = "Insert Into Product (Description) VALUES ('RANDOM')";
-$result = mysqli_query($conn, $query);
-
-if($result){
-
-	echo "OYESSSSOOO";
-}else{
-	echo "MBRAKATA";
-}
-
+$Username = $_SESSION['currentuser'];
 
 	$_POST['Cluster_Number'] =  (empty($_POST['Cluster_Number']) && strlen($_POST['Cluster_Number']) == 0 ?NULL :(int)$_POST['Cluster_Number']);		
 	$_POST['CNF_CODE'] =  (empty($_POST['CNF_CODE']) && strlen($_POST['CNF_CODE']) == 0 ?NULL :(int)$_POST['CNF_CODE']);	
@@ -35,45 +31,50 @@ INSERT Into Product(
        Manufacturer,
        Comments,
        CNF_CODE,
-       Cluster_Number
+       Cluster_Number,
+	   Last_Edited_By
 
-) VALUES ( ?, ?, ?, ?, ?, ?)
+) VALUES ( ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 						$stmt = $conn->prepare($query);
-						$stmt->bind_param("ssssdd", $params[0], $params[1], $params[2], $params[3], $params[4], $params[7]);
+						$stmt->bind_param("ssssdds", $params[0], $params[1], $params[2], $params[3], $params[4], $params[7], $Username);
 						$result_insert = $stmt->execute();
 						$id =  mysqli_insert_id($conn);
 						
 			if (!$result_insert ) {
 				
-						echo "<script type=\"text/javascript\"> document.getElementById (\"cconfirm-message2\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\";</script>";
-				
+						echo "<script type=\"text/javascript\">\n";
+echo "    $(document).ready(function() {\n";
+
+	echo "document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\"";
+
+
+echo "    });\n";
+echo "</script>\n";
+
+
 				}
 					
 				else {
 					
-						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
+					
+					
+							echo "<script type=\"text/javascript\">\n";
+echo "    $(document).ready(function() {\n";
+
+	echo "document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully Created. Redirecting to the view page...</strong></h3>\"";
+
+
+echo "    });\n";
+echo "</script>\n";
+					
 						echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$id';\",3000);</script>";
 
 
 					
 					}
 
-/*								$classification_check =<<<EOQ
-SELECT *
-  FROM Classification
- WHERE Classification_Number = ?
-EOQ;
 
-								$stmt = $conn->prepare($classification_check);
-								$stmt->bind_param("d", $params_product_classification[1]);
-								$classification_check_result = $stmt->execute();
-
-								$stmt->store_result();
-								if (($stmt->num_rows) > 0) {}
-
-
-*/
 							$query2 =<<<EOQ
 INSERT Into Product_Classification(
        ClassificationID,
@@ -114,13 +115,32 @@ EOQ;
 						
 			if (!$result_insert_x ) {
 				
-						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\";</script>";
-				
+						//echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\";</script>";
+										echo "<script type=\"text/javascript\">\n";
+echo "    $(document).ready(function() {\n";
+
+	echo "document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to create a product...</strong></h3>\"";
+
+
+echo "    });\n";
+echo "</script>\n";
+
 				}
 					
 				else {
 					
-						echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
+						//echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
+					
+												echo "<script type=\"text/javascript\">\n";
+echo "    $(document).ready(function() {\n";
+
+	echo "document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully Created. Redirecting to the view page...</strong></h3>\"";
+
+
+echo "    });\n";
+echo "</script>\n";
+				
+					
 						echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$id';\",3000);</script>";
 
 
@@ -129,7 +149,7 @@ EOQ;
 		
 		}
 
-
+	}}
 }
 
 $conn->close();

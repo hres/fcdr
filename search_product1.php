@@ -8,6 +8,13 @@
 
 	if(isset($_POST['search'])) {
 	
+    if (!empty($_POST['token'])) {
+   
+  $_POST['token'] =  rtrim($_POST['token']);
+ $_SESSION['token'] =   rtrim($_SESSION['token']);
+    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+         // Proceed to process the form data
+
 	 $fields = array('Brand','Description', 'Manufacturer', 'Classification_Number', 'CNF_CODE','Classification_Type', 'Comments','Cluster_Number');
     $conditions = array();
     $flag = false;
@@ -22,6 +29,7 @@
       }
 
  }
+
 
 if($flag){
 
@@ -78,7 +86,16 @@ if (!$result) {
         echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3 >Must enter at least one field</h3>\" </script>";
     }
 
+    } else {
+       
+         // Log this as a warning and keep an eye on these attempts
+    }
+}else{
+    
+}
+
 	}
+  
 	
 	
 $conn->close();

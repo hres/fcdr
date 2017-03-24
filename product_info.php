@@ -17,7 +17,7 @@ $stmt = $conn->prepare($query);
 $stmt->bind_param("i",$ProductID);
  $stmt->execute();
 $result = $stmt->get_result();
-//	$result = mysqli_query($conn,$query);
+
 
 
 if (!$result) {

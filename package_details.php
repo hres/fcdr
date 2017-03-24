@@ -1,4 +1,6 @@
 <?php include 'session.php';?>
+<?php include 'Check_PackageID.php';?>
+
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -991,14 +993,14 @@ $conn->close();
 <section>
 <strong>Nutrient Claims</strong>
 <div class="well">
-<?php echo " ". $row['Nutrition_Claim'] ."";  ?></div>
+<?php echo " ". nl2br($row['Nutrition_Claim']) ."";  ?></div>
 </section>
 
 <!--h3-section-start-->
 <section>
 <strong>Other Package Statements</strong>
 <div class="well">
-<?php echo " ". $row['Other_Package_Statement'] ."";  ?></div>
+<?php echo " ". nl2br($row['Other_Package_Statement']) ."";  ?></div>
 </section>
 
 <!--h3-section-start-->

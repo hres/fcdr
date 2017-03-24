@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -37,8 +38,10 @@ $(function(){
 		$(this).find(".error").remove();
 		 pass = $(this).find("input[name=psw]").val();
 		 user = $(this).find("input[name=uname]").val();
+          //token2 = $(this).find("input[name=token]").val();
 		 loginInput = $(this).find("input[name=uname]");
 		 passordInput= $(this).find("input[name=psw]");
+
 		 form=$(this);
 
 		 url = $(this).attr("action");
@@ -188,8 +191,7 @@ span.psw {
     <input type="text" placeholder="Enter Username" name="uname" required>
 
     <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
+    <input type="password" placeholder="Enter Password" name="psw" autocomplete="off" required>
     <button type="submit">Login</button>
   </div>
 
