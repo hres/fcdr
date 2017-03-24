@@ -93,30 +93,30 @@ EOQ;
 
 
 echo "<tr>
-         <td>". $row['Description'] .    " </td>
-         <td>". $row['Sales_Year'] .    " </td>
-         <td>". $row['Collection_Date'] .    " </td>
-         <td>". $row['Sales_UPC'] .    " </td>
-         <td>". $row['Sales_Description'] .    " </td>
-         <td>". $row['Product_Grouping'] .    " </td>
-         <td>". $row['Manufacturer'] .    " </td>
-         <td>". $row['Brand'] .    " </td>
-         <td>". $row['Nielsen_Category'] .    " </td>
-         <td>". $row['Classification_Number'] .    " </td>
-         <td>". $row['Cluster_Number'] .    " </td>
-         <td>". $row['Control_Label_Flag'] .    " </td>
-         <td>". $row['Kilo_Share'] .    " </td>
-         <td>". $row['Kilo_Vol'] .    " </td>
-         <td>". $row['Kilo_Volume_Percent_Change'] .    " </td>
-         <td>". $row['Kilo_Rank'] .    " </td>
-         <td>". $row['Kilo_Volume_Total'] .    " </td>
-         <td>". $row['Dollar_Share'] .    " </td>
-         <td>". $row['Dollar_Volume'] .    " </td>
-         <td>". $row['Dollar_Volume_Total'] .    " </td>
-         <td>". $row['Average_AC_Dist'] .    " </td>
-         <td>". $row['Average_Retail_Price'] .    " </td>
-         <td>". $row['Sales_Comments'] .    " </td>
-         <td>". $row['Product_Comment'] .    " </td>
+         <td>". $row['Description'] .                " </td>
+         <td>". $row['Sales_Year'] .                 " </td>
+         <td>". $row['Collection_Date'] .            " </td>
+         <td>". $row['Sales_UPC'] .                  " </td>
+         <td>". $row['Sales_Description'] .          " </td>
+         <td>". $row['Product_Grouping'] .           " </td>
+         <td>". $row['Manufacturer'] .               " </td>
+         <td>". $row['Brand'] .                      " </td>
+         <td>". $row['Nielsen_Category'] .           " </td>
+         <td>". $row['Classification_Number'] .      " </td>
+         <td>". $row['Cluster_Number'] .             " </td>
+         <td>". $row['Control_Label_Flag'] .         " </td>
+         <td>". $row['Kilo_Share'] .                 " </td>
+         <td>". $row['Kilo_Vol'] .                   " </td>
+         <td>". $row['Kilo_Volume_Percent_Change'] . " </td>
+         <td>". $row['Kilo_Rank'] .                  " </td>
+         <td>". $row['Kilo_Volume_Total'] .          " </td>
+         <td>". $row['Dollar_Share'] .               " </td>
+         <td>". $row['Dollar_Volume'] .              " </td>
+         <td>". $row['Dollar_Volume_Total'] .        " </td>
+         <td>". $row['Average_AC_Dist'] .            " </td>
+         <td>". $row['Average_Retail_Price'] .       " </td>
+         <td>". $row['Sales_Comments'] .             " </td>
+         <td>". $row['Product_Comment'] .            " </td>
          </tr>";
 
 
