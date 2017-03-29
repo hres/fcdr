@@ -1,3 +1,7 @@
+
+<!DOCTYPE html>
+<html>
+<body>
 <?php
 
 include "connection.php";
@@ -17,3 +21,6 @@ if($result2){
 
 
 ?>
+
+</body>
+</html>
