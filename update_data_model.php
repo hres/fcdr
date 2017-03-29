@@ -2,12 +2,14 @@
 <!DOCTYPE html>
 <html>
 <body>
+
+<?php include 'connection.php';?>
 <?php
 
-include "connection.php";
-echo "<h1>add classification</h1>"
 
-$query = "ALTER TABLE Package Add column Classification_Number FLOAT('4','6')";
+echo "<h1>add classification</h1>";
+
+$query = "ALTER TABLE Package Add column Classification_Number FLOAT(6,6)";
 $result = mysqli_query($conn, $query);
 if($result){
     echo "CN added";
@@ -16,6 +18,8 @@ $result2 = mysqli_query($conn, $query2);
 if($result2){
     echo "Both were created";
 }
+}else{
+    echo "FAILED";
 }
 
 
