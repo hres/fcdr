@@ -10,7 +10,6 @@ $(document).ready(function(){
 
 $("#vids-search-form").validate({
 
-    excluded: [':disabled'],
 
     rules: {
 
