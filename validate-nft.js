@@ -10,6 +10,7 @@ $(document).ready(function(){
 
 $("#vids-search-form").validate({
 
+    ignore: "",
 
     rules: {
 
@@ -1769,6 +1770,11 @@ number: true,
 },
  Per_Serving_Amount_In_Grams : {   
     number: true
+   
+
+},
+ Nielsen_Item_Rank_UPC : {   
+    digits: true
    
 
 },

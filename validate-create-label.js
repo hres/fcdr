@@ -9,7 +9,7 @@ $(document).ready(function(){
 
 
 $("#vids-search-form").validate({
-
+ ignore: "",
     rules: {
         Label_UPC: {
 				required: true,
@@ -221,39 +221,23 @@ $("#vids-search-form").validate({
 },
     Carbohydrates_Amount : {   
   number: true, 
-         required: {
-             
-             depends: function(element){
-          return $('#Carbohydrates_Unit').val().length > 0;
-        }}
+         required: true
 
 },  
     Carbohydrates_Unit : {   
 
-         required: {
-             
-             depends: function(element){
-          return $('#Carbohydrates_Amount').val().length > 0;
-        }}
+         required: true
 
 },
 
     Fibre_Amount : {   
   number: true, 
-         required: {
-             
-             depends: function(element){
-          return $('#Fibre_Unit').val().length > 0;
-        }}
+    required: true
 
 },  
     Fibre_Unit : {   
 
-         required: {
-             
-             depends: function(element){
-          return $('#Fibre_Amount').val().length > 0;
-        }}
+         required: true
 
 },
 
@@ -1818,6 +1802,11 @@ number: true,
     number: true
    
 //
+},
+ Nielsen_Item_Rank_UPC : {   
+    digits: true
+   
+
 },
  Per_Serving_Amount : {   
     number: true,
