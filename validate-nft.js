@@ -10,6 +10,7 @@ $(document).ready(function(){
 
 $("#vids-search-form").validate({
 
+
     rules: {
 
 
