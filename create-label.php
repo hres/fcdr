@@ -1,5 +1,24 @@
-<?php include 'session.php';?>
+<?php
+
+
+ include 'session.php';
+
+
+  //$_POST['token'] =  rtrim($_POST['token']);
+ //$_SESSION['token'] =   rtrim($_SESSION['token']);
+
+	if(isset($_POST['search'])){
+			 if (!hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+				  header ('Location: error404.php');
+			 }
+	}
+     $_SESSION['token'] = bin2hex(random_bytes(32));
+	$token = $_SESSION['token'];
+
+ ?>
 <?php include 'Check_ProductID.php';?>
+<?php $sanitation_errors = array();?>
+<?php include 'validate-label-create.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html lang="en">
 <head>
@@ -9,12 +28,16 @@
 	<link rel="shortcut icon" type="image/png" href="/media/images/favicon.png">
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" integrity="sha384-MI32KR77SgI9QAPUs+6R7leEOwtop70UsjEtFEezfKnMjXWx15NENsZpfDgq8m8S" crossorigin="anonymous">
 
-	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
-	</script>  
+	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" integrity="sha384-o6l2EXLcx4A+q7ls2O2OP2Lb2W7iBgOsYvuuRI6G+Efbjbk6J4xbirJpHZZoHbfs" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" integrity="sha384-89aj/hOsfOyfD0Ll+7f2dobA15hDyiNb8m1dJ+rJuqgrGR+PVqNU8pybx4pbF3Cc" crossorigin="anonymous"></script>
+
 
 
 	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
@@ -31,7 +54,6 @@
 <script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
 
-<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
 
 
 
@@ -140,7 +162,21 @@ $('input[name="intervaltype"]').click(function () {
 <?php include 'header.php';?>
 
 <main role="main" property="mainContentOfPage" class="container">
-
+	<?php
+if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
+	if (count($sanitation_errors) == 0) {
+		include("new-label-updated.php");
+	} else {
+		foreach ($sanitation_errors as $error) {
+?>
+			<div class="alert alert-danger">
+				<strong>Error!</strong> Please correct the following field: <strong><?php echo $error;?></strong>
+			</div>
+<?php
+		}
+	}
+}
+?>
 
 
 
@@ -149,7 +185,7 @@ $('input[name="intervaltype"]').click(function () {
 	<div id="confirm-message" style="color:#008000;"></div>
 	<div id="confirm-message2" style="color:#FF0000;"></div>	
 	
-<form role="form" method="post" action="#" id="vids-search-form"  name="myForm" >
+<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'] . "?ProductID=" .  $_GET['ProductID']) ;?>" id="vids-search-form"  name="myForm" >
 	
 	<div class="well" style="margin-right:2%;">
 
@@ -162,24 +198,39 @@ $('input[name="intervaltype"]').click(function () {
 				<input type="text" class="form-control" style="width:540px" name="Label_UPC" id="Label_UPC" placeholder="Enter Label UPC" required/>
 			</div>
             			<div class="form-group col-xs-6">
-				<label for="Nielsen_Item_Rank_UPC" >Nielsen Item Rank UPC</label>
-				<input type="text" class="form-control" style="width:540px" name="Nielsen_Item_Rank_UPC"  id="Nielsen_Item_Rank_UPC" placeholder="Enter the Nielsen Item Rank UPC of the Package Label"/> 
-			</div>
-
-</div>
-			<div class="row">
-		
-			<div class="form-group col-xs-6">
 				<label for="Label_Description" class="required">Label Description <strong class="required">(required)</strong></label>
 				<input type="text" class="form-control" style="width:540px" name="Label_Description" id="Label_Description" placeholder="Enter the Label description " required/>
 			</div>
-				<div class="form-group col-xs-6">
-				<label for="Common_Measure" >Common Household Measure </label>
-				<input type="text" class="form-control" style="width:540px" name="Common_Measure" id="Common_Measure" placeholder="Enter the Common Household Measure " />
+
+
+</div>
+        <div class="row">
+        				<div class="form-group col-sm-4">
+				<label for="Classification_Number">Classification Number</label>
+			
+    <select class="form-control" id="Classification_Number" name="Classification_Number" >
+		   <option value="" selected>Select a Classification Number</option>
+	<?php include 'List_Classification_Number.php';?>
+		
+			 </select>
 			</div>
-		</div>
-	
-		<div class="row">
+					<div class="form-group col-sm-4">
+				<label for="Classification_Name">Classification Name</label>
+			
+    <select class="form-control" id="Classification_Name" name="Classification_Name">
+		   <option value="" selected>Select a Classification Name</option>
+	<?php include 'List_Classification.php';?>
+		
+			 </select>
+			</div>		
+
+          			<div class="form-group col-sm-4">
+				<label for="Nielsen_Item_Rank_UPC" >Nielsen Item Rank UPC</label>
+				<input type="text" class="form-control" name="Nielsen_Item_Rank_UPC"  id="Nielsen_Item_Rank_UPC" placeholder="Enter the Nielsen Item Rank UPC"/> 
+			</div>	
+
+        </div>
+        		<div class="row">
 			<div class="form-group col-sm-4">
 				<label for="Nielsen_Category">Nielsen Category </label>
 				<input type="text" class="form-control" name="Nielsen_Category" id="Nielsen_Category" placeholder="Enter the Nielsen Category "/>
@@ -194,78 +245,84 @@ $('input[name="intervaltype"]').click(function () {
 				<input type="text" class="form-control" name="Manufacturer" id="Manufacturer" placeholder="Enter the Manufacturer " required/>
 			</div>
 		</div>
-		<div class="row">
+
+        <div class="row">
 			<div class="form-group col-sm-4">
 				<label for="Country">Country</label>
 				<input type="text" class="form-control" name="Country" id="Country" placeholder="Enter Country " />
 			</div>
-		
-			<div class="form-group col-sm-4">
-				<label for="Package_Size" > Package Size</label>
-				<input type="text" class="form-control" name="Package_Size" id="Package_Size" placeholder="Enter the Package Size "/>
+
+            			<div class="form-group col-sm-4">
+				<label for="Package_Size" > Net Quantity</label>
+				<input type="text" class="form-control" name="Package_Size" id="Package_Size" placeholder="Enter the Net Quantity "/>
 			</div>
 
 					<div class="form-group col-sm-4">
-	<label for="Package_Size_UofM" name="Package_Size_UofM" >Package Size Unit of Measure </label>
+	<label for="Package_Size_UofM" name="Package_Size_UofM" >Net Quantity Unit of Measure </label>
     <select class="form-control" id="Package_Size_UofM" name="Package_Size_UofM"> 
-		   <option value="" selected="selected">Select the Per Serving Unit</option>
+		   <option value="" selected="selected">Select Serving Unit of Measure</option>
 			<?php include 'Units.php';?>
       
       </select></div>
 
-
-		</div>		
-		
-		<div class="row">
-			<div class="form-group col-sm-4">
-				<label for="Storage_Type">Storage Type</label>
-				<input type="text" class="form-control" name="Storage_Type"  id="Storage_Type" placeholder="Enter the Storage Type " /> 
-			</div>
-			<div class="form-group col-sm-4">
-				<label for="Storage_Statement">Storage Statements</label>
-				<input type="text" class="form-control" name="Storage_Statement" id="Storage_Statement" placeholder="Enter the Storage Statements " />
-			</div>
+        </div>
+    <div class="row">
 			<div class="form-group col-sm-4">
 				<label for="Number_Of_Units">Number of Units</label>
 				<input type="text" class="form-control" name="Number_Of_Units" id="Number_Of_Units" placeholder="Enter the Number of Units " />
 			</div>
-		
-		</div>
+            		<div class="form-group col-sm-4">
+	<label for="Multi_Part_Package" name="Multi_Part_Package">Multi-part Package?</label>
+      <select class="form-control" id="Multi_Part_Package" name="Multi_Part_Package">
+		<option value="" selected></option>
+         <option value="No">No</option>
+		 <option value="Yes">Yes</option>
+      </select></div>
+
+      				<div class="form-group col-sm-4">
+				<label for="Common_Measure" >Common Household Measure </label>
+				<input type="text" class="form-control"  name="Common_Measure" id="Common_Measure" placeholder="Enter the Common Household Measure " />
+			</div>
+    </div>
+
 	
 	
 <div class="row">
 	
-					<div class="form-group col-xs-6 ">
+					<div class="form-group col-md-12 ">
   <label for="Ingredients" class="required">Ingredients <strong class="required">(required)</strong></label>
-  <textarea class="form-control"  style="width:540px" rows="2"  id="Ingredients" placeholder="Enter the Ingredients " name="Ingredients" required></textarea>
+  <textarea class="form-control"  style="width:100%" rows="2"  id="Ingredients" placeholder="Enter the Ingredients " name="Ingredients" required></textarea>
 </div>
-		
+	</div>	
 
-		
+	<div class="row">	
 				
-					<div class="form-group col-xs-6">
+					<div class="form-group col-md-12">
   <label for="Nutrition_Fact_Table" class="required">Nutrition Fact Table <strong class="required">(required)</strong></label>
-  <textarea class="form-control" style="width:540px" placeholder="Enter The Nutrition Fact Table "   rows="2"  id="Nutrition_Fact_Table" name="Nutrition_Fact_Table" required></textarea>
+  <textarea class="form-control" style="width:100%" placeholder="Enter The Nutrition Fact Table "   rows="2"  id="Nutrition_Fact_Table" name="Nutrition_Fact_Table" required></textarea>
 </div>
 		
 </div>
 
 <div class="row">
 	
-					<div class="form-group col-xs-6 ">
+					<div class="form-group col-md-12">
   <label for="Suggested_Direction">Suggested Direction</label>
-  <textarea class="form-control"  style="width:540px" rows="2" placeholder="Enter the Suggested Direction " id="Suggested_Direction" name="Suggested_Direction"></textarea>
+  <textarea class="form-control"  style="width:100%; " rows="2"  placeholder="Enter the Suggested Direction " id="Suggested_Direction" name="Suggested_Direction"></textarea>
 </div>
 		
 
-		
-				
-					<div class="form-group col-xs-6">
-  <label for="Nutrition_Claim">Nutrition Claim</label>
-  <textarea class="form-control" style="width:540px"  placeholder="Enter the Nutrition Claim " rows="2"  id="Nutrition_Claim" name="Nutrition_Claim" ></textarea>
-</div>
+	
 		
 </div>
+<div class="row">
+					<div class="form-group  col-md-12">
+  <label for="Nutrition_Claim">Nutrient Claim</label>
+  <textarea class="form-control" style="width:100%"  placeholder="Enter the Nutrient Claim " rows="1"  id="Nutrition_Claim" name="Nutrition_Claim" ></textarea>
+</div>
+
+</div>
+
 
 <div class="row">
 	
@@ -283,6 +340,21 @@ $('input[name="intervaltype"]').click(function () {
 </div>
 		
 </div>
+
+		<div class="row">
+			<div class="form-group  col-md-12">
+				<label for="Storage_Type">Storage Type</label>
+				<input type="text" class="form-control" style="width:100%;" name="Storage_Type"  id="Storage_Type" placeholder="Enter the Storage Type " /> 
+			</div>
+            </div>
+            <div class="row">
+			<div class="form-group  col-md-12">
+				<label for="Storage_Statement">Storage Statements</label>
+				<input type="text" class="form-control" name="Storage_Statement" style="width:100%;" id="Storage_Statement" placeholder="Enter the Storage Statements " />
+			</div>
+
+		
+		</div>
 			<div class="row">
 			<div class="form-group col-sm-4">
 				<label for="Comments">Comments</label>
@@ -313,7 +385,8 @@ $('input[name="intervaltype"]').click(function () {
 			
 			
 		</div>
-	
+	</div>
+    <div class="well">
 				<div class="row">
 
 			<div class="form-group col-xs-6">
@@ -327,18 +400,12 @@ $('input[name="intervaltype"]').click(function () {
 		
 		</div>
 <div class="row">
-			<div class="form-group col-xs-6">
+			<div class="form-group col-md-12">
 				<label for="Product_Description">Product Description</label>
-				<input type="text" class="form-control" style="width:540px" name="Product_Description"  id="Product_Description" placeholder="Enter the Product Description " /> 
+				<input type="text" class="form-control" style="width:100%" name="Product_Description"  id="Product_Description" placeholder="Enter the Product Description " /> 
 			</div>
 
-            		<div class="form-group col-xs-6">
-	<label for="Multi_Part_Package" name="Multi_Part_Package">Multi-part Package?</label>
-      <select class="form-control" id="Multi_Part_Package" style="width:540px" name="Multi_Part_Package">
-		<option value="" selected></option>
-         <option value="No">No</option>
-		 <option value="Yes">Yes</option>
-      </select></div>
+
 </div>	
 
 		
@@ -2095,14 +2162,16 @@ $('input[name="intervaltype"]').click(function () {
 		</form>
 	
 	<div>
-	 	 <?php include("new-label-updated.php"); ?>
+	 	
 
 	
 	</div>	
 </div>
 <!-- Include Date Range Picker -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js" integrity="sha384-aHFhM5aT8aFA9xA6PAeaB8dav8Bc3nF2gDv/DnBl7E6Qhutr42h9VSmf7BXTdugy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" integrity="sha384-oQPlepmWw0NnzP5Cy8gA9Q3XOJrv+Os+uVsv93hZChsFr2FeEk2at3W50doSLPzu" crossorigin="anonymous">
+
 <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="validate-create-label.js"></script>
 
@@ -2163,6 +2232,6 @@ function goBack() {
 		</main>
 	<?php include 'footer.php';?>
 	</div>
-
+<?php include 'List_Classification_Object.php'; ?>
 </body>
 </html>

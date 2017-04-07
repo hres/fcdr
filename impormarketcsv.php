@@ -1,11 +1,7 @@
 <?php include 'connection.php';?>
 <?php
 
-	    if (!empty($_POST['token'])) {
-   
-  $_POST['token'] =  rtrim($_POST['token']);
- $_SESSION['token'] =   rtrim($_SESSION['token']);
-    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+
          // Proceed to process the form data
 
 
@@ -1178,7 +1174,8 @@ $count = $count -1;
 		}
 
 
-}}}
+}
+
 	  fclose($handle); 
   mysqli_close($conn);
 

@@ -13,9 +13,9 @@ $PackageID = ($_GET['PackageID']?$_GET['PackageID']:'');
     // loop through the defined fields
     foreach($fields as $field){
         // if the field is set and not empty
-        if(isset($_POST[$field]) && $_POST[$field] != '') {
+        if(isset($__GET[$field]) && $__GET[$field] != '') {
             // create a new condition while escaping the value inputed by the user (SQL Injection)
-            $conditions[] = "`$field` LIKE '%" . mysqli_real_escape_string($conn,$_POST[$field]) . "%'";
+            $conditions[] = "`$field` LIKE '%" . mysqli_real_escape_string($conn,$__GET[$field]) . "%'";
         }
     }
 	

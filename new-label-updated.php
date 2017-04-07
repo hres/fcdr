@@ -8,12 +8,14 @@
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 $Username = $_SESSION['currentuser'];
 
-		if(isset($_POST['search'])) {
+		if(isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
+			 	//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 
- if (!empty($_POST['token'])) {
- $_POST['token'] =  rtrim($_POST['token']);
- $_SESSION['token'] =   rtrim($_SESSION['token']);
-    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+ //if (!empty($_POST['token'])) {
+ //$_POST['token'] =  rtrim($_POST['token']);
+ //$_SESSION['token'] =   rtrim($_SESSION['token']);
+    //if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
 
 		$Label_UPC = $_POST['Label_UPC'];
 
@@ -25,6 +27,14 @@ $_POST['Per_Serving_Amount_In_Grams'] = (empty($_POST['Per_Serving_Amount_In_Gra
 $_POST['Per_Serving_Amount_In_Grams_PPD'] = (empty($_POST['Per_Serving_Amount_In_Grams_PPD']) && strlen($_POST['Per_Serving_Amount_In_Grams_PPD']) == 0 ?NULL :$_POST['Per_Serving_Amount_In_Grams_PPD']);
 $_POST['date1'] = (empty($_POST['date1']) && strlen($_POST['date1']) == 0 ?NULL :$_POST['date1']);
 $_POST['Calculated'] = (empty($_POST['Calculated']) && strlen($_POST['Calculated']) == 0 ?NULL :$_POST['Calculated']);
+$Classification_Number = (empty($_POST['Classification_Number'] ) && strlen($_POST['Classification_Number'] ) == 0 ?NULL :$_POST['Classification_Number'] );;
+
+			$stmt_classification = $conn->prepare("Select Classification_Name From Classification Where Classification_Number = ?");		
+			$stmt_classification->bind_param("d", $Classification_Number);
+			$stmt_classification->execute();
+			$result = $stmt_classification->get_result();
+			$row = $result->fetch_assoc(); 
+			$Classification_Name = $row['Classification_Name'];
 
 
 
@@ -111,13 +121,15 @@ INSERT INTO Package (
 	Multipart,
 	Calculated,
 	Nielsen_Item_Rank_UPC,
-	Last_Edited_By
+	Last_Edited_By,
+	Classification_Number,
+	Classification_Name
 )
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
 							$stmt = $conn->prepare($query);
-							$stmt->bind_param("issssdsdsssssssssssssssissddssiss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27], $param[28],$param[29],$param[30],$param[31],$Username);
+							$stmt->bind_param("issssdsdsssssssssssssssissddssissds", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27], $param[28],$param[29],$param[30],$param[31],$Username, $Classification_Number,$Classification_Name);
 							$result_insert = $stmt->execute();
 							$last_id = mysqli_insert_id($conn);
 
@@ -282,14 +294,13 @@ VALUES ( ?, ?, ?, ?, ?, ?)
 EOQ;
 for ($row = 0; $row < 94; $row++) {
 								$stmt = $conn->prepare($query_insert);
+
+								$cars[$row][1] = preg_replace('/[^\d.]/', '', $cars[$row][1]);
+								$cars[$row][3] = preg_replace('/[^\d.]/', '', $cars[$row][3]);
 					
 								$cars[$row][1] =  (empty($cars[$row][1]) && strlen($cars[$row][1]) == 0 ?NULL :$cars[$row][1]);
 								$cars[$row][3] =  (empty($cars[$row][3]) && strlen($cars[$row][3]) == 0 ?NULL :$cars[$row][3]);
 								$cars[$row][2] =  (empty($cars[$row][1]) && strlen($cars[$row][1]) == 0 ?NULL :$cars[$row][2]);
-
-								//$cars[$row][1] = preg_replace('/[^\d.]/', '', $cars[$row][1]);
-								//$cars[$row][3] = preg_replace('/[^\d.]/', '', $cars[$row][3]);
-
 								$stmt->bind_param("iidsds",$last_id, $cars[$row][0],$cars[$row][1],$cars[$row][2],$cars[$row][3],$cars[$row][4]);
 								$results = $stmt->execute();
 							
@@ -298,7 +309,15 @@ for ($row = 0; $row < 94; $row++) {
 
 }
 
-		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Label Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
+
+			
+				echo "<script type=\"text/javascript\">\n";
+		echo "$(document).ready(function() {\n";
+		echo "	document.getElementById (\"confirm-message\").innerHTML = \"<h3><strong>Label Successfully Created. Redirecting to the view page...</strong></h3></h3>\";\n";
+		echo "});\n";
+		echo "</script>";
+		
+		//echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Label Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
 		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",3000);</script>";
 
 						}else{
@@ -310,7 +329,8 @@ for ($row = 0; $row < 94; $row++) {
 
 
 
-		}}}
+	
+		}
 	
 $conn->close();
 ?>

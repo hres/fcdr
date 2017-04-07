@@ -1,5 +1,24 @@
-<?php include 'session.php';?>
+<?php
+
+
+ include 'session.php';
+
+
+  //$_POST['token'] =  rtrim($_POST['token']);
+ //$_SESSION['token'] =   rtrim($_SESSION['token']);
+
+	if(isset($_POST['search'])){
+			 if (!hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+
+				 header ('Location: error404.php');
+			 }
+	}
+     $_SESSION['token'] = bin2hex(random_bytes(32));
+	$token = $_SESSION['token'];
+
+ ?>
 <?php include 'Check_PackageID.php';?>
+<?php include 'Check_ProductID.php';?>
 <?php $sanitation_errors = array();?>
 <?php include 'validate-label.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
@@ -10,13 +29,17 @@
 	<title>FCDR</title>
 	<link rel="shortcut icon" type="image/png" href="/media/images/favicon.png">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" integrity="sha384-MI32KR77SgI9QAPUs+6R7leEOwtop70UsjEtFEezfKnMjXWx15NENsZpfDgq8m8S" crossorigin="anonymous">
 
-<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" integrity="sha384-o6l2EXLcx4A+q7ls2O2OP2Lb2W7iBgOsYvuuRI6G+Efbjbk6J4xbirJpHZZoHbfs" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" integrity="sha384-89aj/hOsfOyfD0Ll+7f2dobA15hDyiNb8m1dJ+rJuqgrGR+PVqNU8pybx4pbF3Cc" crossorigin="anonymous"></script>
 
 
 
@@ -179,10 +202,11 @@ $UPC12 = ($_GET['PackageID']?$_GET['PackageID']:'');
 		
 		<div class="container" >
 	<?php
-if (isset($_POST['search'])) {
+if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 	if (count($sanitation_errors) == 0) {
 		include("save-label-updated.php");
 	} else {
+		
 		foreach ($sanitation_errors as $error) {
 ?>
 			<div class="alert alert-danger">
@@ -197,14 +221,14 @@ if (isset($_POST['search'])) {
   
 
 
-<form role="form" method="post" action="#" id="vids-search-form" onsubmit="return validateForm()" name="myForm" >
+<form role="form" method="post"  id="vids-search-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'] . "?PackageID=" . $_GET['PackageID'] . "&ProductID=" .$_GET['ProductID']);?>"  onsubmit="return validateForm()" name="myForm" >
 <section style="margin-top: 15px;" class="hidethis">
 <h3>Package Label</h3>
 	  <div id="confirm-message" style="color:#008000;"></div>
 <div class="well" style="margin-right:2%;">
 	
 
-	
+	<?php include("fill_package.php"); ?>
 	
 		<div class="row">
 			<div class="form-group col-xs-6">
@@ -212,26 +236,40 @@ if (isset($_POST['search'])) {
 				<input type="text" class="form-control" style="width:540px" name="Label_UPC" disabled="disabled" id="Label_UPC" placeholder="Enter the UPC Code of the Package Label" value="<?PHP echo $row['Label_UPC']; ?>" required/> 
 			</div>
 			<div class="form-group col-xs-6">
-				<label for="Nielsen_Item_Rank_UPC" >Nielsen Item Rank UPC</label>
-				<input type="text" class="form-control" style="width:540px" name="Nielsen_Item_Rank_UPC"  id="Nielsen_Item_Rank_UPC" placeholder="Enter the Nielsen Item Rank UPC of the Package Label" value="<?PHP echo $row['Nielsen_Item_Rank_UPC']; ?>"/> 
+				<label for="Label_Description" class="required">Label Description <strong class="required">(required)</strong></label>
+				<input type="text" class="form-control" style="width:540px" name="Label_Description" id="Label_Description" placeholder="Enter the Description of the Package Label" value="<?PHP echo $row['Label_Description']; ?>" required/>
 			</div>
 
 </div>
 			<div class="row">
-			<div class="form-group col-xs-6">
-				<label for="Label_Description" class="required">Label Description <strong class="required">(required)</strong></label>
-				<input type="text" class="form-control" style="width:540px" name="Label_Description" id="Label_Description" placeholder="Enter the Description of the Package Label" value="<?PHP echo $row['Label_Description']; ?>" required/>
+							<div class="form-group col-sm-4">
+				<label for="Classification_Name">Classification Name</label>
+    <select class="form-control" id="Classification_Name" name="Classification_Name" >
+	   <option value="<?PHP echo $row['Classification_Number']; ?>" selected="selected"><?PHP echo $row['Classification_Name']; ?></option>
+	<?php include 'List_Classification.php';?>
+		
+			 </select>
 			</div>
-			<div class="form-group col-xs-6">
-				<label for="Common_Measure" >Common Household Measure </label>
-				<input type="text" class="form-control" style="width:540px" name="Common_Measure" id="Common_Measure" placeholder="Enter the Common Household Measure of the Package Label" value="<?PHP echo $row['Common_Measure']; ?>"/>
+			<div class="form-group col-sm-4">
+				<label for="Classification_Number">Classification Number</label>
+		<?php include("fill_package.php"); ?>	
+    <select class="form-control" id="Classification_Number" name="Classification_Number">
+	   <option value="<?PHP echo $row['Classification_Number']; ?>" selected="selected"><?PHP echo $row['Classification_Number']; ?></option>
+	<?php include 'List_Classification_Number.php';?>
+		
+			 </select>
 			</div>
+			<?php include("fill_package.php"); ?>	
+						<div class="form-group col-sm-4">
+				<label for="Nielsen_Item_Rank_UPC" >Nielsen Item Rank UPC</label>
+				<input type="text" class="form-control" name="Nielsen_Item_Rank_UPC"  id="Nielsen_Item_Rank_UPC" placeholder="Enter the Nielsen Item Rank UPC of the Package Label" value="<?PHP echo $row['Nielsen_Item_Rank_UPC']; ?>"/> 
+			</div>
+
+
 		
 		</div>
 	
-	</div>
-	<div class="well" style="margin-right:2%;">
-		
+
 		<div class="row">
 			<div class="form-group col-sm-4">
 				<label for="Nielsen_Category" >Nielsen Category </label>
@@ -248,25 +286,22 @@ if (isset($_POST['search'])) {
 		
 		</div>
 	
-	</div>
 	
-	<div class="well" style="margin-right:2%;">
-		
 		<div class="row">
 			<div class="form-group col-sm-4">
 				<label for="Country">Country</label>
 				<input type="text" class="form-control" name="Country"  id="Country" placeholder="Enter the Country of the Package Label" value="<?PHP echo $row['Country']; ?>" /> 
 			</div>
 			<div class="form-group col-sm-4">
-				<label for="Package_Size">Package Size </label>
-				<input type="text" class="form-control" name="Package_Size" id="Package_Size" placeholder="Enter the Package Size of the Package Label" value="<?PHP echo $row['Package_Size']; ?>" />
+				<label for="Package_Size">Net Quantity </label>
+				<input type="text" class="form-control" name="Package_Size" id="Package_Size" placeholder="Enter the Net Quantity of the Package Label" value="<?PHP echo $row['Package_Size']; ?>" />
 			</div>
 
 
 			
 
 								<div class="form-group col-sm-4">
-	<label for="Package_Size_UofM" > Package Size Unit of Measure </label>
+	<label for="Package_Size_UofM" > Net Quantity Unit of Measure </label>
     <select class="form-control" id="Package_Size_UofM" name="Package_Size_UofM" > 
 		   <option value="<?PHP echo $row['Package_Size_UofM']; ?>" selected="selected"><?PHP echo $row['Package_Size_UofM']; ?></option>
 			<?php include 'Units.php';?>
@@ -276,69 +311,73 @@ if (isset($_POST['search'])) {
 		
 		</div>
 	
-	</div>
-	<div class="well" style="margin-right:2%;">
-		
-		<div class="row">
-			<div class="form-group col-sm-4">
-				<label for="Storage_Type">Storage Type</label>
-				<input type="text" class="form-control" name="Storage_Type"  id="Storage_Type" placeholder="Enter the Storage Type of the Package Label" value="<?PHP echo $row['Storage_Type']; ?>" /> 
-			</div>
-			<div class="form-group col-sm-4">
-				<label for="Storage_Statement">Storage Statements</label>
-				<input type="text" class="form-control" name="Storage_Statement" id="Storage_Statement" placeholder="Enter the Storage Statements of the Package Label" value="<?PHP echo $row['Storage_Statement']; ?>" />
-			</div>
+	<div class="row">
 			<div class="form-group col-sm-4">
 				<label for="Number_Of_Units">Number of Units</label>
 				<input type="text" class="form-control" name="Number_Of_Units" id="Number_Of_Units" placeholder="Enter the Number of Units of the Package Label" value="<?PHP echo $row['Number_Of_Units']; ?>"/>
 			</div>
+
+			            		<div class="form-group col-sm-4">
+	<label for="Multi_Part_Package" name="Multi_Part_Package">Multi-part Package?</label>
+      <select class="form-control" id="Multi_Part_Package" name="Multi_Part_Package">
+	  <option value="<?PHP echo $row['Multipart']; ?>" selected> <?PHP echo $row['Multipart']; ?></option>
+	  	<?PHP
+		  
+		   if($row['Multipart']==""){
+
+			   echo "  <option value=\"No\">No</option> <option value=\"Yes\">Yes</option>";
 		
-		</div>
-	
+		   }elseif($row['Multipart']=="No"){
+  			echo "  <option value=\"\"></option> <option value=\"Yes\">Yes</option>";
+
+		   }else{
+
+  			echo "  <option value=\"\"></option> <option value=\"No\">No</option>";
+
+		   }
+		   
+		   
+		   
+		   ?>
+
+      </select></div>
+	  			<div class="form-group col-sm-4">
+				<label for="Common_Measure" >Common Household Measure </label>
+				<input type="text" class="form-control" name="Common_Measure" id="Common_Measure" placeholder="Enter the Common Household Measure of the Package Label" value="<?PHP echo $row['Common_Measure']; ?>"/>
+			</div>
 	</div>
-	
-		<div class="well" style="margin-right:2%; ">
-		
+
 <div class="row">
-	
-					<div class="form-group col-xs-6 ">
+					<div class="form-group col-md-12 ">
   <label for="Ingredients" class="required">Ingredients <strong class="required">(required)</strong></label>
-  <textarea class="form-control"  style="width:540px" rows="2"  id="Ingredients" name="Ingredients" required><?PHP echo $row['Ingredients']; ?></textarea>
+  <textarea class="form-control"  style="width:100%" rows="2"  id="Ingredients" name="Ingredients" required><?PHP echo $row['Ingredients']; ?></textarea>
 </div>
-		
+</div>		
 
-		
+	<div class="row">	
 				
-					<div class="form-group col-xs-6">
+					<div class="form-group col-md-12 ">
   <label for="Nutrition_Fact_Table" class="required">Nutrition Fact Table <strong class="required">(required)</strong></label>
-  <textarea class="form-control" style="width:540px"   rows="2" name="Nutrition_Fact_Table" id="Nutrition_Fact_Table" required><?PHP echo $row['Nutrition_Fact_Table']; ?></textarea>
-</div>
-		
+  <textarea class="form-control" style="width:100%"   rows="2" name="Nutrition_Fact_Table" id="Nutrition_Fact_Table" required><?PHP echo $row['Nutrition_Fact_Table']; ?></textarea>
 </div>
 </div>
-
-		<div class="well" style="margin-right:2%; ">
-		
-<div class="row">
-	
-					<div class="form-group col-xs-6 ">
+<div class="row">	
+					<div class="form-group col-md-12">
   <label for="Suggested_Direction">Suggested Direction</label>
-  <textarea class="form-control"  style="width:540px" rows="2" name="Suggested_Direction" id="Suggested_Direction" ><?PHP echo $row['Suggested_Direction']; ?></textarea>
+  <textarea class="form-control"  style="width:100%" rows="2" name="Suggested_Direction" id="Suggested_Direction" ><?PHP echo $row['Suggested_Direction']; ?></textarea>
 </div>
-		
+</div>		
 
-		
+	<div class="row">		
 				
-					<div class="form-group col-xs-6">
+					<div class="form-group col-md-12">
   <label for="Nutrition_Claim">Nutrition Claim</label>
-  <textarea class="form-control" style="width:540px" name="Nutrition_Claim"  rows="2"  id="Nutrition_Claim" ><?PHP echo $row['Nutrition_Claim']; ?></textarea>
-</div>
-		
+  <textarea class="form-control" style="width:100%" name="Nutrition_Claim"  rows="2"  id="Nutrition_Claim" ><?PHP echo $row['Nutrition_Claim']; ?></textarea>
 </div>
 </div>
 
-		<div class="well" style="margin-right:2%; ">
-		
+
+	
 <div class="row">
 	
 					<div class="form-group col-xs-6 ">
@@ -355,12 +394,18 @@ if (isset($_POST['search'])) {
 </div>
 		
 </div>
+<div class="row">	
+			<div class="form-group col-md-12">
+				<label for="Storage_Type">Storage Type</label>
+				<input type="text" class="form-control" name="Storage_Type" style="width:100%" id="Storage_Type" placeholder="Enter the Storage Type of the Package Label" value="<?PHP echo $row['Storage_Type']; ?>" /> 
+			</div>
+	</div>
+	<div class="row">	
+			<div class="form-group col-md-12">
+				<label for="Storage_Statement">Storage Statements</label>
+				<input type="text" class="form-control" name="Storage_Statement" style="width:100%" id="Storage_Statement" placeholder="Enter the Storage Statements of the Package Label" value="<?PHP echo $row['Storage_Statement']; ?>" />
+			</div>
 </div>
-
-
-	
-		
-			<div class="well" style="margin-right:2%;">
 			<div class="row">
 			<div class="form-group col-sm-4">
 				<label for="Comments">Comments</label>
@@ -409,35 +454,12 @@ if (isset($_POST['search'])) {
 		</div>
 
 		<div class="row">
-			<div class="form-group col-xs-6">
+			<div class="form-group col-md-12">
 				<label for="Product_Description">Product Description</label>
-				<input type="text" class="form-control" style="width:540px" name="Product_Description"  id="Product_Description" placeholder="Enter the Product Description of the Package Label" value="<?PHP echo $row['Product_Description']; ?>" /> 
+				<input type="text" class="form-control" name="Product_Description"style="width:100%" id="Product_Description" placeholder="Enter the Product Description of the Package Label" value="<?PHP echo $row['Product_Description']; ?>" /> 
 			</div>
 
-            		<div class="form-group col-xs-6">
-	<label for="Multi_Part_Package" name="Multi_Part_Package">Multi-part Package?</label>
-      <select class="form-control" id="Multi_Part_Package" style="width:540px" name="Multi_Part_Package">
-	  <option value="<?PHP echo $row['Multipart']; ?>" selected> <?PHP echo $row['Multipart']; ?></option>
-	  	<?PHP
-		  
-		   if($row['Multipart']==""){
 
-			   echo "  <option value=\"No\">No</option> <option value=\"Yes\">Yes</option>";
-		
-		   }elseif($row['Multipart']=="No"){
-  			echo "  <option value=\"\"></option> <option value=\"Yes\">Yes</option>";
-
-		   }else{
-
-  			echo "  <option value=\"\"></option> <option value=\"No\">No</option>";
-
-		   }
-		   
-		   
-		   
-		   ?>
-
-      </select></div>
 		</div>
 	
 	</div>
@@ -4823,7 +4845,7 @@ EOQ;
 </div>
 <div id="demo"></div>	
 		<div style="float:left; display:inline-block;">
-			 <?php echo " <a class=\"btn btn-default\" href=package_details.php?PackageID=".$_GET['PackageID'].">Back</a>";  ?>
+			 <?php echo " <a class=\"btn btn-default\" href=package_details.php?PackageID=".$_GET['PackageID']."&ProductID=".$_GET['ProductID'].">Back</a>";  ?>
 		</div>
 		<input type="hidden" name="token" value = "<?php echo $token; ?>"/>
 		<div style="float:right; display:inline-block; margin-right:2%;">
@@ -4860,8 +4882,10 @@ function goBack() {
 	</div>
 	
 	<!-- Include Date Range Picker -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js" integrity="sha384-aHFhM5aT8aFA9xA6PAeaB8dav8Bc3nF2gDv/DnBl7E6Qhutr42h9VSmf7BXTdugy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" integrity="sha384-oQPlepmWw0NnzP5Cy8gA9Q3XOJrv+Os+uVsv93hZChsFr2FeEk2at3W50doSLPzu" crossorigin="anonymous">
+
 
 <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="validate-nft.js"></script>
@@ -4888,6 +4912,7 @@ function goBack() {
 		})
 </script>
 	
+<?php include 'List_Classification_Object.php'; ?>
 
 </body>
 </html>

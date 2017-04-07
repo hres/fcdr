@@ -16,7 +16,7 @@ if (isset($_POST['search'])) {
 	if (!empty($_POST["CNF_CODE"])                      && !filter_var($_POST["CNF_CODE"], FILTER_SANITIZE_NUMBER_FLOAT)) {
 		$sanitation_errors[] = "CNF_CODE";
 	}
-	if (!empty($_POST["Cluster_Number"])                && !filter_var($_POST["Cluster_Number"], FILTER_SANITIZE_NUMBER_INT)) {
+	if (!empty($_POST["Cluster_Number"])                && !filter_var($_POST["Cluster_Number"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
 		$sanitation_errors[] = "Cluster_Number";
 	}
 	if (!empty($_POST["Description"])                   && !filter_var($_POST["Description"], FILTER_SANITIZE_STRING)) {

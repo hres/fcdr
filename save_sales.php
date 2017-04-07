@@ -8,13 +8,13 @@
 $salesID = ($_GET['SalesID']?$_GET['SalesID']:'');
 $Username = $_SESSION['currentuser'];
 
-if (isset($_POST['search'])) {
+if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
-	    if (!empty($_POST['token'])) {
+	   // if (!empty($_POST['token'])) {
    
- $_POST['token'] =  rtrim($_POST['token']);
- $_SESSION['token'] =   rtrim($_SESSION['token']);
-    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+// $_POST['token'] =  rtrim($_POST['token']);
+ //$_SESSION['token'] =   rtrim($_SESSION['token']);
+    //if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
          // Proceed to process the form data
 
 
@@ -73,7 +73,7 @@ if (isset($_POST['search'])) {
 		 $_POST['Dollar_Volume_Total'],
 		 $_POST['Kilo_Volume_Total'],
 		$_POST['Control_Label_Flag'],
-		preg_replace('/[^\d.]/', '', $_POST['Dollar_Share']),
+		$_POST['Dollar_Share'],
 		$_POST['Cluster_Number'],
 		$_POST['Product_Grouping'],
 		 $_POST['Kilo_Share'],
@@ -142,6 +142,7 @@ EOQ;
 		echo "</script>\n";
 		echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
 	}
-}}}
+
+}
 $conn->close();
 ?>

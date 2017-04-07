@@ -1,4 +1,23 @@
-<?php include 'session.php';?>
+<?php
+
+
+ include 'session.php';
+
+
+  //$_POST['token'] =  rtrim($_POST['token']);
+ //$_SESSION['token'] =   rtrim($_SESSION['token']);
+
+	if(isset($_POST['search'])){
+			 if (!hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+
+				 header ('Location: error404.php');
+			 }
+	}
+	
+     $_SESSION['token'] = bin2hex(random_bytes(32));
+	$token = $_SESSION['token'];
+
+ ?>
 <?php include 'Check_ProductID.php';?>
 <?php $sanitation_errors = array();?>
 <?php include 'validate-product.php';?>
@@ -104,7 +123,7 @@
 		<div class="container" >
 
 <?php
-if (isset($_POST['search'])) {
+if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 	if (count($sanitation_errors) == 0) {
 		include("save_product.php");
 	} else {
@@ -124,7 +143,7 @@ if (isset($_POST['search'])) {
 <div id="confirm-message" style="color:#008000;"></div>
 
 <div class="well" style="margin-right:2%;">
-	<form role="form" method="post" action="#" id="vids-search-form">
+	<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'] . "?ProductID=" .  $_GET['ProductID']) ;?>" id="vids-search-form">
 	
 	
 		<div class="row">
@@ -196,6 +215,7 @@ if (isset($_POST['search'])) {
 		</div>
 			<div class="row">
 			<div class="form-group col-sm-4 submit_button">
+			<input type="hidden" name="token" value = "<?php echo $token; ?>"/>
 				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search">Save</button>
 			</div>
 		</div>

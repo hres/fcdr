@@ -1,7 +1,9 @@
 <?php
 
-
+//$lifetime = 1200;  time() + $lifetime
 session_start();
+setcookie(session_name(), session_id(),true, "/", true);
+
 
  
 
@@ -10,10 +12,7 @@ if (!isset($_SESSION['currentuser'])) {
 	die();
 	
 }else{
-if (empty($_SESSION['token'])) {
-    $_SESSION['token'] = bin2hex(random_bytes(32));
-}
-$token = $_SESSION['token'];
+
 }
 
 ?>

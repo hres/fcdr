@@ -8,7 +8,7 @@ $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 $ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 
-		if(isset($_POST['delete-label'])) {
+		if(isset($_POST['delete-label']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 			
 			//$query = "Delete from $dbname.Product_Component where PackageID = $packageID"; 
 

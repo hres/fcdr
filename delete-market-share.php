@@ -6,7 +6,7 @@
 $salesID = ($_GET['SalesID']?$_GET['SalesID']:'');
 $ProductID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
-		if(isset($_POST['delete-market-share'])) {
+		if(isset($_POST['delete-market-share']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 			
 
 

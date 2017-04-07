@@ -14,9 +14,7 @@ EOQ;
 							$stmt->execute();
 						$stmt->store_result();
 					if (($stmt->num_rows) < 1 ){
-	                        header ('Location: error404.php');
-
-	 
+	                        header ('Location: error404.php');	 
 					}}else{
 
                         header ('Location: error404.php');

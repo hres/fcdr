@@ -1,5 +1,6 @@
 <?php include 'session.php';?>
 <?php include 'Check_PackageID.php';?>
+<?php include 'Check_ProductID.php';?>
 
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
@@ -9,28 +10,14 @@
 	<title>FCDR</title>
 	<link rel="shortcut icon" type="image/png" href="/media/images/favicon.png">
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/colreorder/1.3.2/css/colReorder.dataTables.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css">
 	
-	
-	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" integrity="sha384-o6l2EXLcx4A+q7ls2O2OP2Lb2W7iBgOsYvuuRI6G+Efbjbk6J4xbirJpHZZoHbfs" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  
 
-	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
-	</script>  
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/colreorder/1.3.2/js/dataTables.colReorder.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js">
-	</script>
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" integrity="sha384-89aj/hOsfOyfD0Ll+7f2dobA15hDyiNb8m1dJ+rJuqgrGR+PVqNU8pybx4pbF3Cc" crossorigin="anonymous"></script>
+
 
 	
 	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
@@ -142,7 +129,7 @@ $(document).ready(function()
   
   $.ajax({
   
-  type : 'POST',
+  type : 'GET',
   url  :  'search-modal-label.php?PackageID=<?php echo $_GET['PackageID']; ?>',
   data : data,
   success :  function(data) {
@@ -547,7 +534,7 @@ hr {
 <div style="float:right; ">
 
 <div class= "btn-group">
-<?php echo " <a class=\"btn btn-default\" href=edit_package.php?PackageID=" .$_GET['PackageID'] . ">Edit</a>";  ?>
+<?php echo " <a class=\"btn btn-default\" href=edit_package.php?PackageID=" .$_GET['PackageID'] . "&ProductID=" .$_GET['ProductID'] . ">Edit</a>";  ?>
 <a class="js-open-modal btn btn-default btn-large" href="#"  data-modal-id="popup" id="button"  onclick="return hidedeletemessage();">Delete Label</a>
 <a class="js-open-modal btn btn-default btn-large" href="#" data-modal-id="popup" id="button" onclick="return hiderelinkmessage();">Re-Link</a>
 </div>
@@ -584,7 +571,7 @@ hr {
 
 </div>	<br>
 <div class="well well2" style=" display:none; margin-left:0.5%; margin-right:0.5%;" id="welcomeDiv">
-	<form role="form" method="post" action="#" id="vids-search-form3">
+	<form role="form" method="get" action="<?php echo $_SERVER['PHP_SELF'];?>" id="vids-search-form3">
 	
 	
 		<div class="row">
@@ -660,51 +647,54 @@ hr {
 
 </div>
 <?php include("delete-label.php"); ?>	
+
 <table style="width:100%" class="table2">
   <tr >
     <th>Label UPC</th>
-	<th>Nielsen Item Rank UPC</th>
+
     <th>Label Description</th>
-	<th>Nielsen Category</th>   
+    <th>Classification Number</th>
+	<th>Classification Name</th>
 	
 	
   </tr>
   			<?php include("package_d_1.php"); ?>
-		<?php echo "<tr><td>". $row['Label_UPC'] . "</td><td>". $row['Nielsen_Item_Rank_UPC'] . "</td><td>". $row['Label_Description'] . "</td><td>". $row['Nielsen_Category'] . "</td></tr>"?>
+		<?php echo "<tr><td>". $row['Label_UPC'] . "</td><td>". $row['Label_Description'] . "</td><td>". $row['Classification_Number'] . "</td><td>". $row['Classification_Name'] . "</td></tr>"?>
 
 </table>
 
-
 <table style="width:100%" class="table2">
   <tr >
-    <th>Brand</th>
-    <th>Manufacturer</th>
+
+  	<th>Nielsen Item Rank UPC</th>  
+	<th>Nielsen Category</th>   
+	<th>Brand</th>
+	<th>Manufacturer</th>
 	<th>Country</th>
-	<th>Package Size</th>
-	
-	
   </tr>
-  			<?php echo "<tr><td>". $row['Brand'] . "</td><td>". $row['Manufacturer'] . "</td><td>". $row['Country'] . "</td><td>". $row['Package_Size'] . "</td></tr>"?>
-		
+  			
+		<?php echo "<tr><td>". $row['Nielsen_Item_Rank_UPC'] . "</td><td>". $row['Nielsen_Category'] . "</td><td>". $row['Brand'] . "</td><td>". $row['Manufacturer'] . "</td><td>". $row['Country'] . "</td></tr>"?>
 
 </table>
 
 
 
 <table style="width:100%" class="table2">
-  <tr >
-    <th>Package  Size Unit Of Measure</th>
-    <th>Storage Type</th>
-	<th>Storage Statements</th>
+  <tr>
+    
+    <th>Net Quantity</th>
+	<th>Net Quantity Unit Of Measure</th>
 	<th>Number Of Units</th>
 	<th>Multi-part Package?</th>
 	
 	
   </tr>
-  			<?php echo "<tr><td>". $row['Package_Size_UofM'] . "</td><td>". $row['Storage_Type'] . "</td><td>". $row['Storage_Statement'] . "</td><td>". $row['Number_Of_Units'] . "</td><td>". $row['Multipart'] . "</td></tr>"?>
+  			<?php echo "<tr><td>". $row['Package_Size'] . "</td><td>". $row['Package_Size_UofM'] . "</td><td>". $row['Number_Of_Units'] . "</td><td>". $row['Multipart'] . "</td></tr>"?>
 		
 
 </table>
+
+
 
 		<div class="container">
 
@@ -787,6 +777,7 @@ hr {
 							<th>Amount</th>
 							<th>Unit of Measure</th>
 							<th>% DV</th>
+							<th>Per 100g Amount</th>
 							
 						</tr>
 					</thead>
@@ -876,6 +867,7 @@ hr {
 							<th>Amount</th>
 							<th>Unit of Measure</th>
 							<th>% DV</th>
+							<th>Per 100g Amount</th>
 							
 						</tr>
 					</thead>
@@ -1009,7 +1001,17 @@ $conn->close();
 <div class="well">
 <?php echo " ". $row['Health_Claim'] ."";  ?></div>
 </section>
+<section>
+<strong>Storage Type</strong>
+<div class="well">
+<?php echo " ". $row['Storage_Type'] ."";  ?></div>
+</section>
 
+<section>
+<strong>Storage Satements</strong>
+<div class="well">
+<?php echo " ". $row['Storage_Statement'] ."";  ?></div>
+</section>
 <section>
 <strong>Comments</strong>
 <div class="well">

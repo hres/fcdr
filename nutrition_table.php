@@ -12,11 +12,27 @@ $PackageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 
 EOQ;
 
+
 							$stmt_list = $conn->prepare($list_fields);
 					     	$stmt_list->bind_param("i",$PackageID);
 							$stmt_list->execute();	
-							$result_list = $stmt_list->get_result();
+							$result_list= $stmt_list->get_result();
 
+		$list_fields2 =<<<EOQ
+		select Per_Serving_Amount_In_Grams, Per_Serving_Amount, Per_Serving_Unit 
+		from  Package
+		WHERE PackageID = ? 
+
+EOQ;
+
+							$stmt_list2 = $conn->prepare($list_fields2);
+					     	$stmt_list2->bind_param("i",$PackageID);
+							$stmt_list2->execute();	
+							$result_list2 = $stmt_list2->get_result();
+							$row2 = $result_list2->fetch_assoc();
+							$Per_Serving_Amount_In_Grams = $row2['Per_Serving_Amount_In_Grams'];
+							$Per_Serving_Amount = $row2['Per_Serving_Amount'];
+							$Per_Serving_Unit =  $row2['Per_Serving_Unit'];
 
 
 if (!$result_list) {
@@ -27,7 +43,21 @@ if (!$result_list) {
 		
 		$row['Component_Name'] = ($row['Component_Name']==='Sugars Alcohol'?'Sugar Alcohols':$row['Component_Name']); 
 		$row['Component_Name'] = ($row['Component_Name']==='Energy kj'?'Energy kJ':$row['Component_Name']); 
-		echo "<tr><td>". $row['Component_Name'] . "</td><td>". $row['Amount'] . "</td><td>". $row['Amount_Unit_Of_Measure'] . "</td><td>". $row['Daily_Value'] . "</td></tr>";                       
+		$Per_100g = NULL;
+
+		if(((!empty($row['Amount']) && strlen($row['Amount'])) != 0 || $row['Amount'] == 0) && $row['Amount_Unit_Of_Measure'] == 'g'){
+
+				if(!empty($Per_Serving_Amount_In_Grams) && $Per_Serving_Amount_In_Grams != 0){
+
+					$Per_100g  = ($row['Amount'] / $Per_Serving_Amount_In_Grams) * 100;
+
+				}else if((empty($Per_Serving_Amount_In_Grams) || $Per_Serving_Amount_In_Grams == 0) && $Per_Serving_Unit == 'g' && $Per_Serving_Amount != 0){
+					$Per_100g = ($row['Amount'] / $Per_Serving_Amount) * 100;
+				}
+
+		}
+		
+		echo "<tr><td>". $row['Component_Name'] . "</td><td>". $row['Amount'] . "</td><td>". $row['Amount_Unit_Of_Measure'] . "</td><td>". $row['Daily_Value'] . "</td><td>$Per_100g</td></tr>";                       
 		}
 }
 

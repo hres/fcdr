@@ -1,4 +1,7 @@
+<?php
 
+header('X-Content-Type-Options: nosniff')
+?>
 <header role="banner">
 <div id="wb-bnr">
 <div id="wb-bar">
@@ -33,7 +36,11 @@
 </div>
 <div id= "logout-but" style="float:right; margin-right:-13px;">					<?php
 					if(isset($_SESSION['currentuser'])){
-					echo "<li><a href='logout.php' class = 'btn btn-default'>Logout</a></li>"; }					
+
+					echo "<li><a href='logout.php' class = 'btn btn-default'>Logout</a></li>";
+					
+					
+					 }					
 					
 					?> </div>
 </div>

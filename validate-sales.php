@@ -3,40 +3,40 @@ if (isset($_POST['search'])) {
 
 
 
-	if (!filter_var($_POST["Dollar_Volume"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+	if (!filter_var($_POST["Dollar_Volume"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION) && $_POST["Dollar_Volume"] !=0) {
 		$sanitation_errors[] = "Dollar Volume";
 	}
-		if (!filter_var($_POST["Kilo_Volume_Percent_Change"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+		if (!filter_var($_POST["Kilo_Volume_Percent_Change"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION) && $_POST["Kilo_Volume_Percent_Change"] != 0) {
 		$sanitation_errors[] = "Kilo Volume Percent Change";
 	}
-    	if (!filter_var($_POST["Kilo_Vol"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+    	if (!filter_var($_POST["Kilo_Vol"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION) && $_POST["Kilo_Vol"] != 0) {
 		$sanitation_errors[] = "Kilo Vol";
 	}
-    	if (!filter_var($_POST["Dollar_Rank"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+    	if (!filter_var($_POST["Dollar_Rank"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION) && $_POST["Dollar_Rank"] != 0) {
 		$sanitation_errors[] = "Dollar Rank";
 	}
-    	if (!filter_var($_POST["Dollar_Volume_PerCentage_Change"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+    	if (!filter_var($_POST["Dollar_Volume_PerCentage_Change"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION) && $_POST["Dollar_Volume_PerCentage_Change"] != 0) {
 		$sanitation_errors[] = "Dollar Volume PerCentage Change";
 	}
-    	if (!empty($_POST["Average_AC_Dist"])           && !filter_var($_POST["Average_AC_Dist"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+    	if (!empty($_POST["Average_AC_Dist"])           && !filter_var($_POST["Average_AC_Dist"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION) && $_POST["Average_AC_Dist"] !=0) {
 		$sanitation_errors[] = "Average AC Dist";
 	}
-	    	if (!filter_var($_POST["Dollar_Share"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+	    	if (!filter_var($_POST["Dollar_Share"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION) && $_POST["Dollar_Share"] != 0) {
 		$sanitation_errors[] = "Dollar Share";
 	}
     	if (!empty($_POST["Average_Retail_Price"])           && !filter_var($_POST["Average_Retail_Price"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
 		$sanitation_errors[] = "Average Retail Price";
 	}
-    	if (!filter_var($_POST["Dollar_Volume_Total"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+    	if (!filter_var($_POST["Dollar_Volume_Total"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION) && $_POST["Dollar_Volume_Total"]!=0) {
 		$sanitation_errors[] = "Dollar Volume Total";
 	}
-    	if (!filter_var($_POST["Kilo_Volume_Total"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+    	if (!filter_var($_POST["Kilo_Volume_Total"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION) && $_POST["Kilo_Volume_Total"]!=0) {
 		$sanitation_errors[] = "Kilo Volume Total";
 	}
-    	if (!filter_var($_POST["Kilo_Share"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+    	if (!filter_var($_POST["Kilo_Share"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION) && $_POST["Kilo_Share"]!= 0) {
 		$sanitation_errors[] = "Kilo Share";
 	}
-    	if (!empty($_POST["Kilo_Rank"])           && !filter_var($_POST["Kilo_Rank"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+    	if (!empty($_POST["Kilo_Rank"])           && !filter_var($_POST["Kilo_Rank"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION) && $_POST["Kilo_Rank"] !=0) {
 		$sanitation_errors[] = "Kilo Rank";
 	}
     	if (!empty($_POST["Product_Grouping"])           && !filter_var($_POST["Product_Grouping"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {

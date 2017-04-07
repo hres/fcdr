@@ -6,14 +6,14 @@
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 $Username = $_SESSION['currentuser'];
 
-if (isset($_POST['search'])) {
+if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
-        if (!empty($_POST['token'])) {
+       // if (!empty($_POST['token'])) {
    
-  $_POST['token'] =  rtrim($_POST['token']);
- $_SESSION['token'] =   rtrim($_SESSION['token']);
+  //$_POST['token'] =  rtrim($_POST['token']);
+ //$_SESSION['token'] =   rtrim($_SESSION['token']);
  
-    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+    //if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
          // Proceed to process the form data
     
 
@@ -151,16 +151,33 @@ EOQ;
 
 
 		if (!$result ) {
-	echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to create Market Share...</strong></h3>\";</script>";
+	//echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message2\"). innerHTML = \"<h3><strong>Failed to create Market Share...</strong></h3>\";</script>";
 	
+				echo "<script type=\"text/javascript\">\n";
+		echo "$(document).ready(function() {\n";
+		echo "	document.getElementById (\"confirm-message2\").innerHTML = \"<h3><strong>Failed to create Market Share...</strong></h3>\";\n";
+		echo "});\n";
+		echo "</script>";
+
 		} else {
-		echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Market Share Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
+		//echo "<script type=\"text/javascript\"> document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Market Share Successfully Created. Redirecting to the view page...</strong></h3>\";</script>";
+	
+				
+				echo "<script type=\"text/javascript\">\n";
+		echo "$(document).ready(function() {\n";
+		echo "	document.getElementById (\"confirm-message\").innerHTML = \"<h3><strong>Market Share Successfully Created. Redirecting to the view page...</strong></h3>\";\n";
+		echo "});\n";
+		echo "</script>";
+	
+	
+	
+	
 		echo "<script>setTimeout(\"location.href = 'view_product.php?ProductID=$productID';\",2500);</script>";
 
 
 		}
 	}
-}}
+
 }
 $conn->close();
 

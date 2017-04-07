@@ -6,7 +6,7 @@
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 
 
-		if(isset($_POST['delete-product'])) {
+		if(isset($_POST['delete-product']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 $delete_classification =<<<EOQ

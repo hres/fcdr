@@ -1,7 +1,13 @@
 <?php include 'connection.php';?>
 <?php
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 	session_start();
 	
+	$old_sessionid = session_id();
+	session_regenerate_id();
+
+	$new_sessionid = session_id();
 	
 
 	$tableau = array();
@@ -53,5 +59,5 @@ EOQ;
 	
 
 	echo json_encode($tableau);
-	
+	}
 ?>

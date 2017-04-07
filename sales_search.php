@@ -2,14 +2,9 @@
 <?php include 'connection.php';?>
 <?php
 
-	if(isset($_POST['search1'])) {
+	if(isset($_GET['search1']) && $_SERVER["REQUEST_METHOD"] == "GET") {
 
-        if (!empty($_POST['token'])) {
-   
-  $_POST['token'] =  rtrim($_POST['token']);
- $_SESSION['token'] =   rtrim($_SESSION['token']);
- 
-    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+
          // Proceed to process the form data
     
         
@@ -18,10 +13,10 @@
 	  $field2 = array('Sales_UPC', 'Nielsen_Category', 'Source', 'Sales_Year', 'Sales_Description', 'Comments', 'date1');
     $conditions = array();
     $flag1 = false;
-//(empty($_POST[$field]) && strlen($_POST[$field]) == 0 ?NULL :$data[5])
+//(empty($_GET[$field]) && strlen($_GET[$field]) == 0 ?NULL :$data[5])
 
  foreach($field2 as $field){
-        if(!empty($_POST[$field]) && strlen($_POST[$field]) != 0 && !ctype_space($_POST[$field]) ){
+        if(!empty($_GET[$field]) && strlen($_GET[$field]) != 0 && !ctype_space($_GET[$field]) ){
           $flag1 = true;
           break;
       }else {
@@ -42,20 +37,20 @@ if($flag1){
 
   foreach($fields as $field){
         // if the field is set and not empty
-        if(isset($_POST[$field]) && $_POST[$field] != '') {
+        if(isset($_GET[$field]) && $_GET[$field] != '') {
 		
             // create a new condition while escaping the value inputed by the user (SQL Injection)
-            $conditions[] = "`$field` LIKE '%" . mysqli_real_escape_string($conn,$_POST[$field]) . "%'";
+            $conditions[] = "`$field` LIKE '%" . mysqli_real_escape_string($conn,$_GET[$field]) . "%'";
         }
     }
 	
 	
 
-		 if(isset($_POST['date1']) && $_POST['date1'] != ''){
+		 if(isset($_GET['date1']) && $_GET['date1'] != ''){
 			 
-			   $from_date = $_POST['date1'];
+			   $from_date = $_GET['date1'];
 
-				$to_date = $_POST['date2'];
+				$to_date = $_GET['date2'];
 					 $conditions[] 	 = " Collection_Date between '$from_date' and '$to_date'";
 
 }
@@ -91,8 +86,7 @@ if (!$result) {
 		        echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3 >Must enter at least one field</h3>\" </script>";
 
 	}
-	}
-    }
+	
     }
 
 $conn->close();

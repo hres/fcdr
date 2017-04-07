@@ -1,4 +1,21 @@
-<?php include 'session.php';?>
+<?php
+
+
+ include 'session.php';
+
+
+  //$_POST['token'] =  rtrim($_POST['token']);
+ //$_SESSION['token'] =   rtrim($_SESSION['token']);
+
+	if(isset($_POST['search'])){
+			 if (!hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+				  header ('Location: error404.php');
+			 }
+	}
+     $_SESSION['token'] = bin2hex(random_bytes(32));
+	$token = $_SESSION['token'];
+
+ ?>
 <?php $sanitation_errors = array();?>
 <?php include 'validate-create-product.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
@@ -9,14 +26,17 @@
 	<title>FCDR</title>
 	<link rel="shortcut icon" type="image/png" href="/media/images/favicon.png">
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" integrity="sha384-MI32KR77SgI9QAPUs+6R7leEOwtop70UsjEtFEezfKnMjXWx15NENsZpfDgq8m8S" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
-	</script>  
 	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" integrity="sha384-o6l2EXLcx4A+q7ls2O2OP2Lb2W7iBgOsYvuuRI6G+Efbjbk6J4xbirJpHZZoHbfs" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" integrity="sha384-89aj/hOsfOyfD0Ll+7f2dobA15hDyiNb8m1dJ+rJuqgrGR+PVqNU8pybx4pbF3Cc" crossorigin="anonymous"></script>
+
+
 
 
 	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
@@ -105,7 +125,7 @@
 <main role="main" property="mainContentOfPage" class="container">
 
 <?php
-if (isset($_POST['search'])) {
+if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 	if (count($sanitation_errors) == 0) {
 		include("new-product.php");
 	} else {
@@ -126,7 +146,7 @@ if (isset($_POST['search'])) {
 		<div id="confirm-message" style="color:#008000;"></div>
 		<div id="confirm-message2" style="color:#FF0000;"></div>	
 		<div class="well wb-frmvld" style="margin-right:2%; ">
-<form role="form" method="post" action="#" id="vids-search-form">
+<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" id="vids-search-form">
 	
 	
 
@@ -275,6 +295,6 @@ function goBack() {
 		</main>
 			<?php include 'footer.php';?>
 	</div>
-<?php include 'List_Classification_Object.php'?>
+<?php include 'List_Classification_Object.php'; ?>
 </body>
 </html>

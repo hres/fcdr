@@ -3,14 +3,15 @@
 
 <?php
 
-	if(isset($_POST['search'])) {
+	if(isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
-        if (!empty($_POST['token'])) {
+
+       // if (!empty($_POST['token'])) {
    
-  $_POST['token'] =  rtrim($_POST['token']);
- $_SESSION['token'] =   rtrim($_SESSION['token']);
+ // $_POST['token'] =  rtrim($_POST['token']);
+ //$_SESSION['token'] =   rtrim($_SESSION['token']);
  
-    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+    //if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
     
 
 $Username = $_SESSION['currentuser'];
@@ -148,8 +149,15 @@ echo "</script>\n";
 					}
 		
 		}
+/*
+	}else{
+	$var1 = 	  $_POST['token'] =  rtrim($_POST['token']);
+ $var2 = $_SESSION['token'] =   rtrim($_SESSION['token']);
+		echo "NOT SAME $var1 <br>  $var2";
 
-	}}
+	}
+	*/
+//}
 }
 
 $conn->close();

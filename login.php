@@ -1,4 +1,9 @@
+<?php
 
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+?>
 
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
@@ -8,19 +13,18 @@
 	<title>FCDR</title>
 	<link rel="shortcut icon" type="image/png" href="/media/images/favicon.png">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
 
 
-<script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
-
+<script src="https://formden.com/static/cdn/formden.js" integrity="sha384-MsKPMz6b6gP+SF0UXTkFPd6Vvm5s+oHuVfmfyMON0VCCrbPYxan15zuNk5sIQQBO" crossorigin="anonymous"></script>
 <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" integrity="sha384-34U14a9ISTviFf44/OGfcoBiXJTk4jYxkR3fNtRqGxyCbsUyRM90SuD3D7Mmy4Bz" crossorigin="anonymous">
 
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" integrity="sha384-MI32KR77SgI9QAPUs+6R7leEOwtop70UsjEtFEezfKnMjXWx15NENsZpfDgq8m8S" crossorigin="anonymous">
 <!--Font Awesome (added because you use icons in your prepend/append)-->
-<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
 
 <!--<![endif]-->
 <!--[if lt IE 9]>
@@ -183,7 +187,7 @@ span.psw {
 </header>
 <main role="main" property="mainContentOfPage" class="container">
 
-<form  method="post" id="testJSON"  action="save_session.php">
+<form  role="form" method="post" id="testJSON"  action="save_session.php">
 
 
   <div class="container2">

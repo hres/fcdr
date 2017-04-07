@@ -4,7 +4,7 @@
 ini_set('display_errors', 1); 
 
 
-	if(isset($_POST['delete-label'])) {
+	if(isset($_POST['delete-label']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
 $ImageID = ($_GET['ImageID']?$_GET['ImageID']:'');
 

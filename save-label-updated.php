@@ -5,15 +5,15 @@
 
 $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 
-		if(isset($_POST['search'])) {
+		if(isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
  	//error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 
-	    if (!empty($_POST['token'])) {
+	  // if (!empty($_POST['token'])) {
    
- $_POST['token'] =  rtrim($_POST['token']);
- $_SESSION['token'] =   rtrim($_SESSION['token']);
-    if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+ //$_POST['token'] =  rtrim($_POST['token']);
+ //$_SESSION['token'] =   rtrim($_SESSION['token']);
+   // if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
 
 
 $Username = $_SESSION['currentuser'];
@@ -25,7 +25,14 @@ $_POST['Per_Serving_Amount_In_Grams'] = (empty($_POST['Per_Serving_Amount_In_Gra
 $_POST['Per_Serving_Amount_In_Grams_PPD'] = (empty($_POST['Per_Serving_Amount_In_Grams_PPD']) && strlen($_POST['Per_Serving_Amount_In_Grams_PPD']) == 0 ?NULL :$_POST['Per_Serving_Amount_In_Grams_PPD']);
 $_POST['Collection_Date'] = (empty($_POST['Collection_Date']) && strlen($_POST['Collection_Date']) == 0 ?NULL :$_POST['Collection_Date']);
 $_POST['Calculated'] = (empty($_POST['Calculated']) && strlen($_POST['Calculated']) == 0 ?NULL :$_POST['Calculated']);
-
+$Classification_Number = (empty($_POST['Classification_Number'] ) && strlen($_POST['Classification_Number'] ) == 0 ?NULL :$_POST['Classification_Number'] );;
+			
+			$stmt_classification = $conn->prepare("Select Classification_Name From Classification Where Classification_Number = ?");		
+			$stmt_classification->bind_param("d", $Classification_Number);
+			$stmt_classification->execute();
+			$result = $stmt_classification->get_result();
+			$row = $result->fetch_assoc(); 
+$Classification_Name = $row['Classification_Name'];
 
 		$param = array(
 			$_POST['Label_Description'],
@@ -94,13 +101,15 @@ UPDATE Package SET
 	Multipart = ?,
 	Calculated = ?,
 	Nielsen_Item_Rank_UPC = ?,
-	Last_Edited_By = ?
+	Last_Edited_By = ?,
+	Classification_Number = ?,
+	Classification_Name = ?
 
 	WHERE PackageID=?
 EOQ;
 
 							$stmt = $conn->prepare($query);
-							$stmt->bind_param("sssdsdsssssssssssssssissddssissi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27],$param[28],$param[29],$Username,$packageID);
+							$stmt->bind_param("sssdsdsssssssssssssssissddssissdsi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27],$param[28],$param[29],$Username,$Classification_Number,$Classification_Name,$packageID);
 							$result_insert = $stmt->execute();
 							//$last_id = mysqli_insert_id($conn);
 
@@ -181,11 +190,13 @@ EOQ;
 
 							for ($row = 0; $row < 47; $row++) { //empty($as_prepared[$row][1]) && strlen($as_prepared[$row][1]) == 0
 								$stmt = $conn->prepare($query_insert_asprepred);
+							
+							
+								$as_prepared[$row][1] = preg_replace('/[^\d.]/', '',  $as_prepared[$row][1]);
+								$as_prepared[$row][3] = preg_replace('/[^\d.]/', '', $as_prepared[$row][3]);
+
 								$as_prepared[$row][1] =  (empty($as_prepared[$row][1]) && strlen($as_prepared[$row][1]) == 0 ?NULL :$as_prepared[$row][1]);
 								$as_prepared[$row][3] = (empty($as_prepared[$row][3]) && strlen($as_prepared[$row][3]) == 0 ?NULL :$as_prepared[$row][3]);
-
-								//$as_prepared[$row][1] = preg_replace('/[^\d.]/', '',  $as_prepared[$row][1]);
-								///$as_prepared[$row][3] = preg_replace('/[^\d.]/', '', $as_prepared[$row][3]);
 								
 								$stmt->bind_param("dsdiis",$as_prepared[$row][1],$as_prepared[$row][2],$as_prepared[$row][3],$packageID,$as_prepared[$row][0],$as_prepared[$row][4]);
 								$results = $stmt->execute();
@@ -269,12 +280,13 @@ EOQ;
 							for ($row1 = 0; $row1 < 47; $row1++) {
 								$stmt = $conn->prepare($query_insert_as_sold);
 								//$as_sold[$row1][3] = (!empty($as_sold[$row1][3])?$as_sold[$row1][3] :NULL);
-								
+								$as_sold[$row1][1] = preg_replace('/[^\d.]/', '', $as_sold[$row1][1]);
+								$as_sold[$row1][3] = preg_replace('/[^\d.]/', '', $as_sold[$row1][3]);
+
 								$as_sold[$row1][1] =  (empty($as_sold[$row1][1]) && strlen($as_sold[$row1][1]) == 0 ?NULL :$as_sold[$row1][1]);
 								$as_sold[$row1][3] =  (empty($as_sold[$row1][3]) && strlen($as_sold[$row1][3]) == 0 ?NULL :$as_sold[$row1][3]);
 
-								//$as_sold[$row1][1] = preg_replace('/[^\d.]/', '', $as_sold[$row1][1]);
-								//$as_sold[$row1][3] = preg_replace('/[^\d.]/', '', $as_sold[$row1][3]);
+
 								//					   preg_replace('/[^\d.]/', '', $_POST['Number_Of_Units'])
 								$stmt->bind_param("dsdiii",$as_sold[$row1][1],$as_sold[$row1][2],$as_sold[$row1][3],$packageID,$as_sold[$row1][0],$as_sold[$row1][4]);
 								$results = $stmt->execute();
@@ -290,11 +302,12 @@ EOQ;
 		echo "});\n";
 		echo "</script>";
 		
-		echo "<script>setTimeout(\"location.href = 'package_details.php?PackageID=$packageID';\",3000);</script>";
+		echo "<script>setTimeout(\"location.href = 'package_details.php?PackageID=$packageID&ProductID=".$_GET['ProductID']."';\",3000);</script>";
 
 		}
 
-		}}}
+	
+		}
 			//echo "Success... ";
 $conn->close();
 ?>
