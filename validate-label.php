@@ -11,7 +11,7 @@
 			//$_POST['Per_Serving_Amount_In_Grams_PPD'] = preg_replace('/[^\d.]/', '', $_POST['Per_Serving_Amount_In_Grams_PPD']);
 
 
-	if (!filter_var($_POST["Per_Serving_Amount"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+	if (!filter_var($_POST["Per_Serving_Amount"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION) && $_POST["Per_Serving_Amount"] !=0) {
 		$sanitation_errors[] = "Per Serving Amount";
 	}
 
