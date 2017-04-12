@@ -3357,7 +3357,7 @@ EOQ;
 
 	
 	?>
-   <input type="text" class="form-control" placeholder="% Daily value of Insolube Fibre" name="Insolube_Fibre_DValue_S" value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>">
+   <input type="text" class="form-control" placeholder="% Daily value of Insolube Fibre" name="Insolube_Fibre_DValue_S" value="<?PHP echo $row['Daily_Value']; ?>">
   </div>
  </div>
  </div>
