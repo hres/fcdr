@@ -4044,8 +4044,8 @@ EOQ;
    <input type="text" class="form-control" placeholder="Amount of Riboflavin" id="Riboflavin_Amount_S" name="Riboflavin_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="Riboflavin_Unit_S" name="Riboflavin_Unit_S" value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>">
-	    <option value="" selected="selected"></option>
+	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+	   
 	<?php include 'Units.php';?>
 		 <option value=""></option>
       
