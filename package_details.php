@@ -744,15 +744,15 @@ hr {
 <div class="col-sm-4">
   <div class="panel panel-default">
   <div class="panel-heading"> Per Serving <br>Unit of Measure</div>
-  <div class="panel-body">
-    <?php echo " ". $row['Per_Serving_Unit'] ."";  ?>
+  <div class="panel-body" style="height:30px">
+    <?php echo " ". $row['Per_Serving_Unit'] ." ";  ?>
   </div>
 </div>
 </div>
 <div class="col-sm-4">
   <div class="panel panel-default">
-  <div class="panel-heading"> Per Serving Amount<br> (grams)</div>
-  <div class="panel-body">
+  <div class="panel-heading" > Per Serving Amount<br> (grams)</div>
+  <div class="panel-body" style="height:30px">
     <?php echo " ". $row['Per_Serving_Amount_In_Grams'] ."";  ?>
   </div>
 </div>
@@ -765,8 +765,8 @@ hr {
 </div>
   <div class="panel panel-info">
   <div class="panel-heading"> Household Measure</div>
-  <div class="panel-body">
-    <?php echo " ". $row['Common_Measure'] ."";  ?>
+  <div class="panel-body" style="height:30px">
+    <?php echo " ". $row['Common_Measure'] ." ";  ?>
   </div>
 </div>
 		<strong>Nutrition Fact Table</strong>
@@ -803,7 +803,7 @@ hr {
 <div class="col-xs-6">  
   <div class="panel panel-default">
   <div class="panel-heading"> Per Serving  Amount</div>
-  <div class="panel-body">
+  <div class="panel-body" style="height:30px">
     <?php echo " ". $row['PPD_Per_Serving_Amount'] ."";  ?>
   </div>
 
@@ -813,7 +813,7 @@ hr {
 <div class="col-xs-6">
   <div class="panel panel-default">
   <div class="panel-heading"> Per Serving Unit of Measure</div>
-  <div class="panel-body">
+  <div class="panel-body" style="height:30px">
     <?php echo " ". $row['PPD_Per_Serving_UofM'] ."";  ?>
   </div>
 </div>
@@ -823,7 +823,7 @@ hr {
 <div class="col-xs-6">
   <div class="panel panel-default">
   <div class="panel-heading"> Per Serving Amount (grams)</div>
-  <div class="panel-body">
+  <div class="panel-body" style="height:30px">
     <?php echo " ". $row['Per_Serving_Amount_In_Grams_PPD'] ."";  ?>
   </div>
 </div>
@@ -831,8 +831,8 @@ hr {
 
 <div class="col-xs-6">
   <div class="panel panel-default">
-  <div class="panel-heading"> Calculated?</div>
-  <div class="panel-body">
+  <div class="panel-heading" > Calculated?</div>
+  <div class="panel-body" style="height:30px">
     <?php 
 	 $row['Calculated'] =  ($row['Calculated']=="1"? "Yes":$row['Calculated']);
 
