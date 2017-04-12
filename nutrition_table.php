@@ -45,7 +45,7 @@ if (!$result_list) {
 		$row['Component_Name'] = ($row['Component_Name']==='Energy kj'?'Energy kJ':$row['Component_Name']); 
 		$Per_100g = NULL;
 
-		if(((!empty($row['Amount']) && strlen($row['Amount'])) != 0 || $row['Amount'] == 0) && $row['Amount_Unit_Of_Measure'] == 'g'){
+		if(((!empty($row['Amount'])  && $row['Amount'] != NULL) || $row['Amount'] === '0') ){
 
 				if(!empty($Per_Serving_Amount_In_Grams) && $Per_Serving_Amount_In_Grams != 0){
 
@@ -67,7 +67,6 @@ if (!$result_list) {
 	$fill_package =<<<EOQ
 		Select * from Package P 
 		where P.PackageID = ?
-
 
 EOQ;
 

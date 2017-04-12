@@ -46,7 +46,7 @@ if (!$result_list) {
 		$row['Component_Name'] = ($row['Component_Name']==='Energy kj'?'Energy kJ':$row['Component_Name']); 
 		$Per_100g = NULL;
 
-		if((!empty($row['Amount']) && strlen($row['Amount']) != 0 || $row['Amount'] == 0) && $row['Amount_Unit_Of_Measure']=== 'g'){
+		if(((!empty($row['Amount'])  && $row['Amount'] != NULL) || $row['Amount'] === '0') ){
 				if((!empty($Per_Serving_Amount_In_Grams_PPD) && strlen($Per_Serving_Amount_In_Grams_PPD) != 0 ) && $Per_Serving_Amount_In_Grams_PPD != 0){
 					$Per_100g  = ($row['Amount'] / $Per_Serving_Amount_In_Grams_PPD) * 100;
 				}elseif((empty($Per_Serving_Amount_In_Grams_PPD) && strlen($Per_Serving_Amount_In_Grams_PPD) == 0 || $Per_Serving_Amount_In_Grams_PPD == 0) && $PPD_Per_Serving_UofM=== 'g' && $PPD_Per_Serving_Amount != 0 && !empty($PPD_Per_Serving_Amount) && strlen($PPD_Per_Serving_Amount) != 0 ){
