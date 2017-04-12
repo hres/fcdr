@@ -6,7 +6,7 @@
 
   //$_POST['token'] =  rtrim($_POST['token']);
  //$_SESSION['token'] =   rtrim($_SESSION['token']);
-/*
+
 	if(isset($_POST['search'])){
 			 if (!hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
 				  header ('Location: error404.php');
@@ -14,7 +14,7 @@
 	}
      $_SESSION['token'] = bin2hex(random_bytes(32));
 	$token = $_SESSION['token'];
-*/
+
  ?>
 <?php include 'Check_ProductID.php';?>
 <?php $sanitation_errors = array();?>
