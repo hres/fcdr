@@ -1142,7 +1142,7 @@ EOQ;
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);		  
-	$Component_Name = 'Insolube Fibre';
+	$Component_Name ='Insoluble Fibre';
 	$PPD = 1;
 	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
 	$editpackagestmt->execute();
@@ -1169,7 +1169,7 @@ EOQ;
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);  
-	$Component_Name = 'Insolube Fibre';
+	$Component_Name = 'Insoluble Fibre';
 	$PPD = 1;
 	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
 	$editpackagestmt->execute();
@@ -3322,7 +3322,7 @@ EOQ;
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
-	$Component_Name = 'Insolube Fibre';
+	$Component_Name = 'Insoluble Fibre';
 	$PPD = 0;
 	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
 	$editpackagestmt->execute();
@@ -3348,7 +3348,7 @@ EOQ;
 	<?php
 
 	$editpackagestmt = $conn->prepare($editpackagequery);
-	$Component_Name = 'Insolube Fibre';
+	$Component_Name = 'Insoluble Fibre';
 	$PPD = 0;
 	$editpackagestmt->bind_param("sii", $Component_Name, $UPC12, $PPD);
 	$editpackagestmt->execute();
@@ -3468,7 +3468,7 @@ EOQ;
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Starch_Unit_S" name="Starch_Unit_S">
-	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"></option>
+	   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>
       </select>  </div>
@@ -3512,7 +3512,7 @@ EOQ;
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Protein_Unit_S" name="Protein_Unit_S">
-	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"></option>
+	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>
       
@@ -3646,8 +3646,8 @@ EOQ;
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Potassium_Unit_S" name="Potassium_Unit_S">
-	    <option value="" selected="selected"></option>
-	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+	    <option value="" selected=""></option>
+	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected ><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>
       
