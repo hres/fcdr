@@ -5,7 +5,6 @@
 
 $packageID = ($_GET['PackageID']?$_GET['PackageID']:'');
 
-		if(isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
  	//error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 
@@ -307,7 +306,7 @@ EOQ;
 		}
 
 	
-		}
+		
 			//echo "Success... ";
 $conn->close();
 ?>

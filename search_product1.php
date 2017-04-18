@@ -6,22 +6,22 @@
 
 
 
-	if(isset($_GET['search']) && $_SERVER["REQUEST_METHOD"] == "GET") {
+	if(isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 	
   
    
-  //$_GET['token'] =  rtrim($_GET['token']);
+  //$_POST['token'] =  rtrim($_POST['token']);
  //$_SESSION['token'] =   rtrim($_SESSION['token']);
-    //if (hash_equals(trim($_SESSION['token']),trim($_GET['token']))) {
+    //if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
          // Proceed to process the form data
 
 	 $fields = array('Brand','Description', 'Manufacturer', 'Classification_Number', 'CNF_CODE','Classification_Type', 'Comments','Cluster_Number');
     $conditions = array();
     $flag = false;
-//(empty($_GET[$field]) && strlen($_GET[$field]) == 0 ?NULL :$data[5])
+//(empty($_POST[$field]) && strlen($_POST[$field]) == 0 ?NULL :$data[5])
 
  foreach($fields as $field){
-      if(!empty($_GET[$field]) && strlen($_GET[$field]) != 0 && !ctype_space($_GET[$field]) ){
+      if(!empty($_POST[$field]) && strlen($_POST[$field]) != 0 && !ctype_space($_POST[$field]) ){
           $flag = true;
           break;
       }else {
@@ -39,9 +39,9 @@ if($flag){
     // loop through the defined fields
     foreach($fields as $field){
         // if the field is set and not empty
-        if(isset($_GET[$field]) && $_GET[$field] != '') {
+        if(isset($_POST[$field]) && $_POST[$field] != '') {
             // create a new condition while escaping the value inputed by the user (SQL Injection)
-            $conditions[] = "`$field` LIKE '%" . mysqli_real_escape_string($conn,$_GET[$field]) . "%'";
+            $conditions[] = "`$field` LIKE '%" . mysqli_real_escape_string($conn,$_POST[$field]) . "%'";
         }
     }
 

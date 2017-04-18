@@ -1,5 +1,22 @@
 
-<?php include 'session.php';?>
+<?php
+
+
+ include 'session.php';
+
+
+  //$_POST['token'] =  rtrim($_POST['token']);
+ //$_SESSION['token'] =   rtrim($_SESSION['token']);
+
+	if(isset($_POST['search1'])){
+			 if (!hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+				  header ('Location: error404.php');
+			 }
+	}
+     $_SESSION['token'] = bin2hex(random_bytes(32));
+	$token = $_SESSION['token'];
+
+ ?>
 <?php $sanitation_errors = array();?>
 <?php include 'validate-search.php';?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
@@ -122,7 +139,7 @@
 <main role="main" property="mainContentOfPage" class="container">
 
     <?php
-if (isset($_GET['search1']) && $_SERVER["REQUEST_METHOD"] == "GET") {
+if (isset($_POST['search1']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 	if (count($sanitation_errors) == 0) {
 
 	} else {
@@ -165,7 +182,7 @@ if (isset($_GET['search1']) && $_SERVER["REQUEST_METHOD"] == "GET") {
   <section style="margin-top: 15px;">
 <div  style="margin-right:2%;">
 
-	<form role="form" method="get" action="<?php echo $_SERVER['PHP_SELF'];?>" id="vids-search-form1">
+	<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" id="vids-search-form1">
 
 <div class="well">	
 <div class="row">
@@ -429,7 +446,7 @@ if (!$result) {
 		<tbody>
 
     <?php
-if (isset($_GET['search1'])) {
+if (isset($_POST['search1'])) {
 	if (count($sanitation_errors) == 0) {
 		include("search_all.php");
 	} 

@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -7,6 +8,13 @@
   //$_POST['token'] =  rtrim($_POST['token']);
  //$_SESSION['token'] =   rtrim($_SESSION['token']);
 
+	if(isset($_POST['search'])){
+			 if (!hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
+				  header ('Location: error404.php');
+			 }
+	}
+     $_SESSION['token'] = bin2hex(random_bytes(32));
+	$token = $_SESSION['token'];
 
  ?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
@@ -157,7 +165,7 @@ $(document).ready(function() {
 <section style="margin-top: 15px;" class="hidethis">
 
 <div class="well" style="margin-right:2%;">
-	<form role="form" method="get" action="<?php echo $_SERVER['PHP_SELF'];?>" id="vids-search-form">
+	<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" id="vids-search-form">
 	
 	
 

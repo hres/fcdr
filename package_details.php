@@ -570,9 +570,8 @@ hr {
 </div>
 
 </div>	<br>
-<div class="well well2" style=" display:none; margin-left:0.5%; margin-right:0.5%;" id="welcomeDiv">
-	<form role="form" method="get" action="<?php echo $_SERVER['PHP_SELF'];?>" id="vids-search-form3">
-	
+<div class="well well2" style="display:none; margin-left:0.5%; margin-right:0.5%;" id="welcomeDiv">
+	<form role="form" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="vids-search-form3">
 	
 		<div class="row">
 			<div class="form-group col-sm-4">
@@ -609,9 +608,7 @@ hr {
 				<div class="form-group col-sm-4">
 				<label for="immunizing_agent">Classification Type</label>
 				<input type="text" class="form-control" name="Classification_Type" id="Classification_Type" placeholder="Enter the Classification Type of the Product" />		
-			</div>
-			
-		
+			</div>		
 		</div>
 		<div class="row">
 	

@@ -2,7 +2,7 @@
 <?php include 'connection.php';?>
 <?php
 
-	if(isset($_GET['search1']) && $_SERVER["REQUEST_METHOD"] == "GET") {
+	if(isset($_POST['search1']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
 
          // Proceed to process the form data
@@ -13,10 +13,10 @@
 	  $field2 = array('Sales_UPC', 'Nielsen_Category', 'Source', 'Sales_Year', 'Sales_Description', 'Comments', 'date1');
     $conditions = array();
     $flag1 = false;
-//(empty($_GET[$field]) && strlen($_GET[$field]) == 0 ?NULL :$data[5])
+//(empty($_POST[$field]) && strlen($_POST[$field]) == 0 ?NULL :$data[5])
 
  foreach($field2 as $field){
-        if(!empty($_GET[$field]) && strlen($_GET[$field]) != 0 && !ctype_space($_GET[$field]) ){
+        if(!empty($_POST[$field]) && strlen($_POST[$field]) != 0 && !ctype_space($_POST[$field]) ){
           $flag1 = true;
           break;
       }else {
@@ -37,20 +37,20 @@ if($flag1){
 
   foreach($fields as $field){
         // if the field is set and not empty
-        if(isset($_GET[$field]) && $_GET[$field] != '') {
+        if(isset($_POST[$field]) && $_POST[$field] != '') {
 		
             // create a new condition while escaping the value inputed by the user (SQL Injection)
-            $conditions[] = "`$field` LIKE '%" . mysqli_real_escape_string($conn,$_GET[$field]) . "%'";
+            $conditions[] = "`$field` LIKE '%" . mysqli_real_escape_string($conn,$_POST[$field]) . "%'";
         }
     }
 	
 	
 
-		 if(isset($_GET['date1']) && $_GET['date1'] != ''){
+		 if(isset($_POST['date1']) && $_POST['date1'] != ''){
 			 
-			   $from_date = $_GET['date1'];
+               $from_date =  filter_var($_POST["date1"], FILTER_SANITIZE_STRING);
 
-				$to_date = $_GET['date2'];
+                $to_date = filter_var($_POST["date2"], FILTER_SANITIZE_STRING);
 					 $conditions[] 	 = " Collection_Date between '$from_date' and '$to_date'";
 
 }
@@ -87,6 +87,13 @@ if (!$result) {
 
 	}
 	
+
+    function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
     }
 
 $conn->close();

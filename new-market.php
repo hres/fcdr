@@ -6,7 +6,7 @@
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 $Username = $_SESSION['currentuser'];
 
-if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
+
 
        // if (!empty($_POST['token'])) {
    
@@ -178,7 +178,7 @@ EOQ;
 		}
 	}
 
-}
+
 $conn->close();
 
 ?>

@@ -8,7 +8,7 @@
 $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 $Username = $_SESSION['currentuser'];
 
-		if(isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
+
 			 	//error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 
@@ -330,7 +330,7 @@ for ($row = 0; $row < 94; $row++) {
 
 
 	
-		}
+		
 	
 $conn->close();
 ?>

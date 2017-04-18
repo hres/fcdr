@@ -3,13 +3,13 @@
 <?php
 
 
-	if(isset($_GET['search2']) && $_SERVER["REQUEST_METHOD"] == "GET") {
+	if(isset($_POST['search2']) && $_SERVER["REQUEST_METHOD"] == "POST") {
   
    
-  //$_GET['token'] =  rtrim($_GET['token']);
+  //$_POST['token'] =  rtrim($_POST['token']);
  //$_SESSION['token'] =   rtrim($_SESSION['token']);
  
-    //if (hash_equals(trim($_SESSION['token']),trim($_GET['token']))) {
+    //if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
   
     
 
@@ -21,7 +21,7 @@
 	    $flag1 = false;
 
  foreach($field2 as $field){
-      if(!empty($_GET[$field]) && strlen($_GET[$field]) != 0 && !ctype_space($_GET[$field]) ){
+      if(!empty($_POST[$field]) && strlen($_POST[$field]) != 0 && !ctype_space($_POST[$field]) ){
           $flag = true;
           break;
       }else {
@@ -37,19 +37,19 @@ if($flag){
 	
 
 
-        if(!empty($_GET[$field])&& strlen($_GET[$field]) != 0  && !ctype_space($_GET[$field]) ) {
+        if(!empty($_POST[$field])&& strlen($_POST[$field]) != 0  && !ctype_space($_POST[$field]) ) {
            
 			 
 		   // create a new condition while escaping the value inputed by the user (SQL Injection)
-            $conditions[] = "`$field` LIKE '%" . mysqli_real_escape_string($conn,$_GET[$field]) . "%'";
+            $conditions[] = "`$field` LIKE '%" . mysqli_real_escape_string($conn,$_POST[$field]) . "%'";
         }
     }
 	
 	
-				 if(isset($_GET['date1']) && $_GET['date1'] != ''){
-			    $from_date = $_GET['date1'];
+				 if(isset($_POST['date1']) && $_POST['date1'] != ''){
+                $from_date = filter_var($_POST["date1"], FILTER_SANITIZE_STRING);
 
-				$to_date = $_GET['date2'];
+                $to_date = filter_var($_POST["date2"], FILTER_SANITIZE_STRING);
 
 				 $conditions[] 	 = " Collection_Date between '$from_date' and '$to_date'";
 
@@ -90,7 +90,6 @@ $stmt_first = $conn->prepare($first_query);
         echo "<script>document.getElementById(\"noResult\").innerHTML = \"<h3 >Must enter at least one field</h3>\" </script>";
     }
 	//}
-    
     
     }
 	

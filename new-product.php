@@ -3,7 +3,7 @@
 
 <?php
 
-	if(isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
+
 
 
        // if (!empty($_POST['token'])) {
@@ -158,7 +158,7 @@ echo "</script>\n";
 	}
 	*/
 //}
-}
+
 
 $conn->close();
 ?>

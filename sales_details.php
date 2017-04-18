@@ -53,7 +53,7 @@ $(document).ready(function()
   
   $.ajax({
   
-  type : 'GET',
+  type : 'POST',
   url  :  'search-modal-market.php?SalesID=<?php echo $_GET['SalesID']; ?>',
   data : data,
   success :  function(data) {
@@ -512,7 +512,7 @@ $(window).resize();
   <form action="#" method="post" id="vids-search-formxx">
 
   <input type="submit" value="Delete" class="btn btn-default" name="delete-market-share" >
-</form>
+  </form>
 
 </div>
 
@@ -520,7 +520,7 @@ $(window).resize();
 
 <div class="well wellx" style=" display:none; margin-left:0.5%; margin-right:0.5%;" id="welcomeDiv">
 
-	<form role="form" method="get" action="<?php echo $_SERVER['PHP_SELF'];?>" id="vids-search-formx">
+	<form role="form" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="vids-search-formx">
 	
 	
 		<div class="row">

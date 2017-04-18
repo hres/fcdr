@@ -8,7 +8,6 @@
 $salesID = ($_GET['SalesID']?$_GET['SalesID']:'');
 $Username = $_SESSION['currentuser'];
 
-if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
 	   // if (!empty($_POST['token'])) {
    
@@ -143,6 +142,6 @@ EOQ;
 		echo "<script>setTimeout(\"location.href = 'sales_details.php?SalesID=$salesID';\",3000);</script>";
 	}
 
-}
+
 $conn->close();
 ?>

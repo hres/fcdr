@@ -10,8 +10,8 @@ $salesID = ($_GET['SalesID']?$_GET['SalesID']:'');
 
     // loop through the defined fields
     foreach($fields as $field){
-        if(isset($_GET[$field]) && $_GET[$field] != '') {
-            $conditions[] = "`$field` LIKE '%" . mysqli_real_escape_string($conn,$_GET[$field]) . "%'";
+        if(isset($_POST[$field]) && $_POST[$field] != '') {
+            $conditions[] = "`$field` LIKE '%" . mysqli_real_escape_string($conn,$_POST[$field]) . "%'";
         }
     }
 	
