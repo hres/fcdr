@@ -312,14 +312,14 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 		</div>
 	
 	<div class="row">
-			<div class="form-group col-sm-4">
+			<div class="form-group col-md-6">
 				<label for="Number_Of_Units">Number of Units</label>
-				<input type="text" class="form-control" name="Number_Of_Units" id="Number_Of_Units" placeholder="Enter the Number of Units of the Package Label" value="<?PHP echo $row['Number_Of_Units']; ?>"/>
+				<input type="text" class="form-control" name="Number_Of_Units" style="width:580px" id="Number_Of_Units" placeholder="Enter the Number of Units of the Package Label" value="<?PHP echo $row['Number_Of_Units']; ?>"/>
 			</div>
 
-			            		<div class="form-group col-sm-4">
+			            		<div class="form-group col-md-6">
 	<label for="Multi_Part_Package" name="Multi_Part_Package">Multi-part Package?</label>
-      <select class="form-control" id="Multi_Part_Package" name="Multi_Part_Package">
+      <select class="form-control" id="Multi_Part_Package" style="width:580px" name="Multi_Part_Package">
 	  <option value="<?PHP echo $row['Multipart']; ?>" selected> <?PHP echo $row['Multipart']; ?></option>
 	  	<?PHP
 		  
@@ -341,9 +341,16 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 		   ?>
 
       </select></div>
-	  			<div class="form-group col-sm-4">
+	  </div>
+<div class="row">	
+			<div class="form-group col-md-6">
+				<label for="Storage_Type">Storage Type</label>
+				<input type="text" class="form-control" name="Storage_Type" style="width:580px" id="Storage_Type" placeholder="Enter the Storage Type of the Package Label" value="<?PHP echo $row['Storage_Type']; ?>" /> 
+			</div>
+
+	  			<div class="form-group col-md-6">
 				<label for="Common_Measure" >Common Household Measure </label>
-				<input type="text" class="form-control" name="Common_Measure" id="Common_Measure" placeholder="Enter the Common Household Measure of the Package Label" value="<?PHP echo $row['Common_Measure']; ?>"/>
+				<input type="text" class="form-control" name="Common_Measure"  style="width:580px" id="Common_Measure" placeholder="Enter the Common Household Measure of the Package Label" value="<?PHP echo $row['Common_Measure']; ?>"/>
 			</div>
 	</div>
 
@@ -394,12 +401,6 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 		
 </div>
-<div class="row">	
-			<div class="form-group col-md-12">
-				<label for="Storage_Type">Storage Type</label>
-				<input type="text" class="form-control" name="Storage_Type" style="width:100%" id="Storage_Type" placeholder="Enter the Storage Type of the Package Label" value="<?PHP echo $row['Storage_Type']; ?>" /> 
-			</div>
-	</div>
 	<div class="row">	
 			<div class="form-group col-md-12">
 				<label for="Storage_Statement">Storage Statements</label>

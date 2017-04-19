@@ -683,10 +683,11 @@ hr {
 	<th>Net Quantity Unit Of Measure</th>
 	<th>Number Of Units</th>
 	<th>Multi-part Package?</th>
+	<th>Storage Type</th>
 	
 	
   </tr>
-  			<?php echo "<tr><td>". $row['Package_Size'] . "</td><td>". $row['Package_Size_UofM'] . "</td><td>". $row['Number_Of_Units'] . "</td><td>". $row['Multipart'] . "</td></tr>"?>
+  			<?php echo "<tr><td>". $row['Package_Size'] . "</td><td>". $row['Package_Size_UofM'] . "</td><td>". $row['Number_Of_Units'] . "</td><td>". $row['Multipart'] . "</td><td>". $row['Storage_Type'] . "</td></tr>"?>
 		
 
 </table>
@@ -998,14 +999,10 @@ $conn->close();
 <div class="well">
 <?php echo " ". $row['Health_Claim'] ."";  ?></div>
 </section>
-<section>
-<strong>Storage Type</strong>
-<div class="well">
-<?php echo " ". $row['Storage_Type'] ."";  ?></div>
-</section>
+
 
 <section>
-<strong>Storage Satements</strong>
+<strong>Storage Statements</strong>
 <div class="well">
 <?php echo " ". $row['Storage_Statement'] ."";  ?></div>
 </section>
