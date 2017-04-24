@@ -37,11 +37,12 @@ EOQ;
 	$row = $result->fetch_assoc();	
 	if(mysqli_num_rows($result)>0){
 		
+		$username = $row['Name'];
 		$_SESSION['currentuser'] = $username;
 		
 		
 		$tableau["error"] = "No";
-		$tableau["success"] = "<p style=\"color: #00b300; padding:25px;\"><h3>You have successfully logged in as '$username', <a href=\"index.php\">go to the home page...</a></h3></p>";	
+		$tableau["success"] = "<p style=\"color: #00b300; padding:25px;\"><h3>You have successfully logged in as<span style=\"color:red\"> $username </span>, <a href=\"index.php\">go to the home page...</a></h3></p>";	
 		
 	}else{
 	
