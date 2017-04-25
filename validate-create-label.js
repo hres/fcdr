@@ -3,13 +3,14 @@ $.validator.addMethod( "myDateFormat", function(value, element) {
 
 	// valid if optional and empty OR if it passes the regex test
 	return (this.optional(element) && value == "") || re.test(value);
+
 });
 
 $(document).ready(function(){
 
 
 $("#vids-search-form").validate({
- ignore: "",
+    ignore: "",
     rules: {
         Label_UPC: {
 				required: true,
@@ -31,8 +32,7 @@ $("#vids-search-form").validate({
 
          number: true
 
-},
-				Collection_Date: {
+},Collection_Date: {
 					required: true,
 					date: true
 				},
@@ -64,8 +64,6 @@ $("#vids-search-form").validate({
          number: true
 
 },
-//
-
         Energy_kj_Amount: {
   number: true, 
          required: {
@@ -121,9 +119,7 @@ $("#vids-search-form").validate({
           return $('#Saturated_Trans_Amount').val().length > 0;
         }}
 
-},
-
-    Saturated_Fat_Amount : {   
+},Saturated_Fat_Amount : {   
   number: true, 
          required: {
              
@@ -165,6 +161,7 @@ $("#vids-search-form").validate({
         }}
 
 },
+    
     Omega6_Amount : {   
   number: true, 
          required: {
@@ -209,8 +206,7 @@ $("#vids-search-form").validate({
           return $('#Monounsaturated_Unit').val().length > 0;
         }}
 
-},  
-    Monounsaturated_Unit : {   
+}, Monounsaturated_Unit : {   
 
          required: {
              
@@ -329,6 +325,7 @@ $("#vids-search-form").validate({
         }}
 
 },  
+	
     Starch_Unit : {   
 
          required: {
@@ -490,6 +487,8 @@ $("#vids-search-form").validate({
         }}
 
 },
+
+
 
     VitaminE_Amount : {   
   number: true, 
@@ -677,8 +676,7 @@ $("#vids-search-form").validate({
         }}
 
 },
-
-    Pantothenate_Amount : {   
+	 Pantothenate_Amount : {   
   number: true, 
          required: {
              
@@ -828,7 +826,6 @@ $("#vids-search-form").validate({
         }}
 
 },
-
     Chromium_Amount : {   
   number: true, 
          required: {
@@ -864,7 +861,7 @@ $("#vids-search-form").validate({
           return $('#Molybdenium_Amount').val().length > 0;
         }}
 
-},  
+},
      Chloride_Amount : {   
   number: true, 
          required: {
@@ -915,6 +912,7 @@ $("#vids-search-form").validate({
         }}
 
 },
+
   Energy_kj_Amount_S: {
   number: true, 
          required: {
@@ -953,7 +951,6 @@ $("#vids-search-form").validate({
 
 },
 
-
 Saturated_Fat_Amount_S : {   
   number: true, 
          required: {
@@ -990,7 +987,7 @@ Saturated_Fat_Amount_S : {
           return $('#Trans_Fat_Amount_S').val().length > 0;
         }}
 
-},  
+},
    Polyunsaturated_Amount_S : {   
   number: true, 
          required: {
@@ -1026,25 +1023,6 @@ Saturated_Fat_Amount_S : {
              
              depends: function(element){
           return $('#Omega6_Amount_S').val().length > 0;
-        }}
-
-},
-
-    Fat_Amount_S : {   
-  number: true, 
-         required: {
-             
-             depends: function(element){
-          return $('#Fat_Unit_S').val().length > 0;
-        }}
-
-},  
-    Fat_Unit_S : {   
-
-         required: {
-             
-             depends: function(element){
-          return $('#Fat_Amount_S').val().length > 0;
         }}
 
 },
@@ -1087,6 +1065,7 @@ Saturated_Fat_Amount_S : {
         }}
 
 },
+
 
 
     Carbohydrates_Amount_S : {   
@@ -1416,8 +1395,7 @@ number: true,
           return $('#VitaminK_Amount_S').val().length > 0;
         }}
 
-},
-    Thiamine_Amount_S : {   
+},Thiamine_Amount_S : {   
 number: true,
          required: {
              
@@ -1621,9 +1599,7 @@ number: true,
           return $('#Iodide_Amount_S').val().length > 0;
         }}
 
-},
-
-    Magnesium_Amount_S : {   
+},Magnesium_Amount_S : {   
 number: true,
          required: {
              
@@ -1808,11 +1784,39 @@ number: true,
    
 
 },
+ 
+    Fat_Unit_S : {   
+
+         required: {
+             
+             depends: function(element){
+
+          return $('#Fat_Amount_S').val().length > 0;
+          
+        }
+    }
+
+},
+    Fat_Amount_S : {   
+    
+     number: true, 
+         required: {
+             
+             depends: function(element){
+
+          return $('#Fat_Unit_S').val().length > 0;
+
+        }
+    }
+
+}, 
  Per_Serving_Amount : {   
     number: true,
    required: true
 //
     }, /**/
+   
+		
   },
     messages: {
     date1: "Enter the correct date format"
