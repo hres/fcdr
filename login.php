@@ -237,6 +237,9 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 }
 ?>
+
+<div style="margin:50px 50px;">
+<h2>Login</h2>
 <form  role="form" method="post" id="testJSON" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 
 
@@ -252,7 +255,7 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 </form>
-
+</div>
 
 		
 	
