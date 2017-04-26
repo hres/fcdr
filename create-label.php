@@ -1362,7 +1362,7 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
  
   <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label for="Fat_Amount_S" class="col-sm-3 control-label">Energy kJ</label>
+  <label for="Energy_kj_Amount_S" class="col-sm-3 control-label">Energy kJ</label>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="Amount of Energy kJ" name="Energy_kj_Amount_S" id="Energy_kj_Amount_S">
   </div><!-- /col-sm-9 -->
@@ -1380,7 +1380,7 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
  
    <div class= "row" style="margin-top:4px;">
 		 <div class="form-group">
-  <label for="Fat_Amount_S" class="col-sm-3 control-label">Saturated + Trans Fat</label>
+  <label for="Saturated_Trans_kj_Unit_S" class="col-sm-3 control-label">Saturated + Trans Fat</label>
   <div class="col-sm-3">
    <input type="text" class="form-control" placeholder="Amount of Saturated + Trans Fat" name="Saturated_Trans_kj_Amount_S" id="Saturated_Trans_kj_Amount_S">
   </div><!-- /col-sm-9 -->
@@ -1404,7 +1404,7 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
    <input type="text" class="form-control" placeholder="Amount of Fat" name="Fat_Amount_S" id="Fat_Amount_S">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Fat_Unit_S">
+ <select class="form-control" id="Fat_Unit_S" name="Fat_Unit_S">
   <option value="" selected="selected"></option>
 			<?php include 'Units.php';?>
       
@@ -2178,6 +2178,7 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
 <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="validate-create-label.js"></script>
+
 
 	<script>
 	$(document).ready(function(){
