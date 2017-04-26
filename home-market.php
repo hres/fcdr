@@ -63,8 +63,8 @@
 <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />-->
 
 <!--Font Awesome (added because you use icons in your prepend/append)-->
-<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
 
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" integrity="sha384-MI32KR77SgI9QAPUs+6R7leEOwtop70UsjEtFEezfKnMjXWx15NENsZpfDgq8m8S" crossorigin="anonymous">
 
 
 <script type="text/javascript" src="js/formden.js"></script>
