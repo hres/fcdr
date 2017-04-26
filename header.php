@@ -65,7 +65,7 @@ ini_set('session.cookie_httponly', true);
   <li> <a href="create-product.php">Create Product</a></li>
 				   <li><a  href="importdata.php" >Import</a></li>
 
-				<li><a href="#">Export</a></li>
+				
 			</ul>
 		</div>
 	</div>
