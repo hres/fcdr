@@ -26,7 +26,7 @@ header("location: index.php");
 	$token = $_SESSION['token'];
 
  ?>
-
+<?php $sanitation_errors = array();?>
 <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
 <html>
 <head>
@@ -57,6 +57,7 @@ header("location: index.php");
 <![endif]-->
 
 <script type="text/javascript">
+/*
 $(function(){
 	$("#testJSON").submit(function(event){
           event.preventDefault();
@@ -95,7 +96,7 @@ $(function(){
 	
 	
 	
-});
+});*/
 
 </script>
 
@@ -209,7 +210,32 @@ span.psw {
 </header>
 <main role="main" property="mainContentOfPage" class="container">
 
-<form  role="form" method="post" id="testJSON"  action="save_session.php">
+
+<?php
+if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
+  
+  include("save_session.php"); 
+
+	if (count($sanitation_errors) == 0) {
+		//include("new-product.php");
+
+        ?>
+        			<div class="alert alert-success">
+                <strong>Success!</strong> You have successfully logged in as <strong><?php echo "<span style=\"color:red\"> " . $_SESSION['currentuser']."</span> Redirecting to the home page <script>setTimeout(\"location.href = 'index.php';\",4000);</script>" ;?></strong>
+			</div>
+            <?php
+	} else {
+		foreach ($sanitation_errors as $error) {
+?>
+			<div class="alert alert-danger">
+				<strong>Error!</strong> Wrong Password and/or Username <strong><?php ?></strong>
+			</div>
+<?php
+		}
+	}
+}
+?>
+<form  role="form" method="post" id="testJSON" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 
 
   <div class="container2">
@@ -234,7 +260,23 @@ span.psw {
 
 		<?php include 'footer.php';?>
 
-
-
 </body>
 </html>
+<?php
+if (isset($_POST['logoutbutton'])&& isset($_SESSION['currentuser']) && $_SERVER["REQUEST_METHOD"] == "POST") {
+
+	//$_SESSION = array(); 
+
+	if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 42000,
+        $params["path"], $params["domain"],
+        $params["secure"], $params["httponly"]
+    );
+}
+
+session_destroy();
+header("location: login.php");
+
+}
+?>

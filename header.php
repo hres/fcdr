@@ -37,7 +37,16 @@ header('X-Content-Type-Options: nosniff')
 <div id= "logout-but" style="float:right; margin-right:-13px;">					<?php
 					if(isset($_SESSION['currentuser'])){
 
-					echo "<li><a href='logout.php' class = 'btn btn-default'>Logout</a></li>";
+					echo "
+					
+							<form method=\"post\" action=\"login.php\">
+
+							<button  type=\"submit\" class=\"btn btn-default\" name=\"logoutbutton\">Logout</button>
+							</form> 
+					
+					
+					
+					";
 					
 					
 					 }					
