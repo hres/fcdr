@@ -27,11 +27,7 @@ EOQ;
 		
 		$username = $row['Name'];
 		$_SESSION['currentuser'] = $username;
-
-
-session_regenerate_id();
-
-
+		
 
 
 	}else{

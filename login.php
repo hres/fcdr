@@ -8,8 +8,10 @@ header("Pragma: no-cache");
 
 <?php
 
-
+ini_set('session.cookie_httponly', true);
 session_start();
+
+
 
 if(isset($_SESSION['currentuser'])){
 header("location: index.php");
@@ -221,7 +223,7 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
         ?>
         			<div class="alert alert-success">
-                <strong>Success!</strong> You have successfully logged in as <strong><?php echo "<span style=\"color:red\"> " . $_SESSION['currentuser']."</span> Redirecting to the home page <script>setTimeout(\"location.href = 'index.php';\",3300);</script>" ;?></strong>
+                <strong>Success!</strong> You have successfully logged in as <strong><?php echo "<span style=\"color:red\"> " . $_SESSION['currentuser']."</span> Redirecting to the home page <script>setTimeout(\"location.href = 'index.php';\",2800);</script>" ;?></strong>
 			</div>
             <?php
 	} else {

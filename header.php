@@ -1,6 +1,6 @@
 <?php
-
-header('X-Content-Type-Options: nosniff')
+header('X-Content-Type-Options: nosniff');
+ini_set('session.cookie_httponly', true);
 ?>
 <header role="banner">
 <div id="wb-bnr">
