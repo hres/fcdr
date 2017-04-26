@@ -221,7 +221,7 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
         ?>
         			<div class="alert alert-success">
-                <strong>Success!</strong> You have successfully logged in as <strong><?php echo "<span style=\"color:red\"> " . $_SESSION['currentuser']."</span> Redirecting to the home page <script>setTimeout(\"location.href = 'index.php';\",4000);</script>" ;?></strong>
+                <strong>Success!</strong> You have successfully logged in as <strong><?php echo "<span style=\"color:red\"> " . $_SESSION['currentuser']."</span> Redirecting to the home page <script>setTimeout(\"location.href = 'index.php';\",3300);</script>" ;?></strong>
 			</div>
             <?php
 	} else {
