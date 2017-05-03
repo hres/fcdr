@@ -66,8 +66,7 @@ $(document).ready(function() {
 				},
 				Sales_UPC: {
 				required: true,
-				digits: true,
-				minlength: 10
+				digits: true
 				}, 
 				Sales_Year: {
 				digits: true,

@@ -14,8 +14,7 @@ $("#vids-search-form").validate({
     rules: {
         Label_UPC: {
 				required: true,
-				digits: true,
-				minlength: 12
+				digits: true
 
 },
  Package_Size : {   
