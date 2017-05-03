@@ -8,9 +8,8 @@ header("Pragma: no-cache");
 
 <?php
 
-ini_set('session.cookie_httponly', true);
 session_start();
-
+ini_set('session.cookie_httponly', true);
 
 
 if(isset($_SESSION['currentuser'])){
@@ -44,9 +43,10 @@ header("location: index.php");
 
 <script src="https://formden.com/static/cdn/formden.js" integrity="sha384-MsKPMz6b6gP+SF0UXTkFPd6Vvm5s+oHuVfmfyMON0VCCrbPYxan15zuNk5sIQQBO" crossorigin="anonymous"></script>
 <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" integrity="sha384-34U14a9ISTviFf44/OGfcoBiXJTk4jYxkR3fNtRqGxyCbsUyRM90SuD3D7Mmy4Bz" crossorigin="anonymous">
+<!--<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" integrity="sha384-34U14a9ISTviFf44/OGfcoBiXJTk4jYxkR3fNtRqGxyCbsUyRM90SuD3D7Mmy4Bz" crossorigin="anonymous">-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" integrity="sha384-MI32KR77SgI9QAPUs+6R7leEOwtop70UsjEtFEezfKnMjXWx15NENsZpfDgq8m8S" crossorigin="anonymous">
+<!--<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" integrity="sha384-MI32KR77SgI9QAPUs+6R7leEOwtop70UsjEtFEezfKnMjXWx15NENsZpfDgq8m8S" crossorigin="anonymous">-->
 <!--Font Awesome (added because you use icons in your prepend/append)-->
 
 
@@ -215,7 +215,7 @@ span.psw {
 
 <?php
 if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
-  
+  	
   include("save_session.php"); 
 
 	if (count($sanitation_errors) == 0) {
