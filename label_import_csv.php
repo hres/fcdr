@@ -3,7 +3,6 @@
 
 
 
-
 			$allowed =  array('csv');		
 		$tmpfname = $_FILES['file_save']['tmp_name'];
 		$ext = pathinfo($_FILES['file_save']['name'], PATHINFO_EXTENSION);
@@ -62,7 +61,7 @@ $conn->autocommit(FALSE);
 			$Number_Of_Units                                = $data[10];
 			$Storage_Type                                   = $data[11];
 			$Storage_Statement                              = $data[12];
-			$Collection_Date                                = $data[13];
+			$Collection_Date                                = (empty($data[13]) && strlen($data[13]) == 0 ?NULL :$data[13]); //$data[13]; //
 			$Health_Claim                                   = $data[14];
 			$Nutrient_Claim                                 = $data[15];
 			$Other_Package_Statement                        = $data[16];
@@ -639,6 +638,8 @@ EOQ;
 						$stmt = $conn->prepare($query1);
 						$stmt->bind_param("ssssssssssssssssssssssssssssssss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8], $params[9], $params[10], $params[11], $params[12], $params[13], $params[14], $params[15], $params[16], $params[17], $params[18], $params[19], $params[20], $params[21], $params[22], $params[23], $params[24], $params[25], $params[26], $params[27], $params[28],$params[29],$Username, $Neilsen_Item_Rank_UPC);
 						$stmt->execute();
+						
+
 						$nid = mysqli_insert_id($conn);
 						++$linked_to_market_count;
 						$params = array($Brand, $Manufacturer, $Neilsen_Item_Rank_UPC);
