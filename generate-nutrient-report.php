@@ -159,6 +159,7 @@ EOQ;
 $query =<<<EOQ
   SELECT P.Description,
        P.Brand AS Product_Brand,
+       P.ProductID AS Product_Product_ID,
        P.Manufacturer AS Product_Manufacturer,
        P.Comments AS Product_Comments,
        P.Cluster_Number AS Product_Cluster_Number,
@@ -301,7 +302,7 @@ EOQ;
 
 
 echo "<tr>
-            <td>". $row['Description'] .                                " </td>
+           <td> <a href=view_product.php?ProductID=" .$row['Product_Product_ID'] . " target = '_blank'>". $row['Description'] . "</a></td>
             <td>". $row['Product_Manufacturer'] .                       " </td>
             <td>". $row['Product_Brand'] .                                " </td>
             <td>". $row['Product_Classification_Number'] .                                " </td>
