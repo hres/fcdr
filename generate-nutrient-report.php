@@ -69,6 +69,7 @@ if(count($list_of_classification) > 0 && count($conditions) > 0 ){
        $query =<<<EOQ
   SELECT P.Description,
        P.Brand AS Product_Brand,
+       P.ProductID AS Product_Product_ID,
        P.Manufacturer AS Product_Manufacturer,
        P.Comments AS Product_Comments,
        S.Sales_UPC,
