@@ -176,6 +176,7 @@ th, td{
 
 	 <li ><a  href="sample-designreport.php">Sample Design Report </a></li>
     <li  class="active"><a href="nutrient-analysis-report.php">Nutrient Analysis Report</a></li>
+	   <li><a href="label-report.php">Label Report</a></li>
 
   </ul>
 
