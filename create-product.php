@@ -221,7 +221,35 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 		
 					<div class="row">
 					<input type="hidden" name="token" value = "<?php echo $token; ?>"/>
-			<div class="form-group col-sm-4 submit_button" >
+	<div class="form-group col-sm-4">
+							<label for="Restaurant_Type">Restaurant Type</label>
+				 <select class="form-control" id="Restaurant_Type"  name="Restaurant_Type">
+
+			<option value="" selected>Select a Restaurant Type</option>			
+			<option value="Caterer" >Caterer</option>
+			<option value="Family" >Family</option>
+			<option value="Fine Dining" >Fine Dining</option>
+			<option value="Food Service Distributor" >Food Service Distributor</option>
+			<option value="Food Service Manufacturer" >Food Service Manufacturer</option>
+			<option value="Home Meal Replacement" >Home Meal Replacement</option>
+			<option value="Institutional Food Service" >Institutional Service</option>
+			<option value="Quick Service" >Quick Service</option>
+	
+			 </select>
+			</div>
+
+
+				<div class="form-group col-sm-4">
+							<label for="Type">Type</label>
+				 <select class="form-control" id="Type" name="Type">
+
+ 				 <option value="" slected>Select a Type</option>
+			  <option value="Retail" >Retail</option>
+			<option value="Food Service" >Food Service</option>
+		
+			 </select>
+			</div>
+			<div class="form-group  col-sm-4 " >
 				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search">Save</button>
 			</div>
 		</div>

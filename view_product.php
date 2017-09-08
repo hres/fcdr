@@ -268,6 +268,45 @@ $(window).resize();
 
 }
 
+
+
+
+td, th {
+    padding: 9px;
+    border: none;
+}
+th{
+    text-align: left;
+
+}
+tr:nth-child(odd){
+    background-color: #f0f5f5;
+}
+
+
+th:last-child, td:last-child{
+border-right: 1px solid lightgray;
+border-left:1px solid lightgray;
+
+}
+th:first-child, td:first-child{
+border-left: 1px solid lightgray;
+}
+table{
+    border-collapse: collapse;
+}
+tr:last-child, th{
+  border-bottom:   1px solid lightgray;
+}
+/*td:last-child{
+    text-align: right;
+}*/
+ tr:first-child{
+	 border-top: 1px solid lightgray;
+
+ }
+
+
 	</style>
 </head>
 <body class="wide comments example">
@@ -281,14 +320,27 @@ $(window).resize();
 		<!--	<div class="content">-->
 		
 
-<h2 style="margin-top:2px;"> Product </h2>
-<p style="color:#FF0000"><i><?php include 'last_product.php';?></i></p>
+<p style="color:#FF0000"><?php include 'last_product.php';?></p>
 <div id="deletemess"> </div>
-<div style="float:right; ">
+<div >
 
+<div class="row">
+<div class=" col-md-6" style="float:left">
+<h2 style="margin-top:2px;"> Product </h2>
+</div>
+
+<div class=" col-md-6" style="text-align:right">
 
 <a class="js-open-modal btn btn-default btn-large" href="#" data-modal-id="popup" id="button">Delete Product</a>
+
  <?php echo " <a class=\"btn btn-default\" href=edit_product.php?ProductID=" .$_GET['ProductID'] . ">Edit</a>";  ?>
+
+</div>
+
+</div>
+
+
+
 
 	</div>	
 <div id="popup" class="modal-box"> 
@@ -325,9 +377,44 @@ $(window).resize();
 </div>
 	 <?php include("product_info.php"); ?>
 
+      <table style="width:100%; margin-top:10px;">
 
+<tr>
+  <th>Classification Name</th>
+  <td><?php echo $row['Classification_Name']; ?></td>
 
-<table style="width:100%; " class="table2" border="0">
+</tr>
+<tr> <th> Classification Number</th>
+<td> <?php echo $row['Classification_Number']; ?></td>
+</tr>
+<tr> <th> Classification Type</th>
+<td> <?php echo $row['Classification_Type']; ?></td>
+</tr>
+<tr> <th> Manufacturer</th>
+<td> <?php echo $row['Manufacturer']; ?></td>
+</tr>
+<tr> <th> Brand</th>
+<td> <?php echo $row['Brand']; ?></td>
+</tr>
+<tr> <th> CNF CODE</th>
+<td> <?php echo $row['CNF_CODE']; ?></td>
+</tr>
+<tr> <th> Description</th>
+<td> <?php echo $row['Description']; ?></td>
+</tr>
+
+<tr> <th> Comment</th>
+<td> <?php echo $row['Comments']; ?></td>
+</tr>
+<tr> <th> Restaurant Type</th>
+<td> <?php echo $row['Restaurant_Type']; ?></td>
+</tr>
+<tr> <th> Type</th>
+<td> <?php echo $row['Type']; ?></td>
+</tr>
+</table>
+<!--
+<table style="width:100%; margin-top:25px;" class="table2" border="0">
   <tr>
   
     <th>Classification Name</th>
@@ -341,7 +428,7 @@ $(window).resize();
 
 </table>
 
-<table style="width:100%; " class="table2" border="0">
+<table style="width:100%;  " class="table2" border="0">
   <tr>
   
 
@@ -374,6 +461,20 @@ $(window).resize();
 </div>
 </section>
 
+    <section>
+	<div>
+<strong>Restaurant Type</strong> 
+<div class="well">
+ <?php echo " ". $row['Restaurant_Type'] ."";  ?></div>
+</div>
+</section>
+    <section>
+	<div>
+<strong>Type</strong> 
+<div class="well">
+ <?php echo " ". $row['Type'] ."";  ?></div>
+</div>
+</section>-->
 
 
 <div class="clearfix">

@@ -19,7 +19,7 @@ $Username = $_SESSION['currentuser'];
 	$_POST['Cluster_Number'] =  (empty($_POST['Cluster_Number']) && strlen($_POST['Cluster_Number']) == 0 ?NULL :(int)$_POST['Cluster_Number']);		
 	$_POST['CNF_CODE'] =  (empty($_POST['CNF_CODE']) && strlen($_POST['CNF_CODE']) == 0 ?NULL :(int)$_POST['CNF_CODE']);	
 		
-	$params = array($_POST['Description'],$_POST['Brand'], $_POST['Manufacturer_Name'],$_POST['Comments'],$_POST['CNF_CODE'],$_POST['Classification_Type'],$_POST['Classification_Number'],$_POST['Cluster_Number']);
+	$params = array($_POST['Description'],$_POST['Brand'], $_POST['Manufacturer_Name'],$_POST['Comments'],$_POST['CNF_CODE'],$_POST['Classification_Type'],$_POST['Classification_Number'],$_POST['Cluster_Number'],$_POST['Restaurant_Type']);
 	
 	$flag = 0;
 	
@@ -33,12 +33,14 @@ INSERT Into Product(
        Comments,
        CNF_CODE,
        Cluster_Number,
-	   Last_Edited_By
+	   Last_Edited_By,
+	   Restaurant_Type,
+	   Type
 
-) VALUES ( ?, ?, ?, ?, ?, ?, ?)
+) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 						$stmt = $conn->prepare($query);
-						$stmt->bind_param("ssssdds", $params[0], $params[1], $params[2], $params[3], $params[4], $params[7], $Username);
+						$stmt->bind_param("ssssddsss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[7], $Username,$params[8],$_POST['Type']);
 						$result_insert = $stmt->execute();
 						$id =  mysqli_insert_id($conn);
 						
@@ -104,12 +106,14 @@ INSERT Into Product(
        Manufacturer,
        Comments,
        CNF_CODE,
-       Cluster_Number
+       Cluster_Number,
+	   Restaurant_Type,
+	   Type
 
-) VALUES ( ?, ?, ?, ?, ?, ?)
+) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 						$stmt_product = $conn->prepare($query_product);
-						$stmt_product->bind_param("ssssdd", $params[0], $params[1], $params[2], $params[3], $params[4], $params[7]);
+						$stmt_product->bind_param("ssssddss", $params[0], $params[1], $params[2], $params[3], $params[4], $params[7],$params[8],$_POST['Type']);
 						$result_insert_x = $stmt_product->execute();
 						$id =  mysqli_insert_id($conn);
 				

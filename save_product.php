@@ -18,10 +18,10 @@ $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 		$_POST['Manufacturer'],
 		$_POST['Comments'],
 		$_POST['CNF_CODE'],
-		'',
 		$_POST['Classification_Type'],
 		$_POST['Classification_Number'],
-		$_POST['Cluster_Number']
+		$_POST['Cluster_Number'],
+		$_POST['Restaurant_Type']
 	);
 
 	$query =<<<EOQ
@@ -32,13 +32,15 @@ UPDATE Product
        Comments       = ?,
        CNF_CODE       = ?,
        Cluster_Number = ?,
-       Last_Edited_By = ?
+       Last_Edited_By = ?,
+	   Restaurant_Type = ?,
+	   Type = ?
  WHERE ProductID      = ?
 
 EOQ;
 	
 						$stmt = $conn->prepare($query);
-						$stmt->bind_param("ssssddsi", $params[0], $params[1], $params[2], $params[3], $params[4], $params[8],$Username,$productID);
+						$stmt->bind_param("ssssddsssi", $params[0], $params[1], $params[2], $params[3], $params[4], $params[7],$Username,$params[8],$_POST['Type'],$productID);
 						$result_insert = $stmt->execute();	
 	
 
@@ -46,7 +48,7 @@ EOQ;
 
 
 			$stmt_classification = $conn->prepare("Select * From Classification Where Classification_Number= ?");		
-			$stmt_classification->bind_param("d", $params[7]);
+			$stmt_classification->bind_param("d", $params[6]);
 			$result_c = $stmt_classification->execute();
 			$stmt_classification->store_result();
 				if(($stmt_classification->num_rows)>0){
@@ -60,7 +62,7 @@ EOQ;
 					
 						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = ?");		
 	
-						$classification_update->bind_param("di",$params[7], $productID);
+						$classification_update->bind_param("di",$params[6], $productID);
 						$classification_update_result = $classification_update->execute();
 
 							if(!$classification_update_result){
@@ -95,7 +97,7 @@ INSERT Into Product_Classification(
        ProductID
 ) Select ClassificationID, ? from Classification where Classification_Number =?
 EOQ;
-	$params_product_classification = array($productID,$params[7]);
+	$params_product_classification = array($productID,$params[6]);
 		
 						$stmt_product_classification = $conn->prepare($query2);
 						$stmt_product_classification->bind_param("id", $params_product_classification[0], $params_product_classification[1]);
@@ -128,7 +130,14 @@ echo "</script>\n";
 					
 				}
 		
+		echo "<script type=\"text/javascript\">\n";
+echo "    $(document).ready(function() {\n";
 
+	echo "document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Product Successfully updated. Redirecting to the view page...</strong></h3>\"";
+
+
+echo "    });\n";
+echo "</script>\n";
 
 	}
 	

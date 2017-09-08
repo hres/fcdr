@@ -15,7 +15,7 @@
     //if (hash_equals(trim($_SESSION['token']),trim($_POST['token']))) {
          // Proceed to process the form data
 
-	 $fields = array('Brand','Description', 'Manufacturer', 'Classification_Number', 'CNF_CODE','Classification_Type', 'Comments','Cluster_Number');
+	 $fields = array('Brand','Description', 'Manufacturer', 'Classification_Number', 'CNF_CODE','Classification_Type', 'Comments','Cluster_Number', 'Restaurant_Type', 'Type');
     $conditions = array();
     $flag = false;
 //(empty($_POST[$field]) && strlen($_POST[$field]) == 0 ?NULL :$data[5])

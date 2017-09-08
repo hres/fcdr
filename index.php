@@ -1,7 +1,7 @@
 
 <?php
-
-
+// setcookie("name", "romario",time()+10);
+//  echo $_COOKIE['name'] ;
  include 'session.php';
 
 
@@ -42,6 +42,8 @@
 	<link href="./theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="./theme-gcwu-fegc/css/theme.min.css">
 
+
+	 
 
 
 
@@ -87,9 +89,28 @@ function mainInfo(str) {
 
 $(document).ready(function() {
     var table = $('#example').DataTable( {
+		
+		//  "processing": true,
+        //  "serverSide": true,
+        //  "ajax":{
+        //     url :"search_pagination.php", // json datasource
+        //     type: "post",  // type of method  ,GET/POST/DELETE
+
+        //   },
+		//   "columns": [
+		// 	{ "data": "Description" },
+		// 	{ "data": "Brand"},
+		// 	{ "data": "Manufacturer"},
+		// 	{ "data": "Classification_Number"},
+		// 	{ "data": "Classification_Name"},
+		// 	{ "data": "Classification_Type"},	  
+		// 	{ "data": "CNF_CODE"},
+		// 	{ "data": "Cluster_Number"}
+
+		//   ], 
         dom: 'Bfrtip',
         colReorder: true,
-		  stateSave: true,
+		stateSave: true,
         buttons: [
         	'colvis'
         ]
@@ -233,8 +254,32 @@ $(document).ready(function() {
 		</div>
 		<div class="row">
 		<input type="hidden" name="token" value = "<?php echo $token; ?>"/>
-			<div class="form-group col-sm-4 submit_button">
-				<button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search">Search</button>
+			<div class="form-group col-sm-4">
+							<label for="Restaurant_Type">Restaurant Type</label>
+				 <select class="form-control" id="Restaurant_Type" placeholder="Select a Restaurant Type" name="Restaurant_Type">
+
+			<option value="" selected>Select a Restaurant Type</option>
+			<option value="Caterer" >Caterer</option>
+			<option value="Family" slected>Family</option>
+			<option value="Fine Dining" slected>Fine Dining</option>
+			<option value="Food Service Distributor" slected>Food Service Distributor</option>
+			<option value="Food Service Manufacturer" slected>Food Service Manufacturer</option>
+			<option value="Home Meal Replacement" slected>Home Meal Replacement</option>
+			<option value="Institutional Food Service" slected>Institutional Service</option>
+			<option value="Quick Service" slected>Quick Service</option>
+			 </select>
+			</div>
+						<div class="form-group col-sm-4">
+							<label for="Type">Type</label>
+				 <select class="form-control" id="Type"  name="Type">
+
+			<option value="" selected>Select a Type</option>
+			  <option value="Retail" >Retail</option>
+			<option value="Food Service" slected>Food Service</option>
+			 </select>
+			</div>
+			<div class="form-group col-sm-4 submit_button" >
+			    <button style="margin-top: 28px; float:right;" type="submit" class="btn btn-default" name="search">Search</button>
 			</div>
 		</div>
 		
@@ -259,8 +304,8 @@ $(document).ready(function() {
 						</tr>
 					</thead>
 			
-					<tbody >
-								      <?php include("search_product1.php"); ?>
+					<tbody > 
+					<?php	include 'search_product1.php'; ?>		     
 
 					</tbody>
 				</table>
@@ -281,6 +326,7 @@ $(document).ready(function() {
 		</main>
 
 <?php include 'footer.php';?>
+
 
 	<script>
 

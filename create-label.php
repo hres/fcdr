@@ -188,7 +188,49 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 <form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'] . "?ProductID=" .  $_GET['ProductID']) ;?>" id="vids-search-form"  name="myForm" >
 	
 	<div class="well" style="margin-right:2%;">
+			<div class="row">
+			<div class="form-group col-sm-4">
+				<label for="Informed_Dining_Program">Informed Dining Program</label>
 
+    <select class="form-control" id="Informed_Dining_Program" name="Informed_Dining_Program">
+
+	   <option value="" selected="selected"></option>
+	   <option value="0" >No</option>
+	   <option value="1">Yes</option>
+
+
+		
+			 </select>
+			</div>
+						   <div class="form-group col-sm-4">
+      <label for="date3" >
+     NFT Last Update Date
+      </label>
+      <div class="">
+       <div class="input-group">
+     
+        <input class="form-control" id="date3" name="Nft_Last_Update_Date" placeholder="YYYY/MM/DD" type="text" value="<?PHP echo $row['Nft_Last_Update_Date']; ?>" >
+          <div class="input-group-addon" >
+         <i class="fa fa-calendar">
+         </i>
+        </div>
+	   </div>
+	   <label class="error" for="date3"></label>
+      </div>
+     </div>
+			<div class="form-group col-sm-4">
+				<label for="Child_Item">Child Item</label>
+
+    <select class="form-control" id="Child_Item" name="Child_Item">
+	   <option value="" selected="selected"></option>
+	   <option value="0" >No</option>
+	   <option value="1">Yes</option>
+
+		
+			 </select>
+			</div>
+		
+		</div>
 
 
 	
@@ -2231,7 +2273,25 @@ function goBack() {
     window.history.back();
 }
 </script>
-
+<script>
+	$(document).ready(function(){
+		var date_input=$('input[name="Nft_Last_Update_Date"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			format: 'yyyy/mm/dd',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+	})
+</script>	
+			<script>
+	$(document).ready(function(){
+				$('.input-group').find('.fa-calendar').on('click', function(){
+    $(this).parent().siblings('#date3').trigger('focus');
+});
+		})
+</script>
 
 	
 		</main>

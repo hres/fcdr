@@ -173,7 +173,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<div id="post-file-info">
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	include 'label_import_csv.php';
+	//include 'label_import_csv.php';
+	include 'importLabelRefactored.php';
 }
 ?>
 </div>

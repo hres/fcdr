@@ -253,6 +253,15 @@ $(function(){
 	</script>
 	
 		<style>
+
+		table.as_sold td:nth-child(5), table.as_sold th:nth-child(5){
+
+			border-left: 2px solid black;
+			
+		}
+		table.as_sold{
+			
+		}
 .panel-body{
      padding: 5px;
   
@@ -644,6 +653,23 @@ hr {
 
 </div>
 <?php include("delete-label.php"); ?>	
+<?php include("package_d_1.php"); ?>
+
+<table style="width:100%" class="table2">
+  <tr >
+    <th>Informed Dining Program</th>
+
+    <th>NFT Last Update Date</th>
+    <th>Child Item</th>
+
+	
+	
+  </tr>
+  			
+		<?php echo "<tr><td>". ($row['Informed_Dining_Program']===0?'No': ($row['Informed_Dining_Program']===1?'Yes':'')). "</td>
+				<td>". $row['Nft_Last_Update_Date'] . "</td><td>".  ($row['Child_Item']===0?'No': ($row['Child_Item']===1?'Yes':'')). "</td></tr>"?>
+
+</table>
 
 <table style="width:100%" class="table2">
   <tr >
@@ -655,7 +681,7 @@ hr {
 	
 	
   </tr>
-  			<?php include("package_d_1.php"); ?>
+  			
 		<?php echo "<tr><td>". $row['Label_UPC'] . "</td><td>". $row['Label_Description'] . "</td><td>". $row['Classification_Number'] . "</td><td>". $row['Classification_Name'] . "</td></tr>"?>
 
 </table>
@@ -768,7 +794,7 @@ hr {
   </div>
 </div>
 		<strong>Nutrition Fact Table</strong>
-      <p>   <table class="table table-striped" >
+      <p>   <table class="table table-striped as_sold" cellspacing="15" >
 					<thead>
 						<tr>
 							<th>Component</th>

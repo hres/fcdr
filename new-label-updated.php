@@ -9,8 +9,8 @@ $productID = ($_GET['ProductID']?$_GET['ProductID']:'');
 $Username = $_SESSION['currentuser'];
 
 
-			 	//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
+			 	error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
  //if (!empty($_POST['token'])) {
  //$_POST['token'] =  rtrim($_POST['token']);
@@ -28,6 +28,12 @@ $_POST['Per_Serving_Amount_In_Grams_PPD'] = (empty($_POST['Per_Serving_Amount_In
 $_POST['date1'] = (empty($_POST['date1']) && strlen($_POST['date1']) == 0 ?NULL :$_POST['date1']);
 $_POST['Calculated'] = (empty($_POST['Calculated']) && strlen($_POST['Calculated']) == 0 ?NULL :$_POST['Calculated']);
 $Classification_Number = (empty($_POST['Classification_Number'] ) && strlen($_POST['Classification_Number'] ) == 0 ?NULL :$_POST['Classification_Number'] );;
+
+$last_update= (empty($_POST['Nft_Last_Update_Date']) && strlen($_POST['Nft_Last_Update_Date']) == 0 ?NULL :$_POST['Nft_Last_Update_Date']);
+$informedDining = (empty($_POST['Informed_Dining_Program']) && strlen($_POST['Informed_Dining_Program']) == 0 ?NULL :$_POST['Informed_Dining_Program']);
+$childItem= (empty($_POST['Child_Item']) && strlen($_POST['Child_Item']) == 0 ?NULL :$_POST['Child_Item']);
+
+
 
 			$stmt_classification = $conn->prepare("Select Classification_Name From Classification Where Classification_Number = ?");		
 			$stmt_classification->bind_param("d", $Classification_Number);
@@ -123,13 +129,19 @@ INSERT INTO Package (
 	Nielsen_Item_Rank_UPC,
 	Last_Edited_By,
 	Classification_Number,
-	Classification_Name
+	Classification_Name,
+	Nft_Last_Update_Date,
+	Informed_Dining_Program,
+	Child_Item
 )
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
 							$stmt = $conn->prepare($query);
-							$stmt->bind_param("issssdsdsssssssssssssssissddssissds", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27], $param[28],$param[29],$param[30],$param[31],$Username, $Classification_Number,$Classification_Name);
+							$stmt->bind_param("issssdsdsssssssssssssssissddssissdssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16],
+							 $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27], $param[28],$param[29],$param[30],$param[31],$Username, $Classification_Number,$Classification_Name,$last_update,
+							$informedDining,$childItem);
+							
 							$result_insert = $stmt->execute();
 							$last_id = mysqli_insert_id($conn);
 

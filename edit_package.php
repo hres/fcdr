@@ -230,6 +230,88 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
 	<?php include("fill_package.php"); ?>
 	
+			<div class="row">
+			<div class="form-group col-sm-4">
+				<label for="Informed_Dining_Program">Informed Dining Program</label>
+
+    <select class="form-control" id="Informed_Dining_Program" name="Informed_Dining_Program">
+	   <option value="<?PHP echo $row['Informed_Dining_Program']; ?>" selected="selected"><?PHP echo $row['Informed_Dining_Program']===0?'No':($row['Informed_Dining_Program']===1?'Yes':''); ?></option>
+
+<?PHP
+		  
+		   if($row['Informed_Dining_Program']===null){
+
+			   echo "  <option value=\"0\">No</option> <option value=\"1\">Yes</option>";
+		
+		   }else if($row['Informed_Dining_Program']==0){
+
+  			echo "  <option value=\"\"></option> <option value=\"1\">Yes</option>";
+
+		   }else{
+
+  			echo "  <option value=\"\"></option> <option value=\"0\">No</option>";
+
+		   }
+		   
+		   
+		   
+		   ?>
+
+
+		
+			 </select>
+			</div>
+						   <div class="form-group col-sm-4">
+      <label for="date3" >
+     NFT Last Update Date
+      </label>
+      <div class="">
+       <div class="input-group">
+     
+        <input class="form-control" id="date3" name="Nft_Last_Update_Date" placeholder="YYYY/MM/DD" type="text" value="<?PHP echo $row['Nft_Last_Update_Date']; ?>" >
+          <div class="input-group-addon" >
+         <i class="fa fa-calendar">
+         </i>
+        </div>
+	   </div>
+	   <label class="error" for="date3"></label>
+      </div>
+     </div>
+			<div class="form-group col-sm-4">
+				<label for="Child_Item">Child Item</label>
+
+    <select class="form-control" id="Child_Item" name="Child_Item">
+	   <option value="<?PHP echo $row['Child_Item']; ?>" selected="selected"><?PHP echo $row['Child_Item']===0?'No':($row['Child_Item']===1?'Yes':''); ?></option>
+
+
+	  	<?PHP
+		  
+		   if($row['Child_Item']===null){
+
+			   echo "  <option value=\"0\">No</option> <option value=\"1\">Yes</option>";
+		
+		   }elseif($row['Child_Item']==0){
+  			echo "  <option value=\"\"></option> <option value=\"1\">Yes</option>";
+
+		   }else{
+
+  			echo "  <option value=\"\"></option> <option value=\"0\">No</option>";
+
+		   }
+		   
+		   
+		   
+		   ?>
+
+
+
+
+
+		
+			 </select>
+			</div>
+		
+		</div>
 		<div class="row">
 			<div class="form-group col-xs-6">
 				<label for="Label_UPC" class="required">Label UPC <strong class="required">(required)</strong></label>
@@ -4905,6 +4987,19 @@ function goBack() {
 </script>	
 
 
+	<script>
+	$(document).ready(function(){
+		var date_input=$('input[name="Nft_Last_Update_Date"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			format: 'yyyy/mm/dd',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+	})
+</script>	
+
 		<script>
 	$(document).ready(function(){
 				$('.input-group').find('.fa-calendar').on('click', function(){
@@ -4912,7 +5007,13 @@ function goBack() {
 });
 		})
 </script>
-	
+			<script>
+	$(document).ready(function(){
+				$('.input-group').find('.fa-calendar').on('click', function(){
+    $(this).parent().siblings('#date3').trigger('focus');
+});
+		})
+</script>
 <?php include 'List_Classification_Object.php'; ?>
 
 </body>
