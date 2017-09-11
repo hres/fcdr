@@ -45,9 +45,9 @@
             $packageObject->setPer_Serving_Amount_In_Grams_PPD($Per_Serving_Amount_In_Grams_PPD);
 			$packageObject->setType($data[147]);
 			$packageObject->setType_Of_Restaurant($data[148]);
-			$packageObject->setInformed_Dining_Program($data[149]);
+			$packageObject->setInformed_Dining_Program($data[149]!=NULL?$data[149]:NULL);
 			$packageObject->setNFT_Last_Update($data[150]);
-			$packageObject->setChild_Item($data[151]);
+			$packageObject->setChild_Item($data[151]!=NULL?$data[151]:NULL);
 			$packageObject->setProduct_Grouping($data[152]);
 			
 		

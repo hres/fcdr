@@ -607,11 +607,11 @@ EOQ;
 
 $nft = ($this->NFT_Last_Update != null?$this->NFT_Last_Update:NULL);
 $informed = ($this->Informed_Dining_Program != null?$this->Informed_Dining_Program:NULL);
-$childItem = $this->Child_Item;  ($this->Child_Item != null?$this->Child_Item:NULL);
+$childItem =  ($this->Child_Item != null?$this->Child_Item:NULL);
 
 
 						$stmt = $conn->prepare($query_insert);
-						$stmt->bind_param("issdsddsssssssssssssssssssssssssssis", $productID,$this->Label_UPC,$this->Label_Description, 
+						$stmt->bind_param("issdsddsssssssssssssssssssssssssssss", $productID,$this->Label_UPC,$this->Label_Description, 
 						$this->Per_Serving_Amount_PPD, $this->Per_Serving_Amount_PPD_UofM, $this->Per_Serving_Amount_In_Grams, 
 						$this->Per_Serving_Amount_In_Grams_PPD, $this->Package_Size_UofM, $this->Nielsen_Category,
 						$this->Brand,$this->Manufacturer, $this->Country, $this->getPackage_Size, 
@@ -627,6 +627,7 @@ $childItem = $this->Child_Item;  ($this->Child_Item != null?$this->Child_Item:NU
 						if($stmt->execute()){
 							
 						}else{
+							
 							die('Error : '. $conn->error);
 						}
 
@@ -687,9 +688,9 @@ EOQ;
 
 $nft = ($this->NFT_Last_Update != null?$this->NFT_Last_Update:NULL);
 $informed = ($this->Informed_Dining_Program != null?$this->Informed_Dining_Program:NULL);
-$childItem = $this->Child_Item;  ($this->Child_Item != null?$this->Child_Item:NULL);
+$childItem =   ($this->Child_Item != null?$this->Child_Item:NULL);
 						$stmt = $conn->prepare($query_insert);
-						$stmt->bind_param("ssdsddsssssssssssssssssssssssssssiss", $this->Label_UPC,$this->Label_Description, 
+						$stmt->bind_param("ssdsddssssssssssssssssssssssssssssss", $this->Label_UPC,$this->Label_Description, 
 						$this->Per_Serving_Amount_PPD, $this->Per_Serving_Amount_PPD_UofM, $this->Per_Serving_Amount_In_Grams, 
 						$this->Per_Serving_Amount_In_Grams_PPD, $this->Package_Size_UofM, $this->Nielsen_Category,
 						$this->Brand,$this->Manufacturer, $this->Country, $this->Package_Size, 
@@ -822,10 +823,10 @@ EOQ;
 
 $nft = ($this->NFT_Last_Update != null?$this->NFT_Last_Update:NULL);
 $informed = ($this->Informed_Dining_Program != null?$this->Informed_Dining_Program:NULL);
-$childItem = $this->Child_Item;  ($this->Child_Item != null?$this->Child_Item:NULL);
+$childItem =  ($this->Child_Item != null?$this->Child_Item:NULL);
 
 						$stmt = $conn->prepare($query_insert);
-						$stmt->bind_param("ssdsddsssssssssssssssssssssssssssiss", $this->Label_UPC,$this->Label_Description, 
+						$stmt->bind_param("ssdsddssssssssssssssssssssssssssssss", $this->Label_UPC,$this->Label_Description, 
 						$this->Per_Serving_Amount_PPD, $this->Per_Serving_Amount_PPD_UofM, $this->Per_Serving_Amount_In_Grams, 
 						$this->Per_Serving_Amount_In_Grams_PPD, $this->Package_Size_UofM, $this->Nielsen_Category,
 						$this->Brand,$this->Manufacturer, $this->Country, $this->Package_Size, 
