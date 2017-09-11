@@ -20,6 +20,9 @@
     if(mysqli_query($conn,$query2)){
 
         echo "Restaurant Type added \n\n";
+    }else{
+
+        echo "Failed to add a new column";
     }	
 	
 
