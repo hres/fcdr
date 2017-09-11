@@ -661,13 +661,14 @@ hr {
 
     <th>NFT Last Update Date</th>
     <th>Child Item</th>
+	<th>Product Grouping</th>
 
 	
 	
   </tr>
   			
 		<?php echo "<tr><td>". ($row['Informed_Dining_Program']===0?'No': ($row['Informed_Dining_Program']===1?'Yes':'')). "</td>
-				<td>". $row['Nft_Last_Update_Date'] . "</td><td>".  ($row['Child_Item']===0?'No': ($row['Child_Item']===1?'Yes':'')). "</td></tr>"?>
+				<td>". $row['Nft_Last_Update_Date'] . "</td><td>".  ($row['Child_Item']===0?'No': ($row['Child_Item']===1?'Yes':'')). "</td><td>". $row['Product_Grouping'] . "</td></tr>"?>
 
 </table>
 

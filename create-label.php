@@ -189,10 +189,10 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 	
 	<div class="well" style="margin-right:2%;">
 			<div class="row">
-			<div class="form-group col-sm-4">
+			<div class="form-group col-sm-6">
 				<label for="Informed_Dining_Program">Informed Dining Program</label>
 
-    <select class="form-control" id="Informed_Dining_Program" name="Informed_Dining_Program">
+    <select class="form-control" id="Informed_Dining_Program" style="width:540px" name="Informed_Dining_Program">
 
 	   <option value="" selected="selected"></option>
 	   <option value="0" >No</option>
@@ -202,14 +202,14 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 		
 			 </select>
 			</div>
-						   <div class="form-group col-sm-4">
+						   <div class="form-group col-sm-6">
       <label for="date3" >
      NFT Last Update Date
       </label>
       <div class="">
        <div class="input-group">
      
-        <input class="form-control" id="date3" name="Nft_Last_Update_Date" placeholder="YYYY/MM/DD" type="text" value="<?PHP echo $row['Nft_Last_Update_Date']; ?>" >
+        <input class="form-control" id="date3"  name="Nft_Last_Update_Date" placeholder="YYYY/MM/DD" type="text" value="<?PHP echo $row['Nft_Last_Update_Date']; ?>" >
           <div class="input-group-addon" >
          <i class="fa fa-calendar">
          </i>
@@ -218,10 +218,15 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 	   <label class="error" for="date3"></label>
       </div>
      </div>
-			<div class="form-group col-sm-4">
+
+		
+		</div>
+
+<div class="row">
+			<div class="form-group col-sm-6">
 				<label for="Child_Item">Child Item</label>
 
-    <select class="form-control" id="Child_Item" name="Child_Item">
+    <select class="form-control" id="Child_Item" name="Child_Item" style="width:540px">
 	   <option value="" selected="selected"></option>
 	   <option value="0" >No</option>
 	   <option value="1">Yes</option>
@@ -229,12 +234,14 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 		
 			 </select>
 			</div>
-		
-		</div>
+            			<div class="form-group col-sm-6">
+				<label for="Product_Grouping" >Product Grouping</label>
+				<input type="text" class="form-control" style="width:540px" name="Product_Grouping" id="Product_Grouping" placeholder="Enter the Product Grouping"/>
+			</div>
 
-
+</div>
 	
-		<div class="row">
+		<div class="row" >
 			<div class="form-group col-xs-6">
 				<label for="Label_UPC" class="required">Label UPC <strong class="required">(required)</strong></label>
 				<input type="text" class="form-control" style="width:540px" name="Label_UPC" id="Label_UPC" placeholder="Enter Label UPC" required/>

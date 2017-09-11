@@ -28,7 +28,7 @@ $Classification_Number = (empty($_POST['Classification_Number'] ) && strlen($_PO
 $_POST['Nft_Last_Update_Date'] = (empty($_POST['Nft_Last_Update_Date']) && strlen($_POST['Nft_Last_Update_Date']) == 0 ?NULL :$_POST['Nft_Last_Update_Date']);
 $_POST['Informed_Dining_Program'] = (empty($_POST['Informed_Dining_Program']) && strlen($_POST['Informed_Dining_Program']) == 0 ?NULL :$_POST['Informed_Dining_Program']);
 $_POST['Child_Item'] = (empty($_POST['Child_Item']) && strlen($_POST['Child_Item']) == 0 ?NULL :$_POST['Child_Item']);
-
+$_POST['Product_Grouping'] = (empty($_POST['Product_Grouping']) && strlen($_POST['Product_Grouping']) == 0 ?NULL :$_POST['Product_Grouping']);
 
 
 
@@ -112,16 +112,17 @@ UPDATE Package SET
 	Classification_Name = ?,
 	Nft_Last_Update_Date = ?,
 	Informed_Dining_Program =?,
-	Child_Item =?
+	Child_Item =?,
+	Product_Grouping=?
 
 	WHERE PackageID=?
 EOQ;
 
 							$stmt = $conn->prepare($query);
-							$stmt->bind_param("sssdsdsssssssssssssssissddssissdssiii", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], 
+							$stmt->bind_param("sssdsdsssssssssssssssissddssissdsssssi", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16], $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], 
 							$param[23], $param[24], $param[25], $param[26], $param[27],$param[28],
 							$param[29],$Username,$Classification_Number,
-							$Classification_Name,$_POST['Nft_Last_Update_Date'],$_POST['Informed_Dining_Program'],$_POST['Child_Item'], $packageID);
+							$Classification_Name,$_POST['Nft_Last_Update_Date'],$_POST['Informed_Dining_Program'],$_POST['Child_Item'],$_POST['Product_Grouping'], $packageID);
 							$result_insert = $stmt->execute();
 							//$last_id = mysqli_insert_id($conn);
 
