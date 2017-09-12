@@ -85,6 +85,10 @@ $conn->autocommit(FALSE);
 			$Source                                         = $data[145];
 			$Product_Description                            = $data[146];
 
+
+
+			
+
 			$Per_Serving_Amount=  (empty($Per_Serving_Amount) && strlen($Per_Serving_Amount) == 0 ?NULL :$Per_Serving_Amount);
 			$Per_Serving_Amount_PPD =  (empty($Per_Serving_Amount_PPD) && strlen($Per_Serving_Amount_PPD) == 0 ?NULL :$Per_Serving_Amount_PPD);
 
@@ -466,6 +470,10 @@ EOQ;
 					$sales_result = $stmt2->execute();
 					$stmt2->store_result();
 								if (($stmt2->num_rows) < 1) {
+
+
+
+
 						/* Create new Product and attach the label to it $Username  Last_Edited_By Last_Edited_By Last_Edited_by */
 						
 						if (empty($Product_Description) || strlen($Product_Description) == 0) {
