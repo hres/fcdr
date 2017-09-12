@@ -269,7 +269,7 @@ $(window).resize();
 }
 
 
-
+/*
 
 td, th {
     padding: 9px;
@@ -297,15 +297,15 @@ table{
 }
 tr:last-child, th{
   border-bottom:   1px solid lightgray;
-}
+}*/
 /*td:last-child{
     text-align: right;
-}*/
+}
  tr:first-child{
 	 border-top: 1px solid lightgray;
 
  }
-
+*/
 
 	</style>
 </head>
@@ -376,7 +376,7 @@ tr:last-child, th{
 
 </div>
 	 <?php include("product_info.php"); ?>
-
+<!--
       <table style="width:100%; margin-top:10px;">
 
 <tr>
@@ -412,8 +412,8 @@ tr:last-child, th{
 <tr> <th> Type</th>
 <td> <?php echo $row['Type']; ?></td>
 </tr>
-</table>
-<!--
+</table>-->
+
 <table style="width:100%; margin-top:25px;" class="table2" border="0">
   <tr>
   
@@ -474,7 +474,7 @@ tr:last-child, th{
 <div class="well">
  <?php echo " ". $row['Type'] ."";  ?></div>
 </div>
-</section>-->
+</section>
 
 
 <div class="clearfix">
