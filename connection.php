@@ -2,7 +2,7 @@
 
 $db = parse_ini_file("conn.ini");
 
-=======
+
 $servername = $db['host'];
 $username   = $db['user'];
 $password   = $db['pass'];
