@@ -49,7 +49,10 @@
 			$packageObject->setNFT_Last_Update($data[150]);
 			$packageObject->setChild_Item($data[151]!=NULL?$data[151]:NULL);
 			$packageObject->setProduct_Grouping($data[152]);
+
+			$Classification=  (empty($data[153]) && strlen($data[153]) == 0 ?NULL :$data[153]);
 			
+			$packageObject->setClassification_Number($Classification);
 		
 			
 			$Per_Serving_Energy_Kcal                        = $data[26];

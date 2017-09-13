@@ -58,9 +58,15 @@ if (!in_array($ext, $allowed)) {
                 
                 include 'ImportLabelNutrientsData.php';
                 
-                if ($packageObject->getLabel_UPC() === null) // or $Label_Description === null  or $Ingredients === null or $Nutrition_Fact_Table=== null or $Per_Serving_Amount=== null or $Per_Serving_UofM === null or $Per_Serving_Energy_Kcal === null    or $Source === null)
+                if ((empty($packageObject->getLabel_UPC()) && strlen($packageObject->getLabel_UPC()) == 0) 
+                    or (empty($packageObject->getLabel_Description()) && strlen($packageObject->getLabel_Description()) == 0) 
+                    or (empty($packageObject->getCollection_Date()) && strlen($packageObject->getCollection_Date()) == 0) 
+                    or (empty($packageObject->getSource()) && strlen($packageObject->getSource()) == 0) 
+                    or (empty($packageObject->getRecord()) && strlen($packageObject->getRecord()) == 0) 
+) // or $Label_Description === null  or $Ingredients === null or $Nutrition_Fact_Table=== null or $Per_Serving_Amount=== null or $Per_Serving_UofM === null or $Per_Serving_Energy_Kcal === null    or $Source === null)
                     {
                     
+                    ++$skipped_count ;
                     $inputx = $packageObject->getLabel_Description();
                     $skipped_label->push($inputx);
                     

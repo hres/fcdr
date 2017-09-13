@@ -42,7 +42,7 @@
         private  $NFT_Last_Update;
         private  $Child_Item;
         private  $Product_Grouping;
-
+		private  $Classification_Number;
 
 		function __construct(){
 			
@@ -82,9 +82,22 @@
 			$this->Informed_Dining_Program = null;
 			$this->NFT_Last_Update = null;
 			$this->Child_Item = null;
-			$this->Product_Grouping;
+			$this->Product_Grouping = null;
+			$this->Classification_Number = null;
 
 		}
+	
+	public function getClassification_Name(){
+
+		return $this->Classification_Number;
+
+	}
+
+
+	public function setClassification_Number($Classification_Number){
+
+		$this->Classification_Number = $Classification_Number;
+	}
 
 	public function getRecord(){
 		return $this->Record;
@@ -514,12 +527,40 @@ EOQ;
 						$stmt = $conn->prepare($query_product);
 						$stmt->bind_param("ssssss", $this->Product_Description, $this->Brand, $this->Manufacturer,$Username, $this->Type, $this->Type_Of_Restaurant);
 						$stmt->execute();
+						$id = mysqli_insert_id($conn);
 
-						return mysqli_insert_id($conn);
+						if(!empty($this->Classification_Number) && strlen($this->Classification_Number) != 0){
+
+
+			$stmt_classification = $conn->prepare("Select * From Classification Where Classification_Number= ?");		
+			$stmt_classification->bind_param("d", $this->Classification_Number);
+			$result_c = $stmt_classification->execute();
+			$stmt_classification->store_result();
+				if(($stmt_classification->num_rows)>0){
+
+	$query2 =<<<EOQ
+
+INSERT INTO Product_Classification (ProductID,ClassificationID)
+Select ?, ClassificationID from Classification where Classification_Number = ?
+EOQ;
+
+								$stmt = $conn->prepare($query2);
+									$stmt->bind_param("id",$id, $this->Classification_Number);
+									$result2 = $stmt->execute();
+
+
+
+						}
+
+
+
+
+
+						return $id;
 			
 		}
 
-
+		}
 
 
 
