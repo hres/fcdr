@@ -13,8 +13,7 @@ $("#vids-search-form").validate({
     ignore: "",
     rules: {
         Label_UPC: {
-				required: true,
-				digits: true
+				required: true
 
 },
  Package_Size : {   
