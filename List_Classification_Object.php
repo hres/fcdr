@@ -14,9 +14,10 @@ echo "<script type=\"text/javascript\">\n";
 echo "    $(document).ready(function() {\n";
 echo "        classificationItem = Array();\n";
 while($row = $result->fetch_assoc()) {
-	echo "        classificationItem[" . $row['Classification_Number'] ."] = '". $row['Classification_Name'] ."';\n";
+	echo "        classificationItem['" . $row['Classification_Number'] ."'] = '". $row['Classification_Name'] ."';\n";
 }
 echo "        $('#Classification_Number').on('change', function() {\n";
+echo "console.log(\"Selected Classification Number\")";
 echo "            // $('#Classification_Name').prop('selectedIndex', $('#Classification_Number').prop('selectedIndex'));\n";
 echo "            $('#Classification_Name').val($('#Classification_Number').val());\n";
 echo "        });\n";

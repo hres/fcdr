@@ -140,7 +140,7 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 
 EOQ;
 
 							$stmt = $conn->prepare($query);
-							$stmt->bind_param("issssdsdsssssssssssssssissddssissdsssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16],
+							$stmt->bind_param("issssdsdsssssssssssssssissddssissssssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7], $param[8], $param[9], $param[10], $param[11], $param[12], $param[13], $param[14], $param[15], $param[16],
 							 $param[17], $param[18], $param[19], $param[20], $param[21], $param[22], $param[23], $param[24], $param[25], $param[26], $param[27], $param[28],$param[29],$param[30],$param[31],$Username, $Classification_Number,$Classification_Name,$last_update,
 							$informedDining,$childItem,$ProductGrouping);
 							

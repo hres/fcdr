@@ -545,7 +545,7 @@ Select ?, ClassificationID from Classification where Classification_Number = ?
 EOQ;
 
 								$stmt = $conn->prepare($query2);
-									$stmt->bind_param("id",$id, $this->Classification_Number);
+									$stmt->bind_param("is",$id, $this->Classification_Number);
 									$result2 = $stmt->execute();
 
 
@@ -556,9 +556,10 @@ EOQ;
 
 
 
-						return $id;
+						
 			
 		}
+		return $id;
 
 		}
 
@@ -604,6 +605,8 @@ function createPackage($productID,$conn,$Username){
 // error_reporting(E_ALL);
 // ini_set('display_errors', 1);
 // echo "HERE $productID   Date: $this->NFT_Last_Update Child: $this->Child_Item **";
+
+
 	$query_insert =<<<EOQ
 INSERT Into Package(
        ProductIDP,
