@@ -172,7 +172,7 @@ $(document).ready(function() {
 	
 		<div class="container" id="tabs" >
   <ul class="nav nav-tabs">
-    <li class="active"><a href="index.php">Search Product </a></li>
+    <li class="active"><a href="index.php">Search Product 1</a></li>
     <li><a href="home-market.php">Search Market Share</a></li>
     <li><a  href="home-label.php">Search Package Label</a></li>
 	  <li><a  href="search.php">Search All</a></li>
@@ -327,7 +327,6 @@ $(document).ready(function() {
 
 <?php include 'footer.php';?>
 
-
 	<script>
 
 		function myFunct(){
@@ -355,6 +354,7 @@ $(document).ready(function() {
 
 	</script>
 
-<?php include 'List_Classification_Object.php'?>
+<?php include 'List_Classification_Object.php';?>
+
 </body>
 </html>
