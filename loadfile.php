@@ -3,7 +3,7 @@
 include "connection.php";
 	$query ="
 
-                                 LOAD DATA LOCAL INFILE '/home/romario/Downloads/Sodium.csv' 
+                                 LOAD DATA LOCAL INFILE \'/home/romario/Downloads/Sodium.csv\' 
 INTO TABLE Classification
 FIELDS TERMINATED BY ',' 
 ENCLOSED by '\"' ESCAPED BY '\\\'
