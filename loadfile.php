@@ -1,9 +1,13 @@
 <?php
 
 include "connection.php";
-	$query ="
 
-                                 LOAD DATA LOCAL INFILE '/home/romario/Downloads/Sodium.csv' 
+    		$tmpfname = $_FILES['file_save']['tmp_name'];
+
+    
+    $query ="
+
+                                 LOAD DATA LOCAL INFILE '$tmpfname' 
 INTO TABLE Classification
 FIELDS TERMINATED BY ',' 
 ENCLOSED by '\"' ESCAPED BY '\\\'
