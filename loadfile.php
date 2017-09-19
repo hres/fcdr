@@ -1,6 +1,6 @@
 <?php
 
-
+include "connection.php";
 	$query ="
 
                                  LOAD DATA LOCAL INFILE '/home/romario/Downloads/Sodium.csv' 
@@ -27,7 +27,7 @@ if($result){
 //     }
 // }
 }else{
-
-    echo "Failed to load the file";
-}
+							
+							die('Error : '. $conn->error);
+						}
 ?>
