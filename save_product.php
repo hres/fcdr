@@ -62,7 +62,7 @@ EOQ;
 					
 						$classification_update = $conn->prepare("UPDATE Product_Classification SET ClassificationID=(Select ClassificationID From Classification where Classification_Number =?) Where ProductID = ?");		
 	
-						$classification_update->bind_param("di",$params[6], $productID);
+						$classification_update->bind_param("si",$params[6], $productID);
 						$classification_update_result = $classification_update->execute();
 
 							if(!$classification_update_result){
@@ -100,7 +100,7 @@ EOQ;
 	$params_product_classification = array($productID,$params[6]);
 		
 						$stmt_product_classification = $conn->prepare($query2);
-						$stmt_product_classification->bind_param("id", $params_product_classification[0], $params_product_classification[1]);
+						$stmt_product_classification->bind_param("is", $params_product_classification[0], $params_product_classification[1]);
 						$result_product_classification = $stmt_product_classification->execute();
 		
 						if($result_product_classification){
