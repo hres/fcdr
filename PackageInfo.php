@@ -533,7 +533,7 @@ EOQ;
 
 
 			$stmt_classification = $conn->prepare("Select * From Classification Where Classification_Number= ?");		
-			$stmt_classification->bind_param("d", $this->Classification_Number);
+			$stmt_classification->bind_param("s", $this->Classification_Number);
 			$result_c = $stmt_classification->execute();
 			$stmt_classification->store_result();
 				if(($stmt_classification->num_rows)>0){
@@ -672,7 +672,7 @@ $childItem =  ($this->Child_Item != null?$this->Child_Item:NULL);
 							
 						}else{
 							
-							die('Error : '. $conn->error);
+							//die('Error : '. $conn->error);
 						}
 
 				
