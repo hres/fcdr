@@ -605,6 +605,38 @@ function createPackage($productID,$conn,$Username){
 // error_reporting(E_ALL);
 // ini_set('display_errors', 1);
 // echo "HERE $productID   Date: $this->NFT_Last_Update Child: $this->Child_Item **";
+$Classification_Name = null;
+						if(!empty($this->Classification_Number) && strlen($this->Classification_Number) != 0){
+
+
+			$stmt_classification = $conn->prepare(" Select Classification_Number,Classification_Name From Classification Where Classification_Number = ?");		
+			$stmt_classification->bind_param("s", $this->Classification_Number);
+			$stmt_classification->execute();
+			$numOfResults = $stmt_classification->get_result();
+
+				if(($numOfResults->num_rows)<1){
+							 
+					$this->Classification_Number = null;
+
+						}else{
+							
+							while($row = mysqli_fetch_assoc($numOfResults)){
+								
+								$this->Classification_Number = $row['Classification_Number'];
+								$Classification_Name = $row['Classification_Name'];
+
+							}
+
+						}
+						
+			
+		}else{
+			$this->Classification_Number = null;
+		}
+
+
+
+
 
 
 	$query_insert =<<<EOQ
@@ -644,9 +676,10 @@ INSERT Into Package(
 	   Nft_Last_Update_Date,
 	   Informed_Dining_Program,
 	   Child_Item,
-
-	   Product_Grouping
-) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	   Product_Grouping,
+	   Classification_Number,
+	   Classification_Name
+) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 EOQ;
 
 $nft = ($this->NFT_Last_Update != null?$this->NFT_Last_Update:NULL);
@@ -655,7 +688,7 @@ $childItem =  ($this->Child_Item != null?$this->Child_Item:NULL);
 
 
 						$stmt = $conn->prepare($query_insert);
-						$stmt->bind_param("issdsddsssssssssssssssssssssssssssss", $productID,$this->Label_UPC,$this->Label_Description, 
+						$stmt->bind_param("issdsddsssssssssssssssssssssssssssssss", $productID,$this->Label_UPC,$this->Label_Description, 
 						$this->Per_Serving_Amount_PPD, $this->Per_Serving_Amount_PPD_UofM, $this->Per_Serving_Amount_In_Grams, 
 						$this->Per_Serving_Amount_In_Grams_PPD, $this->Package_Size_UofM, $this->Nielsen_Category,
 						$this->Brand,$this->Manufacturer, $this->Country, $this->getPackage_Size, 
@@ -665,7 +698,9 @@ $childItem =  ($this->Child_Item != null?$this->Child_Item:NULL);
 						$this->Multipart, $this->Nutrition_Fact_Table, $this->Common_Household_Measure,
 						$this->Per_Serving_Amount, $this->Per_Serving_UofM,$this->Source, 
 						$this->Comment, $this->Product_Description,$this->Nielsen_Item_Rank_UPC,$Username,$nft,
-						$informed,$childItem,$this->Product_Grouping);
+						$informed,$childItem,$this->Product_Grouping, $this->Classification_Number,
+						$Classification_Name
+						);
 						
 
 						if($stmt->execute()){
@@ -682,6 +717,38 @@ $childItem =  ($this->Child_Item != null?$this->Child_Item:NULL);
 
 }
 function createPackageSalesUPCMatch($Username,$conn){
+
+$Classification_Name = null;
+						if(!empty($this->Classification_Number) && strlen($this->Classification_Number) != 0){
+
+
+			$stmt_classification = $conn->prepare(" Select Classification_Number,Classification_Name From Classification Where Classification_Number = ?");		
+			$stmt_classification->bind_param("s", $this->Classification_Number);
+			$stmt_classification->execute();
+			$numOfResults = $stmt_classification->get_result();
+
+				if(($numOfResults->num_rows)<1){
+							 
+					$this->Classification_Number = null;
+
+						}else{
+							$this->updateClassification('Sales_UPC',$value,$conn);
+							while($row = mysqli_fetch_assoc($numOfResults)){
+								
+								$this->Classification_Number = $row['Classification_Number'];
+								$Classification_Name = $row['Classification_Name'];
+
+							}
+
+						}
+						
+			
+		}else{
+			$this->Classification_Number = null;
+		}
+
+
+
 
 
 
@@ -722,19 +789,24 @@ INSERT INTO Package(
 	   Nft_Last_Update_Date,
 	   Informed_Dining_Program,
 	   Child_Item,
-	   Product_Grouping
+	   Product_Grouping,
+	   Classification_Number,
+	   Classification_Name
 )
 SELECT DISTINCT
-       ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+       ProductIDS, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Sales
  WHERE Sales_UPC = ?
 EOQ;
+
+
+						
 
 $nft = ($this->NFT_Last_Update != null?$this->NFT_Last_Update:NULL);
 $informed = ($this->Informed_Dining_Program != null?$this->Informed_Dining_Program:NULL);
 $childItem =   ($this->Child_Item != null?$this->Child_Item:NULL);
 						$stmt = $conn->prepare($query_insert);
-						$stmt->bind_param("ssdsddssssssssssssssssssssssssssssss", $this->Label_UPC,$this->Label_Description, 
+						$stmt->bind_param("ssdsddssssssssssssssssssssssssssssssss", $this->Label_UPC,$this->Label_Description, 
 						$this->Per_Serving_Amount_PPD, $this->Per_Serving_Amount_PPD_UofM, $this->Per_Serving_Amount_In_Grams, 
 						$this->Per_Serving_Amount_In_Grams_PPD, $this->Package_Size_UofM, $this->Nielsen_Category,
 						$this->Brand,$this->Manufacturer, $this->Country, $this->Package_Size, 
@@ -745,7 +817,7 @@ $childItem =   ($this->Child_Item != null?$this->Child_Item:NULL);
 						$this->Per_Serving_Amount, $this->Per_Serving_UofM,$this->Source, 
 						$this->Comment, $this->Product_Description,$this->Nielsen_Item_Rank_UPC,$Username,$nft, 
 						$informed, $childItem, 
-						$this->Product_Grouping, $this->Nielsen_Item_Rank_UPC);
+						$this->Product_Grouping, $this->Classification_Number,$Classification_Name, $this->Nielsen_Item_Rank_UPC);
 						
 						$result_insert = $stmt->execute();
 						
@@ -817,8 +889,59 @@ EOQ;
 
 }
 
+function updateClassification($grouping, $value,$conn){
+							$query_update =<<<EOQ
+ UPDATE Product_Classification SET
+
+	ClassificationID = (Select ClassificationID from Classification where Classification_Number = ?) where
+    ProductID = (
+		Select Distinct ProductIDP from Package where $grouping = ?
+        )
+EOQ;
+
+							$stmt2 = $conn->prepare($query_update);
+							$stmt2->bind_param("ss", $this->Classification_Number,$value);
+							$stmt2->execute();
+
+}
+
+
 function createPackageLabelUPCGroupingMatch($Username,$match,$value, $conn){
   
+$Classification_Name = null;
+						if(!empty($this->Classification_Number) && strlen($this->Classification_Number) != 0){
+
+
+			$stmt_classification = $conn->prepare(" Select Classification_Number,Classification_Name From Classification Where Classification_Number = ?");		
+			$stmt_classification->bind_param("s", $this->Classification_Number);
+			$stmt_classification->execute();
+			$numOfResults = $stmt_classification->get_result();
+
+				if(($numOfResults->num_rows)<1){
+							 
+					$this->Classification_Number = null;
+
+						}else{
+
+
+							$this->updateClassification($match,$value,$conn);
+							
+							while($row = mysqli_fetch_assoc($numOfResults)){
+								
+								$this->Classification_Number = $row['Classification_Number'];
+								$Classification_Name = $row['Classification_Name'];
+
+							}
+
+						}
+						
+			
+		}else{
+			$this->Classification_Number = null;
+		}
+
+
+
 						$query_insert =<<<EOQ
 INSERT Into Package(
        ProductIDP,
@@ -856,11 +979,12 @@ INSERT Into Package(
 	  Nft_Last_Update_Date,
 	   Informed_Dining_Program,
 	   Child_Item,
-	 
-	   Product_Grouping
+	   Product_Grouping,
+	   Classification_Number,
+	   Classification_Name
 )
 SELECT DISTINCT
-       ProductIDP, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+       ProductIDP, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   FROM Package
  WHERE $match = ?
 EOQ;
@@ -869,8 +993,9 @@ $nft = ($this->NFT_Last_Update != null?$this->NFT_Last_Update:NULL);
 $informed = ($this->Informed_Dining_Program != null?$this->Informed_Dining_Program:NULL);
 $childItem =  ($this->Child_Item != null?$this->Child_Item:NULL);
 
+
 						$stmt = $conn->prepare($query_insert);
-						$stmt->bind_param("ssdsddssssssssssssssssssssssssssssss", $this->Label_UPC,$this->Label_Description, 
+						$stmt->bind_param("ssdsddssssssssssssssssssssssssssssssss", $this->Label_UPC,$this->Label_Description, 
 						$this->Per_Serving_Amount_PPD, $this->Per_Serving_Amount_PPD_UofM, $this->Per_Serving_Amount_In_Grams, 
 						$this->Per_Serving_Amount_In_Grams_PPD, $this->Package_Size_UofM, $this->Nielsen_Category,
 						$this->Brand,$this->Manufacturer, $this->Country, $this->Package_Size, 
@@ -880,7 +1005,7 @@ $childItem =  ($this->Child_Item != null?$this->Child_Item:NULL);
 						$this->Multipart, $this->Nutrition_Fact_Table, $this->Common_Household_Measure,
 						$this->Per_Serving_Amount, $this->Per_Serving_UofM,$this->Source, 
 						$this->Comment, $this->Product_Description,$this->Nielsen_Item_Rank_UPC,$Username,
-						$nft, $informed, $childItem,$this->Product_Grouping, $value);
+						$nft, $informed, $childItem,$this->Product_Grouping, $this->Classification_Number,$Classification_Name, $value);
 						
 						
 						$result_insert = $stmt->execute();
