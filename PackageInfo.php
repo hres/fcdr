@@ -551,12 +551,7 @@ EOQ;
 
 
 						}
-
-
-
-
-
-						
+					
 			
 		}
 		return $id;
@@ -616,7 +611,7 @@ $Classification_Name = null;
 
 				if(($numOfResults->num_rows)<1){
 							 
-					$this->Classification_Number = null;
+					//$this->Classification_Number = null;
 
 						}else{
 							
@@ -729,7 +724,7 @@ $Classification_Name = null;
 
 				if(($numOfResults->num_rows)<1){
 							 
-					$this->Classification_Number = null;
+					//$this->Classification_Number = null;
 
 						}else{
 							$this->updateClassification('Sales_UPC',$value,$conn);
@@ -919,7 +914,7 @@ $Classification_Name = null;
 
 				if(($numOfResults->num_rows)<1){
 							 
-					$this->Classification_Number = null;
+					//$this->Classification_Number = null;
 
 						}else{
 

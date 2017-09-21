@@ -214,24 +214,22 @@ $("#vids-search-form").validate({
 
 },
     Carbohydrates_Amount : {   
-  number: true, 
-         required: true
+  number: true
 
 },  
     Carbohydrates_Unit : {   
 
-         required: true
+         //required: true
 
 },
 
     Fibre_Amount : {   
-  number: true, 
-    required: true
+  number: true
 
 },  
     Fibre_Unit : {   
 
-         required: true
+        // required: true
 
 },
 
@@ -1809,8 +1807,7 @@ number: true,
 
 }, 
  Per_Serving_Amount : {   
-    number: true,
-   required: true
+    number: true
 //
     }, /**/
    
