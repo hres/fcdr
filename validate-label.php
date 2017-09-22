@@ -77,9 +77,9 @@
 		$sanitation_errors[] = "Comments";
 	}
 
-    	if (!filter_var($_POST["Nutrition_Fact_Table"], FILTER_SANITIZE_STRING)) {
-		$sanitation_errors[] = "Nutrition Fact Table";
-	}
+    // 	if (!filter_var($_POST["Nutrition_Fact_Table"], FILTER_SANITIZE_STRING)) {
+	// 	$sanitation_errors[] = "Nutrition Fact Table";
+	// }
 
     	if (!empty($_POST["Other_Package_Statement"])                  && !filter_var($_POST["Other_Package_Statement"], FILTER_SANITIZE_STRING)) {
 		$sanitation_errors[] = "Other Package Statement";
@@ -103,17 +103,17 @@
 	}
 
 
-    	if (!filter_var($_POST["Brand"], FILTER_SANITIZE_STRING)) {
-		$sanitation_errors[] = "Brand";
-	}
+    // 	if (!filter_var($_POST["Brand"], FILTER_SANITIZE_STRING)) {
+	// 	$sanitation_errors[] = "Brand";
+	// }
 
-    	if (!filter_var($_POST["Manufacturer"], FILTER_SANITIZE_STRING)) {
-		$sanitation_errors[] = "Manufacturer";
-	}
+    // 	if (!filter_var($_POST["Manufacturer"], FILTER_SANITIZE_STRING)) {
+	// 	$sanitation_errors[] = "Manufacturer";
+	// }
 
-    	if (!empty($_POST["Country"])                  && !filter_var($_POST["Country"], FILTER_SANITIZE_STRING)) {
-		$sanitation_errors[] = "Country";
-	}
+    // 	if (!empty($_POST["Country"])                  && !filter_var($_POST["Country"], FILTER_SANITIZE_STRING)) {
+	// 	$sanitation_errors[] = "Country";
+	// }
 
     	if (!empty($_POST["Package_Size"])                  && !filter_var($_POST["Package_Size"], FILTER_SANITIZE_STRING)) {
 		$sanitation_errors[] = "Package Size";
@@ -131,9 +131,9 @@
 		$sanitation_errors[] = "Label Description";
 	}
 
-    	if (!filter_var($_POST["Ingredients"], FILTER_SANITIZE_STRING)) {
-		$sanitation_errors[] = "Ingredients";
-	}
+    // 	if (!filter_var($_POST["Ingredients"], FILTER_SANITIZE_STRING)) {
+	// 	$sanitation_errors[] = "Ingredients";
+	// }
 
     	if (!empty($_POST["Common_Measure"])                  && !filter_var($_POST["Common_Measure"], FILTER_SANITIZE_STRING)) {
 		$sanitation_errors[] = "Common Measure";
