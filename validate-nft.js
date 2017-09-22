@@ -34,6 +34,25 @@ $("#vids-search-form").validate({
         }}
 
 },
+ Energy_Amount: {
+  number: true, 
+         required: {
+             
+             depends: function(element){
+          return $('#Energy_Unit').val().length > 0;
+        }}
+
+},
+
+      Energy_Unit : {
+    
+         required: {
+             
+             depends: function(element){
+          return $('#Energy_Amount').val().length > 0;
+        }}
+
+},
  Trans_Fat_Amount : {
   number: true, 
          required: {

@@ -366,12 +366,12 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 				<input type="text" class="form-control" name="Nielsen_Category"  id="Nielsen_Category" placeholder="Enter the Nielsen of the Package Label" value="<?PHP echo $row['Nielsen_Category']; ?>"/> 
 			</div>
 			<div class="form-group col-sm-4">
-				<label for="Brand" class="required">Brand <strong class="required">(required)</strong></label>
-				<input type="text" class="form-control" name="Brand" id="Brand" placeholder="Enter the Brand of the Package Label" value="<?PHP echo $row['Brand']; ?>" required/>
+				<label for="Brand" >Brand </label>
+				<input type="text" class="form-control" name="Brand" id="Brand" placeholder="Enter the Brand of the Package Label" value="<?PHP echo $row['Brand']; ?>" />
 			</div>
 			<div class="form-group col-sm-4">
-				<label for="Manufacturer" class="required">Manufacturer <strong class="required">(required)</strong></label>
-				<input type="text" class="form-control" name="Manufacturer" id="Manufacturer" placeholder="Enter the Manufacturer of the Package Label" value="<?PHP echo $row['Manufacturer']; ?>" required/>
+				<label for="Manufacturer">Manufacturer </label>
+				<input type="text" class="form-control" name="Manufacturer" id="Manufacturer" placeholder="Enter the Manufacturer of the Package Label" value="<?PHP echo $row['Manufacturer']; ?>" />
 			</div>
 		
 		</div>
@@ -446,16 +446,16 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="row">
 					<div class="form-group col-md-12 ">
-  <label for="Ingredients" class="required">Ingredients <strong class="required">(required)</strong></label>
-  <textarea class="form-control"  style="width:100%" rows="2"  id="Ingredients" name="Ingredients" required><?PHP echo $row['Ingredients']; ?></textarea>
+  <label for="Ingredients" >Ingredients </label>
+  <textarea class="form-control"  style="width:100%" rows="2"  id="Ingredients" name="Ingredients" ><?PHP echo $row['Ingredients']; ?></textarea>
 </div>
 </div>		
 
 	<div class="row">	
 				
 					<div class="form-group col-md-12 ">
-  <label for="Nutrition_Fact_Table" class="required">Nutrition Fact Table <strong class="required">(required)</strong></label>
-  <textarea class="form-control" style="width:100%"   rows="2" name="Nutrition_Fact_Table" id="Nutrition_Fact_Table" required><?PHP echo $row['Nutrition_Fact_Table']; ?></textarea>
+  <label for="Nutrition_Fact_Table" >Nutrition Fact Table </label>
+  <textarea class="form-control" style="width:100%"   rows="2" name="Nutrition_Fact_Table" id="Nutrition_Fact_Table" ><?PHP echo $row['Nutrition_Fact_Table']; ?></textarea>
 </div>
 </div>
 <div class="row">	
@@ -504,7 +504,7 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 			</div>
 						   <div class="form-group col-sm-4">
       <label for="date1" class="required">
-     Collection Date <strong class="required">(required)</strong>
+     Collection Date  <strong class="required">(required)</strong>
       </label>
       <div class="">
        <div class="input-group">
@@ -519,8 +519,8 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
      </div>
 			<div class="form-group col-sm-4">
-				<label for="Sources">Source</label>
-				<input type="text" class="form-control" name="Source"  id="Sources" placeholder="Enter the Source of the Package Label" value="<?PHP echo $row['Source']; ?>" /> 
+				<label for="Sources" class="required">Source <strong class="required">(required)</strong></label>
+				<input type="text" class="form-control" name="Source"  id="Sources" placeholder="Enter the Source of the Package Label" value="<?PHP echo $row['Source']; ?>" required/> 
 			</div>
 		
 			
@@ -583,12 +583,12 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="well" style="margin-right:2%;">	
 			<div class="row">
 		<div class="form-group col-xs-6">
-				<label for="Per_Serving_Amount" class="required">Per Serving Amount <strong class="required">(required)</strong></label>
-				<input type="text" style="width:540px" class="form-control" name="Per_Serving_Amount" id="manufacturer" placeholder="Enter the Amount in the Package Label" value="<?PHP echo $row['Per_Serving_Amount']; ?>" required/>
+				<label for="Per_Serving_Amount" >Per Serving Amount </label>
+				<input type="text" style="width:540px" class="form-control" name="Per_Serving_Amount" id="manufacturer" placeholder="Enter the Amount in the Package Label" value="<?PHP echo $row['Per_Serving_Amount']; ?>"/>
 			</div>
 	
 					<div class="form-group col-xs-6">
-	<label for="sel1" name="Per_Serving_Unit" class="required"> Per Serving  Unit of measure <strong class="required">(required)</strong></label>
+	<label for="sel1" name="Per_Serving_Unit" > Per Serving  Unit of measure </label>
     <select class="form-control" id="sel1" name="Per_Serving_Unit" style="width:540px" required>
 		  <option value="<?PHP echo $row['Per_Serving_Unit']; ?>" selected="selected"><?PHP echo $row['Per_Serving_Unit']; ?></option>
 		<?php include 'Units.php';?>
@@ -636,13 +636,15 @@ EOQ;
 	
 	?>
 		 <div class="form-group">
-  <label class="col-sm-3 control-label required">Energy <strong class="required">(required)</strong></label>
+  <label class="col-sm-3 control-label ">Energy </label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Energy" name="Energy_Amount" value="<?PHP echo $row['Amount']; ?>" required>
+   <input type="text" class="form-control" placeholder="Amount of Energy" id="Energy_Amount" name="Energy_Amount" value="<?PHP echo $row['Amount']; ?>" >
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Energy_Unit">
-  <option value="kcal" selected="selected">kcal</option>
+ <select class="form-control" id="Energy_Unit" name="Energy_Unit">
+ <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected><?PHP echo $row['Amount_Unit_Of_Measure']; ?><option>
+<option value="kcal" >kcal</option>
+  <option value=""></option>
 	
       </select>  </div>
   <div class="col-sm-3">
@@ -775,12 +777,12 @@ EOQ;
 	?>
 		 <div class="form-group">
 
-  <label class="col-sm-3 control-label required">Fat <strong class="required">(required)</strong></label>
+  <label class="col-sm-3 control-label ">Fat </label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Fat" name="Fat_Amount" value="<?PHP echo $row['Amount']; ?>" required> 
+   <input type="text" class="form-control" placeholder="Amount of Fat" name="Fat_Amount" value="<?PHP echo $row['Amount']; ?>"> 
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
-<select class="form-control" id="sel1" name="Fat_Unit_Of" required>
+<select class="form-control" id="sel1" name="Fat_Unit_Of" >
   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	
 	<?php include 'Units.php';?>
@@ -1104,12 +1106,12 @@ EOQ;
 	
 	?>
 		 
-  <label class="col-sm-3 control-label required">Carbohydrates <strong class="required">(required)</strong></label>
+  <label class="col-sm-3 control-label">Carbohydrates </label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Carbohydrates" id="Carbohydrates_Amount"  name="Carbohydrates_Amount" value="<?PHP echo $row['Amount']; ?>" required>
+   <input type="text" class="form-control" placeholder="Amount of Carbohydrates" id="Carbohydrates_Amount"  name="Carbohydrates_Amount" value="<?PHP echo $row['Amount']; ?>" >
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="Carbohydrates_Unit" name="Carbohydrates_Unit" required>
+ <select class="form-control" id="Carbohydrates_Unit" name="Carbohydrates_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	<?php include 'Units.php';?>
 		 <option value=""></option>
@@ -1150,13 +1152,13 @@ EOQ;
 	
 	?>	 
 		 
-  <label class="col-sm-3 control-label required">Fibre <strong class="required">(required)</strong></label>
+  <label class="col-sm-3 control-label ">Fibre </label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Fibre" id="Fibre_Amount" name="Fibre_Amount" value="<?PHP echo $row['Amount']; ?>" required>
+   <input type="text" class="form-control" placeholder="Amount of Fibre" id="Fibre_Amount" name="Fibre_Amount" value="<?PHP echo $row['Amount']; ?>" >
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="Fibre_Unit" name="Fibre_Unit" required>
-	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected" required><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
+ <select class="form-control" id="Fibre_Unit" name="Fibre_Unit" >
+	 <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected" ><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>
       
@@ -1421,12 +1423,12 @@ EOQ;
 	
 	?>
 		 
-  <label class="col-sm-3 control-label required">Protein <strong class="required">(required)</strong></label>
+  <label class="col-sm-3 control-label ">Protein </label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Protein" name="Protein_Amount" value="<?PHP echo $row['Amount']; ?>"  required>
+   <input type="text" class="form-control" placeholder="Amount of Protein" name="Protein_Amount" value="<?PHP echo $row['Amount']; ?>" >
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Protein_Unit" required>
+ <select class="form-control" id="sel1" name="Protein_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 
 	<?php include 'Units.php';?>
