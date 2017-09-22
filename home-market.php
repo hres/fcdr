@@ -301,13 +301,15 @@ if (!$result) {
   
   </div>
 </div>
-		<form id="clearbd">
+		<!--<form id="clearbd">
 
 				<button style=" float:right;" type="submit" class="btn btn-default" name="clearbd">Clear DB</button>
-</form> 
+</form> -->
 
 		</main>
 <?php include 'footer.php';?>
+	
+<!--	
 	<script type="text/javascript">
 $(document).ready(function()
 {
@@ -335,7 +337,7 @@ $(document).ready(function()
  });
  
 });
-</script>
+</script>-->
 <!-- Include Date Range Picker -->
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js" integrity="sha384-aHFhM5aT8aFA9xA6PAeaB8dav8Bc3nF2gDv/DnBl7E6Qhutr42h9VSmf7BXTdugy" crossorigin="anonymous"></script>
