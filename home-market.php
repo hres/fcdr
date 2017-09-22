@@ -301,43 +301,13 @@ if (!$result) {
   
   </div>
 </div>
-		<form id="clearbd">
-
-				<button style=" float:right;" type="submit" class="btn btn-default" name="clearbd">Clear DB</button>
-</form> 
+ 
 
 		</main>
 <?php include 'footer.php';?>
 	
 	
-	<script type="text/javascript">
-$(document).ready(function()
-{
- $(document).on('submit', '#clearbd', function()
- {
 
-  var data = $(this).serialize();
-  
-  
-  $.ajax({
-  
-  type : 'POST',
-  url  :  'cleardb.php',
-  data : data,
-  success :  function(data) {
-                $('.result-modal').html(data);
-				
-            },
-            error: function (request, status, error) {
-                alert(error.responseText);
-                //or console.log(request.responseText), or status or error;
-            }
-  });
-  return false;
- });
- 
-});
-</script>
 <!-- Include Date Range Picker -->
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js" integrity="sha384-aHFhM5aT8aFA9xA6PAeaB8dav8Bc3nF2gDv/DnBl7E6Qhutr42h9VSmf7BXTdugy" crossorigin="anonymous"></script>
