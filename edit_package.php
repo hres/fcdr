@@ -589,7 +589,7 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 	
 					<div class="form-group col-xs-6">
 	<label for="sel1" name="Per_Serving_Unit" > Per Serving  Unit of measure </label>
-    <select class="form-control" id="sel1" name="Per_Serving_Unit" style="width:540px" required>
+    <select class="form-control" id="sel1" name="Per_Serving_Unit" style="width:540px">
 		  <option value="<?PHP echo $row['Per_Serving_Unit']; ?>" selected="selected"><?PHP echo $row['Per_Serving_Unit']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>

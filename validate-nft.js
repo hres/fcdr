@@ -1803,8 +1803,7 @@ number: true,
 //
 },
  Per_Serving_Amount : {   
-    number: true,
-   required: true
+    number: true
 //
 },
   },
