@@ -7,5 +7,7 @@ In the connection.php file, update the line that references the conn.ini as foll
 
 Change: 
 $db = parse_ini_file("conn.ini"); 
+
 to
+
 $db = parse_ini_file("/etc/sodium-monitoring/conn.ini");
