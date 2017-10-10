@@ -1,6 +1,6 @@
 <?php
 
-$db = parse_ini_file("conn.ini");
+$db = parse_ini_file("/etc/sodium-monitoring/conn.ini");
 
 
 $servername = $db['host'];
