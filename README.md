@@ -1,5 +1,3 @@
-
-
 Deploying the application from the sodium-monitoring branch
 
 Create a folder called "sodium-monitoring" under /etc then
