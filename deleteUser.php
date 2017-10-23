@@ -116,14 +116,38 @@ tr:last-child, th{
 
 <?php
 	if(isset($_POST['passwordForm']) && $_SERVER["REQUEST_METHOD"] == "POST") {
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 $id= $_GET['UserID'];
 
+			$user_count =<<<EOQ
+ Select * from Users where User_Role = ? 
 
-if($pass1 === $pass2){
+EOQ;
+$value = 'admin';
 
 
- $mpassword= password_hash($pass2, PASSWORD_BCRYPT, ['cost' => 12]);
+							$stmt_user_count = $conn->prepare($user_count);
+					     	$stmt_user_count->bind_param("s",$value);
+							$stmt_user_count->execute();	
+							//$result = $stmt_user_count->get_result();
+
+
+							// $stmt = $conn->prepare($get_user);
+					     	// $stmt->bind_param("s",$username);
+							// $result1 = $stmt->execute();	
+							 $result = $stmt_user_count->get_result();
+	
+	// $row = $result->fetch_assoc();
+	
+
+	if(mysqli_num_rows($result)>1){
+
+
+	
+
+
+
 
    		$deleteUser =<<<EOQ
 		 Delete from Users where UserID = ?
@@ -156,7 +180,7 @@ echo "</script>\n";
                             		echo "<script type=\"text/javascript\">\n";
 echo "    $(document).ready(function() {\n";
 
-	echo "document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Failed deleting the. Redirecting to the Manage Users page...</strong></h3>\"";
+	echo "document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Failed deleting the user. Redirecting to the Manage Users page...</strong></h3>\"";
 
 
 echo "    });\n";
@@ -169,12 +193,24 @@ echo "</script>\n";
 
 }
 
-                          
+	} else{
+                            		echo "<script type=\"text/javascript\">\n";
+echo "    $(document).ready(function() {\n";
 
-}else{
+	echo "document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Failed deleting the user, system must have at least 1 user admin. Redirecting to the Manage Users page...</strong></h3>\"";
 
-    echo "Password don't match";
-}
+
+echo "    });\n";
+echo "</script>\n";
+		
+		
+		
+		echo "<script>setTimeout(\"location.href = 'manageusers.php';\",3300);</script>";
+
+		
+	}      
+
+
 
 }
 
