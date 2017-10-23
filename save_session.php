@@ -33,6 +33,7 @@ EOQ;
 			
 		$username = $row['Name'];
 		$_SESSION['currentuser'] = $username;
+		$_SESSION['role'] = $row['User_Role'];
 
 		}else{
 $sanitation_errors[] = "Error";
