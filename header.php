@@ -64,30 +64,14 @@ ini_set('session.cookie_httponly', true);
   <li><a href="index.php">Search</a></li>
   <li> <a href="create-product.php">Create Product</a></li>
 				   <li><a  href="importdata.php" >Import</a></li>
-				   <?php
-include "connection.php";
-				   $username = $_SESSION['currentuser'];
-				   		$get_users =<<<EOQ
-		Select UserID from Users where Username = ?
 
-EOQ;
-
-
-$stmt_first = $conn->prepare($get_users);
-		$stmt_first->bind_param("s",$username);
-$stmt_first->execute(); 
-$result = $stmt_first->get_result();
- $row = $result->fetch_assoc();
-
- echo "<li><a href=editUser.php?UserID=" .$row['UserID'] . ">Update Profile</a></li>";
-
- ?>
 
 
   
   
   
-  </li>
+
+  <li><a href="editUser.php">Update Profile</a></li>
 				   <?php 
 				   	if($_SESSION['role']==='admin'){
 						   echo " <li><a  href=\"manageusers.php\" >Manage users</a></li>";
