@@ -106,7 +106,7 @@ tr:last-child, th{
 <?php include "connection.php";
 
 
-$userID =  $_SESSION['id'];
+$userID = ($_GET['UserID']?$_GET['UserID']:$_SESSION['id']);
 
 		$get_users =<<<EOQ
 		Select * from Users where UserID = ?
@@ -140,7 +140,7 @@ $result = $stmt_first->get_result();
 <?php
 	if(isset($_POST['passwordForm']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
-$id= $_SESSION['id'];
+$id= ($_GET['UserID']?$_GET['UserID']:$_SESSION['id']);
 $pass1 = $_POST['pass1'];
 $pass2 = $_POST['pass2'];
 
