@@ -88,7 +88,7 @@ $result = $stmt_first->get_result();
   
   
   </li>
-  <li><a href="editUser.php">Update Profile</a></li>
+
 				   <?php 
 				   	if($_SESSION['role']==='admin'){
 						   echo " <li><a  href=\"manageusers.php\" >Manage users</a></li>";
