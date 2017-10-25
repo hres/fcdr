@@ -168,7 +168,7 @@ EOQ;
 		echo "<script type=\"text/javascript\">\n";
 echo "    $(document).ready(function() {\n";
 
-	echo "document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Password Successfully updated. Manage users page...</strong></h3>\"";
+	echo "document.getElementById (\"confirm-message\"). innerHTML = \"<h3><strong>Password Successfully updated. Redirecting to the Manage users page...</strong></h3>\"";
 
 
 echo "    });\n";
