@@ -88,7 +88,6 @@ $result = $stmt_first->get_result();
   
   
   </li>
-
 				   <?php 
 				   	if($_SESSION['role']==='admin'){
 						   echo " <li><a  href=\"manageusers.php\" >Manage users</a></li>";

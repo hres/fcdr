@@ -139,7 +139,7 @@ $result = $stmt_first->get_result();
      
     //   <span class="glyphicon glyphicon-trash"></span>
 echo "<tr> <td> ". $row['Username'] . "</a></td>
-<td><a href=editUser.php?UserID=" .$row['UserID'] . ">". $row['Name'] . "</a></td>
+<td><a href=editUserB.php?UserID=" .$row['UserID'] . ">". $row['Name'] . "</a></td>
 <td>". $row['User_Role'] . "</td>
 <td><a href=deleteUser.php?UserID=" .$row['UserID'] . "><span class=\"glyphicon glyphicon-trash\"></span></a></td>
 

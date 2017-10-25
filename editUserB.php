@@ -90,37 +90,13 @@ tr:last-child, th{
 	</style>
 </head>
 <body class="wide comments example">
-
 				   <?php 
-include "connection.php";
-	$ID = ($_GET['UserID']?$_GET['UserID']:'');		
+				   if (!hash_equals(trim($_SESSION['role']),'admin')) {
 
-	$usermame = $_SESSION['currentuser'];	
-				   			$user_count =<<<EOQ
- Select * from Users where Username = ? AND UserID = ?
-
-EOQ;
-
-
-							$stmt_user_count = $conn->prepare($user_count);
-					     	$stmt_user_count->bind_param("si",$usermame, $ID);
-							$stmt_user_count->execute();	
-							//$result = $stmt_user_count->get_result();
-
-
-							// $stmt = $conn->prepare($get_user);
-					     	// $stmt->bind_param("s",$username);
-							// $result1 = $stmt->execute();	
-							 $result = $stmt_user_count->get_result();
-
-								 if(mysqli_num_rows($result)!=1){
-									 	 header ('Location: index.php');
-								 }
-								 
-							
+						   header ('Location: index.php');
+					   }
+				   
 				    ?>
-
-
 <?php include 'header.php';?>
 
 
