@@ -176,7 +176,7 @@ echo "</script>\n";
 		
 		
 		
-		echo "<script>setTimeout(\"location.href = 'index.php';\",3000);</script>";
+		echo "<script>setTimeout(\"location.href = 'manageusers.php';\",3000);</script>";
 
 
 }else{
