@@ -1,4 +1,4 @@
-`Deploying the application from the sodium-monitoring branch`
+<h2>Deploying the application from the sodium-monitoring branch</h2>
 
 Create a folder called "sodium-monitoring" under /etc then
 Move (delete from the source code) the conn.ini file from the source code under /etc/sodium-monitoring/ .
