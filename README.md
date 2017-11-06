@@ -11,11 +11,19 @@ to
 
 $db = parse_ini_file("/etc/sodium-monitoring/conn.ini");
 
+<<<<<<< HEAD
 <h3>Database creation</h3>
 In order to recreate the database, use the scripts located under /SCRIPT folder in the following order:
 
 fcdr_schema.sql to create the schema only <br>
 fcdr_data.sql to populate the reference tables <br>
+=======
+In order to recreate the database, use the scripts located under /SCRIPT folder in this order:
+
+
+fcdr_schema.sql to create the schema only
+fcdr_data.sql to populate the reference tables 
+>>>>>>> f9e1ca6... Update README.md
 fcdr_user.sql to populate the User table: all information in this table are temporary and will be removed/updated once the application gets deployed. 
 
 If you are using a SQL user that is *not* fcdruser or running the script where the fcdr DB is not localhost, then search and replace `fcdruser@localhost` with the right values. 
