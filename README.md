@@ -11,8 +11,8 @@ to
 
 $db = parse_ini_file("/etc/sodium-monitoring/conn.ini");
 
+<h3>Database creation<h3>
 In order to recreate the database, use the scripts located under /SCRIPT folder in this order:
-
 
 fcdr_schema.sql to create the schema only
 fcdr_data.sql to populate the reference tables 
