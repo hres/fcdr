@@ -162,25 +162,7 @@
 <main role="main" property="mainContentOfPage" class="container">
 
 	
-		<div class="container" id="tabs" >
-  <ul class="nav nav-tabs">
-    <li ><a href="sample-designreport.php">Sample Design Report</a></li>
-    <li><a href="nutrient-analysis-report.php">Nutrient Analysis Report</a></li>
-     <li class="active"><a href="label-report.php">Label Report</a></li>
 
-  </ul>
-
-  
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade">
-
-
-    </div>
-
-    <div id="menu1" class="tab-pane fade">
-
-  </div>
-    <div id="menu2" class="tab-pane fade in active">
  <section style="margin-top: 15px;" class="hidethis">
 
     <?php
@@ -296,39 +278,51 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 <table id="example" class="display nowrap" cellspacing="0" width="100%">
 <thead> <tr>
         <th>Label UPC</th>
-		<th>Nielsen Item Rank</th>
-		<th>Nielsen Category</th> 
+		<th>Type</th>
+
         <th>Label Description</th>
         <th>Brand</th>
         <th>Manufacturer</th>
-        <th>Country</th>   
-		<th>Package Size</th>
-		<th>Package Size Unit of Measure</th>
-		<th>Number of Unit</th>
-        <th>Storage Statements</th>
+        <th>Country</th>  
         <th>Collection Date</th>
 		<th>Health Claims</th>
 		<th>Nutrient Claims</th>
 		<th>Other Package Statements</th>
-        <th>Suggested Directions</th>
         <th>Ingredients</th>
         <th>Multipart?</th>
         <th>Common HouseHold Measure</th>
         <th>Per Serving Amount</th>
         <th>Per Serving Amount Unit of Measure</th>
-        <th>PPD Per Serving Amount</th>
-        <th>PPD Per Serving Amount Unit of Measure</th>
-        <th>Per Serving Amount in grams</th>
-        <th>PPD Per Serving Amount in grams</th>
-        <th>Comments</th>
+
+		<th>PerServing Energy (kcal)</th>
+		<th>Fat PerServing (g)</th>
+		<th>Fat (Saturated) PerServing (g)</th>
+
+		<th>Fat(Trans) PerServing (g)</th>
+		<th>Fats (Polyunsaturated) PerServing (g)</th>
+		<th>Carbohydrated PerServing(g)</th>
+		<th>Fibre PerServing (g)</th>
+		<th>Sugar(Total) PerServing(g)</th>
+		<th>Protein PerServing (g)</th>
+		<th>Cholesterol Perving (mg)</th>
+        <th>Sodium PerSering</th>
+        <th>Sodium % DV</th>
+		<th>Potassium PerServing (mg)</th>
+        <th>Calcium % DV</th>
+        <th>Iron % DV</th>
+		<th>Vitamin A % DV</th>
+        <th>Vitamin C % DV</th>
+
+		<th>Comment</th>
         <th>Source</th>
-        <th>Product Description</th> 
-      	<th>Sodium Amount (as sold)</th>
-		<th>Sodium Unit of Measure</th>
-		<th>Sodium Daily Value</th>
-		<th>Sodium Amount (as prepared)</th>
-		<th>Sodium Unit of Measure</th>
-		<th>Sodium Daily Value</th>
+        <th>Product Grouping ID</th>
+        <th>Product Description</th>
+        <th>Classification Number</th>
+        <th>Type of Restaurant</th>
+        <th>Informed Dining Program?</th>
+        <th>NFT Last Updated</th>
+        <th>Child Item?</th>
+
     </tr></thead> <tbody>
 
 
@@ -350,10 +344,8 @@ if(isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
 </section>
 
-  </div>
-    <div >
-	</div>
-  </div>
+
+
 
 		
 		</main>
