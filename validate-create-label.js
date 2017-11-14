@@ -1809,7 +1809,11 @@ number: true,
  Per_Serving_Amount : {   
     number: true
 //
-    }, /**/
+    }, 
+    Product_Grouping : {   
+    number: true
+//
+    },
    
 		
   },

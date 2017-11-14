@@ -5035,22 +5035,25 @@ function goBack() {
 
 <script> 
 	function validateForm(){
-	
+		document.getElementById("totalFatExceeded").style.display="none";
+    document.getElementById("totalFibreExceeded").style.display="none";
+
 		var flag = true;
-		var totalFat = document.getElementById("Fat_Amount").value;
+
+		var totalFat = document.getElementById("Fat_Amount").value.length?document.getElementById("Fat_Amount").value:0;
 		
-		var transFat = document.getElementById("Trans_Fat_Amount").value;
-		var saturatedFat = document.getElementById("Saturated_Fat_Amount").value;
-		var saturatedTransFat = document.getElementById("Saturated_Plus_Trans_Amount").value;
-		var polyunsaturated = document.getElementById("Polyunsaturated_Amount").value;
-		var omega6 = document.getElementById("Omega6_Amount").value;
-		var omega3 = document.getElementById("Omega3_Amount").value;
-		var monounsaturated = document.getElementById("Monounsaturated_Amount").value;
+		var transFat = document.getElementById("Trans_Fat_Amount").value.length?document.getElementById("Trans_Fat_Amount").value:0;
+		var saturatedFat = document.getElementById("Saturated_Fat_Amount").value.length?document.getElementById("Saturated_Fat_Amount").value:0;
+		var saturatedTransFat = document.getElementById("Saturated_Plus_Trans_Amount").value.length?document.getElementById("Saturated_Plus_Trans_Amount").value:0;
+		var polyunsaturated = document.getElementById("Polyunsaturated_Amount").value.length?document.getElementById("Polyunsaturated_Amount").value:0;
+		var omega6 = document.getElementById("Omega6_Amount").value.length?document.getElementById("Omega6_Amount").value:0;
+		var omega3 = document.getElementById("Omega3_Amount").value.length?document.getElementById("Omega3_Amount").value:0;
+		var monounsaturated = document.getElementById("Monounsaturated_Amount").value.length?document.getElementById("Monounsaturated_Amount").value:0;
 
 
 
 		var sumFat = parseFloat(transFat) +parseFloat(saturatedFat) + parseFloat(saturatedTransFat) + parseFloat(polyunsaturated)  + parseFloat(omega6)+ parseFloat(monounsaturated) + parseFloat(omega3);
-
+	
 		var totalFatPrepared =  document.getElementById("Fat_Amount_S").value;
 
 	var total = 0.0;
