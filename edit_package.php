@@ -5100,8 +5100,10 @@ function goBack() {
 
 		if(flag){
 			return true
+
 		}else{
 			return false;
+			window.scrollTo(0,0);
 		}
  	}
 </script>
