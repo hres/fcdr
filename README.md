@@ -18,10 +18,6 @@ In order to recreate the database, use the scripts located under /SCRIPT folder 
 fcdr_schema.sql to create the schema only <br>
 fcdr_data.sql to populate the reference tables <br>
 
-In order to recreate the database, use the scripts located under /SCRIPT folder in this order:
-
-fcdr_schema.sql to create the schema only
-fcdr_data.sql to populate the reference tables 
 
 fcdr_user.sql to populate the User table: all information in this table are temporary and will be removed/updated once the application gets deployed. 
 
