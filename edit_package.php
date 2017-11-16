@@ -5102,8 +5102,9 @@ function goBack() {
 			return true
 
 		}else{
-			return false;
 			window.scrollTo(0,0);
+			return false;
+			
 		}
  	}
 </script>
