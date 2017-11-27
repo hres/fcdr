@@ -31,7 +31,7 @@ EOQ;
 
 		if(password_verify($hashedPassword,$password)){
 			
-		$username = $row['Name'];
+		$username = $row['Username'];
 		$_SESSION['currentuser'] = $username;
 		$_SESSION['role'] = $row['User_Role'];
 		

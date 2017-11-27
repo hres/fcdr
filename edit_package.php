@@ -218,8 +218,15 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-  
 
+  	<div class="alert alert-danger" id="totalFatExceeded" style="display:none;">
+				<strong>Error!</strong> Please correct the following field: <strong>Sum of total fat should not exceed total fat</strong>
+			</div>
+
+
+  	<div class="alert alert-danger" id="totalFibreExceeded" style="display:none;">
+				<strong>Error!</strong> Please correct the following field: <strong>Sum of total Fibre should not exceed total Fibre </strong>
+			</div>
 
 <form role="form" method="post"  id="vids-search-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'] . "?PackageID=" . $_GET['PackageID'] . "&ProductID=" .$_GET['ProductID']);?>"  onsubmit="return validateForm()" name="myForm" >
 <section style="margin-top: 15px;" class="hidethis">
@@ -779,7 +786,7 @@ EOQ;
 
   <label class="col-sm-3 control-label ">Fat </label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Fat" name="Fat_Amount" value="<?PHP echo $row['Amount']; ?>"> 
+   <input type="text" class="form-control" placeholder="Amount of Fat"  name="Fat_Amount" id="Fat_Amount" value="<?PHP echo $row['Amount']; ?>"> 
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
 <select class="form-control" id="sel1" name="Fat_Unit_Of" >
@@ -2925,7 +2932,7 @@ EOQ;
 	?>
   <label class="col-sm-3 control-label">Saturated + Trans Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount os Saturated + Trans Fat" id="Saturated_Trans_Amount_S" name="Saturated_Trans_Amount_S" value="<?PHP echo $row['Amount']; ?>"> 
+   <input type="text" class="form-control sumFat" placeholder="Amount os Saturated + Trans Fat" id="Saturated_Trans_Amount_S" name="Saturated_Trans_Amount_S" value="<?PHP echo $row['Amount']; ?>"> 
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Saturated_Trans_Unit_S" name="Saturated_Trans_Unit_S">
@@ -3017,7 +3024,7 @@ EOQ;
 		 <div class="form-group">
   <label class="col-sm-3 control-label">Saturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Saturated Fat" id="Saturated_Fat_Amount_S" name="Saturated_Fat_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control sumFat" placeholder="Amount of Saturated Fat" id="Saturated_Fat_Amount_S" name="Saturated_Fat_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Saturated_Fat_Unit_S" name="Saturated_Fat_Unit_S" >
@@ -3062,7 +3069,7 @@ EOQ;
 	?>
   
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Trans Fat" id="Trans_Fat_Amount_S" name="Trans_Fat_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control sumFat" placeholder="Amount of Trans Fat" id="Trans_Fat_Amount_S" name="Trans_Fat_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Trans_Fat_Unit_S" name="Trans_Fat_Unit_S">
@@ -3111,7 +3118,7 @@ EOQ;
 		 
   <label class="col-sm-3 control-label ">Polyunsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Polyunsaturated Fat" id="Polyunsaturated_Amount_S" name="Polyunsaturated_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control sumFat" placeholder="Amount of Polyunsaturated Fat" id="Polyunsaturated_Amount_S" name="Polyunsaturated_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Polyunsaturated_Unit_S" name="Polyunsaturated_Unit_S">
@@ -3158,7 +3165,7 @@ EOQ;
 	?>
   <label class="col-sm-3 control-label">Omega-6 Polyunsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Omega-6 Polyunsaturated Fat" id="Omega6_Amount_S" name="Omega6_Amount_S" value = "<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control sumFat" placeholder="Amount of Omega-6 Polyunsaturated Fat" id="Omega6_Amount_S" name="Omega6_Amount_S" value = "<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Omega6_Unit_S" name="Omega6_Unit_S">
@@ -3201,7 +3208,7 @@ EOQ;
 	?>
   <label class="col-sm-3 control-label">Omega-3 Polyunsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Omega-3 Polyunsaturated Fat" id="Omega3_Amount_S" name="Omega3_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control sumFat" placeholder="Amount of Omega-3 Polyunsaturated Fat" id="Omega3_Amount_S" name="Omega3_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Omega3_Unit_S" name="Omega3_Unit_S">
@@ -3248,7 +3255,7 @@ EOQ;
 		 
   <label class="col-sm-3 control-label ">Monounsaturated Fat</label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Monounsaturated Fat" id="Monounsaturated_Amount_S" name="Monounsaturated_Amount_S" value="<?PHP echo $row['Amount']; ?>">
+   <input type="text" class="form-control sumFat" placeholder="Amount of Monounsaturated Fat" id="Monounsaturated_Amount_S" name="Monounsaturated_Amount_S" value="<?PHP echo $row['Amount']; ?>">
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
  <select class="form-control" id="Monounsaturated_Unit_S" name="Monounsaturated_Unit_S">
@@ -5026,5 +5033,80 @@ function goBack() {
 </script>
 <?php include 'List_Classification_Object.php'; ?>
 
+<script> 
+	function validateForm(){
+		document.getElementById("totalFatExceeded").style.display="none";
+    document.getElementById("totalFibreExceeded").style.display="none";
+
+		var flag = true;
+
+		var totalFat = document.getElementById("Fat_Amount").value.length?document.getElementById("Fat_Amount").value:0;
+		
+		var transFat = document.getElementById("Trans_Fat_Amount").value.length?document.getElementById("Trans_Fat_Amount").value:0;
+		var saturatedFat = document.getElementById("Saturated_Fat_Amount").value.length?document.getElementById("Saturated_Fat_Amount").value:0;
+		var saturatedTransFat = document.getElementById("Saturated_Plus_Trans_Amount").value.length?document.getElementById("Saturated_Plus_Trans_Amount").value:0;
+		var polyunsaturated = document.getElementById("Polyunsaturated_Amount").value.length?document.getElementById("Polyunsaturated_Amount").value:0;
+		var omega6 = document.getElementById("Omega6_Amount").value.length?document.getElementById("Omega6_Amount").value:0;
+		var omega3 = document.getElementById("Omega3_Amount").value.length?document.getElementById("Omega3_Amount").value:0;
+		var monounsaturated = document.getElementById("Monounsaturated_Amount").value.length?document.getElementById("Monounsaturated_Amount").value:0;
+
+
+
+		var sumFat = parseFloat(transFat) +parseFloat(saturatedFat) + parseFloat(saturatedTransFat) + parseFloat(polyunsaturated)  + parseFloat(omega6)+ parseFloat(monounsaturated) + parseFloat(omega3);
+	
+		var totalFatPrepared =  document.getElementById("Fat_Amount_S").value;
+
+	var total = 0.0;
+	var i;
+	let elems = document.getElementsByClassName('sumFat');
+	for( i = 0; i< elems.length; ++i){
+
+		total += elems[i].value.length ? parseFloat(elems[i].value) : 0;
+
+	}
+		if (sumFat > totalFat || total > totalFatPrepared){
+			flag = false;
+			document.getElementById("totalFatExceeded").style.display="block";
+			
+		}
+		
+
+		var totalFibreSold =document.getElementById("Fibre_Amount").value;
+		var	solubleFibre = document.getElementById("Soluble_Fibre_Amount").value.length?document.getElementById("Soluble_Fibre_Amount").value:0;
+		var	insolubleFibre = document.getElementById("Insoluble_Fibre_Amount").value.length?document.getElementById("Insoluble_Fibre_Amount").value:0;
+
+		var sumOfFibre = parseFloat(solubleFibre) +  parseFloat(insolubleFibre);
+
+		if(sumOfFibre > totalFibreSold){
+			flag = false;
+			document.getElementById("totalFibreExceeded").style.display="block";
+
+		}
+
+
+		var totalFibrePrepared =document.getElementById("Fibre_Amount_S").value;
+		var	solubleFibrePrepared = document.getElementById("Soluble_Fibre_Amount_S").value.length?document.getElementById("Soluble_Fibre_Amount_S").value:0;
+		var	insolubleFibrePrepared = document.getElementById("Insoluble_Fibre_Amount_S").value.length?document.getElementById("Insoluble_Fibre_Amount_S").value:0;
+
+		var sumOfFibrePrepared = parseFloat(solubleFibrePrepared) +  parseFloat(insolubleFibrePrepared);
+
+		if(sumOfFibrePrepared > totalFibrePrepared){
+			flag = false;
+			document.getElementById("totalFibreExceeded").style.display="block";
+
+		}
+
+
+
+		if(flag){
+			return true
+
+		}else{
+			window.scrollTo(0,0);
+			return false;
+			
+		}
+ 	}
+</script>
 </body>
 </html>

@@ -71,5 +71,8 @@
 			$sanitation_errors[] = "Soluble and Insolubre fibre should not exceed Fibre Amount (as prepared)";
 		}
 
+		    	if (!empty($_POST["Product_Grouping"])           && !filter_var($_POST["Product_Grouping"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
+		$sanitation_errors[] = "Invalid Product Grouping";
+	}
     }
 ?>

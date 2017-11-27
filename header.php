@@ -63,7 +63,9 @@ ini_set('session.cookie_httponly', true);
 			
   <li><a href="index.php">Search</a></li>
   <li> <a href="create-product.php">Create Product</a></li>
-				   <li><a  href="importdata.php" >Import</a></li>
+  <li><a  href="importdata.php" >Import</a></li>
+  <li><a  href="label-report.php" >Report</a></li>
+
 				   <?php
 include "connection.php";
 				   $username = $_SESSION['currentuser'];
