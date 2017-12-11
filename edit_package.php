@@ -591,12 +591,12 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 			<div class="row">
 		<div class="form-group col-xs-6">
 				<label for="Per_Serving_Amount" >Per Serving Amount </label>
-				<input type="text" style="width:540px" class="form-control" name="Per_Serving_Amount" id="manufacturer" placeholder="Enter the Amount in the Package Label" value="<?PHP echo $row['Per_Serving_Amount']; ?>"/>
+				<input type="text" style="width:540px" class="form-control" name="Per_Serving_Amount" id="Per_Serving_Amount" placeholder="Enter the Amount in the Package Label" value="<?PHP echo $row['Per_Serving_Amount']; ?>"/>
 			</div>
 	
 					<div class="form-group col-xs-6">
 	<label for="sel1" name="Per_Serving_Unit" > Per Serving  Unit of measure </label>
-    <select class="form-control" id="sel1" name="Per_Serving_Unit" style="width:540px">
+    <select class="form-control" id="Per_Serving_Unit" name="Per_Serving_Unit" style="width:540px">
 		  <option value="<?PHP echo $row['Per_Serving_Unit']; ?>" selected="selected"><?PHP echo $row['Per_Serving_Unit']; ?></option>
 		<?php include 'Units.php';?>
 		 <option value=""></option>
@@ -789,7 +789,7 @@ EOQ;
    <input type="text" class="form-control" placeholder="Amount of Fat"  name="Fat_Amount" id="Fat_Amount" value="<?PHP echo $row['Amount']; ?>"> 
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
-<select class="form-control" id="sel1" name="Fat_Unit_Of" >
+<select class="form-control" id="Fat_Unit_Of" name="Fat_Unit_Of" >
   <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 	
 	<?php include 'Units.php';?>
@@ -1432,10 +1432,10 @@ EOQ;
 		 
   <label class="col-sm-3 control-label ">Protein </label>
   <div class="col-sm-3">
-   <input type="text" class="form-control" placeholder="Amount of Protein" name="Protein_Amount" value="<?PHP echo $row['Amount']; ?>" >
+   <input type="text" class="form-control" placeholder="Amount of Protein" name="Protein_Amount" id="Protein_Amount" value="<?PHP echo $row['Amount']; ?>" >
   </div><!-- /col-sm-9 -->
   <div class="col-sm-3">
- <select class="form-control" id="sel1" name="Protein_Unit">
+ <select class="form-control" id="Protein_Unit" name="Protein_Unit">
 	    <option value="<?PHP echo $row['Amount_Unit_Of_Measure']; ?>" selected="selected"><?PHP echo $row['Amount_Unit_Of_Measure']; ?></option>
 
 	<?php include 'Units.php';?>
@@ -5053,7 +5053,7 @@ function goBack() {
 
 
 		var sumFat = parseFloat(transFat) +parseFloat(saturatedFat) + parseFloat(saturatedTransFat) + parseFloat(polyunsaturated)  + parseFloat(omega6)+ parseFloat(monounsaturated) + parseFloat(omega3);
-	
+
 		var totalFatPrepared =  document.getElementById("Fat_Amount_S").value;
 
 	var total = 0.0;
@@ -5066,6 +5066,7 @@ function goBack() {
 	}
 		if (sumFat > totalFat || total > totalFatPrepared){
 			flag = false;
+			
 			document.getElementById("totalFatExceeded").style.display="block";
 			
 		}
@@ -5080,7 +5081,7 @@ function goBack() {
 		if(sumOfFibre > totalFibreSold){
 			flag = false;
 			document.getElementById("totalFibreExceeded").style.display="block";
-
+		
 		}
 
 
@@ -5093,18 +5094,16 @@ function goBack() {
 		if(sumOfFibrePrepared > totalFibrePrepared){
 			flag = false;
 			document.getElementById("totalFibreExceeded").style.display="block";
-
+			
 		}
 
 
 
 		if(flag){
 			return true
-
 		}else{
 			window.scrollTo(0,0);
 			return false;
-			
 		}
  	}
 </script>
