@@ -1028,7 +1028,24 @@ Saturated_Fat_Amount_S : {
         }}
 
 },
-   
+       Fat_Amount : {   
+  number: true, 
+         required: {
+             
+             depends: function(element){
+          return $('#Fat_Unit_Of').val().length > 0;
+        }}
+
+},  
+    Fat_Unit_Of : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Fat_Amount').val().length > 0;
+        }}
+
+},
     Omega3_Amount_S : {   
   number: true, 
          required: {
@@ -1787,6 +1804,26 @@ number: true,
         }}
 
 },
+ 
+     Protein_Amount : {   
+number: true,
+         required: {
+             
+             depends: function(element){
+          return $('#Protein_Unit').val().length > 0;
+        }}
+
+},
+
+ Protein_Unit : {   
+
+         required: {
+             
+             depends: function(element){
+          return $('#Protein_Amount').val().length > 0;
+        }}
+
+},
  Per_Serving_Amount_In_Grams : {   
     number: true
    
@@ -1803,9 +1840,24 @@ number: true,
 //
 },
  Per_Serving_Amount : {   
-    number: true
+    number: true,
+    required: {
+             
+             depends: function(element){
+          return $('#Per_Serving_Unit').val().length > 0;
+        }}
 //
-}, Product_Grouping : {   
+}, 
+Per_Serving_Unit : {   
+  
+    required: {
+             
+             depends: function(element){
+          return $('#Per_Serving_Amount').val().length > 0;
+        }}
+//
+},
+Product_Grouping : {   
     number: true
 //
 },

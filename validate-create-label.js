@@ -137,10 +137,25 @@ $("#vids-search-form").validate({
 },
  Fat_Amount : {   
 
-         number: true
+         number: true,
+         required: {
+             depends: function(element){
+                 return $('#Fat_Unit').val().length > 0;
+             }
+         }
 
 },
+ Fat_Unit : {   
 
+         
+        
+         required: {
+             
+             depends: function(element){
+          return $('#Fat_Amount').val().length > 0;
+        }}
+
+},
     Polyunsaturated_Amount : {   
   number: true, 
          required: {
@@ -214,22 +229,40 @@ $("#vids-search-form").validate({
 
 },
     Carbohydrates_Amount : {   
-  number: true
+  number: true,
+   required: {
+             
+             depends: function(element){
+          return $('#Carbohydrates_Unit').val().length > 0;
+        }}
 
 },  
     Carbohydrates_Unit : {   
 
-         //required: true
+            required: {
+             
+             depends: function(element){
+          return $('#Carbohydrates_Amount').val().length > 0;
+        }}
 
 },
 
     Fibre_Amount : {   
-  number: true
+  number: true,     
+   required: {
+             
+             depends: function(element){
+          return $('#Fibre_Unit').val().length > 0;
+        }}
 
 },  
     Fibre_Unit : {   
 
-        // required: true
+       required: {
+             
+             depends: function(element){
+          return $('#Fibre_Amount').val().length > 0;
+        }}
 
 },
 
@@ -879,16 +912,45 @@ $("#vids-search-form").validate({
   
     Protein_Amount : {   
 
-    number: true
+    number: true,
+        required: {
+             
+             depends: function(element){
+          return $('#Protein_Unit').val().length > 0;
+        }}
+
+},
+   Protein_Unit : {   
+
+   
+        required: {
+             
+             depends: function(element){
+          return $('#Protein_Amount').val().length > 0;
+        }}
 
 },
 
     Energy_Amount : {   
 
-    number: true
+    number: true,
+    required: {
+             
+             depends: function(element){
+          return $('#Energy_Unit').val().length > 0;
+        }}
 
 }, 
+    Energy_Unit : {   
 
+   
+    required: {
+             
+             depends: function(element){
+          return $('#Energy_Amount').val().length > 0;
+        }}
+
+},
              Energy_Amount_S: {
   number: true, 
          required: {
@@ -1807,13 +1869,29 @@ number: true,
 
 }, 
  Per_Serving_Amount : {   
-    number: true
+    number: true,
+           required: {
+             
+             depends: function(element){
+
+          return $('#Per_Serving_Unit').val().length > 0;
+
+        }
+    }
 //
-    }, 
-    Product_Grouping : {   
-    number: true
+    }, /**/
+    Per_Serving_Unit : {   
+    
+           required: {
+             
+             depends: function(element){
+
+          return $('#Per_Serving_Amount').val().length > 0;
+
+        }
+    }
 //
-    },
+    }, /**/
    
 		
   },
