@@ -150,14 +150,10 @@
 		$monounsaturated_fat = filter_var($_POST["Monounsaturated_Amount"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 		$trans_plus_saturated = filter_var($_POST["Saturated_Plus_Trans_Amount"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
-		$fat_total = $saturated_fat + $trans_fat + $polyunsaturated_fat + $omega6_fat + $omega3_fat + $monounsaturated_fat + $trans_plus_saturated;
 
 		$fat_amount =  filter_var($_POST["Fat_Amount"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
-		if ($fat_total > $fat_amount){
 
-			$sanitation_errors[] = "Sum of all fat should not exceed total fat (as sold)";
-		}
 
 
 		
@@ -173,34 +169,24 @@
 		$monounsaturated_fat_1 = filter_var($_POST["Monounsaturated_Amount_S"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 		$trans_plus_saturated_1 = filter_var($_POST["Saturated_Trans_Amount_S"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
-		$fat_total_1 = $saturated_fat_1 + $trans_fat_1 + $polyunsaturated_fat_1 + $omega6_fat_1 + $omega3_fat_1 + $monounsaturated_fat_1 + $trans_plus_saturated_1;
 
 		$fat_amount_1 =  filter_var($_POST["Fat_Amount_S"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
-		if ($fat_total_1 > $fat_amount_1){
 
-			$sanitation_errors[] = "Sum of all fat should not exceed total fat (as prepared)";
-		}
 		
 		$soluble_fibre = filter_var($_POST["Soluble_Fibre_Amount"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 		$insoluble_fibre = filter_var($_POST["Insoluble_Fibre_Amount"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);	
 
 		$total_fibre = filter_var($_POST["Fibre_Amount"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);	
-		$sum_of_fibre = $soluble_fibre + $insoluble_fibre;
 
-		if($sum_of_fibre > $total_fibre){
-			$sanitation_errors[] = "Soluble and Insolubre fibre should not exceed Fibre Amount";
-		}
+
 
 		$soluble_fibre_s = filter_var($_POST["Soluble_Fibre_Amount_S"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 		$insoluble_fibre_s = filter_var($_POST["Insoluble_Fibre_Amount_S"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);	
 
 		$total_fibre_s = filter_var($_POST["Fibre_Amount_S"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);	
-		$sum_of_fibre_s = $soluble_fibre_s + $insoluble_fibre_s;
 
-		if($sum_of_fibre_s > $total_fibre_s){
-			$sanitation_errors[] = "Soluble and Insolubre fibre should not exceed Fibre Amount (as prepared)";
-		}
+
 
 		    	if (!empty($_POST["Product_Grouping"])           && !filter_var($_POST["Product_Grouping"], FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) {
 		$sanitation_errors[] = "Invalid Product Grouping";
