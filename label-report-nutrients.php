@@ -2,6 +2,13 @@
 
 
 $Component_List = array('Energy','Fat', 'Saturated Fat', 'Trans Fat', 'Fat Polyunsaturated', 'Carbohydrates', 'Fibre', 'Sugars', 'Protein', 'Cholesterol', 'Sodium', 'Potassium', 'Calcium', 'Iron', 'Vitamin A', 'Vitamin C');
+   
+   
+   
+   $Per_Serving_Amount_In_Grams = $row['Per_Serving_Amount_In_Grams'];
+   $Per_Serving_Amount = $row['Per_Serving_Amount'];
+   $Per_Serving_Unit = $row['Per_Serving_Unit'];
+
    $PPD = 1;
         $Energy = null;
         $Fat_Perserving = null;
@@ -23,6 +30,11 @@ $Component_List = array('Energy','Fat', 'Saturated Fat', 'Trans Fat', 'Fat Polyu
         $Vitamin_A_DV = null;
         $Vitamin_C_DV = null;
 
+        $EnergyPer100g = null;
+        $Saturated_Fat_Per100g = null;
+        $Sugar_Per100g = null;
+        $Sodium_Per100g = null; 
+
 
 
        	$editpackagestmt = $conn->prepare($editpackagequery);
@@ -31,6 +43,20 @@ $Component_List = array('Energy','Fat', 'Saturated Fat', 'Trans Fat', 'Fat Polyu
         $result_1 = $editpackagestmt->get_result();
         $row_1 = $result_1->fetch_assoc();
         $Energy = $row_1['Amount'];
+
+
+
+        		if(((!empty($row_1['Amount'])  && $row_1['Amount'] != NULL) || $row_1['Amount'] === '0') ){
+
+				if(!empty($Per_Serving_Amount_In_Grams) && $Per_Serving_Amount_In_Grams != 0){
+
+					$EnergyPer100g  = ($row_1['Amount'] / $Per_Serving_Amount_In_Grams) * 100;
+
+				}else if((empty($Per_Serving_Amount_In_Grams) || $Per_Serving_Amount_In_Grams == 0) && $Per_Serving_Unit == 'g' && $Per_Serving_Amount != 0){
+					$EnergyPer100g = ($row_1['Amount'] / $Per_Serving_Amount) * 100;
+				}
+
+		}
 
        	$editpackagestmt = $conn->prepare($editpackagequery);
         $editpackagestmt->bind_param("sii", $Component_List[1], $row['PackageID'], $PPD);
@@ -46,6 +72,20 @@ $Component_List = array('Energy','Fat', 'Saturated Fat', 'Trans Fat', 'Fat Polyu
         $row_3 = $result_3->fetch_assoc();
         $Saturated_Fat = $row_3['Amount'];
         
+
+
+                		if(((!empty($row_3['Amount'])  && $row_3['Amount'] != NULL) || $row_3['Amount'] === '0') ){
+
+				if(!empty($Per_Serving_Amount_In_Grams) && $Per_Serving_Amount_In_Grams != 0){
+
+					$Saturated_Fat_Per100g  = ($row_3['Amount'] / $Per_Serving_Amount_In_Grams) * 100;
+
+				}else if((empty($Per_Serving_Amount_In_Grams) || $Per_Serving_Amount_In_Grams == 0) && $Per_Serving_Unit == 'g' && $Per_Serving_Amount != 0){
+					$Saturated_Fat_Per100g = ($row_3['Amount'] / $Per_Serving_Amount) * 100;
+				}
+
+		}
+
         $editpackagestmt = $conn->prepare($editpackagequery);
         $editpackagestmt->bind_param("sii", $Component_List[3], $row['PackageID'], $PPD);
         $editpackagestmt->execute();
@@ -82,6 +122,19 @@ $Component_List = array('Energy','Fat', 'Saturated Fat', 'Trans Fat', 'Fat Polyu
         $row_8 = $result_8->fetch_assoc();
         $Sugars = $row_8['Amount'];
 
+
+                		if(((!empty($row_8['Amount'])  && $row_8['Amount'] != NULL) || $row_8['Amount'] === '0') ){
+
+				if(!empty($Per_Serving_Amount_In_Grams) && $Per_Serving_Amount_In_Grams != 0){
+
+					$Sugar_Per100g  = ($row_8['Amount'] / $Per_Serving_Amount_In_Grams) * 100;
+
+				}else if((empty($Per_Serving_Amount_In_Grams) || $Per_Serving_Amount_In_Grams == 0) && $Per_Serving_Unit == 'g' && $Per_Serving_Amount != 0){
+					$Sugar_Per100g = ($row_8['Amount'] / $Per_Serving_Amount) * 100;
+				}
+
+		}
+
         $editpackagestmt = $conn->prepare($editpackagequery);
         $editpackagestmt->bind_param("sii", $Component_List[8], $row['PackageID'], $PPD);
         $editpackagestmt->execute();
@@ -105,6 +158,18 @@ $Component_List = array('Energy','Fat', 'Saturated Fat', 'Trans Fat', 'Fat Polyu
         $Sodium_Perserving = $row_11['Amount'];
         $Sodium_DV = $row_11['Daily_Value'];
         
+
+                		if(((!empty($row_11['Amount'])  && $row_11['Amount'] != NULL) || $row_11['Amount'] === '0') ){
+
+				if(!empty($Per_Serving_Amount_In_Grams) && $Per_Serving_Amount_In_Grams != 0){
+
+					$Sodium_Per100g  = ($row_11['Amount'] / $Per_Serving_Amount_In_Grams) * 100;
+
+				}else if((empty($Per_Serving_Amount_In_Grams) || $Per_Serving_Amount_In_Grams == 0) && $Per_Serving_Unit == 'g' && $Per_Serving_Amount != 0){
+					$Sodium_Per100g = ($row_11['Amount'] / $Per_Serving_Amount) * 100;
+				}
+
+		}
 
        	$editpackagestmt = $conn->prepare($editpackagequery);
         $editpackagestmt->bind_param("sii", $Component_List[11], $row['PackageID'], $PPD);

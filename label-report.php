@@ -276,10 +276,9 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="well" style="margin-right:2%; overflow:auto;" id="toHidee">
 <table id="example" class="display nowrap" cellspacing="0" width="100%">
+
 <thead> <tr>
         <th>Label UPC</th>
-		<th>Type</th>
-
         <th>Label Description</th>
         <th>Brand</th>
         <th>Manufacturer</th>
@@ -293,35 +292,31 @@ if (isset($_POST['search']) && $_SERVER["REQUEST_METHOD"] == "POST") {
         <th>Common HouseHold Measure</th>
         <th>Per Serving Amount</th>
         <th>Per Serving Amount Unit of Measure</th>
-
 		<th>PerServing Energy (kcal)</th>
+		<th> Energy (kcal) Per100g </th>
 		<th>Fat PerServing (g)</th>
 		<th>Fat (Saturated) PerServing (g)</th>
-
+		<th> Saturated Fat Per100g </th>
 		<th>Fat(Trans) PerServing (g)</th>
 		<th>Fats (Polyunsaturated) PerServing (g)</th>
 		<th>Carbohydrated PerServing(g)</th>
 		<th>Fibre PerServing (g)</th>
 		<th>Sugar(Total) PerServing(g)</th>
+		<th>Total Sugar Per100g </th>
+
 		<th>Protein PerServing (g)</th>
 		<th>Cholesterol Perving (mg)</th>
-        <th>Sodium PerSering</th>
+        <th>Sodium PerServing</th>
+		<th> Sodium Per100g </th>
         <th>Sodium % DV</th>
 		<th>Potassium PerServing (mg)</th>
         <th>Calcium % DV</th>
         <th>Iron % DV</th>
 		<th>Vitamin A % DV</th>
         <th>Vitamin C % DV</th>
-
 		<th>Comment</th>
         <th>Source</th>
-        <th>Product Grouping ID</th>
-        <th>Product Description</th>
-        <th>Classification Number</th>
-        <th>Type of Restaurant</th>
-        <th>Informed Dining Program?</th>
-        <th>NFT Last Updated</th>
-        <th>Child Item?</th>
+
 
     </tr></thead> <tbody>
 

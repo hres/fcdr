@@ -77,6 +77,7 @@ Select P.PackageID,
        P.Child_Item,
        Product.Type,
        P.Classification_Number,
+       P.Per_Serving_Amount_In_Grams,
        Product.Restaurant_Type
        from Package P INNER JOIN Product ON ProductIDP = ProductID 
     WHERE $array1
@@ -108,6 +109,7 @@ Select P.PackageID,
        P.Child_Item,
        P.Classification_Number,
        Product.Type,
+       P.Per_Serving_Amount_In_Grams,
        Product.Restaurant_Type
        from Package P INNER JOIN Product ON ProductIDP = ProductID 
 
@@ -141,7 +143,7 @@ EOQ;
           echo "<tr>
 
             <td> <a href=package_details.php?ProductID=$ProductID&PackageID=" .$row['PackageID'] . " target = '_blank'>". $row['Label_UPC'] . "</a></td>
-            <td>". $row['Type'] . "</td>
+           
              <td>". $row['Label_Description'] .                                " </td>
             <td>". $row['Brand'] .                                " </td>
             <td>". $row['Manufacturer'] .                                " </td>
@@ -157,8 +159,10 @@ EOQ;
             <td>". $row['Per_Serving_Unit'] .                                " </td>
           
             <td>   $Energy   </td>
+             <td>$EnergyPer100g </td>
             <td>   $Fat_Perserving  </td>
             <td>   $Saturated_Fat</td>
+             <td>$Saturated_Fat_Per100g </td>
             <td>   $Trans_Fat   </td>
             <td>   $Polyunsaturated_Fat  </td>
             <td>   $Carbohydrates_Perserving</td>         
@@ -166,9 +170,11 @@ EOQ;
                  
             <td>   $Fibre_Perserving   </td>
             <td>   $Sugars  </td>
+             <td>$Sugar_Per100g </td>
             <td>   $Protein</td>
             <td>   $Cholesterol   </td>
             <td>   $Sodium_Perserving  </td>
+             <td>$Sodium_Per100g </td>
             <td>   $Sodium_DV</td>         
           
             <td>   $Potassium_Perserving  </td>
@@ -179,13 +185,7 @@ EOQ;
           
             <td>". $row['Comments'] .                                " </td>
             <td>". $row['Source'] .                                " </td>
-            <td>". $row['Product_Grouping'] .                                " </td>
-            <td>". $row['Product_Description'] .                                " </td>
-            <td>". $row['Classification_Number'] .                                " </td>
-            <td>". $row['Restaurant_Type'] .                                " </td>
-            <td>".  ($row['Informed_Dining_Program']===0?'No': ($row['Informed_Dining_Program']===1?'Yes':'')).                                " </td>
-            <td>". $row['Nft_Last_Update_Date'] .                                " </td>
-            <td>". ($row['Child_Item']===0?'No': ($row['Child_Item']===1?'Yes':'')) .                                " </td>
+
 
           
             
