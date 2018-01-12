@@ -87,7 +87,7 @@
 
 		}
 	
-	public function getClassification_Name(){
+	public function getClassification_Number(){
 
 		return $this->Classification_Number;
 
@@ -1008,8 +1008,54 @@ $childItem =  ($this->Child_Item != null?$this->Child_Item:NULL);
 
 
 }
+       function validateFields($grouping,$classification_number, $brand, $manufacturer, $restaurant_type, $conn) {
+		   //echo "$grouping OYESSII";
 
+		 if(is_numeric($grouping)){
+				$query =<<<EOQ
 
+SELECT DISTINCT PK.Product_Grouping, PK.Classification_Number, PK.Manufacturer, PK.Brand, P.Restaurant_Type
+  FROM Package PK INNER JOIN Product P ON P.ProductID = PK.ProductIDP
+ WHERE PK.Product_Grouping = ?  AND PK.Classification_Number = ? AND PK.Manufacturer = ? AND PK.Brand = ? AND P.Restaurant_Type = ?
+EOQ;
+
+					$statement = $conn->prepare($query);
+					$statement->bind_param("sssss", $grouping, $classification_number,  $manufacturer, $brand, $restaurant_type);
+					$result = $statement->execute();
+						$statement->store_result();
+
+                    if($statement->num_rows > 0){
+				
+                        return true;
+                    }else{
+					
+                        return false;
+                    }
+
+		 }else{
+			  return false;
+		 }
+
+         }
+
+		 function validateFieldsLabelUPC($Label_UPC,$classification_number, $brand, $manufacturer, $restaurant_type, $conn){
+			$label_query =<<<EOQ
+SELECT DISTINCT PK.ProductIDP,  PK.Classification_Number, PK.Manufacturer, PK.Brand, P.Restaurant_Type
+FROM Package PK INNER JOIN Product P ON P.ProductID = PK.ProductIDP
+WHERE PK.Label_UPC = ?  AND PK.Classification_Number = ? AND PK.Manufacturer = ? AND PK.Brand = ? AND P.Restaurant_Type = ?
+EOQ;
+			$stmt = $conn->prepare($label_query);
+			$stmt->bind_param("sssss", $Label_UPC, $classification_number,  $manufacturer, $brand, $restaurant_type);
+			$stmt->execute();
+			$stmt->store_result();
+
+			if($stmt->num_rows > 0){
+				return true; 
+			}else{
+				return false; 
+			}
+
+}
 
 
    }

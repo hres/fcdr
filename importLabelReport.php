@@ -1,4 +1,5 @@
 <?php
+
 $count=  $count - 1;
   echo "<h3>$count Records on the spreadsheet</h3>";
 	echo "<hr style=\" border-top: 1px solid red;\">";
@@ -8,6 +9,7 @@ $count=  $count - 1;
 			$senditem = $skipped_label->shift();
 			if(strlen ($senditem) < 1) continue;
 			echo "$senditem <br>";
+	
 		}
 
 					echo "<hr style=\" border-top: 1px solid red;\">";
@@ -65,6 +67,17 @@ $count=  $count - 1;
 			echo "$senditem <br>";
 		}
 
+
+		echo "<hr style=\" border-top: 1px solid red;\">";
+
+		echo "<h3>$invalid_combination_count Labels(s) skipped (invalid product grouping/classification number/manufacturer/brand/restaurant type)</h3><br>";
+		while (!$invalid_combination->isEmpty()) {
+			$senditem = $invalid_combination->shift();
+			if(strlen ($senditem) < 1) continue;
+			echo "$senditem <br>";
+		}
 print "<br> Import done";
+
+
 
 ?>

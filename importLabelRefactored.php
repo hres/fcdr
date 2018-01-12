@@ -1,8 +1,21 @@
 
 <?php
+//    header("Content-type: text/plain");
+//    header("Content-Disposition: attachment; filename=savethis.txt");
+
+// header("Content-Type: text/csv");
+// header("Content-Disposition: attachment; filename=file.csv");
+// # Disable caching - HTTP 1.1
+// header("Cache-Control: no-cache, no-store, must-revalidate");
+// # Disable caching - HTTP 1.0
+// header("Pragma: no-cache");
+// # Disable caching - Proxies
+// header("Expires: 0");
+
 include 'connection.php';
 include 'PackageInfo.php';
 
+// $output = fopen("php://output", "w");
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -40,6 +53,8 @@ if (!in_array($ext, $allowed)) {
     $skipped_same_upc_different_grouping_count  = 0;
     $skipped_same_upc_different_grouping        = new SplQueue();
     
+    $invalid_combination_count  = 0;
+    $invalid_combination        = new SplQueue();
     
     try {
         $conn->autocommit(FALSE);
@@ -92,12 +107,19 @@ if (!in_array($ext, $allowed)) {
                             
                             if($packageObject->checkIfSameGrouping($packageObject->getProduct_Grouping(), $conn)){
 
+                if($packageObject->validateFields($packageObject->getProduct_Grouping(), $packageObject->getClassification_Number(), $packageObject->getBrand(), $packageObject->getManufacturer(),$packageObject->getType_Of_Restaurant(),$conn))
+                                {
+
                                 $idReturned = $packageObject->createPackageLabelUPCGroupingMatch($Username, "Product_Grouping", $packageObject->getProduct_Grouping(), $conn);
 								$packageObject->updateFields("Product_Grouping", $packageObject->getProduct_Grouping(), "ProductIDP", "Package", $Username, $conn);
 								$packageObject->PopulateNFT($idReturned, $cars, $conn);
                                 $linked_by_gouping_count++;
                                 $input = $packageObject->getLabel_Description();
                                 $linked_by_gouping->push($input);
+                                }else{
+                                    $invalid_combination_count++;
+                                    $invalid_combination->push($packageObject->getLabel_Description());
+                                }
                             
 
                             }else{
@@ -131,7 +153,9 @@ if (!in_array($ext, $allowed)) {
                             } }            
                             
                         } else {
-                            
+     //  
+     if($packageObject->validateFieldsLabelUPC($packageObject->getLabel_UPC(), $packageObject->getClassification_Number(), $packageObject->getBrand(), $packageObject->getManufacturer(),$packageObject->getType_Of_Restaurant(),$conn)){
+                     
                             $xid = $packageObject->createPackageLabelUPCGroupingMatch($Username, "Label_UPC", $packageObject->getLabel_UPC(), $conn);
                             
                             
@@ -142,7 +166,10 @@ if (!in_array($ext, $allowed)) {
                             $packageObject->PopulateNFT($xid, $cars, $conn);
                             $input2 = $packageObject->getLabel_Description();
                             $linked_label->push($input2);
-                            
+                        }else{
+                            $invalid_combination_count++;
+                            $invalid_combination->push($packageObject->getLabel_Description());
+                        }        
                         }
                     }
                     }
@@ -154,7 +181,7 @@ if (!in_array($ext, $allowed)) {
         
         
         
-       $conn->commit();
+     
         
         include 'importLabelReport.php';       
     }
@@ -162,8 +189,11 @@ if (!in_array($ext, $allowed)) {
         echo "An Error occured during import, could not complete the transaction";
         $conn->rollback();
     }
+    $conn->commit();
     fclose($handle);
     mysqli_close($conn);
 }
+
+
 
 ?>
