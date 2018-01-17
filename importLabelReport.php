@@ -60,7 +60,7 @@ $count=  $count - 1;
 
 		echo "<hr style=\" border-top: 1px solid red;\">";
 
-		echo "<h3>$linked_by_gouping_count Labels(s) Linked to existing Products via Product Grouping</h3><br>";
+		echo "<h3>$linked_by_gouping_count Label(s) Linked to existing Products via Product Grouping</h3><br>";
 		while (!$linked_by_gouping->isEmpty()) {
 			$senditem = $linked_by_gouping->shift();
 			if(strlen ($senditem) < 1) continue;
@@ -70,7 +70,7 @@ $count=  $count - 1;
 
 		echo "<hr style=\" border-top: 1px solid red;\">";
 
-		echo "<h3>$invalid_combination_count Labels(s) skipped (invalid product grouping/classification number/manufacturer/brand/restaurant type)</h3><br>";
+		echo "<h3>$invalid_combination_count Label(s) skipped (invalid combination of product grouping/classification number/manufacturer/brand/restaurant type)</h3><br>";
 		while (!$invalid_combination->isEmpty()) {
 			$senditem = $invalid_combination->shift();
 			if(strlen ($senditem) < 1) continue;
