@@ -29,6 +29,17 @@ if($conn->query("delete from Sales")){
     echo "sales table not deleted";
 }
 
+if($conn->query("delete from Product_Classification")){
+    echo "product_classification deleted";
+}else{
+    echo "product_classification table not deleted";
+}
+
+if($conn->query("delete from Product")){
+    echo "Product deleted";
+}else{
+    echo "Product table not deleted";
+}
 ?>
 </body>
 
