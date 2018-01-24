@@ -185,11 +185,14 @@ EOQ;
           
             <td>". $row['Comments'] .                                " </td>
             <td>". $row['Source'] .                                " </td>
-
-
-          
-            
-
+            <td>". $row['Product_Description'] .                                " </td>
+            <td>". $row['Type'] . "</td>
+            <td>". $row['Restaurant_Type'] .                                " </td>  
+            <td>".  ($row['Informed_Dining_Program']===0?'No': ($row['Informed_Dining_Program']===1?'Yes':'')).  " </td> 
+            <td>". $row['Nft_Last_Update_Date'] .                                " </td>
+            <td>". ($row['Child_Item']===0?'No': ($row['Child_Item']===1?'Yes':'')) .                                " </td>
+            <td>". $row['Product_Grouping'] .                                " </td>
+            <td>". $row['Classification_Number'] .                                " </td>
                 </tr>";
                      
 
