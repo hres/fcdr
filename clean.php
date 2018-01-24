@@ -23,6 +23,11 @@ if($conn->query($query)){
     echo "failed truncating";
 }
 
+if($conn->query("delete from Sales")){
+    echo "sales deleted";
+}else{
+    echo "sales table not deleted";
+}
 
 ?>
 </body>
