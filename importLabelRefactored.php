@@ -154,7 +154,7 @@ if (!in_array($ext, $allowed)) {
                             
                         } else {
      //  
-     if($packageObject->validateFieldsLabelUPC($packageObject->getLabel_UPC(), $packageObject->getClassification_Number(), $packageObject->getBrand(), $packageObject->getManufacturer(),$packageObject->getType_Of_Restaurant(),$conn)){
+    // if($packageObject->validateFieldsLabelUPC($packageObject->getLabel_UPC(), $packageObject->getClassification_Number(), $packageObject->getBrand(), $packageObject->getManufacturer(),$packageObject->getType_Of_Restaurant(),$conn)){
                      
                             $xid = $packageObject->createPackageLabelUPCGroupingMatch($Username, "Label_UPC", $packageObject->getLabel_UPC(), $conn);
                             
@@ -166,10 +166,7 @@ if (!in_array($ext, $allowed)) {
                             $packageObject->PopulateNFT($xid, $cars, $conn);
                             $input2 = $packageObject->getLabel_Description();
                             $linked_label->push($input2);
-                        }else{
-                            $invalid_combination_count++;
-                            $invalid_combination->push($packageObject->getLabel_Description());
-                        }        
+         
                         }
                     }
                     }
